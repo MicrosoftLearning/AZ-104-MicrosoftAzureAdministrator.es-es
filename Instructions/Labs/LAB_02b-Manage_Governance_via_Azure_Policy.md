@@ -70,7 +70,7 @@ En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure 
 
 1. Cree una etiqueta con la siguiente configuración y aplique el cambio:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **Rol** |
     | Value | **Infraestructura** |
@@ -91,7 +91,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. Para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la tarea anterior |
@@ -100,7 +100,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. Para configurar las propiedades de nivel **Básico** de la asignación, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre de asignación | **Require Role tag with Infra value** (Requerir etiqueta Rol con valor Infra)|
     | Descripción | **Require Role tag with Infra value for all resources in the Cloud Shell resource group** (Requerir etiqueta Rol con el valor Infra para todos los recursos del grupo de recursos de Cloud Shell)|
@@ -110,7 +110,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. Haga clic en **Siguiente** y establezca **Parámetros** en los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre de etiqueta | **Rol** |
     | Valor de etiqueta | **Infraestructura** |
@@ -119,7 +119,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     >**Nota:** Esta configuración se puede usar cuando la directiva o la iniciativa incluyen el efecto **deployIfNotExists** o **Modify**.
 
-1. Haga clic en **Revisar + crear** y, después, en **Crear**.
+1. Haga clic en **Revisar y crear** y, después, en **Crear**.
 
     >**Nota**: Ahora, para comprobar que la nueva asignación de directivas está en vigor, intentará crear otra cuenta de Azure Storage en el grupo de recursos sin agregar explícitamente la etiqueta necesaria. 
     
@@ -153,7 +153,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la primera tarea |
@@ -162,7 +162,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Para configurar las propiedades restantes de nivel **Básico** de la asignación, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre de asignación | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing** (Heredar la etiqueta Rol y su valor Infra del grupo de recursos de Cloud Shell si falta)|
     | Descripción | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing** (Heredar la etiqueta Rol y su valor Infra del grupo de recursos de Cloud Shell si falta)|
@@ -170,20 +170,20 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Siguiente** y establezca **Parámetros** en los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre de etiqueta | **Rol** |
 
 1. Haga clic en **Siguiente** y, en la pestaña **Corrección**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Crear una tarea de corrección | enabled |
     | Directiva que se debe corregir | **Heredar una etiqueta del grupo de recursos si falta** |
 
     >**Nota**: La definición de esta directiva incluye el efecto **Modify**.
 
-1. Haga clic en **Revisar + crear** y, después, en **Crear**.
+1. Haga clic en **Revisar y crear** y, después, en **Crear**.
 
     >**Nota**: Para comprobar que la nueva asignación de directivas está en vigor, creará otra cuenta de Azure Storage en el mismo grupo de recursos sin agregar explícitamente la etiqueta necesaria. 
     
