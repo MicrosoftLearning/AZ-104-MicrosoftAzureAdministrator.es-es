@@ -240,7 +240,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | --- | --- |
     | Nombre de la regla de alertas | **Porcentaje de CPU por encima del umbral de prueba** |
     | Descripción | **Porcentaje de CPU por encima del umbral de prueba** |
-    | severity | **Gravedad 3** |
+    | gravedad | **Gravedad 3** |
     | Habilitar regla tras la creación | **Sí** |
 
 1. Haga clic en **Crear regla de alertas**.
