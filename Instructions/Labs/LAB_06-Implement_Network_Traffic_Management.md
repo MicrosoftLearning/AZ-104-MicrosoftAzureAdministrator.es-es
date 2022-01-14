@@ -461,7 +461,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
     | Puerto back-end | **80** |
     | Grupo back-end | **az104-06-lb4-be1** |
     | Sondeo de mantenimiento | **az104-06-lb4-hp1** |
-    | Persistencia de la sesión | **None** |
+    | Persistencia de la sesión | **Ninguna** |
     | Tiempo de espera de inactividad (minutos) | **4** |
     | Restablecimiento de TCP | **Deshabilitada** |
     | IP flotante (Direct Server Return) | **Deshabilitada** |
