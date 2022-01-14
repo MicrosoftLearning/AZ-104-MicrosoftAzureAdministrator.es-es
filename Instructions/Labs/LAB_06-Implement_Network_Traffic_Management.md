@@ -197,7 +197,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-    > **Note**: **10.62.0.4** representa la dirección IP privada de **az104-06-vm2**.
+    > **Nota**: **10.62.0.4** representa la dirección IP privada de **az104-06-vm2**.
 
 1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que la conexión era directa, sin saltos intermedios entre las VM.
 
@@ -216,7 +216,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-    > **Note**: **10.63.0.4** representa la dirección IP privada de **az104-06-vm3**.
+    > **Nota**: **10.63.0.4** representa la dirección IP privada de **az104-06-vm3**.
 
 1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que la conexión era directa, sin saltos intermedios entre las VM.
 
