@@ -52,14 +52,14 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
-    | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
+    | Grupo de recursos | nombre de un nuevo grupo de recursos **az104-08-rg01** |
     | Nombre de la máquina virtual | **az104-08-vm0** |
     | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure. |
     | Opciones de disponibilidad | **Zona de disponibilidad** |
     | Zona de disponibilidad | **1** |
     | Imagen | **Windows Server 2019 Datacenter Gen1/Gen2** |
     | Instancia de Azure Spot | **No** |
-    | Size | **Estándar D2s v3** |
+    | Tamaño | **Estándar D2s v3** |
     | Nombre de usuario | **Estudiante** |
     | Contraseña | **Pa55w.rd1234** |
     | Puertos de entrada públicos | **None** |
@@ -87,7 +87,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
     | Configuración | Value |
     | --- | --- |
-    | Subnet | **subnet0** |
+    | Subred | **subnet0** |
     | Dirección IP pública | **default** |
     | Grupo de seguridad de red de NIC | **basic** |
     | Puertos de entrada públicos | **None** |
@@ -118,7 +118,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
     | Configuración | Value |
     | --- | --- |
-    | Resource group | **az104-08-rg01** |
+    | Grupo de recursos | **az104-08-rg01** |
     | Nombre de la interfaz de red | **az104-08-vm1-nic1** |
     | Nombre de dirección IP pública | **az104-08-vm1-ip** |
     | Nombre de máquina virtual | **az104-08-vm1** |
@@ -361,13 +361,13 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
     | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
+    | Grupo de recursos | nombre de un nuevo grupo de recursos **az104-08-rg02** |
     | Nombre del conjunto de escalado de máquinas virtuales | **az10408vmss0** |
     | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure diferentes de las que usó para implementar máquinas virtuales anteriormente en este laboratorio. |
     | Zona de disponibilidad | **Zonas 1, 2, 3** |
     | Imagen | **Windows Server 2019 Datacenter - Gen2** |
     | Instancia de Azure Spot | **No** |
-    | Size | **Estándar D2s_v3** |
+    | Tamaño | **Estándar D2s_v3** |
     | Nombre de usuario | **Estudiante** |
     | Contraseña | **Pa55w.rd1234** |
     | ¿Ya tiene una licencia de Windows Server? | **No** |
