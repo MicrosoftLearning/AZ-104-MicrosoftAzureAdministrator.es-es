@@ -2,12 +2,12 @@
 lab:
   title: '03b: Administración de recursos de Azure mediante plantillas de ARM'
   module: Module 03 - Azure Administration
-ms.openlocfilehash: 4d50e205d76db7bfeffd89a970ffcb42bd9c2f42
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 99b5c435e5e2bcaf4df7bc2a6173e6c546abe131
+ms.sourcegitcommit: a8c7d995806dcf8eaad35b204e87bde178f28443
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625557"
+ms.lasthandoff: 02/08/2022
+ms.locfileid: "138110901"
 ---
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -29,7 +29,9 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab03b.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
+
+> **Nota:** Cree siempre su propia contraseña segura para cualquier máquina virtual o cuenta de usuario que cree. Si no es usted quien crea la máquina virtual, use la opción **Restablecer contraseña** en el portal para actualizar la contraseña. 
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -66,8 +68,6 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 #### <a name="task-2-create-an-azure-managed-disk-by-using-an-arm-template"></a>Tarea 2: Crear un disco administrado de Azure mediante una plantilla de ARM
 
 1. En Azure Portal, busque y seleccione **Implementar una plantilla personalizada**.
-
-1. Haga clic en **Template Deployment (implementar mediante plantillas personalizadas)** , que se encuentra bajo el grupo **Marketplace**.
 
 1. En la hoja **Implementación personalizada**, haga clic en **Cree su propia plantilla en el editor**.
 

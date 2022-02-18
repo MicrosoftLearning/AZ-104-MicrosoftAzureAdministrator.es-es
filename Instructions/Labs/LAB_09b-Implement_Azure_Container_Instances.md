@@ -2,12 +2,12 @@
 lab:
   title: '09b: Implementación de Azure Container Instances'
   module: Module 09 - Serverless Computing
-ms.openlocfilehash: 2783bb606e0536ec7ef53d4966d07064392c6421
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 603b8b0b4777e3879c00f95771e519a5843ccbac
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625550"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356611"
 ---
 # <a name="lab-09b---implement-azure-container-instances"></a>Laboratorio 09b: Implementación de Azure Container Instances
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -29,7 +29,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09b.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -84,7 +84,9 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

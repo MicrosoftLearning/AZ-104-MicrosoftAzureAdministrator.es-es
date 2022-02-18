@@ -2,12 +2,12 @@
 lab:
   title: '02a: Administrar suscripciones y RBAC'
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 657e62b4bc0a34da0748c95922d2e3f4868a21c3
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: ec35201e545c0100809124c8a0d6164c9b36b363
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625564"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356689"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Laboratorio 02a: Administrar suscripciones y RBAC
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -43,7 +43,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -107,6 +107,7 @@ En esta tarea, creará una definición de un rol RBAC personalizado.
       ]
    }
    ```
+    > **Nota:** Si no está seguro de dónde se almacenan los archivos en el entorno de laboratorio local, pregunte al instructor.
 
 1. Reemplace el marcador de posición `SUBSCRIPTION_ID` del archivo JSON por el identificador de la suscripción que copió en el Portapapeles y guarde el cambio.
 
@@ -139,13 +140,13 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
     | Nombre de usuario | **az104-02-aaduser1**|
     | Name | **az104-02-aaduser1**|
     | Permitirme crear la contraseña | enabled |
-    | Contraseña inicial | **Pa55w.rd1234** |
+    | Contraseña inicial | **Proporcione una contraseña segura** |
 
     >**Nota**: **Copie en el Portapapeles** el **Nombre de usuario** completo. Lo necesitará más adelante en este laboratorio.
 
 1. En Azure Portal, vuelva al grupo de administración **az104-02-mg1** y muestre sus **detalles**.
 
-1. Haga clic en **Control de acceso (IAM)** , haga clic en **+ Agregar** seguido de **Asignación de roles** y asigne el rol **Colaborador de solicitud de soporte técnico (personalizado)** a la cuenta de usuario recién creada.
+1. Seleccione **Control de acceso (IAM)** , haga clic en **+ Agregar**, **Agregar asignación de roles** y asigne el rol **Colaborador de solicitud de soporte técnico (personalizado)** a la cuenta de usuario recién creada.
 
 1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cambie la contraseña del usuario.
 
@@ -167,9 +168,9 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. 
+   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de recursos sin usar garantiza que no aparezcan cargos inesperados, aunque los recursos creados en este laboratorio no incurren en costos adicionales.
 
-   >**Nota**: La eliminación de recursos sin usar garantiza que no aparezcan cargos inesperados, aunque los recursos creados en este laboratorio no incurren en costos adicionales.
+   >**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza.
 
 1. En Azure Portal, busque y seleccione **Azure Active Directory**, en la hoja Azure Active Directory, haga clic en **Usuarios**.
 

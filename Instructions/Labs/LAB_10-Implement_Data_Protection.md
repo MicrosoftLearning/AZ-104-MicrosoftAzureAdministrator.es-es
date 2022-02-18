@@ -2,12 +2,12 @@
 lab:
   title: '10: Implementación de la protección de datos'
   module: Module 10 - Data Protection
-ms.openlocfilehash: 88b9ba4e552702d7e062fb73a21ab0ec257ab2d6
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 86a5caf061d92bbba64386599ac0a9c073d408ba
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625579"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356589"
 ---
 # <a name="lab-10---backup-virtual-machines"></a>Laboratorio 10: Copia de seguridad de máquinas virtuales
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -47,6 +47,8 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
     >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** y **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** en el directorio principal de Cloud Shell.
+
+1. Edite el archivo de parámetros que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará las máquinas virtuales (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure). Escriba cada línea de comandos por separado y ejecútelas por separado:
 
@@ -107,7 +109,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. De nuevo en la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de seguridad**.
 
-1. En la hoja **Configuración de seguridad**, observe que **Eliminación temporal (para máquinas virtuales de Azure)** tenga un estado **Habilitado**.
+1. En la hoja **Configuración de seguridad**, tenga en cuenta que la opción **Eliminación temporal (para cargas de trabajo que se ejecutan en Azure)**  está **habilitada**.
 
 1. Cierre la hoja **Configuración de seguridad** y, de nuevo en la hoja del almacén de Recovery Services **az104-10-rsv1**, haga clic en **Información general**.
 
@@ -148,7 +150,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
 
 1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**, en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquinas virtuales de Azure**.
 
-1. En la hoja **Elementos de copia de seguridad (máquina virtual de Azure)** de **az104-10-vm0**, revise los valores de las entradas **Comprobación previa a la copia de seguridad** y **Estado de la última copia de seguridad**.
+1. En la hoja **Backup Items (Azure Virtual Machine)** [Elementos de copia de seguridad (máquina virtual de Azure)], haga clic en **az104-10-vm0** y revise los valores de las entradas **Comprobación previa a la copia de seguridad** y **Estado de la última copia de seguridad**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Hacer copia de seguridad ahora**, acepte el valor predeterminado en la lista desplegable **Conservar copia de seguridad hasta** y haga clic en **Aceptar**.
 
@@ -166,7 +168,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros.
 
     >**Nota**: Dado que Azure Portal ya no admite IE11, tendrá que usar el explorador Microsoft Edge para esta tarea.
 
@@ -297,7 +299,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros.
 
    >**Nota**: Dado que Azure Portal ya no admite IE11, tendrá que usar el explorador Microsoft Edge para esta tarea.
 
@@ -433,7 +435,9 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

@@ -2,12 +2,12 @@
 lab:
   title: '07: Administración de Azure Storage'
   module: Module 07 - Azure Storage
-ms.openlocfilehash: c0889dabc4b190ff83c077cb6d74d4ead7541c62
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 3a848e898f1bb92cb93623760086dcea634a2208
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625617"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356605"
 ---
 # <a name="lab-07---manage-azure-storage"></a>Laboratorio 07: Administración de Azure Storage
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -34,7 +34,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab07.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -52,20 +52,25 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** y **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** en el directorio principal de Cloud Shell.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará la máquina virtual (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar la máquina virtual de Azure).
+1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
+
+1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará la máquina virtual (reemplace el marcador de posición “[Azure_region]” por el nombre de una región de Azure donde tiene pensado implementar la máquina virtual de Azure).
 
     >**Nota**: Para enumerar los nombres de las regiones de Azure, ejecute `(Get-AzLocation).Location`
     >**Nota**: Cada comando siguiente debe escribirse por separado.
 
-   ```powershell
-   $location = '[Azure_region]'
+    ```powershell
+    $location = '[Azure_region]'
+    ```
   
-  ```powershell
-   $rgName = 'az104-07-rg0'
- 
- ```powershell
-   New-AzResourceGroup -Name $rgName -Location $location
-   ```
+    ```powershell
+     $rgName = 'az104-07-rg0'
+    ```
+
+    ```powershell
+    New-AzResourceGroup -Name $rgName -Location $location
+    ```
+    
 1. En el panel de Cloud Shell, ejecute lo siguiente para implementar la máquina virtual mediante los archivos de parámetros y plantillas cargados:
 
    ```powershell
@@ -93,7 +98,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
     | Nombre de la cuenta de almacenamiento | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
-    | Location | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
+    | Region | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
     | Rendimiento | **Estándar** |
     | Redundancia | **Almacenamiento con redundancia geográfica (GRS)** |
 
@@ -205,7 +210,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. En la hoja **az104-07-container**, haga clic en **Control de acceso (IAM)** .
 
-1. En la sección **Agregar**, haga clic en **Agregar una asignación de roles**.
+1. En la pestaña **Comprobar acceso**, haga clic en **Agregar asignación de roles**.
 
 1. En la hoja **Agregar asignación de roles**, especifique la configuración siguiente:
 
@@ -215,7 +220,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
     | Asignar acceso a | **Usuario, grupo o entidad de servicio** |
     | Miembros | Nombre de la cuenta de usuario |
 
-1. Haga clic en "Revisar y asignar" y, a continuación, en "Revisar y asignar", y vuelva a la hoja **Información general** del contenedor **az104-07-container** y compruebe que puede cambiar el método de autenticación a (Cambiar la cuenta de usuario de Azure AD).
+1. Haga clic en **Revisar y asignar** y, después, en **Revisar y asignar**. Vuelva a la hoja **Información general** del contenedor **az104-07-container** y compruebe que puede cambiar el método de autenticación a (Cambiar a la cuenta de usuario de Azure AD).
 
     > **Nota**: El cambio puede tardar unos 5 minutos en surtir efecto.
 
@@ -279,7 +284,7 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
     > **Nota**: Esto es lo esperado, ya que se está conectando desde la dirección IP del cliente.
 
-1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **licenses/LICENSE** del contenedor de Azure Storage.
+1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **Redes** de la cuenta de Azure Storage.
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
@@ -298,7 +303,9 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. También puede intentar eliminar el grupo de recursos donde residen los recursos. Se trata de un acceso directo rápido de administrador. Si tiene dudas, hable con el instructor.
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

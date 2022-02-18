@@ -2,12 +2,12 @@
 lab:
   title: '09a: Implementación de Web Apps'
   module: Module 09 - Serverless Computing
-ms.openlocfilehash: 41e7aef9f7d98adeb829618ce0c806116a6cf2df
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: af243b0cfa2b011dd419516139b5200ba349bcb4
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625615"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356617"
 ---
 # <a name="lab-09a---implement-web-apps"></a>Laboratorio 09a: Implementación de Web Apps
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -33,7 +33,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -45,7 +45,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En Azure Portal, busque y seleccione **App Services** y, en la hoja **App Services**, haga clic en **+ Crear**.
 
-1. En la pestaña **Aspectos básicos** de la hoja **Aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     | Configuración | Value |
     | --- | ---|
@@ -53,7 +53,7 @@ En esta tarea, creará una aplicación web de Azure.
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
     | Nombre de aplicación web | Cualquier nombre globalmente único |
     | Publicar | **Código** |
-    | Pila en tiempo de ejecución | **PHP 7.3** |
+    | Pila en tiempo de ejecución | **PHP 7.4** |
     | Sistema operativo | **Windows** |
     | Region | Nombre de una región de Azure donde puede aprovisionar aplicaciones web de Azure |
     | Plan de App Service | Acepte la configuración predeterminada |
@@ -70,7 +70,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. En la hoja de la aplicación web recién implementada, haga clic en el vínculo **URL** para mostrar la página web predeterminada en una nueva pestaña del explorador.
 
-1. Cierre la nueva pestaña del explorador y, de nuevo en Azure Portal, en la sección **Implementación** de la hoja de la aplicación web, haga clic en **Agregue una ranura de implementación**.
+1. Cierre la nueva pestaña del explorador y, de vuelta en Azure Portal, en la sección **Implementación** de la hoja de la aplicación web, haga clic en **Espacios de implementación**.
 
     >**Nota**: La aplicación web, en este momento, tiene una sola ranura de implementación con la etiqueta **PRODUCTION**.
 
@@ -204,11 +204,13 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
     | Configuración | Value |
     | --- |--- |
-    | Límites de instancia, mínimo | **1** |
+    | Límites mínimos de la instancia | **1** |
     | Límites de instancia, máximo | **2** |
     | Límites de instancia, predeterminado | **1** |
 
 1. Haga clic en **Save**(Guardar).
+
+    >**Nota:** Si se produce un error que indica que el proveedor de recursos “microsoft.insights” no está registrado, ejecute `az provider register --namespace 'Microsoft.Insights'` en Cloud Shell y vuelva a intentar guardar las reglas de escalado automático.
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
@@ -242,7 +244,9 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

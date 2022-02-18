@@ -2,12 +2,12 @@
 lab:
   title: '06: Implementación de la administración del tráfico'
   module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 45507e4f181e339eaceae6cce9b6a8da84627a45
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 72ac54fe14d64d35e42b524d7d1f57ba1657335a
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625620"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356623"
 ---
 # <a name="lab-06---implement-traffic-management"></a>Laboratorio 06: Implementación de la administración del tráfico
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -26,7 +26,7 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Configurar la topología de red en estrella tipo hub-and-spoke
 + Tarea 3: Probar la transitividad del emparejamiento de redes virtuales
 + Tarea 4: Configurar el enrutamiento en la topología en estrella tipo hub-and-spoke
-+ Tarea 5: Implementar Azure Load Balancer
++ Implementado Azure Load Balancer
 + Tarea 6: Implementar Azure Application Gateway
 
 ## <a name="estimated-timing-60-minutes"></a>Tiempo estimado: 60 minutos
@@ -36,7 +36,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -54,17 +54,22 @@ En esta tarea, implementará cuatro máquinas virtuales en la misma región de A
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** y **\\Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** en el directorio principal de Cloud Shell.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear el primer grupo de recursos que hospedará el entorno de laboratorio (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure) (puede usar el cmdlet "(Get-AzLocation).Location" para obtener la lista de regiones):
+1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
-   ```powershell (execute one command at a time)
-   $location = '[Azure_region]'
+1. En el panel de Cloud Shell, ejecute lo siguiente para crear el primer grupo de recursos que hospedará el entorno de laboratorio (reemplace el marcador de posición “[Azure_region]” por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure). Puede usar el cmdlet “(Get-AzLocation).Location” para obtener la lista de regiones:
 
-```powershell (execute one command at a time)
-   $rgName = 'az104-06-rg1'
+    ```powershell 
+    $location = '[Azure_region]'
+    ```
+    Ahora, el nombre del grupo de recursos:
+    ```powershell
+    $rgName = 'az104-06-rg1'
+    ```
+    Y, por último, cree el grupo de recursos en la ubicación que desee:
+    ```powershell
+    New-AzResourceGroup -Name $rgName -Location $location
+    ```
 
-```powershell (execute one command at a time)
-   New-AzResourceGroup -Name $rgName -Location $location
-   ```
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear las tres redes virtuales y cuatro VM de Azure en ellas mediante los archivos de parámetros y plantilla que cargó:
 
@@ -130,7 +135,7 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
 
 1. En la hoja de la máquina virtual **az104-06-vnet01**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
 
-1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en Agregar:
+1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Agregar**:
 
     | Configuración | Value |
     | --- | --- |
@@ -154,7 +159,7 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
 
 1. En la hoja de la máquina virtual **az104-06-vnet01**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
 
-1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en Agregar:
+1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Agregar**:
 
     | Configuración | Value |
     | --- | --- |
@@ -180,7 +185,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
 1. En Azure Portal, busque y seleccione **Network Watcher**.
 
-1. En la hoja **Network Watcher**, expanda la lista de regiones de Azure y compruebe que el servicio esté habilitado en la instancia de Azure en la que implementó los recursos en la primera tarea de este laboratorio.
+1. En la hoja **Network Watcher**, expanda la lista de regiones de Azure y compruebe que el servicio está habilitado en la región que está usando. 
 
 1. Vaya a la hoja **Network Watcher** y luego a **Solución de problemas de conexión**.
 
@@ -197,7 +202,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-    > **Nota**: **10.62.0.4** representa la dirección IP privada de **az104-06-vm2**.
+    > **Note**: **10.62.0.4** representa la dirección IP privada de **az104-06-vm2**.
 
 1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que la conexión era directa, sin saltos intermedios entre las VM.
 
@@ -216,7 +221,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-    > **Nota**: **10.63.0.4** representa la dirección IP privada de **az104-06-vm3**.
+    > **Note**: **10.63.0.4** representa la dirección IP privada de **az104-06-vm3**.
 
 1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que la conexión era directa, sin saltos intermedios entre las VM.
 
@@ -301,11 +306,11 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
    > **Nota**: Espere a que se cree la tabla de rutas. Este proceso tardará aproximadamente 3 minutos.
 
-1. De nuevo en la hoja **Tablas de rutas**, haga clic en **Actualizar** y, luego en **az104-06-rt23**.
+1. Haga clic en **Ir al recurso**.
 
 1. En la hoja de la tabla de rutas **az104-06-rt23**, en la sección **Configuración**, haga clic en **Rutas** y luego en **+ Agregar**.
 
-1. Agregue una nueva ruta con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+1. Agregue una nueva ruta con la configuración siguiente:
 
     | Configuración | Value |
     | --- | --- |
@@ -343,7 +348,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
    > **Nota**: Espere a que se cree la tabla de rutas. Este proceso tardará aproximadamente 3 minutos.
 
-1. De nuevo en la hoja **Tablas de rutas**, haga clic en **Actualizar** y, luego en **az104-06-rt32**.
+1. Haga clic en **Ir al recurso**.
 
 1. En la hoja de la tabla de rutas **az104-06-rt32**, en la sección **Configuración**, haga clic en **Rutas** y luego en **+ Agregar**.
 
@@ -396,22 +401,26 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
 
 1. En Azure Portal, busque y seleccione **Equilibradores de carga** y, en la hoja **Equilibradores de carga**, haga clic en **+ Crear**.
 
-1. Cree un equilibrador de carga con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+1. Cree un equilibrador de carga con la siguiente configuración (deje las demás opciones con los valores predeterminados) y haga clic en **Siguiente: Configuración de IP de front-end**:
 
     | Configuración | Value |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
-    | Resource group | Nombre de un nuevo grupo de recursos **az104-06-rg1** |
+    | Resource group | **az104-06-rg1** |
     | Name | **az104-06-lb4** |
     | Region| Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
-    | Tipo | **Public** |
     | SKU | **Estándar** |
+    | Tipo | **Public** |
+    
+1. En la pestaña **Configuración de IP de front-end**, haga clic en **Agregar una configuración de IP de front-end** y use la siguiente configuración antes de hacer clic en **Agregar**.   
+     
+    | Configuración | Value |
+    | --- | --- |
+    | Nombre | Cualquier nombre único |
     | Dirección IP pública | **Crear nuevo** |
     | Nombre de la dirección IP pública | **az104-06-pip4** |
-    | Zona de disponibilidad | **Ninguna zona** |
-    | Adición de una dirección IPv6 pública | **No** |
 
-1. Haga clic en Revisar y crear. Deje que se procese la validación y haga clic en Crear para enviar la implementación.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** para enviar la implementación.
 
     > **Nota**: Espere a que se aprovisione Azure Load Balancer. Este proceso tardará alrededor de 2 minutos.
 
@@ -461,7 +470,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
     | Puerto back-end | **80** |
     | Grupo back-end | **az104-06-lb4-be1** |
     | Sondeo de mantenimiento | **az104-06-lb4-hp1** |
-    | Persistencia de la sesión | **Ninguna** |
+    | Persistencia de la sesión | **None** |
     | Tiempo de espera de inactividad (minutos) | **4** |
     | Restablecimiento de TCP | **Deshabilitada** |
     | IP flotante (Direct Server Return) | **Deshabilitada** |
@@ -506,7 +515,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
     | Configuración | Value |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
-    | Resource group | Nombre de un nuevo grupo de recursos **az104-06-rg1** |
+    | Resource group | **az104-06-rg1** |
     | Nombre de la puerta de enlace de aplicaciones | **az104-06-appgw5** |
     | Region | Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
     | Nivel | **Standard V2** |
@@ -589,7 +598,9 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

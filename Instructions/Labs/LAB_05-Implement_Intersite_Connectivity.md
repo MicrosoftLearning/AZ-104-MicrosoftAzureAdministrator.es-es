@@ -2,12 +2,12 @@
 lab:
   title: '05: Implementación de la conectividad entre sitios'
   module: Module 05 - Intersite Connectivity
-ms.openlocfilehash: 609831e709135d4ba5a46178f9d0c173cf13a9d2
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: ed67186af743d7733e0f106aecf239fce15aa45f
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625631"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356671"
 ---
 # <a name="lab-05---implement-intersite-connectivity"></a>Laboratorio 05: Implementación de la conectividad entre sitios
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -45,6 +45,8 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
     >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** y **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** en el directorio principal de Cloud Shell.
+
+1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en `[Azure_region_1]`. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra `[Azure_region_2]`. (reemplace los marcadores de posición `[Azure_region_1]` y `[Azure_region_2]` por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure):
 
@@ -204,11 +206,11 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. En la hoja **az104-05-vm0**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software de cliente RDP de código abierto.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros. 
 
 1. En la sesión de Escritorio remoto para **az104-05-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)** .
 
@@ -234,11 +236,11 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. En la hoja **az104-05-vm1**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software de cliente RDP de código abierto.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros. 
 
 1. En la sesión de Escritorio remoto para **az104-05-vm1**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)** .
 
@@ -254,7 +256,9 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -270,7 +274,7 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
    Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Por lo tanto, aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 #### <a name="review"></a>Revisar
 

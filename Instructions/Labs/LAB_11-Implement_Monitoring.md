@@ -2,12 +2,12 @@
 lab:
   title: '11: Implementación de la supervisión'
   module: Module 11 - Monitoring
-ms.openlocfilehash: d0c86948b0efc49224b74116e335090bb75b6ac5
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 8fca0aa5a2622740bdc7d582d9b348eb0e4167cc
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625556"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356593"
 ---
 # <a name="lab-11---implement-monitoring"></a>Laboratorio 11: Implementación de la supervisión
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -21,11 +21,12 @@ Tiene que evaluar la funcionalidad de Azure que proporcionaría información sob
 En este laboratorio, aprenderá a:
 
 + Tarea 1: Aprovisionar el entorno de laboratorio
-+ Tarea 2: Crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation
-+ Tarea 3: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
-+ Tarea 4: Configurar las opciones de diagnóstico de máquinas virtuales de Azure
-+ Tarea 5: Revisar las funcionalidad de Azure Monitor
-+ Tarea 6: Revisar las funcionalidad de Azure Log Analytics
++ Tarea 2: Registrar los proveedores de recursos Microsoft.Insghts y Microsoft.AlertsManagement
++ Tarea 3: Crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation
++ Tarea 4: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
++ Tarea 5: Configurar las opciones de diagnóstico de máquinas virtuales de Azure
++ Tarea 6: Revisar las funcionalidad de Azure Monitor
++ Tarea 7: Revisar las funcionalidad de Azure Log Analytics
 
 ## <a name="estimated-timing-45-minutes"></a>Tiempo estimado: 45 minutos
 
@@ -46,6 +47,8 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
     >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** y **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** en el directorio principal de Cloud Shell.
+
+1. Edite el archivo de parámetros que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará las máquinas virtuales (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure):
 
@@ -108,17 +111,16 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre | Cualquier nombre único |
+    | Nombre de la cuenta de Automation | Cualquier nombre único |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Resource group | **az104-11-rg1** |
-    | Location | Nombre de la región de Azure determinada en función de la [documentación de asignaciones de áreas de trabajo](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings) |
-    | Crear cuenta de ejecución de Azure | **Sí** |
+    | Region | Nombre de la región de Azure determinada en función de la [documentación de asignaciones de áreas de trabajo](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings) |
 
     >**Nota**: Asegúrese de especificar la región de Azure en función de la [documentación de asignaciones de áreas de trabajo](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings).
 
     >**Nota**: Espere a que la implementación se complete. La implementación puede tardar unos 3 minutos.
 
-1. En la hoja **Crear una cuenta de Automation**, haga clic en **Actualizar** y, a continuación, haga clic en la entrada que representa la cuenta de Automation recién creada.
+1. Haga clic en **Ir al recurso**.
 
 1. En la hoja Cuenta de Automation, haga clic en la sección **Administración de configuración**, haga clic en **Inventario**.
 
@@ -215,7 +217,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | Granularidad de la agregación (período) | **1 minuto** |
     | Frecuencia de evaluación | **Cada 1 minuto** |
 
-1. En la hoja **Crear regla de alertas**, en la sección **Grupo de acciones**, haga clic en **Agregar grupo de acciones** y, a continuación, haga clic en el botón **+ Crear grupo de acciones**.
+1. Haga clic en **Siguiente: Acciones >** . En la hoja **Crear una regla de alertas**, en la sección **Grupo de acciones**, haga clic en el botón **+Crear grupo de acciones**.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear grupo de acciones**, configure las siguientes opciones (deje las demás con los valores predeterminados) y seleccione **Siguiente: Notificaciones >** :
 
@@ -226,24 +228,24 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | Nombre del grupo de acciones | **az104-11-ag1** |
     | Nombre para mostrar | **az104-11-ag1** |
 
-1. En la pestaña **Notificaciones** de la hoja **Crear grupo de acciones**, en la lista desplegable **Tipo de notificación**, seleccione **Correo electrónico, SMS, inserción o voz**. En el cuadro de texto **Nombre**, escriba **Correo electrónico de admin.** Haga clic en el icono **Editar detalles** (lápiz).
+1. En la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones**, en la lista desplegable **Tipo de notificación**, seleccione **Correo electrónico, mensaje SMS, inserción o voz**. En el cuadro de texto **Nombre**, escriba **Correo electrónico de admin.** Haga clic en el icono **Editar detalles** (lápiz).
 
-1. En la hoja **Correo electrónico, SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo  electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear grupo de acciones** y seleccione **Siguiente: Acciones >** .
+1. En la hoja **Correo electrónico, mensaje SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones** y seleccione **Siguiente: Acciones >** .
 
 1. En la pestaña **Acciones** de la hoja **Crear grupo de acciones**, revise los elementos disponibles en la lista desplegable **Tipo de acción** sin realizar ningún cambio y seleccione **Revisar y crear**.
 
 1. En la pestaña **Revisar y crear** de la hoja **Crear grupo de acciones**, seleccione **Crear**.
 
-1. De vuelta en la hoja **Crear regla de alertas**, en la sección **Detalles de la regla de alertas**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. De vuelta en la hoja **Crear regla de alertas**, haga clic en **Siguiente: Detalles >** y, en la sección **Detalles de la regla de alertas**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     | Configuración | Value |
     | --- | --- |
     | Nombre de la regla de alertas | **Porcentaje de CPU por encima del umbral de prueba** |
-    | Descripción | **Porcentaje de CPU por encima del umbral de prueba** |
-    | gravedad | **Gravedad 3** |
-    | Habilitar regla tras la creación | **Sí** |
+    | Descripción de la regla de alertas | **Porcentaje de CPU por encima del umbral de prueba** |
+    | severity | **Gravedad 3** |
+    | Habilitar tras la creación | **Sí** |
 
-1. Haga clic en **Crear regla de alertas**.
+1. Haga clic en **Revisar y crear**, y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
     >**Nota**: Las reglas de alertas de métricas pueden tardar hasta 10 minutos en activarse.
 
@@ -255,7 +257,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros.
 
 1. En la sesión de Escritorio remoto, haga clic en **Inicio**, expanda la carpeta **Sistema de Windows** y haga clic en **Símbolo del sistema**.
 
@@ -283,7 +285,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: Es posible que tenga que hacer clic en **Comenzar** si es la primera vez que accede a Log Analytics.
 
-1. Si es necesario, haga clic en **Seleccionar ámbito**, en la hoja **Seleccionar un ámbito**, seleccione la pestaña **Reciente**, luego **az104-11-vm0** y haga clic en **Aplicar**.
+1. Si es necesario, haga clic en **Seleccionar ámbito**. En la hoja **Seleccionar un ámbito**, seleccione la pestaña **Reciente**, elija **az104-11-rg0** y haga clic en **Aplicar**.
 
 1. En la ventana de consulta, pegue la consulta siguiente, haga clic en **Ejecutar** y revise el gráfico resultante:
 
@@ -297,7 +299,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
    | render timechart
    ```
 
-1. Haga clic en **Consultas** en la barra de herramientas, en el panel **Consultas**, busque el mosaico **Track VM availability** (Seguir disponibilidad de VM), haga clic en el botón de comando **Ejecutar** en el mosaico y revise los resultados.
+1. Haga clic en **Consultas** en la barra de herramientas. En el panel **Consultas**, busque el icono **Track VM availability** (Seguir disponibilidad de VM) y haga doble clic en él para rellenar la ventana de consulta. Haga clic en el botón de comando **Ejecutar** en el icono y revise los resultados.
 
 1. En la pestaña **Nueva consulta 1**, seleccione el encabezado **Tablas** y revise la lista de tablas en la sección **Máquinas virtuales**.
 
@@ -311,7 +313,9 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

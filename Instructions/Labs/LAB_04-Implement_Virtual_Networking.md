@@ -2,12 +2,12 @@
 lab:
   title: '04: Implementación de redes virtuales'
   module: Module 04 - Virtual Networking
-ms.openlocfilehash: 9d2583d5e99f9c6e69ac44c397f1754cb2c4b5cb
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 8ecc8c5090c63b21a641311bde4117538cb1af7c
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625640"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356683"
 ---
 # <a name="lab-04---implement-virtual-networking"></a>Laboratorio 04: Implementación de redes virtuales
 
@@ -34,7 +34,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab04.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -101,7 +101,9 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
 
     >**Nota**: Es posible que tenga que cargar cada archivo por separado.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para implementar las dos máquinas virtuales mediante los archivos de parámetros y plantillas que ha cargado:
+1. Edite el archivo de parámetros y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
+
+1. En el panel de Cloud Shell, ejecute lo siguiente para implementar las dos máquinas virtuales con los archivos de parámetros y plantilla:
 
    ```powershell
    $rgName = 'az104-04-rg1'
@@ -115,6 +117,13 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
     >**Nota**: Este método de implementación de plantillas de ARM usa Azure PowerShell. Puede realizar la misma tarea ejecutando el comando equivalente de la CLI de Azure **az deployment create** (para más información, consulte [Implementación de recursos con plantillas de Resource Manager y la CLI de Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
 
     >**Nota**: Espere a que la implementación se complete antes de continuar con la tarea siguiente. Este proceso tardará alrededor de 2 minutos.
+
+    >**Nota:** Si se produce un error que indica que el tamaño de la máquina virtual no está disponible en la región, siga estos pasos:
+    > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-04-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
+    > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
+    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
 
 1. Cierre el panel de Cloud Shell.
 
@@ -190,7 +199,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **az104-04-nsg01** |
     | Region | nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
@@ -223,15 +232,15 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Vuelva a la hoja de la máquina virtual **az104-04-vm0**.
 
-    >**Nota**: En los pasos subsiguientes, comprobará que puede conectarse correctamente a la máquina virtual de destino e iniciar sesión con el nombre de usuario **Student** y la contraseña **Pa55w.rd1234**.
+    >**Nota:** En los pasos siguientes, comprobará que puede conectarse correctamente a la máquina virtual de destino.
 
 1. En la hoja de **az104-04-vm0**, haga clic en **Conectar**, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** usando la dirección IP pública y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software de cliente RDP de código abierto.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el usuario y la contraseña del archivo de parámetros.
 
     >**Nota**: Deje abierta esta sesión de Escritorio remoto. Lo necesitará en la próxima tarea.
 
@@ -245,11 +254,11 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **contoso.org** |
 
-1. Haga clic en Revisar y crear. Deje que se procese la validación y haga clic en Crear de nuevo para enviar la implementación.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
     >**Nota**: Espere a que se cree la zona DNS privada. Este proceso tardará alrededor de 2 minutos.
 
@@ -301,11 +310,11 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | nombre de dominio DNS que identificó anteriormente en esta tarea |
 
-1. Haga clic en Revisar y crear. Deje que se procese la validación y haga clic en Crear de nuevo para enviar la implementación.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
     >**Nota**: Espere a que se cree la zona DNS. Este proceso tardará alrededor de 2 minutos.
 
@@ -363,7 +372,9 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+ > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+ > **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -379,7 +390,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
    Get-AzResourceGroup -Name 'az104-04*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Por lo tanto, aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
 #### <a name="review"></a>Revisar
 

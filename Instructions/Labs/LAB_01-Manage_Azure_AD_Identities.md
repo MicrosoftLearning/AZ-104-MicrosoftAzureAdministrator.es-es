@@ -2,12 +2,12 @@
 lab:
   title: '01: Administración de identidades de Azure Active Directory'
   module: Module 01 - Identity
-ms.openlocfilehash: 5d14eb6e187308fcc3bd4256e4fbeac3b23f9687
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: 217ce45f10a687f1d467d5cf7f36df0e26e001e4
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625632"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356677"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Laboratorio 01: Administración de identidades de Azure Active Directory
 
@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 ## <a name="architecture-diagram"></a>Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -62,7 +62,7 @@ En esta tarea, creará y configurará usuarios de Azure AD.
     | Nombre de usuario | **az104-01a-aaduser1** |
     | Name | **az104-01a-aaduser1** |
     | Permitirme crear la contraseña | enabled |
-    | Contraseña inicial | **Pa55w.rd1234** |
+    | Contraseña inicial | **Proporcione una contraseña segura** |
     | Ubicación de uso | **Estados Unidos** |
     | Puesto | **Administrador de la nube** |
     | department | **TI** |
@@ -77,7 +77,7 @@ En esta tarea, creará y configurará usuarios de Azure AD.
 
     >**Nota**: También tiene la opción de asignar roles de Azure AD al aprovisionar un nuevo usuario.
 
-1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cambie la contraseña del usuario.
+1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cámbiela por una contraseña segura de su elección. 
 
     >**Nota**: En lugar de escribir el nombre de usuario (incluido el nombre de dominio), puede pegar el contenido del Portapapeles.
 
@@ -96,7 +96,7 @@ En esta tarea, creará y configurará usuarios de Azure AD.
     | Nombre de usuario | **az104-01a-aaduser2** |
     | Name | **az104-01a-aaduser2** |
     | Permitirme crear la contraseña | enabled |
-    | Contraseña inicial | **Pa55w.rd1234** |
+    | Contraseña inicial | **Proporcione una contraseña segura** |
     | Ubicación de uso | **Estados Unidos** |
     | Puesto | **Administrador del sistema** |
     | department | **TI** |
@@ -190,7 +190,7 @@ En esta tarea, creará un nuevo inquilino de Azure AD.
 
 1. En Azure Portal, busque y seleccione **Azure Active Directory**.
 
-1. Haga clic en **Manage tenant** (Administrar inquilino) y, a continuación, en la siguiente pantalla, haga clic en **+ Crear** y especifique la siguiente configuración:
+1. Haga clic en **Administrar inquilinos**. En la siguiente pantalla, haga clic en **+ Crear** y especifique la siguiente configuración:
 
     | Configuración | Value |
     | --- | --- |
@@ -223,7 +223,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
     | Nombre de usuario | **az104-01b-aaduser1** |
     | Name | **az104-01b-aaduser1** |
     | Permitirme crear la contraseña | enabled |
-    | Contraseña inicial | **Pa55w.rd1234** |
+    | Contraseña inicial | **Proporcione una contraseña segura** |
     | Puesto | **Administrador del sistema** |
     | department | **TI** |
 
@@ -256,9 +256,11 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 #### <a name="task-5-clean-up-resources"></a>Tarea 5: Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. Aunque, en este caso, no hay cargos adicionales asociados a los inquilinos de Azure Active Directory y sus objetos, es posible que quiera considerar la posibilidad de quitar las cuentas de usuario, las cuentas de grupo y el inquilino de Azure Active Directory que creó en este laboratorio.
+> **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. Aunque, en este caso, no hay cargos adicionales asociados a los inquilinos de Azure Active Directory y sus objetos, es posible que quiera considerar la posibilidad de quitar las cuentas de usuario, las cuentas de grupo y el inquilino de Azure Active Directory que creó en este laboratorio.
 
-1. En **Azure Portal**, busque **Azure Active Directory** en la barra de búsqueda. En **Azure Active Directory** en **Administrar**, seleccione **Licencias**. Una vez en **Licencias**, en **Administrar**, seleccione **Todos los productos** y, a continuación, seleccione el elemento **Azure Active Directory Premium P2** en la lista. Para continuar, seleccione **Usuarios con licencia**. Seleccione las cuentas de usuario **az104-01a-aaduser1** y **az104-01a-aaduser2** a las que asignó licencias en este laboratorio, haga clic en **Quitar licencia** y, cuando se le pida confirmación, haga clic en **Aceptar**.
+ > **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
+
+1. En **Azure Portal**, busque **Azure Active Directory** en la barra de búsqueda. En **Azure Active Directory** en **Administrar**, seleccione **Licencias**. Una vez en **Licencias**, en **Administrar**, seleccione **Todos los productos** y, a continuación, seleccione el elemento **Azure Active Directory Premium P2** en la lista. Para continuar, seleccione **Usuarios con licencia**. Seleccione las cuentas de usuario **az104-01a-aaduser1** y **az104-01a-aaduser2** a las que asignó licencias en este laboratorio, haga clic en **Quitar licencia** y, cuando se le pida confirmación, haga clic en **Sí**.
 
 1. En Azure Portal, vaya a la hoja **Usuarios: Todos los usuarios**, haga clic en la entrada que representa la cuenta de usuario invitado **az104-01b-aaduser1**, en la hoja **az104-01b-aaduser1: Perfil** haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Aceptar**.
 
@@ -270,11 +272,9 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Vaya a la hoja **Usuarios: Todos los usuarios**, haga clic en la entrada que representa la cuenta de usuario **az104-01b-aaduser1**, en la hoja **az104-01b-aaduser1: Perfil** haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Aceptar**.
 
-1. Vaya a la hoja **Laboratorio de Contoso: Información general** del inquilino de Azure AD del Laboratorio de Contoso, haga clic en **Manage tenant** (Administrar inquilino) y, a continuación, en la siguiente pantalla, haga clic en **Eliminar inquilino**, haga clic en el vínculo **Obtener permiso para eliminar los recursos de Azure**, en la hoja **Propiedades** de Azure Active Directory, establezca **Administración del acceso para los recursos de Azure** en **Sí** y haga clic en **Guardar**.
+1. Vaya a la hoja **Contoso Lab - Información general** del inquilino Contoso Lab de Azure AD, haga clic en **Administrar inquilinos** y, en la siguiente pantalla, seleccione la casilla situada junto a **Contoso Lab**. Haga clic en **Eliminar**. En la hoja **¿Quiere eliminar el inquilino “Contoso Lab”?** , haga clic en el vínculo **Obtener permiso para eliminar los recursos de Azure**. En la hoja **Propiedades** de Azure Active Directory, establezca **Administración del acceso para los recursos de Azure** en **Sí** y haga clic en **Guardar**.
 
-1. Cierre la sesión de Azure Portal y vuelva a iniciarla. 
-
-1. Vuelva a la hoja **Eliminar inquilino "Contoso Lab"** y haga clic en **Eliminar**.
+1. Vuelva a la hoja **Eliminar inquilino “Contoso Lab”** , seleccione **Actualizar** y haga clic en **Eliminar**.
 
 > **Nota**: Tendrá que esperar a que expire la licencia de prueba para poder eliminar el inquilino. Esto no supone ningún coste adicional.
 

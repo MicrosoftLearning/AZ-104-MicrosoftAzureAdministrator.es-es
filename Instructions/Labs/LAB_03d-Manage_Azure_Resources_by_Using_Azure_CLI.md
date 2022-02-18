@@ -2,12 +2,12 @@
 lab:
   title: '03d: Administración de recursos de Azure mediante la CLI de Azure'
   module: Module 03 - Azure Administration
-ms.openlocfilehash: 7ca60ef19cd8712a95a957c710d10810d05be4ad
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
+ms.openlocfilehash: e673423e49d49629c72f1b28a234d82eb776190f
+ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625580"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "138356581"
 ---
 # <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Laboratorio 03d: Administración de recursos de Azure mediante la CLI de Azure
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -111,7 +111,9 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+ > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+ > **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de shell de **Bash** en el panel **Cloud Shell**.
 
