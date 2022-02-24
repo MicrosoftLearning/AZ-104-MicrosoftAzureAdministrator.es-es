@@ -2,12 +2,12 @@
 lab:
   title: '08: Administración de máquinas virtuales'
   module: Module 08 - Virtual Machines
-ms.openlocfilehash: 9e4b575e699f28b97555ce92df3ca4d3309d3cd3
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: ffbf2e848a5f987d09e9dd6e427ab6783e56a494
+ms.sourcegitcommit: 804bc72bbddb8b0c0259a76ee21ee46e86ff36b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356629"
+ms.lasthandoff: 02/22/2022
+ms.locfileid: "139132839"
 ---
 # <a name="lab-08---manage-virtual-machines"></a>Laboratorio 08: Administración de máquinas virtuales
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -122,7 +122,6 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Nombre de la interfaz de red | **az104-08-vm1-nic1** |
     | Nombre de dirección IP pública | **az104-08-vm1-ip** |
     | Nombre de máquina virtual | **az104-08-vm1** |
-    | Nombre de equipo de máquina virtual | **az104-08-vm1** |
     | Grupo de recursos de la máquina virtual | **az104-08-rg01** |    
     | Nombre de usuario administrador | **Estudiante** |
     | Contraseña de administrador | **Proporcione una contraseña segura**  |
