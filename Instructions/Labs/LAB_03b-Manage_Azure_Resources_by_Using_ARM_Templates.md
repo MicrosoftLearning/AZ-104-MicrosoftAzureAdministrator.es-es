@@ -2,12 +2,12 @@
 lab:
   title: '03b: Administración de recursos de Azure mediante plantillas de ARM'
   module: Module 03 - Azure Administration
-ms.openlocfilehash: 99b5c435e5e2bcaf4df7bc2a6173e6c546abe131
-ms.sourcegitcommit: a8c7d995806dcf8eaad35b204e87bde178f28443
+ms.openlocfilehash: 602da542fdf20f6b1be637e792ec47daaa0de04b
+ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/08/2022
-ms.locfileid: "138110901"
+ms.lasthandoff: 04/19/2022
+ms.locfileid: "143611555"
 ---
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -31,15 +31,13 @@ En este laboratorio, aprenderá a:
 
 ## <a name="instructions"></a>Instrucciones
 
-> **Nota:** Cree siempre su propia contraseña segura para cualquier máquina virtual o cuenta de usuario que cree. Si no es usted quien crea la máquina virtual, use la opción **Restablecer contraseña** en el portal para actualizar la contraseña. 
-
 ### <a name="exercise-1"></a>Ejercicio 1
 
 #### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tarea 1: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure
 
 En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Azure Resource Manager.
 
-1. Inicie sesión en [**Azure Portal**](https://portal.azure.com).
+1. Inicie sesión en [**Azure Portal**](http://portal.azure.com).
 
 1. En Azure Portal, busque y seleccione **Grupos de recursos**. 
 
@@ -108,7 +106,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 1. De nuevo en la hoja **Implementación personalizada**, configure las opciones siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- |--- |
     | Subscription | *Nombre de la suscripción de Azure que está usando en este laboratorio* |
     | Grupo de recursos | Nombre de un **nuevo** grupo de recursos **az104-03b-rg1** |
