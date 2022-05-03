@@ -2,12 +2,12 @@
 lab:
   title: '04: Implementación de redes virtuales'
   module: Module 04 - Virtual Networking
-ms.openlocfilehash: 8ecc8c5090c63b21a641311bde4117538cb1af7c
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: ec7ee419dbce3194b01ee958f9356f48e4d1a054
+ms.sourcegitcommit: 2eea188057ba31af18c9569e14e76e9edfcf4bcd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356683"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144334704"
 ---
 # <a name="lab-04---implement-virtual-networking"></a>Laboratorio 04: Implementación de redes virtuales
 
@@ -193,6 +193,10 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
     >**Nota**: Esto es lo esperado, ya que las direcciones IP públicas de la SKU estándar, de forma predeterminada, requieren que las interfaces de red a las que están asignadas estén protegidas por un grupo de seguridad de red. Para permitir las conexiones de Escritorio remoto, creará un grupo de seguridad de red que permita explícitamente el tráfico RDP entrante desde Internet y lo asignará a las interfaces de red de ambas máquinas virtuales.
 
+1. Detenga las máquinas virtuales **az104-04-vm0** y **az104-04-vm1**.
+
+    >**Nota**: esto se lleva a cabo para agilizar la práctica de laboratorio. Si las máquinas virtuales se ejecutan cuando un grupo de seguridad de red está conectado a su interfaz de red, la conexión pueden tardar más de 30 minutos en surtir efecto. Una vez creado y conectado el grupo de seguridad de red, se reiniciarán las máquinas virtuales y la conexión entrará en vigor inmediatamente.
+
 1. En Azure Portal, busque y seleccione **Grupos de seguridad de red** y, en la hoja **Grupos de seguridad de red**, haga clic en **+ Crear**.
 
 1. Cree un grupo de seguridad de red con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
@@ -229,6 +233,8 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 1. Asocie el grupo de seguridad de red **az104-04-nsg01** a las interfaces de red **az104-04-nic0** y **az104-04-nic1**.
 
     >**Nota**: Las reglas del grupo de seguridad de red recién creado pueden tardar hasta 5 minutos en aplicarse a la tarjeta de interfaz de red.
+
+1. Inicie las máquinas virtuales **az104-04-vm0** y **az104-04-vm1**.
 
 1. Vuelva a la hoja de la máquina virtual **az104-04-vm0**.
 
@@ -300,7 +306,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 En esta tarea, configurará la resolución de nombres DNS externos mediante zonas DNS públicas de Azure.
 
-1. En el explorador web del sistema del laboratorio **SEA-DEV**, abra una nueva pestaña y vaya a <https://www.godaddy.com/domains/domain-name-search>.
+1. En un explorador web, abra una nueva pestaña y vaya a <https://www.godaddy.com/domains/domain-name-search>.
 
 1. Use la búsqueda de nombres de dominio para identificar un nombre de dominio que no esté en uso.
 
