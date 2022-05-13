@@ -2,12 +2,12 @@
 lab:
   title: '07: Administración de Azure Storage'
   module: Module 07 - Azure Storage
-ms.openlocfilehash: 3a848e898f1bb92cb93623760086dcea634a2208
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: c1c918fcdb20cac2adead5d0764dadeda6e1705a
+ms.sourcegitcommit: a76efb47bbca87c5d593a878e681ceba469ffd70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356605"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "144556899"
 ---
 # <a name="lab-07---manage-azure-storage"></a>Laboratorio 07: Administración de Azure Storage
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -83,6 +83,13 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
     >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea.
 
+    >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
+    > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-07-vm-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
+    > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
+    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
+
 1. Cierre el panel de Cloud Shell.
 
 #### <a name="task-2-create-and-configure-azure-storage-accounts"></a>Tarea 2: Crear y configurar cuentas de Azure Storage
@@ -93,9 +100,9 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
     | Nombre de la cuenta de almacenamiento | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
     | Region | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
@@ -130,7 +137,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Haga clic en **+ Contenedor** y cree un contenedor con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-07-container**  |
     | Nivel de acceso público | **Privado (sin acceso anónimo)** |
@@ -234,7 +241,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-07-share** |
 
