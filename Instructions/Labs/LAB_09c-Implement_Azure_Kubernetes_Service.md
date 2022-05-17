@@ -2,12 +2,12 @@
 lab:
   title: 09c:-Implementación de Azure Kubernetes Service
   module: Module 09 - Serverless Computing
-ms.openlocfilehash: d0460064e03b1fdfe011e2cac44c8a8b09096080
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: 42e43fa916e61988df87b3188fba59ab7b57652e
+ms.sourcegitcommit: dd61587ee547d5efa09ad0a63c0b2af272ee1e55
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356599"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "141280828"
 ---
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Laboratorio 09c:-Implementación de Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -65,7 +65,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | ---- | ---- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09c-rg1** |
@@ -74,6 +74,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
     | Zonas de disponibilidad | **Ninguna** (desactive todas las casillas) |
     | Versión de Kubernetes | Acepte el valor predeterminado |
     | Tamaño del nodo | Acepte el valor predeterminado |
+    | Método de escala | **Manual** |
     | Recuento de nodos | **1** |
 
 1. Haga clic en **Siguiente: Grupos de nodos >** y, en la pestaña **Grupos de nodos** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
@@ -81,13 +82,12 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
     | Configuración | Value |
     | ---- | ---- |
     | Habilitar nodos virtuales | **Deshabilitado** (predeterminado) |
-    | Habilitar conjuntos de escalado de máquinas virtuales | **Habilitado** (predeterminado) |
 
-1. Haga clic en **Siguiente: Autenticación >** y, en la pestaña **Autenticación** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. Haga clic en **Siguiente: Acceso >**  y, en la pestaña **Acceso** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     | Configuración | Value |
     | ---- | ---- |
-    | Método de autenticación | **Identidad administrada asignada por el sistema** (predeterminado) | 
+    | Método de autenticación | **Identidad administrada asignada por el sistema** (predeterminado, no se puede modificar) | 
     | Control de acceso basado en roles (RBAC) | **Enabled** |
 
 1. Haga clic en **Siguiente: Redes >** y, en la pestaña **Redes** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):

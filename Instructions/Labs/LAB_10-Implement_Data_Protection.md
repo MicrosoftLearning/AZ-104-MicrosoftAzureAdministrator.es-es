@@ -2,12 +2,12 @@
 lab:
   title: '10: Implementación de la protección de datos'
   module: Module 10 - Data Protection
-ms.openlocfilehash: 86a5caf061d92bbba64386599ac0a9c073d408ba
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: 28884df63a3efefa1d426a6fbec194e113cb203b
+ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356589"
+ms.lasthandoff: 04/09/2022
+ms.locfileid: "141588497"
 ---
 # <a name="lab-10---backup-virtual-machines"></a>Laboratorio 10: Copia de seguridad de máquinas virtuales
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -55,9 +55,11 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
    ```powershell
    $location = '[Azure_region]'
     ```
+    
    ```powershell
    $rgName = 'az104-10-rg0'
     ```
+    
    ```powershell
    New-AzResourceGroup -Name $rgName -Location $location
    ```
@@ -148,9 +150,9 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
 
     >**Nota**: Espere a que se habilite la copia de seguridad. Este proceso tardará alrededor de 2 minutos.
 
-1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**, en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquinas virtuales de Azure**.
+1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**; en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquina virtual de Azure**.
 
-1. En la hoja **Backup Items (Azure Virtual Machine)** [Elementos de copia de seguridad (máquina virtual de Azure)], haga clic en **az104-10-vm0** y revise los valores de las entradas **Comprobación previa a la copia de seguridad** y **Estado de la última copia de seguridad**.
+1. En la hoja **Elementos de copia de seguridad (Máquina virtual de Azure)** , seleccione **Ver detalles** en **az104-10-vm0** y revise los valores de las entradas **Comprobación previa a la copia de seguridad** y **Estado de la última copia de seguridad**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Hacer copia de seguridad ahora**, acepte el valor predeterminado en la lista desplegable **Conservar copia de seguridad hasta** y haga clic en **Aceptar**.
 
@@ -321,7 +323,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **az104-10-rsv1 - Elementos de copia de seguridad**, haga clic en **Máquina virtual de Azure**.
 
-1. En la hoja **Elementos de copia de seguridad (máquina virtual de Azure)** , haga clic en **az104-10-vm0**.
+1. En la hoja **Elementos de copia de seguridad (Máquina virtual de Azure),** seleccione **Ver detalles** para **az104-10-vm0**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Recuperación de archivos**.
 
@@ -367,7 +369,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , haga clic en la entrada que representa la copia de seguridad de **az104-10-vm1**.
 
-1. En **C:\\ en la hoja az104-10-vm1.** , haga clic en el vínculo **az104-10-vm1.** "¿Ha olvidado la contraseña?"
+1. En **C:\\ en la hoja az104-10-vm1.** , seleccione **Ver detalles** para **az104-10-vm1.** .
 
 1. En la hoja de servidores protegidos **az104-10-vm1.** , haga clic en **Eliminar**.
 
@@ -383,11 +385,13 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. Active la casilla situada junto a la etiqueta **Hay datos de copia de seguridad de 1 elementos de copia de seguridad asociados con este servidor. Entiendo que, al hacer clic en "Confirmar", se eliminarán permanentemente todos los datos de la copia de seguridad en la nube. Esta acción no se puede deshacer. Se puede enviar una alerta a los administradores de esta suscripción para notificar esta eliminación**, y haga clic en **Eliminar**.
 
+    >**Nota**: Esto producirá un error porque la característica de **eliminación temporal** debe estar deshabilitada.
+
 1. Vuelva a la hoja **az104-10-rsv1 - Elementos de copia de seguridad** y haga clic en **Máquinas virtuales de Azure**.
 
 1. En la hoja **az104-10-rsv1 - Elementos de copia de seguridad**, haga clic en **Máquina virtual de Azure**.
 
-1. En la hoja **Elementos de copia de seguridad (máquina virtual de Azure)** , haga clic en **az104-10-vm0**.
+1. En la hoja **Elementos de copia de seguridad (Máquina virtual de Azure),** seleccione **Ver detalles** para **az104-10-vm0**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Detener copia de seguridad**.
 
@@ -413,7 +417,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de seguridad**.
 
-1. En la hoja **Configuración de seguridad**, deshabilite **Eliminación temporal (para las cargas de trabajo que se ejecutan en Azure)** y haga clic en **Guardar**.
+1. En la hoja **Configuración de seguridad**, deshabilite la opción **Eliminación temporal (para cargas de trabajo que se ejecutan en Azure)** y deshabilite también las **características de seguridad (para cargas de trabajo que se ejecutan en el entorno local)** y haga clic en **Guardar**.
 
     >**Nota**: Esto no afectará a los elementos que ya están en estado de eliminación temporal.
 
@@ -432,6 +436,8 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
     | Escriba el nombre del elemento de copia de seguridad | **az104-10-vm0** |
     | Motivo | **Otros** |
     | Comentarios | **az104 10 lab** |
+
+1. Repita los pasos al principio de esta tarea para eliminar los elementos de copia de seguridad de **az104-10-vm1**.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 

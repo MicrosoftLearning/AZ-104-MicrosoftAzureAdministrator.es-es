@@ -2,12 +2,12 @@
 lab:
   title: '01: Administración de identidades de Azure Active Directory'
   module: Module 01 - Identity
-ms.openlocfilehash: bbcb79f00eb6988e6f53491a7b2b05207d452631
-ms.sourcegitcommit: 7291b4cdd429e19c354735ba665d7b635281774c
+ms.openlocfilehash: e63cc3685ae15d3e72feb171b06a9a9ceda5e2ed
+ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2022
-ms.locfileid: "138624581"
+ms.lasthandoff: 04/09/2022
+ms.locfileid: "141588485"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Laboratorio 01: Administración de identidades de Azure Active Directory
 
@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 ## <a name="architecture-diagram"></a>Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -237,7 +237,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-01b-aaduser1** |
     | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |
@@ -276,7 +276,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Vuelva a la hoja **Eliminar inquilino “Contoso Lab”** , seleccione **Actualizar** y haga clic en **Eliminar**.
 
-> **Nota**: Tendrá que esperar a que expire la licencia de prueba para poder eliminar el inquilino. Esto no supone ningún coste adicional.
+> **Nota**: Si un inquilino tiene una licencia de prueba, tendría que esperar a que esta expirara para poder eliminar el inquilino. Esto no supondría ningún coste adicional.
 
 #### <a name="review"></a>Revisar
 

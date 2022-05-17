@@ -2,12 +2,12 @@
 lab:
   title: '08: Administración de máquinas virtuales'
   module: Module 08 - Virtual Machines
-ms.openlocfilehash: ffbf2e848a5f987d09e9dd6e427ab6783e56a494
-ms.sourcegitcommit: 804bc72bbddb8b0c0259a76ee21ee46e86ff36b3
+ms.openlocfilehash: ee57d0d4dad96e694ca1315b2e0986b57698c08b
+ms.sourcegitcommit: dc0edbf407335d48b9a98636f4119b335d7426e8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/22/2022
-ms.locfileid: "139132839"
+ms.lasthandoff: 04/13/2022
+ms.locfileid: "141690898"
 ---
 # <a name="lab-08---manage-virtual-machines"></a>Laboratorio 08: Administración de máquinas virtuales
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -49,7 +49,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
@@ -63,20 +63,20 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Nombre de usuario | **Estudiante** |
     | Contraseña | **Proporcione una contraseña segura** |
     | Puertos de entrada públicos | **None** |
-    | ¿Quiere usar una licencia de Windows Server existente? | **No** |
+    | ¿Quiere usar una licencia de Windows Server existente? | **Desactivado** |
 
 1. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     | Configuración | Valor |
     | --- | --- |
     | Tipo de disco del sistema operativo | **SSD Premium** |
-    | Habilitar compatibilidad con Disco Ultra | **No** |
+    | Habilitar compatibilidad con Disco Ultra | **Desactivado** |
 
 1. Haga clic en **Siguiente: Redes >** y, en la pestaña **Redes** de la hoja **Crear una máquina virtual**,haga clic en **Crear nueva** debajo del cuadro de texto **Red virtual**.
 
 1. En la hoja **Crear red virtual**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-08-rg01-vnet** |
     | Intervalo de direcciones | **10.80.0.0/20** |
@@ -91,8 +91,8 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Dirección IP pública | **default** |
     | Grupo de seguridad de red de NIC | **basic** |
     | Puertos de entrada públicos | **None** |
-     | Redes aceleradas | **Desactivado**
-    | ¿Quiere colocar esta máquina virtual como subyacente respecto a una solución de equilibrio de carga existente? | **No** |
+    | Redes aceleradas | **Desactivado**
+    | ¿Quiere colocar esta máquina virtual como subyacente respecto a una solución de equilibrio de carga existente? | **Desactivado** |
 
 1. Pulse en **Siguiente: Administración >** y, en la pestaña **Administración** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -102,7 +102,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Cuenta de almacenamiento de diagnóstico | acepte el valor predeterminado |
     | Opciones de orquestación de revisiones | **Actualizaciones manuales** |  
 
-    >**Nota**: Si es necesario, seleccione una cuenta de almacenamiento existente en la lista desplegable. Anote el nombre de la cuenta de almacenamiento. Lo usará en la tarea siguiente.
+    >**Nota**: Si es necesario, seleccione una cuenta de almacenamiento existente en la lista desplegable para crear una nueva. Anote el nombre de la cuenta de almacenamiento. Lo usará en la tarea siguiente.
 
 1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear una máquina virtual**, revise las opciones disponibles sin modificar ninguna de ellas, y haga clic en **Revisar y crear**.
 
@@ -121,7 +121,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Grupo de recursos | **az104-08-rg01** |
     | Nombre de la interfaz de red | **az104-08-vm1-nic1** |
     | Nombre de dirección IP pública | **az104-08-vm1-ip** |
-    | Nombre de máquina virtual | **az104-08-vm1** |
+    | Nombre de máquina virtual, Nombre de máquina virtual 1, Nombre de equipo de la máquina virtual   | **az104-08-vm1** |
     | Grupo de recursos de la máquina virtual | **az104-08-rg01** |    
     | Nombre de usuario administrador | **Estudiante** |
     | Contraseña de administrador | **Proporcione una contraseña segura**  |
@@ -144,7 +144,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -358,7 +358,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
@@ -370,7 +370,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
     | Size | **Estándar D2s_v3** |
     | Nombre de usuario | **Estudiante** |
     | Contraseña | **Proporcione una contraseña segura**  |
-    | ¿Ya tiene una licencia de Windows Server? | **No** |
+    | ¿Ya tiene una licencia de Windows Server? | **Desactivado** |
 
     >**Nota**: Para obtener la lista de regiones de Azure que admiten la implementación de máquinas virtuales de Windows en zonas de disponibilidad, consulte [¿Qué son las zonas de disponibilidad en Azure?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
@@ -378,7 +378,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-08-rg02-vnet** |
     | Intervalo de direcciones | **10.82.0.0/20** |
@@ -393,13 +393,13 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az10408vmss0-nsg** |
 
 1. Haga clic en **Agregar una regla de entrada** y agregue una regla de seguridad de entrada con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | **\*** |
@@ -464,7 +464,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |

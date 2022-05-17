@@ -2,12 +2,12 @@
 lab:
   title: '05: Implementación de la conectividad entre sitios'
   module: Module 05 - Intersite Connectivity
-ms.openlocfilehash: ed67186af743d7733e0f106aecf239fce15aa45f
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: 6a150d4350a109e955e8b80e18c283c251f74128
+ms.sourcegitcommit: 7ffdffa241b0489dd1c012a36f8ba42393dd9c94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356671"
+ms.lasthandoff: 04/14/2022
+ms.locfileid: "142091970"
 ---
 # <a name="lab-05---implement-intersite-connectivity"></a>Laboratorio 05: Implementación de la conectividad entre sitios
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -48,7 +48,7 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 
 1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en `[Azure_region_1]`. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra `[Azure_region_2]`. (reemplace los marcadores de posición `[Azure_region_1]` y `[Azure_region_2]` por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure):
+1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en [Azure_region_1]. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra [Azure_region_2] (reemplace los marcadores de posición [Azure_region_1] y [Azure_region_2], incluidos los corchetes, por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure. Por ejemplo, $location 1 = "eastus". Puede usar Get-AzLocation para ver todas las ubicaciones):
 
    ```powershell
    $location1 = '[Azure_region_1]'
