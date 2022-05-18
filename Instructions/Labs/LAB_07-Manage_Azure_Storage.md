@@ -2,12 +2,12 @@
 lab:
   title: '07: Administración de Azure Storage'
   module: Module 07 - Azure Storage
-ms.openlocfilehash: c1c918fcdb20cac2adead5d0764dadeda6e1705a
-ms.sourcegitcommit: a76efb47bbca87c5d593a878e681ceba469ffd70
+ms.openlocfilehash: 9703d6543f6b3cf7791352a4ee0ba84cda3b5934
+ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "144556899"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "144937833"
 ---
 # <a name="lab-07---manage-azure-storage"></a>Laboratorio 07: Administración de Azure Storage
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -34,7 +34,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab07.png)
 
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -100,9 +100,9 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
     | Nombre de la cuenta de almacenamiento | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
     | Region | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
@@ -137,7 +137,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Haga clic en **+ Contenedor** y cree un contenedor con la configuración siguiente:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-07-container**  |
     | Nivel de acceso público | **Privado (sin acceso anónimo)** |
@@ -241,7 +241,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-07-share** |
 
@@ -279,13 +279,15 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. En Azure Portal, vuelva a la hoja de la cuenta de almacenamiento que creó en la primera tarea de este laboratorio y, en la sección **Seguridad y redes**, haga clic en **Redes** y, luego, haga clic en **Firewalls y redes virtuales**.
 
-1. Haga clic en la opción **Redes seleccionadas** y revise las opciones de configuración que estarán disponibles una vez habilitada esta opción.
+1. Haga clic en la opción **Enabled from selected virtual networks and IP addresses** (Habilitado desde las redes virtuales y las direcciones IP seleccionadas) y revise las opciones de configuración que aparecen disponibles cuando se habilita esta opción.
 
     > **Nota**: Puede usar estos valores para configurar la conectividad directa entre las máquinas virtuales de Azure en las subredes designadas de redes virtuales y la cuenta de almacenamiento mediante puntos de conexión de servicio.
 
 1. Haga clic en la casilla **Agregar la dirección IP del cliente** y guarde el cambio.
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL de SAS del blob que generó en la tarea anterior.
+
+    > **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob. 
 
 1. Debería presentársele el contenido de la página **The MIT License (MIT)** .
 

@@ -2,12 +2,12 @@
 lab:
   title: '11: Implementación de la supervisión'
   module: Module 11 - Monitoring
-ms.openlocfilehash: 8fca0aa5a2622740bdc7d582d9b348eb0e4167cc
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
+ms.openlocfilehash: 10c3fe049aaf037892a34299c21dfd8213ce40b2
+ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "138356593"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "144937821"
 ---
 # <a name="lab-11---implement-monitoring"></a>Laboratorio 11: Implementación de la supervisión
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -96,7 +96,7 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-11-rg1** |
     | Área de trabajo de Log Analytics | Cualquier nombre único |
     | Region | Nombre de la región de Azure en la que implementó la máquina virtual en la tarea anterior |
@@ -285,7 +285,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: Es posible que tenga que hacer clic en **Comenzar** si es la primera vez que accede a Log Analytics.
 
-1. Si es necesario, haga clic en **Seleccionar ámbito**. En la hoja **Seleccionar un ámbito**, seleccione la pestaña **Reciente**, elija **az104-11-rg0** y haga clic en **Aplicar**.
+1. Si es necesario, haga clic en **Seleccionar ámbito**, en la hoja **Seleccionar un ámbito**, seleccione la pestaña **Reciente**, luego **az104-11-vm0** y haga clic en **Aplicar**.
 
 1. En la ventana de consulta, pegue la consulta siguiente, haga clic en **Ejecutar** y revise el gráfico resultante:
 
@@ -298,6 +298,9 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
    | project TimeGenerated, Name, Val
    | render timechart
    ```
+
+    > **Nota**: La consulta no debería tener errores (indicados con bloques rojos en la barra de desplazamiento derecha). Si la consulta no se pega sin errores directamente siguiendo las instrucciones, pegue el código de la consulta en un editor de texto, como el Bloc de notas, y cópielo y péguelo en la ventana de la consulta desde ahí.
+
 
 1. Haga clic en **Consultas** en la barra de herramientas. En el panel **Consultas**, busque el icono **Track VM availability** (Seguir disponibilidad de VM) y haga doble clic en él para rellenar la ventana de consulta. Haga clic en el botón de comando **Ejecutar** en el icono y revise los resultados.
 

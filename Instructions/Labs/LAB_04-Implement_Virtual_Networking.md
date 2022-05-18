@@ -2,12 +2,12 @@
 lab:
   title: '04: Implementación de redes virtuales'
   module: Module 04 - Virtual Networking
-ms.openlocfilehash: 3e021d4f7a70f7fb7607cbca2c245cfe06f2489e
-ms.sourcegitcommit: a76efb47bbca87c5d593a878e681ceba469ffd70
+ms.openlocfilehash: 383f88f2dddb48d498efb3d868330e4bba15c92b
+ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "144556911"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "144937832"
 ---
 # <a name="lab-04---implement-virtual-networking"></a>Laboratorio 04: Implementación de redes virtuales
 
@@ -34,7 +34,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab04.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -48,7 +48,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
@@ -78,7 +78,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **subnet1** |
     | Intervalo de direcciones (bloque CIDR) | **10.40.1.0/24** |
@@ -121,7 +121,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos:
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-04-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
     > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
-    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
+    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell. Si no hay SKU enumeradas (es decir, no hay resultados), no puede implementar ninguna máquina virtual D2S en esa región. Tendrá que buscar una región que le permita implementar máquinas virtuales D2S. Una vez que haya elegido una ubicación adecuada, elimine el grupo de recursos AZ104-04-rg1 y reinicie el laboratorio.
     > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
     > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
 
@@ -147,7 +147,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-pip0** |
     | SKU | **Estándar** |
@@ -166,7 +166,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-pip1** |
     | SKU | **Estándar** |
@@ -201,9 +201,9 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Cree un grupo de seguridad de red con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **az104-04-nsg01** |
     | Region | nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
@@ -218,7 +218,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Agregue una regla de entrada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | * |
@@ -258,9 +258,9 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Cree una zona DNS privada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **contoso.org** |
 
@@ -314,7 +314,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Cree una zona DNS con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -330,7 +330,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm0** |
     | Tipo | **A** |
@@ -345,7 +345,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm1** |
     | Tipo | **A** |
