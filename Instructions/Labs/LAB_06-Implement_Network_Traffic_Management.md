@@ -2,12 +2,12 @@
 lab:
   title: '06: Implementación de la administración del tráfico'
   module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 6e082988d8b86ab4548171c24d6af6e7b004d06e
-ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
+ms.openlocfilehash: a88449e01cf33631baefb1b6ce99ce82028bbc20
+ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "141588491"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "144937809"
 ---
 # <a name="lab-06---implement-traffic-management"></a>Laboratorio 06: Implementación de la administración del tráfico
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -26,7 +26,7 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Configurar la topología de red en estrella tipo hub-and-spoke
 + Tarea 3: Probar la transitividad del emparejamiento de redes virtuales
 + Tarea 4: Configurar el enrutamiento en la topología en estrella tipo hub-and-spoke
-+ Implementado Azure Load Balancer
++ Tarea 5: Implementar Azure Load Balancer
 + Tarea 6: Implementar Azure Application Gateway
 
 ## <a name="estimated-timing-60-minutes"></a>Tiempo estimado: 60 minutos
@@ -36,7 +36,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -84,6 +84,13 @@ En esta tarea, implementará cuatro máquinas virtuales en la misma región de A
 
     >**Nota**: Espere a que la implementación se complete antes de continuar con el paso siguiente. Este proceso tardará alrededor de 5 minutos.
 
+    >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
+    > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-06-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
+    > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar. Si no se devuelve ningún valor, es posible que tenga que elegir otra región en la que realizar la implementación. También puede elegir otro nombre de familia, como "Standard_B1s".
+    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
+
 1. En el panel de Cloud Shell, ejecute lo siguiente para instalar la extensión Network Watcher en las VM de Azure implementadas en el paso anterior:
 
    ```powershell
@@ -104,6 +111,8 @@ En esta tarea, implementará cuatro máquinas virtuales en la misma región de A
    ```
 
     >**Nota**: Espere a que la implementación se complete antes de continuar con el paso siguiente. Este proceso tardará alrededor de 5 minutos.
+
+
 
 1. Cierre el panel de Cloud Shell.
 
@@ -193,9 +202,9 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Tipo de origen | **Máquina virtual** |
     | Máquina virtual | **az104-06-vm0** |
@@ -212,9 +221,9 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Tipo de origen | **Máquina virtual** |
     | Máquina virtual | **az104-06-vm0** |
@@ -231,9 +240,9 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Tipo de origen | **Máquina virtual** |
     | Máquina virtual | **az104-06-vm2** |
@@ -296,9 +305,9 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. Cree una tabla de rutas con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Location | Nombre de la región de Azure en la que creó las redes virtuales |
     | Name | **az104-06-rt23** |
@@ -317,7 +326,8 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Configuración | Value |
     | --- | --- |
     | Nombre de ruta | **az104-06-route-vnet2-to-vnet3** |
-    | Prefijo de dirección | **10.63.0.0/20** |
+    | Origen de prefijo de la dirección | **Direcciones IP** |
+    | Intervalos de direcciones IP de origen y CIDR | **10.63.0.0/20** |
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
 
@@ -338,7 +348,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. Cree una tabla de rutas con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -359,7 +369,8 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Configuración | Value |
     | --- | --- |
     | Nombre de ruta | **az104-06-route-vnet3-to-vnet2** |
-    | Prefijo de dirección | **10.62.0.0/20** |
+    | Origen de prefijo de la dirección | **Direcciones IP** |
+    | Intervalos de direcciones IP de origen y CIDR | **10.62.0.0/20** |    
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
 
@@ -380,9 +391,9 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Tipo de origen | **Máquina virtual** |
     | Máquina virtual | **az104-06-vm2** |
@@ -405,9 +416,9 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
 
 1. Cree un equilibrador de carga con la siguiente configuración (deje las demás opciones con los valores predeterminados) y haga clic en **Siguiente: Configuración de IP de front-end**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Name | **az104-06-lb4** |
     | Region| Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
@@ -416,7 +427,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
     
 1. En la pestaña **Configuración de IP de front-end**, haga clic en **Agregar una configuración de IP de front-end** y use la siguiente configuración antes de hacer clic en **Agregar**.   
      
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | Cualquier nombre único |
     | Dirección IP pública | **Crear nuevo** |
@@ -432,7 +443,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
 
 1. Agregue un grupo de back-end con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-be1** |
     | Virtual network | **az104-06-vnet01** |
@@ -448,7 +459,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
 
 1. Agregue un sondeo de estado con las opciones de configuración siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-hp1** |
     | Protocolo | **TCP** |
@@ -462,7 +473,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
 
 1. Agregue una regla de equilibrio de carga con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-lbrule1** |
     | Versión de la dirección IP | **IPv4** |
@@ -501,7 +512,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. Agregue una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **subnet-appgw** |
     | Intervalo de direcciones de subred | **10.60.3.224/27** |
@@ -514,9 +525,9 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una puerta de enlace de aplicaciones**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Nombre de la puerta de enlace de aplicaciones | **az104-06-appgw5** |
     | Region | Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
@@ -535,7 +546,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. Haga clic en **Siguiente: Back-ends >** y, en la pestaña **Back-ends** de la hoja **Crear una puerta de enlace de aplicaciones**, haga clic en **Agregar un grupo de back-end** y, en la hoja **Agregar un grupo de back-end**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-appgw5-be1** |
     | Adición de un grupo de back-end sin destinos | **No** |
@@ -550,9 +561,10 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. En la hoja **Agregar una regla de enrutamiento**, en la pestaña **Agente de escucha**, escriba los valores siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre de la regla | **az104-06-appgw5-rl1** |
+    | Priority | **10** |
     | Nombre del cliente de escucha | **az104-06-appgw5-rl1l1** |
     | Dirección IP de front-end | **Public** |
     | Protocolo | **HTTP** |
@@ -567,7 +579,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
     | Tipo de destino | **Grupo de back-end** |
     | Destino de back-end | **az104-06-appgw5-be1** |
 
-1. Haga clic en **Agregar nuevo** bajo el cuadro de texto **Configuración HTTP** y, en la hoja **Agregar una configuración HTTP**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. Haga clic en **Agregar nuevo** bajo el cuadro de texto **Configuración de backend** y, en la hoja **Agregar una configuración de backend**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     | Configuración | Value |
     | --- | --- |
@@ -628,5 +640,5 @@ En este laboratorio, ha:
 + Configurado la topología de red en estrella tipo hub-and-spoke
 + Probado la transitividad del emparejamiento de redes virtuales
 + Configurado el enrutamiento en la topología en estrella tipo hub-and-spoke
-+ Tarea 5: Implementar Azure Load Balancer
++ Implementado Azure Load Balancer
 + Implementado Azure Application Gateway

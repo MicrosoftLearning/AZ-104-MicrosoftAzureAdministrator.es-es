@@ -2,12 +2,12 @@
 lab:
   title: '01: Administración de identidades de Azure Active Directory'
   module: Module 01 - Identity
-ms.openlocfilehash: e63cc3685ae15d3e72feb171b06a9a9ceda5e2ed
-ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
+ms.openlocfilehash: de59a0e8c7634ee756fc66301b90f73233a9cf8a
+ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "141588485"
+ms.lasthandoff: 05/10/2022
+ms.locfileid: "144844256"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Laboratorio 01: Administración de identidades de Azure Active Directory
 
@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 ## <a name="architecture-diagram"></a>Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -116,6 +116,8 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
 1. Haga clic en **+ Probar o comprar** y active la evaluación gratuita de Azure AD Premium P2.
 
 1. Actualice la ventana del explorador para comprobar que la activación se ha realizado correctamente. 
+
+ >**Nota**: Las licencias pueden tardar hasta 10 minutos en activarse. Siga actualizando la página hasta que aparezca. No continúe hasta que se hayan activado las licencias.
 
 1. En la hoja **Licencias: Todos los productos**, seleccione la entrada **Azure Active Directory Premium P2** y asigne todas las opciones de licencia de Azure AD Premium P2 a su cuenta de usuario y a las dos cuentas de usuario recién creadas.
 
@@ -237,7 +239,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-01b-aaduser1** |
     | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |

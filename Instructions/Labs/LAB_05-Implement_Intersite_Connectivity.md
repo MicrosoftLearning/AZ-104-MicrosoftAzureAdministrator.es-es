@@ -2,12 +2,12 @@
 lab:
   title: '05: Implementación de la conectividad entre sitios'
   module: Module 05 - Intersite Connectivity
-ms.openlocfilehash: 6a150d4350a109e955e8b80e18c283c251f74128
-ms.sourcegitcommit: 7ffdffa241b0489dd1c012a36f8ba42393dd9c94
+ms.openlocfilehash: 6254f1b47aacdb2b0e01f090ca182feacba5e076
+ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2022
-ms.locfileid: "142091970"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "144937839"
 ---
 # <a name="lab-05---implement-intersite-connectivity"></a>Laboratorio 05: Implementación de la conectividad entre sitios
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -51,16 +51,24 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en [Azure_region_1]. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra [Azure_region_2] (reemplace los marcadores de posición [Azure_region_1] y [Azure_region_2], incluidos los corchetes, por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure. Por ejemplo, $location 1 = "eastus". Puede usar Get-AzLocation para ver todas las ubicaciones):
 
    ```powershell
-   $location1 = '[Azure_region_1]'
+   $location1 = 'eastus'
 
-   $location2 = '[Azure_region_2]'
+   $location2 = 'westus'
 
    $rgName = 'az104-05-rg1'
 
    New-AzResourceGroup -Name $rgName -Location $location1
    ```
 
-   >**Nota**: Para identificar las regiones de Azure, desde una sesión de PowerShell en Cloud Shell, ejecute **(Get-AzLocation).Location**.
+   >**Nota**: Las regiones usadas anteriormente se probaron y se sabe que funcionan cuando este laboratorio se revisó oficialmente por última vez. Si prefiere usar ubicaciones diferentes o ya no funcionan, deberá identificar dos regiones diferentes en las que se puedan implementar máquinas virtuales D2Sv3 estándar.
+   >
+   >Para identificar las regiones de Azure, desde una sesión de PowerShell en Cloud Shell, ejecute **(Get-AzLocation).Location**
+   >
+   >Una vez que haya identificado dos regiones que quiera usar, ejecute el comando siguiente en el Cloud Shell para cada región para confirmar que puede implementar máquinas virtuales D2Sv3 estándar
+   >
+   >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
+   >
+   >Si el comando no devuelve ningún resultado, debe elegir otra región. Una vez que haya identificado dos regiones adecuadas, puede ajustar las regiones en el bloque de código anterior.
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear las tres redes virtuales e implementar las máquinas virtuales en ellas mediante los archivos de parámetros y plantilla que cargó:
 
