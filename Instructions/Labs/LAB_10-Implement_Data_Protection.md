@@ -2,12 +2,12 @@
 lab:
   title: '10: Implementación de la protección de datos'
   module: Module 10 - Data Protection
-ms.openlocfilehash: 28884df63a3efefa1d426a6fbec194e113cb203b
-ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
+ms.openlocfilehash: f4e79a18ee68068147de54a2bca65e0e879f0419
+ms.sourcegitcommit: e8161696e61bdf61f6fac5641cdf6d5ba65f4739
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "141588497"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "146066376"
 ---
 # <a name="lab-10---backup-virtual-machines"></a>Laboratorio 10: Copia de seguridad de máquinas virtuales
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -88,7 +88,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-10-rg1** |
     | Nombre del almacén | **az104-10-rsv1** |
     | Region | Nombre de una región donde implementó las dos máquinas virtuales en la tarea anterior |
@@ -370,6 +370,8 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , haga clic en la entrada que representa la copia de seguridad de **az104-10-vm1**.
 
 1. En **C:\\ en la hoja az104-10-vm1.** , seleccione **Ver detalles** para **az104-10-vm1.** .
+
+1. En la hoja Detalles, haga clic en **az104-10-vm1**.
 
 1. En la hoja de servidores protegidos **az104-10-vm1.** , haga clic en **Eliminar**.
 
