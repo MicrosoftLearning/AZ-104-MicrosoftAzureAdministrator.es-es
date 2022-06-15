@@ -2,12 +2,12 @@
 lab:
   title: '06: Implementación de la administración del tráfico'
   module: Module 06 - Network Traffic Management
-ms.openlocfilehash: a88449e01cf33631baefb1b6ce99ce82028bbc20
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
+ms.openlocfilehash: 9b2a379c1c01645b0b7998d8eb463f95ab7825d2
+ms.sourcegitcommit: 4efd79c7aa4b4ba9b1f91d0b69eb64a8326b75e4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "144937809"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "145985699"
 ---
 # <a name="lab-06---implement-traffic-management"></a>Laboratorio 06: Implementación de la administración del tráfico
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -86,7 +86,7 @@ En esta tarea, implementará cuatro máquinas virtuales en la misma región de A
 
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-06-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
-    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-06-rg1”. Puede ejecutar `az group show -n az104-06-rg1 --query location` en CloudShell para obtenerlo.
     > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
     > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar. Si no se devuelve ningún valor, es posible que tenga que elegir otra región en la que realizar la implementación. También puede elegir otro nombre de familia, como "Standard_B1s".
     > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
@@ -326,7 +326,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Configuración | Value |
     | --- | --- |
     | Nombre de ruta | **az104-06-route-vnet2-to-vnet3** |
-    | Origen de prefijo de la dirección | **Direcciones IP** |
+    | Destino del prefijo de dirección | **Direcciones IP** |
     | Intervalos de direcciones IP de origen y CIDR | **10.63.0.0/20** |
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
@@ -350,7 +350,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Region | Nombre de la región de Azure en la que creó las redes virtuales |
     | Name | **az104-06-rt32** |
@@ -369,7 +369,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Configuración | Value |
     | --- | --- |
     | Nombre de ruta | **az104-06-route-vnet3-to-vnet2** |
-    | Origen de prefijo de la dirección | **Direcciones IP** |
+    | Destino del prefijo de dirección | **Direcciones IP** |
     | Intervalos de direcciones IP de origen y CIDR | **10.62.0.0/20** |    
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
@@ -640,5 +640,5 @@ En este laboratorio, ha:
 + Configurado la topología de red en estrella tipo hub-and-spoke
 + Probado la transitividad del emparejamiento de redes virtuales
 + Configurado el enrutamiento en la topología en estrella tipo hub-and-spoke
-+ Implementado Azure Load Balancer
++ Tarea 5: Implementar Azure Load Balancer
 + Implementado Azure Application Gateway
