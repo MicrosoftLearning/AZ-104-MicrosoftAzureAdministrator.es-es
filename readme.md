@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3a6d97b55de3c7521ccc4df57f952992a47848bf
-ms.sourcegitcommit: 7bee317d45512510f9d6eb9b05c4ee6ef6c4ada0
+ms.openlocfilehash: a106aae9e7c3de7b5154ce5e889ee057a1b9dff3
+ms.sourcegitcommit: 69083589fed0a226499b3067222e444d3fe0bac8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "141160167"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "146458136"
 ---
 # <a name="az-104-microsoft-azure-administrator"></a>AZ-104: Administrador de Microsoft Azure
 
@@ -44,7 +44,7 @@ Una vez que inician sesión, pueden usar las máquinas para criptominería u otr
 
 ## <a name="what-about-changes-to-the-student-handbook"></a>¿Qué pasa con los cambios en el manual del alumno?
 
-- Este repositorio está destinado solo a problemas con los laboratorios del curso. Los comentarios sobre el contenido del curso deben publicarse en el foro de cursos de MCT. 
+- Este repositorio está destinado solo a problemas con los laboratorios del curso. Puede enviar comentarios o correcciones en relación al [contenido del curso](https://docs.microsoft.com/learn/certifications/courses/az-104t00). Use el vínculo _notificar un problema_ en la parte inferior de cada página de contenido.
 
 ## <a name="notes"></a>Notas
 
