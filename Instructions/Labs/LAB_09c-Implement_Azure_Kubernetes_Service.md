@@ -2,12 +2,12 @@
 lab:
   title: 09c:-Implementación de Azure Kubernetes Service
   module: Module 09 - Serverless Computing
-ms.openlocfilehash: 42e43fa916e61988df87b3188fba59ab7b57652e
-ms.sourcegitcommit: dd61587ee547d5efa09ad0a63c0b2af272ee1e55
+ms.openlocfilehash: 929e2dfa4aba9df613e8d5ac594d903ede2f9934
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/31/2022
-ms.locfileid: "141280828"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587479"
 ---
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Laboratorio 09c:-Implementación de Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09c.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -65,9 +65,9 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | ---- | ---- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09c-rg1** |
     | Nombre del clúster de Kubernetes | **az104-9c-aks1** |
     | Region | Nombre de una región donde puede aprovisionar un clúster de Kubernetes |
@@ -178,11 +178,6 @@ En esta tarea, escalará horizontalmente el número de pods y, luego, el número
 1. En el panel de **Cloud Shell**, ejecute lo siguiente para escalar la implementación aumentando el número de pods a 2:
 
     ```sh
-
-    RESOURCE_GROUP='az104-09c-rg1'
-
-    AKS_CLUSTER='az104-9c-aks1'
-
     kubectl scale --replicas=2 deployment/nginx-deployment
     ```
 
@@ -197,6 +192,10 @@ En esta tarea, escalará horizontalmente el número de pods y, luego, el número
 1. En el panel de **Cloud Shell**, ejecute lo siguiente para escalar horizontalmente el clúster al aumentar el número de nodos a 2:
 
     ```sh
+    RESOURCE_GROUP='az104-09c-rg1'
+
+    AKS_CLUSTER='az104-9c-aks1'
+
     az aks scale --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER --node-count 2
     ```
 

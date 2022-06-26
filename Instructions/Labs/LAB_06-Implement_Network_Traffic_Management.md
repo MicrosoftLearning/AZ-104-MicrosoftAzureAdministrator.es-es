@@ -2,12 +2,12 @@
 lab:
   title: '06: Implementación de la administración del tráfico'
   module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 9b2a379c1c01645b0b7998d8eb463f95ab7825d2
-ms.sourcegitcommit: 4efd79c7aa4b4ba9b1f91d0b69eb64a8326b75e4
+ms.openlocfilehash: 81fd0fefc28cbf9eb59935e93bb548c69d677cf5
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "145985699"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587461"
 ---
 # <a name="lab-06---implement-traffic-management"></a>Laboratorio 06: Implementación de la administración del tráfico
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -36,7 +36,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -327,7 +327,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | --- | --- |
     | Nombre de ruta | **az104-06-route-vnet2-to-vnet3** |
     | Destino del prefijo de dirección | **Direcciones IP** |
-    | Intervalos de direcciones IP de origen y CIDR | **10.63.0.0/20** |
+    | Intervalos de direcciones IP de destino y CIDR | **10.63.0.0/20** |
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
 
@@ -370,7 +370,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | --- | --- |
     | Nombre de ruta | **az104-06-route-vnet3-to-vnet2** |
     | Destino del prefijo de dirección | **Direcciones IP** |
-    | Intervalos de direcciones IP de origen y CIDR | **10.62.0.0/20** |    
+    | Intervalos de direcciones IP de destino y CIDR | **10.62.0.0/20** |
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
 
