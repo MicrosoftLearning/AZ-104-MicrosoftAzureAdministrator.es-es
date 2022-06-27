@@ -2,12 +2,12 @@
 lab:
   title: '07: Administración de Azure Storage'
   module: Module 07 - Azure Storage
-ms.openlocfilehash: 9703d6543f6b3cf7791352a4ee0ba84cda3b5934
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
+ms.openlocfilehash: 34b6dba73d87731df935f80a1b5909e44075e871
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "144937833"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587470"
 ---
 # <a name="lab-07---manage-azure-storage"></a>Laboratorio 07: Administración de Azure Storage
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -102,7 +102,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
     | Nombre de la cuenta de almacenamiento | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
     | Region | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
@@ -111,7 +111,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** .
 
-1. En la pestaña **Redes** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte la opción predeterminada **Punto de conexión público (todas las redes)** y haga clic en **Siguiente: Protección de datos >** .
+1. En la pestaña **Redes** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte la opción predeterminada **Habilitar el acceso público desde todas las redes** y haga clic en **Siguiente: Protección de datos >** .
 
 1. En la pestaña **Protección de datos** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados, haga clic en **Revisar y crear**, espere a que se complete el proceso de validación y haga clic en **Crear**.
 

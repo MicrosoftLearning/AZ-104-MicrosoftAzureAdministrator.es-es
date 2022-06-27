@@ -2,12 +2,12 @@
 lab:
   title: '02b: Administración de la gobernanza mediante Azure Policy'
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 4e61ed82921b3d069646b2de131d765fed23f3d2
-ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
+ms.openlocfilehash: fad481d30818aaea390ed1357c223f3686671383
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2022
-ms.locfileid: "144844268"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587434"
 ---
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -36,7 +36,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab02b.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -149,7 +149,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. En la sección **Creación**, haga clic en **Asignaciones**. 
 
-1. En la lista de asignaciones, haga clic con el botón derecho en el icono de puntos suspensivos de la fila que representa la asignación de directiva etiqueta **Require Role tag with Infra value** (Requerir etiqueta Rol con valor Infra) y use el elemento de menú **Eliminar asignación** para eliminar la asignación. 
+1. En la lista de asignaciones, haga clic en el icono de puntos suspensivos de la fila que representa la asignación de directiva etiqueta **Require Role tag with Infra value** (Requerir etiqueta Rol con valor Infra) y use el elemento de menú **Eliminar asignación** para eliminar la asignación.
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 

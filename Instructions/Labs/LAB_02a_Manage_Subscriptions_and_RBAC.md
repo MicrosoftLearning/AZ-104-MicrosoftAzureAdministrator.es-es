@@ -2,12 +2,12 @@
 lab:
   title: '02a: Administrar suscripciones y RBAC'
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 8318d90573a04b60e4b1cfd79ed2daa621e8401f
-ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
+ms.openlocfilehash: 14b37fcd923ad1b45c83c3a6c41889db3869ed40
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/19/2022
-ms.locfileid: "143611549"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587443"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Laboratorio 02a: Administrar suscripciones y RBAC
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -205,7 +205,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
    
 1. Seleccione **Actualizar** para comprobar que la suscripción se ha movido correctamente al **grupo de administración raíz del inquilino**.
 
-1. Vuelva a la hoja **Grupos de administración**, haga clic con el botón derecho en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
+1. Vuelva a la hoja **Grupos de administración**, haga clic en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
 
 #### <a name="review"></a>Revisar
 

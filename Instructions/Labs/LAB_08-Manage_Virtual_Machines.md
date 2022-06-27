@@ -2,12 +2,12 @@
 lab:
   title: '08: Administración de máquinas virtuales'
   module: Module 08 - Virtual Machines
-ms.openlocfilehash: ee57d0d4dad96e694ca1315b2e0986b57698c08b
-ms.sourcegitcommit: dc0edbf407335d48b9a98636f4119b335d7426e8
+ms.openlocfilehash: a710fbaf4ea888651012bad592d34667a190c68f
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/13/2022
-ms.locfileid: "141690898"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587452"
 ---
 # <a name="lab-08---manage-virtual-machines"></a>Laboratorio 08: Administración de máquinas virtuales
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -45,11 +45,11 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. Inicie sesión en [Azure Portal](http://portal.azure.com).
 
-1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y seleccione **+ Máquina virtual**.
+1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y seleccione **+ Máquina virtual de Azure**.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
@@ -76,7 +76,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la hoja **Crear red virtual**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-08-rg01-vnet** |
     | Intervalo de direcciones | **10.80.0.0/20** |
@@ -144,7 +144,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -358,9 +358,9 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
     | Nombre del conjunto de escalado de máquinas virtuales | **az10408vmss0** |
     | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure diferentes de las que usó para implementar máquinas virtuales anteriormente en este laboratorio. |
@@ -378,7 +378,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-08-rg02-vnet** |
     | Intervalo de direcciones | **10.82.0.0/20** |
@@ -393,13 +393,13 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az10408vmss0-nsg** |
 
 1. Haga clic en **Agregar una regla de entrada** y agregue una regla de seguridad de entrada con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | **\*** |
@@ -464,7 +464,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
