@@ -2,12 +2,12 @@
 lab:
   title: '02b: Administración de la gobernanza mediante Azure Policy'
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: fad481d30818aaea390ed1357c223f3686671383
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
+ms.openlocfilehash: 2bf92c914983a28dc2d3f85abed917a95e88c04f
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587434"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973679"
 ---
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -36,7 +36,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab02b.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -179,7 +179,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
     | Configuración | Value |
     | --- | --- |
     | Crear una tarea de corrección | enabled |
-    | Directiva que se debe corregir | **Heredar una etiqueta del grupo de recursos si falta** |
+    | Directiva que se debe corregir | **Heredar una etiqueta de la suscripción si falta** |
 
     >**Nota**: La definición de esta directiva incluye el efecto **Modify**.
 
