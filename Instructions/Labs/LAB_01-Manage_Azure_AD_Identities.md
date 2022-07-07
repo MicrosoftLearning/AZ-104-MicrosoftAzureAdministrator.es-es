@@ -2,12 +2,12 @@
 lab:
   title: '01: Administración de identidades de Azure Active Directory'
   module: Module 01 - Identity
-ms.openlocfilehash: de59a0e8c7634ee756fc66301b90f73233a9cf8a
-ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
+ms.openlocfilehash: 589e423af0901c93ef685905e4a01a7246e3c791
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/10/2022
-ms.locfileid: "144844256"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973697"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Laboratorio 01: Administración de identidades de Azure Active Directory
 
@@ -23,8 +23,8 @@ En este laboratorio, aprenderá a:
 
 + Tarea 1: Creación y configuración de usuarios de Azure AD
 + Tarea 2: Creación de grupos de Azure AD con pertenencia asignada y dinámica
-+ Tarea 3: Creación de un inquilino de Azure Active Directory (AD)
-+ Tarea 4: Administración de usuarios invitados de Azure AD 
++ Tarea 3: Creación de un inquilino de Azure Active Directory (AD) (opcional: problema del entorno de laboratorio)
++ Tarea 4: Administración de usuarios invitados de Azure AD (opcional: problema del entorno de laboratorio)
 
 ## <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
 
@@ -186,9 +186,11 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
 
 1. Vuelva a la hoja **Grupos: Todos los grupos**, haga clic en la entrada que representa el grupo **Administradores del sistema de TI** y, a continuación, muestre su hoja **Miembros**. Compruebe que **az104-01a-aaduser2** aparece en la lista de miembros del grupo.
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant"></a>Tarea 3: Creación de un inquilino de Azure Active Directory (AD)
+#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tarea 3: Creación de un inquilino de Azure Active Directory (AD) (opcional: problema del entorno de laboratorio)
 
 En esta tarea, creará un nuevo inquilino de Azure AD.
+
+   >**Nota**: Hay un problema conocido con la comprobación de Captcha en el entorno de laboratorio. Si experimenta este problema, omita esta tarea y la siguiente. Estamos trabajando en una solución.
 
 1. En Azure Portal, busque y seleccione **Azure Active Directory**.
 

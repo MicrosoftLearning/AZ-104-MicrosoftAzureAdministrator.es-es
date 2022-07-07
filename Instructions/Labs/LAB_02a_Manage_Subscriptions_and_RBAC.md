@@ -2,12 +2,12 @@
 lab:
   title: '02a: Administrar suscripciones y RBAC'
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 14b37fcd923ad1b45c83c3a6c41889db3869ed40
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
+ms.openlocfilehash: e8b6f60a421222db74d93715ed63860e3ca3c78d
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587443"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973688"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Laboratorio 02a: Administrar suscripciones y RBAC
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -43,7 +43,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -146,7 +146,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 1. En Azure Portal, vuelva al grupo de administración **az104-02-mg1** y muestre sus **detalles**.
 
-1. Seleccione **Control de acceso (IAM)** , haga clic en **+ Agregar**, **Agregar asignación de roles** y asigne el rol **Colaborador de solicitud de soporte técnico (personalizado)** a la cuenta de usuario recién creada.
+1. Seleccione **Control de acceso (IAM)** , haga clic en **+ Agregar**, **Agregar asignación de roles**, seleccione uno de los **Miembros**, vaya a **Revisar y asignar** y asigne el rol **Colaborador de solicitud de soporte técnico (personalizado)** a la cuenta de usuario recién creada.
 
 1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cambie la contraseña del usuario.
 
@@ -206,6 +206,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 1. Seleccione **Actualizar** para comprobar que la suscripción se ha movido correctamente al **grupo de administración raíz del inquilino**.
 
 1. Vuelva a la hoja **Grupos de administración**, haga clic en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
+  >**Nota**: Si no puede eliminar el grupo de **administración raíz del inquilino**, es probable que la **suscripción de Azure** esté en el grupo de recursos. Debe quitar la **suscripción de Azure** del **grupo de administración raíz del inquilino** y, a continuación, eliminar el grupo.
 
 #### <a name="review"></a>Revisar
 
