@@ -2,19 +2,14 @@
 lab:
   title: '07: Administración de Azure Storage'
   module: Module 07 - Azure Storage
-ms.openlocfilehash: 34b6dba73d87731df935f80a1b5909e44075e871
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587470"
 ---
+
 # <a name="lab-07---manage-azure-storage"></a>Laboratorio 07: Administración de Azure Storage
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-Debe evaluar el uso de Azure Storage para almacenar archivos que residen actualmente en almacenes de datos locales. Si bien el acceso a la mayoría de estos archivos no es frecuente, hay algunas excepciones. Para minimizar el costo de almacenamiento, le gustaría colocar los archivos a los que se accede con menos frecuencia en niveles de almacenamiento de menor precio. También tiene previsto explorar los diferentes mecanismos de protección que ofrece Azure Storage, incluido el acceso a la red, la autenticación, la autorización y la replicación. Por último, quiere determinar en qué medida el servicio Azure Files podría ser adecuado para hospedar los recursos compartidos de archivos locales.
+You need to evaluate the use of Azure storage for storing files residing currently in on-premises data stores. While majority of these files are not accessed frequently, there are some exceptions. You would like to minimize cost of storage by placing less frequently accessed files in lower-priced storage tiers. You also plan to explore different protection mechanisms that Azure Storage offers, including network access, authentication, authorization, and replication. Finally, you want to determine to what extent Azure Files service might be suitable for hosting your on-premises file shares.
 
 ## <a name="objectives"></a>Objetivos
 
@@ -52,7 +47,7 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** y **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** en el directorio principal de Cloud Shell.
 
-1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
+1. Edit the <bpt id="p1">**</bpt>Parameters<ept id="p1">**</ept> file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará la máquina virtual (reemplace el marcador de posición “[Azure_region]” por el nombre de una región de Azure donde tiene pensado implementar la máquina virtual de Azure).
 
@@ -85,10 +80,10 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-07-vm-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
-    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Check the location in which the 'az104-04-rg1' resource group is deployed. You can run <ph id="ph1">`az group show -n az104-04-rg1 --query location`</ph> in your CloudShell to get it.
     > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
     > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
-    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
+    > 1. Now redeploy your templates by running the <ph id="ph1">`New-AzResourceGroupDeployment`</ph> command again. You can press the up button a few times which would bring the last executed command.
 
 1. Cierre el panel de Cloud Shell.
 
@@ -100,7 +95,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
@@ -115,7 +110,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Protección de datos** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados, haga clic en **Revisar y crear**, espere a que se complete el proceso de validación y haga clic en **Crear**.
 
-    >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the Storage account to be created. This should take about 2 minutes.
 
 1. En la hoja de implementación, haga clic en **Ir al recurso** para mostrar la hoja de la cuenta de Azure Storage.
 
@@ -137,7 +132,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Haga clic en **+ Contenedor** y cree un contenedor con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-07-container**  |
     | Nivel de acceso público | **Privado (sin acceso anónimo)** |
@@ -166,7 +161,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. En la hoja **licenses/LICENSE**, revise las opciones disponibles.
 
-    > **Nota:** Tiene la opción de descargar el blob, cambiar su nivel de acceso (actualmente está establecido en **Frecuente**), adquirir una concesión, que cambiaría su estado de concesión a **Bloqueado** (actualmente está establecido en **Desbloqueado**), y proteger el blob frente a modificaciones o eliminaciones, así como asignar metadatos personalizados (mediante la especificación de pares arbitrarios de clave y valor). También puede **Editar** el archivo directamente dentro de la interfaz de Azure Portal, sin descargarlo antes. También puede crear instantáneas, así como generar un token de SAS (explorará esta opción en la siguiente tarea).
+    > Debe evaluar el uso de Azure Storage para almacenar archivos que residen actualmente en almacenes de datos locales.
 
 #### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>Tarea 4: Administrar la autenticación y autorización para Azure Storage
 
@@ -201,17 +196,17 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL que copió en el paso anterior.
 
-    > **Nota**: Si usa Microsoft Edge, debe presentarse a la página **The MIT License (MIT)** . Si usa Chrome, Microsoft Edge (Chromium) o Firefox, debería poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
+    > Si bien el acceso a la mayoría de estos archivos no es frecuente, hay algunas excepciones.
 
     > **Nota**: Esto es lo esperado, ya que ahora el acceso está autorizado en función del token de SAS recién generado.
 
-    > **Nota**: Guarde la dirección URL de SAS del blob. La necesitará más adelante en este laboratorio.
+    > Para minimizar el costo de almacenamiento, le gustaría colocar los archivos a los que se accede con menos frecuencia en niveles de almacenamiento de menor precio.
 
 1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **licenses/LICENSE** del contenedor de Azure Storage y, desde allí, vuelva a la hoja **az104-07-container**.
 
 1. Haga clic en el vínculo **Cambiar a la cuenta de usuario de Azure AD** junto a la etiqueta **Método de autenticación**.
 
-    > **Nota**: Puede ver un error al cambiar el método de autenticación (el error es *"No tiene permisos para enumerar los datos con su cuenta de usuario con Azure AD"* ). Este es el comportamiento esperado.  
+    > También tiene previsto explorar los diferentes mecanismos de protección que ofrece Azure Storage, incluido el acceso a la red, la autenticación, la autorización y la replicación.  
 
     > **Nota**: En este momento, no tiene permisos para cambiar el método de autenticación.
 
@@ -241,13 +236,13 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-07-share** |
 
 1. Haga clic en el recurso compartido de archivos recién creado y haga clic en **Conectar**.
 
-1. En la hoja **Conectar**, asegúrese de que la pestaña **Windows** esté seleccionada. A continuación encontrará un cuadro de texto gris con un script, en la esquina inferior derecha de ese cuadro, mantenga el puntero sobre el icono de páginas y haga clic en **Copiar en el Portapapeles**.
+1. Por último, quiere determinar en qué medida el servicio Azure Files podría ser adecuado para hospedar los recursos compartidos de archivos locales.
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la lista de máquinas virtuales, haga clic en **az104-07-vm0**.
 
@@ -287,7 +282,7 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL de SAS del blob que generó en la tarea anterior.
 
-    > **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob. 
+    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you did not record the SAS URL from task 4, you should generate a new one with the same configuration. Use Task 4 steps 4-6 as a guide for generating a new blob SAS URL. 
 
 1. Debería presentársele el contenido de la página **The MIT License (MIT)** .
 
@@ -306,15 +301,15 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
    ```
 1. Compruebe que no puede descargarlo.
 
-    > **Nota**: Debe recibir el mensaje que indica **AuthorizationFailure: Esta solicitud no está autorizada para realizar esta operación**. Esto es lo esperado, ya que se está conectando desde la dirección IP asignada a una VM de Azure que hospeda la instancia de Cloud Shell.
+    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: You should receive the message stating <bpt id="p2">**</bpt>AuthorizationFailure: This request is not authorized to perform this operation<ept id="p2">**</ept>. This is expected, since you are connecting from the IP address assigned to an Azure VM hosting the Cloud Shell instance.
 
 1. Cierre el panel de Cloud Shell.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. También puede intentar eliminar el grupo de recursos donde residen los recursos. Se trata de un acceso directo rápido de administrador. Si tiene dudas, hable con el instructor.
+><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a long time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. You might also try to delete the Resource Group where the resources reside. That is a quick Administrator shortcut. If you have concerns speak to your instructor.
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

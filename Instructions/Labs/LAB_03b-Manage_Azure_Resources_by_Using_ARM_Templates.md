@@ -2,13 +2,8 @@
 lab:
   title: '03b: Administración de recursos de Azure mediante plantillas de ARM'
   module: Module 03 - Azure Administration
-ms.openlocfilehash: 602da542fdf20f6b1be637e792ec47daaa0de04b
-ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 04/19/2022
-ms.locfileid: "143611555"
 ---
+
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -29,7 +24,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab03b.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -55,7 +50,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 1. En la hoja **Microsoft.ManagedDisk-* XXXXXXXXX* \| Plantilla**, haga clic en **Entradas**.
 
-1. Anote el valor del parámetro **ubicación**. Lo necesitará en la próxima tarea.
+1. Note the value of the <bpt id="p1">**</bpt>location<ept id="p1">**</ept> parameter. You will need it in the next task.
 
 1. Extraiga el contenido del archivo descargado en la carpeta **Descargas** del equipo de laboratorio.
 
@@ -96,7 +91,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
    "osType": "[parameters('osType')]",
    ```
 
-    >**Nota**: Estos parámetros se quitan porque no son aplicables a la implementación actual. En concreto, los parámetros sourceResourceId, sourceUri, osType y hyperVGeneration son aplicables a la creación de un disco de Azure a partir de un archivo VHD existente.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: These parameters are removed since they are not applicable to the current deployment. In particular, sourceResourceId, sourceUri, osType, and hyperVGeneration parameters are applicable to creating an Azure disk from an existing VHD file.
 
 1. **Guarde** los cambios.
 
@@ -135,7 +130,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No elimine los recursos que implementó en este laboratorio. Hará referencia a ellos en el siguiente laboratorio de este módulo.
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not delete resources you deployed in this lab. You will reference them in the next lab of this module.
 
 #### <a name="review"></a>Revisar
 

@@ -2,19 +2,14 @@
 lab:
   title: '03a: Administración de recursos de Azure con Azure Portal'
   module: Module 03 - Azure Administration
-ms.openlocfilehash: 020f28742779dab36777e2ae7b8bddb43ebb46be
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "144937815"
 ---
+
 # <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Laboratorio 03a: Administración de recursos de Azure con Azure Portal
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-Tiene que explorar las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos, incluido el movimiento de recursos entre grupos de recursos. También quiere explorar las opciones para proteger los recursos de disco frente a la eliminación accidental, a la vez que se permita modificar las características de rendimiento y tamaño.
+You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
 
 ## <a name="objectives"></a>Objetivos
 
@@ -42,7 +37,7 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription| Nombre de la suscripción de Azure donde creó el grupo de recursos |
     |Grupo de recursos| Nombre de un nuevo grupo de recursos **az104-03a-rg1** |
@@ -57,7 +52,7 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
 1. Haga clic en **Revisar + crear** y, después, en **Crear**.
 
-    >**Nota**: Espere hasta que se cree el disco. Debería tardar menos de un minuto.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait until the disk is created. This should take less than a minute.
 
 #### <a name="task-2-move-resources-between-resource-groups"></a>Tarea 2: Mover recursos entre grupos de recursos 
 
@@ -71,9 +66,9 @@ En esta tarea, moveremos el recurso de disco que creó en la tarea anterior a un
 
     >**Nota**: Este método permite mover varios recursos al mismo tiempo. 
 
-1. Debajo del cuadro de texto **Grupo de recursos**, haga clic en **Crear nuevo** y luego **az104-03a-rg2** en el cuadro de texto. En la pestaña Revisión, seleccione la casilla **Comprendo que las herramientas y los scripts asociados con recursos movidos no funcionarán hasta que los actualice para que usen nuevos identificadores de recursos** y haga clic en **Mover**.
+1. Below the <bpt id="p1">**</bpt>Resource group<ept id="p1">**</ept> text box, click <bpt id="p2">**</bpt>Create new<ept id="p2">**</ept> then type <bpt id="p3">**</bpt>az104-03a-rg2<ept id="p3">**</ept> in the text box. On the Review tab, select the checkbox <bpt id="p1">**</bpt>I understand that tools and scripts associated with moved resources will not work until I update them to use new resource IDs<ept id="p1">**</ept>, and click <bpt id="p2">**</bpt>Move<ept id="p2">**</ept>.
 
-    >**Nota**: No espere a que se complete el movimiento, sino que avance a la siguiente tarea. Esto puede tardar unos 10 minutos. Para saber si la operación se completó, supervise las entradas del registro de actividad del grupo de recursos de origen o de destino. Vuelva a visitar este paso una vez que complete la siguiente tarea.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the move to complete but instead proceed to the next task. The move might take about 10 minutes. You can determine that the operation was completed by monitoring activity log entries of the source or target resource group. Revisit this step once you complete the next task.
 
 #### <a name="task-3-implement-resource-locks"></a>Tarea 3: Implementar bloqueos de recursos
 
@@ -81,7 +76,7 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription| Nombre de la suscripción que está usando en este laboratorio |
     |Grupo de recursos| Haga clic en **Crear nuevo** grupo de recursos y asígnele el nombre **az104-03a-rg3** |
@@ -100,7 +95,7 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En la hoja del grupo de recursos **az104-03a-rg3**, haga clic en **Bloqueos** y luego en **+ Agregar** y configure las opciones siguientes:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Nombre del bloqueo| **az104-03a-delete-lock** |
     |Tipo de bloqueo| **Eliminar** |
@@ -117,13 +112,13 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. Vuelva a la lista de recursos del grupo de recursos **az104-03a-rg3** y haga clic en la entrada que representa el recurso **az104-03a-disk2**. 
 
-1. En la hoja **az104-03a-disk2**, en la sección **Configuración**, haga clic en **Tamaño y rendimiento**, establezca el tipo y tamaño de disco en **SSD prémium** y **64 GiB**,respectivamente, y haga clic en **Cambiar tamaño** para aplicar el cambio. Compruebe que el cambio se realizó correctamente.
+1. On the <bpt id="p1">**</bpt>az104-03a-disk2<ept id="p1">**</ept> blade, in the <bpt id="p2">**</bpt>Settings<ept id="p2">**</ept> section, click <bpt id="p3">**</bpt>Size + performance<ept id="p3">**</ept>, set the disk type and size to <bpt id="p4">**</bpt>Premium SSD<ept id="p4">**</ept> and <bpt id="p5">**</bpt>64 GiB<ept id="p5">**</ept>, respectively, and click <bpt id="p6">**</bpt>Resize<ept id="p6">**</ept> to apply the change. Verify that the change was successful.
 
     >**Nota**: Esto es lo esperado, ya que el bloqueo a nivel de grupo de recursos solo se aplica a las operaciones de eliminación. 
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >**Nota**: No elimine los recursos que implementó en este laboratorio. Los va a usar en el siguiente laboratorio de este módulo. Quite solo el bloqueo de recursos que creó en este laboratorio.
+   >Tiene que explorar las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos, incluido el movimiento de recursos entre grupos de recursos.
 
 1. Vaya a la hoja del grupo de recursos **az104-03a-rg3**, muestre su hoja **Bloqueos** y quite el bloqueo **az104-03a-delete-lock** haciendo clic en el vínculo **Eliminar** en el lado derecho de la entrada de bloqueo **Eliminar**.
 
