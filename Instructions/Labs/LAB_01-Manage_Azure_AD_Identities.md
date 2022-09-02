@@ -1,7 +1,7 @@
 ---
 lab:
   title: '01: Administración de identidades de Azure Active Directory'
-  module: Module 01 - Identity
+  module: Administer Identity
 ---
 
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Laboratorio 01: Administración de identidades de Azure Active Directory

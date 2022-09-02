@@ -1,7 +1,7 @@
 ---
 lab:
   title: '09b: Implementación de Azure Container Instances'
-  module: Module 09 - Serverless Computing
+  module: Administer Serverless Computing
 ---
 
 # <a name="lab-09b---implement-azure-container-instances"></a>Laboratorio 09b: Implementación de Azure Container Instances

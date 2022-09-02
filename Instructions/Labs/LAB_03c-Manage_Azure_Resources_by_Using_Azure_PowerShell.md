@@ -1,7 +1,7 @@
 ---
 lab:
   title: '03c: Administración de recursos de Azure mediante Azure PowerShell'
-  module: Module 03 - Azure Administration
+  module: Administer Azure Resources
 ---
 
 # <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Laboratorio 03c: Administración de recursos de Azure mediante Azure PowerShell
