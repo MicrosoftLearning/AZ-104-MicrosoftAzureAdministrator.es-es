@@ -1,7 +1,7 @@
 ---
 lab:
   title: '06: Implementación de la administración del tráfico'
-  module: Module 06 - Network Traffic Management
+  module: Administer Network Traffic Management
 ---
 
 # <a name="lab-06---implement-traffic-management"></a>Laboratorio 06: Implementación de la administración del tráfico
