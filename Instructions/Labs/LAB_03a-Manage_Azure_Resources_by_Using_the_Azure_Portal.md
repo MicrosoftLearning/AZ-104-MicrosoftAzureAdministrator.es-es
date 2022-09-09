@@ -1,7 +1,7 @@
 ---
 lab:
   title: '03a: Administración de recursos de Azure con Azure Portal'
-  module: Module 03 - Azure Administration
+  module: Administer Azure Resources
 ---
 
 # <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Laboratorio 03a: Administración de recursos de Azure con Azure Portal
@@ -10,6 +10,8 @@ lab:
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
 You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
+
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -25,7 +27,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab03a.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -37,9 +39,9 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
-    |Subscription| Nombre de la suscripción de Azure donde creó el grupo de recursos |
+    |Suscripción| Nombre de la suscripción de Azure donde creó el grupo de recursos |
     |Grupo de recursos| Nombre de un nuevo grupo de recursos **az104-03a-rg1** |
     |Nombre del disco| **az104-03a-disk1** |
     |Region| **(EE. UU.) Este de EE. UU.** |
@@ -76,9 +78,9 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
-    |Subscription| Nombre de la suscripción que está usando en este laboratorio |
+    |Suscripción| Nombre de la suscripción que está usando en este laboratorio |
     |Grupo de recursos| Haga clic en **Crear nuevo** grupo de recursos y asígnele el nombre **az104-03a-rg3** |
     |Nombre del disco| **az104-03a-disk2** |
     |Region| Nombre de la región de Azure donde creó los otros grupos de recursos en este laboratorio |
@@ -95,7 +97,7 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En la hoja del grupo de recursos **az104-03a-rg3**, haga clic en **Bloqueos** y luego en **+ Agregar** y configure las opciones siguientes:
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Nombre del bloqueo| **az104-03a-delete-lock** |
     |Tipo de bloqueo| **Eliminar** |
