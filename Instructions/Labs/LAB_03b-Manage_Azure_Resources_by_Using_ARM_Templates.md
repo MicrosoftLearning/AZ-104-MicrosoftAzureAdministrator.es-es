@@ -1,7 +1,7 @@
 ---
 lab:
   title: '03b: Administración de recursos de Azure mediante plantillas de ARM'
-  module: Module 03 - Azure Administration
+  module: Administer Azure Resources
 ---
 
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
@@ -9,6 +9,8 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal, debe llevar a cabo la tarea equivalente mediante plantillas de Azure Resource Manager.
+
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -24,7 +26,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab03b.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -72,12 +74,6 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
    "sourceResourceId": {
        "type": "String"
    },
-   "sourceUri": {
-       "type": "String"
-   },
-   "osType": {
-       "type": "String"
-   },
    ```
 
    ```json
@@ -85,10 +81,6 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
        "defaultValue": "V1",
        "type": "String"
    },      
-   ```
-
-   ```json
-   "osType": "[parameters('osType')]",
    ```
 
     ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: These parameters are removed since they are not applicable to the current deployment. In particular, sourceResourceId, sourceUri, osType, and hyperVGeneration parameters are applicable to creating an Azure disk from an existing VHD file.
@@ -101,7 +93,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 1. De nuevo en la hoja **Implementación personalizada**, configure las opciones siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- |--- |
     | Subscription | *Nombre de la suscripción de Azure que está usando en este laboratorio* |
     | Grupo de recursos | Nombre de un **nuevo** grupo de recursos **az104-03b-rg1** |

@@ -11,6 +11,8 @@ lab:
 
 You need to evaluate the use of Azure storage for storing files residing currently in on-premises data stores. While majority of these files are not accessed frequently, there are some exceptions. You would like to minimize cost of storage by placing less frequently accessed files in lower-priced storage tiers. You also plan to explore different protection mechanisms that Azure Storage offers, including network access, authentication, authorization, and replication. Finally, you want to determine to what extent Azure Files service might be suitable for hosting your on-premises file shares.
 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** .
+
 ## <a name="objectives"></a>Objetivos
 
 En este laboratorio, aprenderá a:
@@ -29,7 +31,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab07.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -51,8 +53,7 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará la máquina virtual (reemplace el marcador de posición “[Azure_region]” por el nombre de una región de Azure donde tiene pensado implementar la máquina virtual de Azure).
 
-    >**Nota**: Para enumerar los nombres de las regiones de Azure, ejecute `(Get-AzLocation).Location`
-    >**Nota**: Cada comando siguiente debe escribirse por separado.
+    >**Nota**: Para enumerar los nombres de las regiones de Azure, ejecute `(Get-AzLocation).Location`**Nota**: Cada comando siguiente debe escribirse por separado.
 
     ```powershell
     $location = '[Azure_region]'
@@ -95,7 +96,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
@@ -132,7 +133,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Haga clic en **+ Contenedor** y cree un contenedor con la configuración siguiente:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-07-container**  |
     | Nivel de acceso público | **Privado (sin acceso anónimo)** |
@@ -236,7 +237,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-07-share** |
 

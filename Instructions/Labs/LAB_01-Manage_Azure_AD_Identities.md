@@ -12,6 +12,8 @@ lab:
 
 In order to allow Contoso users to authenticate by using Azure AD, you have been tasked with provisioning users and group accounts. Membership of the groups should be updated automatically based on the user job titles. You also need to create a test Azure AD tenant with a test user account and grant that account limited permissions to resources in the Contoso Azure subscription.
 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** .
+
 ## <a name="objectives"></a>Objetivos
 
 En este laboratorio, aprenderá a:
@@ -26,7 +28,7 @@ En este laboratorio, aprenderá a:
 ## <a name="architecture-diagram"></a>Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -236,7 +238,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-01b-aaduser1** |
     | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |
