@@ -22,7 +22,7 @@ Para mejorar la administración de recursos de Azure en Contoso, se le ha encarg
     - crear solicitud de soporte técnico;
     - ver grupos de recursos.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** .
+<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same.
 
 ## <a name="objectives"></a>Objetivos
 
@@ -40,7 +40,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -139,17 +139,17 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
     | Permitirme crear la contraseña | enabled |
     | Contraseña inicial | **Proporcione una contraseña segura** |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: <bpt id="p2">**</bpt>Copy to clipboard<ept id="p2">**</ept> the full <bpt id="p3">**</bpt>User name<ept id="p3">**</ept>. You will need it later in this lab.
+    >Este laboratorio requiere permisos para crear usuarios de Azure Active Directory (Azure AD), crear roles personalizados de control de acceso basado en roles (RBAC) de Azure y asignar estos roles a usuarios de Azure AD.
 
 1. En Azure Portal, vuelva al grupo de administración **az104-02-mg1** y muestre sus **detalles**.
 
-1. Este laboratorio requiere permisos para crear usuarios de Azure Active Directory (Azure AD), crear roles personalizados de control de acceso basado en roles (RBAC) de Azure y asignar estos roles a usuarios de Azure AD. 
+1. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad. 
 
     >**Nota**: Si el rol personalizado no está visible, puede tardar hasta 10 minutos en aparecer después de su creación.
 
-1. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad.
-
 1. Pregunte al instructor acerca de la disponibilidad de este laboratorio.
+
+1. Open an <bpt id="p1">**</bpt>InPrivate<ept id="p1">**</ept> browser window and sign in to the <bpt id="p2">[</bpt>Azure portal<ept id="p2">](https://portal.azure.com)</ept> using the newly created user account. When prompted to update the password, change the password for the user.
 
     >**Nota**: En lugar de escribir el nombre de usuario, puede pegar el contenido del Portapapeles.
 
@@ -171,7 +171,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges, although, resources created in this lab do not incur extra cost.
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going.
+   >conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado de Azure Active Directory.
 
 1. En Azure Portal, busque y seleccione **Azure Active Directory**, en la hoja Azure Active Directory, haga clic en **Usuarios**.
 
@@ -207,7 +207,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 1. Seleccione **Actualizar** para comprobar que la suscripción se ha movido correctamente al **grupo de administración raíz del inquilino**.
 
 1. Vuelva a la hoja **Grupos de administración**, haga clic en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
-  >conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado de Azure Active Directory.
+  >Los permisos de ese usuario solo deben limitarse a:
 
 #### <a name="review"></a>Revisar
 

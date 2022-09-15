@@ -12,7 +12,7 @@ lab:
 
 In order to allow Contoso users to authenticate by using Azure AD, you have been tasked with provisioning users and group accounts. Membership of the groups should be updated automatically based on the user job titles. You also need to create a test Azure AD tenant with a test user account and grant that account limited permissions to resources in the Contoso Azure subscription.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** .
+<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same.
 
 ## <a name="objectives"></a>Objetivos
 
@@ -28,7 +28,7 @@ En este laboratorio, aprenderá a:
 ## <a name="architecture-diagram"></a>Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -114,7 +114,7 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
 
 1. Actualice la ventana del explorador para comprobar que la activación se ha realizado correctamente. 
 
- ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: It can take up to 10 minutes for the licenses to activate. Continue refreshing the page until it appears. Do not proceed until the licenses have been activated.
+ >Para permitir que los usuarios de Contoso se autentiquen mediante Azure AD, se le ha encargado el aprovisionamiento de usuarios y cuentas de grupo.
 
 1. En la hoja **Licencias: Todos los productos**, seleccione la entrada **Azure Active Directory Premium P2** y asigne todas las opciones de licencia de Azure AD Premium P2 a su cuenta de usuario y a las dos cuentas de usuario recién creadas.
 
@@ -141,7 +141,7 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
     | Operador | **Es igual a** |
     | Value | **Administrador de la nube** |
 
-1. Para permitir que los usuarios de Contoso se autentiquen mediante Azure AD, se le ha encargado el aprovisionamiento de usuarios y cuentas de grupo. 
+1. La pertenencia a los grupos debe actualizarse automáticamente en función de los puestos de trabajo del usuario. 
 
 1. De nuevo en la hoja **Grupos: Todos los grupos** del inquilino de Azure AD, haga clic en el botón **+ Nuevo grupo** y cree un grupo con la siguiente configuración:
 
@@ -162,7 +162,7 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
     | Operador | **Es igual a** |
     | Value | **Administrador del sistema** |
 
-1. La pertenencia a los grupos debe actualizarse automáticamente en función de los puestos de trabajo del usuario. 
+1. También debe crear un inquilino de prueba de Azure AD con una cuenta de usuario de prueba y conceder permisos limitados a esa cuenta para los recursos de la suscripción de Azure de Contoso. 
 
 1. De nuevo en la hoja **Grupos: Todos los grupos** del inquilino de Azure AD, haga clic en el botón **+ Nuevo grupo** y cree un grupo con la siguiente configuración:
 
@@ -177,11 +177,11 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
 
 1. En la hoja **Agregar miembros**, busque y seleccione los grupos **Administradores de la nube de TI** y **Administradores del sistema de TI** y, de nuevo en la hoja **Nuevo grupo**, haga clic en **Crear**.
 
-1. También debe crear un inquilino de prueba de Azure AD con una cuenta de usuario de prueba y conceder permisos limitados a esa cuenta para los recursos de la suscripción de Azure de Contoso.
+1. Back on the <bpt id="p1">**</bpt>Groups - All groups<ept id="p1">**</ept> blade, click the entry representing the <bpt id="p2">**</bpt>IT Cloud Administrators<ept id="p2">**</ept> group and, on then display its <bpt id="p3">**</bpt>Members<ept id="p3">**</ept> blade. Verify that the <bpt id="p1">**</bpt>az104-01a-aaduser1<ept id="p1">**</ept> appears in the list of group members.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: You might experience delays with updates of the dynamic membership groups. To expedite the update, navigate to the group blade, display its <bpt id="p1">**</bpt>Dynamic membership rules<ept id="p1">**</ept> blade, <bpt id="p2">**</bpt>Edit<ept id="p2">**</ept> the rule listed in the <bpt id="p3">**</bpt>Rule syntax<ept id="p3">**</ept> textbox by adding a whitespace at the end, and <bpt id="p4">**</bpt>Save<ept id="p4">**</ept> the change.
+    >                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** que le permite realizar sus propias selecciones a su entera discreción.
 
-1. Navigate back to the <bpt id="p1">**</bpt>Groups - All groups<ept id="p1">**</ept> blade, click the entry representing the <bpt id="p2">**</bpt>IT System Administrators<ept id="p2">**</ept> group and, on then display its <bpt id="p3">**</bpt>Members<ept id="p3">**</ept> blade. Verify that the <bpt id="p1">**</bpt>az104-01a-aaduser2<ept id="p1">**</ept> appears in the list of group members.
+1. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 #### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tarea 3: Creación de un inquilino de Azure Active Directory (AD) (opcional: problema del entorno de laboratorio)
 
@@ -238,7 +238,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-01b-aaduser1** |
     | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |

@@ -11,7 +11,7 @@ lab:
 
 You have been tasked with evaluating the use of Azure Recovery Services for backup and restore of files hosted on Azure virtual machines and on-premises computers. In addition, you want to identify methods of protecting data stored in the Recovery Services vault from accidental or malicious data loss.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** .
+<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -94,7 +94,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. Haga clic en **Revisar y crear**, asegúrese de que se haya superado la validación y haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment should take less than 1 minute.
+    >Se le ha encargado la tarea de evaluar el uso de Azure Recovery Services para la copia de seguridad y la restauración de archivos hospedados en máquinas virtuales de Azure y equipos locales.
 
 1. Cuando se haya completado la implementación, haga clic en **Ir al recurso**.
 
@@ -102,7 +102,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de copia de seguridad**.
 
-1. Se le ha encargado la tarea de evaluar el uso de Azure Recovery Services para la copia de seguridad y la restauración de archivos hospedados en máquinas virtuales de Azure y equipos locales.
+1. Además, quiere identificar los métodos de protección de los datos almacenados en el almacén de Recovery Services frente a pérdidas de datos accidentales o malintencionadas.
 
     >**Nota**: Esta opción solo se puede configurar si no hay elementos de copia de seguridad existentes.
 
@@ -145,7 +145,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
 
 1. En la hoja **Seleccionar máquinas virtuales**, seleccione **az-104-10-vm0**, haga clic en **Aceptar** y, de nuevo en la hoja **Copia de seguridad**, haga clic en **Habilitar copia de seguridad**.
 
-    >Además, quiere identificar los métodos de protección de los datos almacenados en el almacén de Recovery Services frente a pérdidas de datos accidentales o malintencionadas.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the backup to be enabled. This should take about 2 minutes.
 
 1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**; en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquina virtual de Azure**.
 
@@ -163,7 +163,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
 1. En la hoja **az104-10-vm1**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** que le permite realizar sus propias selecciones a su entera discreción.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
@@ -194,7 +194,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
     >**Nota**: En la página **Participación en Microsoft Update** del **Asistente para la instalación de Agente de Microsoft Azure Recovery Services**, seleccione la opción de instalación **No deseo usar Microsoft Update**.
 
-1. On the <bpt id="p1">**</bpt>Installation<ept id="p1">**</ept> page of the <bpt id="p2">**</bpt>Microsoft Azure Recovery Services Agent Setup Wizard<ept id="p2">**</ept>, click <bpt id="p3">**</bpt>Proceed to Registration<ept id="p3">**</ept>. This will start <bpt id="p1">**</bpt>Register Server Wizard<ept id="p1">**</ept>.
+1. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 1. Cambie a la ventana del explorador web que muestra Azure Portal, en la hoja **Preparar infraestructura**, active la casilla **Ya se ha descargado o se usa la última instalación de Recovery Server** y haga clic en **Descargar**.
 
