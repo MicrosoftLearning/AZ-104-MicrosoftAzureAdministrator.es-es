@@ -12,7 +12,7 @@ lab:
 
 You need to explore Azure virtual networking capabilities. To start, you plan to create a virtual network in Azure that will host a couple of Azure virtual machines. Since you intend to implement network-based segmentation, you will deploy them into different subnets of the virtual network. You also want to make sure that their private and public IP addresses will not change over time. To comply with Contoso security requirements, you need to protect public endpoints of Azure virtual machines accessible from Internet. Finally, you need to implement DNS name resolution for Azure virtual machines both within the virtual network and from Internet.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab04.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -45,7 +45,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
@@ -75,7 +75,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **subnet1** |
     | Intervalo de direcciones (bloque CIDR) | **10.40.1.0/24** |
@@ -111,16 +111,16 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
 
-    >Debe explorar las funcionalidades de red virtual de Azure.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This method of deploying ARM templates uses Azure PowerShell. You can perform the same task by running the equivalent Azure CLI command <bpt id="p1">**</bpt>az deployment create<ept id="p1">**</ept> (for more information, refer to <bpt id="p2">[</bpt>Deploy resources with Resource Manager templates and Azure CLI<ept id="p2">](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)</ept>.
 
-    >Para empezar, tiene previsto crear una red virtual en Azure que hospedará un par de máquinas virtuales de Azure.
+    >Debe explorar las funcionalidades de red virtual de Azure.
 
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos:
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-04-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
+    > 1. Para empezar, tiene previsto crear una red virtual en Azure que hospedará un par de máquinas virtuales de Azure.
     > 1. Dado que tiene previsto implementar la segmentación basada en red, las implementará en diferentes subredes de la red virtual.
-    > 1. También quiere asegurarse de que sus direcciones IP públicas y privadas no cambiarán con el tiempo.
     > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
-    > 1. Para cumplir los requisitos de seguridad de Contoso, debe proteger los puntos de conexión públicos de las máquinas virtuales de Azure accesibles desde Internet.
+    > 1. También quiere asegurarse de que sus direcciones IP públicas y privadas no cambiarán con el tiempo.
 
 1. Cierre el panel de Cloud Shell.
 
@@ -144,14 +144,14 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-pip0** |
     | SKU | **Estándar** |
 
 1. En la hoja de **ipconfig1**, establezca **Asignación** en **Estática**, y deje el valor predeterminado de **Dirección IP** establecido en **10.40.0.4**.
 
-1. Por último, debe implementar la resolución de nombres DNS para las máquinas virtuales de Azure tanto dentro de la red virtual como desde Internet.
+1. Para cumplir los requisitos de seguridad de Contoso, debe proteger los puntos de conexión públicos de las máquinas virtuales de Azure accesibles desde Internet.
 
 1. Vuelva a la hoja de **az104-04-vnet1**.
 
@@ -163,7 +163,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-pip1** |
     | SKU | **Estándar** |
@@ -188,24 +188,24 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Observe que se produce un error en el intento de conexión.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is expected, because public IP addresses of the Standard SKU, by default, require that the network interfaces to which they are assigned are protected by a network security group. In order to allow Remote Desktop connections, you will create a network security group explicitly allowing inbound RDP traffic from Internet and assign it to network interfaces of both virtual machines.
+    >Por último, debe implementar la resolución de nombres DNS para las máquinas virtuales de Azure tanto dentro de la red virtual como desde Internet.
 
 1. Detenga las máquinas virtuales **az104-04-vm0** y **az104-04-vm1**.
 
-    >                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** que le permite realizar sus propias selecciones a su entera discreción.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is done for lab expediency. If the virtual machines are running when a network security group is attached to their network interface, it can can take over 30 minutes for the attachment to take effect. Once the network security group has been created and attached, the virtual machines will be restarted, and the attachment will be in effect immediately.
 
 1. En Azure Portal, busque y seleccione **Grupos de seguridad de red** y, en la hoja **Grupos de seguridad de red**, haga clic en **+ Crear**.
 
 1. Cree un grupo de seguridad de red con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **az104-04-nsg01** |
     | Region | nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
 
-1. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
 
     ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 2 minutes.
 
@@ -215,7 +215,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Agregue una regla de entrada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | * |
@@ -255,7 +255,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Cree una zona DNS privada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -311,7 +311,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Cree una zona DNS con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -327,7 +327,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm0** |
     | Tipo | **A** |
@@ -342,7 +342,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm1** |
     | Tipo | **A** |

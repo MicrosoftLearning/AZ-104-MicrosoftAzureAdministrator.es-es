@@ -11,7 +11,7 @@ lab:
 
 Contoso wants to find a new platform for its virtualized workloads. You identified a number of container images that can be leveraged to accomplish this objective. Since you want to minimize container management, you plan to evaluate the use of Azure Container Instances for deployment of Docker images.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -26,7 +26,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09b.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -40,7 +40,7 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear instancia de contenedor**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09b-rg1** |
@@ -81,9 +81,9 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
->Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas.
+><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
 
->Se han detectado varias imágenes de contenedor que se pueden aprovechar para lograr este objetivo. 
+>Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

@@ -11,7 +11,7 @@ lab:
 
 You were tasked with testing managing network traffic targeting Azure virtual machines in the hub and spoke network topology, which Contoso considers implementing in its Azure environment (instead of creating the mesh topology, which you tested in the previous lab). This testing needs to include implementing connectivity between spokes by relying on user defined routes that force traffic to flow via the hub, as well as traffic distribution across virtual machines by using layer 4 and layer 7 load balancers. For this purpose, you intend to use Azure Load Balancer (layer 4) and Azure Application Gateway (layer 7).
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** .
 
 ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This lab, by default, requires total of 8 vCPUs available in the Standard_Dsv3 series in the region you choose for deployment, since it involves deployment of four Azure VMs of Standard_D2s_v3 SKU. If your students are using trial accounts, with the limit of 4 vCPUs, you can use a VM size that requires only one vCPU (such as Standard_B1s).
 
@@ -33,7 +33,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -79,14 +79,14 @@ In this task, you will deploy four virtual machines into the same Azure region. 
       -TemplateParameterFile $HOME/az104-06-vms-loop-parameters.json
    ```
 
-    >Se le ha encargado probar la administración del tráfico de red dirigido a máquinas virtuales de Azure en la topología de red en estrella tipo hub-and-spoke, que Contoso está considerando implementar en su entorno de Azure (en lugar de crear la topología de malla, que probó en el laboratorio anterior).
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete before proceeding to the next step. This should take about 5 minutes.
 
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-06-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
-    > 1. Estas pruebas deben incluir la implementación de conectividad entre radios mediante rutas definidas por el usuario que fuercen el flujo de tráfico a través del centro, así como la distribución del tráfico entre máquinas virtuales mediante equilibradores de carga de nivel 4 y nivel 7.
+    > 1. Se le ha encargado probar la administración del tráfico de red dirigido a máquinas virtuales de Azure en la topología de red en estrella tipo hub-and-spoke, que Contoso está considerando implementar en su entorno de Azure (en lugar de crear la topología de malla, que probó en el laboratorio anterior).
     > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
+    > 1. Estas pruebas deben incluir la implementación de conectividad entre radios mediante rutas definidas por el usuario que fuercen el flujo de tráfico a través del centro, así como la distribución del tráfico entre máquinas virtuales mediante equilibradores de carga de nivel 4 y nivel 7.
     > 1. Para ello, tiene previsto usar Azure Load Balancer (nivel 4) y Azure Application Gateway (nivel 7).
-    > 1. Now redeploy your templates by running the <ph id="ph1">`New-AzResourceGroupDeployment`</ph> command again. You can press the up button a few times which would bring the last executed command.
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para instalar la extensión Network Watcher en las VM de Azure implementadas en el paso anterior:
 
@@ -107,7 +107,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
    }
    ```
 
-    >                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** que le permite realizar sus propias selecciones a su entera discreción.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete before proceeding to the next step. This should take about 5 minutes.
 
 
 
@@ -183,7 +183,7 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
     | Tráfico reenviado desde la red virtual remota | **Permitir (predeterminado)** |
     | Puerta de enlace de red virtual | **Ninguna (valor predeterminado)** |
 
-    >Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step establishes two local peerings - one from az104-06-vnet01 to az104-06-vnet3 and the other from az104-06-vnet3 to az104-06-vnet01. This completes setting up the hub and spoke topology (with two spoke virtual networks).
 
     >**Nota**: Es necesario habilitar **Permitir tráfico reenviado** para facilitar el enrutamiento entre redes virtuales de radio, que implementará más adelante en este laboratorio.
 
@@ -199,7 +199,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -212,13 +212,13 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
     > **Note**: **10.62.0.4** representa la dirección IP privada de **az104-06-vm2**.
 
-1. Click <bpt id="p1">**</bpt>Check<ept id="p1">**</ept> and wait until results of the connectivity check are returned. Verify that the status is <bpt id="p1">**</bpt>Reachable<ept id="p1">**</ept>. Review the network path and note that the connection was direct, with no intermediate hops in between the VMs.
+1. **Nota**: Este laboratorio, de manera predeterminada, requiere un total de 8 vCPU disponibles en la serie Standard_Dsv3 en la región que elija para la implementación, ya que implica la implementación de cuatro VM de Azure de SKU Standard_D2s_v3.
 
     > **Nota**: Esto es lo esperado, ya que la red virtual del centro se empareja directamente con la primera red virtual de radio.
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -231,13 +231,13 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
     > **Note**: **10.63.0.4** representa la dirección IP privada de **az104-06-vm3**.
 
-1. **Nota**: Este laboratorio, de manera predeterminada, requiere un total de 8 vCPU disponibles en la serie Standard_Dsv3 en la región que elija para la implementación, ya que implica la implementación de cuatro VM de Azure de SKU Standard_D2s_v3.
+1. Si los alumnos usan cuentas de prueba, con el límite de 4 vCPU, puede usar un tamaño de VM que requiera solo una vCPU (por ejemplo, Standard_B1s).
 
     > **Nota**: Esto es lo esperado, ya que la red virtual del centro se empareja directamente con la segunda red virtual de radio.
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -248,7 +248,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-1. Si los alumnos usan cuentas de prueba, con el límite de 4 vCPU, puede usar un tamaño de VM que requiera solo una vCPU (por ejemplo, Standard_B1s).
+1. Click <bpt id="p1">**</bpt>Check<ept id="p1">**</ept> and wait until results of the connectivity check are returned. Note that the status is <bpt id="p1">**</bpt>Unreachable<ept id="p1">**</ept>.
 
     > **Nota**: Esto es lo esperado, ya que las dos redes virtuales de radio no están emparejadas entre sí (el emparejamiento de redes virtuales no es transitivo).
 
@@ -302,7 +302,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. Cree una tabla de rutas con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -345,7 +345,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. Cree una tabla de rutas con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -388,7 +388,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, inicie una comprobación con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -413,7 +413,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. Cree un equilibrador de carga con la siguiente configuración (deje las demás opciones con los valores predeterminados) y haga clic en **Siguiente: Configuración de IP de front-end**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -425,7 +425,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
     
 1. On the <bpt id="p1">**</bpt>Frontend IP configuration<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add a frontend IP configuration<ept id="p2">**</ept> and use the following settings before clicking <bpt id="p3">**</bpt>OK<ept id="p3">**</ept> and then <bpt id="p4">**</bpt>Add<ept id="p4">**</ept>. When completed click <bpt id="p1">**</bpt>Next: Backend pools<ept id="p1">**</ept>. 
      
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | Cualquier nombre único |
     | Versión de la dirección IP | IPv4 |
@@ -436,7 +436,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. On the <bpt id="p1">**</bpt>Backend pools<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add a backend pool<ept id="p2">**</ept> with the following settings (leave others with their default values). Click <bpt id="p1">**</bpt>+ Add<ept id="p1">**</ept> (twice) and then click  <bpt id="p2">**</bpt>Next:Inbound rules<ept id="p2">**</ept>. 
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-be1** |
     | Virtual network | **az104-06-vnet01** |
@@ -449,7 +449,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. On the <bpt id="p1">**</bpt>Inbound rules<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>Add a load balancing rule<ept id="p2">**</ept>. Add a load balancing rule with the following settings (leave others with their default values). When completed click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept>.
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-lbrule1** |
     | Versión de la dirección IP | **IPv4** |
@@ -495,7 +495,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. Agregue una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **subnet-appgw** |
     | Intervalo de direcciones de subred | **10.60.3.224/27** |
@@ -508,7 +508,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. En la pestaña **Aspectos básicos**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -531,9 +531,9 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
     | Nombre | **az104-06-pip5** |
     | Zona de disponibilidad | **None** |
 
-1. Click <bpt id="p1">**</bpt>Next: Backends &gt;<ept id="p1">**</ept> and then <bpt id="p2">**</bpt>Add a backend pool<ept id="p2">**</ept>. Specify the following settings (leave others with their default values). When completed click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept>.
+1. En esta tarea, implementará cuatro máquinas virtuales en la misma región de Azure.
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-appgw5-be1** |
     | Adición de un grupo de back-end sin destinos | **No** |
@@ -542,7 +542,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
     > **Nota**: Los destinos representan las direcciones IP privadas de las máquinas virtuales en las redes virtuales de radio **az104-06-vm2** y **az104-06-vm3**.
 
-1. En esta tarea, implementará cuatro máquinas virtuales en la misma región de Azure.
+1. Las dos primeras residirán en una red virtual de centro, mientras que cada una de las dos restantes residirá en una red virtual de radio independiente.
 
     | Configuración | Value |
     | --- | --- |
@@ -555,7 +555,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
     | Tipo de cliente de escucha | **Basic** |
     | Dirección URL de la página de errores | **No** |
 
-1. Las dos primeras residirán en una red virtual de centro, mientras que cada una de las dos restantes residirá en una red virtual de radio independiente.  
+1. Switch to the <bpt id="p1">**</bpt>Backend targets<ept id="p1">**</ept> tab and specify the following settings (leave others with their default values). When completed click <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> (twice).  
 
     | Configuración | Value |
     | --- | --- |

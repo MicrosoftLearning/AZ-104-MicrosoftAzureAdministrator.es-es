@@ -11,7 +11,7 @@ lab:
 
 You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, hosted currently in the company's on-premises data centers. The web sites are running on Windows servers using PHP runtime stack. You also need to determine how you can implement DevOps practices by leveraging Azure web apps deployment slots.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -30,7 +30,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -44,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -165,7 +165,7 @@ En esta tarea, intercambiará el espacio de ensayo por el espacio de producción
 
 1. Haga clic en **Información general** en la hoja del espacio de producción de la aplicación web y, luego, en el vínculo **URL** para mostrar la página principal del sitio web en una nueva pestaña del explorador.
 
-1. Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web de Contoso, hospedados actualmente en los centros de datos locales de la empresa.
+1. Verify the default web page has been replaced with the <bpt id="p1">**</bpt>Hello World!<ept id="p1">**</ept> page.
 
 #### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>Tarea 6: Configurar y probar el escalado automático de la aplicación web de Azure
 
@@ -241,9 +241,9 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
->Los sitios web se ejecutan en servidores Windows mediante la pila en tiempo de ejecución de PHP.
+>Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web de Contoso, hospedados actualmente en los centros de datos locales de la empresa.
 
->También tiene que decidir cómo puede implementar prácticas de DevOps al usar ranuras de implementación de aplicaciones web de Azure. 
+>Los sitios web se ejecutan en servidores Windows mediante la pila en tiempo de ejecución de PHP. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

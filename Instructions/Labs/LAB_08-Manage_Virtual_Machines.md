@@ -11,7 +11,7 @@ lab:
 
 You were tasked with identifying different options for deploying and configuring Azure virtual machines. First, you need to determine different compute and storage resiliency and scalability options you can implement when using Azure virtual machines. Next, you need to investigate compute and storage resiliency and scalability options that are available when using Azure virtual machine scale sets. You also want to explore the ability to automatically configure virtual machines and virtual machine scale sets by using the Azure Virtual Machine Custom Script extension.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -32,7 +32,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab08.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -46,7 +46,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
@@ -73,7 +73,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la hoja **Crear red virtual**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-08-rg01-vnet** |
     | Intervalo de direcciones | **10.80.0.0/20** |
@@ -141,7 +141,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -176,7 +176,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, inserte el código siguiente a partir de la línea **20** (directamente debajo de la línea `"resources": [`):
 
-   >Se le ha encargado la tarea de identificar diferentes opciones para implementar y configurar máquinas virtuales de Azure.
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors. You may want to paste the code into notepad first and then paste it into line 20.
 
    ```json
         {
@@ -204,7 +204,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. Haga clic en **Guardar** y, de nuevo en la hoja **Plantilla personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-    >En primer lugar, debe determinar diferentes opciones de escalabilidad y resistencia del proceso y el almacenamiento que puede implementar al usar máquinas virtuales de Azure.
+    >Se le ha encargado la tarea de identificar diferentes opciones para implementar y configurar máquinas virtuales de Azure.
 
 1. Para comprobar que la configuración basada en la extensión de script personalizado se ha realizado correctamente, vuelva a la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
 
@@ -274,7 +274,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
 1. En la hoja **Implementación personalizada**, haga clic en **Editar plantilla**.
 
-    >A continuación, debe investigar las opciones de escalabilidad y resistencia del proceso y el almacenamiento que están disponibles al usar conjuntos de escalado de máquinas virtuales de Azure.
+    >En primer lugar, debe determinar diferentes opciones de escalabilidad y resistencia del proceso y el almacenamiento que puede implementar al usar máquinas virtuales de Azure.
 
 1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **30** `"vmSize": "Standard_D2s_v3"` por la línea siguiente:
 
@@ -306,14 +306,14 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
                     ]
    ```
 
-    >También quiere explorar la capacidad de configurar automáticamente máquinas virtuales y conjuntos de escalado de máquinas virtuales mediante la extensión de script personalizado de máquina virtual de Azure.
+    >A continuación, debe investigar las opciones de escalabilidad y resistencia del proceso y el almacenamiento que están disponibles al usar conjuntos de escalado de máquinas virtuales de Azure.
 
     >**Nota**: Esta sección de la plantilla crea dos discos administrados y los asocia a **az104-08-vm1**, de forma similar a la configuración de almacenamiento de la primera máquina virtual a través de Azure Portal.
 
 
 1. Haga clic en **Guardar** y, de nuevo en la hoja **Implementación personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the template deployment to complete. You can monitor its progress from the <bpt id="p1">**</bpt>Disks<ept id="p1">**</ept> blade of the <bpt id="p2">**</bpt>az104-08-vm1<ept id="p2">**</ept> virtual machine. This should take no more than 3 minutes.
+    >También quiere explorar la capacidad de configurar automáticamente máquinas virtuales y conjuntos de escalado de máquinas virtuales mediante la extensión de script personalizado de máquina virtual de Azure.
 
 1. De nuevo en la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
 
@@ -355,7 +355,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
@@ -375,7 +375,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-08-rg02-vnet** |
     | Intervalo de direcciones | **10.82.0.0/20** |
@@ -390,13 +390,13 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az10408vmss0-nsg** |
 
 1. Haga clic en **Agregar una regla de entrada** y agregue una regla de seguridad de entrada con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | **\*** |
@@ -449,7 +449,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Revisar y crear** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, asegúrese de que ha superado la validación y haga clic en **Crear**.
 
-    >                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** que le permite realizar sus propias selecciones a su entera discreción.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the virtual machine scale set deployment to complete. This should take about 5 minutes.
 
 #### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
@@ -461,7 +461,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -582,7 +582,7 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
 1. Guarde el cambio, en la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
-    >Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, create a filesystem, and mount it. To accomplish this, you will use Azure virtual machine Custom Script extension. First, you will need to remove the existing Custom Script Extension.
 
 1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Extensiones**, en **CustomScriptExtension** y luego en **Desinstalar**.
 

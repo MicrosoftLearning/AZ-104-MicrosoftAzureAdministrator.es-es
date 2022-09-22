@@ -11,7 +11,7 @@ lab:
 
 You need to explore the basic Azure administration capabilities associated with provisioning resources and organizing them based on resource groups, including moving resources between resource groups. You also want to explore options for protecting disk resources from being accidentally deleted, while still allowing for modifying their performance characteristics and size.
 
-<bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> An <bpt id="p2">**</bpt><bpt id="p3">[</bpt>interactive lab simulation<ept id="p3">](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)</ept><ept id="p2">**</ept> is available that allows you to click through this lab at your own pace. You may find slight differences between the interactive simulation and the hosted lab, but the core concepts and ideas being demonstrated are the same. 
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -27,7 +27,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab03a.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -39,7 +39,7 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Suscripción| Nombre de la suscripción de Azure donde creó el grupo de recursos |
     |Grupo de recursos| Nombre de un nuevo grupo de recursos **az104-03a-rg1** |
@@ -78,7 +78,7 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Suscripción| Nombre de la suscripción que está usando en este laboratorio |
     |Grupo de recursos| Haga clic en **Crear nuevo** grupo de recursos y asígnele el nombre **az104-03a-rg3** |
@@ -97,7 +97,7 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En la hoja del grupo de recursos **az104-03a-rg3**, haga clic en **Bloqueos** y luego en **+ Agregar** y configure las opciones siguientes:
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Nombre del bloqueo| **az104-03a-delete-lock** |
     |Tipo de bloqueo| **Eliminar** |
@@ -114,13 +114,13 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. Vuelva a la lista de recursos del grupo de recursos **az104-03a-rg3** y haga clic en la entrada que representa el recurso **az104-03a-disk2**. 
 
-1. Tiene que explorar las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos, incluido el movimiento de recursos entre grupos de recursos.
+1. On the <bpt id="p1">**</bpt>az104-03a-disk2<ept id="p1">**</ept> blade, in the <bpt id="p2">**</bpt>Settings<ept id="p2">**</ept> section, click <bpt id="p3">**</bpt>Size + performance<ept id="p3">**</ept>, set the disk type and size to <bpt id="p4">**</bpt>Premium SSD<ept id="p4">**</ept> and <bpt id="p5">**</bpt>64 GiB<ept id="p5">**</ept>, respectively, and click <bpt id="p6">**</bpt>Resize<ept id="p6">**</ept> to apply the change. Verify that the change was successful.
 
     >**Nota**: Esto es lo esperado, ya que el bloqueo a nivel de grupo de recursos solo se aplica a las operaciones de eliminación. 
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   >También quiere explorar las opciones para proteger los recursos de disco frente a la eliminación accidental, a la vez que se permita modificar las características de rendimiento y tamaño.
+   >Tiene que explorar las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos, incluido el movimiento de recursos entre grupos de recursos.
 
 1. Vaya a la hoja del grupo de recursos **az104-03a-rg3**, muestre su hoja **Bloqueos** y quite el bloqueo **az104-03a-delete-lock** haciendo clic en el vínculo **Eliminar** en el lado derecho de la entrada de bloqueo **Eliminar**.
 
