@@ -11,8 +11,6 @@ lab:
 
 You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, hosted currently in the company's on-premises data centers. The web sites are running on Windows servers using PHP runtime stack. You also need to determine how you can implement DevOps practices by leveraging Azure web apps deployment slots.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** .
-
 ## <a name="objectives"></a>Objetivos
 
 En este laboratorio, aprenderá a:
@@ -30,7 +28,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -44,7 +42,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +71,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|

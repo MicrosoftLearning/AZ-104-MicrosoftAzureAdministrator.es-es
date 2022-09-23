@@ -15,9 +15,7 @@ Para mejorar la administración de recursos de Azure en Contoso, se le ha encarg
 
 - Asegurarse de que solo se puedan agregar recursos de infraestructura correctamente etiquetados a los grupos de recursos de infraestructura.
 
-- Corregir los recursos no compatibles.
-
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** .
+- Corregir los recursos no compatibles. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -33,7 +31,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab02b.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -67,7 +65,7 @@ En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure 
 
 1. Cree una etiqueta con la siguiente configuración y aplique el cambio:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **Rol** |
     | Value | **Infraestructura** |
@@ -88,7 +86,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. Para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la tarea anterior |
@@ -150,7 +148,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la primera tarea |
