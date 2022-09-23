@@ -1,20 +1,17 @@
 ---
 lab:
-  title: 09c:-Implementación de Azure Kubernetes Service
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: 929e2dfa4aba9df613e8d5ac594d903ede2f9934
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587479"
+  title: '09c:-Implementación de Azure Kubernetes Service'
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Laboratorio 09c:-Implementación de Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-Contoso tiene muchas aplicaciones de varios niveles que no son adecuadas para ejecutarse mediante Azure Container Instances. Para decidir si se pueden ejecutar como cargas de trabajo en contenedores, se quiere evaluar el uso de Kubernetes como orquestador de contenedores. Para minimizar aún más la sobrecarga de administración, se quiere probar Azure Kubernetes Service, incluida su experiencia de implementación simplificada y las funcionalidades de escalado.
+Contoso has a number of multi-tier applications that are not suitable to run by using Azure Container Instances. In order to determine whether they can be run as containerized workloads, you want to evaluate using Kubernetes as the container orchestrator. To further minimize management overhead, you want to test Azure Kubernetes Service, including its simplified deployment experience and scaling capabilities.
+
+Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** .
 
 ## <a name="objectives"></a>Objetivos
 
@@ -31,7 +28,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09c.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -69,10 +66,12 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09c-rg1** |
+    | Configuración preestablecida de clúster | **Desarrollo/pruebas (USD)** |
     | Nombre del clúster de Kubernetes | **az104-9c-aks1** |
     | Region | Nombre de una región donde puede aprovisionar un clúster de Kubernetes |
     | Zonas de disponibilidad | **Ninguna** (desactive todas las casillas) |
     | Versión de Kubernetes | Acepte el valor predeterminado |
+    | Disponibilidad del servidor de API | Acepte el valor predeterminado |
     | Tamaño del nodo | Acepte el valor predeterminado |
     | Método de escala | **Manual** |
     | Recuento de nodos | **1** |
@@ -95,13 +94,13 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
     | Configuración | Value |
     | ---- | ---- |
     | Configuración de red | **kubenet** |
-    | Prefijo del nombre DNS | Cualquier nombre de host DNS válido y único globalmente |
+    | Prefijo del nombre DNS | Cualquier prefijo de DNS válido y único globalmente|
 
 1. Haga clic en **Siguiente: Integraciones >** , en la pestaña **Integraciones** de la hoja **Crear un clúster de Kubernetes**, establezca **Supervisión de contenedores** en **Deshabilitado**, haga clic en **Revisar y crear**, asegúrese de que se supera la validación y haga clic en **Crear**.
 
-    >**Nota**: En escenarios de producción, le gustaría habilitar la supervisión. La supervisión está deshabilitada en este caso, ya que no se trata en el laboratorio.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: In production scenarios, you would want to enable monitoring. Monitoring is disabled in this case since it is not covered in the lab.
 
-    >**Nota**: Espere a que la implementación se complete. Esto tardará aproximadamente 10 minutos.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 10 minutes.
 
 #### <a name="task-3-deploy-pods-into-the-azure-kubernetes-service-cluster"></a>Tarea 3: Implementar pods en el clúster de Azure Kubernetes Service
 
@@ -167,9 +166,9 @@ En esta tarea, implementará un pod en el clúster de Azure Kubernetes Service.
     kubectl get service
     ```
 
-1. Vuelva a ejecutar el comando hasta que el valor de la columna **EXTERNAL-IP** de la entrada **nginx-deployment** cambie de **\<pending\>** a una dirección IP pública. Anote la dirección IP pública de la columna **EXTERNAL-IP** para **nginx-deployment**.
+1. Re-run the command until the value in the <bpt id="p1">**</bpt>EXTERNAL-IP<ept id="p1">**</ept> column for the <bpt id="p2">**</bpt>nginx-deployment<ept id="p2">**</ept> entry changes from <bpt id="p3">**</bpt><ph id="ph1">\&lt;pending\&gt;</ph><ept id="p3">**</ept> to a public IP address. Note the public IP address in the <bpt id="p1">**</bpt>EXTERNAL-IP<ept id="p1">**</ept> column for <bpt id="p2">**</bpt>nginx-deployment<ept id="p2">**</ept>.
 
-1. Abra una ventana del explorador y vaya a la dirección IP que obtuvo en el paso anterior. Compruebe que en la página del explorador aparezca el mensaje **Welcome to nginx!** "Hola mundo".
+1. Open a browser window and navigate to the IP address you obtained in the previous step. Verify that the browser page displays the <bpt id="p1">**</bpt>Welcome to nginx!<ept id="p1">**</ept> message.
 
 #### <a name="task-4-scale-containerized-workloads-in-the-azure-kubernetes-service-cluster"></a>Tarea 4: Escalar las cargas de trabajo en contenedores en el clúster de Azure Kubernetes Service
 
@@ -199,7 +198,7 @@ En esta tarea, escalará horizontalmente el número de pods y, luego, el número
     az aks scale --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER --node-count 2
     ```
 
-    > **Nota**: Espere a que se complete el aprovisionamiento del nodo adicional. Esto puede tardar unos 3 minutos. Si se produce un error, vuelva a ejecutar el comando `az aks scale`.
+    > Contoso tiene muchas aplicaciones de varios niveles que no son adecuadas para ejecutarse mediante Azure Container Instances.
 
 1. En el panel de **Cloud Shell**, ejecute lo siguiente para comprobar la salida del escalado del clúster:
 
@@ -241,9 +240,9 @@ En esta tarea, escalará horizontalmente el número de pods y, luego, el número
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>Para decidir si se pueden ejecutar como cargas de trabajo en contenedores, se quiere evaluar el uso de Kubernetes como orquestador de contenedores.
 
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
+>Para minimizar aún más la sobrecarga de administración, se quiere probar Azure Kubernetes Service, incluida su experiencia de implementación simplificada y las funcionalidades de escalado. 
 
 1. En Azure Portal, abra la sesión de shell de **Bash** en el panel **Cloud Shell**.
 

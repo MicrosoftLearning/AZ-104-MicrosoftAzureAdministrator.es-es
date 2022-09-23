@@ -1,20 +1,15 @@
 ---
 lab:
   title: '02a: Administrar suscripciones y RBAC'
-  module: Module 02 - Governance and Compliance
-ms.openlocfilehash: e8b6f60a421222db74d93715ed63860e3ca3c78d
-ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "146973688"
+  module: Administer Governance and Compliance
 ---
+
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Laboratorio 02a: Administrar suscripciones y RBAC
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
 ## <a name="lab-requirements"></a>Requisitos del laboratorio
 
-Este laboratorio requiere permisos para crear usuarios de Azure Active Directory (Azure AD), crear roles personalizados de control de acceso basado en roles (RBAC) de Azure y asignar estos roles a usuarios de Azure AD. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad. Pregunte al instructor acerca de la disponibilidad de este laboratorio.
+This lab requires permissions to create Azure Active Directory (Azure AD) users, create custom Azure Role Based Access Control (RBAC) roles, and assign these roles to Azure AD users. Not all lab hosters may provide this capability. Ask your instructor for the availability of this lab.
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
@@ -22,7 +17,7 @@ Para mejorar la administración de recursos de Azure en Contoso, se le ha encarg
 
 - crear un grupo de administración que incluya todas las suscripciones de Azure de Contoso;
 
-- conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado de Azure Active Directory. Los permisos de ese usuario solo deben limitarse a: 
+- granting permissions to submit support requests for all subscriptions in the management group to a designated Azure Active Directory user. That user's permissions should be limited only to: 
 
     - crear solicitud de soporte técnico;
     - ver grupos de recursos. 
@@ -43,7 +38,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -55,7 +50,7 @@ En esta tarea, creará y configurará grupos de administración.
 
 1. Busque y seleccione **Grupos de administración** para ir a la hoja **Grupos de administración**.
 
-1. Revise los mensajes de la parte superior de la hoja **Grupos de administración**. Si ve el mensaje que indica **Está registrado como administrador de directorio, pero no tiene los permisos necesarios para acceder al grupo de administración raíz. Haga clic para obtener más información**, siga la secuencia de pasos a continuación:
+1. Review the messages at the top of the <bpt id="p1">**</bpt>Management groups<ept id="p1">**</ept> blade. If you are seeing the message stating <bpt id="p1">**</bpt>You are registered as a directory admin but do not have the necessary permissions to access the root management group<ept id="p1">**</ept>, perfom the following sequence of steps:
 
     1. En Azure Portal, busque y seleccione **Azure Active Directory**.
     
@@ -82,7 +77,7 @@ En esta tarea, creará y configurará grupos de administración.
 
 1. En la hoja **az104-02-mg1 \| Suscripciones**, haga clic en **+ Agregar**, en la hoja **Agregar suscripción**, en la lista desplegable **Suscripción**, seleccione la suscripción que está usando en este laboratorio y haga clic en **Guardar**.
 
-    >**Nota:** En la hoja **az104-02-mg1 \| Suscripciones**, copie en el Portapapeles el identificador de la suscripción de Azure. Lo necesitará en la próxima tarea.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: On the <bpt id="p2">**</bpt>az104-02-mg1 <ph id="ph1">\|</ph> Subscriptions<ept id="p2">**</ept> blade, copy the ID of your Azure subscription into Clipboard. You will need it in the next task.
 
 #### <a name="task-2-create-custom-rbac-roles"></a>Tarea 2: Crear roles RBAC personalizados
 
@@ -142,13 +137,17 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
     | Permitirme crear la contraseña | enabled |
     | Contraseña inicial | **Proporcione una contraseña segura** |
 
-    >**Nota**: **Copie en el Portapapeles** el **Nombre de usuario** completo. Lo necesitará más adelante en este laboratorio.
+    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: <bpt id="p2">**</bpt>Copy to clipboard<ept id="p2">**</ept> the full <bpt id="p3">**</bpt>User name<ept id="p3">**</ept>. You will need it later in this lab.
 
 1. En Azure Portal, vuelva al grupo de administración **az104-02-mg1** y muestre sus **detalles**.
 
-1. Seleccione **Control de acceso (IAM)** , haga clic en **+ Agregar**, **Agregar asignación de roles**, seleccione uno de los **Miembros**, vaya a **Revisar y asignar** y asigne el rol **Colaborador de solicitud de soporte técnico (personalizado)** a la cuenta de usuario recién creada.
+1. Este laboratorio requiere permisos para crear usuarios de Azure Active Directory (Azure AD), crear roles personalizados de control de acceso basado en roles (RBAC) de Azure y asignar estos roles a usuarios de Azure AD. 
 
-1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cambie la contraseña del usuario.
+    >**Nota**: Si el rol personalizado no está visible, puede tardar hasta 10 minutos en aparecer después de su creación.
+
+1. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad.
+
+1. Pregunte al instructor acerca de la disponibilidad de este laboratorio.
 
     >**Nota**: En lugar de escribir el nombre de usuario, puede pegar el contenido del Portapapeles.
 
@@ -158,19 +157,19 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 1. En la ventana del explorador **InPrivate**, en Azure Portal, busque y seleccione **Ayuda y soporte técnico** y, luego, haga clic en **Crear solicitud de soporte técnico**. 
 
-1. En la ventana del explorador **InPrivate**, en la pestaña **Descripción/Resumen del problema** de la hoja **Ayuda y soporte técnico: Nueva solicitud de soporte técnico**, escriba **Límites de servicio y suscripción** en el campo Resumen y seleccione el tipo de problema **Límites de servicio y suscripción (cuotas)** . Tenga en cuenta que la suscripción que está usando en este laboratorio aparece en la lista desplegable **Suscripción**.
+1. In the <bpt id="p1">**</bpt>InPrivate<ept id="p1">**</ept> browser window, on the <bpt id="p2">**</bpt>Problem Desription/Summary<ept id="p2">**</ept> tab of the <bpt id="p3">**</bpt>Help + support - New support request<ept id="p3">**</ept> blade, type <bpt id="p4">**</bpt>Service and subscription limits<ept id="p4">**</ept> in the Summary field and select the <bpt id="p5">**</bpt>Service and subscription limits (quotas)<ept id="p5">**</ept> issue type. Note that the subscription you are using in this lab is listed in the <bpt id="p1">**</bpt>Subscription<ept id="p1">**</ept> drop-down list.
 
     >**Nota**: La presencia de la suscripción que está usando en este laboratorio en la lista desplegable **Suscripción** indica que la cuenta que está usando tiene los permisos necesarios para crear la solicitud de soporte técnico específica de la suscripción.
 
     >**Nota**: Si no ve la opción **Límites de servicio y suscripción (cuotas)** , cierre sesión en Azure Portal y vuelva a iniciar sesión.
 
-1. No continúe con la creación de la solicitud de soporte técnico. En su lugar, cierre la sesión como usuario az104-02-aaduser1 de Azure Portal y cierre la ventana InPrivate del explorador.
+1. Do not continue with creating the support request. Instead, sign out as the az104-02-aaduser1 user from the Azure portal and close the InPrivate browser window.
 
 #### <a name="task-4-clean-up-resources"></a>Tarea 4: Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de recursos sin usar garantiza que no aparezcan cargos inesperados, aunque los recursos creados en este laboratorio no incurren en costos adicionales.
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges, although, resources created in this lab do not incur extra cost.
 
-   >**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza.
+   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going.
 
 1. En Azure Portal, busque y seleccione **Azure Active Directory**, en la hoja Azure Active Directory, haga clic en **Usuarios**.
 
@@ -195,7 +194,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
    Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
    ```
 
-1. En Azure Portal, vuelva a la hoja **Usuarios: Todos los usuarios** de **Azure Active Directory** y elimine la cuenta de usuario **az104-02-aaduser1**.
+1. En Azure Portal, vuelva a la hoja **Usuarios: Todos los usuarios** de **Azure Active Directory**y elimine la cuenta de usuario **az104-02-aaduser1**.
 
 1. En Azure Portal, vuelva a la hoja **Grupos de administración**. 
 
@@ -206,7 +205,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 1. Seleccione **Actualizar** para comprobar que la suscripción se ha movido correctamente al **grupo de administración raíz del inquilino**.
 
 1. Vuelva a la hoja **Grupos de administración**, haga clic en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
-  >**Nota**: Si no puede eliminar el grupo de **administración raíz del inquilino**, es probable que la **suscripción de Azure** esté en el grupo de recursos. Debe quitar la **suscripción de Azure** del **grupo de administración raíz del inquilino** y, a continuación, eliminar el grupo.
+  >conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado de Azure Active Directory.
 
 #### <a name="review"></a>Revisar
 

@@ -1,7 +1,7 @@
 ---
 lab:
   title: '05: Implementación de la conectividad entre sitios'
-  module: Module 05 - Intersite Connectivity
+  module: Administer Intersite Connectivity
 ---
 
 # <a name="lab-05---implement-intersite-connectivity"></a>Laboratorio 05: Implementación de la conectividad entre sitios

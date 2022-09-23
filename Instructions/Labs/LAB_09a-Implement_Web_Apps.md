@@ -1,7 +1,7 @@
 ---
 lab:
   title: '09a: Implementación de Web Apps'
-  module: Module 09 - Serverless Computing
+  module: Administer Serverless Computing
 ---
 
 # <a name="lab-09a---implement-web-apps"></a>Laboratorio 09a: Implementación de Web Apps
