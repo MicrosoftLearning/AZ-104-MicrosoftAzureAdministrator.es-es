@@ -10,7 +10,7 @@ lab:
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal, debe llevar a cabo la tarea equivalente mediante plantillas de Azure Resource Manager.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** .
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -32,8 +32,6 @@ En este laboratorio, aprenderá a:
 
 #### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tarea 1: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure
 
-En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Azure Resource Manager.
-
 1. Inicie sesión en [**Azure Portal**](http://portal.azure.com).
 
 1. En Azure Portal, busque y seleccione **Grupos de recursos**. 
@@ -52,7 +50,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 1. En la hoja **Microsoft.ManagedDisk-* XXXXXXXXX* \| Plantilla**, haga clic en **Entradas**.
 
-1. Note the value of the <bpt id="p1">**</bpt>location<ept id="p1">**</ept> parameter. You will need it in the next task.
+1. Anote el valor del parámetro **ubicación**. Lo necesitará en la próxima tarea.
 
 1. Extraiga el contenido del archivo descargado en la carpeta **Descargas** del equipo de laboratorio.
 
@@ -83,7 +81,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
    },      
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: These parameters are removed since they are not applicable to the current deployment. In particular, sourceResourceId, sourceUri, osType, and hyperVGeneration parameters are applicable to creating an Azure disk from an existing VHD file.
+    >**Nota**: Estos parámetros se quitan porque no son aplicables a la implementación actual. En concreto, los parámetros sourceResourceId, sourceUri, osType y hyperVGeneration son aplicables a la creación de un disco de Azure a partir de un archivo VHD existente.
 
 1. **Guarde** los cambios.
 
@@ -93,7 +91,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 1. De nuevo en la hoja **Implementación personalizada**, configure las opciones siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- |--- |
     | Subscription | *Nombre de la suscripción de Azure que está usando en este laboratorio* |
     | Grupo de recursos | Nombre de un **nuevo** grupo de recursos **az104-03b-rg1** |
@@ -122,7 +120,7 @@ En esta tarea, creará un recurso de disco de Azure mediante una plantilla de Az
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not delete resources you deployed in this lab. You will reference them in the next lab of this module.
+   >**Nota**: No elimine los recursos que implementó en este laboratorio. Hará referencia a ellos en el siguiente laboratorio de este módulo.
 
 #### <a name="review"></a>Revisar
 

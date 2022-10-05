@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-You need to evaluate Azure functionality that would provide insight into performance and configuration of Azure resources, focusing in particular on Azure virtual machines. To accomplish this, you intend to examine the capabilities of Azure Monitor, including Log Analytics.
+Tiene que evaluar la funcionalidad de Azure que proporcionaría información sobre el rendimiento y la configuración de los recursos de Azure, centrándose en particular en las máquinas virtuales de Azure. Para ello, tiene previsto examinar las funcionalidades de Azure Monitor, incluido Log Analytics.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** .
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -45,7 +45,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** y **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** en el directorio principal de Cloud Shell.
 
-1. Edit the Parameters file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. Edite el archivo de parámetros que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará las máquinas virtuales (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure):
 
@@ -69,7 +69,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
       -AsJob
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the deployment to complete but instead proceed to the next task. The deployment should take about 3 minutes.
+    >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea. La implementación tardará unos 3 minutos.
 
 #### <a name="task-2-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tarea 2: Registrar los proveedores de recursos Microsoft.Insghts y Microsoft.AlertsManagement
 
@@ -100,7 +100,7 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
     >**Nota**: Asegúrese de especificar la misma región en la que implementó las máquinas virtuales en la tarea anterior.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment should take about 1 minute.
+    >**Nota**: Espere a que la implementación se complete. La implementación tardará aproximadamente 1 minuto.
 
 1. En Azure Portal, busque y seleccione **Cuentas de Automation** y, en la hoja **Cuentas de Automation**, haga clic en **+ Crear**.
 
@@ -115,7 +115,7 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
     >**Nota**: Asegúrese de especificar la región de Azure en función de la [documentación de asignaciones de áreas de trabajo](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings).
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment might take about 3 minutes.
+    >**Nota**: Espere a que la implementación se complete. La implementación puede tardar unos 3 minutos.
 
 1. Haga clic en **Ir al recurso**.
 
@@ -123,13 +123,13 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
 1. En el panel **Inventario**, en la lista desplegable **Área de trabajo de Log Analytics**, seleccione el área de trabajo de Log Analytics que creó anteriormente en esta tarea y haga clic en **Habilitar**.
 
-    >Tiene que evaluar la funcionalidad de Azure que proporcionaría información sobre el rendimiento y la configuración de los recursos de Azure, centrándose en particular en las máquinas virtuales de Azure.
+    >**Nota**: Espere a que se complete la instalación de la solución de Log Analytics correspondiente. Esto puede tardar unos 3 minutos.
 
     >**Nota**: Esto también instala automáticamente la solución de **Seguimiento de cambios**.
 
 1. En la hoja Cuenta de Automation, en la sección **Administración de actualizaciones**, haga clic en **Administración de actualizaciones** y haga clic en **Actualizar**.
 
-    >Para ello, tiene previsto examinar las funcionalidades de Azure Monitor, incluido Log Analytics.
+    >**Nota**: Espere a que termine la instalación. Esto puede tardar unos cinco minutos.
 
 #### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>Tarea 4: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
 
@@ -141,7 +141,7 @@ En esta tarea, revisará la configuración de supervisión predeterminada de las
 
 1. En la hoja **az104-11-vm0 \| Métricas**, en el gráfico predeterminado, tenga en cuenta que el único **Espacio de nombres de métricas** disponible es **Host de máquina virtual**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is expected, since no guest-level diagnostic settings have been configured yet. You do have, however, the option of enabling guest memory metrics directly from the <bpt id="p1">**</bpt>Metrics Namespace<ept id="p1">**</ept> drop down-list. You will enable it later in this exercise.
+    >**Nota**: Esto es lo esperado, ya que aún no se ha configurado ninguna opción de diagnóstico a nivel de invitado. Sin embargo, tiene la opción de habilitar las métricas de memoria de invitado directamente desde la lista desplegable **Espacio de nombres de métricas**. Las habilitará más adelante en este ejercicio.
 
 1. En la lista desplegable **Métricas**, revise la lista de métricas disponibles.
 
@@ -157,27 +157,27 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la pestaña **Información general** de la hoja **az104-11-vm0 \| Configuración de diagnóstico**, haga clic en **Habilitar supervisión a nivel de invitado**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the operation to take effect. This might take about 3 minutes.
+    >**Nota**: Espere a que la operación surta efecto. Esto puede tardar unos 3 minutos.
 
 1. Cambie a la pestaña **Contadores de rendimiento** de la hoja **az104-11-vm0 \| Configuración de diagnóstico** y revise los contadores disponibles.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: By default, CPU, memory, disk, and network counters are enabled. You can switch to the <bpt id="p1">**</bpt>Custom<ept id="p1">**</ept> view for more detailed listing.
+    >**Nota**: De manera predeterminada, los contadores de CPU, memoria, disco y red están habilitados. Puede cambiar a la vista **Personalizado** para obtener una lista más detallada.
 
 1. Cambie a la pestaña **Registros** de la hoja **az104-11-vm0 \| Configuración de diagnóstico** y revise las opciones de recopilación de registros de eventos disponibles.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: By default, log collection includes critical, error, and warning entries from the Application Log and System log, as well as Audit failure entries from the Security log. Here as well you can switch to the <bpt id="p1">**</bpt>Custom<ept id="p1">**</ept> view for more detailed configuration settings.
+    >**Nota**: De manera predeterminada, la recopilación de registros incluye entradas críticas, de error y de advertencia del registro de aplicaciones y del registro del sistema, así como entradas de error de auditoría del registro de seguridad. Aquí también puede cambiar a la vista **Personalizado** para obtener opciones de configuración más detalladas.
 
 1. En la hoja **az104-11-vm0**, en la sección **Supervisión**, haga clic en **Agente de Log Analytics** y, luego, haga clic en **Habilitar**.
 
 1. En la hoja **az104-11-vm0 - Registros**, asegúrese de que el área de trabajo de Log Analytics que creó anteriormente en este laboratorio esté seleccionada en la lista desplegable **Elija un área de trabajo de Log Analytics** y haga clic en **Habilitar**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the operation to complete but instead proceed to the next step. The operation might take about 5 minutes.
+    >**Nota**: No espere a que se complete la operación, sino que avance al siguiente paso. La operación puede tardar unos 5 minutos.
 
 1. En la hoja **az104-11-vm0 \| Registros**, en la sección **Supervisión**, haga clic en **Métricas**.
 
 1. En la hoja **az104-11-vm0 \| Métricas**, en el gráfico predeterminado, tenga en cuenta que, en este momento, la lista desplegable **Espacio de nombres de métrica**, además de la entrada **Host de máquina virtual**, también incluye la entrada **Invitado (clásico)** .
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is expected, since you enabled guest-level diagnostic settings. You also have the option to <bpt id="p1">**</bpt>Enable new guest memory metrics<ept id="p1">**</ept>.
+    >**Nota**: Esto es lo esperado, ya que ha habilitado la configuración de diagnóstico a nivel de invitado. También tiene la opción **Habilitar nuevas métricas de memoria de invitado**.
 
 1. En la lista desplegable **Espacio de nombres de métrica**, seleccione la entrada **Invitado (clásico)** .
 
@@ -199,7 +199,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la hoja **Monitor \| Métricas**, en el panel **Porcentaje promedio de CPU para az104-11-vm0**, haga clic en **Nueva regla de alertas**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Creating an alert rule from Metrics is not supported for metrics from the Guest (classic) metric namespace. This can be accomplished by using Azure Resource Manager templates, as described in the document <bpt id="p1">[</bpt>Send Guest OS metrics to the Azure Monitor metric store using a Resource Manager template for a Windows virtual machine<ept id="p1">](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm)</ept>
+    >**Nota**: No se admite la creación de una regla de alertas a partir de Métricas para las métricas del espacio de nombres de métricas Invitado (clásico). Para esto, se pueden usar plantillas de Azure Resource Manager, como se describe en el documento [Enviar métricas de SO invitado al almacén de métricas de Azure Monitor con una plantilla de Azure Resource Manager para una máquina virtual Windows](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm).
 
 1. En la hoja **Crear regla de alertas**, en la sección **Condición**, haga clic en la entrada de condición existente.
 
@@ -225,7 +225,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | Nombre del grupo de acciones | **az104-11-ag1** |
     | Nombre para mostrar | **az104-11-ag1** |
 
-1. On the <bpt id="p1">**</bpt>Notifications<ept id="p1">**</ept> tab of the <bpt id="p2">**</bpt>Create an action group<ept id="p2">**</ept> blade, in the <bpt id="p3">**</bpt>Notification type<ept id="p3">**</ept> drop-down list, select <bpt id="p4">**</bpt>Email/SMS message/Push/Voice<ept id="p4">**</ept>. In the <bpt id="p1">**</bpt>Name<ept id="p1">**</ept> text box, type <bpt id="p2">**</bpt>admin email<ept id="p2">**</ept>. Click the <bpt id="p1">**</bpt>Edit details<ept id="p1">**</ept> (pencil) icon.
+1. En la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones**, en la lista desplegable **Tipo de notificación**, seleccione **Correo electrónico, mensaje SMS, inserción o voz**. En el cuadro de texto **Nombre**, escriba **Correo electrónico de admin.** Haga clic en el icono **Editar detalles** (lápiz).
 
 1. En la hoja **Correo electrónico, mensaje SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones** y seleccione **Siguiente: Acciones >** .
 
@@ -250,7 +250,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la hoja **az104-11-vm0**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
@@ -296,7 +296,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
    | render timechart
    ```
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The query should not have any errors (indicated by red blocks on the right scroll bar). If the query will not paste without errors directly from the instructions, paste the query code into a text editor such as Notepad, and then copy and paste it into the query window from there.
+    > **Nota**: La consulta no debería tener errores (indicados con bloques rojos en la barra de desplazamiento derecha). Si la consulta no se pega sin errores directamente siguiendo las instrucciones, pegue el código de la consulta en un editor de texto, como el Bloc de notas, y cópielo y péguelo en la ventana de la consulta desde ahí.
 
 
 1. Haga clic en **Consultas** en la barra de herramientas. En el panel **Consultas**, busque el icono **Track VM availability** (Seguir disponibilidad de VM) y haga doble clic en él para rellenar la ventana de consulta. Haga clic en el botón de comando **Ejecutar** en el icono y revise los resultados.
@@ -313,9 +313,9 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

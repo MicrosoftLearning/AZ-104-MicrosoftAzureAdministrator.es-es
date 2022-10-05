@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-Contoso wants to find a new platform for its virtualized workloads. You identified a number of container images that can be leveraged to accomplish this objective. Since you want to minimize container management, you plan to evaluate the use of Azure Container Instances for deployment of Docker images.
+Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas. Se han detectado varias imágenes de contenedor que se pueden aprovechar para lograr este objetivo. Dado que quiere minimizar la administración de contenedores, tiene previsto evaluar el uso de Azure Container Instances para la implementación de imágenes de Docker.
+
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -24,7 +26,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09b.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -38,7 +40,7 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear instancia de contenedor**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09b-rg1** |
@@ -53,13 +55,13 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
     | --- | --- |
     | Etiqueta de nombre DNS | Cualquier nombre de host DNS válido y único globalmente |
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Your container will be publicly reachable at dns-name-label.region.azurecontainer.io. If you receive a <bpt id="p1">**</bpt>DNS name label not available<ept id="p1">**</ept> error message, specify a different value.
+    >**Nota**: El contenedor será accesible públicamente en dns-name-label.region.azurecontainer.io. Si recibe un mensaje de error **La etiqueta de nombre DNS no está disponible**, pruebe otro valor.
 
 1. Haga clic en **Siguiente: Opciones avanzadas >** , revise la configuración en la pestaña **Opciones avanzadas** de la hoja **Crear instancia de contenedor** sin realizar ningún cambio, haga clic en **Revisar y crear**, asegúrese de que se supere la validación y haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 3 minutes.
+    >**Nota**: Espere a que la implementación se complete. Este proceso tardará aproximadamente 3 minutos.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: While you wait, you may be interested in viewing the <bpt id="p2">[</bpt>code behind the sample application<ept id="p2">](https://github.com/Azure-Samples/aci-helloworld)</ept>. To view it, browse the <ph id="ph1">\\</ph>app folder.
+    >**Nota**: Mientras espera, puede que esté interesado en ver el [código que subyace a esta aplicación de ejemplo](https://github.com/Azure-Samples/aci-helloworld). Para verlo, vaya a la carpeta \\app.
 
 #### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>Tarea 2: Revisar la funcionalidad de Azure Container Instances
 
@@ -79,9 +81,9 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
->Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas. 
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

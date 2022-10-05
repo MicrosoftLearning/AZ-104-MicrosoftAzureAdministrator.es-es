@@ -9,7 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-You need to evaluate the use of Azure Web apps for hosting Contoso's web sites, hosted currently in the company's on-premises data centers. The web sites are running on Windows servers using PHP runtime stack. You also need to determine how you can implement DevOps practices by leveraging Azure web apps deployment slots.
+Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web de Contoso, hospedados actualmente en los centros de datos locales de la empresa. Los sitios web se ejecutan en servidores Windows mediante la pila en tiempo de ejecución de PHP. También tiene que decidir cómo puede implementar prácticas de DevOps al usar ranuras de implementación de aplicaciones web de Azure.
+
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -28,7 +30,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -42,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -53,9 +55,9 @@ En esta tarea, creará una aplicación web de Azure.
     | Region | Nombre de una región de Azure donde puede aprovisionar aplicaciones web de Azure |
     | Plan de App Service | Acepte la configuración predeterminada |
 
-1. Click <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept>. On the <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept> tab of the <bpt id="p2">**</bpt>Create Web App<ept id="p2">**</ept> blade, ensure that the validation passed and click <bpt id="p3">**</bpt>Create<ept id="p3">**</ept>.
+1. Haga clic en **Revisar y crear**. En la pestaña **Revisar y crear** de la hoja **Crear aplicación web**, asegúrese de que ha superado la validación y haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait until the web app is created before you proceed to the next task. This should take about a minute.
+    >**Nota**: Espere hasta que se cree la aplicación web antes de continuar con la siguiente tarea. Este proceso tardará aproximadamente un minuto.
 
 1. En la hoja de implementación, haga clic en **Ir al recurso**.
 
@@ -149,7 +151,7 @@ En esta tarea, implementará código en la ranura de implementación de ensayo.
 
 1. En la hoja del espacio de ensayo, haga clic en **Información general** y, luego, en el vínculo **URL** para mostrar la página web predeterminada en una nueva pestaña del explorador.
 
-1. Verify that the browser page displays the <bpt id="p1">**</bpt>Hello World!<ept id="p1">**</ept> message and close the new tab.
+1. Compruebe que en la página del explorador aparezca el mensaje **Hola mundo** y cierre la nueva pestaña.
 
 #### <a name="task-5-swap-the-staging-slots"></a>Tarea 5: Intercambiar los espacios de ensayo
 
@@ -163,7 +165,7 @@ En esta tarea, intercambiará el espacio de ensayo por el espacio de producción
 
 1. Haga clic en **Información general** en la hoja del espacio de producción de la aplicación web y, luego, en el vínculo **URL** para mostrar la página principal del sitio web en una nueva pestaña del explorador.
 
-1. Verify the default web page has been replaced with the <bpt id="p1">**</bpt>Hello World!<ept id="p1">**</ept> page.
+1. Compruebe que la página web predeterminada se ha reemplazado por la página **Hola mundo** página.
 
 #### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>Tarea 6: Configurar y probar el escalado automático de la aplicación web de Azure
 
@@ -239,9 +241,9 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
->Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web de Contoso, hospedados actualmente en los centros de datos locales de la empresa.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
->Los sitios web se ejecutan en servidores Windows mediante la pila en tiempo de ejecución de PHP. 
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

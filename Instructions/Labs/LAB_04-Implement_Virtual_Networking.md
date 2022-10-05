@@ -10,7 +10,9 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-You need to explore Azure virtual networking capabilities. To start, you plan to create a virtual network in Azure that will host a couple of Azure virtual machines. Since you intend to implement network-based segmentation, you will deploy them into different subnets of the virtual network. You also want to make sure that their private and public IP addresses will not change over time. To comply with Contoso security requirements, you need to protect public endpoints of Azure virtual machines accessible from Internet. Finally, you need to implement DNS name resolution for Azure virtual machines both within the virtual network and from Internet.
+Debe explorar las funcionalidades de red virtual de Azure. Para empezar, tiene previsto crear una red virtual en Azure que hospedará un par de máquinas virtuales de Azure. Dado que tiene previsto implementar la segmentación basada en red, las implementará en diferentes subredes de la red virtual. También quiere asegurarse de que sus direcciones IP públicas y privadas no cambiarán con el tiempo. Para cumplir los requisitos de seguridad de Contoso, debe proteger los puntos de conexión públicos de las máquinas virtuales de Azure accesibles desde Internet. Por último, debe implementar la resolución de nombres DNS para las máquinas virtuales de Azure tanto dentro de la red virtual como desde Internet.
+
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -29,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab04.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -43,7 +45,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
@@ -63,9 +65,9 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
     | Nombre de subred | **subnet0** |
     | Intervalo de direcciones de subred | **10.40.0.0/24** |
 
-1. Accept the defaults and click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
+1. Acepte los valores predeterminados y haga clic en **Revisar y crear**. Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> Wait for the virtual network to be provisioned. This should take less than a minute.
+    >**Nota:** Espere a que se aprovisione la red virtual. Debería tardar menos de un minuto.
 
 1. Haga clic en **Ir al recurso**.
 
@@ -73,7 +75,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **subnet1** |
     | Intervalo de direcciones (bloque CIDR) | **10.40.1.0/24** |
@@ -96,7 +98,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
 
     >**Nota**: Es posible que tenga que cargar cada archivo por separado.
 
-1. Edit the Parameters file, and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. Edite el archivo de parámetros y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para implementar las dos máquinas virtuales con los archivos de parámetros y plantilla:
 
@@ -109,16 +111,16 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This method of deploying ARM templates uses Azure PowerShell. You can perform the same task by running the equivalent Azure CLI command <bpt id="p1">**</bpt>az deployment create<ept id="p1">**</ept> (for more information, refer to <bpt id="p2">[</bpt>Deploy resources with Resource Manager templates and Azure CLI<ept id="p2">](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli)</ept>.
+    >**Nota**: Este método de implementación de plantillas de ARM usa Azure PowerShell. Puede realizar la misma tarea ejecutando el comando equivalente de la CLI de Azure **az deployment create** (para más información, consulte [Implementación de recursos con plantillas de Resource Manager y la CLI de Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
 
-    >Debe explorar las funcionalidades de red virtual de Azure.
+    >**Nota**: Espere a que la implementación se complete antes de continuar con la tarea siguiente. Este proceso tardará alrededor de 2 minutos.
 
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos:
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-04-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
-    > 1. Para empezar, tiene previsto crear una red virtual en Azure que hospedará un par de máquinas virtuales de Azure.
-    > 1. Dado que tiene previsto implementar la segmentación basada en red, las implementará en diferentes subredes de la red virtual.
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell. Si no hay SKU enumeradas (es decir, no hay resultados), no puede implementar ninguna máquina virtual D2S en esa región. Tendrá que buscar una región que le permita implementar máquinas virtuales D2S. Una vez que haya elegido una ubicación adecuada, elimine el grupo de recursos AZ104-04-rg1 y reinicie el laboratorio.
     > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
-    > 1. También quiere asegurarse de que sus direcciones IP públicas y privadas no cambiarán con el tiempo.
+    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
 
 1. Cierre el panel de Cloud Shell.
 
@@ -149,7 +151,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, establezca **Asignación** en **Estática**, y deje el valor predeterminado de **Dirección IP** establecido en **10.40.0.4**.
 
-1. Para cumplir los requisitos de seguridad de Contoso, debe proteger los puntos de conexión públicos de las máquinas virtuales de Azure accesibles desde Internet.
+1. De nuevo en la hoja de **ipconfig1**, guarde los cambios. Asegúrese de esperar a que se complete la operación de guardado antes de continuar con el paso siguiente.
 
 1. Vuelva a la hoja de **az104-04-vnet1**.
 
@@ -161,7 +163,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-pip1** |
     | SKU | **Estándar** |
@@ -186,11 +188,11 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Observe que se produce un error en el intento de conexión.
 
-    >Por último, debe implementar la resolución de nombres DNS para las máquinas virtuales de Azure tanto dentro de la red virtual como desde Internet.
+    >**Nota**: Esto es lo esperado, ya que las direcciones IP públicas de la SKU estándar, de forma predeterminada, requieren que las interfaces de red a las que están asignadas estén protegidas por un grupo de seguridad de red. Para permitir las conexiones de Escritorio remoto, creará un grupo de seguridad de red que permita explícitamente el tráfico RDP entrante desde Internet y lo asignará a las interfaces de red de ambas máquinas virtuales.
 
 1. Detenga las máquinas virtuales **az104-04-vm0** y **az104-04-vm1**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This is done for lab expediency. If the virtual machines are running when a network security group is attached to their network interface, it can can take over 30 minutes for the attachment to take effect. Once the network security group has been created and attached, the virtual machines will be restarted, and the attachment will be in effect immediately.
+    >**Nota**: esto se lleva a cabo para agilizar la práctica de laboratorio. Si las máquinas virtuales se ejecutan cuando un grupo de seguridad de red está conectado a su interfaz de red, la conexión pueden tardar más de 30 minutos en surtir efecto. Una vez creado y conectado el grupo de seguridad de red, se reiniciarán las máquinas virtuales y la conexión entrará en vigor inmediatamente.
 
 1. En Azure Portal, busque y seleccione **Grupos de seguridad de red** y, en la hoja **Grupos de seguridad de red**, haga clic en **+ Crear**.
 
@@ -203,9 +205,9 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
     | Name | **az104-04-nsg01** |
     | Region | nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** para enviar la implementación.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. This should take about 2 minutes.
+    >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 2 minutos.
 
 1. En la hoja de implementación, haga clic en **Ir al recurso** para abrir la hoja del grupo de seguridad de red **az104-04-nsg01**.
 
@@ -213,7 +215,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Agregue una regla de entrada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | * |
@@ -237,13 +239,13 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. En la hoja de **az104-04-vm0**, haga clic en **Conectar**, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** usando la dirección IP pública y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
 1. Cuando el sistema se lo indique, inicie sesión con el usuario y la contraseña del archivo de parámetros.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Leave the Remote Desktop session open. You will need it in the next task.
+    >**Nota**: Deje abierta esta sesión de Escritorio remoto. Lo necesitará en la próxima tarea.
 
 #### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
 
@@ -253,15 +255,15 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Cree una zona DNS privada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **contoso.org** |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the private DNS zone to be created. This should take about 2 minutes.
+    >**Nota**: Espere a que se cree la zona DNS privada. Este proceso tardará alrededor de 2 minutos.
 
 1. Haga clic en **Ir al recurso** para abrir la hoja de zona DNS privada de **contoso.org**.
 
@@ -278,7 +280,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Haga clic en **Aceptar**.
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> Wait for the virtual network link to be created. This should take less than 1 minute.
+    >**Nota:** Espere a que se cree el vínculo de red virtual. Debería tardar menos de un minuto.
 
 1. En la hoja de zona DNS privada de **contoso.org**, en la barra lateral, haga clic en **Descripción general**.
 
@@ -315,9 +317,9 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
     | Grupo de recursos | **az104-04-rg1** |
     | Name | nombre de dominio DNS que identificó anteriormente en esta tarea |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> again to submit your deployment.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the DNS zone to be created. This should take about 2 minutes.
+    >**Nota**: Espere a que se cree la zona DNS. Este proceso tardará alrededor de 2 minutos.
 
 1. Haga clic en **Ir al recurso** para abrir la hoja de la zona DNS recién creada.
 
@@ -325,7 +327,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm0** |
     | Tipo | **A** |
@@ -373,9 +375,9 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+ > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
- > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+ > **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 

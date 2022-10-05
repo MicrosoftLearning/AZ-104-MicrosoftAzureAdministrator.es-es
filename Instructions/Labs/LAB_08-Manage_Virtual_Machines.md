@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-You were tasked with identifying different options for deploying and configuring Azure virtual machines. First, you need to determine different compute and storage resiliency and scalability options you can implement when using Azure virtual machines. Next, you need to investigate compute and storage resiliency and scalability options that are available when using Azure virtual machine scale sets. You also want to explore the ability to automatically configure virtual machines and virtual machine scale sets by using the Azure Virtual Machine Custom Script extension.
+Se le ha encargado la tarea de identificar diferentes opciones para implementar y configurar máquinas virtuales de Azure. En primer lugar, debe determinar diferentes opciones de escalabilidad y resistencia del proceso y el almacenamiento que puede implementar al usar máquinas virtuales de Azure. A continuación, debe investigar las opciones de escalabilidad y resistencia del proceso y el almacenamiento que están disponibles al usar conjuntos de escalado de máquinas virtuales de Azure. También quiere explorar la capacidad de configurar automáticamente máquinas virtuales y conjuntos de escalado de máquinas virtuales mediante la extensión de script personalizado de máquina virtual de Azure.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** .
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -32,7 +32,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab08.png)
 
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -95,11 +95,16 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
     | Configuración | Value |
     | --- | --- |
-    | Diagnósticos de arranque | **Habilitar con la cuenta de almacenamiento personalizada** |
-    | Cuenta de almacenamiento de diagnóstico | acepte el valor predeterminado |
     | Opciones de orquestación de revisiones | **Actualizaciones manuales** |  
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If necessary, select an existing storage account in the dropdown list or create a new storage account. Record the name of the storage account. You will use it in the next task.
+1. Haga clic en **Siguiente: Supervisión >** y, en la pestaña **Supervisión** del panel **Crear una máquina virtual**, especifique los valores siguientes (deje los demás con los valores predeterminados):
+
+    | Configuración | Value |
+    | --- | --- |
+    | Diagnósticos de arranque | **Habilitar con la cuenta de almacenamiento personalizada** |
+    | Cuenta de almacenamiento de diagnóstico | **acepte el valor predeterminado** |
+
+    >**Nota**: Si es necesario, seleccione una cuenta de almacenamiento existente en la lista desplegable para crear una nueva. Anote el nombre de la cuenta de almacenamiento. Lo usará en la tarea siguiente.
 
 1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear una máquina virtual**, revise las opciones disponibles sin modificar ninguna de ellas, y haga clic en **Revisar y crear**.
 
@@ -129,7 +134,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. Haga clic en **Revisar y crear**, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for both deployments to complete before you proceed to the next task. This might take about 5 minutes.
+    >**Nota**: Espere a que ambas implementaciones se completen antes de continuar con la siguiente tarea. Esto puede tardar unos cinco minutos.
 
 #### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>Tarea 2: Configuración de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
@@ -172,11 +177,11 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Implementación personalizada**, haga clic en **Editar plantilla**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Disregard the message stating <bpt id="p2">**</bpt>The resource group is in a location that is not supported by one or more resources in the template. Please choose a different resource group<ept id="p2">**</ept>. This is expected and can be ignored in this case.
+    >**Nota**: Pase por alto el mensaje que dice **El grupo de recursos está en una ubicación que no es compatible con uno o más recursos de la plantilla. Elija otro grupo de recursos**. Es previsible y se puede omitir.
 
 1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, inserte el código siguiente a partir de la línea **20** (directamente debajo de la línea `"resources": [`):
 
-   ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: If you are using a tool that pastes the code in line by line intellisense may add extra brackets causing validation errors. You may want to paste the code into notepad first and then paste it into line 20.
+   >**Nota**: Si usa una herramienta que pega el código línea a línea, IntelliSense puede agregar corchetes adicionales que causen errores de validación. Puede pegar el código en el Bloc de notas primero y, a continuación, en la línea 20.
 
    ```json
         {
@@ -204,7 +209,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. Haga clic en **Guardar** y, de nuevo en la hoja **Plantilla personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-    >Se le ha encargado la tarea de identificar diferentes opciones para implementar y configurar máquinas virtuales de Azure.
+    >**Nota**: Espere a que la implementación de la plantilla se complete. Puede supervisar su progreso desde la hoja **Extensiones** de las máquinas virtuales **az104-08-vm0** y **az104-08-vm1**. No debería tardar más de 3 minutos.
 
 1. Para comprobar que la configuración basada en la extensión de script personalizado se ha realizado correctamente, vuelva a la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
 
@@ -274,7 +279,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
 1. En la hoja **Implementación personalizada**, haga clic en **Editar plantilla**.
 
-    >En primer lugar, debe determinar diferentes opciones de escalabilidad y resistencia del proceso y el almacenamiento que puede implementar al usar máquinas virtuales de Azure.
+    >**Nota**: Pase por alto el mensaje que dice **El grupo de recursos está en una ubicación que no es compatible con uno o más recursos de la plantilla. Elija otro grupo de recursos**. Es previsible y se puede omitir.
 
 1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **30** `"vmSize": "Standard_D2s_v3"` por la línea siguiente:
 
@@ -306,14 +311,14 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
                     ]
    ```
 
-    >A continuación, debe investigar las opciones de escalabilidad y resistencia del proceso y el almacenamiento que están disponibles al usar conjuntos de escalado de máquinas virtuales de Azure.
+    >**Nota**: Si usa una herramienta que pega el código línea a línea, IntelliSense puede agregar corchetes adicionales que causen errores de validación. Puede pegar el código en el Bloc de notas primero y, a continuación, en la línea 49.
 
     >**Nota**: Esta sección de la plantilla crea dos discos administrados y los asocia a **az104-08-vm1**, de forma similar a la configuración de almacenamiento de la primera máquina virtual a través de Azure Portal.
 
 
 1. Haga clic en **Guardar** y, de nuevo en la hoja **Implementación personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-    >También quiere explorar la capacidad de configurar automáticamente máquinas virtuales y conjuntos de escalado de máquinas virtuales mediante la extensión de script personalizado de máquina virtual de Azure.
+    >**Nota**: Espere a que la implementación de la plantilla se complete. Puede supervisar su progreso desde la hoja **Discos** de la máquina virtual **az104-08-vm1**. No debería tardar más de 3 minutos.
 
 1. De nuevo en la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
 
@@ -449,7 +454,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Revisar y crear** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, asegúrese de que ha superado la validación y haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the virtual machine scale set deployment to complete. This should take about 5 minutes.
+    >**Nota**: Espere a que se complete la implementación del conjunto de escalado de máquinas virtuales. Este proceso tardará alrededor de 5 minutos.
 
 #### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
@@ -582,7 +587,7 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
 1. Guarde el cambio, en la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: The disk attached in the previous step is a raw disk. Before it can be used, it is necessary to create a partition, create a filesystem, and mount it. To accomplish this, you will use Azure virtual machine Custom Script extension. First, you will need to remove the existing Custom Script Extension.
+    >**Nota**: El disco conectado en el paso anterior es un disco sin procesar. Antes de poder usarse, es necesario crear una partición, crear un sistema de archivos y montarlo. Para ello, usará la extensión de script personalizado de máquina virtual de Azure. En primer lugar, deberá quitar la extensión de script personalizado existente.
 
 1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Extensiones**, en **CustomScriptExtension** y luego en **Desinstalar**.
 
@@ -616,9 +621,9 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
 1. Quite az104-08-configure_VMSS_disks.ps1 mediante la ejecución del comando siguiente:
