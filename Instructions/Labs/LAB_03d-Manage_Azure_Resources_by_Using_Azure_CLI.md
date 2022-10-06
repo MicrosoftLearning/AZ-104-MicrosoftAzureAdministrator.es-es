@@ -23,6 +23,10 @@ En este laboratorio, aprenderá a:
 
 ## <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
 
+## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+
+![imagen](../media/lab03d.png)
+
 ## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
