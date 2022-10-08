@@ -9,9 +9,11 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-You were tasked with testing managing network traffic targeting Azure virtual machines in the hub and spoke network topology, which Contoso considers implementing in its Azure environment (instead of creating the mesh topology, which you tested in the previous lab). This testing needs to include implementing connectivity between spokes by relying on user defined routes that force traffic to flow via the hub, as well as traffic distribution across virtual machines by using layer 4 and layer 7 load balancers. For this purpose, you intend to use Azure Load Balancer (layer 4) and Azure Application Gateway (layer 7).
+Se le ha encargado probar la administración del tráfico de red dirigido a máquinas virtuales de Azure en la topología de red en estrella tipo hub-and-spoke, que Contoso está considerando implementar en su entorno de Azure (en lugar de crear la topología de malla, que probó en el laboratorio anterior). Estas pruebas deben incluir la implementación de conectividad entre radios mediante rutas definidas por el usuario que fuercen el flujo de tráfico a través del centro, así como la distribución del tráfico entre máquinas virtuales mediante equilibradores de carga de nivel 4 y nivel 7. Para ello, tiene previsto usar Azure Load Balancer (nivel 4) y Azure Application Gateway (nivel 7).
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This lab, by default, requires total of 8 vCPUs available in the Standard_Dsv3 series in the region you choose for deployment, since it involves deployment of four Azure VMs of Standard_D2s_v3 SKU. If your students are using trial accounts, with the limit of 4 vCPUs, you can use a VM size that requires only one vCPU (such as Standard_B1s).
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+
+>**Nota**: Este laboratorio, de manera predeterminada, requiere un total de 8 vCPU disponibles en la serie Standard_Dsv3 en la región que elija para la implementación, ya que implica la implementación de cuatro VM de Azure de SKU Standard_D2s_v3. Si los alumnos usan cuentas de prueba, con el límite de 4 vCPU, puede usar un tamaño de VM que requiera solo una vCPU (por ejemplo, Standard_B1s).
 
 ## <a name="objectives"></a>Objetivos
 
@@ -31,13 +33,13 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
 #### <a name="task-1-provision-the-lab-environment"></a>Tarea 1: Aprovisionar el entorno de laboratorio
 
-In this task, you will deploy four virtual machines into the same Azure region. The first two will reside in a hub virtual network, while each of the remaining two will reside in a separate spoke virtual network.
+En esta tarea, implementará cuatro máquinas virtuales en la misma región de Azure. Las dos primeras residirán en una red virtual de centro, mientras que cada una de las dos restantes residirá en una red virtual de radio independiente.
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com).
 
@@ -49,7 +51,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** y **\\Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** en el directorio principal de Cloud Shell.
 
-1. Edit the <bpt id="p1">**</bpt>Parameters<ept id="p1">**</ept> file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el primer grupo de recursos que hospedará el entorno de laboratorio (reemplace el marcador de posición “[Azure_region]” por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure). Puede usar el cmdlet “(Get-AzLocation).Location” para obtener la lista de regiones:
 
@@ -77,14 +79,14 @@ In this task, you will deploy four virtual machines into the same Azure region. 
       -TemplateParameterFile $HOME/az104-06-vms-loop-parameters.json
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete before proceeding to the next step. This should take about 5 minutes.
+    >**Nota**: Espere a que la implementación se complete antes de continuar con el paso siguiente. Este proceso tardará alrededor de 5 minutos.
 
     >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
     > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-06-vms-loop-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
-    > 1. Se le ha encargado probar la administración del tráfico de red dirigido a máquinas virtuales de Azure en la topología de red en estrella tipo hub-and-spoke, que Contoso está considerando implementar en su entorno de Azure (en lugar de crear la topología de malla, que probó en el laboratorio anterior).
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-06-rg1”. Puede ejecutar `az group show -n az104-06-rg1 --query location` en CloudShell para obtenerlo.
     > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
-    > 1. Estas pruebas deben incluir la implementación de conectividad entre radios mediante rutas definidas por el usuario que fuercen el flujo de tráfico a través del centro, así como la distribución del tráfico entre máquinas virtuales mediante equilibradores de carga de nivel 4 y nivel 7.
-    > 1. Para ello, tiene previsto usar Azure Load Balancer (nivel 4) y Azure Application Gateway (nivel 7).
+    > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar. Si no se devuelve ningún valor, es posible que tenga que elegir otra región en la que realizar la implementación. También puede elegir otro nombre de familia, como "Standard_B1s".
+    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para instalar la extensión Network Watcher en las VM de Azure implementadas en el paso anterior:
 
@@ -105,7 +107,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
    }
    ```
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete before proceeding to the next step. This should take about 5 minutes.
+    >**Nota**: Espere a que la implementación se complete antes de continuar con el paso siguiente. Este proceso tardará alrededor de 5 minutos.
 
 
 
@@ -181,7 +183,7 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
     | Tráfico reenviado desde la red virtual remota | **Permitir (predeterminado)** |
     | Puerta de enlace de red virtual | **Ninguna (valor predeterminado)** |
 
-    >**Nota**: Este laboratorio, de manera predeterminada, requiere un total de 8 vCPU disponibles en la serie Standard_Dsv3 en la región que elija para la implementación, ya que implica la implementación de cuatro VM de Azure de SKU Standard_D2s_v3.
+    >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-06-vnet01 a az104-06-vnet3 y el otro de az104-06-vnet3 a az104-06-vnet01. Esto completa la configuración de la topología en estrella tipo hub-and-spoke (con dos redes virtuales de radio).
 
     >**Nota**: Es necesario habilitar **Permitir tráfico reenviado** para facilitar el enrutamiento entre redes virtuales de radio, que implementará más adelante en este laboratorio.
 
@@ -210,7 +212,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
     > **Note**: **10.62.0.4** representa la dirección IP privada de **az104-06-vm2**.
 
-1. Si los alumnos usan cuentas de prueba, con el límite de 4 vCPU, puede usar un tamaño de VM que requiera solo una vCPU (por ejemplo, Standard_B1s).
+1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que la conexión era directa, sin saltos intermedios entre las VM.
 
     > **Nota**: Esto es lo esperado, ya que la red virtual del centro se empareja directamente con la primera red virtual de radio.
 
@@ -229,7 +231,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
 
     > **Note**: **10.63.0.4** representa la dirección IP privada de **az104-06-vm3**.
 
-1. Click <bpt id="p1">**</bpt>Check<ept id="p1">**</ept> and wait until results of the connectivity check are returned. Verify that the status is <bpt id="p1">**</bpt>Reachable<ept id="p1">**</ept>. Review the network path and note that the connection was direct, with no intermediate hops in between the VMs.
+1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que la conexión era directa, sin saltos intermedios entre las VM.
 
     > **Nota**: Esto es lo esperado, ya que la red virtual del centro se empareja directamente con la segunda red virtual de radio.
 
@@ -246,7 +248,7 @@ En esta tarea, probará la transitividad del emparejamiento de redes virtuales m
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-1. Click <bpt id="p1">**</bpt>Check<ept id="p1">**</ept> and wait until results of the connectivity check are returned. Note that the status is <bpt id="p1">**</bpt>Unreachable<ept id="p1">**</ept>.
+1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Fíjese que el estado sea **Inaccesible**.
 
     > **Nota**: Esto es lo esperado, ya que las dos redes virtuales de radio no están emparejadas entre sí (el emparejamiento de redes virtuales no es transitivo).
 
@@ -308,9 +310,9 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Name | **az104-06-rt23** |
     | Propagar las rutas de la puerta de enlace | **No** |
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and click <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
+1. Haga clic en **Review and Create** (Revisar y crear). Deje que se procese la validación y haga clic en **Crear** para enviar la implementación.
 
-   > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the route table to be created. This should take about 3 minutes.
+   > **Nota**: Espere a que se cree la tabla de rutas. Este proceso tardará aproximadamente 3 minutos.
 
 1. Haga clic en **Ir al recurso**.
 
@@ -351,9 +353,9 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Name | **az104-06-rt32** |
     | Propagar las rutas de la puerta de enlace | **No** |
 
-1. Click Review and Create. Let validation occur, and hit Create to submit your deployment.
+1. Haga clic en Revisar y crear. Deje que se procese la validación y haga clic en Crear para enviar la implementación.
 
-   > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the route table to be created. This should take about 3 minutes.
+   > **Nota**: Espere a que se cree la tabla de rutas. Este proceso tardará aproximadamente 3 minutos.
 
 1. Haga clic en **Ir al recurso**.
 
@@ -397,7 +399,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Protocolo | **TCP** |
     | Puerto de destino | **3389** |
 
-1. Click <bpt id="p1">**</bpt>Check<ept id="p1">**</ept> and wait until results of the connectivity check are returned. Verify that the status is <bpt id="p1">**</bpt>Reachable<ept id="p1">**</ept>. Review the network path and note that the traffic was routed via <bpt id="p1">**</bpt>10.60.0.4<ept id="p1">**</ept>, assigned to the <bpt id="p2">**</bpt>az104-06-nic0<ept id="p2">**</ept> network adapter. If status is <bpt id="p1">**</bpt>Unreachable<ept id="p1">**</ept>, you should stop and then start az104-06-vm0.
+1. Haga clic en **Comprobar** y espere hasta que se devuelvan los resultados de la comprobación de conectividad. Compruebe que el estado sea **Accesible**. Revise la ruta de acceso de red y observe que el tráfico se enrutó a través de **10.60.0.4**, asignado al adaptador de red **az104-06-nic0**. Si el estado es **Inaccesible**, debe detenerse y reiniciar az104-06-vm0.
 
     > **Nota**: Esto es lo esperado, ya que el tráfico entre redes virtuales de radio ahora se enruta a través de la máquina virtual ubicada en la red virtual del centro, que funciona como enrutador.
 
@@ -405,9 +407,9 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 #### <a name="task-5-implement-azure-load-balancer"></a>Tarea 5: Implementar Azure Load Balancer
 
-En esta tarea, implementará una instancia de Azure Load Balancer delante de las dos máquinas virtuales de Azure en la red virtual del centro.
+En esta tarea, implementará una instancia de Azure Load Balancer delante de las dos máquinas virtuales de Azure en la red virtual del centro.
 
-1. En Azure Portal, busque y seleccione **Equilibradores de carga** y, en la hoja **Equilibradores de carga**, haga clic en **+ Crear**.
+1. En Azure Portal, busque y seleccione **Equilibradores de carga** y, en la hoja **Equilibradores de carga**, haga clic en **+ Crear**.
 
 1. Cree un equilibrador de carga con la siguiente configuración (deje las demás opciones con los valores predeterminados) y haga clic en **Siguiente: Configuración de IP de front-end**:
 
@@ -416,84 +418,70 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de las
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
     | Name | **az104-06-lb4** |
-    | Region| Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
-    | SKU | **Estándar** |
+    | Region | Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
+    | SKU  | **Estándar** |
     | Tipo | **Public** |
+    | Nivel | **Regional** |
     
-1. En la pestaña **Configuración de IP de front-end**, haga clic en **Agregar una configuración de IP de front-end** y use la siguiente configuración antes de hacer clic en **Agregar**.   
+1. En la pestaña **Configuración de IP de front-end**, haga clic en **Agregar una configuración de IP de front-end** y use la configuración siguiente antes de hacer clic en **Aceptar** y luego en **Agregar**. Cuando haya terminado, haga clic en **Siguiente: Grupos de back-end**. 
      
     | Configuración | Valor |
     | --- | --- |
     | Nombre | Cualquier nombre único |
+    | Versión de la dirección IP | IPv4 |
+    | Tipo de IP | Dirección IP |
     | Dirección IP pública | **Crear nuevo** |
-    | Nombre de la dirección IP pública | **az104-06-pip4** |
+    | Nombre | **az104-06-pip4** |
+    | Zona de disponibilidad | **Ninguna zona** | 
 
-1. Click <bpt id="p1">**</bpt>Review and Create<ept id="p1">**</ept>. Let validation occur, and hit <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> to submit your deployment.
+1. En la pestaña **Grupos de back-end**, haga clic en **Agregar un grupo de back-end** con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Haga clic en **+ Agregar** (dos veces) y, a continuación, haga clic en **Siguiente: Reglas de entrada**. 
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the Azure load balancer to be provisioned. This should take about 2 minutes.
-
-1. En la hoja de implementación, haga clic en **Ir al recurso**.
-
-1. En la hoja del equilibrador de carga **az104-06-lb4**, en la sección **Configuración**, haga clic en **Grupos de back-end** y luego en **+ Agregar**.
-
-1. Agregue un grupo de back-end con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
-
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-be1** |
     | Virtual network | **az104-06-vnet01** |
+    | Configuración del grupo de back-end | **NIC** | 
     | Versión de la dirección IP | **IPv4** |
-    | Máquina virtual | **az104-06-vm0** |
-    | Dirección IP de la máquina virtual | **ipconfig1 (10.60.0.4)** |
-    | Máquina virtual | **az104-06-vm1** |
-    | Dirección IP de la máquina virtual | **ipconfig1 (10.60.1.4)** |
+    | Hacer clic en **Agregar** para agregar una máquina virtual |  |
+    | az104-06-vm0 | **seleccionar la casilla** |
+    | az104-06-vm1 | **seleccionar la casilla** |
 
-1. Haga clic en **Agregar**.
 
-1. Espere a que se cree el grupo de back-end, en la sección **Configuración**, haga clic en **Sondeos de estado** y, a continuación, haga clic en **+ Agregar**.
+1. En la pestaña **Reglas de entrada**, haga clic en **Agregar regla de equilibrio de carga**. Agregue una regla de equilibrio de carga con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-1. Agregue un sondeo de estado con las opciones de configuración siguientes:
-
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
+    | Nombre | **az104-06-lb4-lbrule1** |
+    | Versión de la dirección IP | **IPv4** |
+    | Dirección IP de front-end | **az104-06-pip4** |
+    | Grupo back-end | **az104-06-lb4-be1** |    
+    | Protocolo | **TCP** |
+    | Port | **80** |
+    | Puerto back-end | **80** |
+    | Sondeo de mantenimiento | **Crear nuevo** |
     | Nombre | **az104-06-lb4-hp1** |
     | Protocolo | **TCP** |
     | Port | **80** |
     | Intervalo | **5** |
     | Umbral incorrecto | **2** |
-
-1. Haga clic en **Agregar**.
-
-1. Espere a que se cree el sondeo de estado, en la sección **Configuración**, haga clic en **Reglas de equilibrio de carga** y, a continuación, haga clic en **+ Agregar**.
-
-1. Agregue una regla de equilibrio de carga con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
-
-    | Configuración | Valor |
-    | --- | --- |
-    | Nombre | **az104-06-lb4-lbrule1** |
-    | Versión de la dirección IP | **IPv4** |
-    | Dirección IP de front-end | **Seleccione LoadBalancerFrontEnd en la lista desplegable**
-    | Protocolo | **TCP** |
-    | Port | **80** |
-    | Puerto back-end | **80** |
-    | Grupo back-end | **az104-06-lb4-be1** |
-    | Sondeo de mantenimiento | **az104-06-lb4-hp1** |
+    | Cerrar la ventana de creación de un sondeo de estado | **OK (CORRECTO)** | 
     | Persistencia de la sesión | **None** |
     | Tiempo de espera de inactividad (minutos) | **4** |
     | Restablecimiento de TCP | **Deshabilitada** |
-    | IP flotante (Direct Server Return) | **Deshabilitada** |
+    | Dirección IP flotante | **Deshabilitado** |
+    | Traducción de direcciones de red de origen (SNAT) de salida | **Recomendado** |
 
-1. Haga clic en **Agregar**.
+1. Dado que tiene tiempo, revise las demás pestañas y, a continuación, haga clic en **Revisar y crear**. Asegúrese de que no haya errores de validación y, a continuación, haga clic en **Crear**. 
 
-1. Espere a que se cree la regla de equilibrio de carga, en la sección **Configuración**, haga clic en **Configuración de IP de front-end** y anote el valor de la **Dirección IP pública**.
+1. Espere a la implementación del equilibrador de carga y haga clic en **Ir al recurso**.  
 
-1. Abra otra ventana del explorador y vaya a la dirección IP que identificó en el paso anterior.
+1. Seleccione **Configuración de IP de front-end** en la página de recursos de Load Balancer. Copie la dirección IP.
 
-1. Compruebe que en la ventana del explorador se muestre el mensaje **Hola mundo de az104-06-vm0** u **Hola mundo de az104-06-vm1**.
+1. Abra otra pestaña del explorador y vaya a la dirección IP. Compruebe que en la ventana del explorador se muestre el mensaje **Hola mundo de az104-06-vm0** u **Hola mundo de az104-06-vm1**.
 
-1. Abra otra ventana del explorador, pero esta vez desde el modo InPrivate, y compruebe si la VM de destino cambia (como se indica en el mensaje).
+1. Actualice la ventana para comprobar que el mensaje cambia a la otra máquina virtual. Esto muestra la rotación del equilibrador de carga a través de las máquinas virtuales.
 
-    > **Nota**: Es posible que tenga que actualizar la ventana del explorador o abrirla de nuevo desde el modo InPrivate.
+    > **Nota**: Es posible que tenga que actualizar más de una vez o abrir una nueva ventana del explorador en modo InPrivate.
 
 #### <a name="task-6-implement-azure-application-gateway"></a>Tarea 6: Implementar Azure Application Gateway
 
@@ -514,13 +502,13 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. Haga clic en **Guardar**
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This subnet will be used by the Azure Application Gateway instances, which you will deploy later in this task. The Application Gateway requires a dedicated subnet of /27 or larger size.
+    > **Nota**: Las instancias de Azure Application Gateway, que implementará más adelante en esta tarea, usarán esta subred. Application Gateway requiere una subred dedicada de tamaño /27 o mayor.
 
 1. En Azure Portal, busque y seleccione **Puertas de enlace de aplicaciones** y, en la hoja **Puertas de enlace de aplicaciones**, haga clic en **+ Crear**.
 
-1. En la pestaña **Aspectos básicos** de la hoja **Crear una puerta de enlace de aplicaciones**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. En la pestaña **Aspectos básicos**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -528,33 +516,33 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
     | Region | Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
     | Nivel | **Standard V2** |
     | Habilitación del escalado automático | **No** |
+    | Recuento de instancias | **2** |
+    | Zona de disponibilidad | **None** |
     | HTTP2 | **Deshabilitada** |
     | Virtual network | **az104-06-vnet01** |
-    | Subnet | **subnet-appgw** |
+    | Subnet | **subnet-appgw (10.60.3.224/27)** |
 
-1. Haga clic en **Siguiente: Front-ends >** y, en la pestaña **Front-ends** de la hoja **Crear una puerta de enlace de aplicaciones**, haga clic en **Agregar nuevo** y configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. Haga clic en **Siguiente: Front-end >** y especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Aceptar**. 
 
     | Configuración | Value |
     | --- | --- |
     | Tipo de dirección IP de front-end | **Public** |
-    | Dirección IP pública| Nombre de una nueva dirección IP pública **az104-06-pip5** |
+    | Dirección IP pública| **Agregar nueva** | 
+    | Nombre | **az104-06-pip5** |
+    | Zona de disponibilidad | **None** |
 
-1. Haga clic en **Siguiente: Back-ends >** y, en la pestaña **Back-ends** de la hoja **Crear una puerta de enlace de aplicaciones**, haga clic en **Agregar un grupo de back-end** y, en la hoja **Agregar un grupo de back-end**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. Haga clic en **Siguiente: Back-ends >** y, a continuación, en **Agregar un grupo de back-end**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-appgw5-be1** |
     | Adición de un grupo de back-end sin destinos | **No** |
-    | Tipo de destino | **Dirección IP o FQDN** |
-    | Destino | **10.62.0.4** |
-    | Tipo de destino | **Dirección IP o FQDN** |
-    | Destino | **10.63.0.4** |
+    | dirección IP o FQDN | **10.62.0.4** | 
+    | dirección IP o FQDN | **10.63.0.4** |
 
     > **Nota**: Los destinos representan las direcciones IP privadas de las máquinas virtuales en las redes virtuales de radio **az104-06-vm2** y **az104-06-vm3**.
 
-1. Haga clic en **Agregar**, haga clic en **Siguiente: Configuración >** y, en la pestaña **Configuración** de la hoja **Crear una puerta de enlace de aplicaciones**, haga clic en **+ Agregar una regla de enrutamiento**.
-
-1. En la hoja **Agregar una regla de enrutamiento**, en la pestaña **Agente de escucha**, escriba los valores siguientes:
+1. Haga clic en **Siguiente: Configuración >** y, a continuación, **en + Agregar una regla de enrutamiento**. Especifique la configuración siguiente:
 
     | Configuración | Valor |
     | --- | --- |
@@ -567,49 +555,42 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
     | Tipo de cliente de escucha | **Basic** |
     | Dirección URL de la página de errores | **No** |
 
-1. Cambie a la pestaña **Destinos de back-end** de la hoja **Agregar una regla de enrutamiento** y configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. Cambie a la pestaña **Destinos de back-end** y configure las opciones siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar** (dos veces).  
 
     | Configuración | Value |
     | --- | --- |
     | Tipo de destino | **Grupo de back-end** |
     | Destino de back-end | **az104-06-appgw5-be1** |
-
-1. Haga clic en **Agregar nuevo** bajo el cuadro de texto **Configuración de backend** y, en la hoja **Agregar una configuración de backend**, configure las siguientes opciones (deje las demás con los valores predeterminados):
-
-    | Configuración | Value |
-    | --- | --- |
-    | Nombre de la configuración HTTP | **az104-06-appgw5-http1** |
+    | Configuración de back-end | **Agregar nueva** |
+    | Nombre de la configuración de back-end | **az104-06-appgw5-http1** |
     | Protocolo de back-end | **HTTP** |
     | Puerto back-end | **80** |
-    | Afinidad basada en cookies | **Deshabilitar** |
-    | Purga de la conexión | **Deshabilitar** |
-    | Tiempo de espera de la solicitud (segundos) | **20** |
-
-1. Haga clic en **Agregar** en la hoja **Agregar una configuración HTTP** y, de nuevo, en la hoja **Agregar una regla de enrutamiento**, haga clic en **Agregar**.
+    | Configuración adicional | **tomar los valores predeterminados** |
+    | Nombre de host | **tomar los valores predeterminados** |
 
 1. Haga clic en **Siguiente: Etiquetas >** , seguido de **Siguiente: Revisar y crear** y, luego, haga clic en **Crear**.
 
-    > <bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the Application Gateway instance to be created. This might take about 8 minutes.
+    > **Nota**: Espere a que se cree la instancia de Application Gateway. Esto puede tardar unos 8 minutos.
 
 1. En Azure Portal, busque y seleccione **Puertas de enlace de aplicaciones** y, en la hoja **Puertas de enlace de aplicaciones**, haga clic en **az104-06-appgw5**.
 
-1. En la hoja de Application Gateway **az104-06-appgw5**, anote el valor de la **Dirección IP pública de front-end**.
+1. En la hoja de Application Gateway **az104-06-appgw5**, copie el valor de la **Dirección IP pública de front-end**.
 
 1. Abra otra ventana del explorador y vaya a la dirección IP que identificó en el paso anterior.
 
 1. Compruebe que en la ventana del explorador se muestre el mensaje **Hola mundo de az104-06-vm2** u **Hola mundo de az104-06-vm3**.
 
-1. Abra otra ventana del explorador, pero esta vez desde el modo InPrivate, y compruebe si la VM de destino cambia (según el mensaje que aparece en la página web).
+1. Actualice la ventana para comprobar que el mensaje cambia a la otra máquina virtual. 
 
-    > **Nota**: Es posible que tenga que actualizar la ventana del explorador o abrirla de nuevo desde el modo InPrivate.
+    > **Nota**: Es posible que tenga que actualizar más de una vez o abrir una nueva ventana del explorador en modo InPrivate.
 
     > **Nota**: Tener como destino máquinas virtuales en varias redes virtuales no es una configuración común, pero tiene como fin ilustrar el grado en el que Application Gateway es capaz de dirigirse a máquinas virtuales en varias redes virtuales (así como a puntos de conexión en otras regiones de Azure o, incluso, fuera de Azure), a diferencia de Azure Load Balancer, que equilibra la carga entre las máquinas virtuales de la misma red virtual.
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -635,5 +616,5 @@ En este laboratorio, ha:
 + Configurado la topología de red en estrella tipo hub-and-spoke
 + Probado la transitividad del emparejamiento de redes virtuales
 + Configurado el enrutamiento en la topología en estrella tipo hub-and-spoke
-+ Tarea 5: Implementar Azure Load Balancer
-+ Implementado Azure Application Gateway
++ Implementado Azure Load Balancer
++ Implementado Azure Application Gateway

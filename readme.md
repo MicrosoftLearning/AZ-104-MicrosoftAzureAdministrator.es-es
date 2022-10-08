@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: a106aae9e7c3de7b5154ce5e889ee057a1b9dff3
-ms.sourcegitcommit: 69083589fed0a226499b3067222e444d3fe0bac8
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "146458136"
----
 # <a name="az-104-microsoft-azure-administrator"></a>AZ-104: Administrador de Microsoft Azure
 
 ## <a name="welcome"></a>Bienvenido
@@ -14,6 +6,7 @@ Este repositorio es para instructores que imparten cursos de Microsoft. Si está
 
 - **[Vínculo a los laboratorios (formato HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
 - **¿Es MCT?** Consulte nuestra [guía de usuario de GitHub para MCT](https://microsoftlearning.github.io/MCT-User-Guide/).
+- Para obtener una vista previa de este curso en un formato autodirigido, vea nuestras **[simulaciones de laboratorio interactivas](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)** . Es posible que encuentre pequeñas diferencias entre la simulación interactiva y los laboratorios hospedados, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ## <a name="security-issue---february-2022"></a>Problema de seguridad, febrero de 2022
 

@@ -9,9 +9,9 @@ lab:
 
 ## <a name="lab-scenario"></a>Escenario del laboratorio
 
-You have been tasked with evaluating the use of Azure Recovery Services for backup and restore of files hosted on Azure virtual machines and on-premises computers. In addition, you want to identify methods of protecting data stored in the Recovery Services vault from accidental or malicious data loss.
+Se le ha encargado la tarea de evaluar el uso de Azure Recovery Services para la copia de seguridad y la restauración de archivos hospedados en máquinas virtuales de Azure y equipos locales. Además, quiere identificar los métodos de protección de los datos almacenados en el almacén de Recovery Services frente a pérdidas de datos accidentales o malintencionadas.
 
-Para obtener una vista previa de este laboratorio en formato de guía interactiva, **[haga clic aquí](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** .
+                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## <a name="objectives"></a>Objetivos
 
@@ -45,9 +45,9 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** y **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** en el directorio principal de Cloud Shell.
 
-1. Edit the Parameters file you just uploaded and change the password. If you need help editing the file in the Shell please ask your instructor for assistance. As a best practice, secrets, like passwords, should be more securely stored in the Key Vault. 
+1. Edite el archivo de parámetros que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
-1. From the Cloud Shell pane, run the following to create the resource group that will be hosting the virtual machines (replace the <ph id="ph1">`[Azure_region]`</ph> placeholder with the name of an Azure region where you intend to deploy Azure virtual machines). Type each command line separately and execute them separately:
+1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará las máquinas virtuales (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure). Escriba cada línea de comandos por separado y ejecútelas por separado:
 
    ```powershell
    $location = '[Azure_region]'
@@ -73,7 +73,7 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
 
 1. Minimice el panel de Cloud Shell panel (pero no lo cierre).
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Do not wait for the deployment to complete but instead proceed to the next task. The deployment should take about 5 minutes.
+    >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea. La implementación tardará unos 5 minutos.
 
 #### <a name="task-2-create-a-recovery-services-vault"></a>Tarea 2: Crear un almacén de Recovery Services
 
@@ -94,7 +94,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. Haga clic en **Revisar y crear**, asegúrese de que se haya superado la validación y haga clic en **Crear**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the deployment to complete. The deployment should take less than 1 minute.
+    >**Nota**: Espere a que la implementación se complete. La implementación debería tardar menos de 1 minuto.
 
 1. Cuando se haya completado la implementación, haga clic en **Ir al recurso**.
 
@@ -102,7 +102,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de copia de seguridad**.
 
-1. Se le ha encargado la tarea de evaluar el uso de Azure Recovery Services para la copia de seguridad y la restauración de archivos hospedados en máquinas virtuales de Azure y equipos locales.
+1. En la hoja **Configuración de copia de seguridad**, observe que puede establecer el **Tipo de replicación de almacenamiento** en **Redundancia local** o **Redundancia geográfica**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
 
     >**Nota**: Esta opción solo se puede configurar si no hay elementos de copia de seguridad existentes.
 
@@ -145,7 +145,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
 
 1. En la hoja **Seleccionar máquinas virtuales**, seleccione **az-104-10-vm0**, haga clic en **Aceptar** y, de nuevo en la hoja **Copia de seguridad**, haga clic en **Habilitar copia de seguridad**.
 
-    >Además, quiere identificar los métodos de protección de los datos almacenados en el almacén de Recovery Services frente a pérdidas de datos accidentales o malintencionadas.
+    >**Nota**: Espere a que se habilite la copia de seguridad. Este proceso tardará alrededor de 2 minutos.
 
 1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**; en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquina virtual de Azure**.
 
@@ -163,7 +163,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
 1. En la hoja **az104-10-vm1**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
@@ -194,11 +194,11 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
     >**Nota**: En la página **Participación en Microsoft Update** del **Asistente para la instalación de Agente de Microsoft Azure Recovery Services**, seleccione la opción de instalación **No deseo usar Microsoft Update**.
 
-1. On the <bpt id="p1">**</bpt>Installation<ept id="p1">**</ept> page of the <bpt id="p2">**</bpt>Microsoft Azure Recovery Services Agent Setup Wizard<ept id="p2">**</ept>, click <bpt id="p3">**</bpt>Proceed to Registration<ept id="p3">**</ept>. This will start <bpt id="p1">**</bpt>Register Server Wizard<ept id="p1">**</ept>.
+1. En la página **Instalación** del **Asistente para la instalación de Agente de Microsoft Azure Recovery Services**, haga clic en **Proceder al registro**. Con esto, se iniciará el **Asistente para registrar servidor**.
 
 1. Cambie a la ventana del explorador web que muestra Azure Portal, en la hoja **Preparar infraestructura**, active la casilla **Ya se ha descargado o se usa la última instalación de Recovery Server** y haga clic en **Descargar**.
 
-1. When prompted, whether to open or save the vault credentials file, click <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>. This will save the vault credentials file to the local Downloads folder.
+1. Cuando se le pregunte si desea abrir o guardar el archivo de credenciales del almacén, haga clic en **Guardar**. Con esto se guardará el archivo de credenciales del almacén en la carpeta Descargas local.
 
 1. Vuelva a la ventana **Asistente para registrar servidor** y, en la página **Identificación del almacén**, haga clic en **Examinar**.
 
@@ -216,7 +216,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
     >**Nota**: En un entorno de producción, debe almacenar el archivo de frase de contraseña en una ubicación segura que no sea el servidor del que se va a hacer una copia de seguridad.
 
-1. On the <bpt id="p1">**</bpt>Server Registration<ept id="p1">**</ept> page of the <bpt id="p2">**</bpt>Register Server Wizard<ept id="p2">**</ept>, review the warning regarding the location of the passphrase file, ensure that the <bpt id="p3">**</bpt>Launch Microsoft Azure Recovery Services Agent<ept id="p3">**</ept> checkbox is selected and click <bpt id="p4">**</bpt>Close<ept id="p4">**</ept>. This will automatically open the <bpt id="p1">**</bpt>Microsoft Azure Backup<ept id="p1">**</ept> console.
+1. En la página **Registro del servidor** del **Asistente para registrar servidor**, revise la advertencia relativa a la ubicación del archivo de frase de contraseña, asegúrese de que la casilla **Inicio del agente de Microsoft Azure Recovery Services** esté activada y haga clic en **Cerrar**. Con esto se abrirá automáticamente la consola de **Microsoft Azure Backup**.
 
 1. En la consola de **Microsoft Azure Backup**, en el panel **Acciones**, haga clic en **Programar copia de seguridad**.
 
@@ -234,7 +234,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
 1. En la página **Elija el tipo de copia de seguridad inicial**, acepte los valores predeterminados y haga clic en **Siguiente**.
 
-1. On the <bpt id="p1">**</bpt>Confirmation<ept id="p1">**</ept> page, click <bpt id="p2">**</bpt>Finish<ept id="p2">**</ept>. When the backup schedule is created, click <bpt id="p1">**</bpt>Close<ept id="p1">**</ept>.
+1. En la página **Confirmación**, haga clic en **Finalizar**. Cuando se cree la programación de copia de seguridad, haga clic en **Cerrar**.
 
 1. En la consola de **Microsoft Azure Backup**, en el panel Acciones, haga clic en **Hacer copia ahora**.
 
@@ -260,7 +260,7 @@ En esta tarea, realizará la restauración de archivos mediante el agente de Azu
 
 1. En la sesión de Escritorio remoto en **az104-10-vm1**, abra el Explorador de archivos, vaya a la carpeta **C:\\Windows\\System32\\drivers\\etc\\** y elimine el archivo **hosts**.
 
-1. Open Microsoft Azure Backup and click <bpt id="p1">**</bpt>Recover data<ept id="p1">**</ept> in the <bpt id="p2">**</bpt>Actions<ept id="p2">**</ept> pane. This will start <bpt id="p1">**</bpt>Recover Data Wizard<ept id="p1">**</ept>.
+1. Abra Microsoft Azure Backup y haga clic en **Recuperar datos** en el panel **Acciones**. Con esto se iniciará el **Asistente de recuperación de datos**.
 
 1. En la página **Introducción** del **Asistente de recuperación de datos**, asegúrese de que la opción **Este servidor (az104-10-vm1)** esté seleccionada y haga clic en **Siguiente**.
 
@@ -268,7 +268,7 @@ En esta tarea, realizará la restauración de archivos mediante el agente de Azu
 
 1. En la página **Seleccionar volumen y fecha**, en la lista desplegable **Seleccionar el volumen**, seleccione **C:\\** , acepte la selección predeterminada de la copia de seguridad disponible y haga clic en **Montar**.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Wait for the mount operation to complete. This might take about 2 minutes.
+    >**Nota**: Espere a que se complete la operación de montaje. Esto puede tardar unos 2 minutos.
 
 1. En la página **Examinar y recuperar archivos**, anote la letra de unidad del volumen de recuperación y revise la sugerencia sobre el uso de robocopy.
 
@@ -294,7 +294,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **az104-10-vm0**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    ><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This step refers to connecting via Remote Desktop from a Windows computer. On a Mac, you can use Remote Desktop Client from the Mac App Store and on Linux computers you can use an open source RDP client software.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
@@ -366,11 +366,11 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , haga clic en la entrada que representa la copia de seguridad de **az104-10-vm1**.
 
-1. On the <bpt id="p1">**</bpt>C:<ph id="ph1">\\</ph> on az104-10-vm1.<ept id="p1">**</ept> blade, select <bpt id="p1">**</bpt>View details<ept id="p1">**</ept> for <bpt id="p2">**</bpt>az104-10-vm1.<ept id="p2">**</ept> .
+1. En **C:\\ en la hoja az104-10-vm1.** , seleccione **Ver detalles** para **az104-10-vm1.** .
 
 1. En la hoja Detalles, haga clic en **az104-10-vm1**.
 
-1. On the <bpt id="p1">**</bpt>az104-10-vm1.<ept id="p1">**</ept> Protected Servers blade, click <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>.
+1. En la hoja de servidores protegidos **az104-10-vm1.** , haga clic en **Eliminar**.
 
 1. En la hoja **Eliminar**, configure las opciones siguientes.
 
@@ -440,9 +440,9 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 #### <a name="clean-up-resources"></a>Limpieza de recursos
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>:  Don't worry if the lab resources cannot be immediately removed. Sometimes resources have dependencies and take a longer time to delete. It is a common Administrator task to monitor resource usage, so just periodically review your resources in the Portal to see how the cleanup is going. 
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
