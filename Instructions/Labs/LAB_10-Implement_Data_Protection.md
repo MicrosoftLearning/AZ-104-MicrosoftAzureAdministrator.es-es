@@ -27,7 +27,11 @@ En este laboratorio, aprenderá a:
 
 ## <a name="estimated-timing-50-minutes"></a>Tiempo estimado: 50 minutos
 
-## <a name="instructions"></a>Instructions
+## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+
+![imagen](../media/lab10.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
