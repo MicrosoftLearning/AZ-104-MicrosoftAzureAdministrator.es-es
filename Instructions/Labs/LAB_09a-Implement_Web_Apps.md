@@ -30,7 +30,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -44,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -104,8 +104,6 @@ En esta tarea, configurará las opciones de implementación de la aplicación we
     | --- | ---|
     | Nombre de usuario | Cualquier nombre globalmente único (no debe contener el carácter `@`) |
     | Contraseña | Cualquier contraseña que cumpla los requisitos de complejidad|
-
-    >**Nota**: La contraseña debe tener al menos ocho caracteres y dos de los tres elementos siguientes: letras, números y caracteres no alfanuméricos.
 
     >**Nota**: Necesitará estas credenciales en la siguiente tarea de este laboratorio.
 
@@ -177,7 +175,7 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
     >**Nota**: También tiene la opción de escalar manualmente la aplicación web.
 
-1. Deje seleccionada la opción predeterminada **Escalado basado en una métrica** y haga clic en **+ Agregar una regla**.
+1. Seleccione **Escala basada en una métrica** y haga clic en **+ Añadir una regla**
 
 1. En la hoja **Escalar regla**, configure las opciones siguientes (deje las demás con los valores predeterminados):
 
