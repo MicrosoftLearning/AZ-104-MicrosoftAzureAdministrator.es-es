@@ -416,7 +416,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
     | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **az104-06-rg4** |
     | Name | **az104-06-lb4** |
     | Region | Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
     | SKU  | **Estándar** |
@@ -436,7 +436,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. En la pestaña **Grupos de back-end**, haga clic en **Agregar un grupo de back-end** con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Haga clic en **+ Agregar** (dos veces) y, a continuación, haga clic en **Siguiente: Reglas de entrada**. 
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-06-lb4-be1** |
     | Virtual network | **az104-06-vnet01** |
@@ -449,7 +449,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. En la pestaña **Reglas de entrada**, haga clic en **Agregar regla de equilibrio de carga**. Agregue una regla de equilibrio de carga con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-06-lb4-lbrule1** |
     | Versión de la dirección IP | **IPv4** |
@@ -508,10 +508,10 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. En la pestaña **Aspectos básicos**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **az104-06-rg6** |
     | Nombre de la puerta de enlace de aplicaciones | **az104-06-appgw5** |
     | Region | Nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
     | Nivel | **Standard V2** |
@@ -533,7 +533,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. Haga clic en **Siguiente: Back-ends >** y, a continuación, en **Agregar un grupo de back-end**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-06-appgw5-be1** |
     | Adición de un grupo de back-end sin destinos | **No** |

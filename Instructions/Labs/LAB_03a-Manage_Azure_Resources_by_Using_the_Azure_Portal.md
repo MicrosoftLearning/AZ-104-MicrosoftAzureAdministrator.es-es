@@ -39,9 +39,9 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
-    |Subscription| Nombre de la suscripción de Azure donde creó el grupo de recursos |
+    |Suscripción| Nombre de la suscripción de Azure donde creó el grupo de recursos |
     |Grupo de recursos| Nombre de un nuevo grupo de recursos **az104-03a-rg1** |
     |Nombre del disco| **az104-03a-disk1** |
     |Region| **(EE. UU.) Este de EE. UU.** |
@@ -78,12 +78,12 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
-    |Subscription| Nombre de la suscripción que está usando en este laboratorio |
+    |Suscripción| Nombre de la suscripción que está usando en este laboratorio |
     |Grupo de recursos| Haga clic en **Crear nuevo** grupo de recursos y asígnele el nombre **az104-03a-rg3** |
     |Nombre del disco| **az104-03a-disk2** |
-    |Region| Nombre de la región de Azure donde creó los otros grupos de recursos en este laboratorio |
+    |Región| Nombre de la región de Azure donde creó los otros grupos de recursos en este laboratorio |
     |Zona de disponibilidad| **None** |
     |Tipo de origen| **None** |
 
@@ -114,7 +114,7 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
 1. Vuelva a la lista de recursos del grupo de recursos **az104-03a-rg3** y haga clic en la entrada que representa el recurso **az104-03a-disk2**. 
 
-1. En la hoja **az104-03a-disk2**, en la sección **Configuración**, haga clic en **Tamaño y rendimiento**, establezca el tipo y tamaño de disco en **SSD prémium** y **64 GiB**,respectivamente, y haga clic en **Cambiar tamaño** para aplicar el cambio. Compruebe que el cambio se realizó correctamente.
+1. En la hoja **az104-03a-disk2**, en la sección **Configuración**, haga clic en **Tamaño y rendimiento**, establezca el tipo y tamaño de disco en **SSD prémium** y **64 GiB**,respectivamente, y haga clic en **Guardar** para aplicar el cambio. Compruebe que el cambio se realizó correctamente.
 
     >**Nota**: Esto es lo esperado, ya que el bloqueo a nivel de grupo de recursos solo se aplica a las operaciones de eliminación. 
 
