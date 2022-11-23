@@ -95,61 +95,62 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
     | Configuración | Value |
     | --- | --- |
-    | Opciones de orquestación de revisiones | **Actualizaciones manuales** |  
+    | Opciones de orquestación de revisiones | **Actualizaciones manuales** |
+    | Haga clic en **Siguiente: Supervisión >** y, en la pestaña **Supervisión** del panel **Crear una máquina virtual**, especifique los valores siguientes (deje los demás con los valores predeterminados): | Configuración |
+    | Value | Diagnósticos de arranque |  
 
-1. Haga clic en **Siguiente: Supervisión >** y, en la pestaña **Supervisión** del panel **Crear una máquina virtual**, especifique los valores siguientes (deje los demás con los valores predeterminados):
+    >**Habilitar con la cuenta de almacenamiento personalizada** Cuenta de almacenamiento de diagnóstico **acepte el valor predeterminado**
 
-    | Configuración | Value |
-    | --- | --- |
-    | Diagnósticos de arranque | **Habilitar con la cuenta de almacenamiento personalizada** |
-    | Cuenta de almacenamiento de diagnóstico | **acepte el valor predeterminado** |
+1. **Nota**: Si es necesario, seleccione una cuenta de almacenamiento existente en la lista desplegable para crear una nueva.
 
-    >**Nota**: Si es necesario, seleccione una cuenta de almacenamiento existente en la lista desplegable para crear una nueva. Anote el nombre de la cuenta de almacenamiento. Lo usará en la tarea siguiente.
+1. Anote el nombre de la cuenta de almacenamiento.
+
+1. Lo usará en la tarea siguiente.
 
 1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear una máquina virtual**, revise las opciones disponibles sin modificar ninguna de ellas, y haga clic en **Revisar y crear**.
 
-1. En la hoja **Revisar y crear**, haga clic en **Crear**.
+    >En la hoja **Revisar y crear**, haga clic en **Crear**.
 
 1. En la hoja de implementación, haga clic en **Plantilla**.
 
-1. Revise la plantilla que representa la implementación en curso y haga clic en **Implementar**.
-
-    >**Nota**: Usará esta opción para implementar la segunda máquina virtual con la configuración coincidente, excepto para la zona de disponibilidad.
-
-1. En la hoja **Implementación personalizada**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
-
-    | Configuración | Valor |
+    | Revise la plantilla que representa la implementación en curso y haga clic en **Implementar**. | **Nota**: Usará esta opción para implementar la segunda máquina virtual con la configuración coincidente, excepto para la zona de disponibilidad. |
     | --- | --- |
-    | Grupo de recursos | **az104-08-rg01** |
-    | Nombre de la interfaz de red | **az104-08-vm1-nic1** |
-    | Nombre de dirección IP pública | **az104-08-vm1-ip** |
-    | Nombre de máquina virtual, Nombre de máquina virtual 1, Nombre de equipo de la máquina virtual   | **az104-08-vm1** |
-    | Grupo de recursos de la máquina virtual | **az104-08-rg01** |    
-    | Nombre de usuario administrador | **Estudiante** |
-    | Contraseña de administrador | **Proporcione una contraseña segura**  |
-    | Habilitación de la revisión en caliente | **false** |
-    | Zona | **2** |
+    | En la hoja **Implementación personalizada**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados): | Configuración |
+    | Valor | Grupo de recursos |
+    | **az104-08-rg01** | Nombre de la interfaz de red |
+    | **az104-08-vm1-nic1**   | Nombre de dirección IP pública |
+    | **az104-08-vm1-ip** | Nombre de máquina virtual, Nombre de máquina virtual 1, Nombre de equipo de la máquina virtual |    
+    | **az104-08-vm1** | Grupo de recursos de la máquina virtual |
+    | **az104-08-rg01** | Nombre de usuario administrador  |
+    | **Estudiante** | Contraseña de administrador |
+    | **Proporcione una contraseña segura** | Habilitación de la revisión en caliente |
 
-    >**Nota**: Debe modificar los parámetros correspondientes a las propiedades de los distintos recursos que va a implementar mediante la plantilla, incluida la máquina virtual y su interfaz de red.
+    >**false**
 
-1. Haga clic en **Revisar y crear**, en la hoja **Revisar y crear**, haga clic en **Crear**.
+1. Zona
 
-    >**Nota**: Espere a que ambas implementaciones se completen antes de continuar con la siguiente tarea. Esto puede tardar unos cinco minutos.
+    >**2** **Nota**: Debe modificar los parámetros correspondientes a las propiedades de los distintos recursos que va a implementar mediante la plantilla, incluida la máquina virtual y su interfaz de red.
 
-#### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>Tarea 2: Configuración de máquinas virtuales de Azure mediante extensiones de máquina virtual
+#### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>Haga clic en **Revisar y crear**, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-En esta tarea, instalará el rol del servidor web de Windows Server en las dos máquinas virtuales de Azure que implementó en la tarea anterior mediante la extensión de máquina virtual de script personalizado.
+**Nota**: Espere a que ambas implementaciones se completen antes de continuar con la siguiente tarea.
 
-1. En Azure Portal, busque y seleccione **Cuentas de almacenamiento** y, en la hoja **Cuentas de almacenamiento**, haga clic en la entrada que representa la cuenta de almacenamiento de diagnóstico que creó en la tarea anterior.
+1. Esto puede tardar unos cinco minutos.
 
-1. En la hoja de la cuenta de almacenamiento, en la sección **Almacenamiento de datos**, haga clic en **Contenedores** y luego en **+ Contenedor**.
+1. Tarea 2: Configuración de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
-1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
+1. En esta tarea, instalará el rol del servidor web de Windows Server en las dos máquinas virtuales de Azure que implementó en la tarea anterior mediante la extensión de máquina virtual de script personalizado.
 
-    | Configuración | Value |
+    | En Azure Portal, busque y seleccione **Cuentas de almacenamiento** y, en la hoja **Cuentas de almacenamiento**, haga clic en la entrada que representa la cuenta de almacenamiento de diagnóstico que creó en la tarea anterior. | En la hoja de la cuenta de almacenamiento, en la sección **Almacenamiento de datos**, haga clic en **Contenedores** y luego en **+ Contenedor**. |
     | --- | --- |
-    | Nombre | **scripts** |
-    | Nivel de acceso público | **Privado (sin acceso anónimo**) |
+    | En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**: | Configuración |
+    | Value | Nombre |
+
+1. **scripts**
+
+1. Nivel de acceso público
+
+1. **Privado (sin acceso anónimo**)
 
 1. De nuevo en la hoja de la cuenta de almacenamiento que muestra la lista de contenedores, haga clic en **scripts**.
 
@@ -171,17 +172,11 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la hoja **Máquinas virtuales**, haga clic en **az104-08-vm1**.
 
-1. En la hoja **az104-08-vm1**, en la sección **Automatización**, haga clic en **Exportar plantilla**.
-
-1. En la hoja **az104-08-vm1: Exportar plantilla**, haga clic en **Implementar**.
+    >En la hoja **az104-08-vm1**, en la sección **Automatización**, haga clic en **Exportar plantilla**. En la hoja **az104-08-vm1: Exportar plantilla**, haga clic en **Implementar**.
 
 1. En la hoja **Implementación personalizada**, haga clic en **Editar plantilla**.
 
-    >**Nota**: Pase por alto el mensaje que dice **El grupo de recursos está en una ubicación que no es compatible con uno o más recursos de la plantilla. Elija otro grupo de recursos**. Es previsible y se puede omitir.
-
-1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, inserte el código siguiente a partir de la línea **20** (directamente debajo de la línea `"resources": [`):
-
-   >**Nota**: Si usa una herramienta que pega el código línea a línea, IntelliSense puede agregar corchetes adicionales que causen errores de validación. Puede pegar el código en el Bloc de notas primero y, a continuación, en la línea 20.
+   >**Nota**: Pase por alto el mensaje que dice **El grupo de recursos está en una ubicación que no es compatible con uno o más recursos de la plantilla. Elija otro grupo de recursos**. Es previsible y se puede omitir.
 
    ```json
         {
@@ -205,59 +200,59 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
    ```
 
-   >**Nota**: Esta sección de la plantilla define la misma extensión de script personalizado de máquina virtual de Azure que implementó anteriormente en la primera máquina virtual a través de Azure PowerShell.
+   >En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, inserte el código siguiente a partir de la línea **20** (directamente debajo de la línea `"resources": [`):
 
-1. Haga clic en **Guardar** y, de nuevo en la hoja **Plantilla personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
+1. **Nota**: Si usa una herramienta que pega el código línea a línea, IntelliSense puede agregar corchetes adicionales que causen errores de validación.
 
-    >**Nota**: Espere a que la implementación de la plantilla se complete. Puede supervisar su progreso desde la hoja **Extensiones** de las máquinas virtuales **az104-08-vm0** y **az104-08-vm1**. No debería tardar más de 3 minutos.
+    >Puede pegar el código en el Bloc de notas primero y, a continuación, en la línea 20. **Nota**: Esta sección de la plantilla define la misma extensión de script personalizado de máquina virtual de Azure que implementó anteriormente en la primera máquina virtual a través de Azure PowerShell. Haga clic en **Guardar** y, de nuevo en la hoja **Plantilla personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-1. Para comprobar que la configuración basada en la extensión de script personalizado se ha realizado correctamente, vuelva a la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
+1. **Nota**: Espere a que la implementación de la plantilla se complete.
 
-1. En la hoja **Ejecutar script de comando**, escriba lo siguiente y haga clic en **Ejecutar** para acceder al sitio web hospedado en **az104-08-vm0**:
+1. Puede supervisar su progreso desde la hoja **Extensiones** de las máquinas virtuales **az104-08-vm0** y **az104-08-vm1**.
 
    ```powershell
    Invoke-WebRequest -URI http://10.80.0.4 -UseBasicParsing
    ```
 
-    >**Nota**: El parámetro **-UseBasicParsing** es necesario para eliminar la dependencia de Internet Explorer para completar la ejecución del cmdlet.
+    >No debería tardar más de 3 minutos.
 
-    >**Nota**: También puede conectarse a **az104-08-vm0** y ejecutar `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` para acceder al sitio web hospedado en **az104-08-vm1**.
+    >Para comprobar que la configuración basada en la extensión de script personalizado se ha realizado correctamente, vuelva a la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
 
-#### <a name="task-3-scale-compute-and-storage-for-azure-virtual-machines"></a>Tarea 3: Escalado de proceso y almacenamiento para máquinas virtuales de Azure
+#### <a name="task-3-scale-compute-and-storage-for-azure-virtual-machines"></a>En la hoja **Ejecutar script de comando**, escriba lo siguiente y haga clic en **Ejecutar** para acceder al sitio web hospedado en **az104-08-vm0**:
 
-En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiando su tamaño y escalará su almacenamiento mediante la conexión y configuración de sus discos de datos.
+**Nota**: El parámetro **-UseBasicParsing** es necesario para eliminar la dependencia de Internet Explorer para completar la ejecución del cmdlet.
+
+1. **Nota**: También puede conectarse a **az104-08-vm0** y ejecutar `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` para acceder al sitio web hospedado en **az104-08-vm1**.
+
+1. Tarea 3: Escalado de proceso y almacenamiento para máquinas virtuales de Azure
+
+    >En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiando su tamaño y escalará su almacenamiento mediante la conexión y configuración de sus discos de datos.
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la hoja **Máquinas virtuales**, haga clic en **az104-08-vm0**.
 
 1. En la hoja de la máquina virtual **az104-08-vm0**, haga clic en **Tamaño** y establezca el tamaño de la máquina virtual en **Estándar DS1_v2** y haga clic en **Cambiar tamaño**
 
-    >**Nota**: Elija otro tamaño si **Estándar DS1_v2** no está disponible.
-
-1. En la hoja de la máquina virtual **az104-08-vm0**, haga clic en **Discos** y, en **Discos de datos**, haga clic en **+ Crear y adjuntar un nuevo disco**.
-
-1. Cree un disco administrado con las siguientes opciones de configuración (deje las demás con los predeterminados):
-
-    | Configuración | Value |
+    | **Nota**: Elija otro tamaño si **Estándar DS1_v2** no está disponible. | En la hoja de la máquina virtual **az104-08-vm0**, haga clic en **Discos** y, en **Discos de datos**, haga clic en **+ Crear y adjuntar un nuevo disco**. |
     | --- | --- |
-    | Nombre del disco | **az104-08-vm0-datadisk-0** |
-    | Tipo de almacenamiento | **SSD Premium** |
-    | Tamaño (GiB| **1024** |
+    | Cree un disco administrado con las siguientes opciones de configuración (deje las demás con los predeterminados): | Configuración |
+    | Value | Nombre del disco |
+    | **az104-08-vm0-datadisk-0**| Tipo de almacenamiento |
 
-1. De nuevo en la hoja **az104-08-vm0: Discos**, en **Discos de datos**, haga clic en **+ Crear y adjuntar un nuevo disco**.
+1. **SSD Premium**
 
-1. Cree un disco administrado con las siguientes opciones de configuración (deje las demás con los predeterminados) y guarde los cambios:
+1. Tamaño (GiB
 
-    | Configuración | Value |
+    | **1024** | De nuevo en la hoja **az104-08-vm0: Discos**, en **Discos de datos**, haga clic en **+ Crear y adjuntar un nuevo disco**. |
     | --- | --- |
-    | Nombre del disco | **az104-08-vm0-datadisk-1** |
-    | Tipo de almacenamiento | **SSD Premium** |
-    | Tamaño (GiB)| **1024 GiB** |
+    | Cree un disco administrado con las siguientes opciones de configuración (deje las demás con los predeterminados) y guarde los cambios: | Configuración |
+    | Value | Nombre del disco |
+    | **az104-08-vm0-datadisk-1**| Tipo de almacenamiento |
 
-1. De nuevo en la hoja **az104-08-vm0: Discos**, haga clic en **Guardar**.
+1. **SSD Premium**
 
-1. En la hoja **az104-08-vm0**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
+1. Tamaño (GiB)
 
-1. En la hoja **Ejecutar comando script**, escriba lo siguiente y haga clic en **Ejecutar** para crear una unidad Z: que consta de los dos discos conectados recientemente con el diseño simple y el aprovisionamiento fijo:
+1. **1024 GiB**
 
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
@@ -269,28 +264,28 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
    New-Partition -DiskNumber 4 -UseMaximumSize -DriveLetter Z
    ```
 
-    > **Nota**: Espere a que se confirme que los comandos se completaron correctamente.
+    > De nuevo en la hoja **az104-08-vm0: Discos**, haga clic en **Guardar**.
+
+1. En la hoja **az104-08-vm0**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
+
+1. En la hoja **Ejecutar comando script**, escriba lo siguiente y haga clic en **Ejecutar** para crear una unidad Z: que consta de los dos discos conectados recientemente con el diseño simple y el aprovisionamiento fijo:
+
+1. **Nota**: Espere a que se confirme que los comandos se completaron correctamente.
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la hoja **Máquinas virtuales**, haga clic en **az104-08-vm1**.
 
-1. En la hoja **az104-08-vm1**, en la sección **Automatización**, haga clic en **Exportar plantilla**.
-
-1. En la hoja **az104-08-vm1: Exportar plantilla**, haga clic en **Implementar**.
+    >En la hoja **az104-08-vm1**, en la sección **Automatización**, haga clic en **Exportar plantilla**. En la hoja **az104-08-vm1: Exportar plantilla**, haga clic en **Implementar**.
 
 1. En la hoja **Implementación personalizada**, haga clic en **Editar plantilla**.
-
-    >**Nota**: Pase por alto el mensaje que dice **El grupo de recursos está en una ubicación que no es compatible con uno o más recursos de la plantilla. Elija otro grupo de recursos**. Es previsible y se puede omitir.
-
-1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **30** `"vmSize": "Standard_D2s_v3"` por la línea siguiente:
 
    ```json
                     "vmSize": "Standard_DS1_v2"
 
    ```
 
-    >**Nota**: Esta sección de la plantilla define el mismo tamaño de máquina virtual de Azure que el que especificó para la primera máquina virtual a través de Azure Portal.
+    >**Nota**: Pase por alto el mensaje que dice **El grupo de recursos está en una ubicación que no es compatible con uno o más recursos de la plantilla. Elija otro grupo de recursos**.
 
-1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **51** (línea `"dataDisks": [ ]`) por el código siguiente:
+1. Es previsible y se puede omitir.
 
    ```json
                     "dataDisks": [
@@ -311,18 +306,18 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
                     ]
    ```
 
-    >**Nota**: Si usa una herramienta que pega el código línea a línea, IntelliSense puede agregar corchetes adicionales que causen errores de validación. Puede pegar el código en el Bloc de notas primero y, a continuación, en la línea 49.
+    >En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **30** `"vmSize": "Standard_D2s_v3"` por la línea siguiente: **Nota**: Esta sección de la plantilla define el mismo tamaño de máquina virtual de Azure que el que especificó para la primera máquina virtual a través de Azure Portal.
 
-    >**Nota**: Esta sección de la plantilla crea dos discos administrados y los asocia a **az104-08-vm1**, de forma similar a la configuración de almacenamiento de la primera máquina virtual a través de Azure Portal.
+    >En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **51** (línea `"dataDisks": [ ]`) por el código siguiente:
 
 
-1. Haga clic en **Guardar** y, de nuevo en la hoja **Implementación personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
+1. **Nota**: Si usa una herramienta que pega el código línea a línea, IntelliSense puede agregar corchetes adicionales que causen errores de validación.
 
-    >**Nota**: Espere a que la implementación de la plantilla se complete. Puede supervisar su progreso desde la hoja **Discos** de la máquina virtual **az104-08-vm1**. No debería tardar más de 3 minutos.
+    >Puede pegar el código en el Bloc de notas primero y, a continuación, en la línea 49. **Nota**: Esta sección de la plantilla crea dos discos administrados y los asocia a **az104-08-vm1**, de forma similar a la configuración de almacenamiento de la primera máquina virtual a través de Azure Portal. Haga clic en **Guardar** y, de nuevo en la hoja **Implementación personalizada**, haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, haga clic en **Crear**.
 
-1. De nuevo en la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
+1. **Nota**: Espere a que la implementación de la plantilla se complete.
 
-1. En la hoja **Ejecutar comando script**, escriba lo siguiente y haga clic en **Ejecutar** para crear una unidad Z: que consta de los dos discos conectados recientemente con el diseño simple y el aprovisionamiento fijo:
+1. Puede supervisar su progreso desde la hoja **Discos** de la máquina virtual **az104-08-vm1**.
 
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
@@ -334,17 +329,17 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
    New-Partition -DiskNumber 4 -UseMaximumSize -DriveLetter Z
    ```
 
-    > **Nota**: Espere a que se confirme que los comandos se completaron correctamente.
+    > No debería tardar más de 3 minutos.
 
-#### <a name="task-4-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tarea 4: Registro de proveedores de recursos de Microsoft.Insghts y Microsoft.AlertsManagement
+#### <a name="task-4-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>De nuevo en la hoja **az104-08-vm1**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
+
+1. En la hoja **Ejecutar comando script**, escriba lo siguiente y haga clic en **Ejecutar** para crear una unidad Z: que consta de los dos discos conectados recientemente con el diseño simple y el aprovisionamiento fijo:
+
+1. **Nota**: Espere a que se confirme que los comandos se completaron correctamente.
+
+    >Tarea 4: Registro de proveedores de recursos de Microsoft.Insghts y Microsoft.AlertsManagement
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
-
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
-
-    >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para registrar los proveedores de recursos de Microsoft.Insights y Microsoft.AlertsManagement.
 
    ```powershell
    Register-AzResourceProvider -ProviderNamespace Microsoft.Insights
@@ -352,124 +347,130 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>Tarea 5: Implementación de conjuntos de escalado de máquinas virtuales de Azure resistentes a zona mediante Azure Portal
+#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
 
-En esta tarea, implementará el conjunto de escalado de máquinas virtuales de Azure entre zonas de disponibilidad mediante Azure Portal.
+**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
-1. En Azure Portal, busque y seleccione **Conjuntos de escalado de máquinas virtuales** y en la hoja **Conjuntos de escalado de máquinas virtuales**, haga clic en **+ Agregar**  (o en **+ Crear**).
+1. En el panel de Cloud Shell, ejecute lo siguiente para registrar los proveedores de recursos de Microsoft.Insights y Microsoft.AlertsManagement.
 
-1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
+1. Tarea 5: Implementación de conjuntos de escalado de máquinas virtuales de Azure resistentes a zona mediante Azure Portal
 
-    | Configuración | Value |
+    | En esta tarea, implementará el conjunto de escalado de máquinas virtuales de Azure entre zonas de disponibilidad mediante Azure Portal. | En Azure Portal, busque y seleccione **Conjuntos de escalado de máquinas virtuales** y en la hoja **Conjuntos de escalado de máquinas virtuales**, haga clic en **+ Agregar**  (o en **+ Crear**). |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
-    | Nombre del conjunto de escalado de máquinas virtuales | **az10408vmss0** |
-    | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure diferentes de las que usó para implementar máquinas virtuales anteriormente en este laboratorio. |
-    | Zona de disponibilidad | **Zonas 1, 2, 3** |
-    | Imagen | **Windows Server 2019 Datacenter - Gen2** |
-    | Instancia de Azure Spot | **No** |
-    | Size | **Estándar D2s_v3** |
-    | Nombre de usuario | **Estudiante** |
-    | Contraseña | **Proporcione una contraseña segura**  |
-    | ¿Ya tiene una licencia de Windows Server? | **Desactivado** |
+    | En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** : | Configuración |
+    | Value | Subscription |
+    | nombre de la suscripción de Azure que usa en este laboratorio | Resource group |
+    | nombre de un nuevo grupo de recursos **az104-08-rg02** | Nombre del conjunto de escalado de máquinas virtuales |
+    | **az10408vmss0** | Region |
+    | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure diferentes de las que usó para implementar máquinas virtuales anteriormente en este laboratorio. | Zona de disponibilidad |
+    | **Zonas 1, 2, 3** | Imagen |
+    | **Windows Server 2019 Datacenter - Gen2** | Instancia de Azure Spot |
+    | **No** | Size |
+    | **Estándar D2s_v3** | Nombre de usuario  |
+    | **Estudiante** | Contraseña |
 
-    >**Nota**: Para obtener la lista de regiones de Azure que admiten la implementación de máquinas virtuales de Windows en zonas de disponibilidad, consulte [¿Qué son las zonas de disponibilidad en Azure?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
+    >**Proporcione una contraseña segura**
 
-1. En la pestaña **Discos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** .
+1. ¿Ya tiene una licencia de Windows Server?
 
-1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
+1. **Desactivado**
 
-    | Configuración | Value |
+    | **Nota**: Para obtener la lista de regiones de Azure que admiten la implementación de máquinas virtuales de Windows en zonas de disponibilidad, consulte [¿Qué son las zonas de disponibilidad en Azure?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview) | En la pestaña **Discos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** . |
     | --- | --- |
-    | Nombre | **az104-08-rg02-vnet** |
-    | Intervalo de direcciones | **10.82.0.0/20** |
-    | Nombre de subred | **subnet0** |
-    | Rango de subred | **10.82.0.0/24** |
+    | En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados): | Configuración |
+    | Value | Nombre |
+    | **az104-08-rg02-vnet** | Intervalo de direcciones |
+    | **10.82.0.0/20** | Nombre de subred |
 
-    >**Nota**: Una vez que cree una nueva red virtual y vuelva a la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, el valor de **Red virtual** se establecerá automáticamente en **az104-08-rg02-vnet**.
+    >**subnet0**
 
-1. De nuevo en la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el icono **Editar interfaz de red** a la derecha de la entrada de la interfaz de red.
+1. Rango de subred
 
-1. En la hoja **Editar interfaz de red**, en la sección **Grupo de seguridad de red de NIC**, haga clic en **Opciones avanzadas** y haga clic en **Crear nuevo** en la lista desplegable **Configurar grupo de seguridad de red**.
+1. **10.82.0.0/24**
 
-1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
+1. **Nota**: Una vez que cree una nueva red virtual y vuelva a la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, el valor de **Red virtual** se establecerá automáticamente en **az104-08-rg02-vnet**.
 
-    | Configuración | Value |
+    | De nuevo en la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el icono **Editar interfaz de red** a la derecha de la entrada de la interfaz de red. | En la hoja **Editar interfaz de red**, en la sección **Grupo de seguridad de red de NIC**, haga clic en **Opciones avanzadas** y haga clic en **Crear nuevo** en la lista desplegable **Configurar grupo de seguridad de red**. |
     | --- | --- |
+    | En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados): | Configuración |
+
+1. Value
+
     | Nombre | **az10408vmss0-nsg** |
-
-1. Haga clic en **Agregar una regla de entrada** y agregue una regla de seguridad de entrada con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
-
-    | Configuración | Value |
     | --- | --- |
+    | Haga clic en **Agregar una regla de entrada** y agregue una regla de seguridad de entrada con las siguientes opciones de configuración (deje las demás con sus valores predeterminados): | Configuración |
+    | Value | **\*** |
     | Source | **Cualquiera** |
-    | Source port ranges | **\*** |
-    | Destination | **Cualquiera** |
-    | Intervalos de puertos de destino | **80** |
-    | Protocolo | **TCP** |
-    | Acción | **Permitir** |
-    | Priority | **1010** |
-    | Name | **custom-allow-http** |
+    | Source port ranges | Destination |
+    | **Cualquiera** | Intervalos de puertos de destino |
+    | **80** | Protocolo |
+    | **TCP** | Acción |
+    | **Permitir** | Priority |
 
-1. Haga clic en **Agregar** y, de nuevo en la hoja **Crear grupo de seguridad de red**, haga clic en **Aceptar**.
+1. **1010**
 
-1. De nuevo en la hoja **Editar la interfaz de red**, en la sección **Dirección IP pública**, haga clic en **Habilitada** y en **Aceptar**.
+1. Name
 
-1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, en la sección **Equilibrio de carga**, asegúrese de que está seleccionada la entrada **Usar un equilibrador de carga** y especifique las siguientes opciones de configuración de **Equilibrio de carga** (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Escalado >** :
+1. **custom-allow-http**
 
-    | Configuración | Valor |
+    | Haga clic en **Agregar** y, de nuevo en la hoja **Crear grupo de seguridad de red**, haga clic en **Aceptar**. | De nuevo en la hoja **Editar la interfaz de red**, en la sección **Dirección IP pública**, haga clic en **Habilitada** y en **Aceptar**. |
     | --- | --- |
-    | Opciones de equilibrio de carga | **Azure Load Balancer** |
-    | Seleccionar un equilibrador de carga | **(nuevo) az10408vmss0-lb** |
+    | En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, en la sección **Equilibrio de carga**, asegúrese de que está seleccionada la entrada **Usar un equilibrador de carga** y especifique las siguientes opciones de configuración de **Equilibrio de carga** (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Escalado >** : | Configuración |
+    | Valor | Opciones de equilibrio de carga |
+    | **Azure Load Balancer** | Seleccionar un equilibrador de carga |
+
+1. **(nuevo) az10408vmss0-lb**
+
     | Seleccionar un grupo de back-end | **(nuevo) bepool** |
-
-1. En la pestaña **Escalado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Administración >** :
-
-    | Configuración | Value |
     | --- | --- |
-    | Recuento de instancias inicial | **2** |
+    | En la pestaña **Escalado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Administración >** : | Configuración |
+    | Value | Recuento de instancias inicial |
+
+1. **2**
+
     | Directiva de escalado | **Manual** |
-
-1. En la pestaña **Administración** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
-
-    | Configuración | Value |
     | --- | --- |
-    | Diagnósticos de arranque | **Habilitar con la cuenta de almacenamiento personalizada** |
-    | Cuenta de almacenamiento de diagnóstico | acepte el valor predeterminado |
+    | En la pestaña **Administración** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados): | Configuración |
+    | Value | Diagnósticos de arranque |
 
-    >**Nota**: Necesitará el nombre de esta cuenta de almacenamiento en la siguiente tarea.
+    >**Habilitar con la cuenta de almacenamiento personalizada**
 
-   Haga clic en **Siguiente > Estado >** :
+   Cuenta de almacenamiento de diagnóstico
 
-1. En la pestaña **Estado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, revise las opciones de configuración predeterminadas sin realizar ningún cambio y haga clic en **Siguiente: Opciones avanzadas >** .
+1. acepte el valor predeterminado
 
-1. En la pestaña **Opciones avanzadas** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Revisar y crear**.
+1. **Nota**: Necesitará el nombre de esta cuenta de almacenamiento en la siguiente tarea.
 
-    | Configuración | Value |
+    | Haga clic en **Siguiente > Estado >** : | En la pestaña **Estado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, revise las opciones de configuración predeterminadas sin realizar ningún cambio y haga clic en **Siguiente: Opciones avanzadas >** . |
     | --- | --- |
-    | Algoritmo de propagación | **Propagación fija (no recomendada con zonas)** |
+    | En la pestaña **Opciones avanzadas** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Revisar y crear**. | Configuración |
 
-    >**Nota**: La opción de configuración **Propagación máxima** no funciona actualmente.
+    >Value
 
-1. En la pestaña **Revisar y crear** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, asegúrese de que ha superado la validación y haga clic en **Crear**.
+1. Algoritmo de propagación
 
-    >**Nota**: Espere a que se complete la implementación del conjunto de escalado de máquinas virtuales. Este proceso tardará alrededor de 5 minutos.
+    >**Propagación fija (no recomendada con zonas)** **Nota**: La opción de configuración **Propagación máxima** no funciona actualmente.
 
-#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
+#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>En la pestaña **Revisar y crear** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, asegúrese de que ha superado la validación y haga clic en **Crear**.
 
-En esta tarea, instalará el rol del servidor web de Windows Server en las instancias del conjunto de escalado de máquinas virtuales de Azure que implementó en la tarea anterior mediante la extensión de máquina virtual de script personalizado.
+**Nota**: Espere a que se complete la implementación del conjunto de escalado de máquinas virtuales.
 
-1. En Azure Portal, busque y seleccione **Cuentas de almacenamiento** y, en la hoja **Cuentas de almacenamiento**, haga clic en la entrada que representa la cuenta de almacenamiento de diagnóstico que creó en la tarea anterior.
+1. Este proceso tardará alrededor de 5 minutos.
 
-1. En la hoja de la cuenta de almacenamiento, en la sección **Almacenamiento de datos**, haga clic en **Contenedores** y luego en **+ Contenedor**.
+1. Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
-1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
+1. En esta tarea, instalará el rol del servidor web de Windows Server en las instancias del conjunto de escalado de máquinas virtuales de Azure que implementó en la tarea anterior mediante la extensión de máquina virtual de script personalizado.
 
-    | Configuración | Value |
+    | En Azure Portal, busque y seleccione **Cuentas de almacenamiento** y, en la hoja **Cuentas de almacenamiento**, haga clic en la entrada que representa la cuenta de almacenamiento de diagnóstico que creó en la tarea anterior. | En la hoja de la cuenta de almacenamiento, en la sección **Almacenamiento de datos**, haga clic en **Contenedores** y luego en **+ Contenedor**. |
     | --- | --- |
-    | Nombre | **scripts** |
-    | Nivel de acceso público | **Privado (sin acceso anónimo**) |
+    | En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**: | Configuración |
+    | Value | Nombre |
+
+1. **scripts**
+
+1. Nivel de acceso público
+
+1. **Privado (sin acceso anónimo**)
 
 1. De nuevo en la hoja de la cuenta de almacenamiento que muestra la lista de contenedores, haga clic en **scripts**.
 
@@ -479,27 +480,27 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En Azure Portal, vuelva a la hoja **Conjuntos de escalado de máquinas virtuales** y haga clic en **az10408vmss0**.
 
-1. En la hoja **az10408vmss0**, en la sección **Configuración**, haga clic en **Extensiones** y luego en **+ Agregar**.
+    >En la hoja **az10408vmss0**, en la sección **Configuración**, haga clic en **Extensiones** y luego en **+ Agregar**.
 
 1. En la hoja **Nuevo recurso**, haga clic en **Custom Script Extension** (Extensión de script personalizado) y luego en **Siguiente**.
 
-1. En la hoja **Instalar extensión**, **busque** y **seleccione** el script **az104-08-install_IIS.ps1** que se cargó en el contenedor de **scripts** de la cuenta de almacenamiento antes en esta tarea y, a continuación, haga clic en **Crear**.
+    >En la hoja **Instalar extensión**, **busque** y **seleccione** el script **az104-08-install_IIS.ps1** que se cargó en el contenedor de **scripts** de la cuenta de almacenamiento antes en esta tarea y, a continuación, haga clic en **Crear**.
 
-    >**Nota**: Espere a que se complete la instalación de la extensión antes de continuar con el paso siguiente.
+1. **Nota**: Espere a que se complete la instalación de la extensión antes de continuar con el paso siguiente.
 
 1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las dos instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
     >**Nota**: Espere a que la actualización se complete antes de continuar con el paso siguiente.
 
-1. En Azure Portal, busque y seleccione **Equilibradores de carga** y, en la lista de equilibradores de carga, haga clic en **az10408vmss0-lb**.
+#### <a name="task-7-scale-compute-and-storage-for-azure-virtual-machine-scale-sets"></a>En Azure Portal, busque y seleccione **Equilibradores de carga** y, en la lista de equilibradores de carga, haga clic en **az10408vmss0-lb**.
 
-1. En la hoja **az10408vmss0-lb**, anote el valor de **Dirección IP pública** asignado al front-end del equilibrador de carga, abra una nueva pestaña del explorador y vaya a esa dirección IP.
+En la hoja **az10408vmss0-lb**, anote el valor de **Dirección IP pública** asignado al front-end del equilibrador de carga, abra una nueva pestaña del explorador y vaya a esa dirección IP.
 
-    >**Nota**: Compruebe que la página del explorador muestra el nombre de una de las instancias del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
+1. **Nota**: Compruebe que la página del explorador muestra el nombre de una de las instancias del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
 
-#### <a name="task-7-scale-compute-and-storage-for-azure-virtual-machine-scale-sets"></a>Tarea 7: Escalado de proceso y almacenamiento para conjuntos de escalado de máquinas virtuales de Azure
+1. Tarea 7: Escalado de proceso y almacenamiento para conjuntos de escalado de máquinas virtuales de Azure
 
-En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado de máquinas virtuales, configurará sus opciones de escalado automático y les conectará discos.
+1. En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado de máquinas virtuales, configurará sus opciones de escalado automático y les conectará discos.
 
 1. En Azure Portal, busque y seleccione **Conjuntos de escalado de máquinas virtuales** y seleccione el conjunto de escalado **az10408vmss0**.
 
@@ -511,49 +512,43 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
 1. En la lista de instancias, haga clic en la entrada que representa la primera instancia y, en la hoja de la instancia del conjunto de escalado, anote su **Ubicación** (debe ser una de las zonas de la región de Azure de destino en la que implementó el conjunto de escalado de máquinas virtuales de Azure).
 
-1. Vuelva a la hoja **az10408vmss0: Instancias**, haga clic en la entrada que representa la segunda instancia y, en la hoja de la instancia del conjunto de escalado, anote su **Ubicación** (debe ser una de las otras dos zonas de la región de Azure de destino en la que implementó el conjunto de escalado de máquinas virtuales de Azure).
-
-1. Vuelva a la hoja **az10408vmss0: Instancias** y, en la sección **Configuración**, haga clic en **Escalado**.
-
-1. En la hoja **az10408vmss0: Escalado**, seleccione la opción **Escalabilidad automática personalizada** y configure la escalabilidad automática con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
-
-    | Configuración | Value |
+    | Vuelva a la hoja **az10408vmss0: Instancias**, haga clic en la entrada que representa la segunda instancia y, en la hoja de la instancia del conjunto de escalado, anote su **Ubicación** (debe ser una de las otras dos zonas de la región de Azure de destino en la que implementó el conjunto de escalado de máquinas virtuales de Azure). | Vuelva a la hoja **az10408vmss0: Instancias** y, en la sección **Configuración**, haga clic en **Escalado**. |
     | --- |--- |
+    | En la hoja **az10408vmss0: Escalado**, seleccione la opción **Escalabilidad automática personalizada** y configure la escalabilidad automática con las siguientes opciones de configuración (deje las demás con sus valores predeterminados): | Configuración |
+
+1. Value
+
     | Modo de escalado | **Escalado basado en una métrica** |
-
-1. Haga clic en el vínculo **+ Agregar una regla**, en la hoja **Escalar regla**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
-
-    | Configuración | Valor |
     | --- |--- |
-    | Origen de métricas | **Recurso actual (az10480vmss0)** |
-    | Agregación de tiempo | **Average** |
-    | Espacio de nombres de métricas | **Host de máquina virtual** |
-    | Nombre de métrica | **Red entrante total** |
-    | Operador | **Mayor que** |
-    | Umbral de la métrica para desencadenar la acción de escalado | **10** |
-    | Duración (en minutos) | **1** |
-    | Estadísticas de intervalo de agregación | **Average** |
-    | Operación | **Aumentar recuento en** |
-    | Recuento de instancias | **1** |
-    | Tiempo de finalización (minutos) | **5** |
+    | Haga clic en el vínculo **+ Agregar una regla**, en la hoja **Escalar regla**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados): | Configuración |
+    | Valor | Origen de métricas |
+    | **Recurso actual (az10480vmss0)** | Agregación de tiempo |
+    | **Average** | Espacio de nombres de métricas |
+    | **Host de máquina virtual** | Nombre de métrica |
+    | **Red entrante total** | Operador |
+    | **Mayor que** | Umbral de la métrica para desencadenar la acción de escalado |
+    | **10** | Duración (en minutos) |
+    | **1** | Estadísticas de intervalo de agregación |
+    | **Average** | Operación |
+    | **Aumentar recuento en** | Recuento de instancias |
 
-    >**Nota**: Obviamente, estos valores no representan una configuración realista, ya que su propósito es desencadenar el escalado automático lo antes posible, sin un período de espera extendido.
+    >**1**
 
-1. Haga clic en **Agregar**, de nuevo en la hoja **az10408vmss0: Escalado**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+1. Tiempo de finalización (minutos)
 
-    | Configuración | Value |
+    | **5** | **Nota**: Obviamente, estos valores no representan una configuración realista, ya que su propósito es desencadenar el escalado automático lo antes posible, sin un período de espera extendido. |
     | --- |--- |
-    | Límites mínimos de la instancia | **1** |
-    | Límites máximos de la instancia | **3** |
-    | Límites predeterminados de la instancia | **1** |
+    | Haga clic en **Agregar**, de nuevo en la hoja **az10408vmss0: Escalado**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados): | Configuración |
+    | Value | Límites mínimos de la instancia |
+    | **1** | Límites máximos de la instancia |
+
+1. **3**
+
+1. Límites predeterminados de la instancia
+
+1. **1**
 
 1. Haga clic en **Save**(Guardar).
-
-1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
-
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para identificar la dirección IP pública del equilibrador de carga delante del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
 
    ```powershell
    $rgName = 'az104-08-rg02'
@@ -563,43 +558,43 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
    $pip = (Get-AzPublicIpAddress -ResourceGroupName $rgName -Name $lbpipName).IpAddress
    ```
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para iniciar un bucle infinito que envíe las solicitudes HTTP a los sitios web hospedados en las instancias del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
+1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
    ```powershell
    while ($true) { Invoke-WebRequest -Uri "http://$pip" }
    ```
 
+1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
+
+    >En el panel de Cloud Shell, ejecute lo siguiente para identificar la dirección IP pública del equilibrador de carga delante del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
+
+1. En el panel de Cloud Shell, ejecute lo siguiente para iniciar un bucle infinito que envíe las solicitudes HTTP a los sitios web hospedados en las instancias del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
+
 1. Minimice el panel de Cloud Shell, pero no lo cierre, vuelva a la hoja **az10408vmss0: Instancias** y supervise el número de instancias.
 
-    >**Nota**: Es posible que tenga que esperar un par de minutos y hacer clic en **Actualizar**.
+1. **Nota**: Es posible que tenga que esperar un par de minutos y hacer clic en **Actualizar**.
 
-1. Una vez aprovisionada la tercera instancia, vaya a su hoja para determinar su **Ubicación** (debe ser diferente de las dos primeras zonas que identificó anteriormente en esta tarea).
-
-1. Cierre el panel de Cloud Shell.
-
-1. En la hoja **az10408vmss0**, en la sección **Configuración**, haga clic en **Discos**, haga clic en **+ Crear y adjuntar un nuevo disco** y conecte un nuevo disco administrado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
-
-    | Configuración | Value |
+    | Una vez aprovisionada la tercera instancia, vaya a su hoja para determinar su **Ubicación** (debe ser diferente de las dos primeras zonas que identificó anteriormente en esta tarea). | Cierre el panel de Cloud Shell. |
     | --- | --- |
-    | LUN | **0** |
-    | Tipo de almacenamiento | **HDD estándar** |
-    | Tamaño (GiB) | **32** |
+    | En la hoja **az10408vmss0**, en la sección **Configuración**, haga clic en **Discos**, haga clic en **+ Crear y adjuntar un nuevo disco** y conecte un nuevo disco administrado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados): | Configuración |
+    | Value | LUN |
+    | **0** | Tipo de almacenamiento |
 
-1. Guarde el cambio, en la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
+1. **HDD estándar**
 
-    >**Nota**: El disco conectado en el paso anterior es un disco sin procesar. Antes de poder usarse, es necesario crear una partición, crear un sistema de archivos y montarlo. Para ello, usará la extensión de script personalizado de máquina virtual de Azure. En primer lugar, deberá quitar la extensión de script personalizado existente.
+    >Tamaño (GiB) **32** Guarde el cambio, en la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**. **Nota**: El disco conectado en el paso anterior es un disco sin procesar.
+
+1. Antes de poder usarse, es necesario crear una partición, crear un sistema de archivos y montarlo.
+
+    >Para ello, usará la extensión de script personalizado de máquina virtual de Azure.
+
+1. En primer lugar, deberá quitar la extensión de script personalizado existente.
 
 1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Extensiones**, en **CustomScriptExtension** y luego en **Desinstalar**.
 
-    >**Nota**: Espere a que termine la desinstalación.
+1. **Nota**: Espere a que termine la desinstalación.
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
-
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
-
-1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue el archivo **\\Allfiles\\Labs\\08\\az104-08-configure_VMSS_disks.ps1** en el directorio principal de Cloud Shell.
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para mostrar el contenido del script:
 
    ```powershell
    Set-Location -Path $HOME
@@ -607,52 +602,52 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
    Get-Content -Path ./az104-08-configure_VMSS_disks.ps1
    ```
 
-    >**Nota**: El script instala una extensión de script personalizado que configura el disco conectado.
+    >Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para ejecutar el script y configurar los discos del conjunto de escalado de máquinas virtuales de Azure:
+1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue el archivo **\\Allfiles\\Labs\\08\\az104-08-configure_VMSS_disks.ps1** en el directorio principal de Cloud Shell.
 
    ```powershell
    ./az104-08-configure_VMSS_disks.ps1
    ```
 
-1. Cierre el panel de Cloud Shell.
+1. En el panel de Cloud Shell, ejecute lo siguiente para mostrar el contenido del script:
 
-1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
+1. **Nota**: El script instala una extensión de script personalizado que configura el disco conectado.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+#### <a name="clean-up-resources"></a>En el panel de Cloud Shell, ejecute lo siguiente para ejecutar el script y configurar los discos del conjunto de escalado de máquinas virtuales de Azure:
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>Cierre el panel de Cloud Shell. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
-1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
+>Limpieza de recursos **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados. 
+1. **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente.
 
-1. Quite az104-08-configure_VMSS_disks.ps1 mediante la ejecución del comando siguiente:
+1. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos.
 
    ```powershell
    rm ~\az104-08*
    ```
 
-1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
+1. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza.
 
    ```powershell
    Get-AzResourceGroup -Name 'az104-08*'
    ```
 
-1. Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
+1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
    ```powershell
    Get-AzResourceGroup -Name 'az104-08*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+    >Quite az104-08-configure_VMSS_disks.ps1 mediante la ejecución del comando siguiente:
 
-#### <a name="review"></a>Revisar
+#### <a name="review"></a>Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
 
-En este laboratorio, ha:
+Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
 
++ **Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
++ Revisar
++ En este laboratorio, ha:
 + Implementado máquinas virtuales de Azure resistentes a zona mediante Azure Portal y una plantilla de Azure Resource Manager
 + Configurado máquinas virtuales de Azure mediante extensiones de máquina virtual
 + Escalado el proceso y almacenamiento para máquinas virtuales de Azure
-+ Implementado conjuntos de escalado de máquinas virtuales de Azure resistentes a zona mediante Azure Portal
-+ Configurado conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
-+ Escalado el proceso y almacenamiento para conjuntos de escalado de máquinas virtuales de Azure

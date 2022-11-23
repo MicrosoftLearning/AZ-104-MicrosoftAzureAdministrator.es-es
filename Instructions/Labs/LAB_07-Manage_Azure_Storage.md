@@ -242,7 +242,9 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en el recurso compartido de archivos recién creado y haga clic en **Conectar**.
 
-1. En la hoja **Conectar**, asegúrese de que la pestaña **Windows** esté seleccionada. Debajo encontrará un botón con la etiqueta **Mostrar script**. Haga clic en el botón y encontrará un cuadro de texto gris con un script; en la esquina inferior derecha de ese cuadro mantenga el puntero sobre el icono de páginas y haga clic en **Copiar en el Portapapeles**.
+1. En la hoja **Conectar**, asegúrese de que la pestaña **Windows** esté seleccionada. Debajo encontrará un botón con la etiqueta **Mostrar script**.
+
+1. Haga clic en el botón y encontrará un cuadro de texto gris con un script; en la esquina inferior derecha de ese cuadro mantenga el puntero sobre el icono de páginas y haga clic en **Copiar en el Portapapeles**.
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la lista de máquinas virtuales, haga clic en **az104-07-vm0**.
 
@@ -254,39 +256,39 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Compruebe que el script se haya completado correctamente.
 
-1. Reemplace el contenido del panel **Script de PowerShell** por el siguiente script y haga clic en **Ejecutar**:
-
    ```powershell
    New-Item -Type Directory -Path 'Z:\az104-07-folder'
 
    New-Item -Type File -Path 'Z:\az104-07-folder\az-104-07-file.txt'
    ```
 
+1. Reemplace el contenido del panel **Script de PowerShell** por el siguiente script y haga clic en **Ejecutar**:
+
 1. Compruebe que el script se haya completado correctamente.
 
 1. Vuelva a la hoja del recurso compartido de archivos **az104-07-share**, haga clic en **Actualizar** y compruebe que **az104-07-folder** aparezca en la lista de carpetas.
 
-1. Haga clic en la carpeta **az104-07-share** y compruebe que **az104-07-file.txt** aparezca en la lista de archivos.
+#### <a name="task-6-manage-network-access-for-azure-storage"></a>Haga clic en la carpeta **az104-07-share** y compruebe que **az104-07-file.txt** aparezca en la lista de archivos.
 
-#### <a name="task-6-manage-network-access-for-azure-storage"></a>Tarea 6: Administrar el acceso a la red para Azure Storage
+Tarea 6: Administrar el acceso a la red para Azure Storage
 
-En esta tarea, configurará el acceso a la red para Azure Storage.
+1. En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. En Azure Portal, vuelva a la hoja de la cuenta de almacenamiento que creó en la primera tarea de este laboratorio y, en la sección **Seguridad y redes**, haga clic en **Redes** y, luego, haga clic en **Firewalls y redes virtuales**.
 
-1. Haga clic en la opción **Enabled from selected virtual networks and IP addresses** (Habilitado desde las redes virtuales y las direcciones IP seleccionadas) y revise las opciones de configuración que aparecen disponibles cuando se habilita esta opción.
+    > Haga clic en la opción **Enabled from selected virtual networks and IP addresses** (Habilitado desde las redes virtuales y las direcciones IP seleccionadas) y revise las opciones de configuración que aparecen disponibles cuando se habilita esta opción.
 
-    > **Nota**: Puede usar estos valores para configurar la conectividad directa entre las máquinas virtuales de Azure en las subredes designadas de redes virtuales y la cuenta de almacenamiento mediante puntos de conexión de servicio.
+1. **Nota**: Puede usar estos valores para configurar la conectividad directa entre las máquinas virtuales de Azure en las subredes designadas de redes virtuales y la cuenta de almacenamiento mediante puntos de conexión de servicio.
 
 1. Haga clic en la casilla **Agregar la dirección IP del cliente** y guarde el cambio.
 
-1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL de SAS del blob que generó en la tarea anterior.
+    > Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL de SAS del blob que generó en la tarea anterior. **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. 
 
-    > **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob. 
+1. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob.
 
-1. Debería presentársele el contenido de la página **The MIT License (MIT)** .
+    > Debería presentársele el contenido de la página **The MIT License (MIT)** .
 
-    > **Nota**: Esto es lo esperado, ya que se está conectando desde la dirección IP del cliente.
+1. **Nota**: Esto es lo esperado, ya que se está conectando desde la dirección IP del cliente.
 
 1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **Redes** de la cuenta de Azure Storage.
 
@@ -294,46 +296,44 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para intentar descargar el blob LICENSE desde el contenedor **az104-07-container** de la cuenta de almacenamiento (reemplace el marcador de posición `[blob SAS URL]` por la dirección URL de SAS del blob que generó en la tarea anterior):
-
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
    ```
-1. Compruebe que no puede descargarlo.
+1. En el panel de Cloud Shell, ejecute lo siguiente para intentar descargar el blob LICENSE desde el contenedor **az104-07-container** de la cuenta de almacenamiento (reemplace el marcador de posición `[blob SAS URL]` por la dirección URL de SAS del blob que generó en la tarea anterior):
 
-    > **Nota**: Debe recibir el mensaje que indica **AuthorizationFailure: Esta solicitud no está autorizada para realizar esta operación**. Esto es lo esperado, ya que se está conectando desde la dirección IP asignada a una VM de Azure que hospeda la instancia de Cloud Shell.
+    > Compruebe que no puede descargarlo. **Nota**: Debe recibir el mensaje que indica **AuthorizationFailure: Esta solicitud no está autorizada para realizar esta operación**.
 
-1. Cierre el panel de Cloud Shell.
+1. Esto es lo esperado, ya que se está conectando desde la dirección IP asignada a una VM de Azure que hospeda la instancia de Cloud Shell.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+#### <a name="clean-up-resources"></a>Cierre el panel de Cloud Shell.
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>Limpieza de recursos **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use.
 
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. También puede intentar eliminar el grupo de recursos donde residen los recursos. Se trata de un acceso directo rápido de administrador. Si tiene dudas, hable con el instructor.
+>La eliminación de los recursos sin usar garantiza que no verá cargos inesperados. **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. También puede intentar eliminar el grupo de recursos donde residen los recursos. Se trata de un acceso directo rápido de administrador.
+
+1. Si tiene dudas, hable con el instructor.
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
-
-1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
 
    ```powershell
    Get-AzResourceGroup -Name 'az104-07*'
    ```
 
-1. Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
+1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
 
    ```powershell
    Get-AzResourceGroup -Name 'az104-07*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+    >Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
 
-#### <a name="review"></a>Revisar
+#### <a name="review"></a>**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-En este laboratorio, ha:
+Revisar
 
+- En este laboratorio, ha:
 - Aprovisionado el entorno de laboratorio
 - Creado y configurado cuentas de Azure Storage
 - Administrado el almacenamiento de blobs
 - Administrado la autenticación y autorización para Azure Storage
 - Creado y configurado un recurso compartido de Azure Files
-- Administrado el acceso a la red para Azure Storage
