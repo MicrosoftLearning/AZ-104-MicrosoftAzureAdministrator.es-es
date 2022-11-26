@@ -86,7 +86,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
     | Configuración | Value |
     | ---- | ---- |
-    | Identidad del recurso | **Identidad administrada asignada por el sistema** |
+    | Identidad del recurso | **Identidad administrada asignada por el sistema** | 
     | Método de autenticación | **Cuentas locales con RBAC de Kubernetes** |
 
 1. Haga clic en **Siguiente: Redes >** y, en la pestaña **Redes** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
