@@ -44,14 +44,14 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
     | Nombre de aplicación web | Cualquier nombre globalmente único |
     | Publicar | **Código** |
-    | Pila en tiempo de ejecución | **PHP 7.4** |
-    | Sistema operativo | **Windows** |
+    | Pila en tiempo de ejecución | **PHP 8.0** |
+    | Sistema operativo | **Linux** |
     | Region | Nombre de una región de Azure donde puede aprovisionar aplicaciones web de Azure |
     | Plan de App Service | Acepte la configuración predeterminada |
 
@@ -182,18 +182,18 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
     | Configuración | Valor |
     | --- |--- |
     | Origen de métricas | **Recurso actual** |
-    | Agregación de tiempo | **Máximo** |
-    | Espacio de nombres de métricas | **Métricas estándar de los planes de App Service** |
+    | Espacio de nombres de métricas | **métricas estándar** |
     | Nombre de métrica | **Porcentaje de CPU** |
     | Operador | **Mayor que** |
     | Umbral de la métrica para desencadenar la acción de escalado | **10** |
     | Duración (en minutos) | **1** |
     | Estadísticas de intervalo de agregación | **Máximo** |
+    | Agregación de tiempo | **Máximo** |
     | Operación | **Aumentar recuento en** |
     | Recuento de instancias | **1** |
     | Tiempo de finalización (minutos) | **5** |
 
-    >**Nota**: Obviamente, estos valores no representan una configuración realista, ya que su propósito es desencadenar el escalado automático lo antes posible, sin un período de espera extendido.
+    >**Nota**: Estos valores no representan una configuración realista, ya que su propósito es desencadenar el escalado automático lo antes posible, sin un período de espera extendido.
 
 1. Haga clic en **Agregar** y, de nuevo en la hoja de escalado del plan de App Service, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
@@ -225,11 +225,11 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
    while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
    ```
 
-1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección **Supervisión**, haga clic en **Explorador de procesos**.
+1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)** .
 
-    >**Nota**: El Explorador de procesos facilita la supervisión del número de instancias y su uso de recursos.
+1. Seleccione la pestaña **Historial de ejecución** y compruebe el **Observed resource instance count** (Recuento de instancias de recursos observados).
 
-1. Supervise el uso y el número de instancias durante unos minutos.
+1. Supervise el uso y el número de instancias durante unos minutos. 
 
     >**Nota**: Es posible que tenga que **actualizar** la página.
 
