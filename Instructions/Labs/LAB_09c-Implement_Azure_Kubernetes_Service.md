@@ -28,7 +28,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09c.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -62,7 +62,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09c-rg1** |
@@ -86,7 +86,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
     | Configuración | Value |
     | ---- | ---- |
-    | Identidad del recurso | **Identidad administrada asignada por el sistema** | 
+    | Identidad del recurso | **Identidad administrada asignada por el sistema** |
     | Método de autenticación | **Cuentas locales con RBAC de Kubernetes** |
 
 1. Haga clic en **Siguiente: Redes >** y, en la pestaña **Redes** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):

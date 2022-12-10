@@ -26,7 +26,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab03b.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -91,7 +91,7 @@ En este laboratorio, aprenderá a:
 
 1. De nuevo en la hoja **Implementación personalizada**, configure las opciones siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- |--- |
     | Subscription | *Nombre de la suscripción de Azure que está usando en este laboratorio* |
     | Grupo de recursos | Nombre de un **nuevo** grupo de recursos **az104-03b-rg1** |

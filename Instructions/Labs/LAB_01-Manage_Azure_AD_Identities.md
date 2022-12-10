@@ -28,7 +28,7 @@ En este laboratorio, aprenderá a:
 ## <a name="architecture-diagram"></a>Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -238,7 +238,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-01b-aaduser1** |
     | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |
