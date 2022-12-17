@@ -33,7 +33,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab02b.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -67,7 +67,7 @@ En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure 
 
 1. Cree una etiqueta con la siguiente configuración y aplique el cambio:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **Rol** |
     | Value | **Infraestructura** |
@@ -150,7 +150,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la primera tarea |
