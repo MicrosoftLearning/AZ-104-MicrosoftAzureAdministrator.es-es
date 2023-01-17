@@ -330,7 +330,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Tipo de próximo salto | **Aplicación virtual** |
     | Siguiente dirección de salto | **10.60.0.4** |
 
-1. Haga clic en **Aceptar**
+1. Haga clic en **Agregar**.
 
 1. De nuevo en la hoja de la tabla de rutas **az104-06-rt23**, en la sección **Configuración**, haga clic en **Subredes** y luego en **+ Asociar**.
 
@@ -341,7 +341,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
     | Virtual network | **az104-06-vnet2** |
     | Subnet | **subnet0** |
 
-1. Haga clic en **Aceptar**
+1. Haga clic en **Agregar**.
 
 1. Vuelva a la hoja **Tablas de rutas** y haga clic en **+ Crear**.
 
