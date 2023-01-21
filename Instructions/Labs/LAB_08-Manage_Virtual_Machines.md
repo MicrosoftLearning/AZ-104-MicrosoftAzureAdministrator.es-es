@@ -32,7 +32,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab08.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -290,7 +290,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
     >**Nota**: Esta sección de la plantilla define el mismo tamaño de máquina virtual de Azure que el que especificó para la primera máquina virtual a través de Azure Portal.
 
-1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **51** (línea `"dataDisks": [ ]`) por el código siguiente:
+1. En el panel **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea (línea `"dataDisks": [ ]`) por el código siguiente:
 
    ```json
                     "dataDisks": [
@@ -479,7 +479,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En Azure Portal, vuelva a la hoja **Conjuntos de escalado de máquinas virtuales** y haga clic en **az10408vmss0**.
 
-1. En la hoja **az10408vmss0**, en la sección **Configuración**, haga clic en **Extensiones** y luego en **+ Agregar**.
+1. En el panel **az10408vmss0**, en la sección **Configuración**, haga clic en **Extensiones y aplicaciones** y luego en **+ Agregar**.
 
 1. En la hoja **Nuevo recurso**, haga clic en **Custom Script Extension** (Extensión de script personalizado) y luego en **Siguiente**.
 
@@ -589,7 +589,7 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
     >**Nota**: El disco conectado en el paso anterior es un disco sin procesar. Antes de poder usarse, es necesario crear una partición, crear un sistema de archivos y montarlo. Para ello, usará la extensión de script personalizado de máquina virtual de Azure. En primer lugar, deberá quitar la extensión de script personalizado existente.
 
-1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Extensiones**, en **CustomScriptExtension** y luego en **Desinstalar**.
+1. En la sección **Configuración** del panel **az10408vmss0**, haga clic en **Extensiones y aplicaciones**, en **CustomScriptExtension** y luego en **Desinstalar**.
 
     >**Nota**: Espere a que termine la desinstalación.
 

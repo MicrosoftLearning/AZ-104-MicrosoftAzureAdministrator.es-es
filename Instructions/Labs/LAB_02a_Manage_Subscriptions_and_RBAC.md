@@ -40,7 +40,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1"></a>Ejercicio 1
 
@@ -147,7 +147,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
     >**Nota**: Si el rol personalizado no está visible, puede tardar hasta 10 minutos en aparecer después de su creación.
 
-1. Seleccione el **rol** y haga clic en **Siguiente**. En la pestaña **Miembros**, haga clic en **+ Seleccionar miembros** y **seleccione** su cuenta de usuario az104-***********************.**********.onmicrosoft.com. Haga clic en **Siguiente** y, a continuación, en **Revisar y asignar**.
+1. Seleccione el **rol** y haga clic en **Siguiente**. En la pestaña **Miembros**, haga clic en **+ Seleccionar miembros** y **seleccione** la cuenta de usuario az104-***********************.**********.onmicrosoft.com. Haga clic en **Siguiente** y, a continuación, en **Revisar y asignar**.
 
 1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cambie la contraseña del usuario.
 
@@ -159,7 +159,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 1. En la ventana del explorador **InPrivate**, en Azure Portal, busque y seleccione **Ayuda y soporte técnico** y, luego, haga clic en **Crear solicitud de soporte técnico**. 
 
-1. En la ventana del explorador **InPrivate**, en la pestaña **Descripción/Resumen del problema** de la hoja **Ayuda y soporte técnico: Nueva solicitud de soporte técnico**, escriba **Límites de servicio y suscripción** en el campo Resumen y seleccione el tipo de problema **Límites de servicio y suscripción (cuotas)** . Tenga en cuenta que la suscripción que está usando en este laboratorio aparece en la lista desplegable **Suscripción**.
+1. En la ventana del explorador **InPrivate**, en la pestaña **Descripción/Resumen del problema** del panel **Ayuda y soporte técnico: Nueva solicitud de soporte técnico**, escriba **Límites de servicio y suscripción** en el campo Resumen y seleccione el tipo de incidencia **Límites de servicio y suscripción (cuotas)** . Tenga en cuenta que la suscripción que está usando en este laboratorio aparece en la lista desplegable **Suscripción**.
 
     >**Nota**: La presencia de la suscripción que está usando en este laboratorio en la lista desplegable **Suscripción** indica que la cuenta que está usando tiene los permisos necesarios para crear la solicitud de soporte técnico específica de la suscripción.
 
@@ -185,9 +185,9 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
    ```powershell
    
-   $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes[0]
-
-   Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
+    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
+    
+    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
    ```
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para quitar la definición de rol personalizado:
