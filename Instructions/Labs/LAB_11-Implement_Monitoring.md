@@ -179,11 +179,11 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la hoja **az104-11-vm0 \| Registros**, en la sección **Supervisión**, haga clic en **Métricas**.
 
-1. En la hoja **az104-11-vm0 \| Métricas**, en el gráfico predeterminado, tenga en cuenta que, en este momento, la lista desplegable **Espacio de nombres de métrica**, además de la entrada **Host de máquina virtual**, también incluye la entrada **Invitado (clásico)** .
+1. En la hoja **az104-11-vm0 \| Métricas**, en el gráfico predeterminado, tenga en cuenta que, en este momento, la lista desplegable **Espacio de nombres de métrica**, además de la entrada **Host de máquina virtual**, también incluye la entrada **Invitado (clásico)**.
 
     >**Nota**: Esto es lo esperado, ya que ha habilitado la configuración de diagnóstico a nivel de invitado. También tiene la opción **Habilitar nuevas métricas de memoria de invitado**.
 
-1. En la lista desplegable **Espacio de nombres de métrica**, seleccione la entrada **Invitado (clásico)** .
+1. En la lista desplegable **Espacio de nombres de métrica**, seleccione la entrada **Invitado (clásico)**.
 
 1. En la lista desplegable **Métricas**, revise la lista de métricas disponibles.
 
@@ -218,7 +218,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | Granularidad de la agregación (período) | **1 minuto** |
     | Frecuencia de evaluación | **Cada 1 minuto** |
 
-1. Haga clic en **Siguiente: Acciones >** . En la hoja **Crear una regla de alertas**, en la sección **Grupo de acciones**, haga clic en el botón **+Crear grupo de acciones**.
+1. Haga clic en **Siguiente: Acciones >**. En la hoja **Crear una regla de alertas**, en la sección **Grupo de acciones**, haga clic en el botón **+Crear grupo de acciones**.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear grupo de acciones**, configure las siguientes opciones (deje las demás con los valores predeterminados) y seleccione **Siguiente: Notificaciones >** :
 
@@ -231,7 +231,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones**, en la lista desplegable **Tipo de notificación**, seleccione **Correo electrónico, mensaje SMS, inserción o voz**. En el cuadro de texto **Nombre**, escriba **Correo electrónico de admin.** Haga clic en el icono **Editar detalles** (lápiz).
 
-1. En la hoja **Correo electrónico, mensaje SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones** y seleccione **Siguiente: Acciones >** .
+1. En la hoja **Correo electrónico, mensaje SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones** y seleccione **Siguiente: Acciones >**.
 
 1. En la pestaña **Acciones** de la hoja **Crear grupo de acciones**, revise los elementos disponibles en la lista desplegable **Tipo de acción** sin realizar ningún cambio y seleccione **Revisar y crear**.
 

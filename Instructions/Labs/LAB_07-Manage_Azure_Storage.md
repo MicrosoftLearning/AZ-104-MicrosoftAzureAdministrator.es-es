@@ -106,9 +106,9 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
     | Rendimiento | **Estándar** |
     | Redundancia | **Almacenamiento con redundancia geográfica (GRS)** |
 
-1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** .
+1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados y haga clic en **Siguiente: Redes >**.
 
-1. En la pestaña **Redes** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte la opción predeterminada **Habilitar el acceso público desde todas las redes** y haga clic en **Siguiente: Protección de datos >** .
+1. En la pestaña **Redes** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte la opción predeterminada **Habilitar el acceso público desde todas las redes** y haga clic en **Siguiente: Protección de datos >**.
 
 1. En la pestaña **Protección de datos** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados, haga clic en **Revisar y crear**, espere a que se complete el proceso de validación y haga clic en **Crear**.
 
@@ -173,7 +173,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Debería presentarse un mensaje con formato XML que indique **ResourceNotFound** o **PublicAccessNotPermitted**.
 
-    > **Nota**: Esto es lo esperado, ya que el contenedor que creó tiene el nivel de acceso público establecido en **Privado (sin acceso anónimo)** .
+    > **Nota**: Esto es lo esperado, ya que el contenedor que creó tiene el nivel de acceso público establecido en **Privado (sin acceso anónimo)**.
 
 1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **licenses/LICENSE** del contenedor de Azure Storage y cambie a la pestaña **Generar SAS**.
 
@@ -196,7 +196,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL que copió en el paso anterior.
 
-    > **Nota**: Si usa Microsoft Edge, debe presentarse a la página **The MIT License (MIT)** . Si usa Chrome, Microsoft Edge (Chromium) o Firefox, debería poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
+    > **Nota**: Si usa Microsoft Edge, debe presentarse a la página **The MIT License (MIT)**. Si usa Chrome, Microsoft Edge (Chromium) o Firefox, debería poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
 
     > **Nota**: Esto es lo esperado, ya que ahora el acceso está autorizado en función del token de SAS recién generado.
 
@@ -210,7 +210,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
     > **Nota**: En este momento, no tiene permisos para cambiar el método de autenticación.
 
-1. En la hoja **az104-07-container**, haga clic en **Control de acceso (IAM)** .
+1. En la hoja **az104-07-container**, haga clic en **Control de acceso (IAM)**.
 
 1. En la pestaña **Comprobar acceso**, haga clic en **Agregar asignación de roles**.
 
@@ -284,7 +284,7 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
     > **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob. 
 
-1. Debería presentársele el contenido de la página **The MIT License (MIT)** .
+1. Debería presentársele el contenido de la página **The MIT License (MIT)**.
 
     > **Nota**: Esto es lo esperado, ya que se está conectando desde la dirección IP del cliente.
 

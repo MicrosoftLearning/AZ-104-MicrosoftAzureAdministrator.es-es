@@ -143,7 +143,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 1. En Azure Portal, vuelva al grupo de administración **az104-02-mg1** y muestre sus **detalles**.
 
-1. Haga clic en **Control de acceso (IAM)** , en **+ Agregar** y, a continuación, en **Agregar asignación de roles**. En la pestaña **Rol**, busque **Colaborador de solicitud de soporte técnico (personalizado)** . 
+1. Haga clic en **Control de acceso (IAM)** , en **+ Agregar** y, a continuación, en **Agregar asignación de roles**. En la pestaña **Rol**, busque **Colaborador de solicitud de soporte técnico (personalizado)**. 
 
     >**Nota**: Si el rol personalizado no está visible, puede tardar hasta 10 minutos en aparecer después de su creación.
 
@@ -159,7 +159,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 1. En la ventana del explorador **InPrivate**, en Azure Portal, busque y seleccione **Ayuda y soporte técnico** y, luego, haga clic en **Crear solicitud de soporte técnico**. 
 
-1. En la ventana del explorador **InPrivate**, en la pestaña **Descripción/Resumen del problema** del panel **Ayuda y soporte técnico: Nueva solicitud de soporte técnico**, escriba **Límites de servicio y suscripción** en el campo Resumen y seleccione el tipo de incidencia **Límites de servicio y suscripción (cuotas)** . Tenga en cuenta que la suscripción que está usando en este laboratorio aparece en la lista desplegable **Suscripción**.
+1. En la ventana del explorador **InPrivate**, en la pestaña **Descripción/Resumen del problema** del panel **Ayuda y soporte técnico: Nueva solicitud de soporte técnico**, escriba **Límites de servicio y suscripción** en el campo Resumen y seleccione el tipo de incidencia **Límites de servicio y suscripción (cuotas)** . Tenga en cuenta que la suscripción que está usando en este laboratorio aparece en la lista desplegable **Suscripción.**
 
     >**Nota**: La presencia de la suscripción que está usando en este laboratorio en la lista desplegable **Suscripción** indica que la cuenta que está usando tiene los permisos necesarios para crear la solicitud de soporte técnico específica de la suscripción.
 
