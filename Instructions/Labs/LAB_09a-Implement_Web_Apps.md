@@ -169,7 +169,7 @@ En esta tarea, intercambiará el espacio de ensayo por el espacio de producción
 
 En esta tarea, configurará y probará el escalado automático de la aplicación web de Azure.
 
-1. En la hoja que muestra el espacio de producción de la aplicación web, en la sección **Configuración**, haga clic en **Escalar horizontalmente (plan de App Service)** .
+1. En la hoja que muestra el espacio de producción de la aplicación web, en la sección **Configuración**, haga clic en **Escalar horizontalmente (plan de App Service)**.
 
 1. Haga clic en **Escalabilidad automática personalizada**.
 
@@ -225,7 +225,7 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
    while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
    ```
 
-1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)** .
+1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)**.
 
 1. Seleccione la pestaña **Historial de ejecución** y compruebe el **Observed resource instance count** (Recuento de instancias de recursos observados).
 

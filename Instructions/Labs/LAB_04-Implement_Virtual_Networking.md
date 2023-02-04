@@ -284,7 +284,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
     >**Nota**: Es posible que tenga que esperar unos minutos y actualizar la página si los conjuntos de registros no aparecen en la lista.
 
-1. Cambie a la sesión de Escritorio remoto para **az104-04-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)** .
+1. Cambie a la sesión de Escritorio remoto para **az104-04-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)**.
 
 1. En la ventana de la consola Windows PowerShell, ejecute lo siguiente para probar la resolución interna de nombres en la zona DNS privada recién creada:
 

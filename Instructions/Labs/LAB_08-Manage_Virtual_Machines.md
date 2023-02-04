@@ -106,7 +106,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
     >**Nota**: Si es necesario, seleccione una cuenta de almacenamiento existente en la lista desplegable para crear una nueva. Anote el nombre de la cuenta de almacenamiento. Lo usará en la tarea siguiente.
 
-1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear una máquina virtual**, revise las opciones disponibles sin modificar ninguna de ellas, y haga clic en **Revisar y crear**.
+1. Haga clic en **Siguiente: Opciones avanzadas >**, en la pestaña **Opciones avanzadas** de la hoja **Crear una máquina virtual**, revise las opciones disponibles sin modificar ninguna de ellas, y haga clic en **Revisar y crear**.
 
 1. En la hoja **Revisar y crear**, haga clic en **Crear**.
 
@@ -376,7 +376,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
     >**Nota**: Para obtener la lista de regiones de Azure que admiten la implementación de máquinas virtuales de Windows en zonas de disponibilidad, consulte [¿Qué son las zonas de disponibilidad en Azure?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
-1. En la pestaña **Discos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** .
+1. En la pestaña **Discos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >**.
 
 1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
@@ -442,7 +442,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
    Haga clic en **Siguiente > Estado >** :
 
-1. En la pestaña **Estado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, revise las opciones de configuración predeterminadas sin realizar ningún cambio y haga clic en **Siguiente: Opciones avanzadas >** .
+1. En la pestaña **Estado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, revise las opciones de configuración predeterminadas sin realizar ningún cambio y haga clic en **Siguiente: Opciones avanzadas >**.
 
 1. En la pestaña **Opciones avanzadas** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Revisar y crear**.
 

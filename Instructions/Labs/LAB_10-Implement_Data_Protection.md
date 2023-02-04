@@ -370,11 +370,11 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , haga clic en la entrada que representa la copia de seguridad de **az104-10-vm1**.
 
-1. En **C:\\ en la hoja az104-10-vm1.** , seleccione **Ver detalles** para **az104-10-vm1.** .
+1. En **C:\\ en la hoja az104-10-vm1.**, seleccione **Ver detalles** para **az104-10-vm1.** .
 
 1. En la hoja Detalles, haga clic en **az104-10-vm1**.
 
-1. En la hoja de servidores protegidos **az104-10-vm1.** , haga clic en **Eliminar**.
+1. En la hoja de servidores protegidos **az104-10-vm1.**, haga clic en **Eliminar**.
 
 1. En la hoja **Eliminar**, configure las opciones siguientes.
 
