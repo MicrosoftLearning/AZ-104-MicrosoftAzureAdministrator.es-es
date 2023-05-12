@@ -4,10 +4,10 @@ lab:
   module: Administer Governance and Compliance
 ---
 
-# <a name="lab-02b---manage-governance-via-azure-policy"></a>Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Para mejorar la administración de recursos de Azure en Contoso, se le ha encargado implementar la funcionalidad siguiente:
 
@@ -19,7 +19,7 @@ Para mejorar la administración de recursos de Azure en Contoso, se le ha encarg
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderemos a:
 
@@ -27,17 +27,17 @@ En este laboratorio, aprenderemos a:
 + Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
 + Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
 
-## <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab02b.png)
 
-## <a name="instructions"></a>Instructions
+## Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+### Ejercicio 1
 
-#### <a name="task-1-assign-tags-via-the-azure-portal"></a>Tarea 1: Asignar etiquetas a través de Azure Portal
+#### Tarea 1: Asignar etiquetas a través de Azure Portal
 
 En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal.
 
@@ -63,18 +63,18 @@ En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure 
 
     **Nota**: Anote en qué grupo de recursos se encuentra la cuenta de almacenamiento, lo necesitará más adelante en el laboratorio.
 
-1. En la hoja del grupo de recursos, haga clic en **Editar** junto a **Etiquetas** para crear nuevas etiquetas.
+1. En la hoja del grupo de recursos, haga clic en **Etiquetas** en el menú izquierdo y cree una nueva etiqueta.
 
 1. Cree una etiqueta con la siguiente configuración y aplique el cambio:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **Rol** |
     | Value | **Infraestructura** |
 
-1. Vuelva a la hoja de la cuenta de almacenamiento. Revise la **Información general** y observe que la nueva etiqueta no se asignó automáticamente a la cuenta de almacenamiento. 
+1. Haga clic en **Aplicar** y cierre la ventana de edición de etiquetas para volver a la hoja de la cuenta de almacenamiento. Haga clic en los puntos suspensivos de la cuenta de almacenamiento y seleccione **Editar etiquetas** para observar que la nueva etiqueta no se asignó automáticamente a la cuenta de almacenamiento. 
 
-#### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
+#### Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
 
 En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valor en los recursos* al grupo de recursos y evaluará el resultado. 
 
@@ -88,7 +88,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. Para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la tarea anterior |
@@ -105,7 +105,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     >**Nota**: El **Nombre de asignación** se rellena automáticamente con el nombre de directiva seleccionado, pero puede cambiarlo. También puede agregar una **Descripción** opcional. **Asignado por** se rellena automáticamente en función del nombre de usuario que crea la asignación. 
 
-1. Haga clic en **Siguiente** y establezca **Parámetros** en los valores siguientes:
+1. Haga clic en **Siguiente** dos veces y establezca **Parámetros** en los valores siguientes:
 
     | Configuración | Value |
     | --- | --- |
@@ -126,11 +126,13 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. En la hoja del grupo de recursos, haga clic en **+ Crear**, busque **Cuenta de almacenamiento** y haga clic en **+ Crear**. 
 
-1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que está usando el grupo de recursos al que se aplicó la directiva y configure las opciones siguientes (deje las demás con sus valores predeterminados), haga clic en **Revisar y crear** y, a continuación, haga clic en **Crear**:
+1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que usa el grupo de recursos al que se aplicó la directiva y especifique las opciones siguientes (deje las demás en sus valores predeterminados). A continuación, haga clic en **Revisar** y, luego, haga clic en **Crear**:
 
     | Configuración | Valor |
     | --- | --- |
     | Nombre de la cuenta de almacenamiento | Cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra |
+
+    >**Nota**: Es posible que reciba un error **Error de validación. Haga clic aquí para obtener más información**; si es así, haga clic en el mensaje de error para identificar el motivo del error y omita el paso siguiente. 
 
 1. Una vez que cree la implementación, verá el mensaje **Error de implementación** en la lista **Notificaciones** del portal. En la lista **Notificaciones**, vaya a la información general de la implementación y haga clic en el mensaje **Error en la implementación. Haga clic aquí para ver los detalles** para conocer el motivo del error. 
 
@@ -138,7 +140,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     >**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Role tag with Infra value** (Requerir etiqueta Rol con el valor Infra). El error en la implementación se debe a que la cuenta de almacenamiento que intentó crear no tenía una etiqueta denominada **Rol** con su valor establecido en **Infra**.
 
-#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
+#### Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
 
 En esta tarea, usaremos una definición de directiva diferente para corregir los recursos no compatibles. 
 
@@ -150,7 +152,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la primera tarea |
@@ -165,7 +167,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
     | Descripción | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing** (Heredar la etiqueta Rol y su valor Infra del grupo de recursos de Cloud Shell si falta)|
     | Aplicación de directivas | habilitado |
 
-1. Haga clic en **Siguiente** y establezca **Parámetros** en los valores siguientes:
+1. Haga clic en **Siguiente** dos veces y establezca **Parámetros** en los valores siguientes:
 
     | Configuración | Value |
     | --- | --- |
@@ -190,7 +192,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. En la hoja del grupo de recursos, haga clic en **+ Crear**, busque **Cuenta de almacenamiento** y haga clic en **+ Crear**. 
 
-1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que está usando el grupo de recursos al que se aplicó la directiva y configure las opciones siguientes (deje las demás con sus valores predeterminados) y haga clic en **Revisar y crear**:
+1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que usa el grupo de recursos al que se aplicó la directiva y especifique las opciones siguientes (deje las demás en sus valores predeterminados). A continuación, haga clic en **Revisar**:
 
     | Configuración | Valor |
     | --- | --- |
@@ -200,7 +202,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Una vez que se aprovisione la nueva cuenta de almacenamiento, haga clic en el botón **Ir al recurso** y, en la hoja **Información general** de la cuenta de almacenamiento recién creada, observe que la etiqueta **Rol** con el valor **Infra** se ha asignado automáticamente al recurso.
 
-#### <a name="task-4-clean-up-resources"></a>Tarea 4: Limpieza de recursos
+#### Tarea 4: Limpieza de recursos
 
    >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de recursos no utilizados garantiza que no aparezcan cargos inesperados, aunque recuerde que las directivas de Azure no incurren en costos adicionales.
    
@@ -216,7 +218,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Información general** y elija **Eliminar** en la parte superior de la hoja de la cuenta de almacenamiento. Cuando se le pida confirmación, en la hoja **Eliminar cuenta de almacenamiento**, escriba el nombre de la cuenta de almacenamiento para confirmarla y haga clic en **Eliminar**. 
 
-#### <a name="review"></a>Revisar
+#### Revisar
 
 En este laboratorio, ha:
 
