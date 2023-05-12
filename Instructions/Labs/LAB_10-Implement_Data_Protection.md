@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab10.png)
 
-## Instructions
+## Instrucciones
 
 ### Ejercicio 1
 
@@ -49,8 +49,6 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** y **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** en el directorio principal de Cloud Shell.
 
-1. Edite el archivo de parámetros que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
-
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará las máquinas virtuales (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure). Escriba cada línea de comandos por separado y ejecútelas por separado:
 
    ```powershell
@@ -66,7 +64,8 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
    ```
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear la primera red virtual e implementar una máquina virtual en ella mediante los archivos de parámetros y plantilla que cargó:
-
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `

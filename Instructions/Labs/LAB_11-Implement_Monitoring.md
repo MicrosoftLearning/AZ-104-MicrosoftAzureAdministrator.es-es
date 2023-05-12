@@ -4,16 +4,16 @@ lab:
   module: Administer Monitoring
 ---
 
-# <a name="lab-11---implement-monitoring"></a>Laboratorio 11: Implementación de la supervisión
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 11: Implementación de la supervisión
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Tiene que evaluar la funcionalidad de Azure que proporcionaría información sobre el rendimiento y la configuración de los recursos de Azure, centrándose en particular en las máquinas virtuales de Azure. Para ello, tiene previsto examinar las funcionalidades de Azure Monitor, incluido Log Analytics.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -25,17 +25,17 @@ En este laboratorio, aprenderá a:
 + Tarea 6: Revisar las funcionalidad de Azure Monitor
 + Tarea 7: Revisar las funcionalidad de Azure Log Analytics
 
-## <a name="estimated-timing-45-minutes"></a>Tiempo estimado: 45 minutos
+## Tiempo estimado: 45 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab11.png)
 
-## <a name="instructions"></a>Instructions
+## Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+### Ejercicio 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tarea 1: Aprovisionar el entorno de laboratorio
+#### Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará una máquina virtual que se usará para probar escenarios de supervisión.
 
@@ -48,8 +48,6 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
     >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** y **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** en el directorio principal de Cloud Shell.
-
-1. Edite el archivo de parámetros que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará las máquinas virtuales (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar las máquinas virtuales de Azure):
 
@@ -65,6 +63,8 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear la primera red virtual e implementar una máquina virtual en ella mediante los archivos de parámetros y plantilla que cargó:
 
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -75,7 +75,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
     >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea. La implementación tardará unos 3 minutos.
 
-#### <a name="task-2-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tarea 2: Registrar los proveedores de recursos Microsoft.Insghts y Microsoft.AlertsManagement
+#### Tarea 2: Registrar los proveedores de recursos Microsoft.Insghts y Microsoft.AlertsManagement
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para registrar los proveedores de recursos Microsoft.Insights y Microsoft.AlertsManagement.
 
@@ -87,7 +87,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. Minimice el panel de Cloud Shell panel (pero no lo cierre).
 
-#### <a name="task-3-create-and-configure-an-azure-log-analytics-workspace-and-azure-automation-based-solutions"></a>Tarea 3: Crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation
+#### Tarea 3: Crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation
 
 En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation.
 
@@ -123,7 +123,7 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
 1. Haga clic en **Ir al recurso**.
 
-1. En la hoja Cuenta de Automation, haga clic en la sección **Administración de configuración**, haga clic en **Inventario**.
+1. En la hoja Cuenta de Automation, haga clic en la sección **Administración de configuración**, haga clic en **Inventariar**.
 
 1. En el panel **Inventario**, en la lista desplegable **Área de trabajo de Log Analytics**, seleccione el área de trabajo de Log Analytics que creó anteriormente en esta tarea y haga clic en **Habilitar**.
 
@@ -135,7 +135,7 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
     >**Nota**: Espere a que termine la instalación. Esto puede tardar unos cinco minutos.
 
-#### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>Tarea 4: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
+#### Tarea 4: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
 
 En esta tarea, revisará la configuración de supervisión predeterminada de las máquinas virtuales de Azure.
 
@@ -153,15 +153,15 @@ En esta tarea, revisará la configuración de supervisión predeterminada de las
 
 1. En la lista desplegable **Métrica**, seleccione **Porcentaje de CPU**, en la lista desplegable **Agregación**, seleccione **Promedio** y revise el gráfico resultante.
 
-#### <a name="task-5-configure-azure-virtual-machine-diagnostic-settings"></a>Tarea 5: Configurar las opciones de diagnóstico de máquinas virtuales de Azure
+#### Tarea 5: Configurar las opciones de diagnóstico de máquinas virtuales de Azure
 
 En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales de Azure.
 
 1. En la hoja **az104-11-vm0**, en la sección **Supervisión**, haga clic en **Configuración de diagnóstico**.
 
-1. En la pestaña **Información general** de la hoja **az104-11-vm0 \| Configuración de diagnóstico**, haga clic en **Habilitar supervisión a nivel de invitado**.
+1. En la pestaña **Información general** de la hoja **az104-11-vm0 \| Configuración de diagnóstico**, seleccione una **cuenta de almacenamiento de diagnóstico** y, luego, haga clic en **Habilitar supervisión a nivel de invitado**.
 
-    >**Nota**: Espere a que la operación surta efecto. Esto puede tardar unos 3 minutos.
+    >**Nota**: Espere a que se instale la extensión de configuración de diagnóstico. Esto puede tardar unos 3 minutos.
 
 1. Cambie a la pestaña **Contadores de rendimiento** de la hoja **az104-11-vm0 \| Configuración de diagnóstico** y revise los contadores disponibles.
 
@@ -171,19 +171,19 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: De manera predeterminada, la recopilación de registros incluye entradas críticas, de error y de advertencia del registro de aplicaciones y del registro del sistema, así como entradas de error de auditoría del registro de seguridad. Aquí también puede cambiar a la vista **Personalizado** para obtener opciones de configuración más detalladas.
 
-1. En la hoja **az104-11-vm0**, en la sección **Supervisión**, haga clic en **Agente de Log Analytics** y, luego, haga clic en **Habilitar**.
+1. En la hoja **az104-11-vm0**, en la sección **Supervisión**, haga clic en **Registros** y, luego, haga clic en **Habilitar**.
 
-1. En la hoja **az104-11-vm0 - Registros**, asegúrese de que el área de trabajo de Log Analytics que creó anteriormente en este laboratorio esté seleccionada en la lista desplegable **Elija un área de trabajo de Log Analytics** y haga clic en **Habilitar**.
+1. En la hoja **az104-11-vm0 - Registros**, asegúrese de que la opción **Agente de Azure Monitor (recomendado)** está seleccionada y, luego, haga clic en **Configurar**.  
 
-    >**Nota**: No espere a que se complete la operación, sino que avance al siguiente paso. La operación puede tardar unos 5 minutos.
+    >**Nota**: No espere a que se complete la operación, sino que continúe con el paso siguiente. La operación puede tardar unos 5 minutos.
 
 1. En la hoja **az104-11-vm0 \| Registros**, en la sección **Supervisión**, haga clic en **Métricas**.
 
-1. En la hoja **az104-11-vm0 \| Métricas**, en el gráfico predeterminado, tenga en cuenta que, en este momento, la lista desplegable **Espacio de nombres de métrica**, además de la entrada **Host de máquina virtual**, también incluye la entrada **Invitado (clásico)**.
+1. En la hoja **az104-11-vm0 \| Métricas**, en el gráfico predeterminado, tenga en cuenta que, en este momento, la lista desplegable **Espacio de nombres de métrica**, además de la entrada **Host de máquina virtual**, también incluye la entrada **Invitado (clásico)** .
 
     >**Nota**: Esto es lo esperado, ya que ha habilitado la configuración de diagnóstico a nivel de invitado. También tiene la opción **Habilitar nuevas métricas de memoria de invitado**.
 
-1. En la lista desplegable **Espacio de nombres de métrica**, seleccione la entrada **Invitado (clásico)**.
+1. En la lista desplegable **Espacio de nombres de métrica**, seleccione la entrada **Invitado (clásico)** .
 
 1. En la lista desplegable **Métricas**, revise la lista de métricas disponibles.
 
@@ -191,7 +191,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la lista desplegable **Métrica**, seleccione **Memoria\\Bytes disponibles**, en la lista desplegable **Agregación**, seleccione **Máx.** y revise el gráfico resultante.
 
-#### <a name="task-6-review-azure-monitor-functionality"></a>Tarea 6: Revisar las funcionalidad de Azure Monitor
+#### Tarea 6: Revisar las funcionalidad de Azure Monitor
 
 1. En Azure Portal, busque y seleccione **Monitor** y, en la hoja **Monitor \| Información general**, haga clic en **Métricas**.
 
@@ -218,7 +218,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | Granularidad de la agregación (período) | **1 minuto** |
     | Frecuencia de evaluación | **Cada 1 minuto** |
 
-1. Haga clic en **Siguiente: Acciones >**. En la hoja **Crear una regla de alertas**, en la sección **Grupo de acciones**, haga clic en el botón **+Crear grupo de acciones**.
+1. Haga clic en **Siguiente: Acciones >** . En la hoja **Crear una regla de alertas**, en la sección **Grupo de acciones**, haga clic en el botón **+Crear grupo de acciones**.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear grupo de acciones**, configure las siguientes opciones (deje las demás con los valores predeterminados) y seleccione **Siguiente: Notificaciones >** :
 
@@ -231,7 +231,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones**, en la lista desplegable **Tipo de notificación**, seleccione **Correo electrónico, mensaje SMS, inserción o voz**. En el cuadro de texto **Nombre**, escriba **Correo electrónico de admin.** Haga clic en el icono **Editar detalles** (lápiz).
 
-1. En la hoja **Correo electrónico, mensaje SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones** y seleccione **Siguiente: Acciones >**.
+1. En la hoja **Correo electrónico, mensaje SMS, inserción o voz**, seleccione la casilla **Correo electrónico**, escriba su dirección de correo electrónico en el cuadro de texto **Correo electrónico**, deje las demás opciones con los valores predeterminados, haga clic en **Aceptar**, vuelva a la pestaña **Notificaciones** de la hoja **Crear un grupo de acciones** y seleccione **Siguiente: Acciones >** .
 
 1. En la pestaña **Acciones** de la hoja **Crear grupo de acciones**, revise los elementos disponibles en la lista desplegable **Tipo de acción** sin realizar ningún cambio y seleccione **Revisar y crear**.
 
@@ -280,7 +280,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la hoja **Todas las alertas**, revise las alertas generadas.
 
-#### <a name="task-7-review-azure-log-analytics-functionality"></a>Tarea 7: Revisar las funcionalidad de Azure Log Analytics
+#### Tarea 7: Revisar las funcionalidad de Azure Log Analytics
 
 1. En Azure Portal, vuelva a la hoja **Monitor** y haga clic en **Registros**.
 
@@ -315,7 +315,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: Es posible que tenga que esperar unos minutos antes de que los datos de actualización estén disponibles.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+#### Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -337,7 +337,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+#### Revisar
 
 En este laboratorio, ha:
 

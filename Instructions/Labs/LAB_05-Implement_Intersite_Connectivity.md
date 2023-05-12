@@ -4,16 +4,16 @@ lab:
   module: Administer Intersite Connectivity
 ---
 
-# <a name="lab-05---implement-intersite-connectivity"></a>Laboratorio 05: Implementación de la conectividad entre sitios
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 05: Implementación de la conectividad entre sitios
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Contoso tiene sus centros de datos en las oficinas de Boston, Nueva York y Seattle conectadas a través de una malla de vínculos de red de área extensa, con conectividad completa entre ellas. Debe implementar un entorno de laboratorio que refleje la topología de las redes locales de Contoso y comprobar su funcionalidad.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -21,15 +21,15 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Configuración del emparejamiento local y global de red virtual
 + Tarea 3: Prueba de la conectividad entre sitios
 
-## <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab05.png)
 
-### <a name="instructions"></a>Instructions
+### Instructions
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tarea 1: Aprovisionamiento del entorno de laboratorio
+#### Tarea 1: Aprovisionamiento del entorno de laboratorio
 
 En esta tarea, implementará tres máquinas virtuales, cada una en una red virtual independiente, con dos de ellas en la misma región de Azure y la tercera en otra región de Azure.
 
@@ -41,9 +41,7 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 
     >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
-1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** y **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** en el directorio principal de Cloud Shell.
-
-1. Edite el archivo de **parámetros** que acaba de cargar y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
+1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** y **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** en el directorio principal de Cloud Shell. 
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en [Azure_region_1]. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra [Azure_region_2] (reemplace los marcadores de posición [Azure_region_1] y [Azure_region_2], incluidos los corchetes, por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure. Por ejemplo, $location 1 = "eastus". Puede usar Get-AzLocation para ver todas las ubicaciones):
 
@@ -68,6 +66,8 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
    >Si el comando no devuelve ningún resultado, debe elegir otra región. Una vez que haya identificado dos regiones adecuadas, puede ajustar las regiones en el bloque de código anterior.
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear las tres redes virtuales e implementar las máquinas virtuales en ellas mediante los archivos de parámetros y plantilla que cargó:
+    
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -82,7 +82,7 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 
 1. Cierre el panel de Cloud Shell.
 
-#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>Tarea 2: Configuración del emparejamiento local y global de red virtual
+#### Tarea 2: Configuración del emparejamiento local y global de red virtual
 
 En esta tarea, configurará el emparejamiento local y global entre las redes virtuales que implementó en las tareas anteriores.
 
@@ -201,7 +201,7 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### <a name="task-3-test-intersite-connectivity"></a>Tarea 3: Prueba de la conectividad entre sitios
+#### Tarea 3: Prueba de la conectividad entre sitios
 
 En esta tarea, probará la conectividad entre las máquinas virtuales de las tres redes virtuales que conectó a través del emparejamiento local y global en la tarea anterior.
 
@@ -259,7 +259,7 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. Examine la salida del comando y compruebe que la conexión se ha realizado correctamente.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+#### Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -281,7 +281,7 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+#### Revisar
 
 En este laboratorio, ha:
 

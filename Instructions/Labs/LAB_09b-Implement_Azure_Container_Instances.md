@@ -4,33 +4,33 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09b---implement-azure-container-instances"></a>Laboratorio 09b: Implementación de Azure Container Instances
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 09b: Implementación de Azure Container Instances
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas. Se han detectado varias imágenes de contenedor que se pueden aprovechar para lograr este objetivo. Dado que quiere minimizar la administración de contenedores, tiene previsto evaluar el uso de Azure Container Instances para la implementación de imágenes de Docker.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
 - Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
 - Tarea 2: Revisar la funcionalidad de Azure Container Instances
 
-## <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+## Tiempo estimado: 20 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab09b.png)
 
-## <a name="instructions"></a>Instructions
+## Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+### Ejercicio 1
 
-#### <a name="task-1-deploy-a-docker-image-by-using-the-azure-container-instance"></a>Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
+#### Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
 
 En esta tarea, creará una nueva instancia de contenedor para la aplicación web.
 
@@ -63,7 +63,7 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
     >**Nota**: Mientras espera, puede que esté interesado en ver el [código que subyace a esta aplicación de ejemplo](https://github.com/Azure-Samples/aci-helloworld). Para verlo, vaya a la carpeta \\app.
 
-#### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>Tarea 2: Revisar la funcionalidad de Azure Container Instances
+#### Tarea 2: Revisar la funcionalidad de Azure Container Instances
 
 En esta tarea, revisará la implementación de la instancia de contenedor.
 
@@ -79,13 +79,15 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
 1. Muestre la aplicación en el explorador para comprobar que se ven las entradas de registro que representan la solicitud HTTP GET generada.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+#### Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
 >**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
+
+    >**Nota**: Se debe crear el almacenamiento de Cloud Shell para que funcionen estos comandos. 
 
 1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
 
@@ -101,7 +103,7 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+#### Revisar
 
 En este laboratorio, ha:
 
