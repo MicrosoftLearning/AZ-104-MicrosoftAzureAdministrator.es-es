@@ -31,11 +31,11 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab11.png)
 
-## Instrucciones
+### Instrucciones
 
-### Ejercicio 1
+## Ejercicio 1
 
-#### Tarea 1: Aprovisionar el entorno de laboratorio
+## Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará una máquina virtual que se usará para probar escenarios de supervisión.
 
@@ -75,7 +75,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
     >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea. La implementación tardará unos 3 minutos.
 
-#### Tarea 2: Registrar los proveedores de recursos Microsoft.Insghts y Microsoft.AlertsManagement
+## Tarea 2: Registrar los proveedores de recursos Microsoft.Insghts y Microsoft.AlertsManagement
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para registrar los proveedores de recursos Microsoft.Insights y Microsoft.AlertsManagement.
 
@@ -87,7 +87,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. Minimice el panel de Cloud Shell panel (pero no lo cierre).
 
-#### Tarea 3: Crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation
+## Tarea 3: Crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation
 
 En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytics y soluciones basadas en Azure Automation.
 
@@ -135,7 +135,7 @@ En esta tarea, va a crear y configurar un área de trabajo de Azure Log Analytic
 
     >**Nota**: Espere a que termine la instalación. Esto puede tardar unos cinco minutos.
 
-#### Tarea 4: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
+## Tarea 4: Revisar la configuración de supervisión predeterminada de las máquinas virtuales de Azure
 
 En esta tarea, revisará la configuración de supervisión predeterminada de las máquinas virtuales de Azure.
 
@@ -153,7 +153,7 @@ En esta tarea, revisará la configuración de supervisión predeterminada de las
 
 1. En la lista desplegable **Métrica**, seleccione **Porcentaje de CPU**, en la lista desplegable **Agregación**, seleccione **Promedio** y revise el gráfico resultante.
 
-#### Tarea 5: Configurar las opciones de diagnóstico de máquinas virtuales de Azure
+## Tarea 5: Configurar las opciones de diagnóstico de máquinas virtuales de Azure
 
 En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales de Azure.
 
@@ -191,7 +191,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la lista desplegable **Métrica**, seleccione **Memoria\\Bytes disponibles**, en la lista desplegable **Agregación**, seleccione **Máx.** y revise el gráfico resultante.
 
-#### Tarea 6: Revisar las funcionalidad de Azure Monitor
+## Tarea 6: Revisar las funcionalidad de Azure Monitor
 
 1. En Azure Portal, busque y seleccione **Monitor** y, en la hoja **Monitor \| Información general**, haga clic en **Métricas**.
 
@@ -280,7 +280,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
 1. En la hoja **Todas las alertas**, revise las alertas generadas.
 
-#### Tarea 7: Revisar las funcionalidad de Azure Log Analytics
+## Tarea 7: Revisar las funcionalidad de Azure Log Analytics
 
 1. En Azure Portal, vuelva a la hoja **Monitor** y haga clic en **Registros**.
 
@@ -315,7 +315,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: Es posible que tenga que esperar unos minutos antes de que los datos de actualización estén disponibles.
 
-#### Limpieza de recursos
+## Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -337,7 +337,7 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 

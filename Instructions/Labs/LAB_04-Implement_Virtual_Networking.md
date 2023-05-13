@@ -31,11 +31,11 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab04.png)
 
-## Instrucciones
+### Instrucciones
 
-### Ejercicio 1
+## Ejercicio 1
 
-#### Tarea 1: Creación y configuración de una red virtual
+## Tarea 1: Creación y configuración de una red virtual
 
 En esta tarea, creará una red virtual con varias subredes mediante Azure Portal.
 
@@ -81,7 +81,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Haga clic en **Guardar**
 
-#### Tarea 2: Implementación de máquinas virtuales en la red virtual
+## Tarea 2: Implementación de máquinas virtuales en la red virtual
 
 En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes de la red virtual mediante una plantilla de ARM.
 
@@ -174,7 +174,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
     >**Nota**: Necesitará ambas direcciones IP en la última tarea de este laboratorio.
 
-#### Tarea 4: Configuración de grupos de seguridad de red
+## Tarea 4: Configuración de grupos de seguridad de red
 
 En esta tarea, configurará grupos de seguridad de red para permitir la conectividad restringida a las máquinas virtuales de Azure.
 
@@ -295,7 +295,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Compruebe que la salida del comando incluye la dirección IP privada de **az104-04-vm1** (**10.40.1.4**).
 
-#### Tarea 6: Configuración de Azure DNS para la resolución de nombres externos
+## Tarea 6: Configuración de Azure DNS para la resolución de nombres externos
 
 En esta tarea, configurará la resolución de nombres DNS externos mediante zonas DNS públicas de Azure.
 
@@ -369,7 +369,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Compruebe que la salida del comando incluye la dirección IP pública de **az104-04-vm1**.
 
-#### Limpieza de recursos
+## Limpieza de recursos
 
  > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -391,7 +391,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 

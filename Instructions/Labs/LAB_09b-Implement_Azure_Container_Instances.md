@@ -26,11 +26,11 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09b.png)
 
-## Instrucciones
+### Instrucciones
 
-### Ejercicio 1
+## Ejercicio 1
 
-#### Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
+## Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
 
 En esta tarea, creará una nueva instancia de contenedor para la aplicación web.
 
@@ -63,7 +63,7 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
     >**Nota**: Mientras espera, puede que esté interesado en ver el [código que subyace a esta aplicación de ejemplo](https://github.com/Azure-Samples/aci-helloworld). Para verlo, vaya a la carpeta \\app.
 
-#### Tarea 2: Revisar la funcionalidad de Azure Container Instances
+## Tarea 2: Revisar la funcionalidad de Azure Container Instances
 
 En esta tarea, revisará la implementación de la instancia de contenedor.
 
@@ -79,7 +79,7 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
 1. Muestre la aplicación en el explorador para comprobar que se ven las entradas de registro que representan la solicitud HTTP GET generada.
 
-#### Limpieza de recursos
+## Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -103,7 +103,7 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 

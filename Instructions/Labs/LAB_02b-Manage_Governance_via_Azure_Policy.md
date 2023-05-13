@@ -33,11 +33,11 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab02b.png)
 
-## Instrucciones
+### Instrucciones
 
-### Ejercicio 1
+## Ejercicio 1
 
-#### Tarea 1: Asignar etiquetas a través de Azure Portal
+## Tarea 1: Asignar etiquetas a través de Azure Portal
 
 En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal.
 
@@ -74,7 +74,7 @@ En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure 
 
 1. Haga clic en **Aplicar** y cierre la ventana de edición de etiquetas para volver a la hoja de la cuenta de almacenamiento. Haga clic en los puntos suspensivos de la cuenta de almacenamiento y seleccione **Editar etiquetas** para observar que la nueva etiqueta no se asignó automáticamente a la cuenta de almacenamiento. 
 
-#### Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
+## Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
 
 En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valor en los recursos* al grupo de recursos y evaluará el resultado. 
 
@@ -140,7 +140,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     >**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Role tag with Infra value** (Requerir etiqueta Rol con el valor Infra). El error en la implementación se debe a que la cuenta de almacenamiento que intentó crear no tenía una etiqueta denominada **Rol** con su valor establecido en **Infra**.
 
-#### Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
+## Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
 
 En esta tarea, usaremos una definición de directiva diferente para corregir los recursos no compatibles. 
 
@@ -202,7 +202,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Una vez que se aprovisione la nueva cuenta de almacenamiento, haga clic en el botón **Ir al recurso** y, en la hoja **Información general** de la cuenta de almacenamiento recién creada, observe que la etiqueta **Rol** con el valor **Infra** se ha asignado automáticamente al recurso.
 
-#### Tarea 4: Limpieza de recursos
+## Tarea 4: Limpieza de recursos
 
    >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de recursos no utilizados garantiza que no aparezcan cargos inesperados, aunque recuerde que las directivas de Azure no incurren en costos adicionales.
    
@@ -218,7 +218,7 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
 
 1. Haga clic en **Información general** y elija **Eliminar** en la parte superior de la hoja de la cuenta de almacenamiento. Cuando se le pida confirmación, en la hoja **Eliminar cuenta de almacenamiento**, escriba el nombre de la cuenta de almacenamiento para confirmarla y haga clic en **Eliminar**. 
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 
