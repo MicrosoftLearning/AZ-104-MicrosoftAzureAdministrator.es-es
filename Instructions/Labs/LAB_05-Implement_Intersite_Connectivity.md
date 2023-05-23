@@ -27,9 +27,11 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab05.png)
 
-### Instructions
+### Instrucciones
 
-#### Tarea 1: Aprovisionamiento del entorno de laboratorio
+## Ejercicio 1
+
+## Tarea 1: Aprovisionamiento del entorno de laboratorio
 
 En esta tarea, implementará tres máquinas virtuales, cada una en una red virtual independiente, con dos de ellas en la misma región de Azure y la tercera en otra región de Azure.
 
@@ -82,7 +84,7 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 
 1. Cierre el panel de Cloud Shell.
 
-#### Tarea 2: Configuración del emparejamiento local y global de red virtual
+## Tarea 2: Configuración del emparejamiento local y global de red virtual
 
 En esta tarea, configurará el emparejamiento local y global entre las redes virtuales que implementó en las tareas anteriores.
 
@@ -201,7 +203,7 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### Tarea 3: Prueba de la conectividad entre sitios
+## Tarea 3: Prueba de la conectividad entre sitios
 
 En esta tarea, probará la conectividad entre las máquinas virtuales de las tres redes virtuales que conectó a través del emparejamiento local y global en la tarea anterior.
 
@@ -259,7 +261,7 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. Examine la salida del comando y compruebe que la conexión se ha realizado correctamente.
 
-#### Limpieza de recursos
+## Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -281,7 +283,7 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 

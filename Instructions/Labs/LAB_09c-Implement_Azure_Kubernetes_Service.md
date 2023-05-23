@@ -28,11 +28,11 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09c.png)
 
-## Instrucciones
+### Instrucciones
 
-### Ejercicio 1
+## Ejercicio 1
 
-#### Tarea 1: Registrar los proveedores de recursos Microsoft.Kubernetes y Microsoft.KubernetesConfiguration.
+## Tarea 1: Registrar los proveedores de recursos Microsoft.Kubernetes y Microsoft.KubernetesConfiguration.
 
 En esta tarea, registrará los proveedores de recursos necesarios para implementar un clúster de Azure Kubernetes Services.
 
@@ -54,7 +54,7 @@ En esta tarea, registrará los proveedores de recursos necesarios para implement
 
 1. Cierre el panel de Cloud Shell.
 
-#### Tarea 2: Implementar un clúster de Azure Kubernetes Service
+## Tarea 2: Implementar un clúster de Azure Kubernetes Service
 
 En esta tarea, implementará un clúster de Azure Kubernetes Services mediante Azure Portal.
 
@@ -62,7 +62,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09c-rg1** |
@@ -109,7 +109,7 @@ En esta tarea, implementará un clúster de Azure Kubernetes Services mediante A
 
     >**Nota**: Espere a que la implementación se complete. Esto tardará aproximadamente 10 minutos.
 
-#### Tarea 3: Implementar pods en el clúster de Azure Kubernetes Service
+## Tarea 3: Implementar pods en el clúster de Azure Kubernetes Service
 
 En esta tarea, implementará un pod en el clúster de Azure Kubernetes Service.
 
@@ -177,7 +177,7 @@ En esta tarea, implementará un pod en el clúster de Azure Kubernetes Service.
 
 1. Abra una ventana del explorador y vaya a la dirección IP que obtuvo en el paso anterior. Compruebe que en la página del explorador aparezca el mensaje **Welcome to nginx!** "Hola mundo".
 
-#### Tarea 4: Escalar las cargas de trabajo en contenedores en el clúster de Azure Kubernetes Service
+## Tarea 4: Escalar las cargas de trabajo en contenedores en el clúster de Azure Kubernetes Service
 
 En esta tarea, escalará horizontalmente el número de pods y, luego, el número de nodos de clúster.
 
@@ -245,7 +245,7 @@ En esta tarea, escalará horizontalmente el número de pods y, luego, el número
 
 1. Cierre el panel de **Cloud Shell**.
 
-#### Limpieza de recursos
+## Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -267,7 +267,7 @@ En esta tarea, escalará horizontalmente el número de pods y, luego, el número
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro --nowait). Aunque podrá ejecutar otro comando de la CLI de Azure inmediatamente después en la misma sesión de Bash, los grupos de recursos tardarán unos minutos en quitarse.
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 

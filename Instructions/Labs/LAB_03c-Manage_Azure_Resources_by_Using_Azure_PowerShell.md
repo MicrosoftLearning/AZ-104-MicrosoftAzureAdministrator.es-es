@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Laboratorio 03c: Administración de recursos de Azure mediante Azure PowerShell
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 03c: Administración de recursos de Azure mediante Azure PowerShell
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal y plantillas de Azure Resource Manager, debe llevar a cabo la tarea equivalente mediante Azure PowerShell. Para evitar la instalación de módulos de Azure PowerShell, aprovechará el entorno de PowerShell disponible en Azure Cloud Shell.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -21,19 +21,19 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Crear un grupo de recursos y un disco administrado de Azure mediante Azure PowerShell
 + Tarea 3: Configurar el disco administrado mediante Azure PowerShell
 
-## <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+## Tiempo estimado: 20 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab03c.png)
 
-## <a name="instructions"></a>Instrucciones
+### Instrucciones
 
 > **Nota:** Cree siempre su propia contraseña segura para cualquier máquina virtual o cuenta de usuario que cree. Si no es usted quien crea la máquina virtual, use la opción **Restablecer contraseña** en el portal para actualizar la contraseña. 
 
-### <a name="exercise-1"></a>Ejercicio 1
+## Ejercicio 1
 
-#### <a name="task-1-start-a-powershell-session-in-azure-cloud-shell"></a>Tarea 1: Iniciar una sesión de PowerShell en Azure Cloud Shell
+## Tarea 1: Iniciar una sesión de PowerShell en Azure Cloud Shell
 
 En esta tarea, abrirá una sesión de PowerShell en Cloud Shell. 
 
@@ -47,7 +47,7 @@ En esta tarea, abrirá una sesión de PowerShell en Cloud Shell.
 
 1. Asegúrese de que **PowerShell** aparezca en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-powershell"></a>Tarea 2: Crear un grupo de recursos y un disco administrado de Azure mediante Azure PowerShell
+## Tarea 2: Crear un grupo de recursos y un disco administrado de Azure mediante Azure PowerShell
 
 En esta tarea, creará un grupo de recursos y un disco administrado de Azure mediante una sesión de Azure PowerShell dentro de Cloud Shell.
 
@@ -88,7 +88,7 @@ En esta tarea, creará un grupo de recursos y un disco administrado de Azure med
    Get-AzDisk -ResourceGroupName $rgName -Name $diskName
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-powershell"></a>Tarea 3: Configurar el disco administrado mediante Azure PowerShell
+## Tarea 3: Configurar el disco administrado mediante Azure PowerShell
 
 En esta tarea, administrará la configuración del disco administrado de Azure mediante una sesión de Azure PowerShell en Cloud Shell. 
 
@@ -122,11 +122,11 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
    (Get-AzDisk -ResourceGroupName $rgName -Name $diskName).Sku
    ```
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
    >**Nota**: No elimine los recursos que implementó en este laboratorio. Hará referencia a ellos en el siguiente laboratorio de este módulo.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 
