@@ -139,7 +139,7 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
 
     >**Nota**: Se trata de una solución alternativa que aborda el problema por el que Azure Portal en ocasiones no muestra la red virtual recién aprovisionada al crear emparejamientos de redes virtuales.
 
-1. En la lista de redes virtuales, haga clic en **az104-06-vnet01**.
+1. En la lista de red virtual, haga clic en **az104-06-vnet01**.
 
 1. En la hoja de la máquina virtual **az104-06-vnet01**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
 
@@ -431,7 +431,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
     | --- | --- |
     | Nombre | **az104-06-fe4** |
     | Tipo de IP | Dirección IP |
-    | Dirección IP pública | Seleccione **Crear nuevo**. |
+    | Dirección IP pública | Seleccione **Crear**. |
     | Equilibrador de carga de puerta de enlace | Ninguno |
     
 1. En el elemento emergente **Agregar una dirección IP pública**, utilice la configuración siguiente antes de hacer clic en **Aceptar** y, a continuación, haga clic en **Agregar**. Cuando haya terminado, haga clic en **Siguiente: Grupos de back-end**. 
