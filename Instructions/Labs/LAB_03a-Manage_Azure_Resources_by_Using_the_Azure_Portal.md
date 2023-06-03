@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Laboratorio 03a: Administración de recursos de Azure con Azure Portal
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 03a: Administración de recursos de Azure con Azure Portal
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Tiene que explorar las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos, incluido el movimiento de recursos entre grupos de recursos. También quiere explorar las opciones para proteger los recursos de disco frente a la eliminación accidental, a la vez que se permita modificar las características de rendimiento y tamaño.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderemos a:
 
@@ -21,17 +21,17 @@ En este laboratorio, aprenderemos a:
 + Tarea 2: Mover recursos entre grupos de recursos
 + Tarea 3: Implementar y probar los bloqueos de recursos
 
-## <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+## Tiempo estimado: 20 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab03a.png)
 
-## <a name="instructions"></a>Instructions
+## Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+### Ejercicio 1
 
-#### <a name="task-1-create-resource-groups-and-deploy-resources-to-resource-groups"></a>Tarea 1: Crear grupos de recursos e implementar recursos en ellos
+#### Tarea 1: Crear grupos de recursos e implementar recursos en ellos
 
 En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disco en el grupo de recursos.
 
@@ -39,7 +39,7 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription| Nombre de la suscripción de Azure donde creó el grupo de recursos |
     |Grupo de recursos| Nombre de un nuevo grupo de recursos **az104-03a-rg1** |
@@ -56,7 +56,7 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
     >**Nota**: Espere hasta que se cree el disco. Debería tardar menos de un minuto.
 
-#### <a name="task-2-move-resources-between-resource-groups"></a>Tarea 2: Mover recursos entre grupos de recursos 
+#### Tarea 2: Mover recursos entre grupos de recursos 
 
 En esta tarea, moveremos el recurso de disco que creó en la tarea anterior a un nuevo grupo de recursos. 
 
@@ -72,13 +72,13 @@ En esta tarea, moveremos el recurso de disco que creó en la tarea anterior a un
 
     >**Nota**: No espere a que se complete el movimiento, sino que avance a la siguiente tarea. Esto puede tardar unos 10 minutos. Para saber si la operación se completó, supervise las entradas del registro de actividad del grupo de recursos de origen o de destino. Vuelva a visitar este paso una vez que complete la siguiente tarea.
 
-#### <a name="task-3-implement-resource-locks"></a>Tarea 3: Implementar bloqueos de recursos
+#### Tarea 3: Implementar bloqueos de recursos
 
 En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure que contenga un recurso de disco.
 
 1. En Azure Portal, busque y seleccione **Discos**, haga clic en **+ Crear** y especifique los siguientes valores:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription| Nombre de la suscripción que está usando en este laboratorio |
     |Grupo de recursos| Haga clic en **Crear nuevo** grupo de recursos y asígnele el nombre **az104-03a-rg3** |
@@ -118,13 +118,13 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
     >**Nota**: Esto es lo esperado, ya que el bloqueo a nivel de grupo de recursos solo se aplica a las operaciones de eliminación. 
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+#### Limpieza de recursos
 
    >**Nota**: No elimine los recursos que implementó en este laboratorio. Los va a usar en el siguiente laboratorio de este módulo. Quite solo el bloqueo de recursos que creó en este laboratorio.
 
 1. Vaya a la hoja del grupo de recursos **az104-03a-rg3**, muestre su hoja **Bloqueos** y quite el bloqueo **az104-03a-delete-lock** haciendo clic en el vínculo **Eliminar** en el lado derecho de la entrada de bloqueo **Eliminar**.
 
-#### <a name="review"></a>Revisar
+#### Revisar
 
 En este laboratorio, ha:
 

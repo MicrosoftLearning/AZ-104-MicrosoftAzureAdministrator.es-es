@@ -4,17 +4,17 @@ lab:
   module: Administer Virtual Networking
 ---
 
-# <a name="lab-04---implement-virtual-networking"></a>Laboratorio 04: Implementación de redes virtuales
+# Laboratorio 04: Implementación de redes virtuales
 
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Debe explorar las funcionalidades de red virtual de Azure. Para empezar, tiene previsto crear una red virtual en Azure que hospedará un par de máquinas virtuales de Azure. Dado que tiene previsto implementar la segmentación basada en red, las implementará en diferentes subredes de la red virtual. También quiere asegurarse de que sus direcciones IP públicas y privadas no cambiarán con el tiempo. Para cumplir los requisitos de seguridad de Contoso, debe proteger los puntos de conexión públicos de las máquinas virtuales de Azure accesibles desde Internet. Por último, debe implementar la resolución de nombres DNS para las máquinas virtuales de Azure tanto dentro de la red virtual como desde Internet.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -25,17 +25,17 @@ En este laboratorio, aprenderá a:
 + Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
 + Tarea 6: Configuración de Azure DNS para la resolución de nombres externos
 
-## <a name="estimated-timing-40-minutes"></a>Tiempo estimado: 40 minutos
+## Tiempo estimado: 40 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab04.png)
 
-## <a name="instructions"></a>Instructions
+### Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+## Ejercicio 1
 
-#### <a name="task-1-create-and-configure-a-virtual-network"></a>Tarea 1: Creación y configuración de una red virtual
+## Tarea 1: Creación y configuración de una red virtual
 
 En esta tarea, creará una red virtual con varias subredes mediante Azure Portal.
 
@@ -45,21 +45,22 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
     | Name | **az104-04-vnet1** |
     | Region | nombre de cualquier región de Azure disponible en la suscripción que usará en este laboratorio |
 
-1. Haga clic en **Siguiente: Direcciones IP** y elimine el **espacio de direcciones IPv4** existente. En el cuadro de texto **Espacio de direcciones IPv4**, escriba **10.40.0.0/20**.
+1. Haga clic en **Siguiente: Direcciones IP**. La **dirección inicial** es **10.40.0.0**. El **tamaño del espacio de direcciones** es **/20**. Asegúrese de hacer clic en **Agregar**. 
 
 1. Haga clic en **+ Agregar subred**, escriba los valores siguientes y, a continuación, haga clic en **Agregar**.
 
     | Configuración | Value |
     | --- | --- |
     | Nombre de subred | **subnet0** |
-    | Intervalo de direcciones de subred | **10.40.0.0/24** |
+    | Dirección inicial | **10.40.0.0/24** |
+    | Dirección inicial | **/24 (256 direcciones)** |
 
 1. Acepte los valores predeterminados y haga clic en **Revisar y crear**. Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
@@ -71,7 +72,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **subnet1** |
     | Intervalo de direcciones (bloque CIDR) | **10.40.1.0/24** |
@@ -80,7 +81,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Haga clic en **Guardar**
 
-#### <a name="task-2-deploy-virtual-machines-into-the-virtual-network"></a>Tarea 2: Implementación de máquinas virtuales en la red virtual
+## Tarea 2: Implementación de máquinas virtuales en la red virtual
 
 En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes de la red virtual mediante una plantilla de ARM.
 
@@ -94,10 +95,9 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
 
     >**Nota**: Debe cargar cada archivo por separado. Después de la carga, use **dir** para asegurarse de que ambos archivos se hayan cargado correctamente.
 
-1. Edite el archivo de parámetros y cambie la contraseña. Si necesita ayuda para editar el archivo en el shell, pida ayuda al instructor. Como procedimiento recomendado, los secretos, como las contraseñas, deben almacenarse de una forma más segura en el almacén de claves. 
-
 1. En el panel de Cloud Shell, ejecute lo siguiente para implementar las dos máquinas virtuales con los archivos de parámetros y plantilla:
-
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+    
    ```powershell
    $rgName = 'az104-04-rg1'
 
@@ -106,7 +106,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
       -TemplateFile $HOME/az104-04-vms-loop-template.json `
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
-
+   
     >**Nota**: Este método de implementación de plantillas de ARM usa Azure PowerShell. Puede realizar la misma tarea ejecutando el comando equivalente de la CLI de Azure **az deployment create** (para más información, consulte [Implementación de recursos con plantillas de Resource Manager y la CLI de Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
 
     >**Nota**: Espere a que la implementación se complete antes de continuar con la tarea siguiente. Este proceso tardará alrededor de 2 minutos.
@@ -120,7 +120,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
 
 1. Cierre el panel de Cloud Shell.
 
-#### <a name="task-3-configure-private-and-public-ip-addresses-of-azure-vms"></a>Tarea 3: Configuración de direcciones IP privadas y públicas de máquinas virtuales de Azure
+#### Tarea 3: Configuración de direcciones IP privadas y públicas de máquinas virtuales de Azure
 
 En esta tarea, configurará la asignación estática de direcciones IP públicas y privadas asignadas a interfaces de red de máquinas virtuales de Azure.
 
@@ -140,7 +140,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-04-pip0** |
     | SKU | **Estándar** |
@@ -159,7 +159,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-04-pip1** |
     | SKU | **Estándar** |
@@ -174,7 +174,7 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
     >**Nota**: Necesitará ambas direcciones IP en la última tarea de este laboratorio.
 
-#### <a name="task-4-configure-network-security-groups"></a>Tarea 4: Configuración de grupos de seguridad de red
+## Tarea 4: Configuración de grupos de seguridad de red
 
 En esta tarea, configurará grupos de seguridad de red para permitir la conectividad restringida a las máquinas virtuales de Azure.
 
@@ -211,7 +211,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Agregue una regla de entrada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | * |
@@ -243,7 +243,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
     >**Nota**: Deje abierta esta sesión de Escritorio remoto. Lo necesitará en la próxima tarea.
 
-#### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
+#### Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
 
 En esta tarea, configurará la resolución de nombres DNS dentro de una red virtual mediante zonas DNS privadas de Azure.
 
@@ -295,7 +295,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Compruebe que la salida del comando incluye la dirección IP privada de **az104-04-vm1** (**10.40.1.4**).
 
-#### <a name="task-6-configure-azure-dns-for-external-name-resolution"></a>Tarea 6: Configuración de Azure DNS para la resolución de nombres externos
+## Tarea 6: Configuración de Azure DNS para la resolución de nombres externos
 
 En esta tarea, configurará la resolución de nombres DNS externos mediante zonas DNS públicas de Azure.
 
@@ -307,7 +307,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Cree una zona DNS con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -323,7 +323,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-04-vm0** |
     | Tipo | **A** |
@@ -338,7 +338,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-04-vm1** |
     | Tipo | **A** |
@@ -369,7 +369,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Compruebe que la salida del comando incluye la dirección IP pública de **az104-04-vm1**.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
  > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -391,7 +391,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 

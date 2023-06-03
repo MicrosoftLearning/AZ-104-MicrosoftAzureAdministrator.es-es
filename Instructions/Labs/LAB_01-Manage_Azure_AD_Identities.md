@@ -4,17 +4,17 @@ lab:
   module: Administer Identity
 ---
 
-# <a name="lab-01---manage-azure-active-directory-identities"></a>Laboratorio 01: Administración de identidades de Azure Active Directory
+# Laboratorio 01: Administración de identidades de Azure Active Directory
 
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Para permitir que los usuarios de Contoso se autentiquen mediante Azure AD, se le ha encargado el aprovisionamiento de usuarios y cuentas de grupo. La pertenencia a los grupos debe actualizarse automáticamente en función de los puestos de trabajo del usuario. También debe crear un inquilino de prueba de Azure AD con una cuenta de usuario de prueba y conceder permisos limitados a esa cuenta para los recursos de la suscripción de Azure de Contoso.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -23,16 +23,16 @@ En este laboratorio, aprenderá a:
 + Tarea 3: Creación de un inquilino de Azure Active Directory (AD) (opcional: problema del entorno de laboratorio)
 + Tarea 4: Administración de usuarios invitados de Azure AD (opcional: problema del entorno de laboratorio)
 
-## <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 ![imagen](../media/lab01.png)
 
-## <a name="instructions"></a>Instructions
+### Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+## Ejercicio 1
 
-#### <a name="task-1-create-and-configure-azure-ad-users"></a>Tarea 1: Creación y configuración de usuarios de Azure AD
+## Tarea 1: Creación y configuración de usuarios de Azure AD
 
 En esta tarea, creará y configurará usuarios de Azure AD.
 
@@ -46,7 +46,7 @@ En esta tarea, creará y configurará usuarios de Azure AD.
 
 1. En la hoja Azure Active Directory, en la sección **Administrar**, haga clic en **Usuarios** y, a continuación, haga clic en la cuenta de usuario cuya configuración de **Perfil** se debe mostrar. 
 
-1. Haga clic en **Editar**, en la sección **Configuración**, establezca **Ubicación de uso** en **Estados Unidos** y haga clic en **Guardar** para aplicar el cambio.
+1. Haga clic en **Editar propiedades** y, en la pestaña **Configuración**, establezca **Ubicación de uso** en **Estados Unidos** y haga clic en **Guardar** para aplicar el cambio.
 
     >**Nota**: Esto es necesario para asignar una licencia de Azure AD Premium P2 a su cuenta de usuario más adelante en este laboratorio.
 
@@ -100,7 +100,7 @@ En esta tarea, creará y configurará usuarios de Azure AD.
 
 1. Cierre la sesión como usuario az104-01a-aaduser1 desde Azure Portal y cierre la ventana InPrivate del explorador.
 
-#### <a name="task-2-create-azure-ad-groups-with-assigned-and-dynamic-membership"></a>Tarea 2: Creación de grupos de Azure AD con pertenencia asignada y dinámica
+## Tarea 2: Creación de grupos de Azure AD con pertenencia asignada y dinámica
 
 En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada y dinámica.
 
@@ -183,13 +183,18 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
 
 1. Vuelva a la hoja **Grupos: Todos los grupos**, haga clic en la entrada que representa el grupo **Administradores del sistema de TI** y, a continuación, muestre su hoja **Miembros**. Compruebe que **az104-01a-aaduser2** aparece en la lista de miembros del grupo.
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tarea 3: Creación de un inquilino de Azure Active Directory (AD) (opcional: problema del entorno de laboratorio)
+## Tarea 3: Creación de un inquilino de Azure Active Directory (AD) (opcional: problema del entorno de laboratorio)
 
 En esta tarea, creará un nuevo inquilino de Azure AD.
-
-   >**Nota**: Hay un problema conocido con la comprobación de Captcha en el entorno de laboratorio. Si experimenta este problema, omita esta tarea y la siguiente. Estamos trabajando en una solución.
-
+    
 1. En Azure Portal, busque y seleccione **Azure Active Directory**.
+
+    >**Nota**: Hay un problema conocido con la comprobación de Captcha en el entorno de laboratorio. Si recibe el error **Error de creación. Demasiadas solicitudes, inténtelo de nuevo más tarde**, haga lo siguiente:<br>
+    - Intente la creación unas cuantas veces.<br>
+    - Compruebe la sección **Administrar inquilino** para asegurarse de que el inquilino no se creó en segundo plano. <br>
+    - Abra una nueva ventana **InPrivate** y use Azure Portal para intentar crear el inquilino desde allí.<br>
+     Plantee el problema al instructor y, luego, use la **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** para ver los pasos. <br>
+    - Puede probar esta tarea más adelante, pero la creación de un inquilino no es necesaria en otros laboratorios. 
 
 1. Haga clic en **Administrar inquilinos**. En la siguiente pantalla, haga clic en **+ Crear** y especifique la siguiente configuración:
 
@@ -211,7 +216,7 @@ En esta tarea, creará un nuevo inquilino de Azure AD.
 
 1. Muestre la hoja del inquilino de Azure AD recién creado mediante el vínculo **Click here to navigate to your new tenant: Contoso Lab** (Haga clic aquí para ir al nuevo inquilino: Contoso Lab) o el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
 
-#### <a name="task-4-manage-azure-ad-guest-users"></a>Tarea 4: Administración de usuarios invitados de Azure AD
+## Tarea 4: Administración de usuarios invitados de Azure AD
 
 En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a los recursos de una suscripción de Azure.
 
@@ -238,7 +243,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-01b-aaduser1** |
     | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |
@@ -255,7 +260,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 1. Haga clic en **+ Agregar pertenencia** y agregue la cuenta de usuario invitado al grupo **Administradores del laboratorio de TI**.
 
 
-#### <a name="task-5-clean-up-resources"></a>Tarea 5: Limpieza de recursos
+## Tarea 5: Limpieza de recursos
 
 > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. Aunque, en este caso, no hay cargos adicionales asociados a los inquilinos de Azure Active Directory y sus objetos, es posible que quiera considerar la posibilidad de quitar las cuentas de usuario, las cuentas de grupo y el inquilino de Azure Active Directory que creó en este laboratorio.
 
@@ -279,7 +284,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 > **Nota**: Si un inquilino tiene una licencia de prueba, tendría que esperar a que esta expirara para poder eliminar el inquilino. Esto no supondría ningún coste adicional.
 
-#### <a name="review"></a>Revisar
+#### Revisar
 
 En este laboratorio, ha:
 

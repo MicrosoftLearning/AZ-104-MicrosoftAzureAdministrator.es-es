@@ -4,16 +4,16 @@ lab:
   module: Administer Virtual Machines
 ---
 
-# <a name="lab-08---manage-virtual-machines"></a>Laboratorio 08: Administración de máquinas virtuales
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 08: Administración de máquinas virtuales
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha encargado la tarea de identificar diferentes opciones para implementar y configurar máquinas virtuales de Azure. En primer lugar, debe determinar diferentes opciones de escalabilidad y resistencia del proceso y el almacenamiento que puede implementar al usar máquinas virtuales de Azure. A continuación, debe investigar las opciones de escalabilidad y resistencia del proceso y el almacenamiento que están disponibles al usar conjuntos de escalado de máquinas virtuales de Azure. También quiere explorar la capacidad de configurar automáticamente máquinas virtuales y conjuntos de escalado de máquinas virtuales mediante la extensión de script personalizado de máquina virtual de Azure.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -25,18 +25,18 @@ En este laboratorio, aprenderá a:
 + Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
 + Tarea 7: Escalado de proceso y almacenamiento para conjuntos de escalado de máquinas virtuales de Azure (opcional)
 
-## <a name="estimated-timing-50-minutes"></a>Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab08.png)
 
 
-## <a name="instructions"></a>Instrucciones
+### Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+## Ejercicio 1
 
-#### <a name="task-1-deploy-zone-resilient-azure-virtual-machines-by-using-the-azure-portal-and-an-azure-resource-manager-template"></a>Tarea 1: Implementación de máquinas virtuales de Azure resistentes a zona mediante Azure Portal y una plantilla de Azure Resource Manager
+## Tarea 1: Implementación de máquinas virtuales de Azure resistentes a zona mediante Azure Portal y una plantilla de Azure Resource Manager
 
 En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de disponibilidad mediante Azure Portal y una plantilla de Azure Resource Manager.
 
@@ -46,7 +46,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
@@ -73,7 +73,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la hoja **Crear red virtual**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-08-rg01-vnet** |
     | Intervalo de direcciones | **10.80.0.0/20** |
@@ -125,7 +125,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Nombre de dirección IP pública | **az104-08-vm1-ip** |
     | Nombre de máquina virtual, Nombre de máquina virtual 1, Nombre de equipo de la máquina virtual   | **az104-08-vm1** |
     | Grupo de recursos de la máquina virtual | **az104-08-rg01** |    
-    | Nombre de usuario administrador | **Estudiante** |
+    | Nombre de usuario administrador | **Student** |
     | Contraseña de administrador | **Proporcione una contraseña segura**  |
     | Habilitación de la revisión en caliente | **false** |
     | Zona | **2** |
@@ -136,7 +136,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
     >**Nota**: Espere a que ambas implementaciones se completen antes de continuar con la siguiente tarea. Esto puede tardar unos cinco minutos.
 
-#### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>Tarea 2: Configuración de máquinas virtuales de Azure mediante extensiones de máquina virtual
+## Tarea 2: Configuración de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
 En esta tarea, instalará el rol del servidor web de Windows Server en las dos máquinas virtuales de Azure que implementó en la tarea anterior mediante la extensión de máquina virtual de script personalizado.
 
@@ -146,7 +146,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -223,7 +223,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
     >**Nota**: También puede conectarse a **az104-08-vm0** y ejecutar `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` para acceder al sitio web hospedado en **az104-08-vm1**.
 
-#### <a name="task-3-scale-compute-and-storage-for-azure-virtual-machines"></a>Tarea 3: Escalado de proceso y almacenamiento para máquinas virtuales de Azure
+## Tarea 3: Escalado de proceso y almacenamiento para máquinas virtuales de Azure
 
 En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiando su tamaño y escalará su almacenamiento mediante la conexión y configuración de sus discos de datos.
 
@@ -262,7 +262,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
 
-   New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 2046GB -ResiliencySettingName Simple -ProvisioningType Fixed
+   New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 64GB -ResiliencySettingName Simple -ProvisioningType Fixed
 
    Initialize-Disk -VirtualDisk (Get-VirtualDisk -FriendlyName virtualdisk1)
 
@@ -336,7 +336,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
     > **Nota**: Espere a que se confirme que los comandos se completaron correctamente.
 
-#### <a name="task-4-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tarea 4: Registro de proveedores de recursos de Microsoft.Insghts y Microsoft.AlertsManagement
+## Tarea 4: Registro de proveedores de recursos de Microsoft.Insghts y Microsoft.AlertsManagement
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
@@ -352,7 +352,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>Tarea 5: Implementación de conjuntos de escalado de máquinas virtuales de Azure resistentes a zona mediante Azure Portal
+## Tarea 5: Implementación de conjuntos de escalado de máquinas virtuales de Azure resistentes a zona mediante Azure Portal
 
 En esta tarea, implementará el conjunto de escalado de máquinas virtuales de Azure entre zonas de disponibilidad mediante Azure Portal.
 
@@ -360,15 +360,16 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
     | Nombre del conjunto de escalado de máquinas virtuales | **az10408vmss0** |
     | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure diferentes de las que usó para implementar máquinas virtuales anteriormente en este laboratorio. |
     | Zona de disponibilidad | **Zonas 1, 2, 3** |
+    | Modo de orquestación | **Uniforme** |
     | Imagen | **Windows Server 2019 Datacenter - Gen2** |
-    | Instancia de Azure Spot | **No** |
+    | Ejecución de Azure Spot con descuento | **No** |
     | Size | **Estándar D2s_v3** |
     | Nombre de usuario | **Estudiante** |
     | Contraseña | **Proporcione una contraseña segura**  |
@@ -378,9 +379,9 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Discos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >**.
 
-1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
+1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados). 
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-08-rg02-vnet** |
     | Intervalo de direcciones | **10.82.0.0/20** |
@@ -395,13 +396,13 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az10408vmss0-nsg** |
 
 1. Haga clic en **Agregar una regla de entrada** y agregue una regla de seguridad de entrada con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | **\*** |
@@ -416,13 +417,18 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. De nuevo en la hoja **Editar la interfaz de red**, en la sección **Dirección IP pública**, haga clic en **Habilitada** y en **Aceptar**.
 
-1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, en la sección **Equilibrio de carga**, asegúrese de que está seleccionada la entrada **Usar un equilibrador de carga** y especifique las siguientes opciones de configuración de **Equilibrio de carga** (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Escalado >** :
+1. De nuevo en la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, en la sección **Equilibrio de carga**, especifique lo siguiente (deje a otros con sus valores predeterminados).
 
     | Configuración | Valor |
     | --- | --- |
     | Opciones de equilibrio de carga | **Azure Load Balancer** |
-    | Seleccionar un equilibrador de carga | **(nuevo) az10408vmss0-lb** |
-    | Seleccionar un grupo de back-end | **(nuevo) bepool** |
+    | Seleccionar un equilibrador de carga | **Creación de un equilibrador de carga** |
+    
+1.  En la página **Crear un equilibrador de carga**, especifique el nombre del equilibrador de carga y tome los valores predeterminados. Haga clic en **Crear** cuando haya terminado y, después, haga clic en **Siguiente: Escalado >** .
+    
+    | Configuración | Valor |
+    | --- | --- |
+    | Nombre del equilibrador de carga | **az10408vmss0-lb** |
 
 1. En la pestaña **Escalado** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Administración >** :
 
@@ -456,7 +462,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
     >**Nota**: Espere a que se complete la implementación del conjunto de escalado de máquinas virtuales. Este proceso tardará alrededor de 5 minutos.
 
-#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
+## Tarea 6: Configuración de conjuntos de escalado de máquinas virtuales de Azure mediante extensiones de máquina virtual
 
 En esta tarea, instalará el rol del servidor web de Windows Server en las instancias del conjunto de escalado de máquinas virtuales de Azure que implementó en la tarea anterior mediante la extensión de máquina virtual de script personalizado.
 
@@ -466,7 +472,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -497,7 +503,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
     >**Nota**: Compruebe que la página del explorador muestra el nombre de una de las instancias del conjunto de escalado de máquinas virtuales de Azure **az10408vmss0**.
 
-#### <a name="task-7-scale-compute-and-storage-for-azure-virtual-machine-scale-sets"></a>Tarea 7: Escalado de proceso y almacenamiento para conjuntos de escalado de máquinas virtuales de Azure
+## Tarea 7: Escalado de proceso y almacenamiento para conjuntos de escalado de máquinas virtuales de Azure
 
 En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado de máquinas virtuales, configurará sus opciones de escalado automático y les conectará discos.
 
@@ -619,7 +625,7 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
 1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -646,7 +652,7 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 
