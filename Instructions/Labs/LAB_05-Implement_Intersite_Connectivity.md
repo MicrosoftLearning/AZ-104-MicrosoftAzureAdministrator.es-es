@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '05: Implementación de la conectividad entre sitios'
+  title: "Laboratorio\_05: Implementación de la conectividad entre sitios"
   module: Administer Intersite Connectivity
 ---
 
@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ## Ejercicio 1
 
-## Tarea 1: Aprovisionamiento del entorno de laboratorio
+## Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará tres máquinas virtuales, cada una en una red virtual independiente, con dos de ellas en la misma región de Azure y la tercera en otra región de Azure.
 
@@ -217,7 +217,7 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros. 
+1. Cuando se le solicite, inicie sesión con el nombre de usuario **Alumno** y la contraseña que configuró al implementar las máquinas virtuales mediante CloudShell. 
 
 1. En la sesión de Escritorio remoto para **az104-05-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)**.
 
