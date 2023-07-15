@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '01: Administración de identidades de Azure Active Directory'
+  title: "Laboratorio\_01: Administración de identidades de Azure\_Active Directory"
   module: Administer Identity
 ---
 
@@ -54,15 +54,15 @@ En esta tarea, creará y configurará usuarios de Azure AD.
 
 1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Nombre de usuario | **az104-01a-aaduser1** |
-    | Name | **az104-01a-aaduser1** |
-    | Permitirme crear la contraseña | enabled |
+    | Nombre principal de usuario | **az104-01a-aaduser1** |
+    | Nombre para mostrar | **az104-01a-aaduser1** |
+    | Generar automáticamente la contraseña | sin seleccionar |
     | Contraseña inicial | **Proporcione una contraseña segura** |
-    | Ubicación de uso | **Estados Unidos** |
-    | Puesto | **Administrador de la nube** |
-    | department | **TI** |
+    | Puesto (pestaña Propiedades) | **Administrador de la nube** |
+    | Departamento (pestaña Propiedades) | **TI** |
+    | Ubicación de uso (pestaña Propiedades) | **Estados Unidos** |
 
     >**Nota**: **Copie en el Portapapeles** el **Nombre principal del usuario** completo (nombre de usuario más dominio). Lo necesitará más adelante en esta tarea.
 
@@ -88,16 +88,16 @@ En esta tarea, creará y configurará usuarios de Azure AD.
 
 1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Nombre de usuario | **az104-01a-aaduser2** |
-    | Name | **az104-01a-aaduser2** |
-    | Permitirme crear la contraseña | enabled |
+    | Nombre principal de usuario | **az104-01a-aaduser2** |
+    | Nombre para mostrar | **az104-01a-aaduser2** |
+    | Generar automáticamente la contraseña | sin seleccionar  |
     | Contraseña inicial | **Proporcione una contraseña segura** |
-    | Ubicación de uso | **Estados Unidos** |
     | Puesto | **Administrador del sistema** |
     | department | **TI** |
-
+    | Ubicación de uso | **Estados Unidos** |
+    
 1. Cierre la sesión como usuario az104-01a-aaduser1 desde Azure Portal y cierre la ventana InPrivate del explorador.
 
 ## Tarea 2: Creación de grupos de Azure AD con pertenencia asignada y dinámica
@@ -224,11 +224,11 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
 1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Nombre de usuario | **az104-01b-aaduser1** |
-    | Name | **az104-01b-aaduser1** |
-    | Permitirme crear la contraseña | enabled |
+    | Nombre principal de usuario | **az104-01b-aaduser1** |
+    | Nombre para mostrar | **az104-01b-aaduser1** |
+    | Generar automáticamente la contraseña | sin seleccionar  |
     | Contraseña inicial | **Proporcione una contraseña segura** |
     | Puesto | **Administrador del sistema** |
     | department | **TI** |
@@ -237,19 +237,19 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
     >**Nota**: **Copie en el Portapapeles** el **Nombre principal del usuario** completo (nombre de usuario más dominio). Lo necesitará más adelante en esta tarea.
 
-1. Cambie de nuevo al inquilino de Azure AD predeterminado mediante el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
+1. Cambie de nuevo al inquilino de Azure AD predeterminado (el primero) mediante el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
 
 1. Vuelva al panel **Usuarios: Todos los usuarios** y, después, haga clic en **+ Invitar a un usuario externo**.
 
 1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Nombre | **az104-01b-aaduser1** |
-    | Dirección de correo electrónico | el nombre principal de usuario que copió anteriormente en esta tarea |
-    | Ubicación de uso | **Estados Unidos** |
-    | Puesto | **Administrador del laboratorio** |
-    | department | **TI** |
+    | Email | el nombre principal de usuario que copió anteriormente en esta tarea |
+    | Nombre para mostrar (pestaña Propiedades)  | **az104-01b-aaduser1** |
+    | Puesto (pestaña Propiedades) | **Administrador del laboratorio** |
+    | Departamento (pestaña Propiedades) | **TI** |
+    | Ubicación de uso (pestaña Propiedades) | **Estados Unidos** |
 
 1. Haga clic en **Invitar**. 
 
