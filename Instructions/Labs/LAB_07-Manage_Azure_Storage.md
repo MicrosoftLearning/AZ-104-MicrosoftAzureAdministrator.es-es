@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '07: Administración de Azure Storage'
+  title: "Laboratorio\_07: Administración de Azure\_Storage"
   module: Administer Azure Storage
 ---
 
@@ -132,7 +132,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Haga clic en **+ Contenedor** y cree un contenedor con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-07-container**  |
     | Nivel de acceso público | **Privado (sin acceso anónimo)** |
@@ -235,7 +235,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-07-share** |
 
