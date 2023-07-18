@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '06: Implementación de la administración del tráfico'
+  title: "Laboratorio\_06: Implementación de la administración del tráfico"
   module: Administer Network Traffic Management
 ---
 
@@ -463,7 +463,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
     | --- | --- |
     | Nombre | **az104-06-lb4-lbrule1** |
     | Versión de la dirección IP | **IPv4** |
-    | Dirección IP de front-end | **az104-06-pip4** |
+    | Dirección IP de front-end | **az104-06-fe4** |
     | Grupo back-end | **az104-06-lb4-be1** |    
     | Protocolo | **TCP** |
     | Port | **80** |

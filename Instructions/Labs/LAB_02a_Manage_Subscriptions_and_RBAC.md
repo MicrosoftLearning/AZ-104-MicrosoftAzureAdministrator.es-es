@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '02a: Administrar suscripciones y RBAC'
+  title: "Laboratorio\_02a: Administración de suscripciones y RBAC"
   module: Administer Governance and Compliance
 ---
 

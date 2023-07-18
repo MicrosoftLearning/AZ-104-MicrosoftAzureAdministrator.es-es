@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '09b: Implementación de Azure Container Instances'
+  title: "Laboratorio\_09b: Implementación de Azure Container Instances"
   module: Administer Serverless Computing
 ---
 
@@ -17,7 +17,7 @@ Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtual
 
 En este laboratorio, aprenderá a:
 
-- Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
+- Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker
 - Tarea 2: Revisar la funcionalidad de Azure Container Instances
 
 ## Tiempo estimado: 20 minutos
@@ -30,7 +30,7 @@ En este laboratorio, aprenderá a:
 
 ## Ejercicio 1
 
-## Tarea 1: Implementar una imagen de Docker mediante Azure Container Instances
+## Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker
 
 En esta tarea, creará una nueva instancia de contenedor para la aplicación web.
 
@@ -40,7 +40,7 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear instancia de contenedor**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09b-rg1** |
