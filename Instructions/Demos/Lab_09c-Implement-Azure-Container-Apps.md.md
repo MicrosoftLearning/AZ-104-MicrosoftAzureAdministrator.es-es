@@ -1,18 +1,27 @@
 ---
 lab:
-  title: 'Laboratorio 09c: Implementación de una aplicación de contenedor en el portal'
+  title: "Laboratorio\_09c: Implementación de Azure Container Apps"
   module: Administer PaaS Compute Options
 ---
 
-# Laboratorio 09c: Implementación de una aplicación de contenedor en el portal
+# Laboratorio 09c: Implementación de Azure Container Apps
+# Manual de laboratorio para alumnos
 
+## Escenario del laboratorio
 Azure Container Apps permite ejecutar microservicios y aplicaciones contenedorizadas en una plataforma sin servidor. Con Container Apps, puede disfrutar de las ventajas de ejecutar contenedores y, al mismo tiempo, dejar atrás las preocupaciones de configurar manualmente la infraestructura en la nube y orquestadores de contenedores complejos.
 
-En este laboratorio, cree un entorno seguro de Container Apps e implemente su primera aplicación de contenedor mediante Azure Portal.
+## Objetivos
+
+En este laboratorio, aprenderemos a:
+- Tarea 1: Creación de una aplicación de contenedor y un entorno
+- Tarea 2: Implementación de la aplicación contenedorizada
+- Tarea 3: Prueba y verificación de la implementación de la aplicación contenedorizada
 
 Para empezar, inicie sesión en [Azure Portal](https://portal.azure.com).
 
-## Crear una aplicación de contenedor
+## Tiempo estimado: 20 minutos
+
+## Tarea 1: Creación de una aplicación de contenedor y un entorno
 
 Para crear una aplicación contenedora, comience en la página principal de Azure Portal.
 
@@ -62,7 +71,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 1. Seleccione **Aceptar**.
 
 
-### Implementación de la aplicación contenedora
+## Tarea 2: Implementación de la aplicación contenedorizada
 
 1. Seleccione el botón **Revisar y crear** de la parte inferior de la página.  
 
@@ -74,7 +83,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 
     Se muestra una página con el mensaje *Implementación en curso*.  Una vez completada correctamente la implementación, verá el mensaje: *Se completó la implementación*.
    
-### Comprobación de la implementación
+## Tarea 3: Prueba y verificación de la implementación de la aplicación contenedorizada
 
 Seleccione **Ir al recurso** para ver la aplicación de contenedor.  Seleccione el vínculo que hay junto a *URL de aplicación* para ver la aplicación. Compruebe que aparece el mensaje *Bienvenido a Azure Container Apps*.
 
