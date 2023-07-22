@@ -1,7 +1,7 @@
 ---
 lab:
   title: "Laboratorio\_09b: Implementación de Azure Container Instances"
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # Laboratorio 09b: Implementación de Azure Container Instances
