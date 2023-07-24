@@ -97,7 +97,7 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
@@ -132,7 +132,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Haga clic en **+ Contenedor** y cree un contenedor con la configuración siguiente:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-07-container**  |
     | Nivel de acceso público | **Privado (sin acceso anónimo)** |
@@ -233,11 +233,11 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. En Azure Portal, vuelva a la hoja de la cuenta de almacenamiento que creó en la primera tarea de este laboratorio y, en la sección **Almacenamiento de datos**, haga clic en **Recursos compartidos de archivos**.
 
-1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
+1. Haga clic en **+ Recurso compartido de archivos** y, en la pestaña **Aspectos básicos**, asigne un nombre al recurso compartido de archivos, **az104-07-share**. Revise la otra configuración de esta pestaña. 
 
-    | Configuración | Valor |
-    | --- | --- |
-    | Nombre | **az104-07-share** |
+1. Vaya a la pestaña **Copia de seguridad** y asegúrese de que **Habilitar copia de seguridad** **no** está activada.
+
+1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. Espere a que el recurso compartido de archivos se implemente. 
 
 1. Haga clic en el recurso compartido de archivos recién creado y haga clic en **Conectar**.
 
