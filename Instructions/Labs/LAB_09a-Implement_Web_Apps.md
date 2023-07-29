@@ -1,7 +1,7 @@
 ---
 lab:
-  title: '09a: Implementación de Web Apps'
-  module: Administer Serverless Computing
+  title: "Laboratorio\_09a: Implementación de aplicaciones web"
+  module: Administer PaaS Compute Options
 ---
 
 # Laboratorio 09a: Implementación de Web Apps
@@ -44,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -171,6 +171,8 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 1. En la hoja que muestra el espacio de producción de la aplicación web, en la sección **Configuración**, haga clic en **Escalar horizontalmente (plan de App Service)**.
 
+1. En la sección **Escalado**, seleccione la opción **Basado en reglas** y, a continuación, haga clic en el vínculo **Administrar el escalado basado en reglas**.
+
 1. Haga clic en **Escalabilidad automática personalizada**.
 
     >**Nota**: También tiene la opción de escalar manualmente la aplicación web.
@@ -227,7 +229,7 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)**.
 
-1. Seleccione la pestaña **Historial de ejecución** y compruebe el **Observed resource instance count** (Recuento de instancias de recursos observados).
+1. Seleccione **Configuración de escalado automático**, elija la pestaña **Historial de ejecución** y compruebe el **Recuento de instancias de recursos observado**.
 
 1. Supervise el uso y el número de instancias durante unos minutos. 
 

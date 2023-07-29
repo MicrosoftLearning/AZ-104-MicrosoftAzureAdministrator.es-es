@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '08: Administración de máquinas virtuales'
+  title: "Laboratorio\_08: Administración de máquinas virtuales"
   module: Administer Virtual Machines
 ---
 
@@ -125,7 +125,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Nombre de dirección IP pública | **az104-08-vm1-ip** |
     | Nombre de máquina virtual, Nombre de máquina virtual 1, Nombre de equipo de la máquina virtual   | **az104-08-vm1** |
     | Grupo de recursos de la máquina virtual | **az104-08-rg01** |    
-    | Nombre de usuario administrador | **Student** |
+    | Nombre de usuario administrador | **Estudiante** |
     | Contraseña de administrador | **Proporcione una contraseña segura**  |
     | Habilitación de la revisión en caliente | **false** |
     | Zona | **2** |

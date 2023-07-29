@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '03d: Administración de recursos de Azure mediante la CLI de Azure'
+  title: "Laboratorio\_03d: Administración de recursos de Azure mediante la CLI de Azure"
   module: Administer Azure Resources
 ---
 

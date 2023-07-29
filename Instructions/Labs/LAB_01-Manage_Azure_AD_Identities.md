@@ -237,7 +237,7 @@ En esta tarea, creará usuarios invitados de Azure AD y les concederá acceso a
 
     >**Nota**: **Copie en el Portapapeles** el **Nombre principal del usuario** completo (nombre de usuario más dominio). Lo necesitará más adelante en esta tarea.
 
-1. Cambie de nuevo al inquilino de Azure AD predeterminado (el primero) mediante el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
+1. Vuelva al primer inquilino que creó anteriormente. Para ello, utilice el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
 
 1. Vuelva al panel **Usuarios: Todos los usuarios** y, después, haga clic en **+ Invitar a un usuario externo**.
 

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '04: Implementación de redes virtuales'
+  title: "Laboratorio\_04: Implementación de redes virtuales"
   module: Administer Virtual Networking
 ---
 
@@ -45,7 +45,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
@@ -59,8 +59,8 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
     | Configuración | Value |
     | --- | --- |
     | Nombre de subred | **subnet0** |
-    | Dirección inicial | **10.40.0.0/24** |
-    | Dirección inicial | **/24 (256 direcciones)** |
+    | Dirección inicial | **10.40.0.0** |
+    | Tamaño de la subred | **/24 (256 direcciones)** |
 
 1. Acepte los valores predeterminados y haga clic en **Revisar y crear**. Deje que se procese la validación y haga clic en **Crear** de nuevo para enviar la implementación.
 
@@ -72,7 +72,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **subnet1** |
     | Intervalo de direcciones (bloque CIDR) | **10.40.1.0/24** |
@@ -126,6 +126,24 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
    >**Nota**: Las direcciones IP privadas y públicas se asignan realmente a las interfaces de red, que, a su vez, están conectadas a máquinas virtuales de Azure; sin embargo, es bastante común hacer referencia a direcciones IP asignadas a máquinas virtuales de Azure en su lugar.
 
+   >**Nota**: Necesitará **dos** direcciones IP públicas para completar este laboratorio. 
+
+1. En el Azure Portal, busque y seleccione **Direcciones IP públicas** y, a continuación, seleccione **+ Crear**.
+
+1. Asegúrese de que el **grupo de recursos** es **az104-04-rg1**.
+
+1. En **Detalles de configuración**, asegúrese de que el **Nombre** es **az104-04-pip0**.
+
+1. Seleccione **Revisar y crear** y, a continuación, **Crear**.
+
+1. En el Azure Portal, busque y seleccione **Direcciones IP públicas** y, a continuación, seleccione **+ Crear**.
+
+1. Asegúrese de que el **grupo de recursos** es **az104-04-rg1**.
+
+1. En **Detalles de configuración**, asegúrese de que el **Nombre** es **az104-04-pip1**.
+
+1. Seleccione **Revisar y crear** y, a continuación, **Crear**.
+
 1. En Azure Portal, busque y seleccione **Grupos de recursos** y, en la hoja **Grupos de recursos**, haga clic en **az104-04-rg1**.
 
 1. En la hoja del grupo de recursos **az104-04-rg1**, en la lista de sus recursos, haga clic en **az104-04-vnet1**.
@@ -138,16 +156,11 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la lista de configuraciones de IP, haga clic en **ipconfig1**.
 
-1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
+1. Asegúrese de que la **Asignación** es **Estática**.
 
-    | Configuración | Valor |
-    | --- | --- |
-    | Nombre | **az104-04-pip0** |
-    | SKU | **Estándar** |
+1. Seleccione **Asociar dirección IP pública** y, en la lista desplegable **Dirección IP pública**, seleccione **az104-04-pip0**.
 
-1. En la hoja de **ipconfig1**, establezca **Asignación** en **Estática**, y deje el valor predeterminado de **Dirección IP** establecido en **10.40.0.4**.
-
-1. De nuevo en la hoja de **ipconfig1**, guarde los cambios. Asegúrese de esperar a que se complete la operación de guardado antes de continuar con el paso siguiente.
+1. Seleccione **Guardar**.
 
 1. Vuelva a la hoja de **az104-04-vnet1**.
 
@@ -157,17 +170,12 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. En la lista de configuraciones de IP, haga clic en **ipconfig1**.
 
-1. En la hoja de **ipconfig1**, en la sección **Configuración de dirección IP pública**, seleccione **Asociar**, haga clic en **+ Crear nuevo**, especifique los siguientes valores y haga clic en **Aceptar**:
+1. Asegúrese de que la **Asignación** es **Estática**.
 
-    | Configuración | Valor |
-    | --- | --- |
-    | Nombre | **az104-04-pip1** |
-    | SKU | **Estándar** |
+1. Seleccione **Asociar dirección IP pública** y, en la lista desplegable **Dirección IP pública**, seleccione **az104-04-pip1**.
 
-1. En la hoja de **ipconfig1**, establezca **Asignación** en **Estática**, y deje el valor predeterminado de **Dirección IP** establecido en **10.40.1.4**.
-
-1. De nuevo en la hoja de **ipconfig1**, guarde los cambios.
-
+1. Seleccione **Guardar**.
+   
 1. Vuelva a la hoja del grupo de recursos **az104-04-rg1**, en la lista de sus recursos, haga clic en **az104-04-vm0** y, en la hoja de la máquina virtual **az104-04-vm0**, anote la entrada de la dirección IP pública.
 
 1. Vuelva a la hoja del grupo de recursos **az104-04-rg1**, en la lista de sus recursos, haga clic en **az104-04-vm1** y, en la hoja de la máquina virtual **az104-04-vm1**, anote la entrada de la dirección IP pública.
@@ -211,7 +219,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Agregue una regla de entrada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | * |
@@ -307,7 +315,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Cree una zona DNS con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -323,7 +331,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm0** |
     | Tipo | **A** |
@@ -338,7 +346,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-04-vm1** |
     | Tipo | **A** |

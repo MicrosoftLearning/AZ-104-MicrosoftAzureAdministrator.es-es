@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '10: Implementación de la protección de datos'
+  title: "Laboratorio\_10: Implementación de la protección de datos"
   module: Administer Data Protection
 ---
 
@@ -31,11 +31,11 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab10.png)
 
-## Instrucciones
+### Instrucciones
 
-### Ejercicio 1
+## Ejercicio 1
 
-#### Tarea 1: Aprovisionar el entorno de laboratorio
+## Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará dos máquinas virtuales que se usarán para probar diferentes escenarios de copia de seguridad.
 
@@ -78,7 +78,7 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
 
     >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea. La implementación tardará unos 5 minutos.
 
-#### Tarea 2: Crear un almacén de Recovery Services
+## Tarea 2: Crear un almacén de Recovery Services
 
 En esta tarea, creará un almacén de Recovery Services.
 
@@ -115,7 +115,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. Cierre la hoja **Configuración de seguridad** y, de nuevo en la hoja del almacén de Recovery Services **az104-10-rsv1**, haga clic en **Información general**.
 
-#### Tarea 3: Implementar la copia de seguridad a nivel de máquina virtual de Azure
+## Tarea 3: Implementar la copia de seguridad a nivel de máquina virtual de Azure
 
 En esta tarea, implementará la copia de seguridad a nivel de máquina virtual de Azure.
 
@@ -158,7 +158,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
 
     >**Nota**: No espere a que se complete la copia de seguridad, sino que avance a la siguiente tarea.
 
-#### Tarea 4: Implementar la copia de seguridad de archivos y carpetas
+## Tarea 4: Implementar la copia de seguridad de archivos y carpetas
 
 En esta tarea, implementará la copia de seguridad de archivos y carpetas mediante Azure Recovery Services.
 
@@ -257,7 +257,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , compruebe que haya una entrada que hace referencia a la unidad **C:\\** de **az104-10-vm1**.
 
-#### Tarea 5: Realizar la recuperación de archivos mediante el agente de Azure Recovery Services (opcional)
+## Tarea 5: Realizar la recuperación de archivos mediante el agente de Azure Recovery Services (opcional)
 
 En esta tarea, realizará la restauración de archivos mediante el agente de Azure Recovery Services.
 
@@ -287,7 +287,7 @@ En esta tarea, realizará la restauración de archivos mediante el agente de Azu
 
 1. Finalice la sesión de Escritorio remoto.
 
-#### Tarea 6: Realizar la recuperación de archivos mediante instantáneas de máquinas virtuales de Azure (opcional)
+## Tarea 6: Realizar la recuperación de archivos mediante instantáneas de máquinas virtuales de Azure (opcional)
 
 En esta tarea, restaurará un archivo a partir de la copia de seguridad basada en instantáneas a nivel de máquina virtual de Azure.
 
@@ -359,7 +359,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. Finalice la sesión de Escritorio remoto.
 
-#### Tarea 7: Revisar la funcionalidad de eliminación temporal de Azure Recovery Services
+## Tarea 7: Revisar la funcionalidad de eliminación temporal de Azure Recovery Services
 
 1. En el equipo del laboratorio, en Azure Portal, busque y seleccione **Almacenes de Recovery Services** y, en la hoja **Almacenes de Recovery Services**, haga clic en **az104-10-rsv1**.
 
@@ -441,7 +441,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. Repita los pasos al principio de esta tarea para eliminar los elementos de copia de seguridad de **az104-10-vm1**.
 
-#### Limpieza de recursos
+## Limpieza de recursos
 
 >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
 
@@ -465,7 +465,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### Revisar
+## Revisar
 
 En este laboratorio, ha:
 

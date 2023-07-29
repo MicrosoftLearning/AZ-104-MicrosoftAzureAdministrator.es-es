@@ -1,18 +1,18 @@
 ---
 lab:
-  title: '03b: Administración de recursos de Azure mediante plantillas de ARM'
+  title: "Laboratorio\_03b: Administración de recursos de Azure mediante plantillas de ARM"
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal, debe llevar a cabo la tarea equivalente mediante plantillas de Azure Resource Manager.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
-## <a name="objectives"></a>Objetivos
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -20,17 +20,17 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Crear un disco administrado de Azure mediante una plantilla de ARM
 + Tarea 3: Revisar la implementación del disco administrado basada en la plantilla de ARM
 
-## <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+## Tiempo estimado: 20 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab03b.png)
 
-## <a name="instructions"></a>Instructions
+### Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+## Ejercicio 1
 
-#### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tarea 1: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure
+## Tarea 1: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure
 
 1. Inicie sesión en [**Azure Portal**](http://portal.azure.com).
 
@@ -58,7 +58,7 @@ En este laboratorio, aprenderá a:
     
 1. Cierre todas las ventanas del **Explorador de archivos**.
 
-#### <a name="task-2-create-an-azure-managed-disk-by-using-an-arm-template"></a>Tarea 2: Crear un disco administrado de Azure mediante una plantilla de ARM
+## Tarea 2: Crear un disco administrado de Azure mediante una plantilla de ARM
 
 1. En Azure Portal, busque y seleccione **Implementar una plantilla personalizada**.
 
@@ -91,7 +91,7 @@ En este laboratorio, aprenderá a:
 
 1. De nuevo en la hoja **Implementación personalizada**, configure las opciones siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- |--- |
     | Subscription | *Nombre de la suscripción de Azure que está usando en este laboratorio* |
     | Grupo de recursos | Nombre de un **nuevo** grupo de recursos **az104-03b-rg1** |
@@ -102,13 +102,15 @@ En este laboratorio, aprenderá a:
     | Tamaño del disco en GB | **32** |
     | Create Option (Opción de creación) | **empty** |
     | Disk Encryption Set Type (Tipo de conjunto de cifrado de disco) | **EncryptionAtRestWithPlatformKey** |
+    | Modo de autenticación de acceso a datos | None |
     | Directiva de acceso a la red | **AllowAll** |
+    | Acceso de red pública | Disabled |
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
 1. Compruebe que la implementación se haya completado correctamente.
 
-#### <a name="task-3-review-the-arm-template-based-deployment-of-the-managed-disk"></a>Tarea 3: Revisar la implementación del disco administrado basada en la plantilla de ARM
+## Tarea 3: Revisar la implementación del disco administrado basada en la plantilla de ARM
 
 1. En Azure Portal, busque y seleccione **Grupos de recursos**. 
 
@@ -118,11 +120,11 @@ En este laboratorio, aprenderá a:
 
 1. En la hoja **az104-03b-rg1 - Implementaciones**, haga clic en la primera entrada de la lista de implementaciones y revise el contenido de las hojas **Entrada** y **Plantilla**.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
    >**Nota**: No elimine los recursos que implementó en este laboratorio. Hará referencia a ellos en el siguiente laboratorio de este módulo.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: '11: Implementación de la supervisión'
+  title: "Laboratorio\_11: Implementación de la supervisión"
   module: Administer Monitoring
 ---
 
