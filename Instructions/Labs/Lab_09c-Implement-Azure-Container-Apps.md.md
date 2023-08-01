@@ -68,14 +68,15 @@ A continuación, cree un entorno para la aplicación de contenedor.
   
     El campo *Ubicación* se ha rellenado previamente con su región.
 
-1. Seleccione **Aceptar**.
+1. Seleccione **Aceptar** y, después, **Crear**. 
 
+1. Haga clic en **Siguiente: Contenedor**.
 
-## Tarea 2: Implementación de la aplicación contenedorizada
+1. Active la casilla situada junto a **Usar imagen de inicio rápido**.
 
-1. Seleccione el botón **Revisar y crear** de la parte inferior de la página.  
+1. Seleccione el botón **Revisar y crear** de la parte inferior de la página. Este paso puede tardar unos minutos. 
 
-    A continuación, se comprueba la configuración de la aplicación de contenedor. Si no se encuentran errores, se habilita el botón *Crear*.  
+    Se comprueba la configuración de la aplicación de contenedor. Si no se encuentran errores, se habilita el botón *Crear*.  
 
     Si hay errores, todas las pestañas que contengan errores se marcan con un punto rojo.  Vaya a la pestaña adecuada. Los campos que contienen un error se resaltarán en rojo.  Una vez corregidos todos los errores, vuelva a seleccionar **Revisar y crear**.
 
@@ -83,9 +84,13 @@ A continuación, cree un entorno para la aplicación de contenedor.
 
     Se muestra una página con el mensaje *Implementación en curso*.  Una vez completada correctamente la implementación, verá el mensaje: *Se completó la implementación*.
    
-## Tarea 3: Prueba y verificación de la implementación de la aplicación contenedorizada
+## Tarea 2: Prueba y comprobación de la implementación de la aplicación de contenedor
 
-Seleccione **Ir al recurso** para ver la aplicación de contenedor.  Seleccione el vínculo que hay junto a *URL de aplicación* para ver la aplicación. Compruebe que aparece el mensaje *Bienvenido a Azure Container Apps*.
+1. Seleccione **Ir al recurso** para ver la aplicación de contenedor.
+
+1. Seleccione el vínculo que hay junto a *URL de aplicación* para ver la aplicación.
+
+1. Compruebe que recibe el mensaje *La aplicación de Azure Container Apps está activa**.
 
 ## Limpieza de recursos
 
