@@ -90,7 +90,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 
 1. Seleccione el vínculo que hay junto a *URL de aplicación* para ver la aplicación.
 
-1. Compruebe que recibe el mensaje *La aplicación de Azure Container Apps está activa**.
+1. Compruebe que recibe el mensaje **La aplicación de Azure Container Apps está activa**.
 
 ## Limpieza de recursos
 
