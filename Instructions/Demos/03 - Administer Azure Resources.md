@@ -21,9 +21,15 @@ En esta demostración, se explorará Azure Portal.
 
 1. Seleccione el icono **Configuración** en el banner superior.  Revise la configuración de **Apariencia y vistas de inicio**. 
 
-1. Use el menú de la izquierda y seleccione **Panel**. **Edite** el panel mediante la **Galería de iconos**. Analice las opciones de personalización. 
+1. Use el menú de la izquierda y seleccione **Panel**. **Edite** el panel mediante la **Galería de iconos**. Analice las opciones de personalización.
 
-1. Pregunte si los alumnos tienen alguna pregunta sobre cómo usar Azure Portal. 
+1. Mostrar cómo buscar y localizar recursos.
+
+1. Use el menú superior izquierdo para buscar **Todos los servicios**. 
+
+1. Como tiene tiempo, revise otras características.
+   
+1. Pregunte si los alumnos tienen alguna pregunta.
 
 ## Demostración: Cloud Shell
 
