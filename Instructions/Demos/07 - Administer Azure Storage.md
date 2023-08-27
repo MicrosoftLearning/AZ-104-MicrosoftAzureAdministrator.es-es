@@ -48,6 +48,21 @@ En esta demostración, se explorará el almacenamiento de blobs.
 
 1. Cargue un blob en el contenedor. Como tiene tiempo, revise la configuración avanzada. Por ejemplo, el tipo de blob y el tamaño del blob. 
 
+## Configuración de la seguridad de almacenamiento
+
+En esta demostración, se creará una firma de acceso compartido.
+
+**Nota:**  Para esta demostración se necesita una cuenta de almacenamiento, con un contenedor de blobs y un archivo cargado.
+
+**Referencia**: [Creación de tokens de SAS para contenedores de almacenamiento](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
+
+1. Seleccione un blob o archivo que quiera proteger. 
+
+1. Generar una firma de acceso compartido (SAS). Revise los permisos, los tiempos de inicio y expiración y los protocolos permitidos.
+
+1. Use la dirección URL de SAS para asegurarse de que se muestra el recurso. 
+
+
 ## Configuración de Azure Files 
 
 En esta demostración, se trabajará con instantáneas y recursos compartidos de archivos.
@@ -62,22 +77,7 @@ En esta demostración, se trabajará con instantáneas y recursos compartidos de
 
 1. Creación de un recurso compartido de archivos. Revise las cuotas, cargue archivos y agregue directorios para organizar la información. 
 
-1. Cree una instantánea de recurso compartido de archivos. Revise cuándo usar instantáneas y en qué se diferencian de las copias de seguridad. Como tiene tiempo, cargue un archivo, tome una instantánea, elimine el archivo y restaure la instantánea. 
-
-
-## Configuración de la seguridad de almacenamiento
-
-En esta demostración, se creará una firma de acceso compartido.
-
-**Nota:**  Para esta demostración se necesita una cuenta de almacenamiento, con un contenedor de blobs y un archivo cargado.
-
-**Referencia**: [Creación de tokens de SAS para contenedores de almacenamiento](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
-
-1. Seleccione un blob o archivo que quiera proteger. 
-
-1. Generar una firma de acceso compartido (SAS). Revise los permisos, los tiempos de inicio y expiración y los protocolos permitidos.
-
-1. Use la dirección URL de SAS para asegurarse de que se muestra el recurso. 
+1. Cree una instantánea de recurso compartido de archivos. Revise cuándo usar instantáneas y en qué se diferencian de las copias de seguridad. Como tiene tiempo, cargue un archivo, tome una instantánea, elimine el archivo y restaure la instantánea.
 
 
 ## Herramientas de almacenamiento (opcional)
