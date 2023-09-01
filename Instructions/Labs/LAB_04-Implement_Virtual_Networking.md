@@ -45,7 +45,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
@@ -72,7 +72,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una subred con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **subnet1** |
     | Intervalo de direcciones (bloque CIDR) | **10.40.1.0/24** |
@@ -120,7 +120,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes subredes
 
 1. Cierre el panel de Cloud Shell.
 
-#### Tarea 3: Configuración de direcciones IP privadas y públicas de máquinas virtuales de Azure
+## Tarea 3: Configuración de direcciones IP privadas y públicas de máquinas virtuales de Azure
 
 En esta tarea, configurará la asignación estática de direcciones IP públicas y privadas asignadas a interfaces de red de máquinas virtuales de Azure.
 
@@ -202,7 +202,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Cree un grupo de seguridad de red con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -219,7 +219,7 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Agregue una regla de entrada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Source | **Cualquiera** |
     | Source port ranges | * |
@@ -247,11 +247,11 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando el sistema se lo indique, inicie sesión con el usuario y la contraseña del archivo de parámetros.
+1. Cuando el sistema se lo indique, inicie sesión con el usuario y la contraseña.
 
     >**Nota**: Deje abierta esta sesión de Escritorio remoto. Lo necesitará en la próxima tarea.
 
-#### Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
+## Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
 
 En esta tarea, configurará la resolución de nombres DNS dentro de una red virtual mediante zonas DNS privadas de Azure.
 
@@ -259,7 +259,7 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Cree una zona DNS privada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -315,7 +315,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Cree una zona DNS con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
@@ -331,7 +331,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-04-vm0** |
     | Tipo | **A** |
@@ -346,7 +346,7 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Agregue un conjunto de registros con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-04-vm1** |
     | Tipo | **A** |
