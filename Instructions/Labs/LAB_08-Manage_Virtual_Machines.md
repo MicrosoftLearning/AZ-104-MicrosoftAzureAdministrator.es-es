@@ -564,7 +564,7 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
    ```powershell
    $rgName = 'az104-08-rg02'
 
-   $lbpipName = 'az10408vmss0-ip'
+   $lbpipName = 'az10408vmss0-lb-publicip'
 
    $pip = (Get-AzPublicIpAddress -ResourceGroupName $rgName -Name $lbpipName).IpAddress
    ```

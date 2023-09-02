@@ -44,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -102,11 +102,13 @@ En esta tarea, configurará las opciones de implementación de la aplicación we
 
     | Configuración | Valor |
     | --- | ---|
-    | Nombre de usuario | Cualquier nombre globalmente único (no debe contener el carácter `@`) |
-    | Contraseña | Cualquier contraseña que cumpla los requisitos de complejidad|
+    | Nombre de usuario | cualquier nombre único global (consulte la nota)  |
+    | Contraseña | cualquier contraseña que cumpla los requisitos de complejidad (consulte la nota) |
 
-    >**Nota**: Necesitará estas credenciales en la siguiente tarea de este laboratorio.
-
+    >**Nota:** Copie estas credenciales en el Bloc de notas. Las necesitará más adelante.
+    
+    >**Nota:** Estas credenciales se pasarán a través del URI. No incluya caracteres especiales que afecten a la interpretación del URI. Por ejemplo: @, $, or #. Un signo asterisco o de más (en medio de la cadena) funcionaría.
+    
 ## Tarea 4: Implementar código en la ranura de implementación de ensayo
 
 En esta tarea, implementará código en la ranura de implementación de ensayo.
@@ -140,10 +142,8 @@ En esta tarea, implementará código en la ranura de implementación de ensayo.
 1. En el panel de Cloud Shell, ejecute lo siguiente para insertar el código de la aplicación web de ejemplo del repositorio local en la ranura de implementación de ensayo de la aplicación web de Azure (asegúrese de reemplazar el marcador de posición `[deployment_user_name]` por el valor del nombre de usuario de **Credenciales de implementación**, que identificó en la tarea anterior):
 
    ```powershell
-   git push [deployment_user_name] master
+    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
    ```
-
-1. Si se le pide que se autentique, escriba `[deployment_user_name]` y la contraseña correspondiente (que estableció en la tarea anterior).
 
 1. Cierre el panel de Cloud Shell.
 
