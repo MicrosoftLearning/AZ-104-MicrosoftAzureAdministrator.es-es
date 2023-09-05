@@ -116,7 +116,7 @@ En esta tarea, creará grupos de Azure Active Directory con pertenencia asignada
 
     >**Nota**: Las licencias pueden tardar hasta 10 minutos en activarse. Siga actualizando la página hasta que aparezca. No continúe hasta que se hayan activado las licencias.
 
-1. En la hoja **Licencias: Todos los productos**, seleccione la entrada **Azure Active Directory Premium P2** y asigne todas las opciones de licencia de Azure AD Premium P2 a su cuenta de usuario y a las dos cuentas de usuario recién creadas.
+1. En la hoja **Licencias: Todos los productos**, seleccione la entrada **Microsoft Entra ID P2** y asigne todas las opciones de licencia a su cuenta de usuario y a las dos cuentas de usuario recién creadas.
 
 1. En Azure Portal, vuelva a la hoja del inquilino de Azure AD y haga clic en **Grupos**.
 

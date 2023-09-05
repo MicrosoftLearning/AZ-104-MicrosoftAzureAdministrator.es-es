@@ -148,22 +148,18 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
     | Configuración | Value |
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **Ninguna (valor predeterminado)** |
+    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-06-vnet2_to_az104-06-vnet01** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | enabled |
-    | Id. de recurso | El valor del parámetro Id. de recurso de **az104-06-vnet2** que registró anteriormente en esta tarea |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Permitir (predeterminado)** |
-    | Puerta de enlace de red virtual | **Ninguna (valor predeterminado)** |
+    | Id. de recurso | El valor del parámetro resourceID de **az104-06-vnet2** que registró anteriormente en esta tarea. |
+    | Permitir el acceso a la red virtual actual | **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Habilitar el tráfico hacia la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    
 
     >**Nota**: Espere a que se complete la operación.
 
     >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-06-vnet01 a az104-06-vnet2 y el otro de az104-06-vnet2 a az104-06-vnet01.
-
-    >**Nota**: Es necesario habilitar **Permitir tráfico reenviado** para facilitar el enrutamiento entre redes virtuales de radio, que implementará más adelante en este laboratorio.
 
 1. En la hoja de la máquina virtual **az104-06-vnet01**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
 
@@ -172,20 +168,17 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
     | Configuración | Value |
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **Ninguna (valor predeterminado)** |
+    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |    
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-06-vnet3_to_az104-06-vnet01** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | enabled |
     | Id. de recurso | El valor del parámetro Id. de recurso de **az104-06-vnet3** que registró anteriormente en esta tarea |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Permitir (predeterminado)** |
-    | Puerta de enlace de red virtual | **Ninguna (valor predeterminado)** |
+    | Permitir el acceso a la red virtual actual | **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Habilitar el tráfico hacia la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
 
+    >**Nota**: Espere a que se complete la operación.
+    
     >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-06-vnet01 a az104-06-vnet3 y el otro de az104-06-vnet3 a az104-06-vnet01. Esto completa la configuración de la topología en estrella tipo hub-and-spoke (con dos redes virtuales de radio).
-
-    >**Nota**: Es necesario habilitar **Permitir tráfico reenviado** para facilitar el enrutamiento entre redes virtuales de radio, que implementará más adelante en este laboratorio.
 
 ## Tarea 3: Probar la transitividad del emparejamiento de redes virtuales
 
