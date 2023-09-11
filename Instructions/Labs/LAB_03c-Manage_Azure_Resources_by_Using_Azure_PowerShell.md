@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratorio\_03c: Administración de recursos de Azure mediante Azure PowerShell"
+  title: "Laboratorio\_03c: Administración de recursos de Azure mediante Azure PowerShell (opcional)"
   module: Administer Azure Resources
 ---
 
@@ -12,6 +12,8 @@ lab:
 Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal y plantillas de Azure Resource Manager, debe llevar a cabo la tarea equivalente mediante Azure PowerShell. Para evitar la instalación de módulos de Azure PowerShell, aprovechará el entorno de PowerShell disponible en Azure Cloud Shell.
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+
+>**Nota:** Este laboratorio requiere que se complete Lab 03b. 
 
 ## Objetivos
 
@@ -72,7 +74,7 @@ En esta tarea, creará un grupo de recursos y un disco administrado de Azure med
     -Location $location `
     -CreateOption Empty `
     -DiskSizeGB 32 `
-    -Sku Standard_LRS
+    -SkuName Standard_LRS
 
    $diskName = 'az104-03c-disk1'
 
@@ -113,7 +115,7 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
 1. Para cambiar la SKU de rendimiento del disco a **Premium_LRS**, desde la sesión de PowerShell en Cloud Shell, ejecute lo siguiente:
 
    ```powershell
-   New-AzDiskUpdateConfig -Sku Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
+   New-AzDiskUpdateConfig -SkuName Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
    ```
 
 1. Para comprobar que el cambio ha surtido efecto, ejecute lo siguiente:
