@@ -13,6 +13,8 @@ Ahora que ha explorado las funcionalidades básicas de administración de Azure 
 
                 **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
+>**Nota:** Este laboratorio requiere que se complete Lab 03b.
+
 ## Objetivos
 
 En este laboratorio, aprenderá a:
@@ -27,7 +29,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab03d.png)
 
-### Instrucciones
+### Instructions
 
 ## Ejercicio 1
 
@@ -95,7 +97,7 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
 1. Para comprobar que el cambio ha surtido efecto, ejecute lo siguiente:
 
    ```sh
-   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
+   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGB
    ```
 
 1. Para cambiar la SKU de rendimiento del disco a **Premium_LRS**, desde la sesión de Bash en Cloud Shell, ejecute lo siguiente:
