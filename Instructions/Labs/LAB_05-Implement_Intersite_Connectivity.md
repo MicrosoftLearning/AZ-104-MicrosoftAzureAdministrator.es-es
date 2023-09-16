@@ -103,17 +103,14 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Esta red virtual: tráfico a la red virtual remota | **Permitir (predeterminado)** |
-    | Esta red virtual: tráfico reenviado desde una red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet0** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet1** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual actual |  **Asegúrese de que la casilla está activada (valor predeterminado)** |
+
 
     >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-05-vnet0 a az104-05-vnet1 y el otro de az104-05-vnet1 a az104-05-vnet0.
 
@@ -138,17 +135,13 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet2** |
-    | Esta red virtual: tráfico a la red virtual remota | **Permitir (predeterminado)** |
-    | Esta red virtual: tráfico reenviado desde una red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual remota |**Asegúrese de que la casilla está activada (valor predeterminado)** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet2_to_az104-05-vnet0** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet2** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual actual |**Asegúrese de que la casilla está activada (valor predeterminado)** |
 
     >**Nota**: Este paso establece dos emparejamientos globales: uno de az104-05-vnet0 a az104-05-vnet2 y el otro de az104-05-vnet2 a az104-05-vnet0.
 
@@ -175,17 +168,13 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet2** |
-    | Esta red virtual: tráfico a la red virtual remota | **Permitir (predeterminado)** |
-    | Esta red virtual: tráfico reenviado desde una red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet2_to_az104-05-vnet1** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet2** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual actual | **Asegúrese de que la casilla está activada (valor predeterminado)** |
 
     >**Nota**: Este paso establece dos emparejamientos globales: uno de az104-05-vnet1 a az104-05-vnet2 y el otro de az104-05-vnet2 a az104-05-vnet1.
 

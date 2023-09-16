@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab10.png)
 
-### Instrucciones
+### Instructions
 
 ## Ejercicio 1
 
@@ -208,6 +208,8 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 1. En el cuadro de diálogo **Seleccionar credenciales de almacén**, vaya a la carpeta **Descargas**, haga clic en el archivo de credenciales del almacén que descargó y haga clic en **Abrir**.
 
 1. De nuevo en la página **Identificación del almacén**, haga clic en **Siguiente**.
+
+1. Asegúrese de que no esté activada la opción **Guardar frase de contraseña de forma segura en Azure Key Vault**. 
 
 1. En la página **Configuración de cifrado** del **Asistente para registrar servidor**, haga clic en **Generar frase de contraseña**.
 

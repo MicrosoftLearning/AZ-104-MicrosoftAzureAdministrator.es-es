@@ -27,7 +27,7 @@ En este laboratorio, aprenderemos a:
 
 ![imagen](../media/lab03a.png)
 
-### Instrucciones
+### Instructions
 
 ## Ejercicio 1
 
@@ -41,11 +41,11 @@ En esta tarea, usará Azure Portal para crear grupos de recursos y crear un disc
 
     |Configuración|Valor|
     |---|---|
-    |Suscripción| Nombre de la suscripción de Azure donde creó el grupo de recursos |
+    |Subscription| Nombre de la suscripción de Azure donde creó el grupo de recursos |
     |Grupo de recursos| Nombre de un nuevo grupo de recursos **az104-03a-rg1** |
     |Nombre del disco| **az104-03a-disk1** |
     |Region| **(EE. UU.) Este de EE. UU.** |
-    |Zona de disponibilidad| **None** |
+    |Zona de disponibilidad| **No se requiere redundancia de la infraestructura** |
     |Tipo de origen| **None** |
 
     >**Nota**: Al crear un recurso, tiene la opción de crear un grupo de recursos o usar uno existente.
@@ -80,11 +80,11 @@ En esta tarea, aplicará un bloqueo de recursos a un grupo de recursos de Azure 
 
     |Configuración|Valor|
     |---|---|
-    |Suscripción| Nombre de la suscripción que está usando en este laboratorio |
+    |Subscription| Nombre de la suscripción que está usando en este laboratorio |
     |Grupo de recursos| Haga clic en **Crear nuevo** grupo de recursos y asígnele el nombre **az104-03a-rg3** |
     |Nombre del disco| **az104-03a-disk2** |
     |Region| Nombre de la región de Azure donde creó los otros grupos de recursos en este laboratorio |
-    |Zona de disponibilidad| **None** |
+    |Zona de disponibilidad| **No se requiere redundancia de la infraestructura** |
     |Tipo de origen| **None** |
 
 1. Establezca el tipo y tamaño de disco a **HDD estándar** y **32 GiB**, respectivamente.
