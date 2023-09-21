@@ -30,7 +30,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-### Instrucciones
+### Instructions
 
 ## Ejercicio 1
 
@@ -44,13 +44,13 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
     | Nombre de aplicación web | Cualquier nombre globalmente único |
     | Publicar | **Código** |
-    | Pila en tiempo de ejecución | **PHP 8.0** |
+    | Pila en tiempo de ejecución | **PHP 8.2** |
     | Sistema operativo | **Linux** |
     | Region | Nombre de una región de Azure donde puede aprovisionar aplicaciones web de Azure |
     | Plan de App Service | Acepte la configuración predeterminada |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -94,9 +94,9 @@ En esta tarea, configurará las opciones de implementación de la aplicación we
     
 1. En la pestaña **Configuración**, en la lista desplegable **Origen**, seleccione **GIT local** y haga clic en el botón **Guardar**.
 
-1. En la hoja **Centro de implementación**, copie la entrada **URL de clonación de GIT** en el Bloc de notas.
+1. En la hoja **Centro de implementación**, copie la entrada **URI de git clone** en el Bloc de notas.
 
-    >**Nota**: Necesitará el valor de URL de clonación de GIT en la siguiente tarea de este laboratorio.
+    >**Nota**: necesitará el valor de URI de git clone en la siguiente tarea de este laboratorio.
 
 1. En la hoja **Centro de implementación**, seleccione la pestaña **Credenciales de GIT o FTPS locales**, en la sección **Ámbito de usuario**, configure las opciones siguientes y haga clic en **Guardar**.
 
@@ -131,10 +131,10 @@ En esta tarea, implementará código en la ranura de implementación de ensayo.
    Set-Location -Path $HOME/php-docs-hello-world/
    ```
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para agregar el GIT remoto (asegúrese de reemplazar los marcadores de posición `[deployment_user_name]` y `[git_clone_url]` por el valor del nombre de usuario de **Credenciales de implementación** y la **URL de clonación de GIT**, respectivamente, que identificó en la tarea anterior):
+1. En el panel de Cloud Shell, ejecute lo siguiente para agregar el GIT remoto (asegúrese de reemplazar los marcadores de posición `[deployment_user_name]` y `[git_clone_uri]` por el valor del nombre de usuario de **Credenciales de implementación** y la **URI de git clone**, respectivamente, que identificó en la tarea anterior):
 
    ```powershell
-   git remote add [deployment_user_name] [git_clone_url]
+   git remote add [deployment_user_name] [git_clone_uri]
    ```
 
     >**Nota**: El valor siguiente `git remote add` no tiene que coincidir con el nombre de usuario de **Credenciales de implementación**, pero debe ser único.
