@@ -53,7 +53,7 @@ En esta tarea, creará una aplicación web de Azure.
     | Pila en tiempo de ejecución | **PHP 8.2** |
     | Sistema operativo | **Linux** |
     | Region | Nombre de una región de Azure donde puede aprovisionar aplicaciones web de Azure |
-    | Plan de App Service | Acepte la configuración predeterminada |
+    | Panes de tarifa | Acepte la configuración predeterminada |
 
 1. Haga clic en **Revisar y crear**. En la pestaña **Revisar y crear** de la hoja **Crear aplicación web**, asegúrese de que ha superado la validación y haga clic en **Crear**.
 
