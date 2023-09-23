@@ -54,7 +54,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 1. En el campo *Create Container App environment* (Crear entorno de aplicaciones de contenedor), seleccione el vínculo **Create new** (Crear nuevo).
 1. En la página *Create Container App environment* (Crear entorno de aplicaciones de contenedor), en la pestaña *Basics* (Aspectos básicos), escriba los siguientes valores:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     |--|--|
     | Nombre del entorno | Escriba `my-environment`. |
     | Redundancia de zona | Seleccione **Deshabilitado** |
@@ -62,7 +62,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 1. Seleccione la pestaña **Supervisión** para crear un área de trabajo de Log Analytics.
 1. Seleccione el vínculo **Crear nuevo** en el campo *Área de trabajo de Log Analytics* y escriba los siguientes valores.
 
-    | Configuración | Valor |
+    | Configuración | Value |
     |--|--|
     | Nombre | Escriba `my-container-apps-logs`. |
   
@@ -84,7 +84,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 
     Se muestra una página con el mensaje *Implementación en curso*.  Una vez completada correctamente la implementación, verá el mensaje: *Se completó la implementación*.
    
-## Tarea 2: Prueba y comprobación de la implementación de la aplicación de contenedor
+## Tarea 2: prueba y comprobación de la implementación de la aplicación de contenedor
 
 1. Seleccione **Ir al recurso** para ver la aplicación de contenedor.
 
