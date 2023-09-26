@@ -139,7 +139,7 @@ En esta tarea, implementará código en la ranura de implementación de ensayo.
 
     >**Nota**: El valor siguiente `git remote add` no tiene que coincidir con el nombre de usuario de **Credenciales de implementación**, pero debe ser único.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para insertar el código de la aplicación web de ejemplo del repositorio local en la ranura de implementación de ensayo de la aplicación web de Azure (asegúrese de reemplazar el marcador de posición `[deployment_user_name]` por el valor del nombre de usuario de **Credenciales de implementación**, que identificó en la tarea anterior):
+1. En el panel de Cloud Shell, ejecute lo siguiente para insertar el código de la aplicación web de ejemplo del repositorio local en la ranura de implementación de ensayo de la aplicación web de Azure (asegúrese de reemplazar los valores del marcador de posición por el valor del nombre de usuario de **Credenciales de implementación** que identificó en la tarea anterior):
 
    ```powershell
     git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
