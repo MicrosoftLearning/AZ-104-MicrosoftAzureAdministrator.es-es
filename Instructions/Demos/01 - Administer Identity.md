@@ -6,7 +6,7 @@ demo:
 
 # 01: Administración de identidades
 
-## Configurar Azure Active Directory
+## Configuración de identidades de Entra ID
 
 Esta área no tiene una demostración formal.  Considere la posibilidad de recorrer la simulación interactiva del laboratorio 01 para alumnos. 
 
@@ -14,23 +14,23 @@ Esta área no tiene una demostración formal.  Considere la posibilidad de recor
 
 Como alternativa, puede usar uno de estos inicios rápidos. 
 
-**Referencia**: [Inicio rápido: Acceso y creación de un inquilino (Azure AD)](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+**Referencia**: [inicio rápido: acceso y creación de un nuevo inquilino en Microsoft Entra ID](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
-**Referencia**: [Inicio rápido: Visualización de grupos y miembros (Azure AD)](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
+**Referencia**: [inicio rápido: creación de un grupo con miembros y vista de todos los grupos y miembros](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
 
 ## Configuración de cuentas de usuario y de grupo
 
-En esta demostración, se explorará Azure Active Directory.
+En esta demostración, exploraremos las identidades de Entra ID.
 
-**Referencia**: [Incorporación o eliminación de usuarios: Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
+**Referencia**: [adición o eliminación de usuarios](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
 
-**Referencia**: [Creación de un grupo básico e incorporación de miembros - Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
+**Referencia**: [creación de un grupo básico y adición de miembros](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
 
-**Nota:**  En función de la suscripción, no estarán disponibles todas las áreas del panel de Azure Active Directory. 
+**Nota:**  en función de la suscripción, no estarán disponibles todas las áreas del panel de Microsoft Entra ID. 
 
 **Revisión de la información de licencia y dominio**
 
-1.  Acceda a Azure Portal y vaya al panel  **Azure Active Directory**.
+1.  Acceda a Azure Portal y vaya a la hoja  **Microsoft Entra ID** .
 
 2.  En el panel Información general, revise la  **Información del inquilino**, incluida la licencia y el dominio principal.
 
@@ -48,7 +48,7 @@ En esta demostración, se explorará Azure Active Directory.
 
 **Exploración de cuentas de grupo**
 
-1.  Vuelva a la página  **Azure Active Directory** y seleccione el panel  **Grupos**.
+1.  Vuelva a la página **Microsoft Entra ID** y seleccione la hoja **Grupos** .
 
 2.  Cree un  **Nuevo grupo** o seleccione uno existente para revisarlo.
 

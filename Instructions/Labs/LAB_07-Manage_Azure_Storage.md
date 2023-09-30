@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab07.png)
 
 
-### Instrucciones
+### Instructions
 
 ## Ejercicio 1
 
@@ -39,7 +39,7 @@ En este laboratorio, aprenderá a:
 
 En esta tarea, implementará una máquina virtual de Azure que usará más adelante en el laboratorio.
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+1. Inicie sesión en **[Azure Portal](https://portal.azure.com)**.
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
@@ -239,7 +239,9 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. Espere a que el recurso compartido de archivos se implemente. 
 
-1. Haga clic en el recurso compartido de archivos recién creado y haga clic en **Conectar**.
+1. Haga clic en el recurso compartido de archivos recién creado y anote la información disponible en la hoja **az104-07-share**.
+
+1. Haga clic en **Examinar** y tenga en cuenta que no hay archivos o carpetas en el nuevo recurso compartido de archivos. Haga clic en **Conectar**.
 
 1. En la hoja **Conectar**, asegúrese de que la pestaña **Windows** esté seleccionada. Debajo encontrará un botón con la etiqueta **Mostrar script**. Haga clic en el botón y encontrará un cuadro de texto gris con un script; en la esquina inferior derecha de ese cuadro mantenga el puntero sobre el icono de páginas y haga clic en **Copiar en el Portapapeles**.
 
@@ -263,7 +265,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Compruebe que el script se haya completado correctamente.
 
-1. Vuelva a la hoja del recurso compartido de archivos **az104-07-share**, haga clic en **Actualizar** y compruebe que **az104-07-folder** aparezca en la lista de carpetas.
+1. Vuelva a la hoja del recurso compartido de archivos **az104-07-share \| Examinar**, haga clic en **Actualizar** y compruebe que **az104-07-folder** aparezca en la lista de carpetas.
 
 1. Haga clic en la carpeta **az104-07-share** y compruebe que **az104-07-file.txt** aparezca en la lista de archivos.
 
