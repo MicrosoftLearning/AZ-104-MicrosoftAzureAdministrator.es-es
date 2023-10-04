@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 ![imagen](../media/lab07.png)
 
 
-### Instructions
+### Instrucciones
 
 ## Ejercicio 1
 
@@ -195,7 +195,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL que copió en el paso anterior.
 
-    > **Nota**: Si usa Microsoft Edge, debe presentarse a la página **The MIT License (MIT)** . Si usa Chrome, Microsoft Edge (Chromium) o Firefox, debería poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
+    > **Nota**: Debe poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
 
     > **Nota**: Esto es lo esperado, ya que ahora el acceso está autorizado en función del token de SAS recién generado.
 
