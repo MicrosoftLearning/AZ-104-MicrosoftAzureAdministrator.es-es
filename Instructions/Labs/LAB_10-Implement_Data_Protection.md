@@ -31,7 +31,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab10.png)
 
-### Instructions
+### Instrucciones
 
 ## Ejercicio 1
 
@@ -105,7 +105,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de copia de seguridad**.
 
-1. En la hoja **Configuración de copia de seguridad**, observe que puede establecer el **Tipo de replicación de almacenamiento** en **Redundancia local** o **Redundancia geográfica**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
+1. En la hoja **Configuración de copia de seguridad**, revise las opciones del **tipo de replicación de almacenamiento**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
 
     >**Nota**: Esta opción solo se puede configurar si no hay elementos de copia de seguridad existentes.
 
