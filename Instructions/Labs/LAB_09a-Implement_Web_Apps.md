@@ -30,7 +30,7 @@ En este laboratorio, aprenderá a:
 
 ![imagen](../media/lab09a.png)
 
-### Instructions
+### Instrucciones
 
 ## Ejercicio 1
 
@@ -65,7 +65,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 En esta tarea, creará una ranura de implementación de ensayo.
 
-1. En la hoja de la aplicación web recién implementada, haga clic en el vínculo **URL** para mostrar la página web predeterminada en una nueva pestaña del explorador.
+1. En la hoja de la aplicación web recién implementada, haga clic en el vínculo **Dominio predeterminado** para mostrar la página web predeterminada en una nueva pestaña del explorador.
 
 1. Cierre la nueva pestaña del explorador y, de vuelta en Azure Portal, en la sección **Implementación** de la hoja de la aplicación web, haga clic en **Espacios de implementación**.
 
@@ -142,12 +142,12 @@ En esta tarea, implementará código en la ranura de implementación de ensayo.
 1. En el panel de Cloud Shell, ejecute lo siguiente para insertar el código de la aplicación web de ejemplo del repositorio local en la ranura de implementación de ensayo de la aplicación web de Azure (asegúrese de reemplazar los valores del marcador de posición por el valor del nombre de usuario de **Credenciales de implementación** que identificó en la tarea anterior):
 
    ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
+    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
    ```
 
 1. Cierre el panel de Cloud Shell.
 
-1. En la hoja del espacio de ensayo, haga clic en **Información general** y, luego, en el vínculo **URL** para mostrar la página web predeterminada en una nueva pestaña del explorador.
+1. En la hoja del espacio de ensayo, haga clic en **Información general** y, luego, en el vínculo **Dominio predeterminado** para mostrar la página web predeterminada en una nueva pestaña del explorador.
 
 1. Compruebe que en la página del explorador aparezca el mensaje **Hola mundo** y cierre la nueva pestaña.
 
@@ -161,7 +161,7 @@ En esta tarea, intercambiará el espacio de ensayo por el espacio de producción
 
 1. Haga clic en la hoja **Intercambiar**, revise la configuración predeterminada y haga clic en **Intercambiar**.
 
-1. Haga clic en **Información general** en la hoja del espacio de producción de la aplicación web y, luego, en el vínculo **URL** para mostrar la página principal del sitio web en una nueva pestaña del explorador.
+1. Haga clic en **Información general** en la hoja del espacio de producción de la aplicación web y, luego, en el vínculo **Dominio predeterminado** para mostrar la página principal del sitio web en una nueva pestaña del explorador.
 
 1. Compruebe que la página web predeterminada se ha reemplazado por la página **Hola mundo** página.
 
@@ -229,7 +229,7 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)**.
 
-1. Seleccione **Configuración de escalado automático**, elija la pestaña **Historial de ejecución** y compruebe el **Recuento de instancias de recursos observado**.
+1. Seleccione **Configuración de escalado automático**, seleccione la pestaña **Historial de ejecución**. En **Mostrar datos para la última**, seleccione **1 hora** y consulte el **recuento de instancias de recursos observadas**.
 
 1. Supervise el uso y el número de instancias durante unos minutos. 
 
