@@ -148,13 +148,14 @@ En esta tarea, configurará el emparejamiento local entre las redes virtuales qu
     | Configuración | Value |
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrese de que todas las casillas están marcadas** |
+    | Permitir que "az104-06-vnet01" acceda a la red virtual emparejada | **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Permitir que la puerta de enlace en "az104-06-vnet01" reenvíe el tráfico a la red virtual emparejada | **Asegúrese de que la casilla está activada** 
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-06-vnet2_to_az104-06-vnet01** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | enabled |
     | Id. de recurso | El valor del parámetro resourceID de **az104-06-vnet2** que registró anteriormente en esta tarea. |
-    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrese de que todas las casillas están marcadas** |
-    
+    | Permitir que az104-06-vnet2 acceda a az104-06-vnet01 | **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Permitir que az104-06-vnet2 reciba tráfico reenviado desde az104-06-vnet01 | **Asegúrese de que la casilla está activada** |
 
     >**Nota**: Espere a que se complete la operación.
 
@@ -295,7 +296,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. Cree una tabla de rutas con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -381,7 +382,7 @@ En esta tarea, configurará y probará el enrutamiento entre las dos redes virtu
 
 1. En la hoja **Network Watcher - Solución de problemas de conexión**, utilice las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg1** |
@@ -406,7 +407,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. Cree un equilibrador de carga con la siguiente configuración (deje las demás opciones con los valores predeterminados) y haga clic en **Siguiente: Configuración de IP de front-end**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | **az104-06-rg4** (si es necesario, puede crearla) |
@@ -418,7 +419,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
     
 1. En la pestaña **Configuración de IP de front-end**, haga clic en **Agregar una configuración de IP de front-end** y use la siguiente configuración.  
      
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-06-fe4** |
     | Tipo de IP | Dirección IP |
@@ -427,7 +428,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
     
 1. En el elemento emergente **Agregar una dirección IP pública**, utilice la configuración siguiente antes de hacer clic en **Aceptar** y, a continuación, haga clic en **Agregar**. Cuando haya terminado, haga clic en **Siguiente: Grupos de back-end**. 
      
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-pip4** |
     | SKU | Estándar |
@@ -437,7 +438,7 @@ En esta tarea, implementará una instancia de Azure Load Balancer delante de la
 
 1. En la pestaña **Grupos de back-end**, haga clic en **Agregar un grupo de back-end** con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Haga clic en **+ Agregar** (dos veces) y, a continuación, haga clic en **Siguiente: Reglas de entrada**. 
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-06-lb4-be1** |
     | Virtual network | **az104-06-vnet01** |
@@ -533,7 +534,7 @@ En esta tarea, implementará una instancia de Azure Application Gateway delante 
 
 1. Haga clic en **Siguiente: Back-ends >** y, a continuación, en **Agregar un grupo de back-end**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **az104-06-appgw5-be1** |
     | Adición de un grupo de back-end sin destinos | **No** |
