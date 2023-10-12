@@ -103,14 +103,14 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrese de que todas las casillas están marcadas** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet0** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet1** |
     | Permitir el acceso a la red virtual actual |  **Asegúrese de que la casilla está activada (valor predeterminado)** |
-
+    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrese de que todas las casillas están marcadas** |
 
     >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-05-vnet0 a az104-05-vnet1 y el otro de az104-05-vnet1 a az104-05-vnet0.
 
