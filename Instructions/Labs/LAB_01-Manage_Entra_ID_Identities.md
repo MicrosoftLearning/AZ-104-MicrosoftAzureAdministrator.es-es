@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 'Laboratorio 01: administrar identidades de Microsoft Entra ID (prueba de cambio de marca)'
+  title: 'Laboratorio 01: administrar identidades de Microsoft Entra ID'
   module: Administer Identity
 ---
 
-# Laboratorio 01: administrar identidades de Microsoft Entra ID (prueba de cambio de marca)
+# Laboratorio 01: administrar identidades de Microsoft Entra ID
 
 # Manual de laboratorio para alumnos
 
