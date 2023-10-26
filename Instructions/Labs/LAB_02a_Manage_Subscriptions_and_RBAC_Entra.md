@@ -52,7 +52,7 @@ En esta tarea, creará y configurará grupos de administración.
 
 1. Busque y seleccione **Grupos de administración** para ir a la hoja **Grupos de administración**.
 
-1. Revise los mensajes de la parte superior de la hoja **Grupos de administración**. Si ve el mensaje que indica **Está registrado como administrador de directorio, pero no tiene los permisos necesarios para acceder al grupo de administración raíz. Haga clic para obtener más información**, siga la secuencia de pasos a continuación:
+1. Revise los mensajes de la parte superior de la hoja **Grupos de administración**. Si ve el mensaje que indica **Está registrado como administrador de directorio, pero no tiene los permisos necesarios para acceder al grupo de administración raíz**, siga la secuencia de pasos a continuación:
 
     1. En Azure Portal, busque y seleccione **Microsoft Entra ID**.
     
