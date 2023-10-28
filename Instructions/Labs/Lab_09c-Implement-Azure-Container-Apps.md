@@ -15,7 +15,7 @@ Azure Container Apps permite ejecutar microservicios y aplicaciones contenedoriz
 En este laboratorio, aprenderemos a:
 - Tarea 1: Creación de una aplicación de contenedor y un entorno
 - Tarea 2: Implementación de la aplicación contenedorizada
-- Tarea 3: Prueba y verificación de la implementación de la aplicación contenedorizada
+- Tarea 3: Prueba y comprobación de la implementación de la aplicación de contenedor
 
 Para empezar, inicie sesión en [Azure Portal](https://portal.azure.com).
 
@@ -54,7 +54,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 1. En el campo *Create Container App environment* (Crear entorno de aplicaciones de contenedor), seleccione el vínculo **Create new** (Crear nuevo).
 1. En la página *Create Container App environment* (Crear entorno de aplicaciones de contenedor), en la pestaña *Basics* (Aspectos básicos), escriba los siguientes valores:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     |--|--|
     | Nombre del entorno | Escriba `my-environment`. |
     | Redundancia de zona | Seleccione **Deshabilitado** |
@@ -62,7 +62,7 @@ A continuación, cree un entorno para la aplicación de contenedor.
 1. Seleccione la pestaña **Supervisión** para crear un área de trabajo de Log Analytics.
 1. Seleccione el vínculo **Crear nuevo** en el campo *Área de trabajo de Log Analytics* y escriba los siguientes valores.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     |--|--|
     | Nombre | Escriba `my-container-apps-logs`. |
   

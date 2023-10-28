@@ -44,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
