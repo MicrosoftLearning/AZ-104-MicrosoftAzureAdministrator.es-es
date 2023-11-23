@@ -8,7 +8,7 @@ demo:
 
 ## Configuración de identidades de Entra ID
 
-Esta área no tiene una demostración formal.  Considere la posibilidad de recorrer la simulación interactiva del laboratorio 01 para alumnos. 
+Esta área no tiene una demostración formal. Considere la posibilidad de recorrer la simulación interactiva del laboratorio 01 para alumnos. 
 
 [Simulación interactiva del laboratorio 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
 
