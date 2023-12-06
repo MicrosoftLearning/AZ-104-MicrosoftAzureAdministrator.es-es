@@ -8,7 +8,7 @@ demo:
 
 ## Configuración de suscripciones
 
-Esta área no tiene una demostración formal.  
+Esta área no tiene una demostración formal. 
 
 **Referencia**: [Creación de una suscripción de Azure adicional](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
 
@@ -80,7 +80,7 @@ En esta demostración, obtendrá información sobre las asignaciones de roles.
 
 **Ubicación de la hoja Control de acceso**
 
-1.  Acceda a Azure Portal y seleccione un grupo de recursos.  Tome nota del grupo de recursos que usa.
+1.  Acceda a Azure Portal y seleccione un grupo de recursos. Tome nota del grupo de recursos que usa.
 
 2.  Seleccione el panel  **Control de acceso (IAM)** .
 
