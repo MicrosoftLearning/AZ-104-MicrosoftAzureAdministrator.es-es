@@ -18,9 +18,9 @@ Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web d
 En este laboratorio, aprenderá a:
 
 + Tarea 1: Crear una aplicación web de Azure
-+ Tarea 2: Crear una ranura de implementación de ensayo
-+ Tarea 3: Configurar las opciones de implementación de la aplicación web
-+ Tarea 4: Implementar código en la ranura de implementación de ensayo
++ Tarea 2: Creación de una ranura de implementación de ensayo
++ Tarea 3: Configuración de las opciones de implementación de la aplicación web
++ Tarea 4: Implementación de código en la ranura de implementación de ensayo
 + Tarea 5: Intercambiar los espacios de ensayo
 + Tarea 6: Configurar y probar el escalado automático de la aplicación web de Azure
 
@@ -171,7 +171,7 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 1. En la hoja que muestra el espacio de producción de la aplicación web, en la sección **Configuración**, haga clic en **Escalar horizontalmente (plan de App Service)**.
 
-1. En la sección **Escalado**, seleccione la opción **Basado en reglas** y, a continuación, haga clic en el vínculo **Administrar el escalado basado en reglas**.
+1. En la **sección Escalado**, selecciona la opción **Basado en reglas** y, luego, haz clic en el vínculo **Administrar el escalado basado en reglas**.
 
 1. Haga clic en **Escalabilidad automática personalizada**.
 
@@ -228,8 +228,6 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
    ```
 
 1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)**.
-
-1. Seleccione **Configuración de escalado automático**, seleccione la pestaña **Historial de ejecución**. En **Mostrar datos para la última**, seleccione **1 hora** y consulte el **recuento de instancias de recursos observadas**.
 
 1. Supervise el uso y el número de instancias durante unos minutos. 
 

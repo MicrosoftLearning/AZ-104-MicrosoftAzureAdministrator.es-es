@@ -18,7 +18,7 @@ Para permitir que los usuarios de Contoso se autentiquen mediante Microsoft Entr
 
 En este laboratorio, aprenderá a:
 
-+ Tarea 1: crear y configurar usuarios
++ Tarea 1: Creación y configuración de usuarios
 + Tarea 2: crear grupos con pertenencia asignada y dinámica
 + Tarea 3: crear un inquilino (opcional: incidencia con el entorno de laboratorio)
 + Tarea 4: administrar usuarios invitados (opcional: problema del entorno de laboratorio)
@@ -183,13 +183,13 @@ En esta tarea, creará grupos con pertenencia asignada y dinámica.
 
 1. Vuelva a la hoja **Grupos: Todos los grupos**, haga clic en la entrada que representa el grupo **Administradores del sistema de TI** y, a continuación, muestre su hoja **Miembros**. Compruebe que **az104-01a-aaduser2** aparece en la lista de miembros del grupo.
 
-## Tarea 3: crear un inquilino (opcional: incidencia con el entorno de laboratorio)
+## Tarea 3: Crear un inquilino (opcional: posibles problemas de captcha, suscripción de pago requerida)
 
 En esta tarea, creará un nuevo inquilino.
     
 1. En Azure Portal, busque y seleccione **Microsoft Entra ID**.
 
-    >**Nota**: Hay un problema conocido con la comprobación de Captcha en el entorno de laboratorio. Si recibe el error **Error de creación. Demasiadas solicitudes, inténtelo de nuevo más tarde**, haga lo siguiente:<br>
+    >**Nota**: Hay un problema conocido con la comprobación de Captcha en el entorno de laboratorio. Si recibe el error **Error de creación. Demasiadas solicitudes, inténtelo de nuevo más tarde**, haga lo siguiente:
     - Intente la creación unas cuantas veces.<br>
     - Compruebe la sección **Administrar inquilino** para asegurarse de que el inquilino no se creó en segundo plano. <br>
     - Abra una nueva ventana **InPrivate** y use Azure Portal para intentar crear el inquilino desde allí.<br>
@@ -237,7 +237,10 @@ En esta tarea, creará usuarios invitados y les concederá acceso a los recursos
 
     >**Nota**: **Copie en el Portapapeles** el **Nombre principal del usuario** completo (nombre de usuario más dominio). Lo necesitará más adelante en esta tarea.
 
-1. Vuelva al primer inquilino que creó anteriormente. Para ello, utilice el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
+1. Vuelva al primer inquilino que creó anteriormente.
+2. Seleccione **Descripción general** en el panel de navegación.
+3. Haga clic en **Administrar inquilinos**.
+4. Activa la casilla situada junto al primer inquilino que creaste anteriormente y, luego, selecciona **Cambiar**.
 
 1. Vuelva al panel **Usuarios: Todos los usuarios** y, después, haga clic en **+ Invitar a un usuario externo**.
 
