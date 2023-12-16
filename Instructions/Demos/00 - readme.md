@@ -10,17 +10,17 @@ En este directorio se proporcionan demostraciones de instructor para el curso AZ
 
 # Aspectos en los que pensar
 
-- La mayoría de las áreas incluyen una demostración.  Tómese el tiempo para analizar cada una y decidir cuál usar.  Algunas de las demostraciones son demostraciones simples y explicaciones de Azure Portal; otras requieren habilidades de scripting. 
+- La mayoría de las áreas incluyen una demostración. Tómese el tiempo para analizar cada una y decidir cuál usar. Algunas de las demostraciones son demostraciones simples y explicaciones de Azure Portal; otras requieren habilidades de scripting.
 
 - Considere la posibilidad de que los alumnos sigan la demostración o que uno asuma el papel de "instructor" y guíe al resto por los pasos.
 
-- Considere la posibilidad de realizar primero la demostración y, después, usar las diapositivas para responder a preguntas y asegurarse de que se ha explicado todo. 
+- Considere la posibilidad de realizar primero la demostración y, después, usar las diapositivas para responder a preguntas y asegurarse de que se ha explicado todo.
 
-- Considere la posibilidad de una superposición con los laboratorios formales y aproveche el tiempo al máximo. 
+- Considere la posibilidad de una superposición con los laboratorios formales y aproveche el tiempo al máximo.
 
-- Estas demostraciones se proporcionan para un instructor con experiencia en la administración de Azure.  Los pasos están en un nivel superior al de los laboratorios de cursos que realizarán los alumnos. 
+- Estas demostraciones se proporcionan para un instructor con experiencia en la administración de Azure. Los pasos están en un nivel superior al de los laboratorios de cursos que realizarán los alumnos.
 
-- Estas demostraciones proporcionan un conjunto mínimo de características para mostrar a los alumnos.  Si dispone de tiempo, puede agregar, mostrar y analizar otros aspectos. 
+- Estas demostraciones proporcionan un conjunto mínimo de características para mostrar a los alumnos. Si dispone de tiempo, puede agregar, mostrar y analizar otros aspectos.
 
 - En la página *Resumen y recursos* se identifica dónde hay disponibles espacios aislados de Learn. Considere la posibilidad de usar un espacio aislado para guiar a los alumnos por los pasos.
 

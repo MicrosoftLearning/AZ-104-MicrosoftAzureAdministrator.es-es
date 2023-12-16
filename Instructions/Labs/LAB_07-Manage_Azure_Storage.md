@@ -11,7 +11,7 @@ lab:
 
 Debe evaluar el uso de Azure Storage para almacenar archivos que residen actualmente en almacenes de datos locales. Si bien el acceso a la mayoría de estos archivos no es frecuente, hay algunas excepciones. Para minimizar el costo de almacenamiento, le gustaría colocar los archivos a los que se accede con menos frecuencia en niveles de almacenamiento de menor precio. También tiene previsto explorar los diferentes mecanismos de protección que ofrece Azure Storage, incluido el acceso a la red, la autenticación, la autorización y la replicación. Por último, quiere determinar en qué medida el servicio Azure Files podría ser adecuado para hospedar los recursos compartidos de archivos locales.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 

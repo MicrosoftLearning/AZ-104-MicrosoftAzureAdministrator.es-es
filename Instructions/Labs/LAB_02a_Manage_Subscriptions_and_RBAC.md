@@ -22,7 +22,7 @@ Para mejorar la administración de recursos de Azure en Contoso, se le ha encarg
     - crear solicitud de soporte técnico;
     - ver grupos de recursos.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
 
 ## Objetivos
 
@@ -207,7 +207,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 1. Seleccione **Actualizar** para comprobar que la suscripción se ha movido correctamente al **grupo de administración raíz del inquilino**.
 
 1. Vuelva a la hoja **Grupos de administración**, haga clic en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
-  >                **Nota**: Si no puede eliminar el **grupo de administración raíz del inquilino**, es probable que la **suscripción de Azure** esté en el grupo de administración. Debe quitar la **suscripción de Azure** del **grupo de administración raíz del inquilino** y, a continuación, eliminar el grupo.
+  >**Nota**: Si no puede eliminar el **grupo de administración raíz del inquilino**, es probable que la **suscripción de Azure** esté en el grupo de administración. Debe quitar la **suscripción de Azure** del **grupo de administración raíz del inquilino** y, a continuación, eliminar el grupo.
 
 ## Revisar
 

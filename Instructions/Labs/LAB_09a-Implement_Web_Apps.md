@@ -11,16 +11,16 @@ lab:
 
 Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web de Contoso, hospedados actualmente en los centros de datos locales de la empresa. Los sitios web se ejecutan en servidores Windows mediante la pila en tiempo de ejecución de PHP. También tiene que decidir cómo puede implementar prácticas de DevOps al usar ranuras de implementación de aplicaciones web de Azure.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 
 En este laboratorio, aprenderá a:
 
 + Tarea 1: Crear una aplicación web de Azure
-+ Tarea 2: Crear una ranura de implementación de ensayo
-+ Tarea 3: Configurar las opciones de implementación de la aplicación web
-+ Tarea 4: Implementar código en la ranura de implementación de ensayo
++ Tarea 2: Creación de una ranura de implementación de ensayo
++ Tarea 3: Configuración de las opciones de implementación de la aplicación web
++ Tarea 4: Implementación de código en la ranura de implementación de ensayo
 + Tarea 5: Intercambiar los espacios de ensayo
 + Tarea 6: Configurar y probar el escalado automático de la aplicación web de Azure
 
@@ -44,7 +44,7 @@ En esta tarea, creará una aplicación web de Azure.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
@@ -73,7 +73,7 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | ---|
     | Nombre | **staging** |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -171,7 +171,7 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
 
 1. En la hoja que muestra el espacio de producción de la aplicación web, en la sección **Configuración**, haga clic en **Escalar horizontalmente (plan de App Service)**.
 
-1. En la sección **Escalado**, seleccione la opción **Basado en reglas** y, a continuación, haga clic en el vínculo **Administrar el escalado basado en reglas**.
+1. En la **sección Escalado**, selecciona la opción **Basado en reglas** y, luego, haz clic en el vínculo **Administrar el escalado basado en reglas**.
 
 1. Haga clic en **Escalabilidad automática personalizada**.
 
@@ -228,8 +228,6 @@ En esta tarea, configurará y probará el escalado automático de la aplicación
    ```
 
 1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)**.
-
-1. Seleccione **Configuración de escalado automático**, seleccione la pestaña **Historial de ejecución**. En **Mostrar datos para la última**, seleccione **1 hora** y consulte el **recuento de instancias de recursos observadas**.
 
 1. Supervise el uso y el número de instancias durante unos minutos. 
 

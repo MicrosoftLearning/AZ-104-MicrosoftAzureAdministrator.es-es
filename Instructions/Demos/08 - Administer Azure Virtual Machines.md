@@ -21,7 +21,7 @@ En esta demostración, se creará y accederá a una máquina virtual de Azure en
 
 **Creación de la máquina virtual**
 
-**Nota:** En estos pasos solo se describen algunos parámetros de máquina virtual. No dude en explorar otras áreas.  Puede crear una máquina virtual Windows o Linux, en función de su audiencia.
+**Nota:** En estos pasos solo se describen algunos parámetros de máquina virtual. No dude en explorar otras áreas. Puede crear una máquina virtual Windows o Linux, en función de su audiencia.
 
 1. Use Azure Portal.
 

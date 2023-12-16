@@ -11,7 +11,7 @@ lab:
 
 Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas. Se han detectado varias imágenes de contenedor que se pueden aprovechar para lograr este objetivo. Dado que quiere minimizar la administración de contenedores, tiene previsto evaluar el uso de Azure Container Instances para la implementación de imágenes de Docker.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 
@@ -40,7 +40,7 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear instancia de contenedor**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | ---- | ---- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-09b-rg1** |

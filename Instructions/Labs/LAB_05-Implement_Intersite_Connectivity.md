@@ -11,7 +11,7 @@ lab:
 
 Contoso tiene sus centros de datos en las oficinas de Boston, Nueva York y Seattle conectadas a través de una malla de vínculos de red de área extensa, con conectividad completa entre ellas. Debe implementar un entorno de laboratorio que refleje la topología de las redes locales de Contoso y comprobar su funcionalidad.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 
@@ -103,14 +103,14 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrese de que todas las casillas están marcadas** |
+    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrate de que solo están activadas las tres primeras casillas.** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet0** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet1** |
     | Permitir el acceso a la red virtual actual |  **Asegúrese de que la casilla está activada (valor predeterminado)** |
-    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrese de que todas las casillas están marcadas** |
+    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrate de que solo están activadas las tres primeras casillas.** |
 
     >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-05-vnet0 a az104-05-vnet1 y el otro de az104-05-vnet1 a az104-05-vnet0.
 

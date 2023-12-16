@@ -11,7 +11,7 @@ lab:
 
 Se le ha encargado la tarea de identificar diferentes opciones para implementar y configurar máquinas virtuales de Azure. En primer lugar, debe determinar diferentes opciones de escalabilidad y resistencia del proceso y el almacenamiento que puede implementar al usar máquinas virtuales de Azure. A continuación, debe investigar las opciones de escalabilidad y resistencia del proceso y el almacenamiento que están disponibles al usar conjuntos de escalado de máquinas virtuales de Azure. También quiere explorar la capacidad de configurar automáticamente máquinas virtuales y conjuntos de escalado de máquinas virtuales mediante la extensión de script personalizado de máquina virtual de Azure.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 
@@ -46,7 +46,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
@@ -73,7 +73,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la hoja **Crear red virtual**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-08-vnet01** |
     | Intervalo de direcciones | **10.80.0.0/20** |
@@ -118,7 +118,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la hoja **Implementación personalizada**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Grupo de recursos | **az104-08-rg01** |
     | Nombre de la interfaz de red | **az104-08-vm1-nic1** |
@@ -146,7 +146,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las dos m
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |
@@ -292,7 +292,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
     >**Nota**: Esta sección de la plantilla define el mismo tamaño de máquina virtual de Azure que el que especificó para la primera máquina virtual a través de Azure Portal.
 
-1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **51** (`"dataDisks": [ ],`) por el código siguiente:
+1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplaza la línea **51** (`"dataDisks": [ ],`) por el código siguiente:
 
    ```json
                     "dataDisks": [
@@ -362,7 +362,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
@@ -383,7 +383,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Redes** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una nueva red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados). 
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az104-08-rg02-vnet** |
     | Intervalo de direcciones | **10.82.0.0/20** |
@@ -398,7 +398,7 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **az10408vmss0-nsg** |
 
@@ -474,7 +474,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
 1. En la hoja **Nuevo contenedor**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Crear**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre | **scripts** |
     | Nivel de acceso público | **Privado (sin acceso anónimo**) |

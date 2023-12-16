@@ -11,7 +11,7 @@ lab:
 
 Tiene que evaluar la funcionalidad de Azure que proporcionaría información sobre el rendimiento y la configuración de los recursos de Azure, centrándose en particular en las máquinas virtuales de Azure. Para ello, tiene previsto examinar las funcionalidades de Azure Monitor, incluido Log Analytics.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 
@@ -212,11 +212,11 @@ En esta tarea, configurará las opciones de diagnóstico de máquinas virtuales 
     | Configuración | Value |
     | --- | --- |
     | Umbral | **Estática** |
+    | Tipo de agregación | **Media** |
     | Operador | **Mayor que** |
-    | Tipo de agregación | **Average** |
     | Valor del umbral | **2** |
-    | Granularidad de la agregación (período) | **1 minuto** |
-    | Frecuencia de evaluación | **Cada 1 minuto** |
+    | Comprobar cada | **1 minuto** |
+    | Período de retrospectiva| **1 minuto** |
 
 1. Haga clic en **Siguiente: Acciones >** . En la hoja **Crear una regla de alertas**, en la sección **Grupo de acciones**, haga clic en el botón **+Crear grupo de acciones**.
 

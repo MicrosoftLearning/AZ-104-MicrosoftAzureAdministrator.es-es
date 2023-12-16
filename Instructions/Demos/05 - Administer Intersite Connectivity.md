@@ -28,7 +28,7 @@ demo:
 
 1. En  **Configuración**, seleccione  **Emparejamientos**.
 
-1. Observe que se ha creado un emparejamiento de forma automática.  Observe que el  **Estado de emparejamiento** es  **Conectado**.
+1. Observe que se ha creado un emparejamiento de forma automática. Observe que el  **Estado de emparejamiento** es  **Conectado**.
 
 1. En el laboratorio, los alumnos crearán el emparejamiento y probarán la conexión entre las máquinas virtuales. 
 

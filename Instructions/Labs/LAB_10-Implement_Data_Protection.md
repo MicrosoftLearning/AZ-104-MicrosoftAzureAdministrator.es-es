@@ -11,7 +11,7 @@ lab:
 
 Se le ha encargado la tarea de evaluar el uso de Azure Recovery Services para la copia de seguridad y la restauración de archivos hospedados en máquinas virtuales de Azure y equipos locales. Además, quiere identificar los métodos de protección de los datos almacenados en el almacén de Recovery Services frente a pérdidas de datos accidentales o malintencionadas.
 
-                **Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
 
 ## Objetivos
 
@@ -105,7 +105,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de copia de seguridad**.
 
-1. En la hoja **Configuración de copia de seguridad**, revise las opciones del **tipo de replicación de almacenamiento**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
+1. En la hoja **Configuración de copia de seguridad**, revisa las opciones de **Tipo de replicación de almacenamiento**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
 
     >**Nota**: Esta opción solo se puede configurar si no hay elementos de copia de seguridad existentes.
 

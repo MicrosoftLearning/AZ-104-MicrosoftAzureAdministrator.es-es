@@ -19,7 +19,7 @@ En esta demostración, se explorará Azure Portal.
 
 1. Seleccione el icono  **Soporte técnico y solución de problemas** en el banner superior. Revise los vínculos **Recursos de soporte técnico**. 
 
-1. Seleccione el icono **Configuración** en el banner superior.  Revise la configuración de **Apariencia y vistas de inicio**. 
+1. Seleccione el icono **Configuración** en el banner superior. Revise la configuración de **Apariencia y vistas de inicio**. 
 
 1. Use el menú de la izquierda y seleccione **Panel**. **Edite** el panel mediante la **Galería de iconos**. Analice las opciones de personalización.
 
@@ -43,7 +43,7 @@ En esta demostración, se experimentará con Cloud Shell.
 
 1.  Haga clic en el icono de  **Cloud Shell** en el banner superior.
 
-1.  En la página Bienvenido a Azure Cloud Shell, observe las selecciones para Bash o PowerShell.  Seleccione  **PowerShell**.
+1.  En la página Bienvenido a Azure Cloud Shell, observe las selecciones para Bash o PowerShell. Seleccione  **PowerShell**.
 
 1.  Analice por qué Azure Cloud Shell requiere un recurso compartido de archivos de Azure para conservar los archivos. Si es necesario, configure el recurso compartido de almacenamiento. 
 
@@ -61,7 +61,7 @@ En esta demostración, se experimentará con Cloud Shell.
 
 1. Para usar el editor de Cloud, seleccione el icono de las **llaves**.
 
-1. Seleccione un archivo en el panel de navegación de la izquierda.  Por ejemplo,  **.profile**.
+1. Seleccione un archivo en el panel de navegación de la izquierda. Por ejemplo,  **.profile**.
 
 1. Observe en el banner superior del editor las selecciones para Configuración (Tamaño de texto y Fuente) y Carga/descarga de archivos.
 
