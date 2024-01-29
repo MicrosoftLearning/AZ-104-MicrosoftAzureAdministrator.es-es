@@ -22,7 +22,7 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Implementación de máquinas virtuales en la red virtual
 + Tarea 3: Configuración de direcciones IP privadas y públicas de máquinas virtuales de Azure
 + Tarea 4: Configuración de grupos de seguridad de red
-+ Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
++ Tarea 5: Configuración de Azure DNS para la resolución de nombres internos
 + Tarea 6: Configuración de Azure DNS para la resolución de nombres externos
 
 ## Tiempo estimado: 40 minutos
@@ -45,7 +45,7 @@ En esta tarea, creará una red virtual con varias subredes mediante Azure Portal
 
 1. Cree una red virtual con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Grupo de recursos | nombre de un **nuevo** grupo de recursos **az104-04-rg1** |
@@ -160,6 +160,8 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 
 1. Seleccione **Asociar dirección IP pública** y, en la lista desplegable **Dirección IP pública**, seleccione **az104-04-pip0**.
 
+>**Nota:** si recibe un error, *el nombre de dominio ya está en uso*, se trata de un problema conocido. Deberá localizar la dirección IP pública y asociarla a la NIC por separado. 
+
 1. Seleccione **Guardar**.
 
 1. Vuelva a la hoja de **az104-04-vnet1**.
@@ -173,6 +175,8 @@ En esta tarea, configurará la asignación estática de direcciones IP pública
 1. Asegúrese de que la **Asignación** es **Estática**.
 
 1. Seleccione **Asociar dirección IP pública** y, en la lista desplegable **Dirección IP pública**, seleccione **az104-04-pip1**.
+
+>**Nota:** si recibe un error, *el nombre de dominio ya está en uso*, se trata de un problema conocido. Deberá localizar la dirección IP pública y asociarla a la NIC por separado. 
 
 1. Seleccione **Guardar**.
    
@@ -202,9 +206,9 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
 1. Cree un grupo de seguridad de red con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Suscripción | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **az104-04-nsg01** |
     | Region | nombre de la región de Azure en la que implementó todos los demás recursos de este laboratorio |
@@ -221,9 +225,9 @@ En esta tarea, configurará grupos de seguridad de red para permitir la conectiv
 
     | Configuración | Valor |
     | --- | --- |
-    | Source | **Cualquiera** |
-    | Source port ranges | * |
-    | Destination | **Cualquiera** |
+    | Origen | **Cualquiera** |
+    | Rangos del puerto origen | * |
+    | Destino | **Cualquiera** |
     | Servicio | **RDP** |
     | Acción | **Permitir** |
     | Priority | **300** |
@@ -259,9 +263,9 @@ En esta tarea, configurará la resolución de nombres DNS dentro de una red virt
 
 1. Cree una zona DNS privada con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Suscripción | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | **contoso.org** |
 
@@ -315,9 +319,9 @@ En esta tarea, configurará la resolución de nombres DNS externos mediante zona
 
 1. Cree una zona DNS con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Suscripción | nombre de la suscripción de Azure que usa en este laboratorio |
     | Grupo de recursos | **az104-04-rg1** |
     | Name | nombre de dominio DNS que identificó anteriormente en esta tarea |
 
