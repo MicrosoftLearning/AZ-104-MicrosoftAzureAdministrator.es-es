@@ -19,9 +19,9 @@ En este laboratorio, aprenderá a:
 
 + Tarea 1: Aprovisionar el entorno de laboratorio
 + Tarea 2: Crear y configurar cuentas de Azure Storage
-+ Tarea 3: Administrar el almacenamiento de blobs
-+ Tarea 4: Administrar la autenticación y autorización para Azure Storage
-+ Tarea 5: Crear y configurar un recurso compartido de archivos de Azure Files
++ Tarea 3: Administración de Blob Storage
++ Tarea 4: Administración de la autenticación y la autorización para Azure Storage
++ Tarea 5: Creación y configuración de un recurso compartido de archivos de Azure Files
 + Tarea 6: Administrar el acceso a la red para Azure Storage
 
 ## Tiempo estimado: 40 minutos
@@ -97,9 +97,9 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Suscripción | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
     | Nombre de la cuenta de almacenamiento | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
     | Region | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
@@ -203,9 +203,9 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **licenses/LICENSE** del contenedor de Azure Storage y, desde allí, vuelva a la hoja **az104-07-container**.
 
-1. Haga clic en el vínculo **Cambiar a la cuenta de usuario de Azure AD** junto a la etiqueta **Método de autenticación**.
+1. Haga clic en el vínculo **Cambiar a la cuenta de usuario de Microsoft Entra** junto a la etiqueta **Método de autenticación**.
 
-    > **Nota**: Puede ver un error al cambiar el método de autenticación (el error es *"No tiene permisos para enumerar los datos con su cuenta de usuario con Azure AD"* ). Este es el comportamiento esperado.  
+    > **Nota**: Puede ver un error al cambiar el método de autenticación (el error es *"No tiene permisos para enumerar los datos mediante su cuenta de usuario con Microsoft Entra"*). Este es el comportamiento esperado.  
 
     > **Nota**: En este momento, no tiene permisos para cambiar el método de autenticación.
 
@@ -221,7 +221,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
     | Asignar acceso a | **Usuario, grupo o entidad de servicio** |
     | Miembros | Nombre de la cuenta de usuario |
 
-1. Haga clic en **Revisar y asignar** y, después, en **Revisar y asignar**. Vuelva a la hoja **Información general** del contenedor **az104-07-container** y compruebe que puede cambiar el método de autenticación a (Cambiar a la cuenta de usuario de Azure AD).
+1. Haga clic en **Revisar y asignar** y, después, en **Revisar y asignar**. Vuelva a la hoja **Información general** del contenedor **az104-07-container** y compruebe que puede cambiar el método de autenticación a (Cambiar a la cuenta de usuario de Microsoft Entra ).
 
     > **Nota**: El cambio puede tardar unos 5 minutos en surtir efecto.
 
