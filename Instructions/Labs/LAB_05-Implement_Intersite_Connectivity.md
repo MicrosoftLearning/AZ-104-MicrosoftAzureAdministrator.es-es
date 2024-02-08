@@ -1,22 +1,19 @@
 ---
 lab:
-  title: '05: Implementación de la conectividad entre sitios'
-  module: Module 05 - Intersite Connectivity
-ms.openlocfilehash: 609831e709135d4ba5a46178f9d0c173cf13a9d2
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625631"
+  title: "Laboratorio\_05: Implementación de la conectividad entre sitios"
+  module: Administer Intersite Connectivity
 ---
-# <a name="lab-05---implement-intersite-connectivity"></a>Laboratorio 05: Implementación de la conectividad entre sitios
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+# Laboratorio 05: Implementación de la conectividad entre sitios
+# Manual de laboratorio para alumnos
+
+## Escenario del laboratorio
 
 Contoso tiene sus centros de datos en las oficinas de Boston, Nueva York y Seattle conectadas a través de una malla de vínculos de red de área extensa, con conectividad completa entre ellas. Debe implementar un entorno de laboratorio que refleje la topología de las redes locales de Contoso y comprobar su funcionalidad.
 
-## <a name="objectives"></a>Objetivos
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -24,15 +21,17 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Configuración del emparejamiento local y global de red virtual
 + Tarea 3: Prueba de la conectividad entre sitios
 
-## <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab05.png)
 
-### <a name="instructions"></a>Instructions
+### Instrucciones
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tarea 1: Aprovisionamiento del entorno de laboratorio
+## Ejercicio 1
+
+## Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará tres máquinas virtuales, cada una en una red virtual independiente, con dos de ellas en la misma región de Azure y la tercera en otra región de Azure.
 
@@ -44,23 +43,33 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 
     >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
 
-1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** y **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** en el directorio principal de Cloud Shell.
+1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** y **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** en el directorio principal de Cloud Shell. 
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en `[Azure_region_1]`. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra `[Azure_region_2]`. (reemplace los marcadores de posición `[Azure_region_1]` y `[Azure_region_2]` por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure):
+1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en [Azure_region_1]. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra [Azure_region_2] (reemplace los marcadores de posición [Azure_region_1] y [Azure_region_2], incluidos los corchetes, por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure. Por ejemplo, $location 1 = "eastus". Puede usar Get-AzLocation para ver todas las ubicaciones):
 
    ```powershell
-   $location1 = '[Azure_region_1]'
+   $location1 = 'eastus'
 
-   $location2 = '[Azure_region_2]'
+   $location2 = 'westus'
 
    $rgName = 'az104-05-rg1'
 
    New-AzResourceGroup -Name $rgName -Location $location1
    ```
 
-   >**Nota**: Para identificar las regiones de Azure, desde una sesión de PowerShell en Cloud Shell, ejecute **(Get-AzLocation).Location**.
+   >**Nota**: Las regiones usadas anteriormente se probaron y se sabe que funcionan cuando este laboratorio se revisó oficialmente por última vez. Si prefiere usar ubicaciones diferentes o ya no funcionan, deberá identificar dos regiones diferentes en las que se puedan implementar máquinas virtuales D2Sv3 estándar.
+   >
+   >Para identificar las regiones de Azure, desde una sesión de PowerShell en Cloud Shell, ejecute **(Get-AzLocation).Location**
+   >
+   >Una vez que haya identificado dos regiones que quiera usar, ejecute el comando siguiente en el Cloud Shell para cada región para confirmar que puede implementar máquinas virtuales D2Sv3 estándar
+   >
+   >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
+   >
+   >Si el comando no devuelve ningún resultado, debe elegir otra región. Una vez que haya identificado dos regiones adecuadas, puede ajustar las regiones en el bloque de código anterior.
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear las tres redes virtuales e implementar las máquinas virtuales en ellas mediante los archivos de parámetros y plantilla que cargó:
+    
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -75,7 +84,7 @@ En esta tarea, implementará tres máquinas virtuales, cada una en una red virtu
 
 1. Cierre el panel de Cloud Shell.
 
-#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>Tarea 2: Configuración del emparejamiento local y global de red virtual
+## Tarea 2: Configuración del emparejamiento local y global de red virtual
 
 En esta tarea, configurará el emparejamiento local y global entre las redes virtuales que implementó en las tareas anteriores.
 
@@ -94,17 +103,14 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Esta red virtual: tráfico a la red virtual remota | **Permitir (predeterminado)** |
-    | Esta red virtual: tráfico reenviado desde una red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrate de que solo están activadas las tres primeras casillas.** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet0** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet1** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual actual |  **Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrate de que solo están activadas las tres primeras casillas.** |
 
     >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-05-vnet0 a az104-05-vnet1 y el otro de az104-05-vnet1 a az104-05-vnet0.
 
@@ -129,17 +135,13 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet2** |
-    | Esta red virtual: tráfico a la red virtual remota | **Permitir (predeterminado)** |
-    | Esta red virtual: tráfico reenviado desde una red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual remota |**Asegúrese de que la casilla está activada (valor predeterminado)** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet2_to_az104-05-vnet0** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet2** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual actual |**Asegúrese de que la casilla está activada (valor predeterminado)** |
 
     >**Nota**: Este paso establece dos emparejamientos globales: uno de az104-05-vnet0 a az104-05-vnet2 y el otro de az104-05-vnet2 a az104-05-vnet0.
 
@@ -166,17 +168,13 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
     | Configuración | Value|
     | --- | --- |
     | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet2** |
-    | Esta red virtual: tráfico a la red virtual remota | **Permitir (predeterminado)** |
-    | Esta red virtual: tráfico reenviado desde una red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
     | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet2_to_az104-05-vnet1** |
     | Modelo de implementación de red virtual | **Resource Manager** |
     | Conozco mi Id. de recurso | no seleccionado |
     | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Virtual network | **az104-05-vnet2** |
-    | Tráfico hacia la red virtual remota | **Permitir (predeterminado)** |
-    | Tráfico reenviado desde la red virtual remota | **Bloquear el tráfico que se origina fuera de esta red virtual** |
-    | Puerta de enlace de red virtual | **None** |
+    | Permitir el acceso a la red virtual actual | **Asegúrese de que la casilla está activada (valor predeterminado)** |
 
     >**Nota**: Este paso establece dos emparejamientos globales: uno de az104-05-vnet1 a az104-05-vnet2 y el otro de az104-05-vnet2 a az104-05-vnet1.
 
@@ -194,7 +192,7 @@ En esta tarea, configurará el emparejamiento local y global entre las redes vir
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### <a name="task-3-test-intersite-connectivity"></a>Tarea 3: Prueba de la conectividad entre sitios
+## Tarea 3: Prueba de la conectividad entre sitios
 
 En esta tarea, probará la conectividad entre las máquinas virtuales de las tres redes virtuales que conectó a través del emparejamiento local y global en la tarea anterior.
 
@@ -204,13 +202,13 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. En la hoja **az104-05-vm0**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software de cliente RDP de código abierto.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando se le solicite, inicie sesión con el nombre de usuario **Alumno** y la contraseña que configuró al implementar las máquinas virtuales mediante CloudShell. 
 
-1. En la sesión de Escritorio remoto para **az104-05-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)** .
+1. En la sesión de Escritorio remoto para **az104-05-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)**.
 
 1. En la ventana de la consola de Windows PowerShell, ejecute lo siguiente para probar la conectividad a **az104-05-vm1** (que tiene la dirección IP privada **10.51.0.4**) a través del puerto TCP 3389:
 
@@ -234,13 +232,13 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. En la hoja **az104-05-vm1**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software de cliente RDP de código abierto.
+    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros. 
 
-1. En la sesión de Escritorio remoto para **az104-05-vm1**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)** .
+1. En la sesión de Escritorio remoto para **az104-05-vm1**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)**.
 
 1. En la ventana de la consola de Windows PowerShell, ejecute lo siguiente para probar la conectividad a **az104-05-vm2** (que tiene la dirección IP privada **10.52.0.4**) a través del puerto TCP 3389:
 
@@ -252,9 +250,11 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
 
 1. Examine la salida del comando y compruebe que la conexión se ha realizado correctamente.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -270,9 +270,9 @@ En esta tarea, probará la conectividad entre las máquinas virtuales de las tre
    Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Por lo tanto, aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 

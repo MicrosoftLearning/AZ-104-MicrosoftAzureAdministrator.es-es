@@ -9,7 +9,7 @@ lab:
 
 ## Requisitos del laboratorio
 
-Este laboratorio requiere permisos para crear usuarios de Azure Active Directory (Azure AD), crear roles personalizados de control de acceso basado en roles (RBAC) de Azure y asignar estos roles a usuarios de Azure AD. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad. Pregunte al instructor acerca de la disponibilidad de este laboratorio.
+Este laboratorio requiere permisos para crear usuarios, crear roles personalizados de control de acceso basado en rol (RBAC) de Azure y asignar estos roles a usuarios. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad. Pregunte al instructor acerca de la disponibilidad de este laboratorio.
 
 ## Escenario del laboratorio
 
@@ -17,7 +17,7 @@ Para mejorar la administración de recursos de Azure en Contoso, se le ha encarg
 
 - crear un grupo de administración que incluya todas las suscripciones de Azure de Contoso;
 
-- conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado de Azure Active Directory. Los permisos de ese usuario solo deben limitarse a: 
+- conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado. Los permisos de ese usuario solo deben limitarse a: 
 
     - crear solicitud de soporte técnico;
     - ver grupos de recursos.
@@ -37,7 +37,7 @@ En este laboratorio, aprenderá a:
 
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab02a.png)
+![imagen](../media/lab02aentra.png)
 
 
 ### Instrucciones
@@ -52,13 +52,13 @@ En esta tarea, creará y configurará grupos de administración.
 
 1. Busque y seleccione **Grupos de administración** para ir a la hoja **Grupos de administración**.
 
-1. Revise los mensajes de la parte superior de la hoja **Grupos de administración**. Si ve el mensaje que indica **Está registrado como administrador de directorio, pero no tiene los permisos necesarios para acceder al grupo de administración raíz. Haga clic para obtener más información**, siga la secuencia de pasos a continuación:
+1. Revise los mensajes de la parte superior de la hoja **Grupos de administración**. Si ves el mensaje **Está registrado como administrador de directorio, pero no tiene los permisos necesarios para acceder al grupo de administración raíz**, sigue la secuencia de pasos a continuación:
 
-    1. En Azure Portal, busque y seleccione **Azure Active Directory**.
+    1. En el Azure Portal, busque y seleccione **Microsoft Entra ID**.
     
-    1.  En la hoja que muestra las propiedades del inquilino de Azure Active Directory, en la sección **Administrar** del menú vertical, seleccione **Propiedades**.
+    1.  En la hoja que muestra las propiedades del inquilino, en la sección **Administrar** del menú vertical de la izquierda, selecciona **Propiedades**.
     
-    1.  En la hoja **Propiedades** de su inquilino de Azure Active Directory, en la sección **Administración de acceso para los recursos de Azure**, seleccione **Sí** y, a continuación, seleccione **Guardar**.
+    1.  En la hoja **Propiedades** del inquilino, en la sección **Administración de acceso para los recursos de Azure**, selecciona **Sí** y luego selecciona **Guardar**.
     
     1.  Vuelva a la hoja **Grupos de administración** y seleccione **Actualizar**.
 
@@ -126,9 +126,9 @@ En esta tarea, creará una definición de un rol RBAC personalizado.
 
 ## Tarea 3: Asignar roles RBAC
 
-En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usuario el rol RBAC que creó en la tarea anterior, y comprobará que el usuario puede realizar la tarea especificada en la definición del rol RBAC.
+En esta tarea, crearás un usuario, asignarás a ese usuario el rol RBAC que creaste en la tarea anterior y comprobarás que el usuario puede realizar la tarea especificada en la definición del rol RBAC.
 
-1. En Azure Portal, busque y seleccione **Azure Active Directory**, en la hoja Azure Active Directory, haga clic en **Usuarios** y, a continuación, haga clic en **+ Nuevo usuario**.
+1. En Azure Portal, busca y selecciona **Microsoft Entra ID**, haz clic en **Usuarios** y luego haz clic en **+ Nuevo usuario**.
 
 1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
 
@@ -173,7 +173,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
    >**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza.
 
-1. En Azure Portal, busque y seleccione **Azure Active Directory**, en la hoja Azure Active Directory, haga clic en **Usuarios**.
+1. En Azure Portal, busca y selecciona **Microsoft Entra ID**, y luego haz clic en **Usuarios**.
 
 1. En la hoja **Usuarios: Todos los usuarios**, haga clic en **az104-02-aaduser1**.
 
@@ -181,7 +181,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
 
 1. En Azure Portal, inicie una sesión de **PowerShell** en **Cloud Shell**.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para quitar la asignación de la definición de rol personalizado (reemplace el marcador de posición `[object_ID]` por el valor del atributo **Id. de objeto** de la cuenta de usuario **az104-02-aaduser1** de Azure Active Directory que copió anteriormente en esta tarea):
+1. En el panel de Cloud Shell, ejecuta lo siguiente para quitar la asignación de la definición de rol personalizado (reemplaza el marcador de posición `[object_ID]` por el valor del atributo **Id. de objeto** de la cuenta de usuario **az104-02-aaduser1** que copiaste anteriormente en esta tarea):
 
    ```powershell
    
@@ -196,7 +196,7 @@ En esta tarea, creará un usuario de Azure Active Directory, asignará a ese usu
    Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
    ```
 
-1. En Azure Portal, vuelva a la hoja **Usuarios: Todos los usuarios** de **Azure Active Directory**y elimine la cuenta de usuario **az104-02-aaduser1**.
+1. En Azure Portal, vuelve a la hoja **Usuarios: Todos los usuarios** de **Microsoft Entra ID** y elimina la cuenta de usuario **az104-02-aaduser1**.
 
 1. En Azure Portal, vuelva a la hoja **Grupos de administración**. 
 

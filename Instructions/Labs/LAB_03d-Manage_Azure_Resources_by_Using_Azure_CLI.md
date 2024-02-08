@@ -1,22 +1,19 @@
 ---
 lab:
-  title: '03d: Administración de recursos de Azure mediante la CLI de Azure'
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 7ca60ef19cd8712a95a957c710d10810d05be4ad
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625580"
+  title: 'Lab 03d: Manage Azure resources by Using Azure CLI (opcional)'
+  module: Administer Azure Resources
 ---
-# <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Laboratorio 03d: Administración de recursos de Azure mediante la CLI de Azure
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+# Laboratorio 03d: Administración de recursos de Azure mediante la CLI de Azure
+# Manual de laboratorio para alumnos
+
+## Escenario del laboratorio
 
 Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal, las plantillas de Azure Resource Manager y Azure PowerShell, debe llevar a cabo la tarea equivalente mediante la CLI de Azure. Para evitar la instalación de la CLI de Azure, aprovechará el entorno de Bash disponible en Azure Cloud Shell.
 
-## <a name="objectives"></a>Objetivos
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -24,13 +21,17 @@ En este laboratorio, aprenderá a:
 + Tarea 2: Crear un grupo de recursos y un disco administrado de Azure mediante la CLI de Azure
 + Tarea 3: Configurar el disco administrado mediante la CLI de Azure
 
-## <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+## Tiempo estimado: 20 minutos
 
-## <a name="instructions"></a>Instructions
+## Diagrama de la arquitectura
 
-### <a name="exercise-1"></a>Ejercicio 1
+![imagen](../media/lab03d.png)
 
-#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>Tarea 1: Iniciar una sesión de Bash en Azure Cloud Shell
+### Instrucciones
+
+## Ejercicio 1
+
+## Tarea 1: Iniciar una sesión de Bash en Azure Cloud Shell
 
 En esta tarea, abrirá una sesión de Bash en Cloud Shell. 
 
@@ -44,7 +45,7 @@ En esta tarea, abrirá una sesión de Bash en Cloud Shell.
 
 1. Asegúrese de que **Bash** aparezca en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>Tarea 2: Crear un grupo de recursos y un disco administrado de Azure mediante la CLI de Azure
+## Tarea 2: Crear un grupo de recursos y un disco administrado de Azure mediante la CLI de Azure
 
 En esta tarea, creará un grupo de recursos y un disco administrado de Azure mediante una sesión de la CLI de Azure dentro de Cloud Shell.
 
@@ -81,7 +82,7 @@ En esta tarea, creará un grupo de recursos y un disco administrado de Azure med
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>Tarea 3: Configurar el disco administrado mediante la CLI de Azure
+## Tarea 3: Configurar el disco administrado mediante la CLI de Azure
 
 En esta tarea, administrará la configuración del disco administrado de Azure mediante una sesión de la CLI de Azure en Cloud Shell. 
 
@@ -94,7 +95,7 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
 1. Para comprobar que el cambio ha surtido efecto, ejecute lo siguiente:
 
    ```sh
-   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
+   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGB
    ```
 
 1. Para cambiar la SKU de rendimiento del disco a **Premium_LRS**, desde la sesión de Bash en Cloud Shell, ejecute lo siguiente:
@@ -109,9 +110,11 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
    az disk show --resource-group $RGNAME --name $DISKNAME --query sku
    ```
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+ > **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+ > **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de shell de **Bash** en el panel **Cloud Shell**.
 
@@ -129,7 +132,7 @@ En esta tarea, administrará la configuración del disco administrado de Azure m
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro --nowait). Aunque podrá ejecutar otro comando de la CLI de Azure inmediatamente después en la misma sesión de Bash, los grupos de recursos tardarán unos minutos en quitarse.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 

@@ -1,48 +1,45 @@
 ---
 lab:
-  title: '07: Administración de Azure Storage'
-  module: Module 07 - Azure Storage
-ms.openlocfilehash: c0889dabc4b190ff83c077cb6d74d4ead7541c62
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625617"
+  title: "Laboratorio\_07: Administración de Azure\_Storage"
+  module: Administer Azure Storage
 ---
-# <a name="lab-07---manage-azure-storage"></a>Laboratorio 07: Administración de Azure Storage
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+# Laboratorio 07: Administración de Azure Storage
+# Manual de laboratorio para alumnos
+
+## Escenario del laboratorio
 
 Debe evaluar el uso de Azure Storage para almacenar archivos que residen actualmente en almacenes de datos locales. Si bien el acceso a la mayoría de estos archivos no es frecuente, hay algunas excepciones. Para minimizar el costo de almacenamiento, le gustaría colocar los archivos a los que se accede con menos frecuencia en niveles de almacenamiento de menor precio. También tiene previsto explorar los diferentes mecanismos de protección que ofrece Azure Storage, incluido el acceso a la red, la autenticación, la autorización y la replicación. Por último, quiere determinar en qué medida el servicio Azure Files podría ser adecuado para hospedar los recursos compartidos de archivos locales.
 
-## <a name="objectives"></a>Objetivos
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
 + Tarea 1: Aprovisionar el entorno de laboratorio
 + Tarea 2: Crear y configurar cuentas de Azure Storage
-+ Tarea 3: Administrar el almacenamiento de blobs
-+ Tarea 4: Administrar la autenticación y autorización para Azure Storage
-+ Tarea 5: Crear y configurar un recurso compartido de archivos de Azure Files
++ Tarea 3: Administración de Blob Storage
++ Tarea 4: Administración de la autenticación y la autorización para Azure Storage
++ Tarea 5: Creación y configuración de un recurso compartido de archivos de Azure Files
 + Tarea 6: Administrar el acceso a la red para Azure Storage
 
-## <a name="estimated-timing-40-minutes"></a>Tiempo estimado: 40 minutos
+## Tiempo estimado: 40 minutos
 
-## <a name="architecture-diagram"></a>Diagrama de la arquitectura
+## Diagrama de la arquitectura
 
 ![imagen](../media/lab07.png)
 
 
-## <a name="instructions"></a>Instructions
+### Instrucciones
 
-### <a name="exercise-1"></a>Ejercicio 1
+## Ejercicio 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tarea 1: Aprovisionar el entorno de laboratorio
+## Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará una máquina virtual de Azure que usará más adelante en el laboratorio.
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+1. Inicie sesión en **[Azure Portal](https://portal.azure.com)**.
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
@@ -52,21 +49,26 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
 1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** y **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** en el directorio principal de Cloud Shell.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará la máquina virtual (reemplace el marcador de posición `[Azure_region]` por el nombre de una región de Azure donde tiene pensado implementar la máquina virtual de Azure).
+1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará la máquina virtual (reemplace el marcador de posición “[Azure_region]” por el nombre de una región de Azure donde tiene pensado implementar la máquina virtual de Azure).
 
     >**Nota**: Para enumerar los nombres de las regiones de Azure, ejecute `(Get-AzLocation).Location`
     >**Nota**: Cada comando siguiente debe escribirse por separado.
 
-   ```powershell
-   $location = '[Azure_region]'
+    ```powershell
+    $location = '[Azure_region]'
+    ```
   
-  ```powershell
-   $rgName = 'az104-07-rg0'
- 
- ```powershell
-   New-AzResourceGroup -Name $rgName -Location $location
-   ```
+    ```powershell
+     $rgName = 'az104-07-rg0'
+    ```
+
+    ```powershell
+    New-AzResourceGroup -Name $rgName -Location $location
+    ```
+    
 1. En el panel de Cloud Shell, ejecute lo siguiente para implementar la máquina virtual mediante los archivos de parámetros y plantillas cargados:
+
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -78,9 +80,16 @@ En esta tarea, implementará una máquina virtual de Azure que usará más adela
 
     >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea.
 
+    >**Nota**: Si tiene un error que indica que el tamaño de la máquina virtual no está disponible, pida al instructor ayuda y pruebe estos pasos.
+    > 1. Haga clic en el botón `{}` de CloudShell, seleccione **az104-07-vm-parameters.json** en la barra de la izquierda y anote el valor del parámetro `vmSize`.
+    > 1. Compruebe la ubicación en la que se implementa el grupo de recursos “az104-04-rg1”. Puede ejecutar `az group show -n az104-04-rg1 --query location` en CloudShell para obtenerlo.
+    > 1. Ejecute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` en CloudShell.
+    > 1. Reemplace el valor del parámetro `vmSize` por uno de los valores devueltos por el comando que acaba de ejecutar.
+    > 1. Ahora vuelva a ejecutar el comando `New-AzResourceGroupDeployment` para implementar de nuevo las plantillas. Puede presionar el botón de flecha arriba varias veces para ver el último comando ejecutado.
+
 1. Cierre el panel de Cloud Shell.
 
-#### <a name="task-2-create-and-configure-azure-storage-accounts"></a>Tarea 2: Crear y configurar cuentas de Azure Storage
+## Tarea 2: Crear y configurar cuentas de Azure Storage
 
 En esta tarea, creará y configurará una cuenta Azure Storage.
 
@@ -88,18 +97,18 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Suscripción | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un **nuevo** grupo de recursos **az104-07-rg1** |
     | Nombre de la cuenta de almacenamiento | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
-    | Location | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
+    | Region | Nombre de una región de Azure en la que puede crear una cuenta de Azure Storage  |
     | Rendimiento | **Estándar** |
     | Redundancia | **Almacenamiento con redundancia geográfica (GRS)** |
 
 1. Haga clic en **Siguiente: Opciones avanzadas >** , en la pestaña **Opciones avanzadas** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** .
 
-1. En la pestaña **Redes** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte la opción predeterminada **Punto de conexión público (todas las redes)** y haga clic en **Siguiente: Protección de datos >** .
+1. En la pestaña **Redes** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte la opción predeterminada **Habilitar el acceso público desde todas las redes** y haga clic en **Siguiente: Protección de datos >** .
 
 1. En la pestaña **Protección de datos** de la hoja **Crear cuenta de almacenamiento**, revise las opciones disponibles, acepte los valores predeterminados, haga clic en **Revisar y crear**, espere a que se complete el proceso de validación y haga clic en **Crear**.
 
@@ -107,17 +116,15 @@ En esta tarea, creará y configurará una cuenta Azure Storage.
 
 1. En la hoja de implementación, haga clic en **Ir al recurso** para mostrar la hoja de la cuenta de Azure Storage.
 
-1. En la hoja Cuenta de almacenamiento, en la sección **Administración de datos**, haga clic en **Replicación geográfica** y anote la ubicación secundaria. 
+1. En el panel Cuenta de almacenamiento, en la sección **Administración de datos**, haga clic en **Redundancia** y anote la ubicación secundaria. 
 
-1. En la hoja Cuenta de almacenamiento, en la sección **Configuración**, seleccione **Configuración**, en la lista desplegable **Replicación**, seleccione **Almacenamiento con redundancia local (LRS)** y guarde el cambio.
+1. En la lista desplegable **Redundancia**, seleccione **Almacenamiento con redundancia local (LRS)** y guarde el cambio. Observe que, por ahora, la cuenta de almacenamiento solo tiene la ubicación primaria.
 
-1. Vuelva a la hoja **Replicación geográfica** y tenga en cuenta que, en este momento, la cuenta de almacenamiento solo tiene la ubicación principal.
-
-1. Vuelva a la hoja **Configuración** de la cuenta de almacenamiento, establezca **Nivel de acceso de blob (predeterminado)** en **Esporádico** y guarde el cambio.
+1. En la hoja Cuenta de almacenamiento, en la sección **Configuración**, seleccione **Configuración**. Establezca **Nivel de acceso de blob (predeterminado)** en **Esporádico** y guarde el cambio.
 
     > **Nota**: El nivel de acceso esporádico es óptimo para los datos a los que no se accede con frecuencia.
 
-#### <a name="task-3-manage-blob-storage"></a>Tarea 3: Administrar el almacenamiento de blobs
+## Tarea 3: Administrar el almacenamiento de blobs
 
 En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
@@ -134,11 +141,10 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
 1. Vaya a **\\Allfiles\\Labs\\07\\LICENSE** en el equipo de laboratorio y haga clic en **Abrir**.
 
-1. En la hoja **Cargar blob**, expanda la sección **Opciones avanzadas** y configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. En la hoja **Cargar blob**, expanda la sección **Avanzado** y configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     | Configuración | Valor |
     | --- | --- |
-    | Tipo de autenticación | **Clave de cuenta**  |
     | Tipo de blob | **Blob en bloques** |
     | Tamaño de bloque | **4 MB** |
     | Nivel de acceso | **Acceso frecuente** |
@@ -156,7 +162,7 @@ En esta tarea, creará un contenedor de blobs y cargará un blob en él.
 
     > **Nota:** Tiene la opción de descargar el blob, cambiar su nivel de acceso (actualmente está establecido en **Frecuente**), adquirir una concesión, que cambiaría su estado de concesión a **Bloqueado** (actualmente está establecido en **Desbloqueado**), y proteger el blob frente a modificaciones o eliminaciones, así como asignar metadatos personalizados (mediante la especificación de pares arbitrarios de clave y valor). También puede **Editar** el archivo directamente dentro de la interfaz de Azure Portal, sin descargarlo antes. También puede crear instantáneas, así como generar un token de SAS (explorará esta opción en la siguiente tarea).
 
-#### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>Tarea 4: Administrar la autenticación y autorización para Azure Storage
+## Tarea 4: Administrar la autenticación y autorización para Azure Storage
 
 En esta tarea, configurará la autenticación y la autorización para Azure Storage.
 
@@ -189,7 +195,7 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL que copió en el paso anterior.
 
-    > **Nota**: Si usa Microsoft Edge, debe presentarse a la página **The MIT License (MIT)** . Si usa Chrome, Microsoft Edge (Chromium) o Firefox, debería poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
+    > **Nota**: Debe poder ver el contenido del archivo tras descargarlo y abrirlo con el Bloc de notas.
 
     > **Nota**: Esto es lo esperado, ya que ahora el acceso está autorizado en función del token de SAS recién generado.
 
@@ -197,15 +203,15 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
 
 1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **licenses/LICENSE** del contenedor de Azure Storage y, desde allí, vuelva a la hoja **az104-07-container**.
 
-1. Haga clic en el vínculo **Cambiar a la cuenta de usuario de Azure AD** junto a la etiqueta **Método de autenticación**.
+1. Haga clic en el vínculo **Cambiar a la cuenta de usuario de Microsoft Entra** junto a la etiqueta **Método de autenticación**.
 
-    > **Nota**: Puede ver un error al cambiar el método de autenticación (el error es *"No tiene permisos para enumerar los datos con su cuenta de usuario con Azure AD"* ). Este es el comportamiento esperado.  
+    > **Nota**: Puede ver un error al cambiar el método de autenticación (el error es *"No tiene permisos para enumerar los datos mediante su cuenta de usuario con Microsoft Entra"*). Este es el comportamiento esperado.  
 
     > **Nota**: En este momento, no tiene permisos para cambiar el método de autenticación.
 
 1. En la hoja **az104-07-container**, haga clic en **Control de acceso (IAM)** .
 
-1. En la sección **Agregar**, haga clic en **Agregar una asignación de roles**.
+1. En la pestaña **Comprobar acceso**, haga clic en **Agregar asignación de roles**.
 
 1. En la hoja **Agregar asignación de roles**, especifique la configuración siguiente:
 
@@ -215,11 +221,11 @@ En esta tarea, configurará la autenticación y la autorización para Azure Stor
     | Asignar acceso a | **Usuario, grupo o entidad de servicio** |
     | Miembros | Nombre de la cuenta de usuario |
 
-1. Haga clic en "Revisar y asignar" y, a continuación, en "Revisar y asignar", y vuelva a la hoja **Información general** del contenedor **az104-07-container** y compruebe que puede cambiar el método de autenticación a (Cambiar la cuenta de usuario de Azure AD).
+1. Haga clic en **Revisar y asignar** y, después, en **Revisar y asignar**. Vuelva a la hoja **Información general** del contenedor **az104-07-container** y compruebe que puede cambiar el método de autenticación a (Cambiar a la cuenta de usuario de Microsoft Entra ).
 
     > **Nota**: El cambio puede tardar unos 5 minutos en surtir efecto.
 
-#### <a name="task-5-create-and-configure-an-azure-files-shares"></a>Tarea 5: Crear y configurar un recurso compartido de archivos de Azure Files
+## Tarea 5: Crear y configurar un recurso compartido de archivos de Azure Files
 
 En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
@@ -227,15 +233,17 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. En Azure Portal, vuelva a la hoja de la cuenta de almacenamiento que creó en la primera tarea de este laboratorio y, en la sección **Almacenamiento de datos**, haga clic en **Recursos compartidos de archivos**.
 
-1. Haga clic en **+ Recurso compartido de archivos** y cree un recurso compartido de archivos con la configuración siguiente:
+1. Haga clic en **+ Recurso compartido de archivos** y, en la pestaña **Aspectos básicos**, asigne un nombre al recurso compartido de archivos, **az104-07-share**. Revise la otra configuración de esta pestaña. 
 
-    | Configuración | Value |
-    | --- | --- |
-    | Nombre | **az104-07-share** |
+1. Vaya a la pestaña **Copia de seguridad** y asegúrese de que **Habilitar copia de seguridad** **no** está activada.
 
-1. Haga clic en el recurso compartido de archivos recién creado y haga clic en **Conectar**.
+1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. Espere a que el recurso compartido de archivos se implemente. 
 
-1. En la hoja **Conectar**, asegúrese de que la pestaña **Windows** esté seleccionada. A continuación encontrará un cuadro de texto gris con un script, en la esquina inferior derecha de ese cuadro, mantenga el puntero sobre el icono de páginas y haga clic en **Copiar en el Portapapeles**.
+1. Haga clic en el recurso compartido de archivos recién creado y anote la información disponible en la hoja **az104-07-share**.
+
+1. Haga clic en **Examinar** y tenga en cuenta que no hay archivos o carpetas en el nuevo recurso compartido de archivos. Haga clic en **Conectar**.
+
+1. En la hoja **Conectar**, asegúrese de que la pestaña **Windows** esté seleccionada. Debajo encontrará un botón con la etiqueta **Mostrar script**. Haga clic en el botón y encontrará un cuadro de texto gris con un script; en la esquina inferior derecha de ese cuadro mantenga el puntero sobre el icono de páginas y haga clic en **Copiar en el Portapapeles**.
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la lista de máquinas virtuales, haga clic en **az104-07-vm0**.
 
@@ -257,17 +265,17 @@ En esta tarea, creará y configurará recursos compartidos de Azure Files.
 
 1. Compruebe que el script se haya completado correctamente.
 
-1. Vuelva a la hoja del recurso compartido de archivos **az104-07-share**, haga clic en **Actualizar** y compruebe que **az104-07-folder** aparezca en la lista de carpetas.
+1. Vuelva a la hoja del recurso compartido de archivos **az104-07-share \| Examinar**, haga clic en **Actualizar** y compruebe que **az104-07-folder** aparezca en la lista de carpetas.
 
 1. Haga clic en la carpeta **az104-07-share** y compruebe que **az104-07-file.txt** aparezca en la lista de archivos.
 
-#### <a name="task-6-manage-network-access-for-azure-storage"></a>Tarea 6: Administrar el acceso a la red para Azure Storage
+## Tarea 6: Administrar el acceso a la red para Azure Storage
 
 En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. En Azure Portal, vuelva a la hoja de la cuenta de almacenamiento que creó en la primera tarea de este laboratorio y, en la sección **Seguridad y redes**, haga clic en **Redes** y, luego, haga clic en **Firewalls y redes virtuales**.
 
-1. Haga clic en la opción **Redes seleccionadas** y revise las opciones de configuración que estarán disponibles una vez habilitada esta opción.
+1. Haga clic en la opción **Enabled from selected virtual networks and IP addresses** (Habilitado desde las redes virtuales y las direcciones IP seleccionadas) y revise las opciones de configuración que aparecen disponibles cuando se habilita esta opción.
 
     > **Nota**: Puede usar estos valores para configurar la conectividad directa entre las máquinas virtuales de Azure en las subredes designadas de redes virtuales y la cuenta de almacenamiento mediante puntos de conexión de servicio.
 
@@ -275,11 +283,13 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. Abra otra ventana del explorador en el modo InPrivate y vaya a la dirección URL de SAS del blob que generó en la tarea anterior.
 
+    > **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob. 
+
 1. Debería presentársele el contenido de la página **The MIT License (MIT)** .
 
     > **Nota**: Esto es lo esperado, ya que se está conectando desde la dirección IP del cliente.
 
-1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **licenses/LICENSE** del contenedor de Azure Storage.
+1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **Redes** de la cuenta de Azure Storage.
 
 1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
 
@@ -296,9 +306,11 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
 1. Cierre el panel de Cloud Shell.
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+## Limpieza de recursos
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. También puede intentar eliminar el grupo de recursos donde residen los recursos. Se trata de un acceso directo rápido de administrador. Si tiene dudas, hable con el instructor.
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -316,7 +328,7 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 

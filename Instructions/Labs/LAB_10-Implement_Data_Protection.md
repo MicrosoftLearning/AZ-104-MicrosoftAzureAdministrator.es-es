@@ -1,22 +1,19 @@
 ---
 lab:
-  title: '10: Implementación de la protección de datos'
-  module: Module 10 - Data Protection
-ms.openlocfilehash: 88b9ba4e552702d7e062fb73a21ab0ec257ab2d6
-ms.sourcegitcommit: 8a0ced6338608682366fb357c69321ba1aee4ab8
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "132625579"
+  title: "Laboratorio\_10: Implementación de la protección de datos"
+  module: Administer Data Protection
 ---
-# <a name="lab-10---backup-virtual-machines"></a>Laboratorio 10: Copia de seguridad de máquinas virtuales
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+# Laboratorio 10: Copia de seguridad de máquinas virtuales
+# Manual de laboratorio para alumnos
+
+## Escenario del laboratorio
 
 Se le ha encargado la tarea de evaluar el uso de Azure Recovery Services para la copia de seguridad y la restauración de archivos hospedados en máquinas virtuales de Azure y equipos locales. Además, quiere identificar los métodos de protección de los datos almacenados en el almacén de Recovery Services frente a pérdidas de datos accidentales o malintencionadas.
 
-## <a name="objectives"></a>Objetivos
+**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+
+## Objetivos
 
 En este laboratorio, aprenderá a:
 
@@ -28,13 +25,17 @@ En este laboratorio, aprenderá a:
 + Tarea 6: Realizar la recuperación de archivos mediante instantáneas de máquinas virtuales de Azure (opcional)
 + Tarea 7: Revisar la funcionalidad de eliminación temporal de Azure Recovery Services (opcional)
 
-## <a name="estimated-timing-50-minutes"></a>Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
-## <a name="instructions"></a>Instructions
+## Diagrama de la arquitectura
 
-### <a name="exercise-1"></a>Ejercicio 1
+![imagen](../media/lab10.png)
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tarea 1: Aprovisionar el entorno de laboratorio
+### Instrucciones
+
+## Ejercicio 1
+
+## Tarea 1: Aprovisionar el entorno de laboratorio
 
 En esta tarea, implementará dos máquinas virtuales que se usarán para probar diferentes escenarios de copia de seguridad.
 
@@ -53,15 +54,18 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
    ```powershell
    $location = '[Azure_region]'
     ```
+    
    ```powershell
    $rgName = 'az104-10-rg0'
     ```
+    
    ```powershell
    New-AzResourceGroup -Name $rgName -Location $location
    ```
 
 1. En el panel de Cloud Shell, ejecute lo siguiente para crear la primera red virtual e implementar una máquina virtual en ella mediante los archivos de parámetros y plantilla que cargó:
-
+    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -74,7 +78,7 @@ En esta tarea, implementará dos máquinas virtuales que se usarán para probar 
 
     >**Nota**: No espere a que se completen las implementaciones, sino que avance a la siguiente tarea. La implementación tardará unos 5 minutos.
 
-#### <a name="task-2-create-a-recovery-services-vault"></a>Tarea 2: Crear un almacén de Recovery Services
+## Tarea 2: Crear un almacén de Recovery Services
 
 En esta tarea, creará un almacén de Recovery Services.
 
@@ -84,7 +88,7 @@ En esta tarea, creará un almacén de Recovery Services.
 
     | Configuración | Value |
     | --- | --- |
-    | Subscription | Nombre de la suscripción de Azure que está usando en este laboratorio |
+    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | Nombre de un nuevo grupo de recursos **az104-10-rg1** |
     | Nombre del almacén | **az104-10-rsv1** |
     | Region | Nombre de una región donde implementó las dos máquinas virtuales en la tarea anterior |
@@ -101,17 +105,17 @@ En esta tarea, creará un almacén de Recovery Services.
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de copia de seguridad**.
 
-1. En la hoja **Configuración de copia de seguridad**, observe que puede establecer el **Tipo de replicación de almacenamiento** en **Redundancia local** o **Redundancia geográfica**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
+1. En la hoja **Configuración de copia de seguridad**, revisa las opciones de **Tipo de replicación de almacenamiento**. Deje establecido el valor predeterminado de **Redundancia geográfica** y cierre la hoja.
 
     >**Nota**: Esta opción solo se puede configurar si no hay elementos de copia de seguridad existentes.
 
 1. De nuevo en la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de seguridad**.
 
-1. En la hoja **Configuración de seguridad**, observe que **Eliminación temporal (para máquinas virtuales de Azure)** tenga un estado **Habilitado**.
+1. En la hoja **Configuración de seguridad**, tenga en cuenta que la opción **Eliminación temporal (para cargas de trabajo que se ejecutan en Azure)**  está **habilitada**.
 
 1. Cierre la hoja **Configuración de seguridad** y, de nuevo en la hoja del almacén de Recovery Services **az104-10-rsv1**, haga clic en **Información general**.
 
-#### <a name="task-3-implement-azure-virtual-machine-level-backup"></a>Tarea 3: Implementar la copia de seguridad a nivel de máquina virtual de Azure
+## Tarea 3: Implementar la copia de seguridad a nivel de máquina virtual de Azure
 
 En esta tarea, implementará la copia de seguridad a nivel de máquina virtual de Azure.
 
@@ -140,21 +144,21 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
     | Zona horaria | Nombre de la zona horaria local |
     | Conservar las instantáneas de recuperación instantánea durante | **2** días |
 
-1. Haga clic en **Aceptar** para crear la directiva y luego, en la sección **Máquinas virtuales**, seleccione **Agregar**.
+1. Haga clic en **Aceptar** para crear la directiva y luego, en la sección **Máquinas virtuales**, seleccione **Añadir**.
 
-1. En la hoja **Seleccionar máquinas virtuales**, seleccione **az-104-10-vm0**, haga clic en **Aceptar** y, de nuevo en la hoja **Copia de seguridad**, haga clic en **Habilitar copia de seguridad**.
+1. En la hoja **Seleccionar máquinas virtuales**, seleccione **az104-10-vm0**, haga clic en **Aceptar** y, de nuevo en la hoja **Copia de seguridad**, haga clic en **Habilitar copia de seguridad**.
 
     >**Nota**: Espere a que se habilite la copia de seguridad. Este proceso tardará alrededor de 2 minutos.
 
-1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**, en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquinas virtuales de Azure**.
+1. Vuelva a la hoja del almacén de Recovery Services **az104-10-rsv1**; en la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **Máquina virtual de Azure**.
 
-1. En la hoja **Elementos de copia de seguridad (máquina virtual de Azure)** de **az104-10-vm0**, revise los valores de las entradas **Comprobación previa a la copia de seguridad** y **Estado de la última copia de seguridad**.
+1. En la hoja **Elementos de copia de seguridad (Máquina virtual de Azure)** , seleccione **Ver detalles** en **az104-10-vm0** y revise los valores de las entradas **Comprobación previa a la copia de seguridad** y **Estado de la última copia de seguridad**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Hacer copia de seguridad ahora**, acepte el valor predeterminado en la lista desplegable **Conservar copia de seguridad hasta** y haga clic en **Aceptar**.
 
     >**Nota**: No espere a que se complete la copia de seguridad, sino que avance a la siguiente tarea.
 
-#### <a name="task-4-implement-file-and-folder-backup"></a>Tarea 4: Implementar la copia de seguridad de archivos y carpetas
+## Tarea 4: Implementar la copia de seguridad de archivos y carpetas
 
 En esta tarea, implementará la copia de seguridad de archivos y carpetas mediante Azure Recovery Services.
 
@@ -166,7 +170,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros.
 
     >**Nota**: Dado que Azure Portal ya no admite IE11, tendrá que usar el explorador Microsoft Edge para esta tarea.
 
@@ -204,6 +208,8 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 1. En el cuadro de diálogo **Seleccionar credenciales de almacén**, vaya a la carpeta **Descargas**, haga clic en el archivo de credenciales del almacén que descargó y haga clic en **Abrir**.
 
 1. De nuevo en la página **Identificación del almacén**, haga clic en **Siguiente**.
+
+1. Asegúrese de que no esté activada la opción **Guardar frase de contraseña de forma segura en Azure Key Vault**. 
 
 1. En la página **Configuración de cifrado** del **Asistente para registrar servidor**, haga clic en **Generar frase de contraseña**.
 
@@ -253,7 +259,7 @@ En esta tarea, implementará la copia de seguridad de archivos y carpetas median
 
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , compruebe que haya una entrada que hace referencia a la unidad **C:\\** de **az104-10-vm1**.
 
-#### <a name="task-5-perform-file-recovery-by-using-azure-recovery-services-agent-optional"></a>Tarea 5: Realizar la recuperación de archivos mediante el agente de Azure Recovery Services (opcional)
+## Tarea 5: Realizar la recuperación de archivos mediante el agente de Azure Recovery Services (opcional)
 
 En esta tarea, realizará la restauración de archivos mediante el agente de Azure Recovery Services.
 
@@ -283,7 +289,7 @@ En esta tarea, realizará la restauración de archivos mediante el agente de Azu
 
 1. Finalice la sesión de Escritorio remoto.
 
-#### <a name="task-6-perform-file-recovery-by-using-azure-virtual-machine-snapshots-optional"></a>Tarea 6: Realizar la recuperación de archivos mediante instantáneas de máquinas virtuales de Azure (opcional)
+## Tarea 6: Realizar la recuperación de archivos mediante instantáneas de máquinas virtuales de Azure (opcional)
 
 En esta tarea, restaurará un archivo a partir de la copia de seguridad basada en instantáneas a nivel de máquina virtual de Azure.
 
@@ -297,7 +303,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
     >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
 
-1. Cuando se le pida, inicie sesión con el nombre de usuario **Student** y contraseña **Pa55w.rd1234**.
+1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros.
 
    >**Nota**: Dado que Azure Portal ya no admite IE11, tendrá que usar el explorador Microsoft Edge para esta tarea.
 
@@ -319,7 +325,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **az104-10-rsv1 - Elementos de copia de seguridad**, haga clic en **Máquina virtual de Azure**.
 
-1. En la hoja **Elementos de copia de seguridad (máquina virtual de Azure)** , haga clic en **az104-10-vm0**.
+1. En la hoja **Elementos de copia de seguridad (Máquina virtual de Azure),** seleccione **Ver detalles** para **az104-10-vm0**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Recuperación de archivos**.
 
@@ -355,7 +361,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. Finalice la sesión de Escritorio remoto.
 
-#### <a name="task-7-review-the-azure-recovery-services-soft-delete-functionality"></a>Tarea 7: Revisar la funcionalidad de eliminación temporal de Azure Recovery Services
+## Tarea 7: Revisar la funcionalidad de eliminación temporal de Azure Recovery Services
 
 1. En el equipo del laboratorio, en Azure Portal, busque y seleccione **Almacenes de Recovery Services** y, en la hoja **Almacenes de Recovery Services**, haga clic en **az104-10-rsv1**.
 
@@ -365,9 +371,11 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **Elementos de copia de seguridad (Agente de copia de seguridad de Azure)** , haga clic en la entrada que representa la copia de seguridad de **az104-10-vm1**.
 
-1. En **C:\\ en la hoja az104-10-vm1.** , haga clic en el vínculo **az104-10-vm1.** "¿Ha olvidado la contraseña?"
+1. En **C:\\ en la hoja az104-10-vm1.**, seleccione **Ver detalles** para **az104-10-vm1.** .
 
-1. En la hoja de servidores protegidos **az104-10-vm1.** , haga clic en **Eliminar**.
+1. En la hoja Detalles, haga clic en **az104-10-vm1**.
+
+1. En la hoja de servidores protegidos **az104-10-vm1.**, haga clic en **Eliminar**.
 
 1. En la hoja **Eliminar**, configure las opciones siguientes.
 
@@ -381,11 +389,13 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. Active la casilla situada junto a la etiqueta **Hay datos de copia de seguridad de 1 elementos de copia de seguridad asociados con este servidor. Entiendo que, al hacer clic en "Confirmar", se eliminarán permanentemente todos los datos de la copia de seguridad en la nube. Esta acción no se puede deshacer. Se puede enviar una alerta a los administradores de esta suscripción para notificar esta eliminación**, y haga clic en **Eliminar**.
 
+    >**Nota**: Esto producirá un error porque la característica de **eliminación temporal** debe estar deshabilitada.
+
 1. Vuelva a la hoja **az104-10-rsv1 - Elementos de copia de seguridad** y haga clic en **Máquinas virtuales de Azure**.
 
 1. En la hoja **az104-10-rsv1 - Elementos de copia de seguridad**, haga clic en **Máquina virtual de Azure**.
 
-1. En la hoja **Elementos de copia de seguridad (máquina virtual de Azure)** , haga clic en **az104-10-vm0**.
+1. En la hoja **Elementos de copia de seguridad (Máquina virtual de Azure),** seleccione **Ver detalles** para **az104-10-vm0**.
 
 1. En la hoja del elemento de copia de seguridad **az104-10-vm0**, haga clic en **Detener copia de seguridad**.
 
@@ -411,7 +421,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
 1. En la hoja **az104-10-rsv1 - Propiedades**, haga clic en el vínculo **Actualizar** bajo la etiqueta **Configuración de seguridad**.
 
-1. En la hoja **Configuración de seguridad**, deshabilite **Eliminación temporal (para las cargas de trabajo que se ejecutan en Azure)** y haga clic en **Guardar**.
+1. En la hoja **Configuración de seguridad**, deshabilite la opción **Eliminación temporal (para cargas de trabajo que se ejecutan en Azure)** y deshabilite también las **características de seguridad (para cargas de trabajo que se ejecutan en el entorno local)** y haga clic en **Guardar**.
 
     >**Nota**: Esto no afectará a los elementos que ya están en estado de eliminación temporal.
 
@@ -431,9 +441,13 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
     | Motivo | **Otros** |
     | Comentarios | **az104 10 lab** |
 
-#### <a name="clean-up-resources"></a>Limpieza de recursos
+1. Repita los pasos al principio de esta tarea para eliminar los elementos de copia de seguridad de **az104-10-vm1**.
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+## Limpieza de recursos
+
+>**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+
+>**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
 1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
 
@@ -453,7 +467,7 @@ En esta tarea, restaurará un archivo a partir de la copia de seguridad basada e
 
     >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
 
-#### <a name="review"></a>Revisar
+## Revisar
 
 En este laboratorio, ha:
 
