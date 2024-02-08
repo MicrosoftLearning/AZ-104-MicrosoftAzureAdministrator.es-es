@@ -46,7 +46,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Subscription | nombre de la suscripción de Azure que usará en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg01** |
@@ -54,11 +54,11 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure. |
     | Opciones de disponibilidad | **Zona de disponibilidad** |
     | Zona de disponibilidad | **Zona 1** |
-    | Imagen | **Windows Server 2019 Datacenter Gen1/Gen2** |
+    | Imagen | **Windows Server 2019 Datacenter - Gen2** |
     | Instancia de Azure Spot | **No** |
     | Size | **Estándar D2s v3** |
     | Nombre de usuario | **Estudiante** |
-    | Contraseña | **Proporcione una contraseña segura** |
+    | Contraseña | **Proporcione una contraseña segura, un mínimo de 12 caracteres** |
     | Puertos de entrada públicos | **None** |
     | ¿Quiere usar una licencia de Windows Server existente? | **Desactivado** |
 
@@ -89,7 +89,7 @@ En esta tarea, implementará máquinas virtuales de Azure en diferentes zonas de
     | Grupo de seguridad de red de NIC | **basic** |
     | Puertos de entrada públicos | **None** |
     | Redes aceleradas | **Desactivado**
-    | ¿Quiere colocar esta máquina virtual como subyacente respecto a una solución de equilibrio de carga existente? | **Desactivado** |
+    | Opciones de equilibrio de carga | **Ninguno** |
 
 1. Pulse en **Siguiente: Administración >** y, en la pestaña **Administración** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -237,7 +237,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
 1. En la hoja de la máquina virtual **az104-08-vm0**, haga clic en **Discos** y, en **Discos de datos**, haga clic en **+ Crear y adjuntar un nuevo disco**.
 
-1. Cree un disco administrado con las siguientes opciones de configuración (deje las demás con los predeterminados):
+1. Cree un disco administrado con la siguiente configuración (deje otros con sus valores predeterminados) y haga clic en **Aplicar**:
 
     | Configuración | Value |
     | --- | --- |
@@ -247,7 +247,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
 1. De nuevo en la hoja **az104-08-vm0: Discos**, en **Discos de datos**, haga clic en **+ Crear y adjuntar un nuevo disco**.
 
-1. Cree un disco administrado con las siguientes opciones de configuración (deje las demás con los predeterminados) y guarde los cambios:
+1. Cree un disco administrado con la siguiente configuración (deje otros con sus valores predeterminados) y haga clic en **Aplicar**:
 
     | Configuración | Value |
     | --- | --- |
@@ -255,7 +255,6 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
     | Tipo de almacenamiento | **SSD Premium** |
     | Tamaño (GiB)| **1024 GiB** |
 
-1. De nuevo en la hoja **az104-08-vm0: Discos**, haga clic en **Guardar**.
 
 1. En la hoja **az104-08-vm0**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, en la lista de comandos, haga clic en **RunPowerShellScript**.
 
@@ -292,7 +291,7 @@ En esta tarea, escalará el proceso de las máquinas virtuales de Azure cambiand
 
     >**Nota**: Esta sección de la plantilla define el mismo tamaño de máquina virtual de Azure que el que especificó para la primera máquina virtual a través de Azure Portal.
 
-1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplaza la línea **51** (`"dataDisks": [ ],`) por el código siguiente:
+1. En la hoja **Editar plantilla**, en la sección que muestra el contenido de la plantilla, reemplace la línea **54** (`"dataDisks": [ ],`) por el siguiente código:
 
    ```json
                     "dataDisks": [
@@ -362,9 +361,9 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Discos >** :
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
+    | Suscripción | nombre de la suscripción de Azure que usa en este laboratorio |
     | Resource group | nombre de un nuevo grupo de recursos **az104-08-rg02** |
     | Nombre del conjunto de escalado de máquinas virtuales | **az10408vmss0** |
     | Region | seleccione una de las regiones que admiten zonas de disponibilidad y donde puede aprovisionar máquinas virtuales de Azure diferentes de las que usó para implementar máquinas virtuales anteriormente en este laboratorio. |
@@ -406,9 +405,9 @@ En esta tarea, implementará el conjunto de escalado de máquinas virtuales de A
 
     | Configuración | Valor |
     | --- | --- |
-    | Source | **Cualquiera** |
-    | Source port ranges | **\*** |
-    | Destination | **Cualquiera** |
+    | Origen | **Cualquiera** |
+    | Rangos del puerto origen | **\*** |
+    | Destino | **Cualquiera** |
     | Intervalos de puertos de destino | **80** |
     | Protocolo | **TCP** |
     | Acción | **Permitir** |
@@ -495,7 +494,7 @@ En esta tarea, instalará el rol del servidor web de Windows Server en las insta
 
     >**Nota**: Espere a que se complete la instalación de la extensión antes de continuar con el paso siguiente.
 
-1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las dos instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
+1. En la sección **Información general** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las dos instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
     >**Nota**: Espere a que la actualización se complete antes de continuar con el paso siguiente.
 
@@ -534,13 +533,13 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
     | Configuración | Valor |
     | --- |--- |
     | Origen de métricas | **Recurso actual (az10480vmss0)** |
-    | Agregación de tiempo | **Average** |
     | Espacio de nombres de métricas | **Host de máquina virtual** |
     | Nombre de métrica | **Red entrante total** |
     | Operador | **Mayor que** |
     | Umbral de la métrica para desencadenar la acción de escalado | **10** |
     | Duración (en minutos) | **1** |
-    | Estadísticas de intervalo de agregación | **Average** |
+    | Estadísticas de intervalo de agregación | **Media** |
+    | Agregación de tiempo | **Media** |
     | Operación | **Aumentar recuento en** |
     | Recuento de instancias | **1** |
     | Tiempo de finalización (minutos) | **5** |
@@ -593,7 +592,9 @@ En esta tarea, cambiará el tamaño de las instancias del conjunto de escalado d
     | Tipo de almacenamiento | **HDD estándar** |
     | Tamaño (GiB) | **32** |
 
-1. Guarde el cambio, en la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
+1. Aplique el cambio
+
+1. En la sección **Configuración** de la hoja **az10408vmss0**, haga clic en **Instancias**, active las casillas situadas junto a las instancias del conjunto de escalado de máquinas virtuales, haga clic en **Actualizar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
     >**Nota**: El disco conectado en el paso anterior es un disco sin procesar. Antes de poder usarse, es necesario crear una partición, crear un sistema de archivos y montarlo. Para ello, usará la extensión de script personalizado de máquina virtual de Azure. En primer lugar, deberá quitar la extensión de script personalizado existente.
 
