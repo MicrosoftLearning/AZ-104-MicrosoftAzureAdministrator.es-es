@@ -285,17 +285,17 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 
     > **Nota**: Si no registró la dirección URL de SAS de la tarea 4, debe generar una nueva con la misma configuración. Use los pasos 4-6 de la tarea 4 como guía para generar una nueva dirección URL de SAS de blob. 
 
-1. Debería presentársele el contenido de la página **The MIT License (MIT)** .
+1. Debería poder descargar el archivo LICENSE.txt.
 
     > **Nota**: Esto es lo esperado, ya que se está conectando desde la dirección IP del cliente.
 
 1. Cierre la ventana del explorador en modo InPrivate, vuelva a la ventana del explorador que muestra la hoja **Redes** de la cuenta de Azure Storage.
 
-1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
+1. En Azure Portal, busque y seleccione **Máquinas virtuales** y, en la lista de máquinas virtuales, haga clic en **az104-07-vm0**.
 
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
+1. En la hoja **az104-07-vm0**, en la sección **Operaciones**, haga clic en **Ejecutar comando**.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para intentar descargar el blob LICENSE desde el contenedor **az104-07-container** de la cuenta de almacenamiento (reemplace el marcador de posición `[blob SAS URL]` por la dirección URL de SAS del blob que generó en la tarea anterior):
+1. En la hoja **Ejecutar script de comandos**, ejecute lo siguiente en el panel **Script PowerShell** para intentar descargar el blob de LICENCIA desde el contenedor **az104-07-container** de la cuenta de almacenamiento (reemplace el marcador de posición `[blob SAS URL]` con la dirección URL de SAS del blob que generó en la tarea anterior):
 
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
@@ -303,8 +303,6 @@ En esta tarea, configurará el acceso a la red para Azure Storage.
 1. Compruebe que no puede descargarlo.
 
     > **Nota**: Debe recibir el mensaje que indica **AuthorizationFailure: Esta solicitud no está autorizada para realizar esta operación**. Esto es lo esperado, ya que se está conectando desde la dirección IP asignada a una VM de Azure que hospeda la instancia de Cloud Shell.
-
-1. Cierre el panel de Cloud Shell.
 
 ## Limpieza de recursos
 
