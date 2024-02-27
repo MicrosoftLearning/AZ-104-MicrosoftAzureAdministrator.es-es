@@ -5,173 +5,174 @@ lab:
 ---
 
 # Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
-# Manual de laboratorio para alumnos
 
-## Escenario del laboratorio
+## Introducción del laboratorio
 
-Para mejorar la administración de recursos de Azure en Contoso, se le ha encargado implementar la funcionalidad siguiente:
+En este laboratorio, aprenderá a implementar los planes de gobernanza de la organización. Obtendrá información sobre cómo las directivas de Azure pueden garantizar que las decisiones operativas se apliquen en toda la organización. Aprenderá a usar el etiquetado de recursos para mejorar los informes. 
 
-- Etiquetar grupos de recursos que solo incluyen recursos de infraestructura (por ejemplo, cuentas de almacenamiento de Cloud Shell).
-
-- Asegurarse de que solo se puedan agregar recursos de infraestructura correctamente etiquetados a los grupos de recursos de infraestructura.
-
-- Corregir los recursos no compatibles.
-
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
-
-## Objetivos
-
-En este laboratorio, aprenderemos a:
-
-+ Tarea 1: Crear y asignar etiquetas a través de Azure Portal
-+ Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
-+ Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos con **Este de EE. UU.** 
 
 ## Tiempo estimado: 30 minutos
 
+## Escenario del laboratorio
+
+La superficie en la nube de la organización ha crecido considerablemente en el último año. Durante una auditoría reciente, ha descubierto un número considerable de recursos sin un propietario, proyecto o centro de coste definido. Para mejorar la administración de recursos de Azure en la organización, se le ha encargado implementar la funcionalidad siguiente:
+
+- aplicar etiquetas de recursos para adjuntar metadatos importantes a los recursos de Azure
+
+- aplicar el uso de etiquetas de recursos para nuevos recursos mediante directivas de Azure
+
+- actualizar los recursos existentes con etiquetas de recursos
+
+- usar bloqueos de recursos para proteger los recursos
+
+## Simulaciones interactivas de laboratorio
+
+Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+
++ [Administración de bloqueos de recursos](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Agregue un bloqueo de recursos y pruébelo para confirmarlo.
+  
++ [Crear una directiva de Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Cree una directiva de Azure que restrinja los recursos de ubicación que se pueden ubicar. Cree un recurso y asegúrese de que se aplica la directiva. 
+
++ [Administración de la gobernanza mediante la directiva de Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Cree y asigne etiquetas mediante Azure Portal. Cree una directiva de Azure que requiera etiquetado. Corrija los recursos no conformes.
+
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab02b.png)
+![Diagrama de la arquitectura de tareas.](../media/az104-lab02b-architecture.png)
 
-### Instrucciones
+## Aptitudes de trabajo
 
-## Ejercicio 1
++ Tarea 1: crear y asignar etiquetas a través de Azure Portal.
++ Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy.
++ Tarea 3: Aplicar el etiquetado mediante una instancia de Azure Policy.
++ Tarea 4: Configurar y probar los bloqueos de recursos. 
 
 ## Tarea 1: Asignar etiquetas a través de Azure Portal
 
-En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal.
+En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal. Las etiquetas son un componente fundamental de una estrategia de gobernanza como se describe en el Marco de buena arquitectura de Microsoft y Cloud Adoption Framework. Las etiquetas pueden permitirle identificar rápidamente los propietarios de recursos, las fechas de expiración, los contactos de grupo y otros pares de nombre y valor que la organización considera importantes. Para esta tarea, asigne una etiqueta que identifique el rol de recurso ("Infra" para "Infraestructura").
 
-1. En Azure Portal, inicie una sesión de **PowerShell** en **Cloud Shell**.
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
+      
+1. Busque y seleccione `Resource groups`.
 
-    >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**. 
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para identificar el nombre de la cuenta de almacenamiento que usa Cloud Shell:
-
-   ```powershell
-   df
-   ```
-
-1. En la salida del comando, observe la primera parte de la ruta de acceso completa que designa el montaje de la unidad principal de Cloud Shell (marcado aquí como `xxxxxxxxxxxxxx`:
-
-   ```
-   //xxxxxxxxxxxxxx.file.core.windows.net/cloudshell   (..)  /usr/csuser/clouddrive
-   ```
-
-1. En Azure Portal, busque y seleccione **Cuentas de almacenamiento** y, en la lista de cuentas de almacenamiento, haga clic en la entrada que representa la cuenta de almacenamiento que identificó en el paso anterior.
-
-1. En la hoja de la cuenta de almacenamiento, haga clic en el vínculo que representa el nombre del grupo de recursos que contiene la cuenta de almacenamiento.
-
-    **Nota**: Anote en qué grupo de recursos se encuentra la cuenta de almacenamiento, lo necesitará más adelante en el laboratorio.
-
-1. En la hoja del grupo de recursos, haga clic en **Etiquetas** en el menú izquierdo y cree una nueva etiqueta.
-
-1. Cree una etiqueta con la siguiente configuración y aplique el cambio:
+1. En Grupos de recursos, seleccione **+ Crear**.
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre | **Rol** |
-    | Value | **Infraestructura** |
+    | Nombre de suscripción | su suscripción |
+    | Nombre del grupo de recursos | `az104-rg2` |
+    | Ubicación | **Este de EE. UU.** |
 
-1. Haga clic en **Aplicar** y cierre la ventana de edición de etiquetas para volver a la hoja de la cuenta de almacenamiento. Haga clic en los puntos suspensivos de la cuenta de almacenamiento y seleccione **Editar etiquetas** para observar que la nueva etiqueta no se asignó automáticamente a la cuenta de almacenamiento. 
+    >**Nota:** Para cada laboratorio de este curso, creará un grupo de recursos. Esto le permite localizar y administrar rápidamente los recursos del laboratorio. 
 
-## Tarea 2: Exigir el etiquetado a través de una instancia de Azure Policy
+1. Seleccione **Siguiente: Etiquetas** y cree una etiqueta.
 
-En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valor en los recursos* al grupo de recursos y evaluará el resultado. 
+    | Configuración | Value |
+    | --- | --- |
+    | NOMBRE | `Cost Center` |
+    | Valor | `000` |
 
-1. En Azure Portal, busque y seleccione **Directiva**. 
+1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-1. En la sección **Creación**, haga clic en **Definiciones**. Tómese un momento para examinar la lista de definiciones de directivas integradas que están disponibles para usar. Para enumerar todas las directivas integradas que implican el uso de etiquetas, seleccione la entrada **Etiquetas** (y anule la selección de todas las demás entradas) en la lista desplegable **Categoría**. 
+## Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy
 
-1. Haga clic en la entrada que representa la directiva integrada **Requerir una etiqueta y su valor en los recursos** y revise la definición.
+En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valor en los recursos* al grupo de recursos y evaluará el resultado. Se puede usar Azure Policy para aplicar la configuración y, en este caso, la gobernanza, a los recursos de Azure. 
+
+1. En Azure Portal, busque y seleccione `Policy`. 
+
+1. En el panel **Creación**, seleccione **Definiciones**. Tómese un momento para examinar la lista de [definiciones de directivas integradas](https://learn.microsoft.com/azure/governance/policy/samples/built-in-policies) que están disponibles para usar. Observe que también puede buscar una definición.
+
+    ![Captura de pantalla de la definición de directiva.](../media/az104-lab02b-policytags.png)
+
+1. Haga clic en la entrada que representa la directiva integrada **Requerir una etiqueta y su valor en los recursos**. Dedique un minuto a revisar la definición. 
 
 1. En la hoja de la definición de la directiva integrada **Requerir una etiqueta y su valor en los recursos**, haga clic en **Asignar**.
 
-1. Para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
+1. Para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes. Haga clic en **Seleccionar** cuando haya terminado. 
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la tarea anterior |
+    | Suscripción | *su suscripción* |
+    | Grupo de recursos | **az104-rg2** |
 
-    >**Nota**: Un ámbito determina los recursos o grupos de recursos en los que la asignación de directivas tiene efecto. Puede asignar directivas a nivel de grupo de administración, de suscripción o de grupo de recursos. También tiene la opción de especificar exclusiones, como suscripciones, grupos de recursos o recursos individuales (según el ámbito de asignación). 
+    >**Nota**: Puede asignar directivas en el nivel de grupo de administración, de suscripción o de grupo de recursos. También tiene la opción de especificar exclusiones, como suscripciones, grupos de recursos o recursos individuales. En este escenario, el objetivo es la etiqueta en todos los recursos del grupo de recursos.
 
 1. Para configurar las propiedades de nivel **Básico** de la asignación, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre de asignación | **Require Role tag with Infra value** (Requerir etiqueta Rol con valor Infra)|
-    | Descripción | **Require Role tag with Infra value for all resources in the Cloud Shell resource group** (Requerir etiqueta Rol con el valor Infra para todos los recursos del grupo de recursos de Cloud Shell)|
+    | Nombre de asignación | `Require Cost Center tag with Default value`|
+    | Descripción | `Require Cost Center tag with default value for all resources in the resource group`|
     | Aplicación de directivas | habilitado |
 
-    >**Nota**: El **Nombre de asignación** se rellena automáticamente con el nombre de directiva seleccionado, pero puede cambiarlo. También puede agregar una **Descripción** opcional. **Asignado por** se rellena automáticamente en función del nombre de usuario que crea la asignación. 
+    >**Nota**: El **Nombre de asignación** se rellena automáticamente con el nombre de directiva seleccionado, pero puede cambiarlo. El campo **Description** (Descripción) es opcional. Observe que puede deshabilitar la directiva en cualquier momento. 
 
 1. Haga clic en **Siguiente** dos veces y establezca **Parámetros** en los valores siguientes:
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre de etiqueta | **Rol** |
-    | Valor de etiqueta | **Infraestructura** |
+    | Nombre de etiqueta | `Cost Center` |
+    | Valor de etiqueta | `000` |
 
 1. Haga clic en **Siguiente** y revise la pestaña **Corrección**. Deje desactivada la casilla **Crear una identidad administrada**. 
 
-    >**Nota:** Esta configuración se puede usar cuando la directiva o la iniciativa incluyen el efecto **deployIfNotExists** o **Modify**.
-
 1. Haga clic en **Revisar + crear** y, después, en **Crear**.
 
-    >**Nota**: Ahora, para comprobar que la nueva asignación de directivas está en vigor, intentará crear otra cuenta de Azure Storage en el grupo de recursos sin agregar explícitamente la etiqueta necesaria. 
+    >**Nota**: Ahora, para comprobar que la nueva asignación de directivas está en vigor, intentará crear otra cuenta de Azure Storage en el grupo de recursos. Creará la cuenta de almacenamiento sin agregar la etiqueta necesaria. 
     
-    >**Nota**: La directiva puede tardar entre 5 y 15 minutos en surtir efecto.
+    >**Nota**: La directiva puede tardar entre 5 y 10 minutos en surtir efecto.
 
-1. Vuelva a la hoja del grupo de recursos que hospeda la cuenta de almacenamiento usada para la unidad principal de Cloud Shell, que identificó en la tarea anterior.
+1. En el portal, busque y seleccione `Storage Account`y seleccione **+ Crear**. 
 
-1. En la hoja del grupo de recursos, haga clic en **+ Crear**, busque **Cuenta de almacenamiento** y haga clic en **+ Crear**. 
+1. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, complete la configuración.
 
-1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que usa el grupo de recursos al que se aplicó la directiva y especifique las opciones siguientes (deje las demás en sus valores predeterminados). A continuación, haga clic en **Revisar** y, luego, haga clic en **Crear**:
-
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
-    | Nombre de la cuenta de almacenamiento | Cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra |
+    | Resource group | **az104-rg2** |
+    | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
 
-    >**Nota**: Es posible que reciba un error **Error de validación. Haga clic aquí para obtener más información**; si es así, haga clic en el mensaje de error para identificar el motivo del error y omita el paso siguiente. 
+1. Seleccione **Revisar** y, después, haga clic en **Crear**:
 
 1. Una vez que cree la implementación, verá el mensaje **Error de implementación** en la lista **Notificaciones** del portal. En la lista **Notificaciones**, vaya a la información general de la implementación y haga clic en el mensaje **Error en la implementación. Haga clic aquí para ver los detalles** para conocer el motivo del error. 
 
+    ![Captura de pantalla del error de directiva no permitida.](../media/az104-lab02b-policyerror.png) 
+
     >**Nota**: Compruebe si el mensaje de error indica que la directiva no ha permitido la implementación de recursos. 
 
-    >**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Role tag with Infra value** (Requerir etiqueta Rol con el valor Infra). El error en la implementación se debe a que la cuenta de almacenamiento que intentó crear no tenía una etiqueta denominada **Rol** con su valor establecido en **Infra**.
+    >**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Cost Center tag with Default value** (Requerir etiqueta Centro de coste con el valor Predeterminado). El error en la implementación se debe a que la cuenta de almacenamiento que ha intentado crear no tenía una etiqueta denominada **Centro de coste** con su valor establecido en **Predeterminado**.
 
 ## Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
 
-En esta tarea, usaremos una definición de directiva diferente para corregir los recursos no compatibles. 
+En esta tarea, se usará la nueva definición de directiva para corregir los recursos no compatibles. En este escenario, hará que los recursos secundarios de un grupo de recursos hereden la etiqueta **Centro de coste** que se ha definido en el grupo de recursos.
 
-1. En Azure Portal, busque y seleccione **Directiva**. 
+1. En Azure Portal, busque y seleccione `Policy`. 
 
 1. En la sección **Creación**, haga clic en **Asignaciones**. 
 
-1. En la lista de asignaciones, haga clic en el icono de puntos suspensivos de la fila que representa la asignación de directiva etiqueta **Require Role tag with Infra value** (Requerir etiqueta Rol con valor Infra) y use el elemento de menú **Eliminar asignación** para eliminar la asignación.
+1. En la lista de asignaciones, haga clic en el icono de puntos suspensivos de la fila que representa la asignación de directiva etiqueta **Require Cost Center tag with Default value** (Requerir etiqueta Centro de coste con el valor Predeterminado) y use el elemento de menú **Eliminar asignación** para eliminar la asignación.
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
+    | Configuración | Valor |
+    | --- | --- |
+    | Subscription | su suscripción de Azure |
+    | Grupo de recursos | `az104-rg2` |
+
+1. Para especificar la **Definición de directiva**, haga clic en el botón de puntos suspensivos y busque y seleccione `Inherit a tag from the resource group if missing`.
+
+1. Seleccione **Agregar** y, después, configure las propiedades **básicas** restantes de la asignación.
+
     | Configuración | Value |
     | --- | --- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Grupo de recursos | Nombre del grupo de recursos que contiene la cuenta de Cloud Shell que identificó en la primera tarea |
-
-1. Para especificar la **Definición de directiva**, haga clic en el botón de puntos suspensivos y busque y seleccione **Heredar una etiqueta del grupo de recursos si falta**.
-
-1. Para configurar las propiedades restantes de nivel **Básico** de la asignación, configure las siguientes opciones (deje las demás con los valores predeterminados):
-
-    | Configuración | Value |
-    | --- | --- |
-    | Nombre de asignación | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing** (Heredar la etiqueta Rol y su valor Infra del grupo de recursos de Cloud Shell si falta)|
-    | Descripción | **Inherit the Role tag and its Infra value from the Cloud Shell resource group if missing** (Heredar la etiqueta Rol y su valor Infra del grupo de recursos de Cloud Shell si falta)|
+    | Nombre de asignación | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
+    | Descripción | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Aplicación de directivas | habilitado |
 
 1. Haga clic en **Siguiente** dos veces y establezca **Parámetros** en los valores siguientes:
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre de etiqueta | **Rol** |
+    | Nombre de etiqueta | `Cost Center` |
 
 1. Haga clic en **Siguiente** y, en la pestaña **Corrección**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
@@ -180,48 +181,77 @@ En esta tarea, usaremos una definición de directiva diferente para corregir los
     | Crear una tarea de corrección | enabled |
     | Directiva que se debe corregir | **Heredar una etiqueta del grupo de recursos si falta** |
 
-    >**Nota**: La definición de esta directiva incluye el efecto **Modify**.
+    >**Nota**: La definición de esta directiva incluye el efecto **Modify**. Por tanto, se necesita una identidad administrada. 
+
+    ![Captura de pantalla de la página Corrección de la directiva. ](../media/az104-lab02b-policyremediation.png) 
 
 1. Haga clic en **Revisar + crear** y, después, en **Crear**.
 
-    >**Nota**: Para comprobar que la nueva asignación de directivas está en vigor, creará otra cuenta de Azure Storage en el mismo grupo de recursos sin agregar explícitamente la etiqueta necesaria. 
+    >**Nota**: Para comprobar que la asignación de la nueva directiva está en vigor, creará otra cuenta de almacenamiento de Azure en el mismo grupo de recursos sin agregar explícitamente la etiqueta necesaria. 
     
-    >**Nota**: La directiva puede tardar entre 5 y 15 minutos en surtir efecto.
+    >**Nota**: La directiva puede tardar entre 5 y 10 minutos en surtir efecto.
 
-1. Vuelva a la hoja del grupo de recursos que hospeda la cuenta de almacenamiento usada para la unidad principal de Cloud Shell, que identificó en la primera tarea.
-
-1. En la hoja del grupo de recursos, haga clic en **+ Crear**, busque **Cuenta de almacenamiento** y haga clic en **+ Crear**. 
+1. Busque y seleccione `Storage Account`, y haga clic en **+ Crear**. 
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que usa el grupo de recursos al que se aplicó la directiva y especifique las opciones siguientes (deje las demás en sus valores predeterminados). A continuación, haga clic en **Revisar**:
 
     | Configuración | Valor |
     | --- | --- |
-    | Nombre de la cuenta de almacenamiento | Cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra |
+    | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
 
 1. Compruebe que esta vez se haya superado la validación y haga clic en **Crear**.
 
-1. Una vez que se aprovisione la nueva cuenta de almacenamiento, haga clic en el botón **Ir al recurso** y, en la hoja **Información general** de la cuenta de almacenamiento recién creada, observe que la etiqueta **Rol** con el valor **Infra** se ha asignado automáticamente al recurso.
+1. Una vez que se aprovisione la nueva cuenta de almacenamiento, haga clic en **Ir al recurso**.
 
-## Tarea 4: Limpieza de recursos
+1. En el panel **Etiquetas**, tenga en cuenta que la etiqueta **Centro de coste** con el valor **000** se ha asignado automáticamente al recurso.
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de recursos no utilizados garantiza que no aparezcan cargos inesperados, aunque recuerde que las directivas de Azure no incurren en costos adicionales.
+    >**¿Sabía que...?** Si busca y selecciona **Etiquetas** en el portal, puede ver los recursos con una etiqueta específica. 
+
+## Tarea 4: Configurar y probar los bloqueos de recursos
+
+En esta tarea, configurará y probará un bloqueo de recursos. Los bloqueos impiden las eliminaciones o modificaciones de un recurso. 
+
+1. Busque y seleccione el grupo de recursos.
    
-   >**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
+1. En el panel **Configuración**, seleccione **Bloqueos**.
 
-1. En el portal, busque y seleccione **Directiva**.
+1. Seleccione **Agregar** y complete la información del bloqueo de recursos. Cuando termine, seleccione **Aceptar**. 
 
-1. En la sección **Creación**, haga clic en **Asignaciones**, haga clic en el icono de puntos suspensivos situado a la derecha de la asignación que creó en la tarea anterior y haga clic en **Eliminar asignación**. 
+    | Configuración | Valor |
+    | --- | --- |
+    | Nombre del bloqueo | `rg-lock` |
+    | Tipo de bloqueo | **delete** (observe la selección de solo lectura) |
+    
+1. Vaya al panel **Información general** del grupo de recursos y seleccione **Eliminar grupo de recursos**.
 
-1. En el portal, busque y seleccione **Cuentas de almacenamiento**.
+1. En el cuadro de texto **Escribir nombre del grupo de recursos para confirmar la eliminación**, proporcione el nombre del grupo de recursos, `az104-rg2`. Observe que puede copiar y pegar el nombre del grupo de recursos. 
 
-1. En la lista de cuentas de almacenamiento, seleccione el grupo de recursos correspondiente a la cuenta de almacenamiento que creó en la última tarea de este laboratorio. Seleccione **Etiquetas** y haga clic en **Eliminar** (papelera a la derecha) en la etiqueta **Rol:Infra** y presione **Aplicar**. 
+1. Observe la advertencia: La eliminación de este grupo de recursos y sus recursos dependientes es una acción permanente y no se puede deshacer. Seleccione **Eliminar**.
 
-1. Haga clic en **Información general** y elija **Eliminar** en la parte superior de la hoja de la cuenta de almacenamiento. Cuando se le pida confirmación, en la hoja **Eliminar cuenta de almacenamiento**, escriba el nombre de la cuenta de almacenamiento para confirmarla y haga clic en **Eliminar**. 
+1. Debe recibir una notificación de denegación de la eliminación. 
 
-## Revisar
+    ![Captura de pantalla del mensaje de error de eliminación.](../media/az104-lab02b-failuretodelete.png) 
 
-En este laboratorio, ha:
+## Limpieza de los recursos
 
-- Creado y asignado etiquetas a través de Azure Portal
-- Exigido el etiquetado a través de una instancia de Azure Policy
-- Aplicado el etiquetado a través de una instancia de Azure Policy
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y, después, haga clic en **Eliminar**.
++ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Con la CLI, `az group delete --name resourceGroupName`.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+
++ Las etiquetas de Azure son metadatos que constan de un par clave-valor. Las etiquetas describen un recurso determinado en el entorno. En concreto, el etiquetado en Azure permite etiquetar los recursos de una manera lógica.
++ Azure Policy establece las convenciones de los recursos. Las definiciones de directivas describen las condiciones de cumplimiento de los recursos y qué sucederá si se cumple una condición. Una condición compara un campo o un valor de propiedad de recurso con un valor requerido. Hay muchas definiciones de directiva integradas y puede personalizar las directivas. 
++ La característica de tarea de corrección de Azure Policy se usa para incorporar recursos al cumplimiento en función de una definición y asignación. Los recursos que no son compatibles con una asignación de definición modify o deployIfNotExist, se pueden incorporar al cumplimiento mediante una tarea de corrección.
++ Puede configurar un bloqueo de recursos en una suscripción, un grupo de recursos o un recurso. El bloqueo puede proteger un recurso de eliminaciones y modificaciones accidentales del usuario. El bloqueo invalida los permisos que el usuario pueda tener.
++ Azure Policy es un procedimiento de seguridad previo a la implementación. RBAC y los bloqueos de recursos son procedimientos de seguridad posteriores a la implementación. 
+
+## Más información con el aprendizaje autodirigido
+
++ [Diseño de una estrategia de gobernanza empresarial](https://learn.microsoft.com/training/modules/enterprise-governance/). Use RBAC y Azure Policy para limitar el acceso a las soluciones de Azure y determinar qué método es adecuado para los objetivos de seguridad.
+  
+

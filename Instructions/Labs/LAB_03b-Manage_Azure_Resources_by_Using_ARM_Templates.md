@@ -1,133 +1,276 @@
 ---
 lab:
-  title: "Laboratorio\_03b: Administración de recursos de Azure mediante plantillas de ARM"
+  title: "Laboratorio\_03: Administración de recursos de Azure mediante plantillas de Azure Resource Manager"
   module: Administer Azure Resources
 ---
 
-# Laboratorio 03b: Administración de recursos de Azure mediante plantillas de ARM
-# Manual de laboratorio para alumnos
+# Laboratorio 03: Administración de recursos de Azure mediante plantillas de Azure Resource Manager
 
+## Introducción al laboratorio
+
+En este laboratorio, aprenderá a automatizar las implementaciones de recursos. Obtenga información sobre las plantillas de Azure Resource Manager y las plantillas de Bicep. Obtendrá información sobre las distintas formas de implementar las plantillas. 
+
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos utilizando **Este de EE. UU.** 
+
+## Tiempo estimado: 50 minutos
+
+## Simulaciones interactivas de laboratorio
+
+Hay simulaciones de laboratorio interactivas que puede resultar útil para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure. 
+
++ [Administración de recursos de Azure mediante plantillas de Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205) Revise, cree e implemente discos administrados con una plantilla.
+  
++ [Creación de una máquina virtual con una plantilla](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Implementación desde una máquina virtual con una plantilla de inicio rápido.
+  
 ## Escenario del laboratorio
-Ahora que ha explorado las funcionalidades básicas de administración de Azure asociadas con el aprovisionamiento de recursos y su organización en función de los grupos de recursos mediante Azure Portal, debe llevar a cabo la tarea equivalente mediante plantillas de Azure Resource Manager.
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
-
-## Objetivos
-
-En este laboratorio, aprenderá a:
-
-+ Tarea 1: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure
-+ Tarea 2: Crear un disco administrado de Azure mediante una plantilla de ARM
-+ Tarea 3: Revisar la implementación del disco administrado basada en la plantilla de ARM
-
-## Tiempo estimado: 20 minutos
+Su equipo quiere ver formas de automatizar y simplificar las implementaciones de recursos. Su organización busca formas de reducir la sobrecarga administrativa, reducir el error humano y aumentar la coherencia.  
 
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab03b.png)
+![Diagrama de las tareas.](../media/az104-lab03-architecture.png)
 
-### Instrucciones
+## Aptitudes de trabajo
 
-## Ejercicio 1
++ Tarea 1: Cree una plantilla de Azure Resource Manager.
++ Tarea 2: Edite una plantilla de Azure Resource Manager y vuelva a implementar la plantilla.
++ Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con Azure PowerShell.
++ Tarea 4: Implementación de una plantilla con la CLI. 
++ Tarea 5: Implementación de un recurso mediante Azure Bicep.
 
-## Tarea 1: Revisar una plantilla de ARM para la implementación de un disco administrado de Azure
+## Tarea 1: crear una Azure Resource Manager plantilla
 
-1. Inicie sesión en [**Azure Portal**](http://portal.azure.com).
+En esta tarea, crearemos un disco administrado en Azure Portal. Los discos administrados están diseñados para usarse con máquinas virtuales. Una vez implementado el disco, exportará una plantilla que puede usar en otras implementaciones.
 
-1. En Azure Portal, busque y seleccione **Grupos de recursos**. 
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. En la lista de grupos de recursos, haga clic en **az104-03a-rg1**.
+1. Busque y seleccione `Disks`.
 
-1. En la hoja del grupo de recursos **az104-03a-rg1**, en la sección **Configuración**, haga clic en **Implementaciones**.
+1. En la página Discos, seleccione **Crear**.
 
-1. En la hoja **az104-03a-rg1 - Implementaciones**, haga clic en la primera entrada de la lista de implementaciones.
-
-1. En la hoja **Microsoft.ManagedDisk-* XXXXXXXXX* \| Información general**, haga clic en **Plantilla**.
-
-    >**Nota:** Revise el contenido de la plantilla y tenga en cuenta que tiene la opción **descargarla** en el equipo local, **agregarla a la biblioteca** o **implementarla** de nuevo.
-
-1. Haga clic en **Descargar** y guarde el archivo comprimido que contiene los archivos de parámetros y plantilla en la carpeta **Descargas** del equipo de laboratorio.
-
-1. En la hoja **Microsoft.ManagedDisk-* XXXXXXXXX* \| Plantilla**, haga clic en **Entradas**.
-
-1. Anote el valor del parámetro **ubicación**. Lo necesitará en la próxima tarea.
-
-1. Extraiga el contenido del archivo descargado en la carpeta **Descargas** del equipo de laboratorio.
-
-    >**Nota:** Estos archivos también están disponibles como **\\Allfiles\\Labs\\03\\az104-03b-md-template.json** y **\\Allfiles\\Labs\\03\\az104-03b-md-parameters.json**.
+1. En la página **Crear un disco administrado**, configure el disco y seleccione **Aceptar**. 
     
-1. Cierre todas las ventanas del **Explorador de archivos**.
+    | Configuración | Valor |
+    | --- | --- |
+    | Suscripción | *su suscripción* | 
+    | Grupo de recursos | `az104-rg3` (Si es necesario, seleccione **Crear nuevo**).
+    | Nombre del disco | `az104-disk1` | 
+    | Region | **Este de EE. UU.** |
+    | Zona de disponibilidad | **No se requiere redundancia de la infraestructura** | 
+    | Tipo de origen | **Ninguno** |
+    | Rendimiento | **HDD estándar** (cambiar tamaño) |
+    | Size | **32 GiB** | 
 
-## Tarea 2: Crear un disco administrado de Azure mediante una plantilla de ARM
+    >**Nota:** Estamos creando un disco administrado sencillo para que pueda practicar con plantillas. Los discos administrados de Azure son volúmenes de almacenamiento de nivel de bloque que Azure administra.
 
-1. En Azure Portal, busque y seleccione **Implementar una plantilla personalizada**.
+1. Haga clic en **Revisar y crear** y seleccione **Crear**.
 
-1. En la hoja **Implementación personalizada**, haga clic en **Cree su propia plantilla en el editor**.
+1. Supervise las notificaciones (superior derecha) y, después de la implementación, seleccione **Ir al recurso**. 
+
+1. En la hoja **Automatización**, seleccione **Exportar plantilla**. 
+
+1. Tómese un minuto para revisar los archivos **Plantilla** y **Parámetros**.
+
+1. Haga clic en **Descargar** y guarde las plantillas en la unidad local. Esto crea un archivo comprimido. 
+
+1. Utilice el Explorador de archivos para extraer el contenido del archivo descargado en la carpeta **Descargas** de su ordenador. Observe que hay dos archivos JSON (plantilla y parámetros). 
+
+   >**¿Sabía que...?**  Puede exportar todo un grupo de recursos o solo recursos específicos dentro de ese grupo de recursos.
+
+## Tarea 2: Edite una plantilla de Azure Resource Manager y, a continuación, vuelva a implementar la plantilla.
+
+En esta tarea, usará la plantilla descargada para implementar un nuevo disco administrado. En esta tarea se describe cómo repetir las implementaciones de forma rápida y sencilla. 
+
+1. En Azure Portal, busque y seleccione `Deploy a custom template`.
+
+1. En la hoja **Implementación personalizada**, observe que existe la posibilidad de utilizar una **plantilla de inicio rápido**. Hay muchas plantillas integradas, como se muestra en el menú desplegable. 
+
+1. En lugar de usar un inicio rápido, seleccione **Compilar su propia plantilla en el editor**.
 
 1. En la hoja **Editar plantilla**, haga clic en **Cargar archivo** y cargue el archivo **template.json** que descargó en la tarea anterior.
 
-1. En el panel del editor, quite las líneas siguientes:
+1. En el panel del editor, realice estos cambios.
 
-   ```json
-   "sourceResourceId": {
-       "type": "String"
-   },
-   ```
+    + Cambie **disks_az104_disk1_name** a `disk_name` (dos lugares para cambiar)
+    + Cambie **az104_disk1** a `az102_disk2` (un lugar para cambiar)
 
-   ```json
-   "hyperVGeneration": {
-       "defaultValue": "V1",
-       "type": "String"
-   },      
-   ```
+1. Observe que se trata de un disco **estándar**. La ubicación es **eastus**. El tamaño del disco es de **32 GB**.
 
-    >**Nota**: Estos parámetros se quitan porque no son aplicables a la implementación actual. En concreto, los parámetros sourceResourceId, sourceUri, osType y hyperVGeneration son aplicables a la creación de un disco de Azure a partir de un archivo VHD existente.
+1. Guarde los cambios mediante **Guardar**.
 
-1. **Guarde** los cambios.
+1. No olvide el archivo de parámetros. Seleccione **Editar parámetros**, haga clic en **Cargar archivo** y cargue el **parameters.json**. 
 
-1. De nuevo en la hoja **Implementación personalizada**, haga clic en **Editar parámetros**. 
+1. Realice este cambio para que coincida con el archivo de plantilla.
 
-1. En la hoja **Editar parámetros**, haga clic en **Cargar archivo** y cargue el archivo **parameters.json** que descargó en la tarea anterior, y haga clic en **Guardar** los cambios.
+    Cambie **disks_az104_disk1_name** a **disk_name** (un lugar para cambiar)
 
-1. De nuevo en la hoja **Implementación personalizada**, configure las opciones siguientes:
+1. Guarde los cambios mediante **Guardar**. 
 
-    | Configuración | Value |
+1. Complete la configuración de implementación personalizada:
+
+    | Configuración | Valor |
     | --- |--- |
-    | Subscription | *Nombre de la suscripción de Azure que está usando en este laboratorio* |
-    | Grupo de recursos | Nombre de un **nuevo** grupo de recursos **az104-03b-rg1** |
-    | Region | Nombre de cualquier región de Azure disponible en la suscripción que está usando en este laboratorio |
-    | Nombre del disco | **az104-03b-disk1** |
-    | Location | Valor del parámetro de ubicación que anotó en la tarea anterior |
-    | SKU | **Standard_LRS** |
-    | Tamaño del disco en GB | **32** |
-    | Create Option (Opción de creación) | **empty** |
-    | Disk Encryption Set Type (Tipo de conjunto de cifrado de disco) | **EncryptionAtRestWithPlatformKey** |
-    | Modo de autenticación de acceso a datos | None |
-    | Directiva de acceso a la red | **AllowAll** |
-    | Acceso de red pública | Disabled |
+    | Suscripción | *su suscripción* |
+    | Grupo de recursos | `az104-rg3` |
+    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Nombre del disco | `az104-disk2` |
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-1. Compruebe que la implementación se haya completado correctamente.
+1. Haga clic en **Go to resource** (Ir al recurso). Compruebe que se creó **az104-disk2**.
 
-## Tarea 3: Revisar la implementación del disco administrado basada en la plantilla de ARM
+1. En la hoja **Información general**, seleccione el grupo de recursos **az104-rg3**. Ahora debería tener dos discos.
+   
+1. En la sección **Configuración**, haga clic en **Implementaciones**.
 
-1. En Azure Portal, busque y seleccione **Grupos de recursos**. 
+    >**Nota:** Todos los detalles de las implementaciones se documentan en el grupo de recursos. Se recomienda revisar las primeras implementaciones basadas en plantillas para garantizar el éxito antes de usar las plantillas para las operaciones a gran escala.
 
-1. En la lista de grupos de recursos, haga clic en **az104-03b-rg1**.
+1. Seleccione una implementación y revise el contenido de las hojas **Entrada** y **Plantilla**.
 
-1. En la hoja del grupo de recursos **az104-03b-rg1**, en la sección **Configuración**, haga clic en **Implementaciones**.
+## Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con Azure PowerShell
 
-1. En la hoja **az104-03b-rg1 - Implementaciones**, haga clic en la primera entrada de la lista de implementaciones y revise el contenido de las hojas **Entrada** y **Plantilla**.
+En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud Shell es un terminal interactivo, autenticado y al que se puede acceder desde un explorador para administrar recursos de Azure. Ofrece la flexibilidad de poder elegir la experiencia de shell que mejor se adapte a la forma de trabajar de cada uno, Bash o PowerShell. En esta tarea, usará PowerShell para implementar una plantilla. 
 
-## Limpieza de recursos
+1. Seleccione el icono **Cloud Shell** en la parte superior derecha de Azure Portal. Como alternativa, puede navegar directamente a `https://shell.azure.com`.
 
-   >**Nota**: No elimine los recursos que implementó en este laboratorio. Hará referencia a ellos en el siguiente laboratorio de este módulo.
+   ![Captura de pantalla del icono de Cloud Shell.](../media/az104-lab03-cloudshell-icon.png)
 
-## Revisar
+1. Cuando se le pida que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**. 
 
-En este laboratorio, ha:
+    >**¿Sabía que...?**  Si trabaja principalmente con sistemas Linux, Bash (CLI) le resultará más familiar. Si trabaja principalmente con sistemas Windows, Azure PowerShell le resultará más familiar. 
 
-- Revisado una plantilla de ARM para la implementación de un disco administrado de Azure
-- Creado un disco administrado de Azure mediante una plantilla de ARM
-- Revisado la implementación del disco administrado basada en la plantilla de ARM
+1. En la pantalla **No tiene almacenamiento montado** seleccione **Mostrar configuración avanzada** y proporcione la información requerida. 
+
+    >**Nota:** Al trabajar con Cloud Shell, se requiere una cuenta de almacenamiento y un recurso compartido de archivos. 
+
+    | Configuración | Valores |
+    |  -- | -- |
+    | Grupo de recursos | **az104-rg3** |
+    | Cuenta de almacenamiento (Crear nueva) | `sacloudshell` (debe ser único globalmente, entre 3 y 24 caracteres de longitud y usar números y solo letras minúsculas) |
+    | Recurso compartido de archivos (Crear nuevo) | `fs-cloudshell` |
+
+1. Cuando haya terminado, seleccione **Crear almacenamiento**. Solo tiene que hacerlo la primera vez que use Cloud Shell. Tardará un par de minutos en aprovisionar el almacenamiento.
+
+1. Utilice el icono **Cargar/Descargar archivos** para cargar la plantilla y el archivo de parámetros desde el directorio de descargas. Deberá cargar cada archivo por separado.
+
+1. Compruebe que los archivos están disponibles en el almacenamiento de Cloud Shell. 
+
+    ```powershell
+    dir
+    ```
+    >**Nota**: Si es necesario, puede usar **cls** para borrar la ventana de comandos. Puede usar las teclas de dirección para mover el historial de comandos.
+   
+1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de parámetros.
+
+1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk3**. Presione **Ctrl+S** para guardar los cambios. 
+
+    >**Nota**: La implementación de la plantilla puede tener como destino un grupo de recursos, una suscripción, un grupo de administración o un inquilino. Según el ámbito de la implementación, usará comandos diferentes.
+
+1. Para realizar la implementación en un grupo de recursos, utilice **New-AzResourceGroupDeployment**.
+
+    ```powershell
+    New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
+    ```
+1. Asegúrese de que el comando se completa y ProvisioningState es **Correcto**.
+
+1. Confirme que se creó el disco.
+
+   ```powershell
+   Get-AzDisk
+   ```
+   
+## Tarea 4: Implementación de una plantilla con la CLI 
+
+1. Continúe en **Cloud Shell**, seleccione **Bash**. **Confirme** la selección.
+
+1. Compruebe que los archivos están disponibles en el almacenamiento de Cloud Shell. Si completó la tarea anterior, los archivos de plantilla deben estar disponibles. 
+
+    ```sh
+    ls
+    ```
+
+1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de parámetros.
+
+1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk4**. Presione **Ctrl+S** para guardar los cambios. 
+
+    >**Nota**: La implementación de la plantilla puede tener como destino un grupo de recursos, una suscripción, un grupo de administración o un inquilino. Según el ámbito de la implementación, usará comandos diferentes.
+
+1. Para realizar la implementación en un grupo de recursos, use **az deployment group create**.
+
+    ```sh
+    az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
+    ```
+    
+1. Asegúrese de que el comando se completa y ProvisioningState es **Correcto**.
+
+1. Confirme que se creó el disco.
+
+     ```sh
+     az disk list --output table
+     ```
+   
+## Tarea 5: Implementación de un recurso mediante Azure Bicep
+
+En esta tarea, usará un archivo de Bicep para implementar un disco administrado. Bicep es una herramienta de automatización declarativa que se basa en plantillas de ARM.
+
+1. Continúe trabajando en **Cloud Shell** en una sesión **Bash**.
+
+1. Busque y descargue el archivo **\Allfiles\Lab03\azuredeploydisk.bicep**.
+
+1. **Cargue** el archivo bicep en Cloud Shell. 
+
+1. Seleccione el icono **Editor** (corchetes) y vaya al archivo.
+
+1. Dedique un minuto a leer el archivo de plantilla de bicep. Observe cómo se define el recurso de disco. 
+   
+1. Haga los siguientes cambios:
+
+    + Cambie el valor **managedDiskName** a `Disk4`.
+    + Cambie el valor **nombre de SKU** a `StandardSSD_LRS`.
+    + Cambie el valor de **diskSizeinGiB** a `32`.
+
+1. Presione **Ctrl+S** para guardar los cambios.
+
+1. Ahora, implemente la plantilla.
+
+    ```
+    az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
+    ```
+
+1. Confirme que se creó el disco.
+
+    ```sh
+    az disk list --output table
+    ```
+
+    >**Nota:** Ha implementado correctamente cinco discos administrados, cada uno de ellos de forma diferente. ¡Buen trabajo!
+
+## Limpieza de los recursos
+
+Si trabaja con **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y haga clic en **Eliminar**.
++ Utilizando Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Utilizando la CLI, `az group delete --name resourceGroupName`.
+  
+## Puntos clave
+
+Felicidades por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+
++ Las plantillas de Azure Resource Manager le permiten implementar, administrar y supervisar todos los recursos de la solución como grupo, en lugar de controlar estos recursos individualmente.
++ Una plantilla de Azure Resource Manager es un archivo de notación de objetos JavaScript (JSON) que le permite administrar la infraestructura mediante declaración en lugar de con scripts.
++ En lugar de pasar parámetros como valores insertados en la plantilla, puede usar un archivo JSON independiente que contenga los valores de parámetro.
++ Las plantillas de Azure Resource Manager se pueden implementar de varias maneras, como Azure Portal, Azure PowerShell y la CLI.
++ Bicep es una alternativa a las plantillas de Azure Resource Manager. Bicep usa una sintaxis declarativa para implementar recursos de Azure. 
+
+Bicep brinda sintaxis concisa, seguridad de tipos confiable y compatibilidad con la reutilización de código. Bicep ofrece la mejor experiencia de creación para sus soluciones de infraestructura como código en Azure.
+
+## Más información con el aprendizaje autodirigido
+
++ [Implementación de la infraestructura de Azure mediante plantillas de ARM de JSON](https://learn.microsoft.com/training/modules/create-azure-resource-manager-template-vs-code/). Escriba plantillas de Azure Resource Manager de JSON con Visual Studio Code (plantillas de ARM) para implementar la infraestructura en Azure de forma coherente y confiable.
++ [Revisión de las características y herramientas de Azure Cloud Shell](https://learn.microsoft.com/training/modules/review-features-tools-for-azure-cloud-shell/). Características y herramientas de Cloud Shell. 
++ [Administración de recursos de Azure con Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). En este módulo se explica cómo instalar los módulos necesarios para la administración de servicios en la nube y usar comandos de PowerShell para realizar tareas administrativas sencillas en recursos en la nube, como máquinas virtuales de Azure, suscripciones de Azure y cuentas de almacenamiento de Azure.
++ [Introducción a Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Use Bash para administrar la infraestructura de TI.
++ [Compilación de la primera plantilla de Bicep](https://learn.microsoft.com/training/modules/build-first-bicep-template/). Defina los recursos de Azure dentro de una plantilla de Bicep. Mejore la coherencia y confiabilidad de las implementaciones, reduzca el esfuerzo manual necesario y escale las implementaciones entre entornos. La plantilla será flexible y reutilizable gracias al uso de parámetros, variables, expresiones y módulos.
+
+
