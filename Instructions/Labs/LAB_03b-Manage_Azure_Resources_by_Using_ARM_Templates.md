@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio, aprenderá a automatizar las implementaciones de recursos. Obtenga información sobre las plantillas de Azure Resource Manager y las plantillas de Bicep. Obtendrá información sobre las distintas formas de implementar las plantillas. 
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos utilizando **Este de EE. UU.** 
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos con **Este de EE. UU.** 
 
 ## Tiempo estimado: 50 minutos
 
@@ -160,7 +160,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
     ```
     >**Nota**: Si es necesario, puede usar **cls** para borrar la ventana de comandos. Puede usar las teclas de dirección para mover el historial de comandos.
    
-1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de parámetros.
+1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de plantilla.
 
 1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk3**. Presione **Ctrl+S** para guardar los cambios. 
 
@@ -189,7 +189,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
     ls
     ```
 
-1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de parámetros.
+1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de plantilla.
 
 1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk4**. Presione **Ctrl+S** para guardar los cambios. 
 
@@ -247,15 +247,15 @@ En esta tarea, usará un archivo de Bicep para implementar un disco administrado
 
 ## Limpieza de los recursos
 
-Si trabaja con **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y haga clic en **Eliminar**.
-+ Utilizando Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Utilizando la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y, después, haga clic en **Eliminar**.
++ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Con la CLI, `az group delete --name resourceGroupName`.
   
 ## Puntos clave
 
-Felicidades por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
 
 + Las plantillas de Azure Resource Manager le permiten implementar, administrar y supervisar todos los recursos de la solución como grupo, en lugar de controlar estos recursos individualmente.
 + Una plantilla de Azure Resource Manager es un archivo de notación de objetos JavaScript (JSON) que le permite administrar la infraestructura mediante declaración en lugar de con scripts.
