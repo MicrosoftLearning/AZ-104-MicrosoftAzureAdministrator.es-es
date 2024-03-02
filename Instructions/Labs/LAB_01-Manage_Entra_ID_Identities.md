@@ -6,292 +6,156 @@ lab:
 
 # Laboratorio 01: administrar identidades de Microsoft Entra ID
 
-# Manual de laboratorio para alumnos
+## Introducción al laboratorio
 
-## Escenario del laboratorio
-
-Para permitir que los usuarios de Contoso se autentiquen mediante Microsoft Entra ID, se le ha encargado el aprovisionamiento de usuarios y cuentas de grupo. La pertenencia a los grupos debe actualizarse automáticamente en función de los puestos de trabajo del usuario. También debe crear un inquilino de prueba de con una cuenta de usuario de prueba y conceder permisos limitados a esa cuenta para los recursos de la suscripción de Azure de Contoso.
-
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
-
-## Objetivos
-
-En este laboratorio, aprenderá a:
-
-+ Tarea 1: Creación y configuración de usuarios
-+ Tarea 2: crear grupos con pertenencia asignada y dinámica
-+ Tarea 3: crear un inquilino (opcional: incidencia con el entorno de laboratorio)
-+ Tarea 4: administrar usuarios invitados (opcional: problema del entorno de laboratorio)
+Este es el primero de una serie de laboratorios para administradores de Azure. En este laboratorio, obtendrá información sobre usuarios y grupos. Los usuarios y grupos son los bloques de creación básicos de una solución de identidad. 
 
 ## Tiempo estimado: 30 minutos
 
+## Escenario del laboratorio
+
+Su organización está creando un nuevo entorno de laboratorio para pruebas de preproducción de aplicaciones y servicios.  Algunos ingenieros se están contratando para administrar el entorno de laboratorio, incluidas las máquinas virtuales. Para permitir que los ingenieros se autentiquen mediante el Microsoft Entra ID, se le ha encargado el aprovisionamiento de usuarios y grupos. Para minimizar la sobrecarga administrativa, la pertenencia a los grupos debe actualizarse automáticamente en función de los títulos de trabajo. 
+
+## Simulación interactiva de laboratorio
+
+Este laboratorio usa una simulación de laboratorio interactiva. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
+
+>**Nota:** Esta simulación se está actualizando. Microsoft Entra ID es el nuevo nombre de Azure Active Directory (Azure AD). 
+
++ [Administrar identidades de id. de entra](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201). Cree y configure usuarios y asígnelo a grupos. Cree un inquilino de Azure y administre cuentas de invitado. 
+
 ## Diagrama de la arquitectura
-![imagen](../media/lab01entra.png)
+![Diagrama de la arquitectura del laboratorio 01.](../media/az104-lab01-architecture.png)
 
-### Instrucciones
+## Aptitudes de trabajo
 
-## Ejercicio 1
++ Tarea 1: Cree y configure cuentas de usuario.
++ Tarea 2: Cree grupos y agregue miembros.
 
-## Tarea 1: crear y configurar usuarios
+## Tarea 1: Cree y configure cuentas de usuario
 
-En esta tarea, creará y configurará usuarios.
+En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas de usuario almacenarán datos de usuario como el nombre, el departamento, la ubicación y la información de contacto.
 
->**Nota**: si ha usado previamente la licencia de prueba para Microsoft Entra ID en este inquilino, necesitará un nuevo inquilino y realizar la tarea 2 después de la tarea 3 en ese nuevo inquilino.
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+    >**Nota:** Azure Portal se usa en todos los laboratorios. Si no está familiarizado con Azure, busque y seleccione `Quickstart Center`. Dedique unos minutos a ver el vídeo **Introducción en Azure Portal**. Incluso si ha usado el portal antes, encontrará algunos consejos y trucos para navegar y personalizar la interfaz.
+    
+1. Busque y seleccione `Microsoft Entra ID`. Microsoft Entra ID es la solución de administración de identidades y acceso basada en la nube de Azure. Dedique unos minutos a familiarizarse con algunas de las características enumeradas en el panel izquierdo. 
 
-1. En Azure Portal, busque y seleccione **Microsoft Entra ID**.
+1. Seleccione el panel **Vista general** y, a continuación, la pestaña **Administrar inquilinos**. 
 
-1. En la hoja Microsoft Entra ID, desplácese hacia abajo hasta la sección **Administrar**, haga clic en **Configuración de usuario** y revise las opciones de configuración disponibles.
+    >**¿Sabía que?** Un inquilino es una instancia específica de Microsoft Entra ID que contiene cuentas y grupos. En función de su situación, puede crear más inquilinos y **Cambiar** entre ellos. 
 
-1. En la hoja Microsoft Entra ID, en la sección **Administrar**, haga clic en **Usuarios** y, a continuación, haga clic en la cuenta de usuario cuya configuración de **Perfil** se deba mostrar. 
+1. Vuelva a la página de **Entra ID**y seleccione **Licencias**. Desde aquí puede comprar una licencia, administrar las licencias que tiene y asignar licencias a usuarios y grupos. Seleccione **Características con licencia** para ver lo que está disponible.
+   
+### Creación de un nuevo usuario
 
-1. Haga clic en **Editar propiedades** y, en la pestaña **Configuración**, establezca **Ubicación de uso** en **Estados Unidos** y haga clic en **Guardar** para aplicar el cambio.
+1. Seleccione **Usuarios**y, después, en la lista desplegable **Nuevo usuario ** seleccione **Crear nuevo usuario**. 
 
-    >**Nota**: esto es necesario para asignar una licencia de Microsoft Entra ID P2 a su cuenta de usuario más adelante en este laboratorio.
-
-1. Vuelva a la hoja **Usuarios: Todos los usuarios** y, a continuación, haga clic en **+ Nuevo usuario**.
-
-1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
+1. Cree un nuevo usuario con la siguiente configuración (deje a otros usuarios con sus valores predeterminados). En la pestaña **Propiedades** observe todos los distintos tipos de información que se pueden incluir en la cuenta de usuario. 
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre principal de usuario | **az104-01a-aaduser1** |
-    | Nombre para mostrar | **az104-01a-aaduser1** |
-    | Generar automáticamente la contraseña | sin seleccionar |
-    | Contraseña inicial | **Proporcione una contraseña segura** |
-    | Puesto (pestaña Propiedades) | **Administrador de la nube** |
-    | Departamento (pestaña Propiedades) | **TI** |
+    | Nombre principal de usuario | `az104-user1` |
+    | Nombre para mostrar | `az104-user1` |
+    | Generar automáticamente la contraseña | **checked** |
+    | Cuenta habilitada | **checked** |
+    | Puesto (pestaña Propiedades) | `IT Lab Administrator` |
+    | Departamento (pestaña Propiedades) | `IT` |
     | Ubicación de uso (pestaña Propiedades) | **Estados Unidos** |
 
-    >**Nota**: **Copie en el Portapapeles** el **Nombre principal del usuario** completo (nombre de usuario más dominio). Lo necesitará más adelante en esta tarea.
+1. Una vez que haya terminado de revisar, seleccione **Revisar y crear** y, a continuación, **Crear**.
 
-1. En la lista de usuarios, haga clic en la cuenta de usuario recién creada para mostrar su hoja.
+1. Actualice la página y confirme que se creó el nuevo usuario. 
 
-1. Revise las opciones disponibles en la sección **Administrar** y tenga en cuenta que es posible identificar los roles asignados a la cuenta de usuario, así como los permisos de la cuenta de usuario para los recursos de Azure.
+### Invitación de un usuario externo
 
-1. En la sección **Administrar**, haga clic en **Roles asignados** y, a continuación, haga clic en el botón **+ Agregar asignación** y asigne el rol **Administrador de usuarios** a **az104-01a-aaduser1**.
-
-    >**Nota**: también tiene la opción de asignar roles al aprovisionar un nuevo usuario.
-
-1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cámbiela por una contraseña segura de su elección. 
-
-    >**Nota**: En lugar de escribir el nombre de usuario (incluido el nombre de dominio), puede pegar el contenido del Portapapeles.
-
-1. En la ventana **InPrivate** del explorador, en Azure Portal, busque y seleccione **Microsoft Entra ID**.
-
-    >**Nota**: aunque esta cuenta de usuario puede acceder al inquilino, no tiene acceso a los recursos de Azure. Esto es lo esperado, ya que este acceso tendría que concederse explícitamente mediante el control de acceso basado en roles de Azure. 
-
-1. En la ventana **InPrivate** del explorador, en la hoja Microsoft Entra ID, desplácese hacia abajo hasta la sección **Administrar**, haga clic en **Configuración de usuario** y tenga en cuenta que no tiene permisos para modificar ninguna opción de configuración.
-
-1. En la ventana **InPrivate** del explorador, en la hoja Microsoft Entra ID, en la sección **Administrar**, haga clic en **Usuarios** y, a continuación, haga clic en **+ Nuevo usuario**.
-
-1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
+1. En la lista desplegable **Nuevo usuario**, seleccione **Invitar a un usuario externo**. 
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre principal de usuario | **az104-01a-aaduser2** |
-    | Nombre para mostrar | **az104-01a-aaduser2** |
-    | Generar automáticamente la contraseña | sin seleccionar  |
-    | Contraseña inicial | **Proporcione una contraseña segura** |
-    | Puesto | **Administrador del sistema** |
-    | department | **TI** |
-    | Ubicación de uso | **Estados Unidos** |
+    | Email | dirección de correo electrónico |
+    | Nombre para mostrar | su nombre |
+    | Enviar mensaje de invitación | **seleccionar la casilla** |
+    | Mensaje | `Welcome to Azure and our group project` |
+
+1. Vaya a la pestaña **Propiedades**. Complete la información básica, incluidos estos campos. 
+
+    | Configuración | Valor |
+    | --- | --- |
+    | Puesto  | `IT Lab Administrator` |
+    | department  | `IT` |
+    | Ubicación de uso (pestaña Propiedades) | **Estados Unidos** |
+
+1. Seleccione **Revisar e invitar**y, a continuación, **Invitar**.
+
+1. **Actualizar** la página y confirmar que se creó el usuario invitado. Debería recibir el correo electrónico de invitación en breve. 
+
+    >**Nota:** Es poco probable que cree cuentas de usuario individualmente. ¿Sabe cómo planea su organización crear y administrar cuentas de usuario?
     
-1. Cierre la sesión como usuario az104-01a-aaduser1 desde Azure Portal y cierre la ventana InPrivate del explorador.
+## Tarea 2: Cree grupos y agregue miembros
 
-## Tarea 2: crear grupos con pertenencia asignada y dinámica
+En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir cuentas de usuario o dispositivos. Estas son dos formas básicas de asignar miembros a grupos: Estática y dinámicamente. Los grupos estáticos requieren que los administradores agreguen y quiten miembros manualmente.  Los grupos dinámicos se actualizan automáticamente en función de las propiedades de una cuenta de usuario o dispositivo. Por ejemplo, el puesto de trabajo. 
 
-En esta tarea, creará grupos con pertenencia asignada y dinámica.
+1. En Azure Portal, busque y seleccione `Groups`.
 
-1. De nuevo en Azure Portal, en el que ha iniciado sesión con su **cuenta de usuario**, vuelva a la hoja **Información general** del inquilino y, en la sección **Administrar**, haga clic en **Licencias**.
+1. Dedique un minuto a familiarizarse con la configuración del grupo en el panel izquierdo.
 
-    >**Nota**: las licencias de Microsoft Entra ID Premium P1 o P2 son necesarias para implementar grupos dinámicos.
+   + **Expiración** le permite configurar una duración de grupo en días. Después de ese momento, el propietario debe renovar el grupo.
+   + **La directiva** de nomenclatura le permite configurar palabras bloqueadas y agregar un prefijo o sufijo a los nombres de grupo.
 
-1. En la sección **Administrar**, haga clic en **Todos los productos**.
-
-1. Haga clic en **+ Probar o comprar** y active la evaluación gratuita de Microsoft Entra ID Premium P2.
-
-1. Actualice la ventana del explorador para comprobar que la activación se ha realizado correctamente. 
-
-    >**Nota**: Las licencias pueden tardar hasta 10 minutos en activarse. Siga actualizando la página hasta que aparezca. No continúe hasta que se hayan activado las licencias.
-
-1. En la hoja **Licencias: Todos los productos**, seleccione la entrada **Microsoft Entra ID P2** y asigne todas las opciones de licencia a su cuenta de usuario y a las dos cuentas de usuario recién creadas.
-
-1. En Azure Portal, vuelva a la hoja del inquilino de Microsoft Entra ID y haga clic en **Grupos**.
-
-1. Use el botón **+ Nuevo grupo** para crear un nuevo grupo con la siguiente configuración:
+1. En la hoja **Todos los grupos**, seleccione **+ Nuevo grupo** y cree un nuevo grupo.     
 
     | Configuración | Valor |
     | --- | --- |
     | Tipo de grupo | **Seguridad** |
-    | Nombre del grupo | **Administradores de la nube de TI** |
-    | Descripción del grupo | **Administradores de la nube de TI de Contoso** |
-    | Tipo de pertenencia | **Usuario dinámico** |
-
-    >**Nota**: Si la lista desplegable **Tipo de pertenencia** está atenuada, espere unos minutos y actualice la página del explorador.
-
-1. Haga clic en **Agregar una consulta dinámica**.
-
-1. En la pestaña **Configurar reglas** de la hoja **Reglas de pertenencia dinámica**, cree una nueva regla con la siguiente sintaxis:
-
-    | Configuración | Valor |
-    | --- | --- |
-    | Propiedad | **jobTitle** |
-    | Operador | **Es igual a** |
-    | Value | **Administrador de la nube** |
-
-1. Para guardar la regla, haga clic en **+Agregar expresión** y en **Guardar**. De nuevo en la hoja **Nuevo grupo**, haga clic en **Crear**. 
-
-1. De nuevo en la hoja **Grupos: todos los grupos** del inquilino, haga clic en el botón **+ Nuevo grupo** y cree un grupo con la siguiente configuración:
-
-    | Configuración | Valor |
-    | --- | --- |
-    | Tipo de grupo | **Seguridad** |
-    | Nombre del grupo | **Administradores del sistema de TI** |
-    | Descripción del grupo | **Administradores del sistema de TI de Contoso** |
-    | Tipo de pertenencia | **Usuario dinámico** |
-
-1. Haga clic en **Agregar una consulta dinámica**.
-
-1. En la pestaña **Configurar reglas** de la hoja **Reglas de pertenencia dinámica**, cree una nueva regla con la siguiente sintaxis:
-
-    | Configuración | Valor |
-    | --- | --- |
-    | Propiedad | **jobTitle** |
-    | Operador | **Es igual a** |
-    | Value | **Administrador del sistema** |
-
-1. Para guardar la regla, haga clic en **+Agregar expresión** y en **Guardar**. De nuevo en la hoja **Nuevo grupo**, haga clic en **Crear**. 
-
-1. De nuevo en la hoja **Grupos: todos los grupos** del inquilino, haga clic en el botón **+ Nuevo grupo** y cree un grupo nuevo con la siguiente configuración:
-
-    | Configuración | Valor |
-    | --- | --- |
-    | Tipo de grupo | **Seguridad** |
-    | Nombre del grupo | **Administradores del laboratorio de TI** |
-    | Descripción del grupo | **Administradores del laboratorio de TI de Contoso** |
+    | Nombre del grupo | `IT Lab Administrators` |
+    | Descripción del grupo | `Administrators that manage the IT lab` |
     | Tipo de pertenencia | **Asignado** |
+
+    >**Nota**: Se requiere una licencia Entra ID Premium P1 o P2 para la pertenencia dinámica. Si hay otros **tipos de pertenencia** disponibles, las opciones se mostrarán en la lista desplegable. 
     
-1. Haga clic en **No hay miembros seleccionados**.
+    ![Captura de pantalla de la creación de un grupo asignado.](../media/az104-lab01-create-assigned-group.png)
 
-1. En la hoja **Agregar miembros**, busque y seleccione los grupos **Administradores de la nube de TI** y **Administradores del sistema de TI** y, de nuevo en la hoja **Nuevo grupo**, haga clic en **Crear**.
+1. Seleccione **No hay propietarios seleccionados**.
 
-1. De nuevo en la hoja **Grupos: Todos los grupos**, haga clic en la entrada que representa el grupo **Administradores de la nube de TI** y, a continuación, muestre su hoja **Miembros**. Compruebe que **az104-01a-aaduser1** aparece en la lista de miembros del grupo.
+1. En la página **Agregar propietarios**, busque y **seleccione** usted mismo como propietario. Observe que puede tener más de un propietario. 
 
-    >**Nota**: Es posible que experimente retrasos con las actualizaciones de los grupos de pertenencia dinámica. Para acelerar la actualización, vaya a la hoja del grupo, muestre su hoja **Reglas de pertenencia dinámica**, **edite** la regla que aparece en el cuadro de texto **Sintaxis de regla** agregando un espacio en blanco al final y **guarde** el cambio.
+1. Seleccione **No hay miembros seleccionados**.
 
-1. Vuelva a la hoja **Grupos: Todos los grupos**, haga clic en la entrada que representa el grupo **Administradores del sistema de TI** y, a continuación, muestre su hoja **Miembros**. Compruebe que **az104-01a-aaduser2** aparece en la lista de miembros del grupo.
+1. En el panel **Agregar miembros**, busque y **seleccione** el **az104-user1** y el** usuario invitado ** que invitó. Agregue ambos usuarios al grupo. 
 
-## Tarea 3: Crear un inquilino (opcional: posibles problemas de captcha, suscripción de pago requerida)
+1. Seleccione **Crear** para implementar el grupo.
 
-En esta tarea, creará un nuevo inquilino.
-    
-1. En Azure Portal, busque y seleccione **Microsoft Entra ID**.
+1. **Actualice** la página y asegúrese de que se creó el grupo.
 
-    >**Nota**: Hay un problema conocido con la comprobación de Captcha en el entorno de laboratorio. Si recibe el error **Error de creación. Demasiadas solicitudes, inténtelo de nuevo más tarde**, haga lo siguiente:
-    - Intente la creación unas cuantas veces.<br>
-    - Compruebe la sección **Administrar inquilino** para asegurarse de que el inquilino no se creó en segundo plano. <br>
-    - Abra una nueva ventana **InPrivate** y use Azure Portal para intentar crear el inquilino desde allí.<br>
-     Plantee el problema al instructor y, luego, use la **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** para ver los pasos. <br>
-    - Puede probar esta tarea más adelante, pero la creación de un inquilino no es necesaria en otros laboratorios. 
+1. Seleccione el nuevo grupo y revise la información**Miembros** y **Propietarios**.
 
-1. Haga clic en **Administrar inquilinos**. En la siguiente pantalla, haga clic en **+ Crear** y especifique la siguiente configuración:
+>**Nota:** Puede administrar un gran número de grupos. ¿Tiene su organización un plan para crear grupos y agregar miembros?
+   
+## Limpieza de los recursos
 
-    | Configuración | Value |
-    | --- | --- |
-    | Tipo de directorio | **Microsoft Entra ID** |
-    
-1. Haga clic en **Siguiente:Configuración**.
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
 
-    | Configuración | Valor |
-    | --- | --- |
-    | Nombre de la organización | **Laboratorio de Contoso** |
-    | Nombre de dominio inicial | cualquier nombre DNS válido compuesto de letras minúsculas y dígitos, y que empiece por una letra | 
-    | País/región | **Estados Unidos** |
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Con la CLI, `az group delete --name resourceGroupName`.
+  
+## Puntos clave
 
-   > **Nota**: El **Nombre de dominio inicial** no debe ser un nombre legítimo que coincida potencialmente con el de su organización o de otra. La marca de comprobación verde del cuadro de texto **Nombre de dominio inicial** indicará que el nombre de dominio que ha escrito es válido y único.
+Enhorabuena por completar el laboratorio. Estos son algunos de los principales pasos para este laboratorio:
 
-1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
-
-1. Muestre la hoja del inquilino recién creado mediante el vínculo **Haga clic aquí para ir al nuevo inquilino: Contoso Lab** o el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
-
-## Tarea 4: administrar usuarios invitados.
-
-En esta tarea, creará usuarios invitados y les concederá acceso a los recursos de una suscripción de Azure.
-
-1. En la instancia de Azure Portal que muestra el inquilino del Laboratorio de Contoso, en la sección **Administrar**, haga clic en **Usuarios** y, a continuación, en **+ Nuevo usuario**.
-
-1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
-
-    | Configuración | Value |
-    | --- | --- |
-    | Nombre principal de usuario | **az104-01b-aaduser1** |
-    | Nombre para mostrar | **az104-01b-aaduser1** |
-    | Generar automáticamente la contraseña | sin seleccionar  |
-    | Contraseña inicial | **Proporcione una contraseña segura** |
-    | Puesto | **Administrador del sistema** |
-    | department | **TI** |
-
-1. Haga clic en el perfil recién creado.
-
-    >**Nota**: **Copie en el Portapapeles** el **Nombre principal del usuario** completo (nombre de usuario más dominio). Lo necesitará más adelante en esta tarea.
-
-1. Vuelva al primer inquilino que creó anteriormente.
-2. Seleccione **Descripción general** en el panel de navegación.
-3. Haga clic en **Administrar inquilinos**.
-4. Activa la casilla situada junto al primer inquilino que creaste anteriormente y, luego, selecciona **Cambiar**.
-
-1. Vuelva al panel **Usuarios: Todos los usuarios** y, después, haga clic en **+ Invitar a un usuario externo**.
-
-1. Invite un nuevo usuario invitado con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
-
-    | Configuración | Value |
-    | --- | --- |
-    | Email | el nombre principal de usuario que copió anteriormente en esta tarea |
-    | Nombre para mostrar (pestaña Propiedades)  | **az104-01b-aaduser1** |
-    | Puesto (pestaña Propiedades) | **Administrador del laboratorio** |
-    | Departamento (pestaña Propiedades) | **TI** |
-    | Ubicación de uso (pestaña Propiedades) | **Estados Unidos** |
-
-1. Haga clic en **Invitar**. 
-
-1. De nuevo en la hoja **Usuarios: Todos los usuarios**, haga clic en la entrada que representa la cuenta de usuario invitado recién creada.
-
-1. En la hoja **az104-01b-aaduser1: Perfil**, haga clic en **Grupos**.
-
-1. Haga clic en **+ Agregar pertenencia** y agregue la cuenta de usuario invitado al grupo **Administradores del laboratorio de TI**.
++ El nuevo inquilino representa a su organización y le ayuda a administrar una instancia específica de Servicios en la nube de Microsoft para los usuarios internos y externos.
++ Microsoft Entra ID tiene cuentas de usuario e invitado. Cada cuenta tiene un nivel de acceso específico para el ámbito de trabajo que se espera que se realice.
++ Los grupos combinan usuarios o dispositivos relacionados. Existen dos tipos de grupos: Seguridad y Microsoft 365.
++ La pertenencia a grupos se puede asignar estática o dinámicamente.
 
 
-## Tarea 5: Limpieza de recursos
+## Más información con el aprendizaje autodirigido
 
-> **Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. Aunque, en este caso, no hay cargos adicionales asociados a los inquilinos y sus objetos, es posible que quiera considerar la posibilidad de quitar las cuentas de usuario, las cuentas de grupo y el inquilino que creó en este laboratorio.
++ [Comprender Entra de Microsoft ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/). Compare Microsoft Entra ID con Active Directory DS, obtenga información sobre Microsoft Entra ID P1 y P2 y explore Microsoft Entra Domain Services para administrar aplicaciones y dispositivos unidos a un dominio en la nube.
++ [Crear usuarios y grupos de Azure en el id. de Microsoft Entra](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Crear usuarios en Microsoft Entra ID. Conozca los distintos tipos de grupos. Cree un grupo e incorpore miembros a él. Administre cuentas de invitado de negocio a negocio.
++ [Permitir que los usuarios restablezcan sus contraseñas con el autoservicio de restablecimiento de contraseña de Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Evalúe el autoservicio de restablecimiento de contraseña para permitir que los usuarios de la organización restablezcan sus contraseñas o desbloqueen sus cuentas. Implemente, configure y pruebe el autoservicio de restablecimiento de contraseña.
 
- > **Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
-1. En **Azure Portal**, busque **Microsoft Entra ID** en la barra de búsqueda. En **Administrar** seleccione **Licencias**. Una vez en **Licencias**, en **Administrar**, seleccione **Todos los productos** y, a continuación, seleccione el elemento **Microsoft Entra ID Premium P2** en la lista. Para continuar, seleccione **Usuarios con licencia**. Seleccione las cuentas de usuario **az104-01a-aaduser1** y **az104-01a-aaduser2** a las que asignó licencias en este laboratorio, haga clic en **Quitar licencia** y, cuando se le pida confirmación, haga clic en **Sí**.
 
-1. En Azure Portal, vaya a la hoja **Usuarios: Todos los usuarios**, haga clic en la entrada que representa la cuenta de usuario invitado **az104-01b-aaduser1**, en la hoja **az104-01b-aaduser1: Perfil** haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Aceptar**.
-
-1. Repita la misma secuencia de pasos para eliminar las cuentas de usuario restantes que creó en este laboratorio.
-
-1. Vaya a la hoja **Grupos - Todos los grupos**, seleccione los grupos que creó en este laboratorio, haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Aceptar**.
-
-1. En Azure Portal, muestre la hoja del inquilino de Contoso Lab mediante el botón **Directorio + suscripción** (directamente a la derecha del botón de Cloud Shell) de la barra de herramientas de Azure Portal.
-
-1. Vaya a la hoja **Usuarios: Todos los usuarios**, haga clic en la entrada que representa la cuenta de usuario **az104-01b-aaduser1**, en la hoja **az104-01b-aaduser1: Perfil** haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Aceptar**.
-
-1. Vaya a la hoja **Contoso Lab: información general** del inquilino Contoso Lab, haga clic en **Administrar inquilinos** y, en la siguiente pantalla, seleccione la casilla situada junto a **Contoso Lab**. Finalmente, haga clic en **Eliminar**, en la hoja **¿Quiere eliminar el inquilino de “Contoso Lab”?** hoja, haga clic en el vínculo **Obtener permiso para eliminar los recursos de Azure**. En la hoja **Propiedades**, establezca **Administración del acceso para los recursos de Azure** en **Sí** y haga clic en **Guardar**.
-
-1. Vuelva a la hoja **Eliminar inquilino “Contoso Lab”** , seleccione **Actualizar** y haga clic en **Eliminar**.
-
-> **Nota**: Si un inquilino tiene una licencia de prueba, tendría que esperar a que esta expirara para poder eliminar el inquilino. Esto no supondría ningún coste adicional.
-
-#### Revisar
-
-En este laboratorio, ha:
-
-- Usuarios creados y configurados
-- Grupos creados con pertenencia asignada y dinámica
-- Creación de un inquilino
-- Usuarios invitados administrados 

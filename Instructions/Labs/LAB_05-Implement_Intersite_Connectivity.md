@@ -5,277 +5,300 @@ lab:
 ---
 
 # Laboratorio 05: Implementación de la conectividad entre sitios
-# Manual de laboratorio para alumnos
 
-## Escenario del laboratorio
+## Introducción al laboratorio
 
-Contoso tiene sus centros de datos en las oficinas de Boston, Nueva York y Seattle conectadas a través de una malla de vínculos de red de área extensa, con conectividad completa entre ellas. Debe implementar un entorno de laboratorio que refleje la topología de las redes locales de Contoso y comprobar su funcionalidad.
+En este laboratorio, explorará la comunicación entre redes virtuales. Implemente el emparejamiento de redes virtuales y pruebe las conexiones. También creará una ruta personalizada. 
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
-## Objetivos
+## Tiempo estimado: 50 minutes
+    
+## Escenario del laboratorio 
 
-En este laboratorio, aprenderá a:
+Su organización segmenta los servicios y aplicaciones de TI principales (como DNS y servicios de seguridad) de otras partes de la empresa, incluido el departamento de fabricación. Sin embargo, en algunos escenarios, las aplicaciones y los servicios del área principal necesitan comunicarse con aplicaciones y servicios en el área de fabricación. En este laboratorio, configurará la conectividad entre las áreas segmentadas. Este es un escenario común para separar la producción del desarrollo o separar una filial de otra.  
 
-+ Tarea 1: Aprovisionamiento del entorno de laboratorio
-+ Tarea 2: Configuración del emparejamiento local y global de red virtual
-+ Tarea 3: Prueba de la conectividad entre sitios
+## Simulaciones interactivas de laboratorio
 
-## Tiempo estimado: 30 minutos
+Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+
++ [Conectar dos redes virtuales de Azure mediante el emparejamiento de red virtual global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Pruebe la conexión entre dos máquinas virtuales en redes virtuales diferentes. Cree un emparejamiento de red virtual y vuelva a probarlo.
+
++ [Configuración de la supervisión de redes virtuales](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/). Comprenda cómo usar Azure Network Watcher Connection Monitor, registros de flujo, diagnósticos de NSG y captura de paquetes para supervisar la conectividad entre los recursos de red de IaaS de Azure.
+
++ [Implemente la conectividad entre sitios](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209). Ejecute una plantilla para crear una infraestructura de red virtual con varias máquinas virtuales. Configure redes virtuales y pruebe las conexiones. 
 
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab05.png)
+![Diagrama de arquitectura del laboratorio 05](../media/az104-lab05-architecture.png)
 
-### Instrucciones
+## Aptitudes de trabajo
 
-## Ejercicio 1
++ Tarea 1: Cree una máquina virtual en una red virtual.
++ Tarea 2: Cree una máquina virtual en otra red virtual.
++ Tarea 3: Utilice Network Watcher para probar la conexión entre máquinas virtuales. 
++ Tarea 4: Configure emparejamientos de red virtual entre diferentes redes virtuales.
++ Tarea 5: Use Azure PowerShell para probar la conexión entre máquinas virtuales.
++ Tarea 6: Crear una ruta personalizada. 
 
-## Tarea 1: Aprovisionar el entorno de laboratorio
+## Tarea 1:  Creación de una máquina virtual de servicios principales y una red virtual
 
-En esta tarea, implementará tres máquinas virtuales, cada una en una red virtual independiente, con dos de ellas en la misma región de Azure y la tercera en otra región de Azure.
+En esta tarea, creará una red virtual de servicios principales con una máquina virtual. 
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
+1. Busque y seleccione `Virtual Machines`.
 
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
+1. En la página máquinas virtuales, seleccione **Crear**, después, seleccione **Azure Virtual Machine**.
 
-    >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
-
-1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue los archivos **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-template.json** y **\\Allfiles\\Labs\\05\\az104-05-vnetvm-loop-parameters.json** en el directorio principal de Cloud Shell. 
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que hospedará el entorno de laboratorio. Las dos primeras redes virtuales y un par de máquinas virtuales se implementarán en [Azure_region_1]. La tercera red virtual y la tercera máquina virtual se implementarán en el mismo grupo de recursos, pero en otra [Azure_region_2] (reemplace los marcadores de posición [Azure_region_1] y [Azure_region_2], incluidos los corchetes, por los nombres de las dos regiones de Azure diferentes en las que va a implementar estas máquinas virtuales de Azure. Por ejemplo, $location 1 = "eastus". Puede usar Get-AzLocation para ver todas las ubicaciones):
-
-   ```powershell
-   $location1 = 'eastus'
-
-   $location2 = 'westus'
-
-   $rgName = 'az104-05-rg1'
-
-   New-AzResourceGroup -Name $rgName -Location $location1
-   ```
-
-   >**Nota**: Las regiones usadas anteriormente se probaron y se sabe que funcionan cuando este laboratorio se revisó oficialmente por última vez. Si prefiere usar ubicaciones diferentes o ya no funcionan, deberá identificar dos regiones diferentes en las que se puedan implementar máquinas virtuales D2Sv3 estándar.
-   >
-   >Para identificar las regiones de Azure, desde una sesión de PowerShell en Cloud Shell, ejecute **(Get-AzLocation).Location**
-   >
-   >Una vez que haya identificado dos regiones que quiera usar, ejecute el comando siguiente en el Cloud Shell para cada región para confirmar que puede implementar máquinas virtuales D2Sv3 estándar
-   >
-   >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
-   >
-   >Si el comando no devuelve ningún resultado, debe elegir otra región. Una vez que haya identificado dos regiones adecuadas, puede ajustar las regiones en el bloque de código anterior.
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear las tres redes virtuales e implementar las máquinas virtuales en ellas mediante los archivos de parámetros y plantilla que cargó:
-    
-    >**Nota**: Se le pedirá que proporcione una contraseña de administrador.
-
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-05-vnetvm-loop-template.json `
-      -TemplateParameterFile $HOME/az104-05-vnetvm-loop-parameters.json `
-      -location1 $location1 `
-      -location2 $location2
-   ```
-
-    >**Nota**: Espere a que la implementación se complete antes de continuar con el paso siguiente. Este proceso tardará alrededor de 2 minutos.
-
-1. Cierre el panel de Cloud Shell.
-
-## Tarea 2: Configuración del emparejamiento local y global de red virtual
-
-En esta tarea, configurará el emparejamiento local y global entre las redes virtuales que implementó en las tareas anteriores.
-
-1. En Azure Portal, busque y seleccione **Redes virtuales**.
-
-1. Revise las redes virtuales que creó en la tarea anterior y compruebe que las dos primeras se encuentran en la misma región de Azure y la tercera en otra región de Azure.
-
-    >**Nota**: La plantilla que usó para la implementación de las tres redes virtuales asegura que los intervalos de direcciones IP de las tres redes virtuales no se superpongan.
-
-1. En la lista de redes virtuales, haga clic en **az104-05-vnet0**.
-
-1. En la hoja de la máquina virtual **az104-05-vnet0**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
-
-1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Agregar**:
-
-    | Configuración | Value|
+1. En la pestaña Aspectos básicos, use la siguiente información para completar el formulario y, a continuación, seleccione **Siguiente: Discos >**. Para cualquier configuración no especificada, deje el valor predeterminado.
+ 
+    | Configuración | Valor | 
     | --- | --- |
-    | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrate de que solo están activadas las tres primeras casillas.** |
-    | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet0** |
-    | Modelo de implementación de red virtual | **Resource Manager** |
-    | Conozco mi Id. de recurso | no seleccionado |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Virtual network | **az104-05-vnet1** |
-    | Permitir el acceso a la red virtual actual |  **Asegúrese de que la casilla está activada (valor predeterminado)** |
-    | Configuración para permitir el acceso, el tráfico reenviado y la puerta de enlace | **Asegúrate de que solo están activadas las tres primeras casillas.** |
+    | Suscripción |  *su suscripción* |
+    | Resource group |  `az104-rg5` (Si es necesario, **Crear nuevo**. )
+    | Nombre de la máquina virtual |    `CoreServicesVM` |
+    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Opciones de disponibilidad | No se requiere redundancia de la infraestructura |
+    | Tipo de seguridad | **Estándar** |
+    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** (observe las otras opciones) |
+    | Size | **Standard_DS2_v3** |
+    | Nombre de usuario | `localadmin` | 
+    | Contraseña | **Proporcionar una contraseña compleja** |
+    | Puertos de entrada públicos | **Ninguno** |
 
-    >**Nota**: Este paso establece dos emparejamientos locales: uno de az104-05-vnet0 a az104-05-vnet1 y el otro de az104-05-vnet1 a az104-05-vnet0.
+    ![Captura de pantalla de la página de creación de máquinas virtuales básicas. ](../media/az104-lab05-createcorevm.png)
+   
+1. En la pestaña **Disk**, tome los valores predeterminados y, a continuación, seleccione **Siguiente: Redes >**.
 
-    >**Nota**: Si se encuentra con un problema de la interfaz de Azure Portal que no muestra las redes virtuales creadas en la tarea anterior, puede configurar el emparejamiento ejecutando los siguientes comandos de PowerShell desde Cloud Shell:
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. En la pestaña **Redes**, en Red virtual, seleccione **Crear nuevo**.
 
-   $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
+1. Use la siguiente información para configurar la red virtual y, a continuación, seleccione **Aceptar**. Si es necesario, quite o reemplace la información existente.
 
-   $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet0_to_az104-05-vnet1' -VirtualNetwork $vnet0 -RemoteVirtualNetworkId $vnet1.Id
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet1_to_az104-05-vnet0' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet0.Id
-   ``` 
-
-1. En la hoja de la máquina virtual **az104-05-vnet0**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
-
-1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Agregar**:
-
-    | Configuración | Value|
+    | Configuración | Value | 
     | --- | --- |
-    | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet0_to_az104-05-vnet2** |
-    | Permitir el acceso a la red virtual remota |**Asegúrese de que la casilla está activada (valor predeterminado)** |
-    | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet2_to_az104-05-vnet0** |
-    | Modelo de implementación de red virtual | **Resource Manager** |
-    | Conozco mi Id. de recurso | no seleccionado |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Virtual network | **az104-05-vnet2** |
-    | Permitir el acceso a la red virtual actual |**Asegúrese de que la casilla está activada (valor predeterminado)** |
+    | Nombre | `CoreServicesVNet` (Crear nuevo) |
+    | Intervalo de direcciones | `10.0.0.0/16`  |
+    | Nombre de subred | `Core` | 
+    | Intervalo de direcciones de subred | `10.0.0.0/24` |
 
-    >**Nota**: Este paso establece dos emparejamientos globales: uno de az104-05-vnet0 a az104-05-vnet2 y el otro de az104-05-vnet2 a az104-05-vnet0.
+1. Seleccione la pestaña **Supervisión**. En Diagnósticos de arranque, seleccione **Deshabilitar**.
 
-    >**Nota**: Si se encuentra con un problema de la interfaz de Azure Portal que no muestra las redes virtuales creadas en la tarea anterior, puede configurar el emparejamiento ejecutando los siguientes comandos de PowerShell desde Cloud Shell:
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-   $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
+1. No es necesario esperar a que se creen los recursos. Continúe con la siguiente tarea.
 
-   $vnet2 = Get-AzVirtualNetwork -Name 'az104-05-vnet2' -ResourceGroupName $rgname
+    >**Nota:** ¿Ha observado que en esta tarea creó la red virtual a medida que creó la máquina virtual? También puede crear la infraestructura de red virtual y, a continuación, agregar las máquinas virtuales. 
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet0_to_az104-05-vnet2' -VirtualNetwork $vnet0 -RemoteVirtualNetworkId $vnet2.Id
+## Tarea 2: Cree una máquina virtual en otra red virtual
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet0' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet0.Id
-   ``` 
-
-1. Vuelva a la hoja **Redes virtuales** y, en la lista de redes virtuales, haga clic en **az104-05-vnet1**.
-
-1. En la hoja de la máquina virtual **az104-05-vnet1**, en la sección **Configuración**, haga clic en **Emparejamientos** y luego en **+ Agregar**.
-
-1. Agregue un emparejamiento con las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Agregar**:
-
-    | Configuración | Value|
-    | --- | --- |
-    | Esta red virtual: nombre del vínculo de emparejamiento | **az104-05-vnet1_to_az104-05-vnet2** |
-    | Permitir el acceso a la red virtual remota | **Asegúrese de que la casilla está activada (valor predeterminado)** |
-    | Red virtual remota: nombre del vínculo de emparejamiento | **az104-05-vnet2_to_az104-05-vnet1** |
-    | Modelo de implementación de red virtual | **Resource Manager** |
-    | Conozco mi Id. de recurso | no seleccionado |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Virtual network | **az104-05-vnet2** |
-    | Permitir el acceso a la red virtual actual | **Asegúrese de que la casilla está activada (valor predeterminado)** |
-
-    >**Nota**: Este paso establece dos emparejamientos globales: uno de az104-05-vnet1 a az104-05-vnet2 y el otro de az104-05-vnet2 a az104-05-vnet1.
-
-    >**Nota**: Si se encuentra con un problema de la interfaz de Azure Portal que no muestra las redes virtuales creadas en la tarea anterior, puede configurar el emparejamiento ejecutando los siguientes comandos de PowerShell desde Cloud Shell:
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
-
-   $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
-
-   $vnet2 = Get-AzVirtualNetwork -Name 'az104-05-vnet2' -ResourceGroupName $rgname
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet1_to_az104-05-vnet2' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet2.Id
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
-   ``` 
-
-## Tarea 3: Prueba de la conectividad entre sitios
-
-En esta tarea, probará la conectividad entre las máquinas virtuales de las tres redes virtuales que conectó a través del emparejamiento local y global en la tarea anterior.
+En esta tarea, creará una red virtual de servicios principales con una máquina virtual. 
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales**.
 
-1. En la lista de máquinas virtuales, haga clic en **az104-05-vm0**.
+1. En la página máquinas virtuales, seleccione **Crear**, después, seleccione **Azure Virtual Machine**.
 
-1. En la hoja **az104-05-vm0**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
+1. En la pestaña Aspectos básicos, use la siguiente información para completar el formulario y, a continuación, seleccione **Siguiente: Discos >**. Para cualquier configuración no especificada, deje el valor predeterminado.
+ 
+    | Configuración | Valor | 
+    | --- | --- |
+    | Suscripción |  *su suscripción* |
+    | Resource group |  `az104-rg5` |
+    | Nombre de la máquina virtual |    `ManufacturingVM` |
+    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Tipo de seguridad | **Estándar** |
+    | Opciones de disponibilidad | No se requiere redundancia de la infraestructura |
+    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Size | **Standard_DS2_v3** | 
+    | Nombre de usuario | `localadmin` | 
+    | Contraseña | **Proporcionar una contraseña compleja** |
+    | Puertos de entrada públicos | **Ninguno** |
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
+1. En la pestaña **Disk**, tome los valores predeterminados y, a continuación, seleccione **Siguiente: Redes >**.
 
-    >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
+1. En la pestaña Redes, en Red virtual, seleccione **Crear nuevo**.
 
-1. Cuando se le solicite, inicie sesión con el nombre de usuario **Alumno** y la contraseña que configuró al implementar las máquinas virtuales mediante CloudShell. 
+1. Use la siguiente información para configurar la red virtual y, a continuación, seleccione **Aceptar**.  Si es necesario, quite o reemplace el intervalo de direcciones existente.
 
-1. En la sesión de Escritorio remoto para **az104-05-vm0**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)**.
+    | Configuración | Value | 
+    | --- | --- |
+    | Nombre | `ManufacturingVNet` |
+    | Intervalo de direcciones | `172.16.0.0/16`  |
+    | Nombre de subred | `Manufacturing` |
+    | Intervalo de direcciones de subred | `172.16.0.0/24` |
 
-1. En la ventana de la consola de Windows PowerShell, ejecute lo siguiente para probar la conectividad a **az104-05-vm1** (que tiene la dirección IP privada **10.51.0.4**) a través del puerto TCP 3389:
+1. Seleccione la pestaña **Supervisión**. En Diagnósticos de arranque, seleccione **Deshabilitar**.
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.51.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-    >**Nota**: La prueba usa TCP 3389, ya que el firewall del sistema operativo permite este puerto de forma predeterminada.
+## Tarea 3: Utilice Network Watcher para probar la conexión entre máquinas virtuales 
 
-1. Examine la salida del comando y compruebe que la conexión se ha realizado correctamente.
 
-1. En la ventana de la consola de Windows PowerShell, ejecute lo siguiente para probar la conectividad a **az104-05-vm2** (que tiene la dirección IP privada **10.52.0.4**):
+En esta tarea, comprobará que los recursos de las redes virtuales emparejadas pueden comunicarse entre sí. Network Watcher se usará para probar la conexión. Antes de continuar, asegúrese de que ambas máquinas virtuales se han implementado y se están ejecutando. 
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+1. En Azure Portal, busque y seleccione `Network Watcher`.
 
-1. Vuelva a Azure Portal en el equipo del laboratorio y vuelva a la hoja **Máquinas virtuales**.
+1. En Network Watcher, en el menú Herramientas de diagnóstico de red, seleccione **Solución de problemas de conexión**.
 
-1. En la lista de máquinas virtuales, haga clic en **az104-05-vm1**.
+1. Utilice la siguiente información para completar los campos de la página **Solución de problemas de conexión**.
 
-1. En la hoja **az104-05-vm1**, haga clic en **Conectar**, en el menú desplegable, haga clic en **RDP**, en la hoja **Conectar con RDP**, haga clic en **Descargar archivo RDP** y siga las indicaciones para iniciar la sesión de Escritorio remoto.
+    | Campo | Valor | 
+    | --- | --- |
+    | Tipo de origen           | **Máquina virtual**   |
+    | Máquina virtual       | **CoreServicesVM**    | 
+    | Tipo de destino      | **Máquina virtual**   |
+    | Máquina virtual       | **ManufacturingVM**   | 
+    | Versión de IP preferida  | **Ambos**              | 
+    | Protocolo              | **TCP**               |
+    | Puerto de destino      | `3389`                |  
+    | Puerto de origen           | *Blank*         |
+    | Pruebas de diagnóstico      | *Defaults*      |
 
-    >**Nota**: Este paso hace referencia a la conexión mediante Escritorio remoto desde un equipo Windows. En un equipo Mac, puede usar un cliente de Escritorio remoto de Mac App Store y, en un equipo Linux, puede usar un software cliente RDP de código abierto.
+    ![Azure Portal muestra la configuración de solución de problemas de conexión.](../media/az104-lab05-connection-troubleshoot.png)
 
-    >**Nota**: Puede omitir cualquier aviso de advertencia al conectarse a las máquinas virtuales de destino.
+1. Seleccione **Ejecutar pruebas de diagnóstico**.
 
-1. Cuando el sistema se lo indique, inicie sesión con el nombre de usuario **Student** y la contraseña del archivo de parámetros. 
+    >**Nota**: Los resultados pueden tardar un par de minutos en devolverse. Las selecciones de pantalla se atenuarán mientras se recopilan los resultados. Observe que la **Prueba de conectividad** muestra **UnReachable**. Esto tiene sentido porque las máquinas virtuales están en diferentes redes virtuales. 
 
-1. En la sesión de Escritorio remoto para **az104-05-vm1**, haga clic con el botón derecho en el botón **Inicio** y, en el menú contextual, haga clic en **Windows PowerShell (Administrador)**.
+ 
+## Tarea 4: Configuración de emparejamientos de redes virtuales entre redes virtuales
 
-1. En la ventana de la consola de Windows PowerShell, ejecute lo siguiente para probar la conectividad a **az104-05-vm2** (que tiene la dirección IP privada **10.52.0.4**) a través del puerto TCP 3389:
+En esta tarea, creará un emparejamiento de red virtual para habilitar las comunicaciones entre los recursos de las redes virtuales. 
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+1. En Azure Portal, seleccione la `CoreServicesVnet` red virtual.
 
-    >**Nota**: La prueba usa TCP 3389, ya que el firewall del sistema operativo permite este puerto de forma predeterminada.
+1. En CoreServicesVnet, en **Configuración**, seleccione **Emparejamientos**.
 
-1. Examine la salida del comando y compruebe que la conexión se ha realizado correctamente.
+1. En CoreServicesVnet | Emparejamientos, seleccione **+ Agregar**.
 
-## Limpieza de recursos
+1. Use la información de la tabla siguiente para crear el emparejamiento.
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
+| **Parámetro**                                    | **Valor**                             |
+| --------------------------------------------- | ------------------------------------- |
+| **Esta red virtual**                                       |                                       |
+| Nombre del vínculo de emparejamiento                             | `CoreServicesVnet-to-ManufacturingVnet` |
+| Permitir que CoreServicesVNet acceda a la red virtual emparejada            | seleccionado (valor predeterminado)                       |
+| Permitir que CoreServicesVNet reciba tráfico reenviado de la red virtual emparejada | seleccionados                       |
+| Permitir que la puerta de enlace en CoreServicesVNet reenvíe el tráfico a la red virtual emparejada | No seleccionado (valor predeterminado) |
+| Habilite CoreServicesVNet para usar la puerta de enlace remota de las redes virtuales emparejadas       | No seleccionado (valor predeterminado)                        |
+| **Red virtual remota**                                   |                                       |
+| Nombre del vínculo de emparejamiento                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| Modelo de implementación de red virtual              | **Resource Manager**                      |
+| Conozco mi Id. de recurso                         | No seleccionado                          |
+| Subscription                                  | *su suscripción*    |
+| Virtual network                               | **ManufacturingVnet**                     |
+| Permitir que ManufacturingVNet acceda a CoreServicesVNet  | seleccionado (valor predeterminado)                       |
+| Permitir que ManufacturingVNet reciba tráfico reenviado desde CoreServicesVNet | seleccionados                        |
+| Permitir que la puerta de enlace en CoreServicesVNet reenvíe el tráfico a la red virtual emparejada | No seleccionado (valor predeterminado) |
+| Habilitación de ManufacturingVNet para usar la puerta de enlace remota de CoreServicesVNet       | No seleccionado (valor predeterminado)                        |
 
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
+1. Revise la configuración y seleccione **Agregar**.
 
-1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
+    ![Captura de pantalla de la página de emparejamiento.](../media/az104-lab05-peering.png)
+ 
+1. En CoreServicesVnet | Emparejamientos, compruebe que se muestra el emparejamiento **CoreServicesVnet-to-ManufacturingVnet**. Actualice la página para asegurarse de que el **estado de emparejamiento** es **Conectado**.
 
-1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
+1. Cambie al **ManufacturingVnet** y compruebe que ** se muestra el emparejamiento ManufacturingVnet-to-CoreServicesVnet**. Asegúrese de que el **Estado de emparejamiento** es **Conectado**. Es posible que tenga que **actualizar** la página. 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*'
-   ```
 
-1. Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
+## Tarea 5: Uso de Azure PowerShell para probar la conexión entre máquinas virtuales
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
-   ```
+En esta tarea, se vuelve a probar la conexión entre las máquinas virtuales de diferentes redes virtuales. 
 
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
+### Comprobación de la dirección IP privada de CoreServicesVM
 
-## Revisar
+1. En Azure Portal, busque y seleccione la `CoreServicesVM` máquina virtual.
 
-En este laboratorio, ha:
+1. En la hoja **Información general**, en la sección **Redes**, registre la **dirección IP privada** del equipo. Necesita esta información para probar la conexión.
+   
+### Pruebe la conexión a CoreServicesVM desde el **ManufacturingVM**.
 
-+ Aprovisionado el entorno de laboratorio
-+ Configurado el emparejamiento local y global de red virtual
-+ Probado la conectividad entre sitios
+>**¿Sabía que...?** Hay muchas maneras de comprobar las conexiones. En esta tarea, usará comando **Ejecutar**. También puede seguir usando Network Watcher. O bien, podría usar un [Conexión a Escritorio remoto](https://learn.microsoft.com/azure/virtual-machines/windows/connect-rdp#connect-to-the-virtual-machine) para acceder a la máquina virtual. Una vez conectado, use **test-connection**. Cuando tenga tiempo, pruebe RDP. 
+
+1. Cambie a la `ManufacturingVM` máquina virtual.
+
+1. En la hoja **Operations**, seleccione la hoja **Ejecutar comando**.
+
+1. Seleccione **runPowerShellScript** y ejecute el comando **Test-NetConnection**. Asegúrese de usar la dirección IP privada del **CoreServicesVM**.
+
+    ```Powershell
+    Test-NetConnection <CoreServicesVM private IP address> -port 3389
+    ```
+1. El script de comandos puede tardar un par de minutos en finalizar. En la parte superior de la página se muestra un mensaje informativo *Ejecución de script en curso*.
+
+   
+1. La conexión de prueba debe realizarse correctamente porque se ha configurado el emparejamiento. El nombre del equipo y la dirección remota de este gráfico pueden ser diferentes. 
+   
+   ![Ventana de PowerShell con Test-NetConnection correcta.](../media/az104-lab05-success.png)
+
+## Tarea 6: Creación de una ruta personalizada 
+
+En esta tarea, desea controlar el tráfico de red entre la subred perimetral y la subred de servicios centrales internos. Se instalará una aplicación de red virtual en la subred de servicios principales y todo el tráfico debe enrutarse allí. 
+
+1. Busque seleccionar `CoreServicesVnet`.
+
+1. Seleccione **Subredes** y, a continuación, **+ Crear**. Asegúrese de **Guardar** los cambios. 
+
+    | Configuración | Value | 
+    | --- | --- |
+    | Nombre | `perimeter` |
+    | Intervalo de direcciones de subred | `10.0.1.0/24`  |
+
+   
+1. En Azure Portal, busque y seleccione `Route tables`y, a continuación, seleccione **Crear**. 
+
+    | Configuración | Valor | 
+    | --- | --- |
+    | Suscripción | su suscripción |
+    | Resource group | `az104-rg5`  |
+    | Region | **Este de EE. UU.** |
+    | Nombre | `rt-CoreServices` |
+    | Propagar las rutas de la puerta de enlace | **No** |
+
+1. Después de implementar la tabla de rutas, seleccione **Ir al recurso**.
+
+1. Seleccione **Rutas** y después **Agregar**. Cree una ruta desde la aplicación virtual de red futura a la red virtual CoreServices. 
+
+    | Configuración | Value | 
+    | --- | --- |
+    | Nombre de ruta | `PerimetertoCore` |
+    | Tipo de destino | **Direcciones IP** |
+    | Direcciones IP de destino | `10.0.0.0/16` (red virtual de servicios principales) |
+    | Tipo de próximo salto | **Aplicación virtual** (observe las demás opciones) |
+    | Siguiente dirección de salto | `10.0.1.7` (NVA futura) |
+
+1. Seleccione **+ Agregar** cuando se complete la ruta. Lo último que debe hacer es asociar la ruta a la subred.
+
+1. Seleccione **Subredes** y, después, seleccione **Asociar**. Complete la configuración.
+
+    | Configuración | Value | 
+    | --- | --- |
+    | Virtual network | **CoreServicesVnet** |
+    | Subnet | **Principal** |    
+
+>**Nota**: Ha creado una ruta definida por el usuario para dirigir el tráfico desde la red perimetral a la nueva aplicación virtual de red.  
+
+## Limpieza de los recursos
+
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Con la CLI, `az group delete --name resourceGroupName`.
+
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+
++ De forma predeterminada, los recursos de diferentes redes virtuales no se pueden comunicar.
++ El emparejamiento de red virtual permite conectar sin problemas dos o más redes virtuales en Azure.
++ Las redes virtuales compartidas aparecen como una sola a efectos de conectividad.
++ El tráfico entre las máquinas virtuales de la red virtual emparejada usa la infraestructura de la red troncal de Microsoft.
++ Las rutas definidas por el sistema se crean automáticamente para cada subred de una red virtual. Las rutas definidas por el usuario invalidan o agregan a las rutas del sistema predeterminadas. 
++ Azure Network Watcher proporciona un conjunto de herramientas para supervisar, diagnosticar y ver métricas y registros de los recursos de IaaS de Azure.
+
+## Más información con el aprendizaje autodirigido
+
++ [Distribución de los servicios a través de redes virtuales de Azure e integración de estos mediante emparejamiento de red virtual](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Use el emparejamiento de redes virtuales para habilitar la comunicación entre redes virtuales de forma segura y con una complejidad mínima.
++ [Administrar y controlar el flujo de tráfico en la implementación de Azure con rutas](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Aprenda a controlar el tráfico de red virtual de Azure implementando rutas personalizadas.
