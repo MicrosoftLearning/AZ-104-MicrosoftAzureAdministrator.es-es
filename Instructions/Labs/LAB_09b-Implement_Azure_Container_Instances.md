@@ -5,51 +5,56 @@ lab:
 ---
 
 # Laboratorio 09b: Implementación de Azure Container Instances
-# Manual de laboratorio para alumnos
+
+## Introducción al laboratorio
+
+En este laboratorio, aprenderá a implementar y utilizar Azure Container Instances.
+
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos utilizando **Este de EE. UU.**
+
+## Tiempo estimado: 15 minutos
 
 ## Escenario del laboratorio
 
-Contoso quiere encontrar una nueva plataforma para sus cargas de trabajo virtualizadas. Se han detectado varias imágenes de contenedor que se pueden aprovechar para lograr este objetivo. Dado que quiere minimizar la administración de contenedores, tiene previsto evaluar el uso de Azure Container Instances para la implementación de imágenes de Docker.
+Su organización tiene una aplicación web que se ejecuta en una máquina virtual en el centro de datos local. La organización quiere mover todas las aplicaciones a la nube, pero no quiere tener un gran número de servidores para administrar. Decide evaluar Azure Container Instances y Docker. 
+## Simulaciones interactivas de laboratorio
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+Hay simulaciones de laboratorio interactivas que puede resultar útil para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure.
 
-## Objetivos
++ [Implementación de Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Cree, configure e implemente un contenedor de Docker con Azure Container Instances.
+  
++ [Implementar Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Implementación de una imagen de Docker por medio de Azure Container Instances. 
 
-En este laboratorio, aprenderá a:
+## Aptitudes de trabajo
 
-- Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker
-- Tarea 2: Revisar la funcionalidad de Azure Container Instances
+- Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker.
+- Tarea 2: Pruebe y compruebe la implementación de una instancia de Azure Container Instance.
 
-## Tiempo estimado: 20 minutos
 
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab09b.png)
-
-### Instrucciones
-
-## Ejercicio 1
+![Diagrama de las tareas.](../media/az104-lab09b-aci-architecture.png)
 
 ## Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker
 
-En esta tarea, creará una nueva instancia de contenedor para la aplicación web.
+En esta tarea, creará una aplicación web sencilla mediante una imagen de Docker. Docker es una plataforma que proporciona la capacidad de empaquetar y ejecutar aplicaciones en entornos aislados denominados contenedores. Azure Container Instances proporciona el entorno de proceso para la imagen de contenedor.
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. En Azure Portal, busque **Instancias de contenedor** y luego, en la hoja **Instancias de contenedor**, haga clic en **+ Crear**.
+1. En Azure Portal, busque y seleccione `Container instances` y, después, en la hoja **Instancias de contenedor**, haga clic en **+ Crear**.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear instancia de contenedor**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | ---- | ---- |
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Resource group | Nombre de un nuevo grupo de recursos **az104-09b-rg1** |
-    | Nombre del contenedor | **az104-9b-c1** |
-    | Region | Nombre de una región donde puede aprovisionar Azure Container Instances |
+    | Suscripción | Seleccione su suscripción a Azure. |
+    | Resource group | `az104-rg9` (Si es necesario, seleccione **Crear nuevo**) |
+    | Nombre del contenedor | `az104-c1` |
+    | Region | **Este de EE. UU** (o una región disponible cerca de usted)|
     | Origen de la imagen | **Imágenes de inicio rápido** |
     | Imagen | **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)** |
 
-1. Haga clic en **Siguiente: Redes >** y, en la pestaña **Redes** de la hoja **Crear instancia de contenedor**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+1. Haga clic en **Siguiente: Redes >** y especifique los siguientes ajustes (deje los demás con sus valores predeterminados):
 
     | Configuración | Value |
     | --- | --- |
@@ -57,15 +62,17 @@ En esta tarea, creará una nueva instancia de contenedor para la aplicación web
 
     >**Nota**: El contenedor será accesible públicamente en dns-name-label.region.azurecontainer.io. Si recibe un mensaje de error **La etiqueta de nombre DNS no está disponible**, pruebe otro valor.
 
-1. Haga clic en **Siguiente: Opciones avanzadas >** , revise la configuración en la pestaña **Opciones avanzadas** de la hoja **Crear instancia de contenedor** sin realizar ningún cambio, haga clic en **Revisar y crear**, asegúrese de que se supere la validación y haga clic en **Crear**.
+1. Haga clic en **Siguiente: Avanzado >**, revise los ajustes sin realizar ningún cambio.
 
-    >**Nota**: Espere a que la implementación se complete. Este proceso tardará aproximadamente 3 minutos.
+ 1. Haga clic en **Revisar y crear**, asegúrese de que se ha superado la validación y, a continuación, seleccione **Crear**.
 
-    >**Nota**: Mientras espera, puede que esté interesado en ver el [código que subyace a esta aplicación de ejemplo](https://github.com/Azure-Samples/aci-helloworld). Para verlo, vaya a la carpeta \\app.
+    >**Nota**: Espere a que la implementación se complete. Esto debería tardar entre 2 y 3 minutos.
 
-## Tarea 2: Revisar la funcionalidad de Azure Container Instances
+    >**Nota**: Mientras espera, puede que esté interesado en ver el [código que subyace a esta aplicación de ejemplo](https://github.com/Azure-Samples/aci-helloworld). Para ver el código, examine la carpeta \\aplicación.
 
-En esta tarea, revisará la implementación de la instancia de contenedor.
+## Tarea 2: Pruebe y compruebe la implementación de una instancia de Azure Container Instance 
+
+En esta tarea, revise la implementación de la instancia de contenedor. De forma predeterminada, Azure Container Instance es accesible a través del puerto 80. Una vez implementada la instancia, puede ir al contenedor mediante el nombre DNS que proporcionó en la tarea anterior.
 
 1. En la hoja de implementación, seleccione el vínculo **Ir al recurso**.
 
@@ -73,39 +80,34 @@ En esta tarea, revisará la implementación de la instancia de contenedor.
 
 1. Copie el valor de **FQDN** de la instancia de contenedor, abra una nueva pestaña del explorador y vaya a la dirección URL correspondiente.
 
-1. Compruebe que aparezca la página **Le damos la bienvenida a Azure Container Instances**.
+     ![Captura de pantalla de la página de información general de ACI en el portal.](../media/az104-lab09b-aci-overview.png)
 
-1. Cierre la nueva pestaña del explorador, de nuevo en Azure Portal, en la sección **Configuración** de la hoja de la instancia de contenedor, haga clic en **Contenedores** y, a continuación, haga clic en **Registros**.
+1. Compruebe que aparezca la página **Le damos la bienvenida a Azure Container Instances**. Actualice la página varias veces para crear algunas entradas de registro y, a continuación, cierre la pestaña del explorador.  
+
+1. En la sección **Configuración** de la hoja de instancia del contenedor, haga clic en **Contenedores** y, a continuación, haga clic en **Registros**.
 
 1. Muestre la aplicación en el explorador para comprobar que se ven las entradas de registro que representan la solicitud HTTP GET generada.
+   
+## Limpieza de los recursos
 
-## Limpieza de recursos
+Si trabaja con **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y haga clic en **Eliminar**.
++ Utilizando Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Utilizando la CLI, `az group delete --name resourceGroupName`.
 
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
 
-1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
+## Puntos clave
 
-    >**Nota**: Se debe crear el almacenamiento de Cloud Shell para que funcionen estos comandos. 
+Felicidades por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
 
-1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
++ Azure Container Instances (ACI) es un servicio que permite implementar contenedores en la nube pública de Microsoft Azure.
++ ACI no requiere que aprovisione ni administre ninguna infraestructura subyacente.
++ ACI admite contenedores de Linux y contenedores de Windows.
++ Las cargas de trabajo en ACI suelen iniciarse y detenerse por algún tipo de proceso o desencadenador y suelen ser de corta duración. 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09b*'
-   ```
+## Más información con el aprendizaje autodirigido
 
-1. Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
++ [Ejecución de imágenes de contenedor en Azure Container Instances](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Descubra cómo Azure Container Instances puede ayudarle a implementar rápidamente contenedores, a establecer variables de entorno y a especificar directivas de reinicio de contenedores.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09b*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
-
-## Revisar
-
-En este laboratorio, ha:
-
-- Implementado una imagen de Docker mediante Azure Container Instances
-- Revisado la funcionalidad de Azure Container Instances
+    

@@ -5,214 +5,175 @@ lab:
 ---
 
 # Laboratorio 02a: Administrar suscripciones y RBAC
-# Manual de laboratorio para alumnos
 
-## Requisitos del laboratorio
+## Introducción al laboratorio
 
-Este laboratorio requiere permisos para crear usuarios, crear roles personalizados de control de acceso basado en rol (RBAC) de Azure y asignar estos roles a usuarios. Puede que no todos los hospedadores de laboratorio proporcionen esta funcionalidad. Pregunte al instructor acerca de la disponibilidad de este laboratorio.
+En este laboratorio, obtendrá información sobre el control de acceso basado en roles. Obtendrá información sobre cómo usar los permisos y ámbitos para controlar qué acciones pueden realizar las identidades y cuáles no. También aprenderá a facilitar la administración de suscripciones mediante grupos de administración. 
 
-## Escenario del laboratorio
-
-Para mejorar la administración de recursos de Azure en Contoso, se le ha encargado implementar la funcionalidad siguiente:
-
-- crear un grupo de administración que incluya todas las suscripciones de Azure de Contoso;
-
-- conceder permisos para enviar las solicitudes de soporte técnico para todas las suscripciones del grupo de administración a un usuario designado. Los permisos de ese usuario solo deben limitarse a: 
-
-    - crear solicitud de soporte técnico;
-    - ver grupos de recursos.
-
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos.
-
-## Objetivos
-
-En este laboratorio, aprenderá a:
-
-+ Tarea 1: Implementar grupos de administración
-+ Tarea 2: Crear roles RBAC personalizados 
-+ Tarea 3: Asignar roles RBAC
-
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
 ## Tiempo estimado: 30 minutos
 
+## Escenario del laboratorio
+
+Para simplificar la administración de recursos de Azure en su organización, se le ha encargado la implementación de la siguiente funcionalidad:
+
+- Creación de un grupo de administración que incluya todas las suscripciones de Azure.
+
+- Concesión de permisos para enviar solicitudes de soporte técnico para todas las suscripciones del grupo de administración. Los permisos deberían estar limitados solo a: 
+
+    - Crear y administrar máquinas virtuales
+    - Creación de vales de solicitud de soporte técnico (no incluya agregar proveedores de Azure)
+
+
+## Simulaciones interactivas de laboratorio
+
+Existen algunas simulaciones de laboratorio interactivas que pueden resultarle útiles para este tema. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+
++ [Administrar acceso con RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Asigne un rol integrado a un usuario y supervise los registros de actividad. 
+
++ [Administrar suscripciones y RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202). Implemente un grupo de administración y cree y asigne un rol de RBAC personalizado.
+
++ [Abrir una solicitud de soporte técnico](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022). Revise las opciones del plan de soporte técnico y, a continuación, cree y supervise una solicitud de soporte técnico o facturación.
+
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab02aentra.png)
+![Diagrama de tareas de laboratorio.](../media/az104-lab02a-architecture.png)
 
+## Aptitudes de trabajo
 
-### Instrucciones
-
-## Ejercicio 1
++ Tarea 1: Implementar grupos de administración.
++ Tarea 2: Revisar y asignar un rol de Azure integrado.
++ Tarea 3: Crear un rol de RBAC personalizado.
++ Tarea 4: Supervisar la asignación de roles con el registro de actividades.
 
 ## Tarea 1: Implementar grupos de administración
 
-En esta tarea, creará y configurará grupos de administración. 
+En esta tarea, creará y configurará grupos de administración. Los grupos de administración se usan para organizar lógicamente las suscripciones. Las suscripciones deben segmentarse y permitir que RBAC y Azure Policy se asignen y hereden a otros grupos de administración y suscripciones. Por ejemplo, si su organización cuenta con un equipo de asistencia dedicado a Europa, puede organizar las suscripciones europeas en un grupo de administración para proporcionar al personal de asistencia acceso a dichas suscripciones (sin proporcionar acceso individual a todas las suscripciones). En nuestro escenario, todos los miembros del departamento de soporte técnico tendrán que crear una solicitud de soporte técnico para todas las suscripciones. 
 
-1. Inicie sesión en [**Azure Portal**](http://portal.azure.com).
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. Busque y seleccione **Grupos de administración** para ir a la hoja **Grupos de administración**.
+1. Busque y seleccione `Microsoft Entra ID`.
 
-1. Revise los mensajes de la parte superior de la hoja **Grupos de administración**. Si ves el mensaje **Está registrado como administrador de directorio, pero no tiene los permisos necesarios para acceder al grupo de administración raíz**, sigue la secuencia de pasos a continuación:
+1. En la hoja **Administrar**, seleccione **Propiedades**.
 
-    1. En el Azure Portal, busque y seleccione **Microsoft Entra ID**.
-    
-    1.  En la hoja que muestra las propiedades del inquilino, en la sección **Administrar** del menú vertical de la izquierda, selecciona **Propiedades**.
-    
-    1.  En la hoja **Propiedades** del inquilino, en la sección **Administración de acceso para los recursos de Azure**, selecciona **Sí** y luego selecciona **Guardar**.
-    
-    1.  Vuelva a la hoja **Grupos de administración** y seleccione **Actualizar**.
+1. Revise el área de **Administración de recursos de Azure**. Asegúrese de que puede administrar el acceso a todas las suscripciones y grupos de administración de Azure en el inquilino.
+   
+1. Busque y seleccione `Management groups`.
 
 1. En la hoja **Grupos de administración**, haga clic en **+ Crear**.
 
-    >**Nota**: Si no ha creado anteriormente grupos de administración, seleccione **Empezar a usar grupos de administración**.
-
-1. Cree un grupo de administración con la siguiente configuración:
+1. Cree un grupo de administración con la siguiente configuración. Seleccione **Enviar** cuando haya terminado. 
 
     | Configuración | Value |
     | --- | --- |
-    | Id. de grupo de administración | **az104-02-mg1** |
-    | Nombre para mostrar del grupo de administración | **az104-02-mg1** |
+    | Id. de grupo de administración | `az104-mg1` (debe ser único en el directorio) |
+    | Nombre para mostrar del grupo de administración | `az104-mg1` |
 
-1. En la lista de grupos de administración, haga clic en la entrada que representa el grupo de administración recién creado.
+1. **Actualice** la página del grupo de administración para asegurarse de que se muestra el nuevo grupo de administración. Esta operación puede tardar unos minutos. 
 
-1. En la hoja **az104-02-mg1**, haga clic en **Suscripciones**. 
+   >**Nota:** ¿Se ha fijado en el grupo de administración raíz? Este grupo de administración raíz está integrado en la jerarquía para contener todos los grupos de administración y suscripciones. Este grupo de administración raíz permite la aplicación de directivas globales y de asignaciones de roles de Azure a nivel de directorio. Tras crear un grupo de administración, deberá agregar las suscripciones que deban estar incluidas en el grupo. 
 
-1. En la hoja **az104-02-mg1 \| Suscripciones**, haga clic en **+ Agregar**, en la hoja **Agregar suscripción**, en la lista desplegable **Suscripción**, seleccione la suscripción que está usando en este laboratorio y haga clic en **Guardar**.
+## Tarea 2: Revisar y asignar un rol de Azure integrado
 
-    >**Nota:** En la hoja **az104-02-mg1 \| Suscripciones**, copie en el Portapapeles el identificador de la suscripción de Azure. Lo necesitará en la próxima tarea.
+En esta tarea, revisará los roles integrados y asignará el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
-## Tarea 2: Crear roles RBAC personalizados
+1. Seleccione el grupo de administración **az104-mg1**.
 
-En esta tarea, creará una definición de un rol RBAC personalizado.
+1. Seleccione la hoja **Control de acceso (IAM)** y después la pestaña **Roles**.
 
-1. En el equipo de laboratorio, abra el archivo **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** en el Bloc de notas y revise el contenido:
+1. Desplácese por las definiciones de roles integrados que están disponibles. **Vea** un rol para obtener información detallada sobre los **Permisos**, **JSON** y **Asignaciones**. Usará a menudo *propietario*, *colaborador* y *lector*. 
 
-   ```json
-   {
-      "Name": "Support Request Contributor (Custom)",
-      "IsCustom": true,
-      "Description": "Allows to create support requests",
-      "Actions": [
-          "Microsoft.Resources/subscriptions/resourceGroups/read",
-          "Microsoft.Support/*"
-      ],
-      "NotActions": [
-      ],
-      "AssignableScopes": [
-          "/providers/Microsoft.Management/managementGroups/az104-02-mg1",
-          "/subscriptions/SUBSCRIPTION_ID"
-      ]
-   }
-   ```
-    > **Nota:** Si no está seguro de dónde se almacenan los archivos en el entorno de laboratorio local, pregunte al instructor.
+1. Seleccione **+ Agregar**, en la lista desplegable, seleccione **Agregar asignación de rol**. 
 
-1. Reemplace el marcador de posición `SUBSCRIPTION_ID` del archivo JSON por el identificador de la suscripción que copió en el Portapapeles y guarde el cambio.
+1. En la hoja **Agregar asignación de rol**, busque y seleccione **Colaborador de máquinas virtuales**. El rol de colaborador de la máquina virtual le permite administrar máquinas virtuales, pero no acceder a su sistema operativo ni administrar la red virtual ni la cuenta de almacenamiento a la que estén conectadas. Este es un buen rol para el departamento de soporte técnico. Seleccione **Siguiente**.
 
-1. Haga clic en el icono de la barra de herramientas inmediatamente a la derecha del cuadro de texto de búsqueda en Azure Portal para abrir el panel de **Cloud Shell**.
+    >**¿Sabía que...?** Azure proporcionaba originalmente solo el modelo de implementación **Clásico**. Se ha sustituido por el modelo de implementación de **Azure Resource Manager**. Como procedimiento recomendado, no use recursos clásicos. 
 
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**. 
+1. En la pestaña **Miembros**, **Seleccione Miembros**.
 
-    >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**. 
+    >**Nota:** El siguiente paso asigna el rol al grupo **helpdesk**. Si no dispone de un grupo de departamento de soporte, tómese un minuto para crearlo.
 
-1. En la barra de herramientas del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, haga clic en **Cargar** en el menú desplegable y cargue el archivo **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** en el directorio principal de Cloud Shell.
+1. Busque y seleccione el grupo `helpdesk`. Haga clic en **Seleccionar**. 
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para crear la definición de rol personalizado:
+1. Haga clic en **Revisar y asignar** dos veces para crear la asignación de roles.
 
-   ```powershell
-   New-AzRoleDefinition -InputFile $HOME/az104-02a-customRoleDefinition.json
-   ```
+1. Continúe en la hoja **Control de acceso (IAM)**. En la pestaña **Asignaciones de roles**, confirme que el grupo **helpdesk** tiene el rol de **Colaborador de máquinas virtuales**. 
 
-1. Cierre el panel de Cloud Shell.
+    >**Nota:** Como procedimiento recomendado, asigne siempre roles a grupos que no son individuos. 
 
-## Tarea 3: Asignar roles RBAC
+    >**¿Sabía que...?** Es posible que esta asignación no le conceda privilegios adicionales. Si ya tiene el rol Propietario, ese rol incluye todos los permisos asociados al rol Colaborador de máquina virtual.
+    
+## Tarea 3: Crear un rol de RBAC personalizado
 
-En esta tarea, crearás un usuario, asignarás a ese usuario el rol RBAC que creaste en la tarea anterior y comprobarás que el usuario puede realizar la tarea especificada en la definición del rol RBAC.
+En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados son una parte fundamental de la implementación del principio de privilegios mínimos para un entorno. Los roles integrados pueden tener demasiados permisos para su escenario. En esta tarea, crearemos un nuevo rol y quitaremos los permisos que no sean necesarios. ¿Tiene un plan para administrar permisos superpuestos?
 
-1. En Azure Portal, busca y selecciona **Microsoft Entra ID**, haz clic en **Usuarios** y luego haz clic en **+ Nuevo usuario**.
+1. Continúe trabajando en el grupo de administración. En la hoja **Control de acceso (IAM)**, seleccione la pestaña **Comprobar acceso**.
 
-1. Cree un nuevo usuario con las siguientes opciones de configuración (deje las demás con sus valores predeterminados):
+1. En el cuadro **Crear un rol personalizado**, seleccione **Agregar**.
+
+1. En la pestaña Aspectos básicos termine la configuración.
 
     | Configuración | Valor |
     | --- | --- |
-    | Nombre de usuario | **az104-02-aaduser1**|
-    | Name | **az104-02-aaduser1**|
-    | Permitirme crear la contraseña | enabled |
-    | Contraseña inicial | **Proporcione una contraseña segura** |
+    | Nombre del rol personalizado | `Custom Support Request` |
+    | Descripción | "Un rol de colaborador personalizado para las solicitudes de soporte técnico". |
 
-    >**Nota**: **Copie en el Portapapeles** el **Nombre de usuario** completo. Lo necesitará más adelante en este laboratorio.
+1. Para **Permisos de línea de base**, seleccione **Clonar un rol**. En el menú desplegable **Rol a clonar**, seleccione **Colaborador de solicitud de soporte técnico**.
 
-1. En Azure Portal, vuelva al grupo de administración **az104-02-mg1** y muestre sus **detalles**.
+    ![Captura de pantalla de clonación de un rol.](../media/az104-lab02a-clone-role.png)
 
-1. Haga clic en **Control de acceso (IAM)** , en **+ Agregar** y, a continuación, en **Agregar asignación de roles**. En la pestaña **Rol**, busque **Colaborador de solicitud de soporte técnico (personalizado)**. 
+1. Seleccione **Siguiente** para desplazarse a la pestaña **Permisos** y después seleccione **+Excluir permisos**.
 
-    >**Nota**: Si el rol personalizado no está visible, puede tardar hasta 10 minutos en aparecer después de su creación.
+1. En el campo de búsqueda del proveedor de recursos, escriba `.Support` y seleccione **Microsoft.Support**.
 
-1. Seleccione el **rol** y haga clic en **Siguiente**. En la pestaña **Miembros**, haga clic en **+ Seleccionar miembros** y **seleccione** la cuenta de usuario az104-***********************.**********.onmicrosoft.com. Haga clic en **Siguiente** y, a continuación, en **Revisar y asignar**.
+1. En la lista de permisos, coloque una casilla junto a **Otros: Registra el proveedor de recursos compatibles** y después seleccione **Agregar**. El rol debería actualizarse para incluir este permiso como *NotAction*.
 
-1. Abra una ventana **InPrivate** del explorador e inicie sesión en [Azure Portal](https://portal.azure.com) con la cuenta de usuario recién creada. Cuando se le pida que actualice la contraseña, cambie la contraseña del usuario.
+    >**Nota:** Un proveedor de recursos de Azure es un conjunto de operaciones de REST que habilitan la funcionalidad de un servicio específico de Azure. No queremos que el departamento de soporte técnico pueda tener esta capacidad, por lo que se está eliminando del rol clonado. También podría borrar y agregar otras capacidades al nuevo rol. 
 
-    >**Nota**: En lugar de escribir el nombre de usuario, puede pegar el contenido del Portapapeles.
+1. En la pestaña **Ámbitos asignables**, asegúrese de que su grupo de administración aparece en la lista y después haga clic en **Siguiente**.
 
-1. En la ventana del explorador **InPrivate**, en Azure Portal, busque y seleccione **Grupos de recursos** para comprobar que el usuario az104-02-aaduser1 puede ver todos los grupos de recursos.
+1. Revise el JSON para *Actions*, *NotActions* y *AssignableScopes* personalizados en el rol. 
 
-1. En la ventana del explorador **InPrivate**, en Azure Portal, busque y seleccione **Todos los recursos** para comprobar que el usuario az104-02-aaduser1 no puede ver ningún recurso.
+1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-1. En la ventana del explorador **InPrivate**, en Azure Portal, busque y seleccione **Ayuda y soporte técnico** y, luego, haga clic en **Crear solicitud de soporte técnico**. 
+    >**Nota:** En este punto, ha creado un rol personalizado y lo ha asignado al grupo de administración.  
 
-1. En la ventana del explorador **InPrivate**, en la pestaña **Descripción/Resumen del problema** del panel **Ayuda y soporte técnico: Nueva solicitud de soporte técnico**, escriba **Límites de servicio y suscripción** en el campo Resumen y seleccione el tipo de incidencia **Límites de servicio y suscripción (cuotas)** . Tenga en cuenta que la suscripción que está usando en este laboratorio aparece en la lista desplegable **Suscripción.**
+## Tarea 4: Supervisar la asignación de roles con el registro de actividades
 
-    >**Nota**: La presencia de la suscripción que está usando en este laboratorio en la lista desplegable **Suscripción** indica que la cuenta que está usando tiene los permisos necesarios para crear la solicitud de soporte técnico específica de la suscripción.
+En esta tarea, verá el registro de actividades para determinar si alguien ha creado un nuevo rol. 
 
-    >**Nota**: Si no ve la opción **Límites de servicio y suscripción (cuotas)** , cierre sesión en Azure Portal y vuelva a iniciar sesión.
+1. En el portal, busque el recurso **az104-mg1** y seleccione **Registro de actividad**. El registro de actividad proporciona información sobre los eventos del nivel de suscripción. 
 
-1. No continúe con la creación de la solicitud de soporte técnico. En su lugar, cierre la sesión como usuario az104-02-aaduser1 de Azure Portal y cierre la ventana InPrivate del explorador.
+1. Revise las actividades para las asignaciones de roles. El registro de actividad se puede filtrar para operaciones específicas. 
 
-## Tarea 4: Limpieza de recursos
+    ![Captura de pantalla de la página Registro de actividad con el filtro configurado.](../media/az104-lab02a-searchactivitylog.png)
 
-   >**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de recursos sin usar garantiza que no aparezcan cargos inesperados, aunque los recursos creados en este laboratorio no incurren en costos adicionales.
+## Limpieza de los recursos
 
-   >**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza.
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
 
-1. En Azure Portal, busca y selecciona **Microsoft Entra ID**, y luego haz clic en **Usuarios**.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Con la CLI, `az group delete --name resourceGroupName`.
+  
+## Puntos clave
 
-1. En la hoja **Usuarios: Todos los usuarios**, haga clic en **az104-02-aaduser1**.
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
 
-1. En la hoja **az104-02-aaduser1: Perfil**, copie el valor del atributo **Id. de objeto**.
++ Los grupos de administración se usan para organizar lógicamente las suscripciones.
++ El grupo de administración raíz integrado incluye todos los grupos de administración y suscripciones.
++ Azure tiene muchos roles integrados. Puede asignar estos roles para controlar el acceso a los recursos.
++ Puede crear nuevos roles o personalizar los roles existentes.
++ Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
++ Puede usar el registro de actividad para supervisar las asignaciones de roles. 
 
-1. En Azure Portal, inicie una sesión de **PowerShell** en **Cloud Shell**.
+## Más información con el aprendizaje autodirigido
 
-1. En el panel de Cloud Shell, ejecuta lo siguiente para quitar la asignación de la definición de rol personalizado (reemplaza el marcador de posición `[object_ID]` por el valor del atributo **Id. de objeto** de la cuenta de usuario **az104-02-aaduser1** que copiaste anteriormente en esta tarea):
++ [Protección de los recursos de Azure con el control de acceso basado en roles de Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Uso de RBAC de Azure para administrar el acceso a los recursos en Azure.
++ [Creación de roles personalizados para los recursos de Azure con el control de acceso basado en roles (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenda la estructura de las definiciones de roles para el control de acceso. Identifique las propiedades de roles que se van a usar que definen los permisos de roles personalizados. Cree un rol personalizado de Azure y asígnelo a un usuario.
 
-   ```powershell
-   
-    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
-    
-    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
-   ```
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para quitar la definición de rol personalizado:
 
-   ```powershell
-   Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
-   ```
 
-1. En Azure Portal, vuelve a la hoja **Usuarios: Todos los usuarios** de **Microsoft Entra ID** y elimina la cuenta de usuario **az104-02-aaduser1**.
 
-1. En Azure Portal, vuelva a la hoja **Grupos de administración**. 
-
-1. En la hoja **Grupos de administración**, seleccione el icono de **puntos suspensivos** situado junto a la suscripción en el grupo de administración **az104-02-mg1** y seleccione **Mover** para mover la suscripción al **grupo de administración raíz del inquilino**.
-
-   >**Nota**: Es probable que el grupo de administración de destino sea el **grupo de administración raíz del inquilino**, a menos que haya creado una jerarquía personalizada de grupos de administración antes de ejecutar este laboratorio.
-   
-1. Seleccione **Actualizar** para comprobar que la suscripción se ha movido correctamente al **grupo de administración raíz del inquilino**.
-
-1. Vuelva a la hoja **Grupos de administración**, haga clic en el icono de **puntos suspensivos** situado a la derecha del grupo de administración **az104-02-mg1** y haga clic en **Eliminar**.
-  >**Nota**: Si no puede eliminar el **grupo de administración raíz del inquilino**, es probable que la **suscripción de Azure** esté en el grupo de administración. Debe quitar la **suscripción de Azure** del **grupo de administración raíz del inquilino** y, a continuación, eliminar el grupo.
-
-## Revisar
-
-En este laboratorio, ha:
-
-- Implementado grupos de administración
-- Creado roles RBAC personalizados 
-- Asignado roles RBAC
