@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio, aprenderá a implementar los planes de gobernanza de la organización. Obtendrá información sobre cómo las directivas de Azure pueden garantizar que las decisiones operativas se apliquen en toda la organización. Aprenderá a usar el etiquetado de recursos para mejorar los informes. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos con **Este de EE. UU.** 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
 ## Tiempo estimado: 30 minutos
 
@@ -28,7 +28,7 @@ La superficie en la nube de la organización ha crecido considerablemente en el 
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
 
 + [Administración de bloqueos de recursos](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Agregue un bloqueo de recursos y pruébelo para confirmarlo.
   
@@ -131,15 +131,13 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
     | Resource group | **az104-rg2** |
     | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
 
-1. Seleccione **Revisar** y, después, haga clic en **Crear**:
+1. Seleccione **Revisar** y, después, haga clic en **Crear**.
 
-1. Una vez que cree la implementación, verá el mensaje **Error de implementación** en la lista **Notificaciones** del portal. En la lista **Notificaciones**, vaya a la información general de la implementación y haga clic en el mensaje **Error en la implementación. Haga clic aquí para ver los detalles** para conocer el motivo del error. 
+1. Debería recibir un mensaje de **error de validación**. Vea el mensaje para identificar el motivo del error. Compruebe si el mensaje de error indica que la directiva no ha permitido la implementación de recursos. 
 
     ![Captura de pantalla del error de directiva no permitida.](../media/az104-lab02b-policyerror.png) 
 
-    >**Nota**: Compruebe si el mensaje de error indica que la directiva no ha permitido la implementación de recursos. 
-
-    >**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Cost Center tag with Default value** (Requerir etiqueta Centro de coste con el valor Predeterminado). El error en la implementación se debe a que la cuenta de almacenamiento que ha intentado crear no tenía una etiqueta denominada **Centro de coste** con su valor establecido en **Predeterminado**.
+>**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Cost Center tag with Default value** (Requerir etiqueta Centro de coste con el valor Predeterminado). El error en la implementación se debe a que la cuenta de almacenamiento que ha intentado crear no tenía una etiqueta denominada **Centro de coste** con su valor establecido en **Predeterminado**.
 
 ## Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
 
@@ -234,11 +232,11 @@ En esta tarea, configurará y probará un bloqueo de recursos. Los bloqueos impi
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Puntos clave
 
