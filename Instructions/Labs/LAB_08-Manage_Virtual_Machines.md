@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio, creará máquinas virtuales y las comparará con conjuntos de escalado de máquinas virtuales. Descubrirá cómo crear, configurar y cambiar el tamaño de una máquina virtual única. Descubrirá cómo crear un conjunto de escalado de máquinas virtuales y configurar el escalado automático.
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos con **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos con **Este de EE. UU.**
 
 ## Tiempo estimado: 50 minutos
 
@@ -351,7 +351,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
     -Image 'Win2019Datacenter' `
     -Zone '1' `
     -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' `
+    -Credential '(Get-Credential)' 
     ```
 
 1. Una vez completado el comando, use **Get-AzVM** para mostrar una lista de las máquinas virtuales del grupo de recursos.
@@ -408,9 +408,9 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y, después, haga clic en **Eliminar**.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
 + Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Con la CLI, `az group delete --name resourceGroupName`.
 

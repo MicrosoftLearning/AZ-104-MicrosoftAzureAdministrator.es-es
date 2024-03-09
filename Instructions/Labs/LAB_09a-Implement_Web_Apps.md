@@ -5,78 +5,88 @@ lab:
 ---
 
 # Laboratorio 09a: Implementación de Web Apps
-# Manual de laboratorio para alumnos
+
+
+## Introducción al laboratorio
+
+En este laboratorio, obtendrá información sobre las aplicaciones web de Azure. Aprenderá a configurar una aplicación web para mostrar una aplicación Hola mundo en un repositorio externo de GitHub. Aprenderá a crear un espacio de ensayo y a intercambiarlo con el espacio de producción. También obtendrá información sobre el escalado automático para dar cabida a los cambios de demanda.
+
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para Este de EE. UU.
+
+## Tiempo estimado: 20 minutos
 
 ## Escenario del laboratorio
 
-Tiene que evaluar el uso de aplicaciones web de Azure para hospedar sitios web de Contoso, hospedados actualmente en los centros de datos locales de la empresa. Los sitios web se ejecutan en servidores Windows mediante la pila en tiempo de ejecución de PHP. También tiene que decidir cómo puede implementar prácticas de DevOps al usar ranuras de implementación de aplicaciones web de Azure.
+Su organización está interesada en las aplicaciones web de Azure para hospedar los sitios web de su empresa. Actualmente, estos sitios web se hospedan en centros de datos locales. Los sitios web se ejecutan en servidores Windows con la pila de runtime de PHP. El hardware está cerca del final de la vida útil y pronto tendrá que reemplazarse. Su organización quiere evitar nuevos costes de hardware usando Azure para hospedar los sitios web. 
 
-**Nota:** Hay disponible una **[simulación de laboratorio interactiva](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** que le permite realizar sus propias selecciones a su entera discreción. Es posible que encuentre pequeñas diferencias entre la simulación interactiva y el laboratorio hospedado, pero las ideas y los conceptos básicos que se muestran son los mismos. 
+## Simulaciones interactivas de laboratorio
 
-## Objetivos
+Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
 
-En este laboratorio, aprenderá a:
-
-+ Tarea 1: Crear una aplicación web de Azure
-+ Tarea 2: Creación de una ranura de implementación de ensayo
-+ Tarea 3: Configuración de las opciones de implementación de la aplicación web
-+ Tarea 4: Implementación de código en la ranura de implementación de ensayo
-+ Tarea 5: Intercambiar los espacios de ensayo
-+ Tarea 6: Configurar y probar el escalado automático de la aplicación web de Azure
-
-## Tiempo estimado: 30 minutos
++ [Creación de una aplicación web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Cree una aplicación web que ejecute un contenedor Docker.
+    
++ [Implementación de aplicaciones web de Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013). Cree una aplicación web de Azure, administre la implementación y escale la aplicación. 
 
 ## Diagrama de la arquitectura
 
-![imagen](../media/lab09a.png)
+![Diagrama de las tareas.](../media/az104-lab09a-architecture.png)
 
-### Instrucciones
+## Aptitudes de trabajo
 
-## Ejercicio 1
++ Tarea 1: Cree y configure una aplicación web de Azure.
++ Tarea 2: Cree y configure una ranura de implementación.
++ Tarea 3: configuración de las opciones de implementación de la aplicación web.
++ Tarea 4: Intercambie ranuras de implementación.
++ Tarea 5: Configure y pruebe el escalado automático de la aplicación web de Azure.
 
-## Tarea 1: Crear una aplicación web de Azure
+## Tarea 1: Creación y configuración de una aplicación web de Azure
 
-En esta tarea, creará una aplicación web de Azure.
+En esta tarea, creará una aplicación web de Azure. Azure App Services es una solución de plataforma como servicio (PAAS) para aplicaciones web, móviles y otras basadas en web. Las aplicaciones web de Azure forman parte de las instancias de Azure App Services que hospedan la mayoría de los entornos en runtime, como PHP, Java y .NET. El plan de App Service que seleccione determinará el proceso, el almacenamiento y las características de la aplicación web. 
 
-1. Inicie sesión en [**Azure Portal**](http://portal.azure.com).
+1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. En Azure Portal, busque y seleccione **App Services** y, en la hoja **App Services**, haga clic en **+ Crear**.
+1. Busque y seleccione `App services`.
+
+1. Seleccione **+ Crear**, en el menú desplegable **Aplicación web**. Observe las otras opciones. 
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear aplicación web**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
-    | Subscription | nombre de la suscripción de Azure que usa en este laboratorio |
-    | Resource group | Nombre de un nuevo grupo de recursos **az104-09a-rg1** |
+    | Subscription | su suscripción de Azure |
+    | Resource group | `az104-rg9` (Si es necesario, seleccione **Crear nuevo**) |
     | Nombre de aplicación web | Cualquier nombre globalmente único |
     | Publicar | **Código** |
     | Pila en tiempo de ejecución | **PHP 8.2** |
     | Sistema operativo | **Linux** |
-    | Region | Nombre de una región de Azure donde puede aprovisionar aplicaciones web de Azure |
-    | Panes de tarifa | Acepte la configuración predeterminada |
+    | Region | **Este de EE. UU.** |
+    | Panes de tarifa | aceptar los valores predeterminados |
+    | Redundancia de zona | aceptar los valores predeterminados |
 
-1. Haga clic en **Revisar y crear**. En la pestaña **Revisar y crear** de la hoja **Crear aplicación web**, asegúrese de que ha superado la validación y haga clic en **Crear**.
+ 1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
 
-    >**Nota**: Espere hasta que se cree la aplicación web antes de continuar con la siguiente tarea. Este proceso tardará aproximadamente un minuto.
+    >**Nota**: Espere hasta que se cree la aplicación web antes de continuar con la tarea siguiente. Este proceso tardará aproximadamente un minuto.
 
-1. En la hoja de implementación, haga clic en **Ir al recurso**.
+1. Una vez que la implementación se haya completado, seleccione **Ir al recurso**.
 
-## Tarea 2: Crear una ranura de implementación de ensayo
+## Tarea 2: Creación y configuración de una ranura de implementación
 
-En esta tarea, creará una ranura de implementación de ensayo.
+En esta tarea, creará una ranura de implementación de ensayo. Las ranuras de implementación permiten realizar pruebas antes de que la aplicación esté disponible para el público (o para los usuarios finales). Después de realizar las pruebas, podrá intercambiar la ranura del desarrollo o pasar de Almacenamiento provisional a Producción. Muchas organizaciones usan ranuras para realizar pruebas de preproducción. Además, muchas organizaciones ejecutan varias ranuras para cada aplicación (por ejemplo, desarrollo, control de calidad, prueba y producción).
 
 1. En la hoja de la aplicación web recién implementada, haga clic en el vínculo **Dominio predeterminado** para mostrar la página web predeterminada en una nueva pestaña del explorador.
 
-1. Cierre la nueva pestaña del explorador y, de vuelta en Azure Portal, en la sección **Implementación** de la hoja de la aplicación web, haga clic en **Espacios de implementación**.
+1. Cierre la nueva pestaña del explorador y, de vuelta en Azure Portal, en la sección **Implementación** de la hoja de la aplicación web, haga clic en **Ranuras de implementación**.
 
-    >**Nota**: La aplicación web, en este momento, tiene una sola ranura de implementación con la etiqueta **PRODUCTION**.
+    >**Nota**: En este punto, la aplicación web tiene una ranura de implementación única con la etiqueta **PRODUCTION**.
 
 1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
     | Configuración | Value |
     | --- | ---|
-    | Nombre | **staging** |
+    | Nombre | `staging` |
     | Clonar la configuración de | **No clonar la configuración**|
+
+1. Seleccione **Agregar**.
 
 1. De nuevo en la hoja **Ranuras de implementación** de la aplicación web, haga clic en la entrada que representa el espacio de ensayo recién creado.
 
@@ -84,188 +94,102 @@ En esta tarea, creará una ranura de implementación de ensayo.
 
 1. Revise la hoja del espacio de ensayo y tenga en cuenta que su dirección URL difiere de la asignada al espacio de producción.
 
-## Tarea 3: Configurar las opciones de implementación de la aplicación web
+## Tarea 3: Configuración de las opciones de implementación de la aplicación web
 
-En esta tarea, configurará las opciones de implementación de la aplicación web.
+En esta tarea, configurará las opciones de implementación de la aplicación web. La configuración de implementación permite la implementación continua. Esto garantiza que el servicio de aplicaciones tenga la versión más reciente de la aplicación.
 
-1. En la hoja de la ranura de implementación de ensayo, en la sección **Implementación**, haga clic en **Centro de implementación** y, a continuación, seleccione la pestaña **Configuración**.
+1. En el espacio de ensayo, seleccione **Centro de implementación** y, a continuación, seleccione **Configuración**.
 
-    >**Nota**: Asegúrese de que está en la hoja del espacio de ensayo (en lugar del espacio de producción).
+    >**Nota:** Asegúrese de que está en la hoja del espacio de ensayo (y no en el espacio de producción).
     
-1. En la pestaña **Configuración**, en la lista desplegable **Origen**, seleccione **GIT local** y haga clic en el botón **Guardar**.
+1. En la lista desplegable **Origen**, seleccione **Git externo**. Observe las otras opciones. 
 
-1. En la hoja **Centro de implementación**, copie la entrada **URI de git clone** en el Bloc de notas.
+1. En el campo de repositorio, escriba `https://github.com/Azure-Samples/php-docs-hello-world`.
 
-    >**Nota**: necesitará el valor de URI de git clone en la siguiente tarea de este laboratorio.
+1. En el campo de rama, escriba `master`.
 
-1. En la hoja **Centro de implementación**, seleccione la pestaña **Credenciales de GIT o FTPS locales**, en la sección **Ámbito de usuario**, configure las opciones siguientes y haga clic en **Guardar**.
+1. Seleccione **Guardar**.
 
-    | Configuración | Valor |
-    | --- | ---|
-    | Nombre de usuario | cualquier nombre único global (consulte la nota)  |
-    | Contraseña | cualquier contraseña que cumpla los requisitos de complejidad (consulte la nota) |
+1. En el espacio de ensayo, seleccione **Información general**.
 
-    >**Nota:** Copie estas credenciales en el Bloc de notas. Las necesitará más adelante.
-    
-    >**Nota:** Estas credenciales se pasarán a través del URI. No incluya caracteres especiales que afecten a la interpretación del URI. Por ejemplo: @, $, or #. Un signo asterisco o de más (en medio de la cadena) funcionaría.
-    
-## Tarea 4: Implementar código en la ranura de implementación de ensayo
+1. Seleccione el vínculo **Dominio predeterminado** y abra la dirección URL en una nueva pestaña. 
 
-En esta tarea, implementará código en la ranura de implementación de ensayo.
+1. Compruebe que el espacio de ensayo muestre **Hola mundo**.
 
-1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
+>**Nota:** La implementación puede tardar un momento. Asegúrese de **actualizar** la página de la aplicación.
 
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
+## Tarea 4: Intercambio de ranuras de implementación
 
-    >**Nota**: Si es la primera vez que inicia **Cloud Shell** y aparece el mensaje **No tiene ningún almacenamiento montado**, seleccione la suscripción que utiliza en este laboratorio y haga clic en **Crear almacenamiento**.
+En esta tarea, intercambiará el espacio de ensayo por el espacio de producción. El intercambio de una ranura le permite usar el código que ha probado en el espacio de ensayo y moverlo a producción. Azure Portal también le pedirá si necesita mover otras configuraciones de aplicación que haya personalizado para la ranura. Intercambiar ranuras es una tarea común para los equipos de aplicaciones y los equipos de soporte técnico de aplicaciones, especialmente para aquellos que implementan actualizaciones de aplicaciones rutinarias y correcciones de errores.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para clonar el repositorio remoto que contiene el código de la aplicación web.
+1. Vuelva a la hoja **Ranuras de implementación** y seleccione **Intercambiar**.
 
-   ```powershell
-   git clone https://github.com/Azure-Samples/php-docs-hello-world
-   ```
+1. Use los valores predeterminados y haga clic en **Intercambiar**.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para establecer la ubicación actual en el clon recién creado del repositorio local que contiene el código de la aplicación web de ejemplo.
+1. En la hoja**Información general** de la aplicación web, seleccione el vínculo **Dominio predeterminado** para mostrar la página principal del sitio web.
 
-   ```powershell
-   Set-Location -Path $HOME/php-docs-hello-world/
-   ```
+1. Compruebe que la página web de producción muestre la aplicación **Hola mundo**. página.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para agregar el GIT remoto (asegúrese de reemplazar los marcadores de posición `[deployment_user_name]` y `[git_clone_uri]` por el valor del nombre de usuario de **Credenciales de implementación** y la **URI de git clone**, respectivamente, que identificó en la tarea anterior):
+    >**Nota:** Copie la dirección **URL** de dominio predeterminada que necesitará para las pruebas de carga en la siguiente tarea. 
 
-   ```powershell
-   git remote add [deployment_user_name] [git_clone_uri]
-   ```
+## Tarea 5: Configuración y prueba del escalado automático de la aplicación web de Azure
 
-    >**Nota**: El valor siguiente `git remote add` no tiene que coincidir con el nombre de usuario de **Credenciales de implementación**, pero debe ser único.
+En esta tarea, configurará el escalado automático de la aplicación web de Azure. El escalado automático permite mantener un rendimiento óptimo de la aplicación web cuando aumenta el tráfico a esta. Para determinar cuándo debe escalar la aplicación, puede supervisar métricas como el uso de CPU, la memoria o el ancho de banda.
 
-1. En el panel de Cloud Shell, ejecute lo siguiente para insertar el código de la aplicación web de ejemplo del repositorio local en la ranura de implementación de ensayo de la aplicación web de Azure (asegúrese de reemplazar los valores del marcador de posición por el valor del nombre de usuario de **Credenciales de implementación** que identificó en la tarea anterior):
+1. En la sección **Configuración**, seleccione **Escalar horizontalmente (plan de App Service)**.
 
-   ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
-   ```
+    >**Nota:** Asegúrese de que está trabajando en el espacio de producción y no en el de ensayo.  
 
-1. Cierre el panel de Cloud Shell.
+1. En la sección **Escalado**, seleccione **Automático**. Observe la opción **Basado en reglas**. El escalado basado en reglas se puede configurar para diferentes métricas de aplicación. 
 
-1. En la hoja del espacio de ensayo, haga clic en **Información general** y, luego, en el vínculo **Dominio predeterminado** para mostrar la página web predeterminada en una nueva pestaña del explorador.
+1. En el campo **Ráfaga máxima**, seleccione **2**.
 
-1. Compruebe que en la página del explorador aparezca el mensaje **Hola mundo** y cierre la nueva pestaña.
+    ![Captura de pantalla de la página de escalabilidad automática.](../media/az104-lab09a-autoscale.png)
 
-## Tarea 5: Intercambiar los espacios de ensayo
+1. Seleccione **Guardar**.
 
-En esta tarea, intercambiará el espacio de ensayo por el espacio de producción.
+1. Seleccione **Diagnosticar y solucionar problemas** (panel izquierdo).
 
-1. Vuelva a la hoja que muestra el espacio de producción de la aplicación web.
+1. En el cuadro **Prueba de carga de la aplicación**, seleccione **Crear prueba de carga**.
 
-1. En la sección **Implementación**, haga clic en **Ranuras de implementación** y luego en el icono **Intercambiar** de la barra de herramientas.
+    + Seleccione **+ Crear** y asigne un nombre a su **prueba de carga**.  El nombre debe ser único.
+    + Seleccione **Revisar y crear** y, a continuación, **Crear**.
 
-1. Haga clic en la hoja **Intercambiar**, revise la configuración predeterminada y haga clic en **Intercambiar**.
+1. Espere a que se cree la prueba de carga y seleccione **Ir al recurso**.
 
-1. Haga clic en **Información general** en la hoja del espacio de producción de la aplicación web y, luego, en el vínculo **Dominio predeterminado** para mostrar la página principal del sitio web en una nueva pestaña del explorador.
+1. Desde **Información general** | **Agregar solicitudes HTTP**, seleccione **Crear**.
 
-1. Compruebe que la página web predeterminada se ha reemplazado por la página **Hola mundo** página.
+1. En **URL de prueba**, pegue su URL de **dominio predeterminado**. Asegúrese de que tenga el formato correcto y de que comience por **https://**.
 
-## Tarea 6: Configurar y probar el escalado automático de la aplicación web de Azure
+1. Seleccione **Revisar y crear** y **Crear**.
 
-En esta tarea, configurará y probará el escalado automático de la aplicación web de Azure.
+    >**Nota:** La creación de la prueba puede tardar unos minutos. 
 
-1. En la hoja que muestra el espacio de producción de la aplicación web, en la sección **Configuración**, haga clic en **Escalar horizontalmente (plan de App Service)**.
+1. Revise los resultados de la prueba, incluidos los **usuarios virtuales**, el **tiempo de respuesta** y **las solicitudes por segundo**.
 
-1. En la **sección Escalado**, selecciona la opción **Basado en reglas** y, luego, haz clic en el vínculo **Administrar el escalado basado en reglas**.
+1. Seleccione **Detener** para completar la serie de pruebas.
 
-1. Haga clic en **Escalabilidad automática personalizada**.
+## Limpieza de los recursos
 
-    >**Nota**: También tiene la opción de escalar manualmente la aplicación web.
+Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos del laboratorio consiste en suprimir el grupo de recursos del laboratorio. 
 
-1. Seleccione **Escala basada en una métrica** y haga clic en **+ Añadir una regla**
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Con la CLI, `az group delete --name resourceGroupName`.
 
-1. En la hoja **Escalar regla**, configure las opciones siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Valor |
-    | --- |--- |
-    | Origen de métricas | **Recurso actual** |
-    | Espacio de nombres de métricas | **métricas estándar** |
-    | Nombre de métrica | **Porcentaje de CPU** |
-    | Operador | **Mayor que** |
-    | Umbral de la métrica para desencadenar la acción de escalado | **10** |
-    | Duración (en minutos) | **1** |
-    | Estadísticas de intervalo de agregación | **Máximo** |
-    | Agregación de tiempo | **Máximo** |
-    | Operación | **Aumentar recuento en** |
-    | Recuento de instancias | **1** |
-    | Tiempo de finalización (minutos) | **5** |
 
-    >**Nota**: Estos valores no representan una configuración realista, ya que su propósito es desencadenar el escalado automático lo antes posible, sin un período de espera extendido.
+## Puntos clave
 
-1. Haga clic en **Agregar** y, de nuevo en la hoja de escalado del plan de App Service, configure las siguientes opciones (deje las demás con los valores predeterminados):
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
 
-    | Configuración | Value |
-    | --- |--- |
-    | Límites mínimos de la instancia | **1** |
-    | Límites de instancia, máximo | **2** |
-    | Límites de instancia, predeterminado | **1** |
++ Azure App Services le permite compilar, implementar y escalar aplicaciones web rápidamente.
++ App Service incluye compatibilidad con muchos entornos de desarrollador, como ASP.NET, Java, PHP y Python.
++ Las ranuras de implementación permiten crear entornos independientes para implementar y probar la aplicación web.
++ Puede escalar de forma manual o automática una aplicación web para controlar la demanda adicional.
++ Hay disponible una amplia variedad de herramientas de diagnóstico y pruebas. 
 
-1. Haga clic en **Save**(Guardar).
+## Más información con el aprendizaje autodirigido
 
-    >**Nota:** Si se produce un error que indica que el proveedor de recursos “microsoft.insights” no está registrado, ejecute `az provider register --namespace 'Microsoft.Insights'` en Cloud Shell y vuelva a intentar guardar las reglas de escalado automático.
-
-1. Haga clic en el icono de la esquina superior derecha de Azure Portal para abrir **Azure Cloud Shell**.
-
-1. Si se le pide que seleccione **Bash** o **PowerShell**, seleccione **PowerShell**.
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para identificar la dirección URL de la aplicación web de Azure.
-
-   ```powershell
-   $rgName = 'az104-09a-rg1'
-
-   $webapp = Get-AzWebApp -ResourceGroupName $rgName
-   ```
-
-1. En el panel de Cloud Shell, ejecute lo siguiente para iniciar un bucle infinito que envía las solicitudes HTTP a la aplicación web:
-
-   ```powershell
-   while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
-   ```
-
-1. Minimice el panel de Cloud Shell (pero no lo cierre) y, en la hoja de la aplicación web, en la sección Configuración, haga clic en **Escalabilidad horizontal (plan de App Service)**.
-
-1. Supervise el uso y el número de instancias durante unos minutos. 
-
-    >**Nota**: Es posible que tenga que **actualizar** la página.
-
-1. Una vez que observe que el número de instancias ha aumentado a 2, vuelva a abrir el panel de Cloud Shell y presione **CTRL+C** para finalizar el script.
-
-1. Cierre el panel de Cloud Shell.
-
-## Limpieza de recursos
-
->**Nota**: No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no verá cargos inesperados.
-
->**Nota:** No se preocupe si los recursos del laboratorio no se pueden quitar inmediatamente. A veces, los recursos tienen dependencias y se tarda más tiempo en eliminarlos. Supervisar el uso de los recursos es una tarea habitual del administrador, así que solo tiene que revisar periódicamente los recursos en el portal para ver cómo va la limpieza. 
-
-1. En Azure Portal, abra la sesión de **PowerShell** en el panel **Cloud Shell**.
-
-1. Ejecute el comando siguiente para enumerar todos los grupos de recursos que se han creado en los laboratorios de este módulo:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*'
-   ```
-
-1. Ejecute el comando siguiente para eliminar todos los grupos de recursos que ha creado en los laboratorios de este módulo:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Nota**: El comando se ejecuta de forma asincrónica (según determina el parámetro -AsJob). Aunque podrá ejecutar otro comando de PowerShell inmediatamente después en la misma sesión de PowerShell, los grupos de recursos tardarán unos minutos en eliminarse.
-
-## Revisar
-
-En este laboratorio, ha:
-
-+ Creado una aplicación web de Azure
-+ Creado una ranura de implementación de ensayo
-+ Configurado las opciones de implementación de la aplicación web
-+ Implementado código en la ranura de implementación de ensayo
-+ Intercambiado las ranuras de ensayo
-+ Configurado y probado el escalado automático de la aplicación web de Azure
++ [Ensayo de la implementación de una aplicación web para pruebas y reversión mediante ranuras de implementación de App Service](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Use las ranuras de implementación para simplificar la implementación y revertir una aplicación web en Azure App Service.
++ [Escale una aplicación web de App Service para satisfacer la demanda de forma eficaz con el escalado vertical y horizontal de App Service](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Ante períodos de mayor actividad, aumente de manera incremental los recursos disponibles y, después, cuando disminuya la actividad, redúzcalos para reducir costos.
