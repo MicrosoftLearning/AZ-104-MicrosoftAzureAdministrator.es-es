@@ -10,7 +10,7 @@ lab:
 
 Este es el primero de tres laboratorios que se centra en las redes virtuales. En este laboratorio, aprenderá los conceptos básicos de las redes virtuales y las subredes. Aprenderá a proteger la red con grupos de seguridad de red y grupos de seguridad de aplicaciones. También obtendrá información sobre las zonas y registros DNS. 
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.**
 
 ## Tiempo estimado: 50 minutes
 
@@ -24,7 +24,7 @@ La red virtual **ManufacturingVnet** contiene sistemas para las operaciones de l
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
 
 + [Tráfico de red seguro](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Cree una máquina virtual, una red virtual y un grupo de seguridad de red. Agregue reglas de grupo de seguridad de red para permitir y no permitir el tráfico.
   
@@ -135,7 +135,7 @@ En esta tarea, creará la red virtual ManufacturingVnet y las subredes asociadas
 
 ### Realización de cambios en el archivo de parámetros
 
-1. Busque el archivo **template.json** exportado en la tarea anterior. Debe estar en la carpeta **Descargas**.
+1. Localice el archivo **parameters.json** exportado en la tarea anterior. Debe estar en la carpeta **Descargas**.
 
 1. Edite el archivo con el editor que prefiera.
 
@@ -341,11 +341,11 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
  
 ## Puntos clave
 
