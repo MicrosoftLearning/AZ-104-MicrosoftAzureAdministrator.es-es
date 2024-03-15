@@ -356,8 +356,8 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' 
+    -Size 'Standard_D2s_v3' ` 
+    -Credential (Get-Credential)
     ```
 
 1. Una vez completado el comando, use **Get-AzVM** para mostrar una lista de las máquinas virtuales del grupo de recursos.
@@ -375,7 +375,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
     ```powershell
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8' `
-    -Name 'myPSVM' `
+    -Name 'myPSVM' 
     ```
 
 1. Use **Get-AzVM** con el parámetro **-Status** para comprobar que la máquina está **desasignada**.
