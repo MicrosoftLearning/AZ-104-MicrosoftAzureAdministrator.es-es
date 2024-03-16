@@ -271,7 +271,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
    >**Nota:** Dedique un minuto a leer la información sobre la **afinidad basada en cookies** y el **drenaje de conexiones**.
 
-1. En la sección **Enrutamiento basado en ruta de acceso**, seleccione **Agregar varios destinos para crear una regla basada en ruta de acceso**. Creará dos reglas. Haga clic en **Agregar** después de la primera regla y agregue la segunda regla.
+1. En la sección **Enrutamiento basado en ruta de acceso**, seleccione **Agregar varios destinos para crear una regla basada en ruta de acceso**. Creará dos reglas. Haga clic en **Agregar** después de la primera regla y agregue la segunda regla. 
 
     **Regla: enrutamiento al back-end de imágenes**
 
@@ -291,7 +291,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Configuración de back-end | **az104-http** |
     | Destino de back-end | `az104-videobe` |
 
-1. Seleccione **Agregar** dos veces y, después, ** Tags >** (Siguiente: Etiquetas). No es necesario realizar ningún cambio.
+1. Asegúrese de **Guardar** y comprobar los cambios y, a continuación, seleccione **Siguiente: Tags >** (Siguiente: Etiquetas). No es necesario realizar ningún cambio.
 
 1. Seleccione **Siguiente: Revisar y crear** y después en **Crear**.
 
