@@ -10,13 +10,13 @@ lab:
 
 En este laboratorio, aprenderá a automatizar las implementaciones de recursos. Obtenga información sobre las plantillas de Azure Resource Manager y las plantillas de Bicep. Obtendrá información sobre las distintas formas de implementar las plantillas. 
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos con **Este de EE. UU.** 
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.** 
 
 ## Tiempo estimado: 50 minutos
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que puede resultar útil para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure. 
+Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure. 
 
 + [Administración de recursos de Azure mediante plantillas de Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205) Revise, cree e implemente discos administrados con una plantilla.
   
@@ -146,7 +146,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
     | Configuración | Valores |
     |  -- | -- |
     | Grupo de recursos | **az104-rg3** |
-    | Cuenta de almacenamiento (Crear nueva) | `sacloudshell` (debe ser único globalmente, entre 3 y 24 caracteres de longitud y usar números y solo letras minúsculas) |
+    | Cuenta de almacenamiento (Crear nueva) | * debe ser único globalmente, entre 3 y 24 caracteres de longitud y usar números y solo letras minúsculas* |
     | Recurso compartido de archivos (Crear nuevo) | `fs-cloudshell` |
 
 1. Cuando haya terminado, seleccione **Crear almacenamiento**. Solo tiene que hacerlo la primera vez que use Cloud Shell. Tardará un par de minutos en aprovisionar el almacenamiento.
@@ -247,11 +247,11 @@ En esta tarea, usará un archivo de Bicep para implementar un disco administrado
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
   
 ## Puntos clave
 

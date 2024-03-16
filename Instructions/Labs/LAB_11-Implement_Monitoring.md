@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio, obtendrá información sobre Azure Monitor. Aprenderá a crear alertas y a enviarlas a cualquier grupo de acciones. Desencadenará y probará la alerta y comprobará el registro de actividad.  
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características del laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
 ## Tiempo estimado: 40 minutos
 
@@ -20,7 +20,7 @@ Su organización ha migrado su infraestructura a Azure. Es importante notificar 
 
 ## Simulación interactiva de laboratorio
 
-Hay una simulación de laboratorio interactiva que puede resultar útil para este tema. La simulación permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
+Hay una simulación de laboratorio interactiva que puede resultar útil para este tema. La simulación permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
 
 + [Implementar la supervisión.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017) Cree un área de trabajo de Log Analytics y soluciones de Azure Automation. Examine la configuración de la supervisión y diagnóstico de las máquinas virtuales. Examine de la funcionalidad de Azure Monitor y Log Analytics. 
 
@@ -41,7 +41,7 @@ Hay una simulación de laboratorio interactiva que puede resultar útil para est
 
 En esta tarea, implementará una máquina virtual que se usará para probar escenarios de supervisión.
 
-1. Si fuera necesario, descargue los archivos de laboratorio **\\Allfiles\\Lab11\\az104-11-vm-template.json** en el equipo.
+1. Descargue los archivos de laboratorio **\\Allfiles\\Lab11\\az104-11-vm-template.json** en el equipo.
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
@@ -243,7 +243,7 @@ En esta tarea, usará Azure Monitor para consultar los datos capturados de la m�
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estaré seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
@@ -251,7 +251,7 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 
 ## Puntos clave
 
-Enhorabuena, ha completado el laboratorio. Estas son las principales conclusiones del laboratorio. 
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
 
 + Las alertas le ayudan a detectar y solucionar problemas antes de que los usuarios observen que puede haber un problema con la infraestructura o la aplicación.
 + Puede alertar sobre cualquier métrica o fuente de datos de registro en la plataforma de datos de Azure Monitor.
