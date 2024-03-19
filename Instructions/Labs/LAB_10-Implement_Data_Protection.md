@@ -20,7 +20,7 @@ Su organización está evaluando cómo realizar copias de seguridad y restaurar 
 
 ## Simulación interactiva de laboratorio
 
-Hay una simulación de laboratorio interactiva que puede resultar útil para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
+Hay una simulación de laboratorio interactiva que puede resultar útil para este tema. La simulación permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
 
 + **[Copia de seguridad de máquinas virtuales y archivos locales.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**. Cree un almacén de Recovery Services e implemente una copia de seguridad de máquina virtual de Azure. Implemente la copia de seguridad local de carpetas y archivos mediante el agente de Microsoft Azure Recovery Services. Las copias de seguridad locales están fuera del ámbito de este laboratorio, pero puede resultar útil ver esos pasos. 
 
@@ -69,10 +69,10 @@ En esta tarea, usará una plantilla para implementar una máquina virtual. La m�
     | Configuración       | Valor         | 
     | ---           | ---           |
     | Subscription  | Su suscripción de Azure |
-    | Resource group| `az104-rg-region1` (Si es necesario, seleccione **Crear nuevo**)
+    | Resource group| `az104-rg-region1` (si fuera necesario, seleccione **Crear nuevo**)
     | Region        | **Este de EE. UU.**   |
     | Nombre de usuario      | **localadmin**   |
-    | Contraseña      | Proporcionar una contraseña compleja |
+    | Contraseña      | Especifique una contraseña compleja |
 
 1. Seleccione **Revisar y crear** y, a continuación, seleccione **Crear**.
 
@@ -150,7 +150,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
     | Frecuencia | **A diario** |
     | Time | **12:00 a. m.** |
     | Zona horaria | Nombre de la zona horaria local |
-    | Conservar las instantáneas de recuperación instantánea durante | **12** días |
+    | Conservar las instantáneas de recuperación instantánea durante | **2** días |
 
     ![Captura de pantalla de la página de directiva de copia de seguridad.](../media/az104-lab10-backup-policy.png)
 
@@ -278,11 +278,11 @@ En esta tarea, implementará una cuenta de almacenamiento de Azure. A continuaci
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos del laboratorio consiste en suprimir el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
 
 
 ## Puntos clave
