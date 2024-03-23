@@ -179,9 +179,9 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
 1. En Azure Portal, busque `Virtual networks` y selecciónelo.
 
-1. En la hoja **Redes virtuales**, en la lista de redes virtuales, haga clic en **az104-vnet1**.
+1. En la hoja **Redes virtuales**, en la lista de redes virtuales, haga clic en **az104-06-vnet1**.
 
-1. En la hoja de la red virtual **az104-vnet1**, en la sección **Configuración**, haga clic en **Subredes** y luego en **+ Subred**.
+1. En la hoja de la red virtual **az104-06-vnet1**, en la sección **Configuración**, haga clic en **Subredes** y luego en **+ Subred**.
 
 1. Agregue una subred con las siguientes opciones (deje las demás con los valores predeterminados).
 
@@ -207,7 +207,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Nivel | **Standard V2** |
     | Habilitación del escalado automático | **No** |
     | Recuento mínimo de instancias | `2` |
-    | Zona de disponibilidad | **None** |
+    | Zona de disponibilidad | **Zona 1** |
     | HTTP2 | **Deshabilitada** |
     | Virtual network | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
@@ -271,7 +271,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
    >**Nota:** Dedique un minuto a leer la información sobre la **afinidad basada en cookies** y el **drenaje de conexiones**.
 
-1. En la sección **Enrutamiento basado en ruta de acceso**, seleccione **Agregar varios destinos para crear una regla basada en ruta de acceso**. Creará dos reglas. Haga clic en **Agregar** después de la primera regla y agregue la segunda regla. 
+1. En la sección **Enrutamiento basado en ruta de acceso**, seleccione **Agregar varios destinos para crear una regla basada en ruta de acceso**. Creará dos reglas. Haga clic en **Agregar** después de la primera regla y **Agregar** después la segunda regla. 
 
     **Regla: enrutamiento al back-end de imágenes**
 

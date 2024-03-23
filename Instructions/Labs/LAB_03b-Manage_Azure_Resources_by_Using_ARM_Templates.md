@@ -92,7 +92,7 @@ En esta tarea, usará la plantilla descargada para implementar un nuevo disco ad
 1. En el panel del editor, realice estos cambios.
 
     + Cambie **disks_az104_disk1_name** a `disk_name` (dos lugares para cambiar)
-    + Cambie **az104_disk1** a `az102_disk2` (un lugar para cambiar)
+    + Cambie **az104-disk1** a `az104-disk2` (un lugar para cambiar)
 
 1. Observe que se trata de un disco **estándar**. La ubicación es **eastus**. El tamaño del disco es de **32 GB**.
 
