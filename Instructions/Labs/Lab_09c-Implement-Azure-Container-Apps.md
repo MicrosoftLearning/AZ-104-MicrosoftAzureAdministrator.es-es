@@ -22,14 +22,14 @@ Su organización tiene una aplicación web que se ejecuta en una máquina virtua
 
 No hay simulaciones de laboratorio interactivas para este tema. 
 
+## Diagrama de la arquitectura
+
+![Diagrama de las tareas.](../media/az104-lab09b-aca-architecture.png)
+
 ## Aptitudes de trabajo
 
 - Tarea 1: Cree y configure una instancia de Azure Container Apps y de su entorno.
 - Tarea 2: Pruebe y compruebe la implementación de la instancia de Azure Container Apps.
-
-## Diagrama de la arquitectura
-
-![Diagrama de las tareas.](../media/az104-lab09b-aca-architecture.png)
 
 ## Tarea 1: Cree y configure una instancia de Azure Container Apps y de su entorno
 
@@ -49,7 +49,7 @@ Azure Container Apps lleva el concepto de clúster de Kubernetes administrado un
     | Region    | **Este de EE. UU** (o cualquier región disponible que tenga cerca) |
     | Entorno de Container Apps | Deje el valor predeterminado |
 
-1. En la pestaña **Contenedor**, asegúrese de que la opción **Usar imagen de inicio rápido** está habilitada y de que la imagen del inicio rápido está establecida en **Contenedor sencillo de Hola mundo**.
+1. En la pestaña **Contenedor**, asegúrese de que la opción **Usar imagen de inicio rápido** está habilitada y de que la imagen del inicio rápido está establecida en **Contenedor Hola mundo simple**.
 
 1. Seleccione **Revisar y crear** y, después, **Crear**.
 
@@ -69,9 +69,9 @@ De forma predeterminada, la instancia de Azure Container Apps que cree va a acep
    
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. Así tendrá la certeza de que los recursos están libres y de que se minimiza el costo. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
@@ -79,7 +79,7 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 
 ## Puntos clave
 
-Enhorabuena, ha completado el laboratorio. Estas son las principales conclusiones del laboratorio. 
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
 
 + Azure Container Apps (ACA) es una plataforma sin servidor que permite mantener menos infraestructura y ahorrar costos al ejecutar aplicaciones contenedorizadas.
 + Container Apps proporciona configuración del servidor, orquestación de contenedores y detalles de la implementación. 
