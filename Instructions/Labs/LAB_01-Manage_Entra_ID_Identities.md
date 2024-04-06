@@ -10,6 +10,9 @@ lab:
 
 Este es el primero de una serie de laboratorios para administradores de Azure. En este laboratorio, obtendrá información sobre usuarios y grupos. Los usuarios y grupos son los bloques de creación básicos de una solución de identidad. 
 
+Este laboratorio requiere una suscripción a Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+
+
 ## Tiempo estimado: 30 minutos
 
 ## Escenario del laboratorio
@@ -18,7 +21,7 @@ Su organización está creando un nuevo entorno de laboratorio para pruebas de p
 
 ## Simulación interactiva de laboratorio
 
-Este laboratorio usa una simulación de laboratorio interactiva. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
+Este laboratorio usa una simulación de laboratorio interactiva. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
 
 >**Nota:** Esta simulación se está actualizando. Microsoft Entra ID es el nuevo nombre de Azure Active Directory (Azure AD). 
 
@@ -135,11 +138,11 @@ En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir 
    
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
   
 ## Puntos clave
 
