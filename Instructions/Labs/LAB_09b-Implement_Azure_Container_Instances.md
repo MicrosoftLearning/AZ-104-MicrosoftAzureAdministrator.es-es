@@ -10,30 +10,29 @@ lab:
 
 En este laboratorio, aprenderá a implementar y utilizar Azure Container Instances.
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero los pasos están escritos utilizando **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
 ## Tiempo estimado: 15 minutos
 
 ## Escenario del laboratorio
 
-Su organización tiene una aplicación web que se ejecuta en una máquina virtual en el centro de datos local. La organización quiere mover todas las aplicaciones a la nube, pero no quiere tener un gran número de servidores para administrar. Decide evaluar Azure Container Instances y Docker. 
+Su organización tiene una aplicación web que se ejecuta en una máquina virtual del centro de datos local. La organización quiere mover todas las aplicaciones a la nube, pero no quiere tener un gran número de servidores para administrar. Decide evaluar Azure Container Instances y Docker. 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que puede resultar útil para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure.
+Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure.
 
 + [Implementación de Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Cree, configure e implemente un contenedor de Docker con Azure Container Instances.
   
 + [Implementar Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Implementación de una imagen de Docker por medio de Azure Container Instances. 
 
+## Diagrama de la arquitectura
+
+![Diagrama de las tareas.](../media/az104-lab09b-aci-architecture.png)
+
 ## Aptitudes de trabajo
 
 - Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker.
 - Tarea 2: Pruebe y compruebe la implementación de una instancia de Azure Container Instance.
-
-
-## Diagrama de la arquitectura
-
-![Diagrama de las tareas.](../media/az104-lab09b-aci-architecture.png)
 
 ## Tarea 1: Implementación de Azure Container Instances mediante una imagen de Docker
 
@@ -90,16 +89,16 @@ En esta tarea, revise la implementación de la instancia de contenedor. De forma
    
 ## Limpieza de los recursos
 
-Si trabaja con **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el costo. La manera más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos**y haga clic en **Eliminar**.
-+ Utilizando Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Utilizando la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
 
 
 ## Puntos clave
 
-Felicidades por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
 
 + Azure Container Instances (ACI) es un servicio que permite implementar contenedores en la nube pública de Microsoft Azure.
 + ACI no requiere que aprovisione ni administre ninguna infraestructura subyacente.
