@@ -115,7 +115,7 @@ En esta tarea, creará la red virtual ManufacturingVnet y las subredes asociadas
 
 1. Reemplace todas las apariciones de **CoreServicesVnet** por `ManufacturingVnet`. 
 
-1. Reemplace todas las apariciones de **10.20.0.0/16** por `10.30.0.0/16`. 
+1. Reemplace todas las apariciones de **10.20.0.0** por `10.30.0.0`. 
 
 ### Realización de cambios en las subredes de ManufacturingVnet
 
