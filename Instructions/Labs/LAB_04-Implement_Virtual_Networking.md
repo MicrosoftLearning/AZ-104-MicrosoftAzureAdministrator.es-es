@@ -71,8 +71,7 @@ La organización planea una gran cantidad de crecimiento para los servicios prin
 
     |  **Opción**         | **Valor**            |
     | ------------------ | -------------------- |
-
-    | Espacio de direcciones IPv4 | `10.20.0.0/16` (separe las entradas) |
+    | Espacio de direcciones IPv4 | `10.20.0.0/16` (separar las entradas)    |
 
 1. Seleccione **+ Agregar una subred**. Complete la información de nombre y dirección de cada subred. Asegúrese de seleccionar **Agregar** para cada nueva subred. 
 
