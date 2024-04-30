@@ -42,7 +42,7 @@ En esta tarea, usará una plantilla para implementar una red virtual, un grupo d
 
 1. Busque y seleccione `Deploy a custom template`.
 
-1. En la página de implementación personalizada, seleccione **Crear plantilla propia en el editor**.
+1. En la página de implementación personalizada, seleccione **Crear su propia plantilla en el editor**.
 
 1. En la página de edición de la plantilla, seleccione **Cargar archivo**.
 
@@ -136,7 +136,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
 1. En la hoja **Configuración**, seleccione **Reglas de equilibrio de carga**.
 
-1. Seleccione **Agregar una regla de equilibrio de carga**. Agregue una regla de equilibrio de carga con las opciones de configuración siguientes (deje las demás con los valores predeterminados).  Cuando configure la regla, use los iconos informativos para obtener información sobre cada configuración. Cuando termine, haga clic en **Guardar**.
+1. Seleccione **+Agregar**. Agregue una regla de equilibrio de carga con las opciones de configuración siguientes (deje las demás con los valores predeterminados).  Cuando configure la regla, use los iconos informativos para obtener información sobre cada configuración. Cuando termine, haga clic en **Guardar**.
 
     | Configuración | Value |
     | --- | --- |
@@ -194,7 +194,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
     > **Nota**: Azure Application Gateway usará esta subred. Application Gateway requiere una subred dedicada de tamaño /27 o mayor.
 
-1. En Azure Portal, busque `Application Gateways` y selecciónelo y, en la hoja **Puertas de enlace de aplicación** y haga clic en **+ Crear**.
+1. En Azure Portal, busque `Application gateways` y selecciónelo y, en la hoja **Puertas de enlace de aplicación** y haga clic en **+ Crear**.
 
 1. En la pestaña **Aspectos básicos**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
@@ -250,14 +250,14 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Adición de un grupo de back-end sin destinos | **No** |
     | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
 
-1. Seleccione **Siguiente: Configuración** y, luego, **Agregar reglas de enrutamiento**. Complete la información.
+1. Seleccione **Siguiente: Configuración >** y luego, **Agregar reglas de enrutamiento**. Complete la información.
 
     | Configuración | Value |
     | --- | --- |
     | Nombre de la regla | `az104-gwrule` |
     | Prioridad | `10` |
     | Nombre del cliente de escucha | `az104-listener` |
-    | Dirección IP de front-end | **Public** |
+    | Dirección IP de front-end | **Public IPv4** |
     | Protocolo | **HTTP** |
     | Port | `80` |
     | Tipo de cliente de escucha | **Basic** |

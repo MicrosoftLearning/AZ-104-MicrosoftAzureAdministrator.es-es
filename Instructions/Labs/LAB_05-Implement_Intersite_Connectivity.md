@@ -77,7 +77,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
     | Configuración | Value | 
     | --- | --- |
-    | Nombre | `CoreServicesVNet` (Crear nuevo) |
+    | Nombre | `CoreServicesVnet` (Crear nuevo) |
     | Intervalo de direcciones | `10.0.0.0/16`  |
     | Nombre de subred | `Core` | 
     | Intervalo de direcciones de subred | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
     | Configuración | Value | 
     | --- | --- |
-    | Nombre | `ManufacturingVNet` |
+    | Nombre | `ManufacturingVnet` |
     | Intervalo de direcciones | `172.16.0.0/16`  |
     | Nombre de subred | `Manufacturing` |
     | Intervalo de direcciones de subred | `172.16.0.0/24` |
@@ -180,7 +180,7 @@ En esta tarea, creará un emparejamiento de red virtual para habilitar las comun
 | Permitir que CoreServicesVNet acceda a la red virtual emparejada            | seleccionado (valor predeterminado)                       |
 | Permitir que CoreServicesVNet reciba tráfico reenviado de la red virtual emparejada | seleccionados                       |
 | Permitir que la puerta de enlace en CoreServicesVNet reenvíe el tráfico a la red virtual emparejada | No seleccionado (valor predeterminado) |
-| Habilite CoreServicesVNet para usar la puerta de enlace remota de las redes virtuales emparejadas       | No seleccionado (valor predeterminado)                        |
+| Habilite CoreServicesVnt para usar la puerta de enlace remota de las redes virtuales emparejadas       | No seleccionado (valor predeterminado)                        |
 | **Red virtual remota**                                   |                                       |
 | Nombre del vínculo de emparejamiento                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Modelo de implementación de red virtual              | **Resource Manager**                      |
@@ -188,9 +188,9 @@ En esta tarea, creará un emparejamiento de red virtual para habilitar las comun
 | Subscription                                  | *su suscripción*    |
 | Virtual network                               | **ManufacturingVnet**                     |
 | Permitir que ManufacturingVNet acceda a CoreServicesVNet  | seleccionado (valor predeterminado)                       |
-| Permitir que ManufacturingVNet reciba tráfico reenviado desde CoreServicesVNet | seleccionados                        |
+| Permitir que ManufacturingVnet reciba tráfico reenviado desde CoreServicesVnet | seleccionados                        |
 | Permitir que la puerta de enlace en CoreServicesVNet reenvíe el tráfico a la red virtual emparejada | No seleccionado (valor predeterminado) |
-| Habilitación de ManufacturingVNet para usar la puerta de enlace remota de CoreServicesVNet       | No seleccionado (valor predeterminado)                        |
+| Habilitar ManufacturingVNet para usar la puerta de enlace remota de CoreServicesVNet       | No seleccionado (valor predeterminado)                        |
 
 1. Revise la configuración y seleccione **Agregar**.
 
