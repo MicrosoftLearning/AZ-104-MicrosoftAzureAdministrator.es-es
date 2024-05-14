@@ -420,6 +420,18 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ Proporcione los pasos y los comandos de la CLI de Azure para crear una máquina virtual Linux. 
++ Revise las formas en que puede escalar máquinas virtuales y mejorar el rendimiento.
++ Describir las directivas de administración del ciclo de vida de Azure Storage y cómo pueden optimizar los costos.
+
+## Más información con el aprendizaje autodirigido
+
++ [Crear una máquina virtual Windows en Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Crear una máquina virtual de Windows mediante Azure Portal. Conectarse a una máquina virtual Windows mediante Escritorio remoto
++ [Compilar una aplicación escalable con conjuntos de escalado de máquinas virtuales](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que la aplicación ajuste automáticamente los cambios en la carga, a la vez que minimiza los costos con Virtual Machine Scale Sets.
++ [Conéctese a máquinas virtuales desde Azure Portal con Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implemente Azure Bastion para conectarse de forma segura a máquinas virtuales de Azure directamente en Azure Portal para reemplazar eficazmente una solución de jumpbox existente, supervise las sesiones remotas mediante registros de diagnóstico y administre sesiones remotas mediante la desconexión de una sesión de usuario.
 
 ## Puntos clave
 
@@ -431,10 +443,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Los conjuntos de escalado de máquinas virtuales de Azure permiten crear y administrar un grupo de máquinas virtuales con equilibrio de carga.
 + Las máquinas virtuales de un conjunto de escalado de máquinas virtuales se crean a partir de la misma imagen y configuración.
 + En un conjunto de escalado de máquinas virtuales, el número de instancias de máquina virtual puede aumentar o disminuir automáticamente según la demanda, o en respuesta a una programación definida.
-
-## Más información con el aprendizaje autodirigido
-
-+ [Crear una máquina virtual Windows en Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Crear una máquina virtual de Windows mediante Azure Portal. Conectarse a una máquina virtual Windows mediante Escritorio remoto
-+ [Compilar una aplicación escalable con conjuntos de escalado de máquinas virtuales](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que la aplicación ajuste automáticamente los cambios en la carga, a la vez que minimiza los costos con Virtual Machine Scale Sets.
-+ [Conéctese a máquinas virtuales desde Azure Portal con Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implemente Azure Bastion para conectarse de forma segura a máquinas virtuales de Azure directamente en Azure Portal para reemplazar eficazmente una solución de jumpbox existente, supervise las sesiones remotas mediante registros de diagnóstico y administre sesiones remotas mediante la desconexión de una sesión de usuario.
-  

@@ -95,6 +95,15 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ Resumir los pasos para crear y configurar una instancia de contenedor Azure.
++ ¿Cuáles son las formas en que puedo ejecutar un contenedor sin servidor en Azure?
+
+## Más información con el aprendizaje autodirigido
+
++ [Ejecución de imágenes de contenedor en Azure Container Instances](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Descubra cómo Azure Container Instances puede ayudarle a implementar rápidamente contenedores, a establecer variables de entorno y a especificar directivas de reinicio de contenedores.
 
 ## Puntos clave
 
@@ -104,9 +113,5 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + ACI no requiere que aprovisione ni administre ninguna infraestructura subyacente.
 + ACI admite contenedores de Linux y contenedores de Windows.
 + Las cargas de trabajo en ACI suelen iniciarse y detenerse por algún tipo de proceso o desencadenador y suelen ser de corta duración. 
-
-## Más información con el aprendizaje autodirigido
-
-+ [Ejecución de imágenes de contenedor en Azure Container Instances](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Descubra cómo Azure Container Instances puede ayudarle a implementar rápidamente contenedores, a establecer variables de entorno y a especificar directivas de reinicio de contenedores.
 
     

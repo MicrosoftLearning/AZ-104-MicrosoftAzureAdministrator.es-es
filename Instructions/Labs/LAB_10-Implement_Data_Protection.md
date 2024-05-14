@@ -284,6 +284,18 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ ¿Qué productos admite Azure Backup?
++ Resuma los pasos para realizar copias de seguridad y restaurar una máquina virtual de Azure con Azure Backup.
++ Cómo puedo usar Azure PowerShell o la CLI para comprobar el estado de un trabajo de Azure Backup.
++ Proporcione al menos cinco procedimientos recomendados para configurar copias de seguridad de máquinas virtuales de Azure.  
+
+## Más información con el aprendizaje autodirigido
+
++ [Proteja sus máquinas virtuales con Azure Backup](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Use Azure Backup para ayudar a proteger servidores locales, máquinas virtuales, SQL Server, recursos compartidos de archivos de Azure y otras cargas de trabajo.
++ [Protección de la infraestructura de Azure con Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Proporcione recuperación ante desastres para la infraestructura de Azure mediante la personalización de la replicación, la conmutación por error y la conmutación por recuperación de máquinas virtuales de Azure con Azure Site Recovery.
 
 ## Puntos clave
 
@@ -295,8 +307,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Azure Site Recovery es una solución de recuperación ante desastres que proporciona protección para las máquinas virtuales y las aplicaciones.
 + Azure Site Recovery replica las cargas de trabajo en un sitio secundario y, en caso de interrupción o desastre, puede conmutar por error al sitio secundario y reanudar las operaciones con un tiempo de inactividad mínimo.
 + Un almacén de Recovery Services almacena los datos de copia de seguridad y minimiza la sobrecarga de administración.
-
-## Más información con el aprendizaje autodirigido
-
-+ [Proteja sus máquinas virtuales con Azure Backup](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Use Azure Backup para ayudar a proteger servidores locales, máquinas virtuales, SQL Server, recursos compartidos de archivos de Azure y otras cargas de trabajo.
-+ [Protección de la infraestructura de Azure con Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Proporcione recuperación ante desastres para la infraestructura de Azure mediante la personalización de la replicación, la conmutación por error y la conmutación por recuperación de máquinas virtuales de Azure con Azure Site Recovery.

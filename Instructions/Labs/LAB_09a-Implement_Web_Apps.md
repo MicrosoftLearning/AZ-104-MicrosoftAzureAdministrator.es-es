@@ -11,7 +11,7 @@ lab:
 
 En este laboratorio, obtendrá información sobre las aplicaciones web de Azure. Aprenderá a configurar una aplicación web para mostrar una aplicación Hola mundo en un repositorio externo de GitHub. Aprenderá a crear un espacio de ensayo y a intercambiarlo con el espacio de producción. También obtendrá información sobre el escalado automático para dar cabida a los cambios de demanda.
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para Este de EE. UU.
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para Este de EE. UU.
 
 ## Tiempo estimado: 20 minutos
 
@@ -21,7 +21,7 @@ Su organización está interesada en las aplicaciones web de Azure para hospedar
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
+Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
 
 + [Creación de una aplicación web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Cree una aplicación web que ejecute un contenedor Docker.
     
@@ -171,13 +171,22 @@ En esta tarea, configurará el escalado automático de la aplicación web de Azu
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos del laboratorio consiste en suprimir el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
++ Resumir los pasos para crear y configurar una aplicación web de Azure.
++ ¿Cuáles son las formas en que puedo escalar una aplicación web de Azure?
+
+## Más información con el aprendizaje autodirigido
+
++ [Ensayo de la implementación de una aplicación web para pruebas y reversión mediante ranuras de implementación de App Service](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Use las ranuras de implementación para simplificar la implementación y revertir una aplicación web en Azure App Service.
++ [Escale una aplicación web de App Service para satisfacer la demanda de forma eficaz con el escalado vertical y horizontal de App Service](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Ante períodos de mayor actividad, aumente de manera incremental los recursos disponibles y, después, cuando disminuya la actividad, redúzcalos para reducir costos.
 
 ## Puntos clave
 
@@ -188,8 +197,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Las ranuras de implementación permiten crear entornos independientes para implementar y probar la aplicación web.
 + Puede escalar de forma manual o automática una aplicación web para controlar la demanda adicional.
 + Hay disponible una amplia variedad de herramientas de diagnóstico y pruebas. 
-
-## Más información con el aprendizaje autodirigido
-
-+ [Ensayo de la implementación de una aplicación web para pruebas y reversión mediante ranuras de implementación de App Service](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Use las ranuras de implementación para simplificar la implementación y revertir una aplicación web en Azure App Service.
-+ [Escale una aplicación web de App Service para satisfacer la demanda de forma eficaz con el escalado vertical y horizontal de App Service](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Ante períodos de mayor actividad, aumente de manera incremental los recursos disponibles y, después, cuando disminuya la actividad, redúzcalos para reducir costos.
