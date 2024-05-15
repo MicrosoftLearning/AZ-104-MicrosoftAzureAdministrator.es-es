@@ -238,6 +238,17 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuáles son los comandos de Azure PowerShell y la CLI para agregar y eliminar bloqueos de recursos en un grupo de recursos?
++ Se han tabulado las diferencias entre Azure Policy y Azure RBAC e incluido ejemplos.
++ ¿Cuáles son los pasos para aplicar la directiva de Azure y corregir los recursos que no son compatibles?
++ ¿Cómo puedo obtener un informe de los recursos de Azure con etiquetas específicas?
+
+## Más información con el aprendizaje autodirigido
+
++ [Diseño de una estrategia de gobernanza empresarial](https://learn.microsoft.com/training/modules/enterprise-governance/). Use RBAC y Azure Policy para limitar el acceso a las soluciones de Azure y determinar qué método es adecuado para los objetivos de seguridad.
+
 ## Puntos clave
 
 Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
@@ -246,10 +257,5 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Azure Policy establece las convenciones de los recursos. Las definiciones de directivas describen las condiciones de cumplimiento de los recursos y qué sucederá si se cumple una condición. Una condición compara un campo o un valor de propiedad de recurso con un valor requerido. Hay muchas definiciones de directiva integradas y puede personalizar las directivas. 
 + La característica de tarea de corrección de Azure Policy se usa para incorporar recursos al cumplimiento en función de una definición y asignación. Los recursos que no son compatibles con una asignación de definición modify o deployIfNotExist, se pueden incorporar al cumplimiento mediante una tarea de corrección.
 + Puede configurar un bloqueo de recursos en una suscripción, un grupo de recursos o un recurso. El bloqueo puede proteger un recurso de eliminaciones y modificaciones accidentales del usuario. El bloqueo invalida los permisos que el usuario pueda tener.
-+ Azure Policy es un procedimiento de seguridad previo a la implementación. RBAC y los bloqueos de recursos son procedimientos de seguridad posteriores a la implementación. 
-
-## Más información con el aprendizaje autodirigido
-
-+ [Diseño de una estrategia de gobernanza empresarial](https://learn.microsoft.com/training/modules/enterprise-governance/). Use RBAC y Azure Policy para limitar el acceso a las soluciones de Azure y determinar qué método es adecuado para los objetivos de seguridad.
-  
++ Azure Policy es un procedimiento de seguridad previo a la implementación. RBAC y los bloqueos de recursos son procedimientos de seguridad posteriores a la implementación.
 
