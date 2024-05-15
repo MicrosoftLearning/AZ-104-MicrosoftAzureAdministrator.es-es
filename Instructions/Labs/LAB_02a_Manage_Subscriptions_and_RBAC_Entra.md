@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio, obtendrá información sobre el control de acceso basado en roles. Obtendrá información sobre cómo usar los permisos y ámbitos para controlar qué acciones pueden realizar las identidades y cuáles no. También aprenderá a facilitar la administración de suscripciones mediante grupos de administración. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
 ## Tiempo estimado: 30 minutos
 
@@ -28,7 +28,7 @@ Para simplificar la administración de recursos de Azure en su organización, se
 
 ## Simulaciones interactivas de laboratorio
 
-Existen algunas simulaciones de laboratorio interactivas que pueden resultarle útiles para este tema. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+Existen algunas simulaciones de laboratorio interactivas que pueden resultarle útiles para este tema. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
 
 + [Administrar acceso con RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Asigne un rol integrado a un usuario y supervise los registros de actividad. 
 
@@ -151,12 +151,25 @@ En esta tarea, verá el registro de actividades para determinar si alguien ha cr
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
   
+## Ampliar el aprendizaje con Copilot
+
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ Cree dos tablas que resalte comandos importantes de PowerShell y la CLI para obtener información sobre las suscripciones de la organización en Azure y explicar cada comando en la columna “Explicación”. 
++ ¿Cuál es el formato del archivo JSON RBAC de Azure?
++ ¿Cuáles son los pasos básicos para crear un rol RBAC de Azure personalizado?
++ ¿Cuál es la diferencia entre los roles RBAC de Azure y los roles de Microsoft Entra ID?
+
+## Más información con el aprendizaje autodirigido
+
++ [Protección de los recursos de Azure con el control de acceso basado en roles de Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Uso de RBAC de Azure para administrar el acceso a los recursos en Azure.
++ [Creación de roles personalizados para los recursos de Azure con el control de acceso basado en roles (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenda la estructura de las definiciones de roles para el control de acceso. Identifique las propiedades de roles que se van a usar que definen los permisos de roles personalizados. Cree un rol personalizado de Azure y asígnelo a un usuario.
+
 ## Puntos clave
 
 Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
@@ -166,13 +179,7 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Azure tiene muchos roles integrados. Puede asignar estos roles para controlar el acceso a los recursos.
 + Puede crear nuevos roles o personalizar los roles existentes.
 + Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
-+ Puede usar el registro de actividad para supervisar las asignaciones de roles. 
-
-## Más información con el aprendizaje autodirigido
-
-+ [Protección de los recursos de Azure con el control de acceso basado en roles de Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Uso de RBAC de Azure para administrar el acceso a los recursos en Azure.
-+ [Creación de roles personalizados para los recursos de Azure con el control de acceso basado en roles (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenda la estructura de las definiciones de roles para el control de acceso. Identifique las propiedades de roles que se van a usar que definen los permisos de roles personalizados. Cree un rol personalizado de Azure y asígnelo a un usuario.
-
++ Puede usar el registro de actividad para supervisar las asignaciones de roles.
 
 
 

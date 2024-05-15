@@ -287,6 +287,18 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ ¿Cómo puedo usar los comandos de Azure PowerShell o la CLI de Azure para agregar un emparejamiento de red virtual entre vnet1 y vnet2?
++ Cree una tabla que resalte varias herramientas de supervisión de Azure y de terceros compatibles con Azure. Resalte cuándo usar cada herramienta. 
++ ¿Cuándo crearía una ruta de red personalizada en Azure?
+
+## Más información con el aprendizaje autodirigido
+
++ [Distribución de los servicios a través de redes virtuales de Azure e integración de estos mediante emparejamiento de red virtual](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Use el emparejamiento de redes virtuales para habilitar la comunicación entre redes virtuales de forma segura y con una complejidad mínima.
++ [Administrar y controlar el flujo de tráfico en la implementación de Azure con rutas](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Aprenda a controlar el tráfico de red virtual de Azure implementando rutas personalizadas.
+
 
 ## Puntos clave
 
@@ -298,8 +310,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + El tráfico entre las máquinas virtuales de la red virtual emparejada usa la infraestructura de la red troncal de Microsoft.
 + Las rutas definidas por el sistema se crean automáticamente para cada subred de una red virtual. Las rutas definidas por el usuario invalidan o agregan a las rutas del sistema predeterminadas. 
 + Azure Network Watcher proporciona un conjunto de herramientas para supervisar, diagnosticar y ver métricas y registros de los recursos de IaaS de Azure.
-
-## Más información con el aprendizaje autodirigido
-
-+ [Distribución de los servicios a través de redes virtuales de Azure e integración de estos mediante emparejamiento de red virtual](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Use el emparejamiento de redes virtuales para habilitar la comunicación entre redes virtuales de forma segura y con una complejidad mínima.
-+ [Administrar y controlar el flujo de tráfico en la implementación de Azure con rutas](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Aprenda a controlar el tráfico de red virtual de Azure implementando rutas personalizadas.
