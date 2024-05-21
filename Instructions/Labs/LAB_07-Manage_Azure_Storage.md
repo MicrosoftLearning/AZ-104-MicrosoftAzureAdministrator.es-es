@@ -60,7 +60,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
 1. En la pestaña **Opciones avanzadas**, use los iconos informativos para obtener más información sobre las opciones. Use los valores predeterminados. 
 
-1. En la pestaña **Redes**, revise las opciones disponibles y seleccione **Deshabilitar el acceso público y usar el acceso privado.**
+1. En la pestaña **Redes**, revise las opciones disponibles y seleccione **Deshabilitar el acceso público y usar el acceso privado**.
 
 1. Revise la pestaña **Protección de datos**. Observe que 7 días es la directiva de retención de eliminación temporal predeterminada. Tenga en cuenta que es posible habilitar el control de versiones de blobs. Acepte los valores predeterminados.
 
@@ -182,7 +182,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure. Usará el e
 
 1. Haga clic en **+ Recurso compartido** y, en la pestaña **Aspectos básicos**, asigne un nombre al recurso compartido de archivos, `share1`. 
 
-1. Observe las opciones de **Nivel**. Mantenga la opción predeterminada **Optimizado para transacciones**.
+1. Observe las opciones de **Nivel de acceso**. Mantenga la opción predeterminada **Optimizado para transacciones**.
    
 1. Vaya a la pestaña **Copia de seguridad** y asegúrese de que la opción **Habilitar copia de seguridad** **no** esté activada. Estamos deshabilitando la copia de seguridad para simplificar la configuración del laboratorio.
 
