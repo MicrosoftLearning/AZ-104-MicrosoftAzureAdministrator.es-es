@@ -345,7 +345,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Use el icono (superior derecho) para iniciar una sesión de **Cloud Shell**. Como alternativa, vaya directamente a `https://shell.azure.com`.
 
-1. Asegúrese de seleccionar **PowerShell**. Si es necesario, use la opción **Mostrar opciones avanzadas** y configure el almacenamiento del shell.
+1. Asegúrese de seleccionar **PowerShell**. Si es necesario, configure el almacenamiento del shell.
 
 1. Ejecute el comando siguiente para crear una máquina virtual. Cuando se le solicite, proporcione un nombre de usuario y una contraseña para la máquina virtual. Mientras espera, consulte la referencia del comando [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) para todos los parámetros asociados a la creación de una máquina virtual.
 
@@ -386,7 +386,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Use el icono (superior derecho) para iniciar una sesión de **Cloud Shell**. Como alternativa, vaya directamente a `https://shell.azure.com`.
 
-1. Asegúrese de seleccionar **Bash**. Si es necesario, use la opción **Mostrar opciones avanzadas** y configure el almacenamiento del shell.
+1. Asegúrese de seleccionar **Bash**. Si es necesario, configure el almacenamiento del shell.
 
 1. Ejecute el comando siguiente para crear una máquina virtual. Cuando se le solicite, proporcione un nombre de usuario y una contraseña para la máquina virtual. Mientras espera, consulte la referencia del comando [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) para todos los parámetros asociados a la creación de una máquina virtual.
 
