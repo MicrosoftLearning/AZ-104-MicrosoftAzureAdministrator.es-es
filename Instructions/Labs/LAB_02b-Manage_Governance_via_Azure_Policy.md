@@ -230,6 +230,8 @@ En esta tarea, configurará y probará un bloqueo de recursos. Los bloqueos impi
 
     ![Captura de pantalla del mensaje de error de eliminación.](../media/az104-lab02b-failuretodelete.png) 
 
+    >**Nota:** Tendrá que quitar el bloqueo si tiene previsto eliminar el grupo de recursos. 
+    
 ## Limpieza de los recursos
 
 Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 

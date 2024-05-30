@@ -212,11 +212,11 @@ En esta tarea, creará y configurará recursos compartidos de Azure. Usará el e
 
 1. Espere a que se implemente la red virtual y seleccione **Ir al recurso**.
 
-1. En la sección **Configuración**, seleccione la hoja **Subredes**.
-    + Seleccione la subred **default**.
-    + En la sección **Puntos de conexión de servicio**, en la lista desplegable **Servicios**, seleccione **Microsoft.Storage**.
-    + No realice ningún cambio.    
-    + Asegúrese de **Guardar** los cambios. 
+1. En la sección **Configuración**, seleccione la hoja **Puntos de conexión de servicio**.
+    + Seleccione **Agregar**. 
+    + En la lista desplegable **Servicios**, seleccione **Microsoft.Storage**.
+    + En la lista desplegable **Subredes**, active la subred **Predeterminada**.
+    + Haga clic en **Agregar** para guardar los cambios.  
 
 1. Vuelva a la cuenta de almacenamiento.
 

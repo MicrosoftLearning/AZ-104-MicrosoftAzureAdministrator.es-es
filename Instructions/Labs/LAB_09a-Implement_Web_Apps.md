@@ -79,7 +79,7 @@ En esta tarea, creará una ranura de implementación de ensayo. Las ranuras de i
 
     >**Nota**: En este punto, la aplicación web tiene una ranura de implementación única con la etiqueta **PRODUCTION**.
 
-1. Haga clic en **+ Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
+1. Haga clic en **Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
     | Configuración | Value |
     | --- | ---|
