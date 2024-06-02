@@ -49,7 +49,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
 
 1. Inicie sesión en Azure Portal: `https://portal.azure.com`.
 
-1. Busque y seleccione `Virtual machines`, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, después, seleccione en la lista desplegable **+ Máquina virtual de Azure**. Observe las otras opciones.
+1. Busque y seleccione `Virtual machines`, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, después, seleccione en la lista desplegable **Máquina virtual de Azure**. Observe las otras opciones.
 
 1. En la pestaña **Aspectos básicos**, en el menú desplegable **Zona de disponibilidad**, coloque una marca de verificación junto a **Zona 2**. Esto debe seleccionar tanto la **Zona 1** como la **Zona 2**.
 
@@ -89,7 +89,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
     | Configuración | Valor |
     | --- | --- |
     | Eliminación de la IP pública y NIC cuando se elimine la VM | **Activada** |
-    | Opciones de equilibrio de carga | **Ninguno** |
+    | Opciones de equilibrio de carga | **None** |
 
 
 1. Haga clic en **Siguiente: Administración >** y especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
@@ -194,7 +194,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
     ![Captura de pantalla de la página Crear VMSS. ](../media/az104-lab08-create-vmss.png)
 
-1. En la pestaña **Spot**, acepte los valores predeterminados y seleccione **Siguiente: Discos >**.
+1. En la pestaña **Máquina virtual de acceso puntual**, acepte los valores predeterminados y seleccione **Siguiente: Discos >**.
 
 1. En la pestaña **Discos**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >**.
 
@@ -283,7 +283,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 ### Regla de escalabilidad horizontal
 
-1. Seleccione **Escalabilidad automática personalizada**. Después, cambie el **Modo de escalado** a **Escala basada en métricas**. Después, seleccione **Agregar regla**.
+1. Seleccione **Escalabilidad automática personalizada**. Después, cambie el **Modo de escalado** a **Escala basada en métricas**. A continuación, seleccione **Agregar una regla**.
 
 1. Vamos a crear una regla que aumente automáticamente el número de instancias de máquina virtual. Esta regla se escala horizontalmente cuando la carga media de la CPU es superior al 70 % durante un periodo de 10 minutos. Cuando se desencadena la regla, aumenta el número de instancias de máquina virtual en un 20 %.
 
