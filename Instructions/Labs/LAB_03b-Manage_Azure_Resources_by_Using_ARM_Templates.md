@@ -139,19 +139,23 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
 
     >**¿Sabía que...?**  Si trabaja principalmente con sistemas Linux, Bash (CLI) le resultará más familiar. Si trabaja principalmente con sistemas Windows, Azure PowerShell le resultará más familiar. 
 
-1. En la pantalla **No tiene almacenamiento montado** seleccione **Mostrar configuración avanzada** y proporcione la información requerida. 
+1. En la pantalla **Introducción** seleccione **Cuenta de almacenamiento de montaje** y, a continuación, **Quiero crear una cuenta de almacenamiento**.  
 
-    >**Nota:** Al trabajar con Cloud Shell, se requiere una cuenta de almacenamiento y un recurso compartido de archivos. 
-
+    >**Nota:** Para este laboratorio se necesita una cuenta de almacenamiento. Proporcione la información necesaria. 
+    
     | Configuración | Valores |
     |  -- | -- |
+    | Subscription | *seleccione la suscripción* |
     | Grupo de recursos | **az104-rg3** |
+    | Region | *seleccione la región* | 
     | Cuenta de almacenamiento (Crear nueva) | * debe ser único globalmente, entre 3 y 24 caracteres de longitud y usar números y solo letras minúsculas* |
     | Recurso compartido de archivos (Crear nuevo) | `fs-cloudshell` |
 
-1. Cuando haya terminado, seleccione **Crear almacenamiento**. Solo tiene que hacerlo la primera vez que use Cloud Shell. Tardará un par de minutos en aprovisionar el almacenamiento.
+1. Cuando haya terminado, seleccione **Siguiente**. Solo tiene que hacerlo la primera vez que use Cloud Shell. Tardará un par de minutos en aprovisionar el almacenamiento.
 
 1. Utilice el icono **Cargar/Descargar archivos** para cargar la plantilla y el archivo de parámetros desde el directorio de descargas. Deberá cargar cada archivo por separado.
+
+   >**Nota:** Si en cualquier momento se le pide que **Cambie a shell de nube clásica**, hágalo. 
 
 1. Compruebe que los archivos están disponibles en el almacenamiento de Cloud Shell. 
 
@@ -252,18 +256,15 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
-  
-## Puntos clave
 
-Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+## Ampliar el aprendizaje con Copilot
 
-+ Las plantillas de Azure Resource Manager le permiten implementar, administrar y supervisar todos los recursos de la solución como grupo, en lugar de controlar estos recursos individualmente.
-+ Una plantilla de Azure Resource Manager es un archivo de notación de objetos JavaScript (JSON) que le permite administrar la infraestructura mediante declaración en lugar de con scripts.
-+ En lugar de pasar parámetros como valores insertados en la plantilla, puede usar un archivo JSON independiente que contenga los valores de parámetro.
-+ Las plantillas de Azure Resource Manager se pueden implementar de varias maneras, como Azure Portal, Azure PowerShell y la CLI.
-+ Bicep es una alternativa a las plantillas de Azure Resource Manager. Bicep usa una sintaxis declarativa para implementar recursos de Azure. 
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
-Bicep brinda sintaxis concisa, seguridad de tipos confiable y compatibilidad con la reutilización de código. Bicep ofrece la mejor experiencia de creación para sus soluciones de infraestructura como código en Azure.
++ ¿Cuál es el formato del archivo de plantilla de Azure Resource Manager? Explicar cada componente con ejemplos. 
++ ¿Cómo se usa una plantilla de Azure Resource Manager existente?
++ Compare y contraste las plantillas de Azure Resource Manager y las plantillas de Azure Bicep. 
+
 
 ## Más información con el aprendizaje autodirigido
 
@@ -272,5 +273,16 @@ Bicep brinda sintaxis concisa, seguridad de tipos confiable y compatibilidad con
 + [Administración de recursos de Azure con Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). En este módulo se explica cómo instalar los módulos necesarios para la administración de servicios en la nube y usar comandos de PowerShell para realizar tareas administrativas sencillas en recursos en la nube, como máquinas virtuales de Azure, suscripciones de Azure y cuentas de almacenamiento de Azure.
 + [Introducción a Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Use Bash para administrar la infraestructura de TI.
 + [Compilación de la primera plantilla de Bicep](https://learn.microsoft.com/training/modules/build-first-bicep-template/). Defina los recursos de Azure dentro de una plantilla de Bicep. Mejore la coherencia y confiabilidad de las implementaciones, reduzca el esfuerzo manual necesario y escale las implementaciones entre entornos. La plantilla será flexible y reutilizable gracias al uso de parámetros, variables, expresiones y módulos.
+
+## Puntos clave
+
+Enhorabuena por completar el laboratorio. Estas son las principales conclusiones de este laboratorio. 
+
++ Las plantillas de Azure Resource Manager le permiten implementar, administrar y supervisar todos los recursos de la solución como grupo, en lugar de controlar estos recursos individualmente.
++ Una plantilla de Azure Resource Manager es un archivo de notación de objetos JavaScript (JSON) que le permite administrar la infraestructura mediante declaración en lugar de con scripts.
++ En lugar de pasar parámetros como valores insertados en la plantilla, puede usar un archivo JSON independiente que contenga los valores de parámetro.
++ Las plantillas de Azure Resource Manager se pueden implementar de varias maneras, como Azure Portal, Azure PowerShell y la CLI.
++ Bicep es una alternativa a las plantillas de Azure Resource Manager. Bicep usa una sintaxis declarativa para implementar recursos de Azure.
++ Bicep brinda sintaxis concisa, seguridad de tipos confiable y compatibilidad con la reutilización de código. Bicep ofrece la mejor experiencia de creación para sus soluciones de infraestructura como código en Azure.
 
 

@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio aprenderá a crear cuentas de almacenamiento para blobs y archivos de Azure. Aprenderá a configurar y proteger contenedores de blobs. También aprenderá a usar el explorador de almacenamiento para configurar y proteger recursos compartidos de archivos de Azure. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.**
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
 ## Tiempo estimado: 50 minutos
 
@@ -20,7 +20,7 @@ La organización almacena actualmente datos en almacenes de datos locales. A la 
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
 
 + [Creación del almacenamiento de blobs](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Cree una cuenta de almacenamiento, administre el almacenamiento de blogs y supervise las actividades de almacenamiento. 
   
@@ -60,7 +60,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
 1. En la pestaña **Opciones avanzadas**, use los iconos informativos para obtener más información sobre las opciones. Use los valores predeterminados. 
 
-1. En la pestaña **Redes**, revise las opciones disponibles y seleccione **Deshabilitar el acceso público y usar el acceso privado.**
+1. En la pestaña **Redes**, revise las opciones disponibles y seleccione **Deshabilitar el acceso público y usar el acceso privado**.
 
 1. Revise la pestaña **Protección de datos**. Observe que 7 días es la directiva de retención de eliminación temporal predeterminada. Tenga en cuenta que es posible habilitar el control de versiones de blobs. Acepte los valores predeterminados.
 
@@ -182,7 +182,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure. Usará el e
 
 1. Haga clic en **+ Recurso compartido** y, en la pestaña **Aspectos básicos**, asigne un nombre al recurso compartido de archivos, `share1`. 
 
-1. Observe las opciones de **Nivel**. Mantenga la opción predeterminada **Optimizado para transacciones**.
+1. Observe las opciones de **Nivel de acceso**. Mantenga la opción predeterminada **Optimizado para transacciones**.
    
 1. Vaya a la pestaña **Copia de seguridad** y asegúrese de que la opción **Habilitar copia de seguridad** **no** esté activada. Estamos deshabilitando la copia de seguridad para simplificar la configuración del laboratorio.
 
@@ -212,11 +212,11 @@ En esta tarea, creará y configurará recursos compartidos de Azure. Usará el e
 
 1. Espere a que se implemente la red virtual y seleccione **Ir al recurso**.
 
-1. En la sección **Configuración**, seleccione la hoja **Subredes**.
-    + Seleccione la subred **default**.
-    + En la sección **Puntos de conexión de servicio**, en la lista desplegable **Servicios**, seleccione **Microsoft.Storage**.
-    + No realice ningún cambio.    
-    + Asegúrese de **Guardar** los cambios. 
+1. En la sección **Configuración**, seleccione la hoja **Puntos de conexión de servicio**.
+    + Seleccione **Agregar**. 
+    + En la lista desplegable **Servicios**, seleccione **Microsoft.Storage**.
+    + En la lista desplegable **Subredes**, active la subred **Predeterminada**.
+    + Haga clic en **Agregar** para guardar los cambios.  
 
 1. Vuelva a la cuenta de almacenamiento.
 
@@ -239,11 +239,23 @@ En esta tarea, creará y configurará recursos compartidos de Azure. Usará el e
 
 ## Limpieza de los recursos
 
-Si trabaja con **una suscripción propia**, dedique un minuto a eliminar los recursos del laboratorio. Esto garantizará que los recursos se liberen y se minimice el coste. La manera más fácil de eliminar los recursos de laboratorio consiste en eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escriba el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Con Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Con la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI, `az group delete --name resourceGroupName`.
+
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ Proporcione un script de Azure PowerShell para crear una cuenta de almacenamiento con un contenedor de blobs. 
++ Proporcione una lista de comprobación que pueda usar para asegurarse de que mi cuenta de almacenamiento de Azure sea segura.
++ Cree una tabla para comparar los modelos de redundancia de Azure Storage.
+
+## Más información con el aprendizaje autodirigido
+
++ [Optimice los costes con Azure Blob Storage.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Aprenda a optimizar los costes con Azure Blob Storage.
++ [Control de acceso a Azure Storage con firmas de acceso compartido](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Conceda acceso de forma segura a los datos almacenados en las cuentas de Azure Storage mediante firmas de acceso compartido.
 
 ## Puntos clave
 
@@ -254,8 +266,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Azure Blob Storage permite almacenar grandes cantidades de datos no estructurados en la plataforma de almacenamiento de datos de Microsoft. Blob significa "Binary Large Object" (objeto binario grande), lo cual incluye objetos como imágenes y archivos multimedia.
 + Azure File Storage proporciona almacenamiento compartido para datos estructurados. Los datos se pueden organizar en carpetas.
 + El almacenamiento inmutable permite almacenar datos con el estado WORM (una escritura, múltiples lecturas). Las directivas de almacenamiento inmutable pueden basarse en tiempo o en retención legal.
-
-## Más información con el aprendizaje autodirigido
-
-+ [Optimice los costes con Azure Blob Storage.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Aprenda a optimizar los costes con Azure Blob Storage.
-+ [Control de acceso a Azure Storage con firmas de acceso compartido](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Conceda acceso de forma segura a los datos almacenados en las cuentas de Azure Storage mediante firmas de acceso compartido.

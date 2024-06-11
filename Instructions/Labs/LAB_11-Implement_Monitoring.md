@@ -249,6 +249,18 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ ¿Cuáles son los pasos de configuración básicos que se van a alertar en Azure cuando una máquina virtual está inactiva?
++ ¿Cómo se puede recibir una notificación cuando se desencadena una alerta de Azure?
++ Cree una consulta de Azure Monitor para proporcionar información de rendimiento de CPU de máquina virtual.
+
+## Más información con el aprendizaje autodirigido
+
++ [Mejore la respuesta ante incidentes con la generación de alertas en Azure](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/). Responda a incidentes y actividades en su infraestructura mediante funcionalidades de alerta de Azure Monitor.
++ [Supervise las máquinas virtuales de Azure con Azure Monitor](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/). Supervise las máquinas virtuales de Azure y utilice Azure Monitor para recopilar y analizar métricas y registros de cliente y host de máquina virtual.
+
 ## Puntos clave
 
 Enhorabuena por completar el laboratorio. Estas son las principales conclusiones del laboratorio. 
@@ -258,8 +270,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Una regla de alerta supervisa los datos y captura una señal que indica que algo sucede en el recurso especificado.
 + Se desencadena una alerta si se cumplen las condiciones de la regla de alertas. Se pueden desencadenar varias acciones (correo electrónico, SMS, envío de cambios o voz).
 + Los grupos de acciones incluyen los individuos que deben recibir notificación de una alerta.
-
-## Más información con el aprendizaje autodirigido
-
-+ [Mejore la respuesta ante incidentes con la generación de alertas en Azure](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/). Responda a incidentes y actividades en su infraestructura mediante funcionalidades de alerta de Azure Monitor.
-+ [Supervise las máquinas virtuales de Azure con Azure Monitor](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/). Supervise las máquinas virtuales de Azure y utilice Azure Monitor para recopilar y analizar métricas y registros de cliente y host de máquina virtual.
