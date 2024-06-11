@@ -49,7 +49,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
 
 1. Inicie sesión en Azure Portal: `https://portal.azure.com`.
 
-1. Busque y seleccione `Virtual machines`, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, después, seleccione en la lista desplegable **+ Máquina virtual de Azure**. Observe las otras opciones.
+1. Busque y seleccione `Virtual machines`, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, después, seleccione en la lista desplegable **Máquina virtual de Azure**. Observe las otras opciones.
 
 1. En la pestaña **Aspectos básicos**, en el menú desplegable **Zona de disponibilidad**, coloque una marca de verificación junto a **Zona 2**. Esto debe seleccionar tanto la **Zona 1** como la **Zona 2**.
 
@@ -89,7 +89,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
     | Configuración | Valor |
     | --- | --- |
     | Eliminación de la IP pública y NIC cuando se elimine la VM | **Activada** |
-    | Opciones de equilibrio de carga | **Ninguno** |
+    | Opciones de equilibrio de carga | **None** |
 
 
 1. Haga clic en **Siguiente: Administración >** y especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
@@ -194,7 +194,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
     ![Captura de pantalla de la página Crear VMSS. ](../media/az104-lab08-create-vmss.png)
 
-1. En la pestaña **Spot**, acepte los valores predeterminados y seleccione **Siguiente: Discos >**.
+1. En la pestaña **Máquina virtual de acceso puntual**, acepte los valores predeterminados y seleccione **Siguiente: Discos >**.
 
 1. En la pestaña **Discos**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >**.
 
@@ -283,7 +283,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 ### Regla de escalabilidad horizontal
 
-1. Seleccione **Escalabilidad automática personalizada**. Después, cambie el **Modo de escalado** a **Escala basada en métricas**. Después, seleccione **Agregar regla**.
+1. Seleccione **Escalabilidad automática personalizada**. Después, cambie el **Modo de escalado** a **Escala basada en métricas**. A continuación, seleccione **Agregar una regla**.
 
 1. Vamos a crear una regla que aumente automáticamente el número de instancias de máquina virtual. Esta regla se escala horizontalmente cuando la carga media de la CPU es superior al 70 % durante un periodo de 10 minutos. Cuando se desencadena la regla, aumenta el número de instancias de máquina virtual en un 20 %.
 
@@ -345,7 +345,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Use el icono (superior derecho) para iniciar una sesión de **Cloud Shell**. Como alternativa, vaya directamente a `https://shell.azure.com`.
 
-1. Asegúrese de seleccionar **PowerShell**. Si es necesario, use la opción **Mostrar opciones avanzadas** y configure el almacenamiento del shell.
+1. Asegúrese de seleccionar **PowerShell**. Si es necesario, configure el almacenamiento del shell.
 
 1. Ejecute el comando siguiente para crear una máquina virtual. Cuando se le solicite, proporcione un nombre de usuario y una contraseña para la máquina virtual. Mientras espera, consulte la referencia del comando [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) para todos los parámetros asociados a la creación de una máquina virtual.
 
@@ -386,7 +386,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Use el icono (superior derecho) para iniciar una sesión de **Cloud Shell**. Como alternativa, vaya directamente a `https://shell.azure.com`.
 
-1. Asegúrese de seleccionar **Bash**. Si es necesario, use la opción **Mostrar opciones avanzadas** y configure el almacenamiento del shell.
+1. Asegúrese de seleccionar **Bash**. Si es necesario, configure el almacenamiento del shell.
 
 1. Ejecute el comando siguiente para crear una máquina virtual. Cuando se le solicite, proporcione un nombre de usuario y una contraseña para la máquina virtual. Mientras espera, consulte la referencia del comando [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) para todos los parámetros asociados a la creación de una máquina virtual.
 
@@ -420,6 +420,18 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ Proporcione los pasos y los comandos de la CLI de Azure para crear una máquina virtual Linux. 
++ Revise las formas en que puede escalar máquinas virtuales y mejorar el rendimiento.
++ Describir las directivas de administración del ciclo de vida de Azure Storage y cómo pueden optimizar los costos.
+
+## Más información con el aprendizaje autodirigido
+
++ [Crear una máquina virtual Windows en Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Crear una máquina virtual de Windows mediante Azure Portal. Conectarse a una máquina virtual Windows mediante Escritorio remoto
++ [Compilar una aplicación escalable con conjuntos de escalado de máquinas virtuales](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que la aplicación ajuste automáticamente los cambios en la carga, a la vez que minimiza los costos con Virtual Machine Scale Sets.
++ [Conéctese a máquinas virtuales desde Azure Portal con Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implemente Azure Bastion para conectarse de forma segura a máquinas virtuales de Azure directamente en Azure Portal para reemplazar eficazmente una solución de jumpbox existente, supervise las sesiones remotas mediante registros de diagnóstico y administre sesiones remotas mediante la desconexión de una sesión de usuario.
 
 ## Puntos clave
 
@@ -431,10 +443,3 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Los conjuntos de escalado de máquinas virtuales de Azure permiten crear y administrar un grupo de máquinas virtuales con equilibrio de carga.
 + Las máquinas virtuales de un conjunto de escalado de máquinas virtuales se crean a partir de la misma imagen y configuración.
 + En un conjunto de escalado de máquinas virtuales, el número de instancias de máquina virtual puede aumentar o disminuir automáticamente según la demanda, o en respuesta a una programación definida.
-
-## Más información con el aprendizaje autodirigido
-
-+ [Crear una máquina virtual Windows en Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Crear una máquina virtual de Windows mediante Azure Portal. Conectarse a una máquina virtual Windows mediante Escritorio remoto
-+ [Compilar una aplicación escalable con conjuntos de escalado de máquinas virtuales](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que la aplicación ajuste automáticamente los cambios en la carga, a la vez que minimiza los costos con Virtual Machine Scale Sets.
-+ [Conéctese a máquinas virtuales desde Azure Portal con Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implemente Azure Bastion para conectarse de forma segura a máquinas virtuales de Azure directamente en Azure Portal para reemplazar eficazmente una solución de jumpbox existente, supervise las sesiones remotas mediante registros de diagnóstico y administre sesiones remotas mediante la desconexión de una sesión de usuario.
-  

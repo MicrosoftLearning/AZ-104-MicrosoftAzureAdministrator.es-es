@@ -144,14 +144,14 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
   
-## Puntos clave
 
-Enhorabuena por completar el laboratorio. Estos son algunos de los principales pasos para este laboratorio:
+## Ampliar el aprendizaje con Copilot
 
-+ El nuevo inquilino representa a su organización y le ayuda a administrar una instancia específica de Servicios en la nube de Microsoft para los usuarios internos y externos.
-+ Microsoft Entra ID tiene cuentas de usuario e invitado. Cada cuenta tiene un nivel de acceso específico para el ámbito de trabajo que se espera que se realice.
-+ Los grupos combinan usuarios o dispositivos relacionados. Existen dos tipos de grupos: Seguridad y Microsoft 365.
-+ La pertenencia a grupos se puede asignar estática o dinámicamente.
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
++ ¿Cuáles son los comandos de Azure PowerShell y la CLI para crear un grupo de seguridad denominado Administradores de TI? Proporcione la página oficial de referencia del comando.  
++ Proporcione una estrategia paso a paso para administrar usuarios y grupos en Microsoft Entra ID.
++ ¿Cuáles son los pasos de Azure Portal para crear usuarios y grupos de forma masiva?
++ Proporcione una tabla de comparación de cuentas de usuario internas y externas de Microsoft Entra ID. 
 
 
 ## Más información con el aprendizaje autodirigido
@@ -161,4 +161,11 @@ Enhorabuena por completar el laboratorio. Estos son algunos de los principales p
 + [Permitir que los usuarios restablezcan sus contraseñas con el autoservicio de restablecimiento de contraseña de Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Evalúe el autoservicio de restablecimiento de contraseña para permitir que los usuarios de la organización restablezcan sus contraseñas o desbloqueen sus cuentas. Implemente, configure y pruebe el autoservicio de restablecimiento de contraseña.
 
 
+## Puntos clave
 
+Enhorabuena por completar el laboratorio. Estos son algunos de los principales pasos para este laboratorio:
+
++ El nuevo inquilino representa a su organización y le ayuda a administrar una instancia específica de Servicios en la nube de Microsoft para los usuarios internos y externos.
++ Microsoft Entra ID tiene cuentas de usuario e invitado. Cada cuenta tiene un nivel de acceso específico para el ámbito de trabajo que se espera que se realice.
++ Los grupos combinan usuarios o dispositivos relacionados. Existen dos tipos de grupos: Seguridad y Microsoft 365.
++ La pertenencia a grupos se puede asignar estática o dinámicamente.

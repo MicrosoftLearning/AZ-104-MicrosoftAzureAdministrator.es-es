@@ -75,6 +75,15 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
+## Ampliar el aprendizaje con Copilot
+Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+
++ Resumir los pasos para crear y configurar una aplicación de contenedor de Azure.
++ Compare y contraste Azure Container Apps con Azure Kubernetes Service.
+
+## Más información con el aprendizaje autodirigido
+
++ [Configure aplicaciones contenedoras en Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina las características y funcionalidades de Azure Container Apps y, después, se centra en cómo crear, configurar, escalar y administrar aplicaciones contenedoras mediante Azure Container Apps.
 
 
 ## Puntos clave
@@ -85,7 +94,4 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Container Apps proporciona configuración del servidor, orquestación de contenedores y detalles de la implementación. 
 + En Azure Container Apps, las cargas de trabajo suelen ser procesos de ejecución prolongada como una aplicación web.
 
-## Más información con el aprendizaje autodirigido
-
-+ [Configure aplicaciones contenedoras en Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina las características y funcionalidades de Azure Container Apps y, después, se centra en cómo crear, configurar, escalar y administrar aplicaciones contenedoras mediante Azure Container Apps.
      
