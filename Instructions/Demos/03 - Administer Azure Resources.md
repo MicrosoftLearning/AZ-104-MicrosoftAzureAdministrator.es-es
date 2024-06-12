@@ -1,90 +1,90 @@
 ---
 demo:
-  title: "Demostración\_03: Administración de recursos de Azure"
-  module: Administer Administer Azure Resources
+    title: 'Demonstration 03: Administer Azure Resources'
+    module: 'Administer Administer Azure Resources'
 ---
-# 03: Administración de recursos de Azure
+# 03 - Administer Azure Resources
 
-## Demostración: Azure Portal
+## Demonstration -- Azure Portal
 
-En esta demostración, se explorará Azure Portal.
+In this demonstration, we will explore the Azure portal.
 
-**Referencia**: [Administración de las preferencias y la configuración de Azure Portal](https://docs.microsoft.com/azure/azure-portal/set-preferences)
+**Reference**: [Manage Azure portal settings and preferences](https://docs.microsoft.com/azure/azure-portal/set-preferences)
 
-**Referencia**: [Creación de un panel en Azure Portal](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards)
+**Reference**: [Create a dashboard in the Azure portal](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards)
 
-**Referencia**: [Creación de una solicitud de soporte técnico de Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
+**Reference**: [How to create an Azure support request](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
 
-1. Acceda a Azure Portal.
+1. Access the Azure Portal.
 
-1. Seleccione el icono  **Soporte técnico y solución de problemas** en el banner superior. Revise los vínculos **Recursos de soporte técnico**. 
+1. Select  the **Support & Troubleshooting** icon on the top banner. Review the **Support resources** links. 
 
-1. Seleccione el icono **Configuración** en el banner superior. Revise la configuración de **Apariencia y vistas de inicio**. 
+1. Select the **Settings** icon on the top banner. Review **Appearance + startup views** settings. 
 
-1. Use el menú de la izquierda y seleccione **Panel**. **Edite** el panel mediante la **Galería de iconos**. Analice las opciones de personalización.
+1. Use the left-side menu and select **Dashboard**. **Edit** the dashboard using the **Tile Gallery**. Discuss customization options.
 
-1. Mostrar cómo buscar y localizar recursos.
+1. Show how to search for and locate resources.
 
-1. Use el menú superior izquierdo para buscar **Todos los servicios**. 
+1. Use the upper left menu to locate **All services**. 
 
-1. Como tiene tiempo, revise otras características.
+1. As you have time review other features.
    
-1. Pregunte si los alumnos tienen alguna pregunta.
+1. Ask if the students have any questions.
 
-## Demostración: Cloud Shell
+## Demonstration -- Cloud Shell
 
-En esta demostración, se experimentará con Cloud Shell.
+In this demonstration, we will experiment with Cloud Shell.
 
-**Referencia**: [Inicio rápido para Azure Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli)
+**Reference**: [Quickstart for Azure Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart?tabs=azurecli)
 
-**Configuración de Cloud Shell**
+**Configure the Cloud Shell**
 
-1.  Acceda a  **Azure Portal**.
+1.  Access the **Azure Portal**.
 
-1.  Haga clic en el icono de  **Cloud Shell** en el banner superior.
+1.  Click the **Cloud Shell** icon on the top banner.
 
-1.  En la página Bienvenido a Azure Cloud Shell, observe las selecciones para Bash o PowerShell. Seleccione  **PowerShell**.
+1.  On the Welcome to the Shell page, notice your selections for Bash or PowerShell. Select **PowerShell**.
 
-1.  Analice por qué Azure Cloud Shell requiere un recurso compartido de archivos de Azure para conservar los archivos. Si es necesario, configure el recurso compartido de almacenamiento. 
+1.  Discuss how the Azure Cloud Shell requires an Azure file share to persist files. If necessary, configure the storage share. 
 
-**Experimentación con Azure PowerShell y Bash**
+**Experiment with Azure PowerShell and Bash**
 
-1. Asegúrese de que el shell de **PowerShell** está seleccionado y pruebe algunos comandos. Por ejemplo, **Get-AzSubscription** y **Get-AzResourceGroup**.
+1. Ensure the **PowerShell** shell is selected and try a few commands. For example, **Get-AzSubscription** and **Get-AzResourceGroup**.
 
-1. Muestra cómo funciona la característica de autocompletar. Muestra cómo borrar la pantalla, **cls**. 
+1. Show how auto-complete works. Show how to clear the screen, **cls**. 
 
-1. Asegúrese de que el shell de **Bash** está seleccionado y pruebe algunos comandos. Por ejemplo, **az account list** y **az resource list**.
+1. Ensure the **Bash** shell is selected and try a few commands. For example, **az account list** and **az resource list**.
 
-1. Pregunte si los alumnos tienen alguna pregunta sobre el uso de los comandos de PowerShell o Bash. 
+1. Ask if students have any questions on using the PowerShell or Bash commands. 
 
-**Experimentación con el editor de Cloud Shell (opcional)**
+**Experiment with the Cloud shell editor (optional)**
 
-1. Para usar el editor de Cloud, seleccione el icono de las **llaves**.
+1. To use the Cloud Editor, select the **curly braces** icon.
 
-1. Seleccione un archivo en el panel de navegación de la izquierda. Por ejemplo,  **.profile**.
+1. Select a file from the left navigation pane. For example, **.profile**.
 
-1. Observe en el banner superior del editor las selecciones para Configuración (Tamaño de texto y Fuente) y Carga/descarga de archivos.
+1. Notice on the editor top banner, selections for Settings (Text Size and Font) and Upload/Download files.
 
-1. Observe los puntos suspensivos ( **\...** ) en el extremo derecho para **Guardar**, **Cerrar editor** y **Abrir archivo**.
+1. Notice on the ellipsis (**\...**) on the far right for **Save**, **Close Editor**, and **Open File**.
 
-1. Experimente a medida que tenga tiempo y, después,  **cierre** el editor de Cloud.
+1. Experiment as you have time, then **close** the Cloud Editor.
 
-1. Cierre Cloud Shell.
+1. Close the Cloud Shell.
 
-## Demostración: Plantillas de inicio rápido
+## Demonstration -- QuickStart Templates
 
-En esta demostración, se explorarán las plantillas de inicio rápido.
+In this demonstration, we will explore QuickStart templates.
 
-**Referencia**: [Tutorial: Creación e implementación de una plantilla (Azure Resource Manager)](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell)
+**Reference**: [Tutorial - Create & deploy template - Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell)
 
-1. Para empezar, vaya a la  [galería de plantillas de inicio rápido de Azure](https://learn.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-resource-manager). Observe que hay ejemplos de JSON y Bicep. 
+1. Start by browsing to the [Azure Quickstart Templates gallery](https://learn.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-resource-manager). Notice there are JSON and Bicep examples. 
 
-1. Pregunte a los alumnos si hay plantillas específicas que sean de su interés. Si no hay ninguna, seleccione una plantilla. Por ejemplo, la plantilla [Implementación de una máquina virtual Windows sencilla con etiquetas](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/vm-tags/).
+1. Ask students if there are any specific templates that are of interest. If not, select a template. For example, the [Deploy a simple Windows VM with tags](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/vm-tags/) template.
 
-1. Analice cómo el botón  **Implementar en Azure** permite implementar la plantilla directamente desde Azure Portal.
+1. Discuss how the **Deploy to Azure** button enables you to deploy the template directly through the Azure portal.
 
-1. **Implemente** la plantilla JSON y analice cómo puede editar el archivo de plantillas y parámetros. Revise el propósito de los archivos. Como tiene tiempo, revise la sintaxis. 
+1. **Deploy** the JSON template and discuss how you can edit the template and parameters file. Review the purpose of the files. As you have time, review the syntax. 
 
-1. Vuelva a la galería de ejemplos de código y busque una plantilla de Bicep. Por ejemplo, [Creación de una cuenta de Standard Storage](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/storage-account-create/). 
+1. Return to the code samples gallery, and locate a Bicep template. For example, [Create a Create a Standard Storage Account](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/storage-account-create/). 
 
-1. **Implemente** la plantilla Bicep y analice cómo puede editar el archivo de plantillas y parámetros. Como tiene tiempo, revise la sintaxis. 
+1. **Deploy** the Bicep template and discuss how you can edit the template and parameters file. As you have time, review the syntax. 

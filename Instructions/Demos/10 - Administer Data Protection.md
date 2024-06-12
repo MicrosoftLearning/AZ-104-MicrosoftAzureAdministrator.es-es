@@ -1,62 +1,62 @@
 ---
 demo:
-  title: "Demostración\_10: Administración de la protección de datos"
-  module: Administer Data Protection
+    title: 'Demonstration 10: Administer Data Protection'
+    module: 'Administer Data Protection'
 ---
 
-# 10: Administración de la protección de datos
+# 10 - Administer Data Protection
 
-## Copia de seguridad de los recursos compartidos de archivos de Azure
+## Backup Azure File Shares
 
-En esta demostración, se explorará la copia de seguridad de un recurso compartido de archivos en Azure Portal.
+In this demonstration, we will explore backing up a file share in the Azure portal.
 
-> **Nota:** Para esta demostración se necesita una cuenta de almacenamiento con un recurso compartido de archivos. 
+> **Note:** This demonstration requires a storage account with a file share. 
 
-**Referencia**: [Copia de seguridad de los recursos compartidos de archivos de Azure en Azure Portal](https://docs.microsoft.com/azure/backup/backup-afs)
+**Reference**: [Back up Azure file shares in the Azure portal](https://docs.microsoft.com/azure/backup/backup-afs)
 
-**Creación de un almacén de Recovery Services**
+**Create a Recovery Services vault**
 
-1. Use Azure Portal.
+1. Use the Azure portal.
 
-1. Busque **Almacenes de Recovery Services** y selecciónelo.
+1. Search for an select **Recovery Services vaults**.
 
-1. Cree un **Almacén de Recovery Services**. Revise el requisito de que el almacén esté en la misma región que el recurso compartido de archivos. 
+1. Create a **Recovery Services Vault**. Review the requirement that the vault be in the same region as the file share. 
 
-1. Espere a que se cree el almacén. 
+1. Wait for the vault to be created. 
 
-**Configuración de la copia de seguridad de archivos de Azure**
+**Configure the Azure files backup**
 
-1. Vaya al **Centro de copias de seguridad** y cree una nueva instancia de **Backup**.
+1. Go to **Backup center** and create a new **Backup** instance.
 
-1. Revise y analice las opciones en la lista desplegable **Tipo de origen de datos**. Seleccione **Azure Files (Azure Storage)** . 
+1. Review and discuss the choices in the **Datasource type** drop-down. Select **Azure files (Azure storage)**. 
 
-1. Seleccione el **almacén**.
+1. Select your **vault**.
 
-1. **Continúe** configurando la copia de seguridad. Seleccione la cuenta de almacenamiento específica y el recurso compartido de archivos del que desea realizar una copia de seguridad.  
+1. **Continue** configuring the backup. Select the specific storage account and file share that you want to backup.  
 
-1. En **Detalles de la directiva**, haga clic en **Editar esta directiva**. Analice el propósito de las directivas de copia de seguridad. Revise la **Programación de copia de seguridad** y la **Duración de retención**.  
+1. In the **Policy details** click **Edit this policy**. Discuss the purpose of backup policies. Review the **backup schedule** and **retention range**.  
 
-1. **Habilite la copia de seguridad** para guardar los cambios. 
+1. **Enable backup** to save your changes. 
 
-1. Como tiene tiempo, revise cómo **restaurar** una**instancia de Backup**. Lea también cómo supervisar los **trabajos de Backup**. 
+1. As you have time, review how to **Restore** a **Backup instance**. Also, how to monitor your **Backup jobs**. 
 
-## Copia de seguridad de Azure Virtual Machines
+## Backup Azure Virtual Machines
 
-En esta demostración, se programará una copia de seguridad diaria de una máquina virtual en un almacén de Recovery Services.
+In this demonstration, we will schedule a daily backup of a virtual machine to a Recovery Services vault.
 
-> **Nota:** En esta demostración se necesita una máquina virtual y un almacén de Recovery Services.
+> **Note:** This demonstration requires a virtual machine and a recovery service vault.
 
-**Referencia**: [Tutorial: Copia de seguridad de varias máquinas virtuales de Azure](https://docs.microsoft.com/azure/backup/tutorial-backup-vm-at-scale)
+**Reference**: [Tutorial - Back up multiple Azure virtual machines](https://docs.microsoft.com/azure/backup/tutorial-backup-vm-at-scale)
 
-1. Use Azure Portal.
+1. Use the Azure portal.
 
-1. Vaya al **Centro de copias de seguridad** y cree una nueva instancia de **Backup**.
+1. Go to **Backup center** and create a new **Backup** instance.
 
-1. Seleccione **Azure Virtual Machines** en **Tipo de origen de datos** y, después, seleccione el almacén que ha creado.
+1. Select **Azure Virtual machines** as the **Datasource type** and select the vault.
 
-1. Revise la **Directiva predeterminada**. La directiva predeterminada hace una copia de seguridad de la máquina virtual una vez al día. Asimismo, las copias de seguridad diarias se conservan durante 30 días. Las instantáneas de recuperación instantánea se conservan durante dos días.
+1. Review the **DefaultPolicy**. The default policy backs up the virtual machine once a day. The daily backups are retained for 30 days. Instant recovery snapshots are retained for two days.
 
-1. Use **Habilitar copia de seguridad** para guardar la configuración.
+1. Use **Enable backup** to save your configuration.
 
-1. Como tiene tiempo, revise cómo **realizar una copia de seguridad ahora**. Lea también cómo revisar los **trabajos de Backup**.  
+1. As you have time, review how to **Backup now**. Also, how to review your **Backup jobs**.  
 
