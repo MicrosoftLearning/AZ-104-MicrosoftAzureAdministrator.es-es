@@ -1,65 +1,65 @@
 ---
 demo:
-  title: "Demostración\_06: Administración del tráfico de red"
-  module: Administer Network Traffic Management
+    title: 'Demonstration 06: Administer Network Traffic Management'
+    module: 'Administer Network Traffic Management'
 ---
 
 
-# 06: Administración del tráfico de red
+# 06 - Administer Network Traffic Management
 
-## Configuración de Azure Load Balancer
+## Configure Azure Load Balancer
 
-En esta demostración aprenderá a crear un equilibrador de carga público. 
+In this demonstration, we will learn how to create a public load balancer. 
 
-**Nota:**  Para esta demostración se necesita una red virtual con al menos una subred. 
+**Note:** This demonstration requires a virtual network with at least one subnet. 
 
-**Referencia**: [Inicio rápido: Uso de Azure Portal para crear un equilibrador de carga público para equilibrar la carga de máquinas virtuales](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal).
+**Reference**: [Quickstart: Create a public load balancer to load balance VMs using the Azure portal](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal)
 
-**Mostrar la característica “Ayudarme a elegir” del portal**
+**Show the portal's help me choose feature**
 
-1. Acceda a Azure Portal.
+1. Access the Azure portal.
 
-1. Busque y seleccione **Equilibrio de carga: ayuda para elegir**.
+1. Search for and select **Load balancing - help me choose**.
 
-1. Use el asistente para recorrer diferentes escenarios.
+1. Use the wizard to walk-through different scenarios.
    
-**Creación de un equilibrador de carga**
+**Create a load balancer**
 
-1. Continúe en Azure Portal.
+1. Continue in the Azure portal.
 
-1. Busque y seleccione **Equilibrador de carga**. **Cree** un equilibrador de carga. 
+1. Search for and select **Load balancer**. **Create** a load balancer. 
 
-1. En la pestaña **Datos básicos**, analice los valores de **SKU**, **Tipo** y **Nivel**.
+1. On the **Basics** tab, discuss **SKU**, **Type**, and **Tier**.
 
-1. En la pestaña **Configuración de IP de front-end**, analice el uso de una dirección IP pública.
+1. On the **Frontend IP configuration** tab, discuss using a public IP address.
 
-1. En la pestaña **Grupos de back-end**, seleccione la red virtual con un intervalo de direcciones IP.
+1. On the **Backend pools** tab, select the virtual network with IP address range.
 
-1. En la pestaña **Reglas de entrada**, cree una regla de equilibrio de carga. Analice parámetros como **Protocolo**, **Puertos**, **Sondeos de estado** y **Persistencia de la sesión**. 
+1. On the **Inbound rules** tab, create a load balancing rule. Discuss parameters like **Protocol**, **Ports**, **Health probes**, and **Session persistence**. 
 
 
-## Configuración de Azure Application Gateway
+## Configure Azure Application Gateway
 
-En esta demostración aprenderá a crear una instancia de Azure Application Gateway. 
+In this demonstration, we will learn how to create an Azure Application Gateway. 
 
-**Nota:** Para hacerlo más sencillo, cree nuevas redes virtuales y subredes a medida que defina la configuración. 
+**Note**: To keep things simple, create new virtual networks and subnets as you go through the configuration. 
 
-**Referencia**: [Inicio rápido: Dirección del tráfico web con Azure Application Gateway: Azure Portal](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
+**Reference**: [Quickstart: Direct web traffic with Azure Application Gateway - Azure portal](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 
-**Crear la instancia de Azure Application Gateway**
+**Create the Azure Application Gateway**
 
-1. Acceda a Azure Portal.
+1. Access the Azure portal.
 
-1. Busque y seleccione **Azure Application Gateway**.
+1. Search for and select **Azure Application Gateway**.
 
-1. **Cree** una puerta de enlace.
+1. **Create** a new gateway.
 
-1. En la pestaña **Datos básicos**, analice los parámetros **Niveles**, **Escalado automático** y **Recuento de instancias**.
+1. On the **Basics** tab, discuss **Tiers**, **Autoscaling**, and **Instance counts**.
 
-1. En la pestaña **Front-end**, analice los tipos de dirección IP.
+1. On the **Frontends** tab, discuss the IP address types.
 
-1. En la pestaña **Back-end**, analice cuándo debe usarse un grupo de back-end vacío.
+1. On the **Backends** tab, discuss when to use an empty backend pool.
 
-1. En la pestaña **Configuración**, analice las reglas de enrutamiento. Compárelas con las reglas del equilibrador de carga.
+1. On the **Configuration** tab, discuss routing rules. Compare to the load balancer rules.
 
-1. Explique que, después de crear la puerta de enlace, agregaría destinos de back-end y haría pruebas. 
+1. Explain that after gateway is created, you would then add backend targets and test. 
