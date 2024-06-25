@@ -122,7 +122,7 @@ En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir 
 
 1. Seleccione **No hay propietarios seleccionados**.
 
-1. En la página **Agregar propietarios**, busque y **seleccione** usted mismo como propietario. Observe que puede tener más de un propietario. 
+1. En la página **Agregar propietarios**, busque y **seleccione** usted mismo (que se muestra en la esquina superior derecha) como propietario. Observe que puede tener más de un propietario. 
 
 1. Seleccione **No hay miembros seleccionados**.
 
@@ -138,7 +138,7 @@ En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir 
    
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. Tenga en cuenta que esto no quitará ningún usuario o grupo de Entra ID que haya creado. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
