@@ -113,11 +113,9 @@ En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery
     
     >**¿Sabía que...?** La opción "Restauración entre regiones (CRR)" permite restaurar datos en una [región de Azure emparejada](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore) secundaria. 
 
-1. Vuelva a la hoja del almacén de Recovery Services, haga clic en el vínculo **Actualizar** en la etiqueta **Configuración de seguridad > Eliminación temporal y configuración de seguridad**.
+1. Seleccione el vínculo **Actualizar** en la etiqueta **Configuración de seguridad > configuración de seguridad y eliminación temporal**.
 
 1. En la hoja **Configuración de seguridad**, tenga en cuenta que la opción **Eliminación temporal (para cargas de trabajo que se ejecutan en Azure)**  está **habilitada**. Fíjese en que el **período de retención de eliminación temporal** es de **14** días. 
-
-1. Vuelva a la hoja del almacén de Recovery Services y seleccione la hoja **Información general**.
 
 >**¿Sabía que...?** Azure tiene dos tipos de almacenes: Almacenes de Recovery Services y almacenes de Backup La principal diferencia reside en los orígenes de datos de los que se puede realizar una copia de seguridad. Obtenga más información sobre [las diferencias](https://learn.microsoft.com/answers/questions/405915/what-is-difference-between-recovery-services-vault).
 

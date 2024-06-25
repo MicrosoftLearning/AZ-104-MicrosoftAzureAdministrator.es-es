@@ -106,7 +106,7 @@ En esta tarea, configurará las opciones de implementación de la aplicación we
 
 1. En el campo de repositorio, escriba `https://github.com/Azure-Samples/php-docs-hello-world`.
 
-1. En el campo de rama, escriba `master`.
+1. En el campo de rama, escriba `main`.
 
 1. Seleccione **Guardar**.
 
@@ -159,7 +159,7 @@ En esta tarea, configurará el escalado automático de la aplicación web de Azu
 
 1. Desde **Información general** | **Agregar solicitudes HTTP**, seleccione **Crear**.
 
-1. En **URL de prueba**, pegue su URL de **dominio predeterminado**. Asegúrese de que tenga el formato correcto y de que comience por **https://**.
+1. En la pestaña **Plan de prueba**, haga clic en **Agregar solicitud**. En el **campo Dirección URL**, pegue la dirección URL de **Dominio predeterminado**. Asegúrese de que tenga el formato correcto y de que comience por **https://**.
 
 1. Seleccione **Revisar y crear** y **Crear**.
 

@@ -240,20 +240,13 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
     | Opciones de equilibrio de carga | **Azure Load Balancer** |
     | Seleccionar un equilibrador de carga | **Creación de un equilibrador de carga** |
 
-1. En la página **Crear un equilibrador de carga**, especifique el nombre del equilibrador de carga y tome los valores predeterminados. Haga clic en **Crear** cuando haya terminado y, después, haga clic en **Siguiente: Escalado >** .
+1. En la página **Crear un equilibrador de carga**, especifique el nombre del equilibrador de carga y tome los valores predeterminados. Haga clic en **Crear** cuando haya terminado **Siguiente: Administración >**.
 
     | Configuración | Valor |
     | --- | --- |
     | Nombre del equilibrador de carga | `vmss-lb` |
 
     >**Nota:** Deténgase un minuto y revise lo que ha hecho. En este momento, ha configurado el conjunto de escalado de máquinas virtuales con discos y redes. En la configuración de red, ha creado un grupo de seguridad de red y ha permitido HTTP. También ha creado un equilibrador de carga con una IP pública.
-
-1. En la pestaña **Escalado**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Administración >**:
-
-    | Configuración | Value |
-    | --- | --- |
-    | Recuento de instancias inicial | `2` |
-    | Directiva de escalado | **Manual** |
 
 1. En la pestaña **Administración**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
@@ -277,7 +270,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Seleccione **Ir al recurso** o busque y seleccione el conjunto de escalado **vmss1**.
 
-1. Elija **Escalado** en el menú de la izquierda de la ventana del conjunto de escalado.
+1. Elija **Disponibilidad y escalado** en el menú de la izquierda y, a continuación, elija **Escalado**.
 
 >**¿Sabía que...?** Puede realizar una **Escala manual** o una **Escalabilidad automática personalizada**. En conjuntos de escalado con un pequeño número de instancias de máquina virtual, puede ser mejor opción aumentar o reducir el número de instancias (escala manual). En conjuntos de escalado con un gran número de instancias de máquina virtual, el escalado basado en métricas (escalabilidad automática personalizada) puede ser más adecuado.
 
