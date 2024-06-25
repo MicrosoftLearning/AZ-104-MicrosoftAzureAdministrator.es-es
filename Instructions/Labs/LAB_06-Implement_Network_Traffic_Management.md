@@ -188,7 +188,8 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Configuración | Value |
     | --- | --- |
     | Nombre | `subnet-appgw` |
-    | Intervalo de direcciones de subred | `10.60.3.224/27` |
+    | Dirección inicial| `10.60.3.224` |
+    | Size | `/27` |
 
 1. Haga clic en **Guardar**
 
@@ -207,7 +208,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Nivel | **Standard V2** |
     | Habilitación del escalado automático | **No** |
     | Recuento mínimo de instancias | `2` |
-    | Zona de disponibilidad | **Zona 1** |
+    | Zona de disponibilidad | **1** (predeterminado) |
     | HTTP2 | **Deshabilitada** |
     | Virtual network | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
@@ -231,8 +232,8 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | --- | --- |
     | Nombre | `az104-appgwbe` |
     | Adición de un grupo de back-end sin destinos | **No** |
-    | Máquina virtual | **az104-rg6-nic1 (10.60.1.4)** |
-    | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
+    | Máquina virtual | **az104-06-nic1 (10.60.1.4)** |
+    | Máquina virtual | **az104-06-nic2 (10.60.2.4)** |
 
 1. Haga clic en **Agregar un grupo de back-end**. Este es el grupo de back-end para las **imágenes**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
@@ -240,7 +241,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | --- | --- |
     | Nombre | `az104-imagebe` |
     | Adición de un grupo de back-end sin destinos | **No** |
-    | Máquina virtual | **az104-rg6-nic1 (10.60.1.4)** |
+    | Máquina virtual | **az104-06-nic1 (10.60.1.4)** |
 
 1. Haga clic en **Agregar un grupo de back-end**. Este es el grupo de back-end para el **vídeo**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
@@ -248,7 +249,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | --- | --- |
     | Nombre | `az104-videobe` |
     | Adición de un grupo de back-end sin destinos | **No** |
-    | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
+    | Máquina virtual | **az104-06-nic2 (10.60.2.4)** |
 
 1. Seleccione **Siguiente: Configuración >** y luego, **Agregar reglas de enrutamiento**. Complete la información.
 
