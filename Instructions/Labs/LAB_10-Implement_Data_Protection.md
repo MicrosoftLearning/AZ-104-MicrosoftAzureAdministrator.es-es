@@ -103,7 +103,7 @@ En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery
 
 1. Cuando se haya completado la implementación, haga clic en **Ir al recurso**.
 
-1. En la hoja del almacén de Recovery Services, en la sección **Configuración**, haga clic en **Propiedades**.
+1. En la sección **Configuración**, haga clic en **Propiedades**.
 
 1. Seleccione el vínculo **Actualizar** en la etiqueta **Configuración de copia de seguridad**.
 
