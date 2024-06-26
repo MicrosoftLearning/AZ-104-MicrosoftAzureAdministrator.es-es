@@ -106,7 +106,7 @@ En esta tarea, configurará las opciones de implementación de la aplicación we
 
 1. En el campo de repositorio, escriba `https://github.com/Azure-Samples/php-docs-hello-world`.
 
-1. En el campo de rama, escriba `main`.
+1. En el campo de rama, escriba `master`.
 
 1. Seleccione **Guardar**.
 
