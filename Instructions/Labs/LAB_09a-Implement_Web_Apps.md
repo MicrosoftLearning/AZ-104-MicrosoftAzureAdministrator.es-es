@@ -106,7 +106,7 @@ En esta tarea, configurará las opciones de implementación de la aplicación we
 
 1. En el campo de repositorio, escriba `https://github.com/Azure-Samples/php-docs-hello-world`.
 
-1. En el campo de rama, escriba `main`.
+1. En el campo de rama, escriba `master`.
 
 1. Seleccione **Guardar**.
 
@@ -124,7 +124,7 @@ En esta tarea, intercambiará el espacio de ensayo por el espacio de producción
 
 1. Vuelva a la hoja **Ranuras de implementación** y seleccione **Intercambiar**.
 
-1. Use los valores predeterminados y haga clic en **Intercambiar**.
+1. Use los valores predeterminados y haga clic en **Iniciar intercambio**.
 
 1. En la hoja**Información general** de la aplicación web, seleccione el vínculo **Dominio predeterminado** para mostrar la página principal del sitio web.
 

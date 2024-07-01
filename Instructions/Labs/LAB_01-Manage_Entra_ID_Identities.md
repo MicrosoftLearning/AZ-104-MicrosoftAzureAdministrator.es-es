@@ -41,6 +41,8 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas 
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
+1. Para continuar con el portal, seleccione **Cancelar** en la pantalla de presentación **Bienvenida a Azure**. 
+
     >**Nota:** Azure Portal se usa en todos los laboratorios. Si no está familiarizado con Azure, busque y seleccione `Quickstart Center`. Dedique unos minutos a ver el vídeo **Introducción en Azure Portal**. Incluso si ha usado el portal antes, encontrará algunos consejos y trucos para navegar y personalizar la interfaz.
     
 1. Busque y seleccione `Microsoft Entra ID`. Microsoft Entra ID es la solución de administración de identidades y acceso basada en la nube de Azure. Dedique unos minutos a familiarizarse con algunas de las características enumeradas en el panel izquierdo. 
@@ -49,7 +51,9 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas 
 
     >**¿Sabía que?** Un inquilino es una instancia específica de Microsoft Entra ID que contiene cuentas y grupos. En función de su situación, puede crear más inquilinos y **Cambiar** entre ellos. 
 
-1. Vuelva a la página de **Entra ID**y seleccione **Licencias**. Desde aquí puede comprar una licencia, administrar las licencias que tiene y asignar licencias a usuarios y grupos. Seleccione **Características con licencia** para ver lo que está disponible.
+1. Vuelva a la página **Entra ID** presionando hacia atrás en el explorador o seleccionando la opción en el menú de la ruta de navegación.
+
+1. Seleccione **Licencias**. Desde aquí puede comprar una licencia, administrar las licencias que tiene y asignar licencias a usuarios y grupos. Seleccione **Características con licencia** para ver lo que está disponible.
    
 ### Creación de un nuevo usuario
 

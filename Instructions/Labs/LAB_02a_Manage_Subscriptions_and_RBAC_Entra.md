@@ -49,7 +49,7 @@ Existen algunas simulaciones de laboratorio interactivas que pueden resultarle �
 
 ## Tarea 1: Implementar grupos de administración
 
-En esta tarea, creará y configurará grupos de administración. Los grupos de administración se usan para organizar lógicamente las suscripciones. Las suscripciones deben segmentarse y permitir que RBAC y Azure Policy se asignen y hereden a otros grupos de administración y suscripciones. Por ejemplo, si su organización cuenta con un equipo de asistencia dedicado a Europa, puede organizar las suscripciones europeas en un grupo de administración para proporcionar al personal de asistencia acceso a dichas suscripciones (sin proporcionar acceso individual a todas las suscripciones). En nuestro escenario, todos los miembros del departamento de soporte técnico tendrán que crear una solicitud de soporte técnico para todas las suscripciones. 
+En esta tarea, creará y configurará grupos de administración. Los grupos de administración se usan para organizar y segmentar lógicamente las suscripciones. Permiten asignar y heredar RBAC y Azure Policy a otros grupos de administración y suscripciones. Por ejemplo, si su organización cuenta con un equipo de asistencia dedicado a Europa, puede organizar las suscripciones europeas en un grupo de administración para proporcionar al personal de asistencia acceso a dichas suscripciones (sin proporcionar acceso individual a todas las suscripciones). En nuestro escenario, todos los miembros del departamento de soporte técnico tendrán que crear una solicitud de soporte técnico para todas las suscripciones. 
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 

@@ -127,7 +127,7 @@ En esta tarea, usará la plantilla descargada para implementar un nuevo disco ad
 
 1. Seleccione una implementación y revise el contenido de las hojas **Entrada** y **Plantilla**.
 
-## Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con Azure PowerShell
+## Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con PowerShell 
 
 En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud Shell es un terminal interactivo, autenticado y al que se puede acceder desde un explorador para administrar recursos de Azure. Ofrece la flexibilidad de poder elegir la experiencia de shell que mejor se adapte a la forma de trabajar de cada uno, Bash o PowerShell. En esta tarea, usará PowerShell para implementar una plantilla. 
 
@@ -139,32 +139,28 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
 
     >**¿Sabía que...?**  Si trabaja principalmente con sistemas Linux, Bash (CLI) le resultará más familiar. Si trabaja principalmente con sistemas Windows, Azure PowerShell le resultará más familiar. 
 
-1. En la pantalla **Introducción** seleccione **Cuenta de almacenamiento de montaje** y, a continuación, **Quiero crear una cuenta de almacenamiento**.  
+1. En la pantalla **Introducción**, seleccione **Montar una cuenta de almacenamiento**, seleccione la **suscripción de la cuenta de almacenamiento** y, a continuación, seleccione **Aplicar**.
 
-    >**Nota:** Para este laboratorio se necesita una cuenta de almacenamiento. Proporcione la información necesaria. 
+1. Seleccione **Quiero crear una cuenta de almacenamiento** y, a continuación, **Siguiente**. Complete la información de **Crear cuenta de almacenamiento**. 
     
     | Configuración | Valores |
     |  -- | -- |
-    | Subscription | *seleccione la suscripción* |
     | Grupo de recursos | **az104-rg3** |
     | Region | *seleccione la región* | 
     | Cuenta de almacenamiento (Crear nueva) | * debe ser único globalmente, entre 3 y 24 caracteres de longitud y usar números y solo letras minúsculas* |
     | Recurso compartido de archivos (Crear nuevo) | `fs-cloudshell` |
 
-1. Cuando haya terminado, seleccione **Siguiente**. Solo tiene que hacerlo la primera vez que use Cloud Shell. Tardará un par de minutos en aprovisionar el almacenamiento.
+1. Cuando haya terminado, seleccione **Crear**.
 
-1. Utilice el icono **Cargar/Descargar archivos** para cargar la plantilla y el archivo de parámetros desde el directorio de descargas. Deberá cargar cada archivo por separado.
+    >Tardará un par de minutos en aprovisionar el almacenamiento.
 
-   >**Nota:** Si en cualquier momento se le pide que **Cambie a shell de nube clásica**, hágalo. 
+1. Seleccione **Configuración** (barra superior) y, a continuación, **Ir a la versión clásica**.
 
-1. Compruebe que los archivos están disponibles en el almacenamiento de Cloud Shell. 
+1. Seleccione el icono **Cargar o descargar archivos** (barra superior) y, a continuación, seleccione **Cargar**.
 
-    ```powershell
-    dir
-    ```
-    >**Nota**: Si es necesario, puede usar **cls** para borrar la ventana de comandos. Puede usar las teclas de dirección para mover el historial de comandos.
-   
-1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de plantilla.
+1. Cargue los archivos de plantilla y parámetros desde el directorio **Descargas**. 
+
+1. Seleccione el icono **Editor (corchetes)** y vaya hasta el archivo JSON de plantilla de la izquierda en el panel de navegación.
 
 1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk3**. Presione **Ctrl+S** para guardar los cambios. 
 

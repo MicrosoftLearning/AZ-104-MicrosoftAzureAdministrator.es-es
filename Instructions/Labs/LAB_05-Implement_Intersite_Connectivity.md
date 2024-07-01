@@ -169,38 +169,21 @@ En esta tarea, creará un emparejamiento de red virtual para habilitar las comun
 
 1. En CoreServicesVnet, en **Configuración**, seleccione **Emparejamientos**.
 
-1. En CoreServicesVnet | Emparejamientos, seleccione **+ Agregar**.
-
-1. Use la información de la tabla siguiente para crear el emparejamiento.
+1. En CoreServicesVnet | Emparejamientos, seleccione **+ Agregar**. Si no se especifica, tome el valor predeterminado. 
 
 | **Parámetro**                                    | **Valor**                             |
-| --------------------------------------------- | ------------------------------------- |
-| **Esta red virtual**                                       |                                       |
+| --------------------------------------------- | ------------------------------------- |                                
 | Nombre del vínculo de emparejamiento                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Permitir que CoreServicesVNet acceda a la red virtual emparejada            | seleccionado (valor predeterminado)                       |
-| Permitir que CoreServicesVNet reciba tráfico reenviado de la red virtual emparejada | seleccionados                       |
-| Permitir que la puerta de enlace en CoreServicesVNet reenvíe el tráfico a la red virtual emparejada | No seleccionado (valor predeterminado) |
-| Habilite CoreServicesVnt para usar la puerta de enlace remota de las redes virtuales emparejadas       | No seleccionado (valor predeterminado)                        |
-| **Red virtual remota**                                   |                                       |
-| Nombre del vínculo de emparejamiento                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Modelo de implementación de red virtual              | **Resource Manager**                      |
-| Conozco mi Id. de recurso                         | No seleccionado                          |
-| Subscription                                  | *su suscripción*    |
-| Virtual network                               | **ManufacturingVnet**                     |
+| Red virtual    | **ManufacturingVM-net (az104-rg5)**  |
 | Permitir que ManufacturingVNet acceda a CoreServicesVNet  | seleccionado (valor predeterminado)                       |
 | Permitir que ManufacturingVnet reciba tráfico reenviado desde CoreServicesVnet | seleccionados                        |
-| Permitir que la puerta de enlace en CoreServicesVNet reenvíe el tráfico a la red virtual emparejada | No seleccionado (valor predeterminado) |
-| Habilitar ManufacturingVNet para usar la puerta de enlace remota de CoreServicesVNet       | No seleccionado (valor predeterminado)                        |
+| Nombre del vínculo de emparejamiento                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| Permitir que CoreServicesVNet acceda a la red virtual emparejada            | seleccionado (valor predeterminado)                       |
+| Permitir que CoreServicesVNet reciba tráfico reenviado de la red virtual emparejada | seleccionados                       |
 
-1. Revise la configuración y seleccione **Agregar**.
-
-![Captura de pantalla de la página de emparejamiento.](../media/az104-lab05-peering.png)
-
- 
 1. En CoreServicesVnet | Emparejamientos, compruebe que se muestra el emparejamiento **CoreServicesVnet-to-ManufacturingVnet**. Actualice la página para asegurarse de que el **estado de emparejamiento** es **Conectado**.
 
 1. Cambie al **ManufacturingVnet** y compruebe que ** se muestra el emparejamiento ManufacturingVnet-to-CoreServicesVnet**. Asegúrese de que el **Estado de emparejamiento** es **Conectado**. Es posible que tenga que **actualizar** la página. 
-
 
 ## Tarea 5: Uso de Azure PowerShell para probar la conexión entre máquinas virtuales
 
