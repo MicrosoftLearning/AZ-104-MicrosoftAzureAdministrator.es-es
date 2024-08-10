@@ -76,7 +76,7 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
 
 ## Tarea 2: Revisar y asignar un rol de Azure integrado
 
-En esta tarea, revisará los roles integrados y asignará el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
+, revisarás los roles integrados y asignarás el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
 1. Seleccione el grupo de administración **az104-mg1**.
 
@@ -129,7 +129,7 @@ En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados so
 
 1. En la lista de permisos, coloque una casilla junto a **Otros: Registra el proveedor de recursos compatibles** y después seleccione **Agregar**. El rol debería actualizarse para incluir este permiso como *NotAction*.
 
-    >**Nota:** Un proveedor de recursos de Azure es un conjunto de operaciones de REST que habilitan la funcionalidad de un servicio específico de Azure. No queremos que el departamento de soporte técnico pueda tener esta capacidad, por lo que se está eliminando del rol clonado. También podría borrar y agregar otras capacidades al nuevo rol. 
+    >**Nota:** Un proveedor de recursos de Azure es un conjunto de operaciones de REST que habilitan la funcionalidad de un servicio específico de Azure. No queremos que el departamento de soporte técnico pueda tener esta capacidad, por lo que se está eliminando del rol clonado. 
 
 1. En la pestaña **Ámbitos asignables**, asegúrese de que su grupo de administración aparece en la lista y después haga clic en **Siguiente**.
 
