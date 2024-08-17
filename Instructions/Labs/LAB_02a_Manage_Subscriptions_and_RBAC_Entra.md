@@ -76,7 +76,7 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
 
 ## Tarea 2: Revisar y asignar un rol de Azure integrado
 
-, revisarás los roles integrados y asignarás el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
+En esta tarea, revisará los roles integrados y asignará el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
 1. Seleccione el grupo de administración **az104-mg1**.
 
@@ -106,7 +106,7 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
     
 ## Tarea 3: Crear un rol de RBAC personalizado
 
-En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados son una parte fundamental de la implementación del principio de privilegios mínimos para un entorno. Los roles integrados pueden tener demasiados permisos para su escenario. En esta tarea, crearemos un nuevo rol y quitaremos los permisos que no sean necesarios. ¿Tiene un plan para administrar permisos superpuestos?
+En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados son una parte fundamental de la implementación del principio de privilegios mínimos para un entorno. Los roles integrados pueden tener demasiados permisos para su escenario. También crearemos un nuevo rol y quitaremos los permisos que no sean necesarios. ¿Tiene un plan para administrar permisos superpuestos?
 
 1. Continúe trabajando en el grupo de administración. En la hoja **Control de acceso (IAM)**, seleccione la pestaña **Comprobar acceso**.
 
@@ -117,7 +117,7 @@ En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados so
     | Configuración | Valor |
     | --- | --- |
     | Nombre del rol personalizado | `Custom Support Request` |
-    | Descripción | "Un rol de colaborador personalizado para las solicitudes de soporte técnico". |
+    | Descripción | `A custom contributor role for support requests.` |
 
 1. Para **Permisos de línea de base**, seleccione **Clonar un rol**. En el menú desplegable **Rol a clonar**, seleccione **Colaborador de solicitud de soporte técnico**.
 
