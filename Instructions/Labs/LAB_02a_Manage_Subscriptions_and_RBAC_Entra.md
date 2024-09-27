@@ -108,9 +108,9 @@ En esta tarea, revisará los roles integrados y asignará el rol Colaborador de 
 
 En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados son una parte fundamental de la implementación del principio de privilegios mínimos para un entorno. Los roles integrados pueden tener demasiados permisos para su escenario. También crearemos un nuevo rol y quitaremos los permisos que no sean necesarios. ¿Tiene un plan para administrar permisos superpuestos?
 
-1. Continúe trabajando en el grupo de administración. En la hoja **Control de acceso (IAM)**, seleccione la pestaña **Comprobar acceso**.
+1. Continúe trabajando en el grupo de administración. Ve a la hoja **Control de acceso (IAM)**.
 
-1. En el cuadro **Crear un rol personalizado**, seleccione **Agregar**.
+1. Selecciona **+ Agregar**, en el menú desplegable y selecciona **Agregar rol personalizado**.
 
 1. En la pestaña Aspectos básicos termine la configuración.
 
