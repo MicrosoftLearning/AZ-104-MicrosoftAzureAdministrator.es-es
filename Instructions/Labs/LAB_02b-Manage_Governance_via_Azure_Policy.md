@@ -107,7 +107,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     >**Nota**: El **Nombre de asignación** se rellena automáticamente con el nombre de directiva seleccionado, pero puede cambiarlo. El campo **Description** (Descripción) es opcional. Observe que puede deshabilitar la directiva en cualquier momento. 
 
-1. Haga clic en **Siguiente** dos veces y establezca **Parámetros** en los valores siguientes:
+1. Haga clic en **Siguiente** y establezca **Parámetros** en los valores siguientes:
 
     | Configuración | Value |
     | --- | --- |
