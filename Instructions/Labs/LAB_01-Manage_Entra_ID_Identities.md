@@ -133,15 +133,6 @@ En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir 
 
 >**Nota:** Puede administrar un gran número de grupos. ¿Tiene su organización un plan para crear grupos y agregar miembros?
    
-## Limpieza de los recursos
-
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. Tenga en cuenta que esto no quitará ningún usuario o grupo de Entra ID que haya creado. 
-
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Mediante la CLI, `az group delete --name resourceGroupName`.
-  
-
 ## Ampliar el aprendizaje con Copilot
 
 Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
