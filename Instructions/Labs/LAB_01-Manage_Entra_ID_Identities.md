@@ -97,7 +97,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas 
 
 En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir cuentas de usuario o dispositivos. Estas son dos formas básicas de asignar miembros a grupos: Estática y dinámicamente. Los grupos estáticos requieren que los administradores agreguen y quiten miembros manualmente.  Los grupos dinámicos se actualizan automáticamente en función de las propiedades de una cuenta de usuario o dispositivo. Por ejemplo, el puesto de trabajo. 
 
-1. En Azure Portal, busque y seleccione `Groups`.
+1. En Azure Portal, busque y seleccione `Microsoft Entra ID`. En la hoja **Administrar**, selecciona **Grupos**. 
 
 1. Dedique un minuto a familiarizarse con la configuración del grupo en el panel izquierdo.
 

@@ -235,7 +235,7 @@ En esta tarea, creamos un grupo de seguridad de aplicaciones y un grupo de segur
     | Configuración | Valor |
     | -- | -- |
     | Origen | **Cualquiera** |
-    | Rangos del puerto origen |  * |
+    | Intervalos de puertos de origen |  * |
     | Destination | **Etiqueta de servicio** |
     | Etiqueta de servicio de destino | **Internet** |
     | Service | **Personalizada** |
@@ -317,14 +317,16 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. Observe que en la hoja **Información general** no hay registros de servidor de nombres. 
 
-1. Seleccione **+ Vínculos de red virtual** y, después, seleccione **+ Agregar**. 
+1. Selecciona **Configuración**, y después, selecciona **Administración de DNS**.
+
+1. Selecciona **Vínculos de red virtual** y configura el vínculo. 
 
     | Propiedad | Valor    |
     |:---------|:---------|
     | Nombre del vínculo | `manufacturing-link` |
-    | Virtual network | `ManufacturingVnet` |
+    | Red virtual | `ManufacturingVnet` |
 
-1. Seleccione **Aceptar** y espere a que se cree el vínculo. 
+1. Selecciona **Crear** y espera a que se cree el vínculo. 
 
 1. En la hoja **Información general**, seleccione **+ Conjunto de registros**. Ahora agregaría un registro para cada máquina virtual que necesite compatibilidad con la resolución de nombres privada.
 

@@ -47,7 +47,7 @@ Azure Container Apps lleva el concepto de clúster de Kubernetes administrado un
     | Resource group | `az104-rg9` |
     | Nombre de la aplicación de contenedor |  `my-app` |
     | Region    | **Este de EE. UU** (o cualquier región disponible que tenga cerca) |
-    | Entorno de Container Apps | Deje el valor predeterminado |
+    | Entorno de Container Apps | Selecciona **Crear nuevo** > Establece el nombre del entorno en **my-environment** > **Crear** |
 
 1. En la pestaña **Contenedor**, asegúrese de que la opción **Usar imagen de inicio rápido** está habilitada y de que la imagen del inicio rápido está establecida en **Contenedor Hola mundo simple**.
 
