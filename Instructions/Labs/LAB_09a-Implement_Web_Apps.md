@@ -60,12 +60,14 @@ En esta tarea, creará una aplicación web de Azure. Azure App Services es una s
     | Pila en tiempo de ejecución | **PHP 8.2** |
     | Sistema operativo | **Linux** |
     | Region | **Este de EE. UU.** |
-    | Panes de tarifa | aceptar los valores predeterminados |
+    | Panes de tarifa | **Premium V3 P1V3** |
     | Redundancia de zona | aceptar los valores predeterminados |
 
  1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
 
     >**Nota**: Espere hasta que se cree la aplicación web antes de continuar con la tarea siguiente. Este proceso tardará aproximadamente un minuto.
+    
+    >**Nota**: Si se produce un error en la implementación, cambia a otra región e inténtalo de nuevo. Por ejemplo, cambia a **Este de EE. UU. 2**. 
 
 1. Una vez que la implementación se haya completado, seleccione **Ir al recurso**.
 
