@@ -176,7 +176,7 @@ En esta tarea, implementará una cuenta de almacenamiento de Azure. A continuaci
 
 1. En la página Cuentas de almacenamiento, seleccione **Crear**.
 
-1. Use la siguiente información para definir la cuenta de almacenamiento y seleccione **Revisar**.
+1. Usa la siguiente información para definir la cuenta de almacenamiento, y después selecciona **Revisar + crear**.
 
     | Configuración | Value |
     | --- | --- | 
@@ -185,13 +185,13 @@ En esta tarea, implementará una cuenta de almacenamiento de Azure. A continuaci
     | Nombre de la cuenta de almacenamiento  | Proporcione un nombre único global.   |
     | Region                | **Este de EE. UU.**   |
 
-1. En la pestaña Revisión, seleccione **Crear**.
+1. Seleccione **Crear**.
 
     >**Nota**: Espere a que la implementación se complete. Esta operación debería tardar aproximadamente un minuto.
 
 1. Busque y seleccione el almacén de Recovery Services.
 
-1. Seleccione **Configuración de diagnóstico** y, a continuación, seleccione **Agregar configuración de diagnóstico**.
+1. En la hoja **Supervisión**, selecciona **Configuración de diagnóstico** y después **Agregar configuración de diagnóstico**.
 
 1. Asigne a la configuración el nombre `Logs and Metrics to storage`.
 
