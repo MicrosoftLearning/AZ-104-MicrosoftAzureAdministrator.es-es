@@ -115,7 +115,7 @@ En esta tarea, si la alerta se desencadena, envía una notificación por correo 
 
 1. En la pestaña **Aspectos básicos**, escriba los valores siguientes para cada opción.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     |---------|---------|
     | **Detalles del proyecto** |
     | Subscription | su suscripción |
@@ -157,7 +157,7 @@ En esta tarea, se desencadena la alerta y se confirma que se ha enviado una noti
 
 1. Seleccione **Eliminar** en la barra de menús.
 
-1. Active la casilla **Aplicar eliminación forzada**. Escriba `delete` para confirmar que desea realizar la operación y seleccione **Eliminar**. 
+1. Active la casilla **Aplicar eliminación forzada**. Activa la casilla de la parte inferior para confirmar que quieres que se eliminen los recursos y selecciona **Eliminar**. 
 
 1. En la barra de título, seleccione el icono **Notificaciones** y espere hasta que **vm0** se haya eliminado.
 
