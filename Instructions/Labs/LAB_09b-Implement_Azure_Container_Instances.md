@@ -61,6 +61,8 @@ En esta tarea, creará una aplicación web sencilla mediante una imagen de Docke
 
     >**Nota**: El contenedor será accesible públicamente en dns-name-label.region.azurecontainer.io. Si recibe un mensaje de error **La etiqueta de nombre DNS no está disponible**, pruebe otro valor.
 
+1. Haz clic en **Siguiente: Supervisión >** y desactiva **Habilitar registros de instancia de contenedor**. 
+
 1. Haga clic en **Siguiente: Avanzado >**, revise los ajustes sin realizar ningún cambio.
 
  1. Haga clic en **Revisar y crear**, asegúrese de que se ha superado la validación y, a continuación, seleccione **Crear**.
