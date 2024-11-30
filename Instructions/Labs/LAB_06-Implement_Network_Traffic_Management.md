@@ -326,7 +326,7 @@ Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos
 
 Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
-+ Compare y contraste Azure Load Balancer con Azure Application Gateway. Ayúdame a decidir en qué escenarios debo usar cada producto.
++ Compare y contraste Azure Load Balancer con Azure Application Gateway. Necesito ayuda para decidir en qué escenarios debo usar cada producto.
 + ¿Qué herramientas están disponibles para solucionar problemas de conexiones a Azure Load Balancer? 
 + ¿Cuáles son los pasos básicos para configurar Azure Application Gateway? Proporciona una lista de comprobación de alto nivel. 
 + Crea una tabla en la que se destaquen tres soluciones de equilibrio de carga de Azure. Para cada solución, muestra los protocolos admitidos, las directivas de enrutamiento, la afinidad de sesión y la descarga de TLS.

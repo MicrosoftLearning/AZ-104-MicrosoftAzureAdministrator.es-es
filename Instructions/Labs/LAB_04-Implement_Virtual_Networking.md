@@ -171,7 +171,7 @@ En esta tarea, creamos un grupo de seguridad de aplicaciones y un grupo de segur
     | Suscripción | *su suscripción* |
     | Resource group | **az104-rg4** |
     | Nombre | `asg-web` |
-    | Region | **Este de EE. UU.**  |
+    | Región | **Este de EE. UU.**  |
 
 1. Haga clic en **Revisar y crear** y luego, después de la validación, haga clic en **Crear**.
 
@@ -186,7 +186,7 @@ En esta tarea, creamos un grupo de seguridad de aplicaciones y un grupo de segur
     | Suscripción | *su suscripción* |
     | Resource group | **az104-rg4** |
     | Nombre | `myNSGSecure` |
-    | Region | **Este de EE. UU.**  |
+    | Región | **Este de EE. UU.**  |
 
 1. Haga clic en **Revisar y crear** y luego, después de la validación, haga clic en **Crear**.
 
@@ -262,7 +262,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
 
     | Propiedad | Valor    |
     |:---------|:---------|
-    | Suscripción | **Seleccione la suscripción** |
+    | Suscripción | **Selecciona la suscripción** |
     | Resource group | **az-104-rg4** |
     | Nombre | `contoso.com` (si se reserva, ajuste el nombre) |
     | Region |**Este de EE. UU.** (revise el icono informativo) |
@@ -306,7 +306,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
     | Propiedad | Valor    |
     |:---------|:---------|
-    | Suscripción | **Seleccione la suscripción** |
+    | Suscripción | **Selecciona la suscripción** |
     | Resource group | **az-104-rg4** |
     | Nombre | `private.contoso.com` (ajuste si tenía que cambiar el nombre) |
     | Region |**Este de EE. UU.** |
@@ -317,9 +317,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. Observe que en la hoja **Información general** no hay registros de servidor de nombres. 
 
-1. Selecciona **Configuración**, y después, selecciona **Administración de DNS**.
-
-1. Selecciona **Vínculos de red virtual** y configura el vínculo. 
+1. Selecciona **Administración de DNS** y después **Vínculos de red virtual**. Configura el vínculo. 
 
     | Propiedad | Valor    |
     |:---------|:---------|
@@ -328,7 +326,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. Selecciona **Crear** y espera a que se cree el vínculo. 
 
-1. En la hoja **Información general**, seleccione **+ Conjunto de registros**. Ahora agregaría un registro para cada máquina virtual que necesite compatibilidad con la resolución de nombres privada.
+1. En la hoja **Administración de DNS** selecciona **+ Conjuntos de registros**. Ahora agregaría un registro para cada máquina virtual que necesite compatibilidad con la resolución de nombres privada.
 
     | Propiedad | Valor    |
     |:---------|:---------|

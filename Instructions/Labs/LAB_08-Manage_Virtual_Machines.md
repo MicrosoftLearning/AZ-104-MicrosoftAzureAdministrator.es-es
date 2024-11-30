@@ -222,7 +222,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
     | Configuración | Valor |
     | --- | --- |
     | Origen | **Cualquiera** |
-    | Rangos del puerto origen | * |
+    | Intervalos de puertos de origen | * |
     | Destino | **Cualquiera** |
     | Servicio | **HTTP** |
     | Action | **Permitir** |
