@@ -175,7 +175,9 @@ En esta tarea, creamos un grupo de seguridad de aplicaciones y un grupo de segur
 
 1. Haga clic en **Revisar y crear** y luego, después de la validación, haga clic en **Crear**.
 
-### Cree el grupo de seguridad de red y asócielo a la subred del ASG
+>**Nota:** en este momento, asociarías el ASG a las máquinas virtuales. Estas máquinas se verán afectadas por la regla de NSG de entrada que crees en la siguiente tarea.  
+
+### Crea el grupo de seguridad de red y asócialo a CoreServicesVnet
 
 1. En Azure Portal, busque y seleccione `Network security groups`.
 
@@ -194,7 +196,7 @@ En esta tarea, creamos un grupo de seguridad de aplicaciones y un grupo de segur
 
 1. En **Configuración** haga clic en **Subredes** y, a continuación, **Asociar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | -- | -- |
     | Virtual network | **CoreServicesVnet (az104-rg4)** |
     | Subnet | **SharedServicesSubnet** |
