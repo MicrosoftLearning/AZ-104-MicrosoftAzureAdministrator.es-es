@@ -83,7 +83,7 @@ En esta tarea, creará una ranura de implementación de ensayo. Las ranuras de i
 
 1. Haga clic en **Agregar ranura** y agregue una nueva ranura con la siguiente configuración:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | ---|
     | Nombre | `staging` |
     | Clonar la configuración de | **No clonar la configuración**|
@@ -169,7 +169,7 @@ En esta tarea, configurará el escalado automático de la aplicación web de Azu
 
 1. Revise los resultados de la prueba, incluidos los **usuarios virtuales**, el **tiempo de respuesta** y **las solicitudes por segundo**.
 
-1. Seleccione **Detener** para completar la serie de pruebas.
+1. Seleccione **Detener** para completar la serie de pruebas. No es necesario esperar a que finalice la prueba. 
 
 ## Limpieza de los recursos
 
