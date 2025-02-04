@@ -28,7 +28,7 @@ Para simplificar la administración de recursos de Azure en su organización, se
 
 ## Simulaciones interactivas de laboratorio
 
-Existen algunas simulaciones de laboratorio interactivas que pueden resultarle útiles para este tema. La simulación permite hacer clic en escenarios similares a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+Existen algunas simulaciones de laboratorio interactivas que pueden resultarle útiles para este tema. La simulación te permite hacer clic en un escenario similar a tu propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
 
 + [Administrar acceso con RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Asigne un rol integrado a un usuario y supervise los registros de actividad. 
 
