@@ -19,7 +19,7 @@ Este laboratorio requiere una suscripción a Azure. El tipo de suscripción pued
 
 Su organización está creando un nuevo entorno de laboratorio para pruebas de preproducción de aplicaciones y servicios.  Algunos ingenieros se están contratando para administrar el entorno de laboratorio, incluidas las máquinas virtuales. Para permitir que los ingenieros se autentiquen mediante el Microsoft Entra ID, se le ha encargado el aprovisionamiento de usuarios y grupos. Para minimizar la sobrecarga administrativa, la pertenencia a los grupos debe actualizarse automáticamente en función de los títulos de trabajo. 
 
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de la arquitectura del laboratorio 01.](../media/az104-lab01-architecture.png)
 
@@ -46,7 +46,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas 
 
 1. Vuelva a la página **Entra ID** presionando hacia atrás en el explorador o seleccionando la opción en el menú de la ruta de navegación.
 
-1. Seleccione **Licencias**. Desde aquí puede comprar una licencia, administrar las licencias que tiene y asignar licencias a usuarios y grupos. Seleccione **Características con licencia** para ver lo que está disponible.
+1. Como tienes tiempo, explora otras opciones, como **Licencias** y **Restablecimiento de contraseña**.
    
 ### Creación de un nuevo usuario
 
