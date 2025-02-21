@@ -32,9 +32,9 @@ Hay simulaciones de laboratorio interactivas que podrían resultar útiles para 
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Implementación de máquinas virtuales de Azure con resistencia de zona mediante Azure Portal.
-+ Tarea 2: Administración del escalado del proceso y el almacenamiento para máquinas virtuales.
-+ Tarea 3: Creación y configuración de conjuntos de escalado de máquinas virtuales de Azure.
++ Tarea 1: Implementación de Azure Virtual Machines con resistencia de zona mediante Azure Portal.
++ Tarea 2: Administración del escalado de proceso y almacenamiento para máquinas virtuales.
++ Tarea 3: Creación y configuración de Azure Virtual Machine Scale Sets.
 + Tarea 4: Escalado de los Conjuntos de escalado de las máquinas virtuales de Azure.
 + Tarea 5: Creación de una máquina virtual mediante Azure PowerShell (opcional 1).
 + Tarea 6: Creación de una máquina virtual con la CLI (opcional 2).
@@ -100,7 +100,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
 
 1. Haga clic en **Siguiente: Supervisión >** y especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Diagnósticos de arranque | **Deshabilitar** |
 
@@ -183,6 +183,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
     | Zona de disponibilidad | **Zonas 1, 2, 3** |
     | Modo de orquestación | **Uniforme** |
     | Tipo de seguridad | **Estándar** |
+    | Opciones de escalado | **Revisa y toma los valores predeterminados**. Cambiaremos esto en la siguiente tarea. |
     | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
     | Ejecución de Azure Spot con descuento | **Desactivado** |
     | Size | **Estándar D2s_v3** |
@@ -200,10 +201,10 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
 1. En la página **Redes**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados).  Cuando termine, seleccione **Aceptar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `vmss-vnet` |
-    | Intervalo de direcciones | `10.82.0.0/20` (cambie lo que hay ahí). |
+    | Intervalo de direcciones | `10.82.0.0/20` (elimina el intervalo de direcciones existente) |
     | Nombre de subred | `subnet0` |
     | Rango de subred | `10.82.0.0/24` |
 
@@ -213,7 +214,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
 1. En la hoja **Crear grupo de seguridad de red**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | **vmss1-nsg** |
 
@@ -250,7 +251,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Administración**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Diagnósticos de arranque | **Deshabilitar** |
 
@@ -270,15 +271,15 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Seleccione **Ir al recurso** o busque y seleccione el conjunto de escalado **vmss1**.
 
-1. Elija **Disponibilidad y escalado** en el menú de la izquierda y, a continuación, elija **Escalado**.
+1. Elige **Disponibilidad y escalado** en el menú de la izquierda y, a continuación, elige **Escalado**.
 
->**¿Sabía que...?** Puede realizar una **Escala manual** o una **Escalabilidad automática personalizada**. En conjuntos de escalado con un pequeño número de instancias de máquina virtual, puede ser mejor opción aumentar o reducir el número de instancias (escala manual). En conjuntos de escalado con un gran número de instancias de máquina virtual, el escalado basado en métricas (escalabilidad automática personalizada) puede ser más adecuado.
+    >**¿Sabía que...?** Puede realizar una **Escala manual** o una **Escalabilidad automática personalizada**. En conjuntos de escalado con un pequeño número de instancias de máquina virtual, puede ser mejor opción aumentar o reducir el número de instancias (escala manual). En conjuntos de escalado con un gran número de instancias de máquina virtual, el escalado basado en métricas (escalabilidad automática personalizada) puede ser más adecuado.
 
-### Regla de escalabilidad horizontal
+**Regla de escalabilidad horizontal**
 
 1. Seleccione **Escalabilidad automática personalizada**. Después, cambie el **Modo de escalado** a **Escala basada en métricas**. A continuación, seleccione **Agregar una regla**.
 
-1. Vamos a crear una regla que aumente automáticamente el número de instancias de máquina virtual. Esta regla se escala horizontalmente cuando la carga media de la CPU es superior al 70 % durante un periodo de 10 minutos. Cuando se desencadena la regla, aumenta el número de instancias de máquina virtual en un 20 %.
+1. Vamos a crear una regla que aumente automáticamente el número de instancias de máquina virtual. Esta regla se escala horizontalmente cuando la carga media de la CPU es superior al 70 % durante un periodo de 10 minutos. Cuando se desencadena la regla, aumenta el número de instancias de máquina virtual en un 50 %.
 
     | Configuración | Valor |
     | --- | --- |
@@ -292,13 +293,13 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
     | Estadísticas de intervalo de agregación | **Average** |
     | Operación | **Aumentar porcentaje por** (revisar otras opciones) |
     | Tiempo de finalización (minutos) | **5** |
-    | Percentage | **20** |
+    | Porcentaje | **50** |
 
     ![Captura de pantalla de la página Agregar regla de escalado.](../media/az104-lab08-scale-rule.png)
 
 1. Asegúrese de **Guardar** los cambios.
 
-### Regla de reducción horizontal
+**Regla de reducción horizontal**
 
 1. Durante las noches o fines de semana, la demanda puede disminuir, por lo que es importante crear una regla de reducción horizontal.
 
@@ -311,11 +312,11 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
     | Operador | **Menor que** |
     | Umbral | **30** |
     | Operación | **Disminuir porcentaje por** (revisar las otras opciones) |
-    | Percentage | **20** |
+    | Porcentaje | **50** |
 
 1. Asegúrese de **Guardar** los cambios.
 
-### Establecimiento de los límites de la instancia
+**Establecimiento de los límites de la instancia**
 
 1. Cuando se aplican las reglas de escalado automático, los límites de instancia garantizan que no se realiza un escalado horizontal que supere el número máximo de instancias ni se realiza una reducción horizontal que no llegue al número mínimo de instancias.
 
