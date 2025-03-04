@@ -75,7 +75,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
 1. Use la siguiente información para configurar la red virtual y, a continuación, seleccione **Aceptar**. Si es necesario, quite o reemplace la información existente.
 
-    | Configuración | Value | 
+    | Configuración | Valor | 
     | --- | --- |
     | Nombre | `CoreServicesVnet` (Crear nuevo) |
     | Intervalo de direcciones | `10.0.0.0/16`  |
@@ -120,7 +120,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
 1. Use la siguiente información para configurar la red virtual y, a continuación, seleccione **Aceptar**.  Si es necesario, quite o reemplace el intervalo de direcciones existente.
 
-    | Configuración | Value | 
+    | Configuración | Valor | 
     | --- | --- |
     | Nombre | `ManufacturingVnet` |
     | Intervalo de direcciones | `172.16.0.0/16`  |
@@ -223,7 +223,7 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
 
 1. Seleccione **Subredes** y, a continuación, **+ Crear**. Asegúrese de **Guardar** los cambios. 
 
-    | Configuración | Value | 
+    | Configuración | Valor | 
     | --- | --- |
     | Nombre | `perimeter` |
     | Intervalo de direcciones de subred | `10.0.1.0/24`  |
@@ -241,7 +241,7 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
 
 1. Después de implementar la tabla de rutas, seleccione **Ir al recurso**.
 
-1. Seleccione **Rutas** y después **Agregar**. Cree una ruta desde la aplicación virtual de red futura a la red virtual CoreServices. 
+1. Seleccione **Rutas** y después **Agregar**. Crea una ruta desde la aplicación virtual de red (NVA) futura a la red virtual CoreServices. 
 
     | Configuración | Value | 
     | --- | --- |
@@ -255,7 +255,7 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
 
 1. Seleccione **Subredes** y, después, seleccione **Asociar**. Complete la configuración.
 
-    | Configuración | Value | 
+    | Configuración | Valor | 
     | --- | --- |
     | Virtual network | **CoreServicesVnet** |
     | Subnet | **Principal** |    
