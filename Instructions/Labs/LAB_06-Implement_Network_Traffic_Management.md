@@ -1,18 +1,18 @@
 ---
 lab:
-  title: "Laboratorio\_06: Implementación de la administración del tráfico"
+  title: 'Laboratorio 06: Implementación de la administración del tráfico de red'
   module: Administer Network Traffic Management
 ---
 
-# Laboratorio 06: Implementación de la administración del tráfico
+# Laboratorio 06: Implementación de la administración del tráfico de red
 
 ## Introducción al laboratorio
 
 En este laboratorio, aprenderá a configurar y probar una instancia de Load Balancer pública y una instancia de Application Gateway.
 
-Este laboratorio requiere una suscripción a Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Este laboratorio requiere una suscripción a Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
-## Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
 ## Escenario del laboratorio
 
@@ -28,11 +28,11 @@ Hay simulaciones de laboratorio interactivas que podrían resultar útiles para 
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Use una plantilla para aprovisionar una infraestructura.
-+ Tarea 2: Configurar una instancia de Azure Load Balancer.
-+ Tarea 3: Configurar una instancia de Azure Application Gateway.
++ Tarea 1: Use una plantilla para aprovisionar una infraestructura.
++ Tarea 2: Configurar una instancia de Azure Load Balancer.
++ Tarea 3: Configurar una instancia de Azure Application Gateway.
 
-## Tarea 1: Usar una plantilla para aprovisionar una infraestructura
+## Tarea 1: Usar una plantilla para aprovisionar una infraestructura
 
 En esta tarea, usará una plantilla para implementar una red virtual, un grupo de seguridad de red y dos máquinas virtuales.
 
@@ -66,11 +66,11 @@ En esta tarea, usará una plantilla para implementar una red virtual, un grupo d
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-    >**Nota**: Espere a que se complete la implementación para pasar a la siguiente tarea. La implementación debería durar unos 5 minutos.
+    >**Nota**: Espere a que se complete la implementación para pasar a la siguiente tarea. La implementación debería durar unos 5 minutos.
 
     >**Nota**: Examine los recursos que se implementan. Habrá una red virtual con tres subredes y cada una de ellas tendrá una máquina virtual.
 
-## Tarea 2: Configurar una instancia de Azure Load Balancer
+## Tarea 2: Configurar una instancia de Azure Load Balancer
 
 En esta tarea, se implementa una instancia de Azure Load Balancer delante de las dos máquinas virtuales de Azure en la red virtual. En Azure, las instancias de Load Balancer proporcionan conectividad de nivel 4 entre recursos, como máquinas virtuales. La configuración de Load Balancer incluye una dirección IP de front-end para aceptar conexiones, un grupo de back-end y reglas que definen la forma en que las conexiones cómo deben atravesar el equilibrador de carga.
 
@@ -80,7 +80,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
 ![Diagrama de las tareas del laboratorio.](../media/az104-lab06-lb-architecture.png)
 
-1. En Azure Portal, busque `Load balancers` y selecciónelo, y en la hoja **Equilibradores de carga**, haga clic en **+ Crear**.
+1. En Azure Portal, busque `Load balancers` y selecciónelo, y en la hoja **Equilibradores de carga**, haga clic en **+ Crear**.
 
 1. Cree un equilibrador de carga con los siguientes valores (deje los demás con sus valores predeterminados) y haga clic en **Siguiente: Configuración de IP de front-end**:
 
@@ -98,7 +98,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
 1. En la pestaña **Configuración de IP de front-end**, haga clic en **Agregar una configuración de IP de front-end** y use la siguiente configuración.  
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-fe` |
     | Tipo de IP | Dirección IP |
@@ -107,7 +107,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
 1. En el elemento emergente **Agregar una dirección IP pública**, utilice la configuración siguiente antes de hacer clic en **Aceptar** y, a continuación, haga clic en **Agregar**. Cuando haya terminado, haga clic en **Siguiente: Grupos de back-end**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-lbpip` |
     | SKU | Estándar |
@@ -115,11 +115,11 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
     | Asignación | estática |
     | Preferencia de enrutamiento | **Microsoft Network** |
 
-    >**Nota:** La versión Estándar de SKU proporciona una dirección IP estática. Cuando se elimina el recurso se asignan direcciones IP estáticas con el recurso que se crea y publica.  
+    >**Nota:** La versión Estándar de SKU proporciona una dirección IP estática. Cuando se elimina el recurso se asignan direcciones IP estáticas con el recurso que se crea y publica.  
 
 1. En la pestaña **Grupos de back-end**, haga clic en **Agregar un grupo de back-end** con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Haga clic en **+ Agregar** (dos veces) y, después, en**Siguiente: Reglas de entrada**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-be` |
     | Virtual network | **az104-06-vnet1** |
@@ -138,7 +138,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
 1. Seleccione **+Agregar**. Agregue una regla de equilibrio de carga con las opciones de configuración siguientes (deje las demás con los valores predeterminados).  Cuando configure la regla, use los iconos informativos para obtener información sobre cada configuración. Cuando termine, haga clic en **Guardar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-lbrule` |
     | Versión de la dirección IP | **IPv4** |
@@ -167,9 +167,9 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
     > **Nota**: Es posible que tenga que actualizar más de una vez o abrir una nueva ventana del explorador en modo InPrivate.
 
-## Tarea 3: Configurar una instancia de Azure Application Gateway
+## Tarea 3: Configurar una instancia de Azure Application Gateway
 
-En esta tarea, se implementa Azure Application Gateway delante de dos máquinas virtuales de Azure. Una instancia de Application Gateway proporciona equilibrio de carga de nivel 7, Web Application Firewall (WAF), terminación SSL y cifrado de un extremo a otro a los recursos definidos en el grupo de back-end. Application Gateway enruta imágenes a una máquina virtual y vídeos a la otra máquina virtual.
+En esta tarea, se implementa Azure Application Gateway delante de dos máquinas virtuales de Azure. Una instancia de Application Gateway proporciona equilibrio de carga de nivel 7, Web Application Firewall (WAF), terminación SSL y cifrado de un extremo a otro a los recursos definidos en el grupo de back-end. Application Gateway enruta imágenes a una máquina virtual y vídeos a la otra máquina virtual.
 
 ## Diagrama de arquitectura: Application Gateway
 
@@ -181,11 +181,11 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
 1. En la hoja **Redes virtuales**, en la lista de redes virtuales, haga clic en **az104-06-vnet1**.
 
-1. En la hoja de la red virtual **az104-06-vnet1**, en la sección **Configuración**, haga clic en **Subredes** y luego en **+ Subred**.
+1. En la hoja de la red virtual **az104-06-vnet1**, en la sección **Configuración**, haga clic en **Subredes** y luego en **+ Subred**.
 
 1. Agregue una subred con las siguientes opciones (deje las demás con los valores predeterminados).
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `subnet-appgw` |
     | Dirección inicial| `10.60.3.224` |
@@ -195,7 +195,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
     > **Nota**: Azure Application Gateway usará esta subred. Application Gateway requiere una subred dedicada de tamaño /27 o mayor.
 
-1. En Azure Portal, busque `Application gateways` y selecciónelo y, en la hoja **Puertas de enlace de aplicación** y haga clic en **+ Crear**.
+1. En Azure Portal, busque `Application gateways` y selecciónelo y, en la hoja **Puertas de enlace de aplicación** y haga clic en **+ Crear**.
 
 1. En la pestaña **Aspectos básicos**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
@@ -204,7 +204,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Subscription | su suscripción de Azure |
     | Resource group | `az104-rg6` |
     | Nombre de la puerta de enlace de aplicaciones | `az104-appgw` |
-    | Region | La **misma** región de Azure que usó en la tarea 1 |
+    | Region | La **misma** región de Azure que usó en la tarea 1 |
     | Nivel | **Standard V2** |
     | Habilitación del escalado automático | **No** |
     | Recuento mínimo de instancias | `2` |
@@ -222,11 +222,11 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Nombre | `az104-gwpip` |
     | Zona de disponibilidad | **1** |
 
-    >**Nota:** Application Gateway puede tener una dirección IP pública y una privada.
+    >**Nota:** Application Gateway puede tener una dirección IP pública y una privada.
  
 1. Haga clic en **Siguiente: Back-ends >** y, a continuación, en **Agregar un grupo de back-end**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-appgwbe` |
     | Adición de un grupo de back-end sin destinos | **No** |
@@ -235,7 +235,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
 1. Haga clic en **Agregar un grupo de back-end**. Este es el grupo de back-end para las **imágenes**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-imagebe` |
     | Adición de un grupo de back-end sin destinos | **No** |
@@ -243,7 +243,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
 1. Haga clic en **Agregar un grupo de back-end**. Este es el grupo de back-end para el **vídeo**. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados). Cuando haya terminado, haga clic en **Agregar**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `az104-videobe` |
     | Adición de un grupo de back-end sin destinos | **No** |
@@ -319,7 +319,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
@@ -331,7 +331,7 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 + ¿Cuáles son los pasos básicos para configurar Azure Application Gateway? Proporciona una lista de comprobación de alto nivel. 
 + Crea una tabla en la que se destaquen tres soluciones de equilibrio de carga de Azure. Para cada solución, muestra los protocolos admitidos, las directivas de enrutamiento, la afinidad de sesión y la descarga de TLS.
   
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
 + [Mejora de la escalabilidad y resistencia de las aplicaciones mediante Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Analice los diferentes equilibradores de carga de Azure y cómo elegir la solución de Azure Load Balancer adecuada para satisfacer sus necesidades.
 + [Equilibrio de carga del tráfico de servicio web con Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Mejorar la resistencia de la aplicación al distribuir la carga entre varios servidores y usar el enrutamiento basado en ruta de acceso para dirigir el tráfico web.
@@ -340,7 +340,7 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 
 Enhorabuena por completar el laboratorio. Estos son los puntos clave de este laboratorio.
 
-+ Azure Load Balancer es una excelente opción para distribuir el tráfico de red entre varias máquinas virtuales en la capa de transporte (nivel 4 de OSI: TCP y UDP).
++ Azure Load Balancer es una excelente opción para distribuir el tráfico de red entre varias máquinas virtuales en la capa de transporte (nivel 4 de OSI: TCP y UDP).
 + Las instancias públicas de Load Balancer se usan para equilibrar la carga del tráfico de Internet en las máquinas virtuales. Un equilibrador de carga interno (o privado) se usa cuando se necesitan direcciones IP privadas solo en el front-end.
 + La versión Básico del equilibrador de carga es para aplicaciones a pequeña escala que no necesitan alta disponibilidad ni redundancia. La versión Estándar del equilibrador de carga es para un alto rendimiento y una latencia ultra baja.
 + Azure Application Gateway es un equilibrador de carga de tráfico web (OSI capa 7) que permite administrar el tráfico a las aplicaciones web.
