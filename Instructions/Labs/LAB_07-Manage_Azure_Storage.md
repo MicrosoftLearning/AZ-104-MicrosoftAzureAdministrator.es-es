@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratorio\_07: Administración de Azure\_Storage"
+  title: 'Laboratorio 07: Administración de Azure Storage'
   module: Administer Azure Storage
 ---
 
@@ -10,9 +10,9 @@ lab:
 
 En este laboratorio aprenderá a crear cuentas de almacenamiento para blobs y archivos de Azure. Aprenderá a configurar y proteger contenedores de blobs. También aprenderá a usar el explorador de almacenamiento para configurar y proteger recursos compartidos de archivos de Azure. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
-## Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
 ## Escenario del laboratorio
 
@@ -50,59 +50,61 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
     | --- | --- |
     | Suscripción          | el nombre de la suscripción de Azure  |
     | Resource group        | **az104-rg7** (crear nueva) |
-    | Nombre de la cuenta de almacenamiento  | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
+    | Nombre de la cuenta de almacenamiento  | Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos |
     | Región                | **(EE. UU.) Este de EE. UU.**  |
-    | Rendimiento           | **Estándar** (observe la opción Premium) |
+    | Rendimiento           | **Estándar** (observa la opción Premium) |
     | Redundancia            | **Almacenamiento con redundancia geográfica** (observe las otras opciones)|
-    | Habilitar el acceso de lectura a los datos en caso de disponibilidad regional | Active la casilla. |
+    | Habilitar el acceso de lectura a los datos en caso de disponibilidad regional | Activa la casilla. |
 
->**¿Sabía que...?** Se debería usar el nivel de rendimiento Estándar para la mayoría de las aplicaciones. Use el nivel de rendimiento Premium para aplicaciones empresariales o de alto rendimiento. 
+    >**¿Sabías que...?** Se debería usar el nivel de rendimiento Estándar para la mayoría de las aplicaciones. Usa el nivel de rendimiento Premium para aplicaciones empresariales o de alto rendimiento. 
 
-1. En la pestaña **Opciones avanzadas**, use los iconos informativos para obtener más información sobre las opciones. Use los valores predeterminados. 
+1. En la pestaña **Opciones avanzadas**, usa los iconos informativos para obtener más información sobre las opciones. Usa los valores predeterminados. 
 
-1. En la pestaña **Redes**, revise las opciones disponibles y seleccione **Deshabilitar el acceso público y usar el acceso privado**.
+1. En la pestaña **Redes**, en la sección **Acceso a red pública** selecciona **Deshabilitar**. Esto restringirá el acceso entrante al permitir el acceso saliente. 
 
-1. Revise la pestaña **Protección de datos**. Observe que 7 días es la directiva de retención de eliminación temporal predeterminada. Tenga en cuenta que es posible habilitar el control de versiones de blobs. Acepte los valores predeterminados.
+1. Revisa la pestaña **Protección de datos**. Recuerda que la directiva de retención de eliminación temporal predeterminada es de 7 días. Observa que es posible habilitar el control de versiones de blobs. Acepta los valores predeterminados.
 
-1. Revise la pestaña **Cifrado**. Observe las opciones de seguridad adicionales. Acepte los valores predeterminados.
+1. Revisa la pestaña **Cifrado**. Observa las opciones de seguridad adicionales. Acepta los valores predeterminados.
 
-1. Seleccione **Revisar**, espere a que se complete el proceso de validación y, a continuación, haga clic en **Crear**.
+1. Selecciona **Revisar y crear**, espera a que se complete el proceso de validación y, a continuación, haz clic en **Crear**.
 
-1. Una vez implementada la cuenta de almacenamiento, seleccione **Ir al recurso**.
+1. Una vez implementada la cuenta de almacenamiento, selecciona **Ir al recurso**.
 
-1. Revise la hoja **Información general** y las configuraciones adicionales que se pueden cambiar. Se trata de una configuración global para la cuenta de almacenamiento. Observe que la cuenta de almacenamiento se puede usar para contenedores de blobs, recursos compartidos de archivos, colas y tablas.
+1. Revisa la hoja **Información general** y las configuraciones adicionales que se pueden cambiar. Se trata de una configuración global para la cuenta de almacenamiento. Observa que la cuenta de almacenamiento se puede usar para contenedores de blobs, recursos compartidos de archivos, colas y tablas.
 
-1. En la sección **Seguridad y redes**, seleccione **Redes**. Observe que el acceso a la red pública está deshabilitado.
+1. Selecciona **Redes** en la hoja **Seguridad y redes**. Observa que el **acceso a la red pública** está deshabilitado.
 
-    + Cambie el **nivel de acceso público** a **Habilitado desde redes virtuales y direcciones IP seleccionadas**.
-    + En la sección **Firewall**, active la casilla **Agregar la dirección IP del cliente.**
-    + Asegúrese de **Guardar** los cambios. 
+    + Selecciona **Administrar** el **Acceso a la red pública**.
+    + Cambia el **Acceso a la red pública** a **Habilitar**.
+    + Cambia la **Acción predeterminada** a **Habilitar desde redes seleccionadas**.
+    + En la sección **Direcciones IP**, selecciona **Agregar la dirección IP del cliente**.
+    + Guarde los cambios mediante **Guardar**.
   
-1. En la sección **Administración de datos**, observe la hoja **Redundancia**. Observe la información sobre las ubicaciones del centro de datos principal y secundario.
+1. En la hoja **Administración de datos**, selecciona **Redundancia**. Observa la información sobre las ubicaciones del centro de datos principal y secundario.
 
-1. En la sección **Administración de datos**, seleccione **Administración del ciclo de vida** y, a continuación, seleccione **Agregar una regla**.
+1. En la hoja **Administración de datos**, selecciona **Administración del ciclo de vida** y, a continuación, selecciona **Agregar una regla**.
 
-    + **Asigne un nombre** a la regla `Movetocool`. Observe las opciones para limitar el ámbito de la regla.
+    + **Asigna un nombre** a la regla `Movetocool`. Observa las opciones para limitar el ámbito de la regla.
     
-    + En la pestaña **Blobs de base**, *si* los blobs de base se modificaron por última vez más de hace más de `30 days`, *entonces* **mueva a almacenamiento esporádico**. Observe las otras opciones. 
+    + En la pestaña **Blobs de base**, *si* los blobs de base se modificaron por última vez más de hace más de `30 days`, *entonces* **mueva a almacenamiento esporádico**. Observa las otras opciones. 
     
-    + Observe que se pueden configurar otras condiciones. Seleccione **Agregar** cuando haya terminado de explorar.
+    + Observa que se pueden configurar otras condiciones. Selecciona **Agregar** cuando hayas terminado de explorar.
 
     ![Captura de pantalla sobre mover a condiciones de regla esporádicos.](../media/az104-lab07-movetocool.png)
 
 ## Tarea 2: Creación y configuración del almacenamiento de blobs seguro
 
-En esta tarea, creará un contenedor de blobs y cargará una imagen. Los contenedores de blobs son estructuras de tipo directorio que almacenan datos no estructurados.
+En esta tarea, crearás un contenedor de blobs y cargarás una imagen. Los contenedores de blobs son estructuras de tipo directorio que almacenan datos no estructurados.
 
 ### Creación de contenedores de blobs y directivas de retención basadas en el tiempo
 
-1. Continúe en Azure Portal, trabajando con la cuenta de almacenamiento.
+1. Continúa en Azure Portal, trabajando con la cuenta de almacenamiento.
 
-1. En la sección **Almacenamiento de datos**, haga clic en **Contenedores**. 
+1. En la hoja **Almacenamiento de datos**, selecciona **Contenedores**. 
 
-1. Haga clic en **+ Contenedor** y **Cree** un contenedor con la configuración siguiente:
+1. Haz clic en **+ Contenedor** y **Crea** un contenedor con la configuración siguiente:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Nombre | `data`  |
     | Nivel de acceso público | Observe que el nivel de acceso esté establecido en privado |
@@ -162,69 +164,69 @@ En esta tarea, creará un contenedor de blobs y cargará una imagen. Los contene
     | Hora de inicio | hora actual |
     | Fecha de vencimiento | fecha de mañana |
     | Hora de expiración | hora actual |
-    | Direcciones IP permitidas | déjelo en blanco |
+    | Direcciones IP permitidas | déjalo en blanco |
 
-1. Haga clic en **Generar URL y token de SAS**.
+1. Haz clic en **Generar URL y token de SAS**.
 
-1. Copie la entrada **dirección URL de SAS de blob** en el Portapapeles.
+1. Copia la entrada **dirección URL de SAS de blob** en el Portapapeles.
 
-1. Abra otra ventana del explorador en InPrivate y vaya a la dirección URL de SAS de blob que copió en el paso anterior.
+1. Abre otra ventana del explorador en InPrivate y ve a la dirección URL de SAS de blob que copiaste en el paso anterior.
 
-    >**Nota**: Debería poder ver el contenido del archivo. 
+    >**Nota**: deberías poder ver el contenido del archivo. 
 
 ## Tarea 3: Creación y configuración del almacenamiento de archivos de Azure
 
-En esta tarea, creará y configurará recursos compartidos de Azure. Usará el explorador de almacenamiento para administrar el recurso compartido. 
+En esta tarea, crearás y configurarás recursos compartidos de Azure. Usarás el explorador de almacenamiento para administrar el recurso compartido de archivos. 
 
 ### Creación del recurso compartido y carga de un archivo
 
-1. En Azure Portal, vuelva a la cuenta de almacenamiento, en la sección **Almacenamiento de datos** y haga clic en **Recursos compartidos**.
+1. En Azure Portal, vuelve a la cuenta de almacenamiento, en la hoja **Almacenamiento de datos**, haz clic en **Recursos compartidos de archivos**.
 
-1. Haga clic en **+ Recurso compartido** y, en la pestaña **Aspectos básicos**, asigne un nombre al recurso compartido de archivos, `share1`. 
+1. Haz clic en **+ Recurso compartido de archivos** y, en la pestaña **Datos básicos**, asigna un nombre al recurso compartido de archivos, `share1`. 
 
-1. Observe las opciones de **Nivel de acceso**. Mantenga la opción predeterminada **Optimizado para transacciones**.
+1. Observa las opciones de **Nivel de acceso**. Mantén la opción predeterminada **Optimizado para transacciones**.
    
-1. Vaya a la pestaña **Copia de seguridad** y asegúrese de que la opción **Habilitar copia de seguridad** **no** esté activada. Estamos deshabilitando la copia de seguridad para simplificar la configuración del laboratorio.
+1. Ve a la pestaña **Copia de seguridad** y asegúrate de que la opción **Habilitar copia de seguridad****no** esté activada. Estamos deshabilitando la copia de seguridad para simplificar la configuración del laboratorio.
 
-1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. Espere a que el recurso compartido de archivos se implemente.
+1. Haz clic en **Revisar y crear** y, a continuación, en **Crear**. Espera a que el recurso compartido de archivos se implemente.
 
     ![Captura de pantalla de la página Crear recurso compartido.](../media/az104-lab07-create-share.png)
 
 ### Exploración del explorador de almacenamiento y carga de un archivo
 
-1. Vuelva a la cuenta de almacenamiento y seleccione **Explorador de almacenamiento**. El explorador de almacenamiento de Azure es una herramienta del portal que permite ver rápidamente todos los servicios de almacenamiento de la cuenta.
+1. Vuelve a la cuenta de almacenamiento y selecciona **Explorador de almacenamiento**. El explorador de almacenamiento de Azure es una herramienta del portal que permite ver rápidamente todos los servicios de almacenamiento de la cuenta.
 
-1. Seleccione **Recursos compartidos** y compruebe que el directorio **share1** esté presente.
+1. Selecciona **Recursos compartidos** y comprueba que el directorio **share1** esté presente.
 
-1. Seleccione el directorio **share1** y observe que pueda **+ Agregar directorio**. Esto le permitirá crear una estructura de carpetas.
+1. Selecciona el directorio **share1** y observa que pueda **+ Agregar directorio**. Esto te permitirá crear una estructura de carpetas.
 
-1. Seleccione **Cargar**. Vaya a un archivo de su elección y, a continuación, haga clic en **Cargar**.
+1. Selecciona **Cargar**. Ve a un archivo de su elección y, a continuación, haz clic en **Cargar**.
 
-    >**Nota**: Es posible ver los recursos compartidos y administrarlos en el explorador de almacenamiento. En este momento no hay restricciones.
+    >**Nota**: es posible ver los recursos compartidos de archivos y administrarlos en el explorador de almacenamiento. En este momento no hay restricciones.
 
 ### Restricción del acceso de red a la cuenta de almacenamiento
 
-1. En el portal, busque y seleccione **Redes virtuales**.
+1. En el portal, busca y selecciona **Redes virtuales**.
 
-1. Seleccione **+ Create** (+ Crear). Seleccione el grupo de recursos. y asigne a la red virtual un **nombre**, `vnet1`.
+1. Selecciona **+ Create** (+ Crear). Selecciona el grupo de recursos. y asigna a la red virtual un **nombre**, `vnet1`.
 
-1. Tome los valores predeterminados para otros parámetros, seleccione **Revisar y crear** y, a continuación, **Crear**.
+1. Toma los valores predeterminados para otros parámetros, selecciona **Revisar y crear** y, a continuación, **Crear**.
 
-1. Espere a que se implemente la red virtual y seleccione **Ir al recurso**.
+1. Espera a que se implemente la red virtual y selecciona **Ir al recurso**.
 
-1. En la sección **Configuración**, seleccione la hoja **Puntos de conexión de servicio**.
-    + Seleccione **Agregar**. 
-    + En la lista desplegable **Servicios**, seleccione **Microsoft.Storage**.
-    + En la lista desplegable **Subredes**, active la subred **Predeterminada**.
-    + Haga clic en **Agregar** para guardar los cambios.  
+1. En la sección **Configuración**, selecciona la hoja **Puntos de conexión de servicio**.
+    + Selecciona **Agregar**. 
+    + En la lista desplegable **Servicios**, selecciona **Microsoft.Storage**.
+    + En la lista desplegable **Subredes**, activa la subred **Predeterminada**.
+    + Haz clic en **Agregar** para guardar los cambios.  
 
-1. Vuelva a la cuenta de almacenamiento.
+1. Vuelve a la cuenta de almacenamiento.
 
-1. En la sección **Seguridad y redes**, seleccione la hoja **Redes**.
+1. En la hoja **Seguridad y redes**, selecciona **Redes**.
 
-1. Seleccione **Agregar red virtual existente**, así como **vnet1** y subred **predeterminada**. Seleccione **Agregar**.
+1. Selecciona **Agregar red virtual existente**, así como **vnet1** y subred **predeterminada**. Selecciona **Agregar**.
 
-1. En la sección **Firewall**, **Elimine** la dirección IP de la máquina. El tráfico permitido solo debería provenir de la red virtual. 
+1. En la sección **Firewall**, **Elimina** la dirección IP de la máquina. El tráfico permitido solo debería provenir de la red virtual. 
 
 1. Asegúrese de **Guardar** los cambios.
 
@@ -242,7 +244,7 @@ En esta tarea, creará y configurará recursos compartidos de Azure. Usará el e
 Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
