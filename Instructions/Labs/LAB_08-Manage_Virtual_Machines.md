@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratorio\_08: Administración de máquinas virtuales"
+  title: 'Laboratorio 08: Administración de máquinas virtuales'
   module: Administer Virtual Machines
 ---
 
@@ -10,9 +10,9 @@ lab:
 
 En este laboratorio, creará máquinas virtuales y las comparará con conjuntos de escalado de máquinas virtuales. Descubrirá cómo crear, configurar y cambiar el tamaño de una máquina virtual única. Descubrirá cómo crear un conjunto de escalado de máquinas virtuales y configurar el escalado automático.
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
-## Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
 ## Escenario del laboratorio
 
@@ -26,34 +26,34 @@ Hay simulaciones de laboratorio interactivas que podrían resultar útiles para 
 
 + [Implementar una máquina virtual con una plantilla](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Explore la galería de inicio rápido y localice una plantilla de máquina virtual. Implementar la plantilla y comprobar el resultado.
 
-+ [Crear una máquina virtual con PowerShell](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2010). Use Azure PowerShell para implementar una máquina virtual. Revise las recomendaciones de Azure Advisor.
++ [Crear una máquina virtual con PowerShell](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2010). Use Azure PowerShell para implementar una máquina virtual. Revise las recomendaciones de Azure Advisor.
 
-+ [Crear una máquina virtual con la CLI](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2011). Use la CLI para implementar una máquina virtual. Revise las recomendaciones de Azure Advisor.
++ [Crear una máquina virtual con la CLI](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2011). Use la CLI para implementar una máquina virtual. Revise las recomendaciones de Azure Advisor.
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Implementación de Azure Virtual Machines con resistencia de zona mediante Azure Portal.
-+ Tarea 2: Administración del escalado de proceso y almacenamiento para máquinas virtuales.
-+ Tarea 3: Creación y configuración de Azure Virtual Machine Scale Sets.
-+ Tarea 4: Escalado de los Conjuntos de escalado de las máquinas virtuales de Azure.
-+ Tarea 5: Creación de una máquina virtual mediante Azure PowerShell (opcional 1).
-+ Tarea 6: Creación de una máquina virtual con la CLI (opcional 2).
++ Tarea 1: Implementación de Azure Virtual Machines con resistencia de zona mediante Azure Portal.
++ Tarea 2: Administración del escalado de proceso y almacenamiento para máquinas virtuales.
++ Tarea 3: Creación y configuración de Azure Virtual Machine Scale Sets.
++ Tarea 4: Escalado de los Conjuntos de escalado de las máquinas virtuales de Azure.
++ Tarea 5: Creación de una máquina virtual mediante Azure PowerShell (opcional 1).
++ Tarea 6: Creación de una máquina virtual con la CLI (opcional 2).
 
 ## Diagrama de arquitectura de Azure Virtual Machines
 
 ![Diagrama de las tareas de arquitectura de VM.](../media/az104-lab08-vm-architecture.png)
 
-## Tarea 1: Implementación de máquinas virtuales de Azure con resistencia de zona mediante Azure Portal
+## Tarea 1: Implementación de máquinas virtuales de Azure con resistencia de zona mediante Azure Portal
 
-En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zonas de disponibilidad mediante Azure Portal. Las zonas de disponibilidad ofrecen el nivel más alto de Acuerdo de Nivel de Servicio de tiempo de actividad para las máquinas virtuales, un 99,99 %. Para lograr este Acuerdo de Nivel de Servicio, debe implementar al menos dos máquinas virtuales en distintas zonas de disponibilidad.
+En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zonas de disponibilidad mediante Azure Portal. Las zonas de disponibilidad ofrecen el nivel más alto de Acuerdo de Nivel de Servicio de tiempo de actividad para las máquinas virtuales, un 99,99%. Para lograr este Acuerdo de Nivel de Servicio, debe implementar al menos dos máquinas virtuales en distintas zonas de disponibilidad.
 
 1. Inicie sesión en Azure Portal: `https://portal.azure.com`.
 
 1. Busque y seleccione `Virtual machines`, en la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, después, seleccione en la lista desplegable **Máquina virtual de Azure**. Observe las otras opciones.
 
-1. En la pestaña **Aspectos básicos**, en el menú desplegable **Zona de disponibilidad**, coloque una marca de verificación junto a **Zona 2**. Esto debe seleccionar tanto la **Zona 1** como la **Zona 2**.
+1. En la pestaña **Aspectos básicos**, en el menú desplegable **Zona de disponibilidad**, coloque una marca de verificación junto a **Zona 2**. Esto debe seleccionar tanto la **Zona 1** como la **Zona 2**.
 
-    >**Nota**: Esto implementará dos máquinas virtuales en la región seleccionada, una en cada zona. El Acuerdo de Nivel de Servicio de tiempo de actividad del 99,99 % se alcanza porque tiene al menos dos máquinas virtuales distribuidas entre al menos dos zonas. En el escenario en el que puede que solo necesite una máquina virtual, seguir implementando la máquina virtual en otra zona es un procedimiento recomendado.
+    >**Nota**: Esto implementará dos máquinas virtuales en la región seleccionada, una en cada zona. El Acuerdo de Nivel de Servicio de tiempo de actividad del 99,99% se alcanza porque tiene al menos dos máquinas virtuales distribuidas entre al menos dos zonas. En el escenario en el que puede que solo necesite una máquina virtual, seguir implementando la máquina virtual en otra zona es un procedimiento recomendado.
 
 1. En la pestaña Aspectos básicos, continúe completando la configuración:
 
@@ -64,11 +64,11 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
     | Nombres de las máquinas virtuales | `az104-vm1` y `az104-vm2` (Después de seleccionar ambas zonas de disponibilidad, seleccione **Editar nombres** en el campo Nombre de la máquina virtual). |
     | Region | **Este de EE. UU.** |
     | Opciones de disponibilidad | **Zona de disponibilidad** |
-    | Zona de disponibilidad | **Zona 1, 2** (lea la nota sobre el uso de conjuntos de escalado de máquinas virtuales). |
+    | Zona de disponibilidad | **Zona 1, 2** (lea la nota sobre el uso de conjuntos de escalado de máquinas virtuales). |
     | Tipo de seguridad | **Estándar** |
-    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
     | Instancia de Azure Spot | **unchecked** |
-    | Size | **Estándar D2s v3** |
+    | Size | **Estándar D2s v3** |
     | Nombre de usuario | `localadmin` |
     | Contraseña | **Proporcione una contraseña segura** |
     | Puertos de entrada públicos | **None** |
@@ -114,7 +114,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
 
    >**Nota:** Supervise los mensajes de **Notificación**.
 
-## Tarea 2: Administración del escalado del proceso y el almacenamiento para máquinas virtuales
+## Tarea 2: Administración del escalado del proceso y el almacenamiento para máquinas virtuales
 
 En esta tarea, escalará una máquina virtual ajustando su tamaño a una SKU diferente. Azure proporciona flexibilidad en la selección de tamaño de máquina virtual para que pueda ajustar una máquina virtual durante periodos si necesita más (o menos) proceso y memoria asignadas. Este concepto se extiende a los discos, donde puede modificar el rendimiento del disco o aumentar la capacidad asignada.
 
@@ -166,11 +166,11 @@ En esta tarea, escalará una máquina virtual ajustando su tamaño a una SKU dif
 
 ![Diagrama de las tareas de arquitectura de VMSS.](../media/az104-lab08-vmss-architecture.png)
 
-## Tarea 3: Creación y configuración de conjuntos de escalado de máquinas virtuales de Azure
+## Tarea 3: Creación y configuración de conjuntos de escalado de máquinas virtuales de Azure
 
 En esta tarea, implementará un conjunto de escalado de máquinas virtuales de Azure entre zonas de disponibilidad. Los conjuntos de escalado de máquinas virtuales reducen la sobrecarga administrativa de la automatización al permitirle configurar métricas o condiciones que permitan que el conjunto de escalado se escale horizontalmente o se reduzca horizontalmente.
 
-1. En Azure Portal, busque y seleccione `Virtual machine scale sets` y, en la hoja **Conjuntos de escalado de máquinas virtuales**, haga clic en **+ Crear**.
+1. En Azure Portal, busque y seleccione `Virtual machine scale sets` y, en la hoja **Conjuntos de escalado de máquinas virtuales**, haga clic en **+ Crear**.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear un conjunto de escalado de máquinas virtuales**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Spot >**.
 
@@ -179,17 +179,17 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
     | Suscripción | el nombre de la suscripción de Azure  |
     | Resource group | **az104-rg8**  |
     | Nombre del conjunto de escalado de máquinas virtuales | `vmss1` |
-    | Region | **(EE. UU.) Este de EE. UU.** |
+    | Region | **(EE. UU.) Este de EE. UU.** |
     | Zona de disponibilidad | **Zonas 1, 2, 3** |
     | Modo de orquestación | **Uniforme** |
     | Tipo de seguridad | **Estándar** |
     | Opciones de escalado | **Revisa y toma los valores predeterminados**. Cambiaremos esto en la siguiente tarea. |
-    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
     | Ejecución de Azure Spot con descuento | **Desactivado** |
     | Size | **Estándar D2s_v3** |
     | Nombre de usuario | `localadmin` |
     | Contraseña | **Proporcione una contraseña segura**  |
-    | ¿Ya tiene una licencia de Windows Server? | **Desactivado** |
+    | ¿Ya tiene una licencia de Windows Server? | **Desactivado** |
 
     >**Nota**: Para obtener la lista de regiones de Azure que admiten la implementación de máquinas virtuales de Windows en zonas de disponibilidad, consulte [¿Qué son las zonas de disponibilidad en Azure?](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
@@ -199,7 +199,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Discos**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >**.
 
-1. En la página **Redes**, haga clic en el vínculo **Crear red virtual** debajo del cuadro de texto **Red virtual** y cree una red virtual con las siguientes opciones de configuración (deje las demás con sus valores predeterminados).  Cuando termine, seleccione **Aceptar**.
+1. En la página **Redes**, selecciona el vínculo **Editar red virtual**. Realiza algunos cambios. Cuando termine, seleccione **Aceptar**.
 
     | Configuración | Valor |
     | --- | --- |
@@ -263,9 +263,9 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
 
 1. En la pestaña **Revisar y crear**, asegúrese de que se haya superado la validación y haga clic en **Crear**.
 
-    >**Nota**: Espere a que se complete la implementación del conjunto de escalado de máquinas virtuales. Esto debe durar unos 5 minutos. Mientras espera, revise la [documentación](https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview).
+    >**Nota**: Espere a que se complete la implementación del conjunto de escalado de máquinas virtuales. Esto debe durar unos 5 minutos. Mientras espera, revise la [documentación](https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview).
 
-## Tarea 4: Escalado de los Conjuntos de escalado de las máquinas virtuales de Azure
+## Tarea 4: Escalado de los Conjuntos de escalado de las máquinas virtuales de Azure
 
 En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante una regla de escalado personalizada.
 
@@ -279,7 +279,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Seleccione **Escalabilidad automática personalizada**. Después, cambie el **Modo de escalado** a **Escala basada en métricas**. A continuación, seleccione **Agregar una regla**.
 
-1. Vamos a crear una regla que aumente automáticamente el número de instancias de máquina virtual. Esta regla se escala horizontalmente cuando la carga media de la CPU es superior al 70 % durante un periodo de 10 minutos. Cuando se desencadena la regla, aumenta el número de instancias de máquina virtual en un 50 %.
+1. Vamos a crear una regla que aumente automáticamente el número de instancias de máquina virtual. Esta regla se escala horizontalmente cuando la carga media de la CPU es superior al 70 % durante un periodo de 10 minutos. Cuando se desencadena la regla, aumenta el número de instancias de máquina virtual en un 50 %.
 
     | Configuración | Valor |
     | --- | --- |
@@ -303,7 +303,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. Durante las noches o fines de semana, la demanda puede disminuir, por lo que es importante crear una regla de reducción horizontal.
 
-1. Vamos a crear una regla que reduzca el número de instancias de máquina virtual en un conjunto de escalado. El número de instancias debe disminuir cuando la carga media de la CPU disminuya por debajo del 30 % durante un periodo de 10 minutos. Cuando se desencadena la regla, reduzca el número de instancias de máquina virtual en un 20 %.
+1. Vamos a crear una regla que reduzca el número de instancias de máquina virtual en un conjunto de escalado. El número de instancias debe disminuir cuando la carga media de la CPU disminuya por debajo del 30 % durante un periodo de 10 minutos. Cuando se desencadena la regla, reduzca el número de instancias de máquina virtual en un 20 %.
 
 1. Seleccione **Agregar una regla**, ajuste la configuración y, después, seleccione **Agregar**.
 
@@ -333,9 +333,9 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 1. En la página**vmss1**, seleccione **Instancias**. Aquí es donde supervisaría el número de instancias de máquina virtual.
 
-    >**Nota:** Si está interesado en usar Azure PowerShell para la creación de máquinas virtuales, pruebe la tarea 5. Si está interesado en usar la CLI para crear máquinas virtuales, pruebe la tarea 6.
+    >**Nota:** Si está interesado en usar Azure PowerShell para la creación de máquinas virtuales, pruebe la tarea 5. Si está interesado en usar la CLI para crear máquinas virtuales, pruebe la tarea 6.
 
-## Tarea 5: Creación de una máquina virtual mediante Azure PowerShell (opcional 1)
+## Tarea 5: Creación de una máquina virtual mediante Azure PowerShell (opcional 1)
 
 1. Use el icono (superior derecho) para iniciar una sesión de **Cloud Shell**. Como alternativa, vaya directamente a `https://shell.azure.com`.
 
@@ -376,7 +376,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
     >**¿Sabía que...?** Cuando se usa Azure para detener la máquina virtual, el estado se *desasigna*. Esto significa que se liberan las IP públicas no estáticas y se dejan de pagar los costos de proceso de la máquina virtual.
 
-## Tarea 6: Creación de una máquina virtual con la CLI (opcional 2)
+## Tarea 6: Creación de una máquina virtual con la CLI (opcional 2)
 
 1. Use el icono (superior derecho) para iniciar una sesión de **Cloud Shell**. Como alternativa, vaya directamente a `https://shell.azure.com`.
 
@@ -411,7 +411,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
