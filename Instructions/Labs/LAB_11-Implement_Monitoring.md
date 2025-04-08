@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratorio\_11: Implementación de la supervisión"
+  title: 'Laboratorio 11: Implementación de la supervisión'
   module: Administer Monitoring
 ---
 
@@ -10,9 +10,9 @@ lab:
 
 En este laboratorio, obtendrá información sobre Azure Monitor. Aprenderá a crear alertas y a enviarlas a cualquier grupo de acciones. Desencadenará y probará la alerta y comprobará el registro de actividad.  
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
-## Tiempo estimado: 40 minutos
+## Tiempo estimado: 40 minutos
 
 ## Escenario del laboratorio
 
@@ -30,14 +30,14 @@ Hay una simulación de laboratorio interactiva que puede resultar útil para est
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Use una plantilla para aprovisionar una infraestructura.
-+ Tarea 2: Crear una alerta.
-+ Tarea 3: Configure las notificaciones del grupo de acciones.
-+ Tarea 4: Desencadene una alerta y confirme que funciona.
-+ Tarea 5: Configure una regla de procesamiento de alertas.
-+ Tarea 6: Use consultas del registro de Azure Monitor.
++ Tarea 1: Use una plantilla para aprovisionar una infraestructura.
++ Tarea 2: Crear una alerta.
++ Tarea 3: Configure las notificaciones del grupo de acciones.
++ Tarea 4: Desencadene una alerta y confirme que funciona.
++ Tarea 5: Configure una regla de procesamiento de alertas.
++ Tarea 6: Use consultas del registro de Azure Monitor.
 
-## Tarea 1: Usar una plantilla para aprovisionar una infraestructura
+## Tarea 1: Usar una plantilla para aprovisionar una infraestructura
 
 En esta tarea, implementará una máquina virtual que se usará para probar escenarios de supervisión.
 
@@ -85,7 +85,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. El agente de máquina virtual tardará unos minutos en instalarse y configurarse, y vaya al paso siguiente. 
    
-## Tarea 2: Crear una alerta
+## Tarea 2: Crear una alerta
 
 En esta tarea, se crea una alerta que se debe desencadenar cuando se elimine una máquina virtual. 
 
@@ -93,7 +93,7 @@ En esta tarea, se crea una alerta que se debe desencadenar cuando se elimine una
 
 1. Seleccione **Crear+** y, después, **Regla de alertas**. 
 
-1. Seleccione el cuadro del grupo de recursos y, después, seleccione **Aplicar**. Esta alerta se aplicará a las máquinas virtuales del grupo de recursos. Si lo desea, puede especificar una máquina determinada. 
+1. Seleccione el cuadro de la suscripción y después seleccione **Aplicar**. Esta alerta se aplicará a las máquinas virtuales de la suscripción. Si lo desea, puede especificar una máquina determinada. 
 
 1. Seleccione la pestaña **Condición** y después seleccione el vínculo **Ver todas las señales**.
 
@@ -105,7 +105,7 @@ En esta tarea, se crea una alerta que se debe desencadenar cuando se elimine una
 
 1. Deje abierto el panel **Crear regla de alerta**, ya que lo usará en la siguiente tarea.
 
-## Tarea 3: Configurar notificaciones de grupo de acciones
+## Tarea 3: Configurar notificaciones de grupo de acciones
 
 En esta tarea, si la alerta se desencadena, envía una notificación por correo electrónico al equipo de operaciones. 
 
@@ -136,6 +136,8 @@ En esta tarea, si la alerta se desencadena, envía una notificación por correo 
 
     >**Nota:** Debe recibir una notificación por correo electrónico en la que se le indica que se le ha agregado a un grupo de acciones. Puede haber un retraso de unos minutos, pero eso significa que la regla se ha implementado.
 
+1. Seleccione **Revisar y crear** y, a continuación, **Crear**.
+   
 1. Una vez creado el grupo de acciones, vaya a **Siguiente: Detalles** y escriba los siguientes valores.
 
     | Configuración | Value |
@@ -145,7 +147,7 @@ En esta tarea, si la alerta se desencadena, envía una notificación por correo 
 
 1. Seleccione **Revisar y crear** para validar la entrada y, luego, **Crear**.
 
-## Tarea 4: Desencadenar una alerta y confirmar que funciona
+## Tarea 4: Desencadenar una alerta y confirmar que funciona
 
 En esta tarea, se desencadena la alerta y se confirma que se ha enviado una notificación. 
 
@@ -173,13 +175,13 @@ En esta tarea, se desencadena la alerta y se confirma que se ha enviado una noti
 
 1. Seleccione el nombre de una de las alertas (por ejemplo, **se eliminó la máquina virtual**). Aparece un panel **Detalles de alerta** que muestra más detalles sobre el evento.
 
-## Tarea 5: Configurar una regla de procesamiento de alertas
+## Tarea 5: Configurar una regla de procesamiento de alertas
 
 En esta tarea, se crea una regla de alertas para suprimir las notificaciones durante el período de mantenimiento. 
 
 1. Vaya a la hoja **Alertas**, seleccione **Reglas de procesamiento de alertas** y, después, **+ Crear**. 
    
-1. Seleccione un **grupo de recursos** y, después, seleccione **Aplicar**.
+1. Seleccione su **Suscripción** y después **Aplicar**.
    
 1. Seleccione **Siguiente: Configuración de la regla** y, a continuación, seleccione **Suprimir notificaciones**.
    
@@ -199,7 +201,7 @@ Escriba esta configuración para la programación de la regla de procesamiento d
 
 1. Seleccione **Siguiente: Detalles** y escriba esta configuración:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     |---------|---------|
     | Resource group | **az104-rg11** |
     | Nombre de la regla | `Planned Maintenance` |
@@ -207,17 +209,19 @@ Escriba esta configuración para la programación de la regla de procesamiento d
 
 1. Seleccione **Revisar y crear** para validar la entrada y, luego, **Crear**.
 
-## Tarea 6: Usar consultas de registro de Azure Monitor
+## Tarea 6: Usar consultas de registro de Azure Monitor
 
 En esta tarea, usará Azure Monitor para consultar los datos capturados de la máquina virtual.
 
-1. En Azure Portal, busque la hoja `Monitor` y selecciónela, y haga clic en **Registros**.
+1. En Azure Portal, busca y selecciona `Monitor` y después haz clic en **Registros**.
 
 1. Si fuera necesario, cierre la pantalla de presentación. 
 
-1. Seleccione un ámbito, su **grupo de recursos**. Seleccione **Aplicar**. 
+1. Si es necesario, seleccione un ámbito, su **suscripción**. Seleccione **Aplicar**. 
 
-1. En la pestaña **Consultas**, seleccione **Máquinas virtuales** (panel izquierdo). 
+1. En la pestaña **Consultas**, seleccione **Máquinas virtuales** (panel izquierdo). Es posible que tenga que volver a abrir la hoja.
+
+    ![Captura de pantalla de la página Consultas.](../media/az104-lab11-queries.png)
 
 1. Examine las consultas disponibles. **Ejecute** (mantenga el puntero sobre la consulta) la consulta **Recuento de latidos**.
 
@@ -246,7 +250,7 @@ En esta tarea, usará Azure Monitor para consultar los datos capturados de la m�
 Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
