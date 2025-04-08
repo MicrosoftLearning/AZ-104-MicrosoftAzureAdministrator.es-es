@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratorio\_03: Administración de recursos de Azure mediante plantillas de Azure Resource Manager"
+  title: 'Laboratorio 03: Administración de recursos de Azure mediante plantillas de Azure Resource Manager'
   module: Administer Azure Resources
 ---
 
@@ -10,9 +10,9 @@ lab:
 
 En este laboratorio, aprenderá a automatizar las implementaciones de recursos. Obtenga información sobre las plantillas de Azure Resource Manager y las plantillas de Bicep. Obtendrá información sobre las distintas formas de implementar las plantillas. 
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.** 
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.** 
 
-## Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
 ## Simulaciones interactivas de laboratorio
 
@@ -32,11 +32,11 @@ Su equipo quiere ver formas de automatizar y simplificar las implementaciones de
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Cree una plantilla de Azure Resource Manager.
-+ Tarea 2: Edite una plantilla de Azure Resource Manager y vuelva a implementar la plantilla.
-+ Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con Azure PowerShell.
-+ Tarea 4: Implementación de una plantilla con la CLI. 
-+ Tarea 5: Implementación de un recurso mediante Azure Bicep.
++ Tarea 1: Cree una plantilla de Azure Resource Manager.
++ Tarea 2: Edite una plantilla de Azure Resource Manager y vuelva a implementar la plantilla.
++ Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con Azure PowerShell.
++ Tarea 4: Implementación de una plantilla con la CLI. 
++ Tarea 5: Implementación de un recurso mediante Azure Bicep.
 
 ## Tarea 1: crear una Azure Resource Manager plantilla
 
@@ -44,8 +44,8 @@ En esta tarea, crearemos un disco administrado en Azure Portal. Los discos admin
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. Busque y seleccione `Disks`.
-
+1. Busque y seleccione `Disks`. 
+   
 1. En la página Discos, seleccione **Crear**.
 
 1. En la página **Crear un disco administrado**, configure el disco y seleccione **Aceptar**. 
@@ -59,7 +59,7 @@ En esta tarea, crearemos un disco administrado en Azure Portal. Los discos admin
     | Zona de disponibilidad | **No se requiere redundancia de la infraestructura** | 
     | Tipo de origen | **Ninguno** |
     | Rendimiento | **HDD estándar** (cambiar tamaño) |
-    | Size | **32 GiB** | 
+    | Size | **32 GiB** | 
 
     >**Nota:** Estamos creando un disco administrado sencillo para que pueda practicar con plantillas. Los discos administrados de Azure son volúmenes de almacenamiento de nivel de bloque que Azure administra.
 
@@ -77,7 +77,7 @@ En esta tarea, crearemos un disco administrado en Azure Portal. Los discos admin
 
    >**¿Sabía que...?**  Puede exportar todo un grupo de recursos o solo recursos específicos dentro de ese grupo de recursos.
 
-## Tarea 2: Edite una plantilla de Azure Resource Manager y, a continuación, vuelva a implementar la plantilla.
+## Tarea 2: Edite una plantilla de Azure Resource Manager y, a continuación, vuelva a implementar la plantilla.
 
 En esta tarea, usará la plantilla descargada para implementar un nuevo disco administrado. En esta tarea se describe cómo repetir las implementaciones de forma rápida y sencilla. 
 
@@ -112,7 +112,7 @@ En esta tarea, usará la plantilla descargada para implementar un nuevo disco ad
     | --- |--- |
     | Suscripción | *su suscripción* |
     | Grupo de recursos | `az104-rg3` |
-    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Región | **(EE. UU.) Este de EE. UU.** |
     | Nombre del disco | `az104-disk2` |
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
@@ -127,7 +127,7 @@ En esta tarea, usará la plantilla descargada para implementar un nuevo disco ad
 
 1. Seleccione una implementación y revise el contenido de las hojas **Entrada** y **Plantilla**.
 
-## Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con PowerShell 
+## Tarea 3: Configuración de Cloud Shell e implementación de una plantilla con PowerShell 
 
 En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud Shell es un terminal interactivo, autenticado y al que se puede acceder desde un explorador para administrar recursos de Azure. Ofrece la flexibilidad de poder elegir la experiencia de shell que mejor se adapte a la forma de trabajar de cada uno, Bash o PowerShell. En esta tarea, usará PowerShell para implementar una plantilla. 
 
@@ -179,7 +179,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
    Get-AzDisk
    ```
    
-## Tarea 4: Implementación de una plantilla con la CLI 
+## Tarea 4: Implementación de una plantilla con la CLI 
 
 1. Continúe en **Cloud Shell**, seleccione **Bash**. **Confirme** la selección.
 
@@ -191,80 +191,84 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
 
 1. Seleccione el icono **Editor** (corchetes) y vaya hasta el archivo JSON de plantilla.
 
-1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk4**. Presione **Ctrl+S** para guardar los cambios. 
+1. Realizar un cambio. Por ejemplo, cambia el nombre del disco a **az104-disk4**. Presiona **Ctrl+S** para guardar los cambios. 
 
-    >**Nota**: La implementación de la plantilla puede tener como destino un grupo de recursos, una suscripción, un grupo de administración o un inquilino. Según el ámbito de la implementación, usará comandos diferentes.
+    >**Nota**: la implementación de la plantilla puede tener como destino un grupo de recursos, una suscripción, un grupo de administración o un inquilino. Según el ámbito de la implementación, usarás comandos diferentes.
 
-1. Para realizar la implementación en un grupo de recursos, use **az deployment group create**.
+1. Para realizar la implementación en un grupo de recursos, usa **az deployment group create**.
 
     ```sh
     az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
     ```
     
-1. Asegúrese de que el comando se completa y ProvisioningState es **Correcto**.
+1. Asegúrate de que el comando se completa y ProvisioningState es **Correcto**.
 
-1. Confirme que se creó el disco.
+1. Confirma que se creó el disco.
 
      ```sh
      az disk list --output table
      ```
    
-## Tarea 5: Implementación de un recurso mediante Azure Bicep
+## Tarea 5: Implementación de un recurso mediante Azure Bicep
 
-En esta tarea, usará un archivo de Bicep para implementar un disco administrado. Bicep es una herramienta de automatización declarativa que se basa en plantillas de ARM.
+En esta tarea, usarás un archivo de Bicep para implementar un disco administrado. Bicep es una herramienta de automatización declarativa que se basa en plantillas de ARM.
 
-1. Continúe trabajando en **Cloud Shell** en una sesión **Bash**.
+1. Busca el archivo **\Allfiles\Lab03\azuredeploydisk.bicep**.
 
-1. Busque y descargue el archivo **\Allfiles\Lab03\azuredeploydisk.bicep**.
+1. Continúa trabajando en **Cloud Shell** en una sesión **Bash**.
 
-1. **Cargue** el archivo bicep en Cloud Shell. 
+1. Selecciona **Administrar archivos** y después **Cargar** para cargar el archivo Bicep en Cloud Shell. 
 
-1. Seleccione el icono **Editor** (corchetes) y vaya al archivo.
+1. Haz clic en **Editor** y, cuando se te solicite, **Confirmar** el modificador a Classic Cloud Shell.
 
-1. Dedique un minuto a leer el archivo de plantilla de bicep. Observe cómo se define el recurso de disco. 
+1. Selecciona el archivo **azuredeploydisk.bicep**. 
+
+1. Dedica un minuto a leer el archivo de plantilla de Bicep. Observa cómo se define el recurso de disco. 
    
-1. Haga los siguientes cambios:
+1. Haz los siguientes cambios:
 
-    + Cambie el valor **managedDiskName** a `Disk4`.
-    + Cambie el valor **nombre de SKU** a `StandardSSD_LRS`.
-    + Cambie el valor de **diskSizeinGiB** a `32`.
+    + Cambia el valor **managedDiskName**, línea 4, a Disk4.
+    + Cambia el valor **sku name**, línea 26, a StandardSSD_LRS.
+    + Cambia el valor **diskSizeinGiB**, línea 7, a 32.
 
-1. Presione **Ctrl+S** para guardar los cambios.
+    >**Nota:** hay disponible una plantilla de Bicep completada en los archivos para laboratorio.
+    
+1. Presiona **Ctrl+S** para guardar los cambios.
 
-1. Ahora, implemente la plantilla.
+1. Ahora, implementa la plantilla.
 
     ```
     az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
     ```
 
-1. Confirme que se creó el disco.
+1. Confirma que se creó el disco.
 
     ```sh
     az disk list --output table
     ```
 
-    >**Nota:** Ha implementado correctamente cinco discos administrados, cada uno de ellos de forma diferente. ¡Buen trabajo!
+    >**Nota:** has implementado correctamente cinco discos administrados, cada uno de ellos de forma diferente. ¡Buen trabajo!
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedica unos minutos a probar estas indicaciones.
 
 + ¿Cuál es el formato del archivo de plantilla de Azure Resource Manager? Explicar cada componente con ejemplos. 
 + ¿Cómo se usa una plantilla de Azure Resource Manager existente?
-+ Compare y contraste las plantillas de Azure Resource Manager y las plantillas de Azure Bicep. 
++ Compara y contrasta las plantillas de Azure Resource Manager y las plantillas de Azure Bicep. 
 
 
-## Más información con el aprendizaje autodirigido
+## Obtén más información con el aprendizaje autodirigido
 
-+ [Implementación de la infraestructura de Azure mediante plantillas de ARM de JSON](https://learn.microsoft.com/training/modules/create-azure-resource-manager-template-vs-code/). Escriba plantillas de Azure Resource Manager de JSON con Visual Studio Code (plantillas de ARM) para implementar la infraestructura en Azure de forma coherente y confiable.
++ [Implementación de la infraestructura de Azure mediante plantillas de ARM de JSON](https://learn.microsoft.com/training/modules/create-azure-resource-manager-template-vs-code/). Escribe plantillas de Azure Resource Manager de JSON con Visual Studio Code (plantillas de ARM) para implementar la infraestructura en Azure de forma coherente y confiable.
 + [Revisión de las características y herramientas de Azure Cloud Shell](https://learn.microsoft.com/training/modules/review-features-tools-for-azure-cloud-shell/). Características y herramientas de Cloud Shell. 
 + [Administración de recursos de Azure con Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). En este módulo se explica cómo instalar los módulos necesarios para la administración de servicios en la nube y usar comandos de PowerShell para realizar tareas administrativas sencillas en recursos en la nube, como máquinas virtuales de Azure, suscripciones de Azure y cuentas de almacenamiento de Azure.
 + [Introducción a Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Use Bash para administrar la infraestructura de TI.

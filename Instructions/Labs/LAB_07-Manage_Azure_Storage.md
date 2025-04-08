@@ -107,59 +107,59 @@ En esta tarea, crearás un contenedor de blobs y cargarás una imagen. Los conte
     | Configuración | Valor |
     | --- | --- |
     | Nombre | `data`  |
-    | Nivel de acceso público | Observe que el nivel de acceso esté establecido en privado |
+    | Nivel de acceso público | Observa que el nivel de acceso esté establecido en privado |
 
     ![Captura de pantalla de la creación de un contenedor.](../media/az104-lab07-create-container.png)
 
-1. En el contenedor, desplácese hasta los puntos suspensivos (...) del lado extremo derecho y seleccione **Directiva de acceso**.
+1. En el contenedor, desplázate hasta los puntos suspensivos (...) del lado extremo derecho y selecciona **Directiva de acceso**.
 
-1. En la sección **Almacenamiento de blobs inmutable**, seleccione **Agregar directiva**.
+1. En la sección **Almacenamiento de blobs inmutable**, selecciona **Agregar directiva**.
 
     | Configuración | Valor |
     | --- | --- |
     | Tipo de directiva | **Retención con duración definida**  |
     | Establecer el período de retención para | `180` días |
 
-1. Seleccione **Guardar**.
+1. Selecciona **Guardar**.
 
 ### Administración de cargas de blobs
 
-1. Vuelva a la página contenedores, seleccione el contenedor de **datos** y haga clic en **Cargar**.
+1. Vuelva a la página contenedores, selecciona el contenedor de **datos** y haz clic en **Cargar**.
 
-1. En la hoja **Actualizar blob**, expanda la sección **Avanzado**.
+1. En la hoja **Actualizar blob**, expande la sección **Avanzado**.
 
-    >**Nota**: Busque el archivo que se vaya a cargar. Puede ser cualquier tipo de archivo, pero un archivo pequeño resultará mejor. Se puede descargar un archivo de ejemplo del directorio AllFiles. 
+    >**Nota**: busca el archivo que se vaya a cargar. Puede ser cualquier tipo de archivo, pero un archivo pequeño resultará mejor. Se puede descargar un archivo de ejemplo del directorio AllFiles. 
 
     | Configuración | Valor |
     | --- | --- |
-    | Buscar archivos | agregue el archivo que haya seleccionado para cargar |
-    | Seleccione **Avanzado**. | |
+    | Buscar archivos | agrega el archivo que hayas seleccionado para cargar |
+    | Selecciona **Avanzado**. | |
     | Tipo de blob | **Blob en bloques** |
     | Tamaño de bloque | **4 MiB** |
-    | Nivel de acceso | **Frecuente**  (observe las otras opciones) |
+    | Nivel de acceso | **Frecuente** (observa las otras opciones) |
     | Cargar en carpeta | `securitytest` |
     | Ámbito de cifrado | Usar el ámbito del contenedor predeterminado existente |
 
-1. Haga clic en **Cargar**.
+1. Haz clic en **Cargar**.
 
-1. Confirme que tenga una nueva carpeta y que el archivo se cargó. 
+1. Confirma que tienes una nueva carpeta y que el archivo se cargó. 
 
-1. Seleccione el archivo de carga y revise las opciones, como **Descargar**, **Eliminar**, **Cambiar de nivel** y **Adquirir concesión**.
+1. Selecciona el archivo de carga y revisa las opciones, como **Descargar**, **Eliminar**, **Cambiar de nivel** y **Adquirir concesión**.
 
-1. Copie la **dirección URL** del archivo y péguela en una nueva ventana de exploración de **Inprivate**.
+1. Copia la **dirección URL** del archivo (hoja Propiedades) y pégala en una nueva ventana de exploración de **Inprivate**.
 
 1. Debería presentarse un mensaje con formato XML que indique **ResourceNotFound** o **PublicAccessNotPermitted**.
 
-    > **Nota**: Esto es lo esperado, ya que el contenedor que creó tiene el nivel de acceso público establecido en **Privado (sin acceso anónimo)** .
+    > **Nota**: esto es lo esperado, ya que el contenedor que creaste tiene el nivel de acceso público establecido en **Privado (sin acceso anónimo)**.
 
 ### Configuración del acceso limitado al almacenamiento de blobs
 
-1. Seleccione el archivo cargado y la pestaña **Generar SAS**. También es posible usar los puntos suspensivos (...) del lado extremo derecho. Especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
+1. Selecciona el archivo cargado y la pestaña **Generar SAS**. También es posible usar los puntos suspensivos (...) del lado extremo derecho. Especifica las opciones de configuración siguientes (deja las demás con los valores predeterminados):
 
     | Configuración | Value |
     | --- | --- |
     | Clave de firma | **Clave 1** |
-    | Permisos | **Leer** (observe las otras opciones) |
+    | Permisos | **Leer** (observa las otras opciones) |
     | Fecha de inicio | fecha de ayer |
     | Hora de inicio | hora actual |
     | Fecha de vencimiento | fecha de mañana |

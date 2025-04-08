@@ -1,18 +1,18 @@
 ---
 lab:
-  title: "Laboratorio\_02b: Administración de la gobernanza mediante Azure Policy"
+  title: 'Laboratorio 02b: Administración de la gobernanza mediante Azure Policy'
   module: Administer Governance and Compliance
 ---
 
-# Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
+# Laboratorio 02b: Administración de la gobernanza mediante Azure Policy
 
 ## Introducción del laboratorio
 
 En este laboratorio, aprenderá a implementar los planes de gobernanza de la organización. Obtendrá información sobre cómo las directivas de Azure pueden garantizar que las decisiones operativas se apliquen en toda la organización. Aprenderá a usar el etiquetado de recursos para mejorar los informes. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
-## Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
 ## Escenario del laboratorio
 
@@ -43,13 +43,13 @@ Hay simulaciones de laboratorio interactivas que le podrían resultar útiles pa
 ## Aptitudes de trabajo
 
 + Tarea 1: crear y asignar etiquetas a través de Azure Portal.
-+ Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy.
-+ Tarea 3: Aplicar el etiquetado mediante una instancia de Azure Policy.
-+ Tarea 4: Configurar y probar los bloqueos de recursos. 
++ Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy.
++ Tarea 3: Aplicar el etiquetado mediante una instancia de Azure Policy.
++ Tarea 4: Configurar y probar los bloqueos de recursos. 
 
-## Tarea 1: Asignar etiquetas a través de Azure Portal
+## Tarea 1: Asignar etiquetas a través de Azure Portal
 
-En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal. Las etiquetas son un componente fundamental de una estrategia de gobernanza como se describe en el Marco de buena arquitectura de Microsoft y Cloud Adoption Framework. Las etiquetas pueden permitirle identificar rápidamente los propietarios de recursos, las fechas de expiración, los contactos de grupo y otros pares de nombre y valor que la organización considera importantes. Para esta tarea, asigne una etiqueta que identifique el rol de recurso ("Infra" para "Infraestructura").
+En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal. Las etiquetas son un componente fundamental de una estrategia de gobernanza como se describe en el Marco de buena arquitectura de Microsoft y Cloud Adoption Framework. Las etiquetas pueden permitirle identificar rápidamente los propietarios de recursos, las fechas de expiración, los contactos de grupo y otros pares de nombre y valor que la organización considera importantes. Para esta tarea, asigne una etiqueta que identifique el rol de recurso ("Infra" para "Infraestructura").
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
       
@@ -65,16 +65,16 @@ En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure 
 
     >**Nota:** Para cada laboratorio de este curso, creará un grupo de recursos. Esto le permite localizar y administrar rápidamente los recursos del laboratorio. 
 
-1. Seleccione **Siguiente: Etiquetas** y cree una etiqueta.
+1. Seleccione **Siguiente** y vaya a la pestaña **Etiquetas**. Proporcione información para una nueva etiqueta.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
-    | NOMBRE | `Cost Center` |
-    | Valor | `000` |
+    | Nombre | Centro de costes |
+    | Valor | 000 |
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-## Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy
+## Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy
 
 En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valor en los recursos* al grupo de recursos y evaluará el resultado. Se puede usar Azure Policy para aplicar la configuración y, en este caso, la gobernanza, a los recursos de Azure. 
 
@@ -84,9 +84,9 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     ![Captura de pantalla de la definición de directiva.](../media/az104-lab02b-policytags.png)
 
-1. Haga clic en la entrada que representa la directiva integrada **Requerir una etiqueta y su valor en los recursos**. Dedique un minuto a revisar la definición. 
+1. Busque la directiva integrada `Require a tag and its value on resources`. Seleccione la directiva y dedique un minuto a revisar la definición. 
 
-1. En la hoja de la definición de la directiva integrada **Requerir una etiqueta y su valor en los recursos**, haga clic en **Asignar**.
+1. Seleccione **Asignar directiva**.
 
 1. Para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes. Haga clic en **Seleccionar** cuando haya terminado. 
 
@@ -101,8 +101,8 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre de asignación | `Require Cost Center tag with Default value`|
-    | Descripción | `Require Cost Center tag with default value for all resources in the resource group`|
+    | Nombre de asignación | Requerir etiqueta de centro de coste y su valor en los recursos |
+    | Descripción | `Require Cost Center tag and its value on all resources in the resource group`|
     | Aplicación de directivas | habilitado |
 
     >**Nota**: El **Nombre de asignación** se rellena automáticamente con el nombre de directiva seleccionado, pero puede cambiarlo. El campo **Description** (Descripción) es opcional. Observe que puede deshabilitar la directiva en cualquier momento. 
@@ -120,16 +120,16 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     >**Nota**: Ahora, para comprobar que la nueva asignación de directivas está en vigor, intentará crear otra cuenta de Azure Storage en el grupo de recursos. Creará la cuenta de almacenamiento sin agregar la etiqueta necesaria. 
     
-    >**Nota**: La directiva puede tardar entre 5 y 10 minutos en surtir efecto.
+    >**Nota**: La directiva puede tardar entre 5 y 10 minutos en surtir efecto.
 
-1. En el portal, busque y seleccione `Storage Account`y seleccione **+ Crear**. 
+1. En el portal, busque y seleccione `Storage Accounts`y seleccione **+ Crear**. 
 
 1. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, complete la configuración.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Resource group | **az104-rg2** |
-    | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
+    | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
 
 1. Seleccione **Revisar** y, después, haga clic en **Crear**.
 
@@ -137,9 +137,9 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     ![Captura de pantalla del error de directiva no permitida.](../media/az104-lab02b-policyerror.png) 
 
->**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puede encontrar más detalles sobre el error, incluido el nombre de la definición de rol **Require Cost Center tag with Default value** (Requerir etiqueta Centro de coste con el valor Predeterminado). El error en la implementación se debe a que la cuenta de almacenamiento que ha intentado crear no tenía una etiqueta denominada **Centro de coste** con su valor establecido en **Predeterminado**.
+>**Nota**: Al hacer clic en la pestaña **Error sin procesar**, puedes encontrar más detalles sobre el error, incluyendo el nombre de la definición de rol **Requerir etiqueta y su valor en los recursos**. El error en la implementación se debe a que la cuenta de almacenamiento que ha intentado crear no tenía una etiqueta denominada **Centro de coste** con su valor establecido en **Predeterminado**.
 
-## Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
+## Tarea 3: Aplicar el etiquetado a través de una instancia de Azure Policy
 
 En esta tarea, se usará la nueva definición de directiva para corregir los recursos no compatibles. En este escenario, hará que los recursos secundarios de un grupo de recursos hereden la etiqueta **Centro de coste** que se ha definido en el grupo de recursos.
 
@@ -147,7 +147,7 @@ En esta tarea, se usará la nueva definición de directiva para corregir los rec
 
 1. En la sección **Creación**, haga clic en **Asignaciones**. 
 
-1. En la lista de asignaciones, haga clic en el icono de puntos suspensivos de la fila que representa la asignación de directiva etiqueta **Require Cost Center tag with Default value** (Requerir etiqueta Centro de coste con el valor Predeterminado) y use el elemento de menú **Eliminar asignación** para eliminar la asignación.
+1. En la lista de asignaciones, haga clic en el icono de puntos suspensivos de la fila que representa la asignación de directiva **Requerir etiqueta y su valor en los recursos** y use el elemento de menú **Eliminar asignación** para eliminar la asignación.
 
 1. Haga clic en **Asignar directiva** y, para especificar el **Ámbito**, haga clic en el botón de puntos suspensivos y seleccione los valores siguientes:
 
@@ -187,25 +187,25 @@ En esta tarea, se usará la nueva definición de directiva para corregir los rec
 
     >**Nota**: Para comprobar que la asignación de la nueva directiva está en vigor, creará otra cuenta de almacenamiento de Azure en el mismo grupo de recursos sin agregar explícitamente la etiqueta necesaria. 
     
-    >**Nota**: La directiva puede tardar entre 5 y 10 minutos en surtir efecto.
+    >**Nota**: La directiva puede tardar entre 5 y 10 minutos en surtir efecto.
 
-1. Busque y seleccione `Storage Account`, y haga clic en **+ Crear**. 
+1. Busque y seleccione `Storage Account` y haga clic en **+ Crear**. 
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que usa el grupo de recursos al que se aplicó la directiva y especifique las opciones siguientes (deje las demás en sus valores predeterminados). A continuación, haga clic en **Revisar**:
 
     | Configuración | Valor |
     | --- | --- |
-    | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
+    | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
 
 1. Compruebe que esta vez se haya superado la validación y haga clic en **Crear**.
 
 1. Una vez que se aprovisione la nueva cuenta de almacenamiento, haga clic en **Ir al recurso**.
 
-1. En el panel **Etiquetas**, tenga en cuenta que la etiqueta **Centro de coste** con el valor **000** se ha asignado automáticamente al recurso.
+1. En el panel **Etiquetas**, tenga en cuenta que la etiqueta **Centro de coste** con el valor **000** se ha asignado automáticamente al recurso.
 
     >**¿Sabía que...?** Si busca y selecciona **Etiquetas** en el portal, puede ver los recursos con una etiqueta específica. 
 
-## Tarea 4: Configurar y probar los bloqueos de recursos
+## Tarea 4: Configurar y probar los bloqueos de recursos
 
 En esta tarea, configurará y probará un bloqueo de recursos. Los bloqueos impiden las eliminaciones o modificaciones de un recurso. 
 
@@ -237,7 +237,7 @@ En esta tarea, configurará y probará un bloqueo de recursos. Los bloqueos impi
 Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
 + En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
