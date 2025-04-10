@@ -1,18 +1,18 @@
 ---
 lab:
-  title: "Laboratorio\_10: Implementación de la protección de datos"
+  title: 'Laboratorio 10: Implementación de la protección de datos'
   module: Administer Data Protection
 ---
 
-# Laboratorio 10: Implementación de la protección de datos
+# Laboratorio 10: Implementación de la protección de datos
 
 ## Introducción al laboratorio    
 
 En este laboratorio, obtendrá información sobre la copia de seguridad y la recuperación de máquinas virtuales de Azure. Aprenderá a crear un almacén de Recovery Service y una directiva de copia de seguridad para máquinas virtuales de Azure. Obtendrá información sobre la recuperación ante desastres con Azure Site Recovery. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Puede cambiar las regiones, pero los pasos se escriben teniendo en cuenta las regiones **Este de EE. UU.** y **Oeste de EE. UU.**
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción podría afectar a la disponibilidad de las características de este laboratorio. Puede cambiar las regiones, pero los pasos se escriben teniendo en cuenta las regiones **Este de EE. UU.** y **Oeste de EE. UU.**
 
-## Tiempo estimado: 50 minutos
+## Tiempo estimado: 50 minutos
 
 ## Escenario del laboratorio
 
@@ -26,19 +26,19 @@ Hay una simulación de laboratorio interactiva que puede resultar útil para est
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Use una plantilla para aprovisionar una infraestructura.
-+ Tarea 2: Creación y configuración de un almacén de Recovery Services.
-+ Tarea 3: Configure la copia de seguridad de nivel de máquina virtual de Azure.
-+ Tarea 4: Supervise Azure Backup.
-+ Tarea 5: Habilite la replicación de máquinas virtuales. 
++ Tarea 1: Use una plantilla para aprovisionar una infraestructura.
++ Tarea 2: Creación y configuración de un almacén de Recovery Services.
++ Tarea 3: Configure la copia de seguridad de nivel de máquina virtual de Azure.
++ Tarea 4: Supervise Azure Backup.
++ Tarea 5: Habilite la replicación de máquinas virtuales. 
 
-## Tiempo estimado: 40 minutos
+## Tiempo estimado: 40 minutos
 
 ## Diagrama de la arquitectura
 
 ![Diagrama de las tareas de arquitectura.](../media/az104-lab10-architecture.png)
 
-## Tarea 1: Uso de una plantilla para aprovisionar una infraestructura
+## Tarea 1: Uso de una plantilla para aprovisionar una infraestructura
 
 En esta tarea, usará una plantilla para implementar una máquina virtual. La máquina virtual se usará para probar distintos escenarios de copia de seguridad.
 
@@ -78,11 +78,11 @@ En esta tarea, usará una plantilla para implementar una máquina virtual. La m�
 
     >**Nota:** Espere a que se implemente la plantilla y seleccione **Ir al recurso**. Debe tener una máquina virtual en una red virtual. 
 
-## Tarea 2: Creación y configuración de un almacén de Recovery Services
+## Tarea 2: Creación y configuración de un almacén de Recovery Services
 
 En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery Services proporciona almacenamiento para los datos de la máquina virtual. 
 
-1. En Azure Portal, busque y seleccione `Recovery Services vaults` y, en la hoja **Almacenes de Recovery Services**, haga clic en **+ Crear**.
+1. En Azure Portal, busca y selecciona `Recovery Services vaults` y, en la hoja **Almacenes de Recovery Services**, haz clic en **+ Crear**.
 
 1. En la hoja **Create Recovery Services vault** (Crear almacén de Recovery Services), configure las opciones siguientes:
 
@@ -119,154 +119,147 @@ En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery
 
 >**¿Sabía que...?** Azure tiene dos tipos de almacenes: Almacenes de Recovery Services y almacenes de Backup La principal diferencia reside en los orígenes de datos de los que se puede realizar una copia de seguridad. Obtenga más información sobre [las diferencias](https://learn.microsoft.com/answers/questions/405915/what-is-difference-between-recovery-services-vault).
 
-## Tarea 3: Configuración de la copia de seguridad de nivel de máquina virtual
+## Tarea 3: Configuración de la copia de seguridad de nivel de máquina virtual
 
 En esta tarea, implementará la copia de seguridad a nivel de máquina virtual de Azure. Como parte de una copia de seguridad de máquina virtual, deberá definir la directiva de copia de seguridad y retención que se aplica a la copia de seguridad. Las distintas máquinas virtuales pueden tener diferentes directivas de copia de seguridad y retención asignadas.
 
    >**Nota**: Antes de comenzar esta tarea, asegúrese de que la implementación que inició en la primera tarea de este laboratorio se haya completado correctamente.
 
-1. En la hoja del almacén de Recovery Services, haga clic en **Información general** y, a continuación, haga clic en **+ Copia de seguridad**.
+1. En la hoja del almacén de Recovery Services, haz clic en **Información general** y, a continuación, haz clic en **+ Copia de seguridad**.
 
-1. En la hoja **Objetivo de Backup**, configure las opciones siguientes:
+1. En la hoja **Objetivo de Backup**, configura las opciones siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | ¿Dónde se ejecuta su carga de trabajo? | **Azure** (vea las otras opciones) |
     | ¿De qué quiere hacer una copia de seguridad? | **Máquina virtual** (vea las otras opciones) |
 
-1. Seleccione **Backup** (Hacer copia de seguridad).
+1. Selecciona **Copia de seguridad**.
 
-1. Observe que hay dos **subtipos de directiva**: **Mejorada** y **Estándar**. Revise las opciones y seleccione **Estándar**. 
+1. Observa que hay dos **subtipos de directiva**: **Mejorada** y **Estándar**. Revisa las opciones y selecciona **Estándar**. 
 
-1. En **Directiva de copia de seguridad**, seleccione **Crear una directiva**.
+1. En **Directiva de copia de seguridad**, selecciona **Crear una directiva**.
 
-1. Defina una nueva directiva de copia de seguridad con las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+1. Define una nueva directiva de copia de seguridad con las siguientes opciones de configuración (deja las demás con los valores predeterminados):
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | ---- | ---- |
     | Nombre de la directiva | `az104-backup` |
     | Frecuencia | **A diario** |
-    | Time | **12:00 a. m.** |
+    | Hora | **12:00 a. m.** |
     | Zona horaria | Nombre de la zona horaria local |
     | Conservar las instantáneas de recuperación instantánea durante | **2** días |
 
     ![Captura de pantalla de la página de directiva de copia de seguridad.](../media/az104-lab10-backup-policy.png)
 
-1. Haga clic en **Aceptar** para crear la directiva y luego, en la sección **Máquinas virtuales**, seleccione **Añadir**.
+1. Haz clic en **Aceptar** para crear la directiva y luego, en la sección **Máquinas virtuales**, selecciona **Añadir** (desplazarte hacia abajo).
 
-1. En la hoja **Seleccionar máquinas virtuales**, seleccione **az-104-10-vm0**, haga clic en **Aceptar** y vuelva a la hoja **Copia de seguridad**; después, haga clic en **Habilitar copia de seguridad**.
+1. En la hoja **Seleccionar máquinas virtuales**, selecciona **az-104-10-vm0**, haz clic en **Aceptar** y vuelve a la hoja **Copia de seguridad**; después, haz clic en **Habilitar copia de seguridad**.
 
-    >**Nota**: Espere a que se habilite la copia de seguridad. Esta operación debe durar unos 2 minutos.
+    >**Nota**: espera a que se habilite la copia de seguridad. Esta operación debe durar unos 2 minutos.
 
-1. En la sección **Elementos protegidos**, haga clic en **Elementos de copia de seguridad** y, a continuación, haga clic en la entrada **máquina virtual** de Azure.
+1. Una vez que la implementación se haya completado, selecciona **Ir al recurso**.
+   
+1. En la sección **Elementos protegidos**, haz clic en **Elementos de copia de seguridad** y, a continuación, haz clic en la entrada **máquina virtual** de Azure.
 
-1. Seleccione el vínculo **Ver detalles** para **az104-10-vm0** y revise los valores de las entradas **Comprobación previa de copia de seguridad** y **último estado de copia de seguridad**.
+1. Selecciona el vínculo **Ver detalles** para **az104-10-vm0** y revisa los valores de las entradas **Comprobación previa de copia de seguridad** y **último estado de copia de seguridad**.
 
-    >**Nota:** Fíjese en que la copia de seguridad está pendiente.
+    >**Nota:** fíjate en que la copia de seguridad está pendiente.
     
-1. Seleccione **Copia de seguridad ahora**, acepte el valor predeterminado en la lista desplegable **Conservar copia de seguridad hasta** y haga clic en **Aceptar**.
+1. Selecciona **Copia de seguridad ahora**, acepta el valor predeterminado en la lista desplegable **Conservar copia de seguridad hasta** y haz clic en **Aceptar**.
 
-    >**Nota**: No espere a que se complete la copia de seguridad, sino que avance a la siguiente tarea.
+    >**Nota**: no esperes a que se complete la copia de seguridad, sino que avanza a la siguiente tarea.
 
-## Tarea 4: Supervisión de Azure Backup
+## Tarea 4: Supervisión de Azure Backup
 
-En esta tarea, implementará una cuenta de almacenamiento de Azure. A continuación, configurará el almacén para enviar los registros y las métricas a la cuenta de almacenamiento. A continuación, este repositorio se puede usar con Log Analytics u otras soluciones de supervisión de terceros.
+En esta tarea, implementarás una cuenta de Azure Storage. A continuación, configurarás el almacén para enviar los registros y las métricas a la cuenta de almacenamiento. A continuación, este repositorio se puede usar con Log Analytics u otras soluciones de supervisión de terceros.
 
-1. En Azure Portal, busque y seleccione `Storage accounts`.
+1. En Azure Portal, busca y selecciona `Storage accounts`.
 
-1. En la página Cuentas de almacenamiento, seleccione **Crear**.
+1. En la página Cuentas de almacenamiento, selecciona **Crear**.
 
 1. Usa la siguiente información para definir la cuenta de almacenamiento, y después selecciona **Revisar + crear**.
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- | 
-    | Suscripción          | *Su suscripción*    |
-    | Resource group        | **az104-rg-region1**        |
-    | Nombre de la cuenta de almacenamiento  | Proporcione un nombre único global.   |
-    | Region                | **Este de EE. UU.**   |
+    | Suscripción          | *Tu suscripción*    |
+    | Grupo de recursos        | **az104-rg-region1**        |
+    | Nombre de la cuenta de almacenamiento  | Proporciona un nombre único global.   |
+    | Región                | **Este de EE. UU.**   |
 
-1. Seleccione **Crear**.
+1. Selecciona **Crear**.
 
-    >**Nota**: Espere a que la implementación se complete. Esta operación debería tardar aproximadamente un minuto.
+    >**Nota**: espera a que la implementación se complete. Esta operación debería tardar aproximadamente un minuto.
 
-1. Busque y seleccione el almacén de Recovery Services.
+1. Busca y selecciona el almacén de Recovery Services.
 
 1. En la hoja **Supervisión**, selecciona **Configuración de diagnóstico** y después **Agregar configuración de diagnóstico**.
 
-1. Asigne a la configuración el nombre `Logs and Metrics to storage`.
+1. Asigna a la configuración el nombre `Logs and Metrics to storage`.
 
-1. Coloque una marca de verificación junto a las siguientes categorías de registro y métricas:
+1. Coloca una marca de verificación junto a las siguientes categorías de registro y métricas:
 
     - **Datos de informes de Azure Backup**
     - **Datos de trabajo de Azure Backup del complemento**
     - **Datos de alerta de Azure Backup del complemento**
     - **Trabajos de Azure Site Recovery**
     - **Eventos de Azure Site Recovery**
-    - **Salud**
+    - **Estado**
 
-1. En Detalles de destino, coloque una marca de verificación junto a **Archivar en una cuenta de almacenamiento**.
+1. En Detalles de destino, coloca una marca de verificación junto a **Archivar en una cuenta de almacenamiento**.
 
-1. En el campo desplegable Cuenta de almacenamiento, seleccione la cuenta de almacenamiento que implementó anteriormente en esta tarea.
+1. En el campo desplegable Cuenta de almacenamiento, selecciona la cuenta de almacenamiento que implementaste anteriormente en esta tarea.
 
-1. Seleccione **Guardar**.
+1. Selecciona **Guardar**.
 
-1. Vuelva al almacén de Recovery Services y, en la hoja **Supervisión**, seleccione **Trabajos de copia de seguridad**.
+1. Vuelve al almacén de Recovery Services y, en la hoja **Supervisión**, selecciona **Trabajos de copia de seguridad**.
 
-1. Busque la operación de copia de seguridad de la máquina virtual **az104-10-vm0**. 
+1. Busca la operación de copia de seguridad de la máquina virtual **az104-10-vm0**. 
 
-1. Revise los detalles del trabajo de copia de seguridad.
+1. **Ver los detalles** (desplázate a la derecha para el vínculo) del trabajo de copia de seguridad.
 
-## Tarea 5: Habilitar la replicación de máquinas virtuales
+## Tarea 5: Habilitación de la replicación de máquinas virtuales
 
-1. En Azure Portal, busque y seleccione `Recovery Services vaults` y, en la hoja **Almacenes de Recovery Services**, haga clic en **+ Crear**.
+1. En Azure Portal, busca y selecciona `Recovery Services vaults` y, en la hoja **Almacenes de Recovery Services**, haz clic en **+ Crear**.
 
-1. En la hoja **Create Recovery Services vault** (Crear almacén de Recovery Services), configure las opciones siguientes:
-
-    | Configuración | Value |
-    | --- | --- |
-    | Suscripción | el nombre de la suscripción de Azure |
-    | Resource group | `az104-rg-region2` (Si es necesario, seleccione **Crear nuevo**) |
-    | Nombre del almacén | `az104-rsv-region2` |
-    | Region | **Oeste de EE. UU.** |
-
-    >**Nota**: Asegúrese de especificar una **región diferente** a la máquina virtual.
-
-1. Haga clic en **Revisar y crear**, asegúrese de que se haya superado la validación y, a continuación, haga clic en **Crear**.
-
-    >**Nota**: Espere a que la implementación se complete. La implementación podría tardar un par de minutos. 
-
-1. Busque y seleccione la máquina virtual `az104-10-vm0`.
-
-1. En la hoja **Copia de seguridad y recuperación ante desastres**, seleccione **Recuperación ante desastres**. 
-
-1. Seleccione **Habilitar replicación**.
-
-1. En la pestaña **Aspectos básicos**, observe la **Región de destino**.
-
-1. Cambie a la pestaña **Configuración avanzada**. Las selecciones de recursos se habrán realizado automáticamente. Es importante revisarlas. 
-
-1. Compruebe la configuración de la suscripción, el grupo de recursos de máquina virtual, la red virtual y la disponibilidad (elija la predeterminada).
-
-1. En **Configuración de almacenamiento**, seleccione **Mostrar detalles**.
+1. En la hoja **Crear almacén de Recovery Services**, configura las opciones siguientes:
 
     | Configuración | Valor |
-    | ---- | ---- |
-    | Abandono de la máquina virtual | **Abandono normal**  |
-    | Cuenta de almacenamiento en caché | **(nuevo) xxx**  |
+    | --- | --- |
+    | Suscripción | el nombre de la suscripción de Azure |
+    | Grupo de recursos | `az104-rg-region2` (Si es necesario, selecciona **Crear nuevo**) |
+    | Nombre del almacén | `az104-rsv-region2` |
+    | Región | **Oeste de EE. UU.** |
 
-   >**Nota:** Es importante que se rellenen ambas opciones de configuración o se producirá un error en la validación. Si los valores no están presentes, pruebe a actualizar la página. Si eso no funciona, cree una cuenta de almacenamiento vacía y vuelva a esta página.
+    >**Nota**: asegúrate de especificar una **región diferente** a la máquina virtual.
 
-1. En **Configuración de replicación**, seleccione **Mostrar detalles**. Observe que el almacén de recursos de recuperación de la región 2 se ha seleccionado automáticamente.
+1. Haz clic en **Revisar y crear**, asegúrate de que se haya superado la validación y, a continuación, haz clic en **Crear**.
 
-1. Seleccione **Revisar e iniciar replicación** y, después, **Habilitar replicación**.
+    >**Nota**: espera a que la implementación se complete. La implementación podría tardar un par de minutos. 
 
-    >**Nota**: La habilitación de la replicación tardará entre 10 y 15 minutos en completarse. Vea los mensajes de notificación en la esquina superior derecha del portal. Mientras espera, considere la posibilidad de revisar los vínculos de entrenamiento autodirigido al final de esta página.
+1. Busca y selecciona la máquina virtual `az104-10-vm0`.
+
+1. En la hoja **Copia de seguridad y recuperación ante desastres**, selecciona **Recuperación ante desastres**. 
+
+1. Selecciona **Habilitar replicación**.
+
+1. En la pestaña **Aspectos básicos**, observa la **Región de destino**.
+
+1. Selecciona **Siguiente: Configuración avanzada**. Las selecciones de recursos se han realizado por ti. 
+
+1. Desplázate hacia abajo y **Crea** la cuenta de automatización. 
+
+   >**Nota:** es importante que se rellenen las opciones de configuración o se producirá un error en la validación. 
+
+1. Selecciona **Revisar e iniciar replicación** y, después, **Habilitar replicación**.
+
+    >**Nota**: la habilitación de la replicación tardará entre 10 y 15 minutos en completarse. Visualiza los mensajes de notificación en la esquina superior derecha del portal. Mientras esperas, considera la posibilidad de revisar los vínculos de entrenamiento autodirigido al final de esta página.
     
-1. Una vez completada la replicación, localice el almacén de Recovery Services, **az104-rsv-region2**. Es posible que tenga que **actualizar** la página. 
+1. Una vez completada la replicación, localiza el almacén de Recovery Services, **az104-rsv-region2**. Es posible que tenga que **actualizar** la página. 
 
 1. En **Elementos protegidos**, seleccione **Elementos replicados**.
 
-1. Compruebe que la máquina virtual se muestre como correcta para el estado de replicación. Tenga en cuenta que el estado mostrará la sincronización (a partir del 0 %) y, por último, mostrará **Protegido** una vez completada la sincronización inicial.
+1. Compruebe que la máquina virtual se muestre como correcta para el estado de replicación. Tenga en cuenta que el estado mostrará la sincronización (a partir del 0 %) y, por último, mostrará **Protegido** una vez completada la sincronización inicial.
 
    ![Captura de pantalla de la página de elementos replicados.](../media/az104-lab10-replicated-items.png)
 
@@ -276,14 +269,14 @@ En esta tarea, implementará una cuenta de almacenamiento de Azure. A continuaci
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
 + ¿Qué productos admite Azure Backup?
 + Resuma los pasos para realizar copias de seguridad y restaurar una máquina virtual de Azure con Azure Backup.
