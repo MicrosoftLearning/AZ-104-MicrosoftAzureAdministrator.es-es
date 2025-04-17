@@ -120,9 +120,9 @@ En esta tarea, escalará una máquina virtual ajustando su tamaño a una SKU dif
 
 1. En la máquina virtual **az104-vm1**, en la hoja **Disponibilidad y escala**, seleccione **Tamaño**.
 
-1. Establezca el tamaño de la máquina virtual en **DS1_v2** y haga clic en **Cambiar tamaño**. Cuando se le solicite, confirme el cambio.
+1. Establece el tamaño de la máquina virtual en **D2ds_v4** y haz clic en **Cambiar tamaño**. Cuando se le solicite, confirme el cambio.
 
-    >**Nota**: Elija otro tamaño si **Estándar DS1_v2** no está disponible. El cambio de tamaño también se conoce como escalado vertical o reducción vertical.
+    >**Nota**: elige otro tamaño si **D2ds_v4** no está disponible. El cambio de tamaño también se conoce como escalado vertical o reducción vertical.
 
     ![Captura de pantalla del cambio de tamaño de la máquina virtual.](../media/az104-lab08-resize-vm.png)
 
@@ -408,14 +408,14 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
 + Proporcione los pasos y los comandos de la CLI de Azure para crear una máquina virtual Linux. 
 + Revise las formas en que puede escalar máquinas virtuales y mejorar el rendimiento.

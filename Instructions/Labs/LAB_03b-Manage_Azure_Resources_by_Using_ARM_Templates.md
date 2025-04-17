@@ -52,7 +52,7 @@ En esta tarea, crearemos un disco administrado en Azure Portal. Los discos admin
     
     | Configuración | Valor |
     | --- | --- |
-    | Suscripción | *su suscripción* | 
+    | Suscripción | *tu suscripción* | 
     | Grupo de recursos | `az104-rg3` (Si es necesario, seleccione **Crear nuevo**).
     | Nombre del disco | `az104-disk1` | 
     | Region | **Este de EE. UU.** |
@@ -110,7 +110,7 @@ En esta tarea, usará la plantilla descargada para implementar un nuevo disco ad
 
     | Configuración | Valor |
     | --- |--- |
-    | Suscripción | *su suscripción* |
+    | Suscripción | *tu suscripción* |
     | Grupo de recursos | `az104-rg3` |
     | Región | **(EE. UU.) Este de EE. UU.** |
     | Nombre del disco | `az104-disk2` |
@@ -164,7 +164,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
 
 1. Realizar un cambio. Por ejemplo, cambie el nombre del disco a **az104-disk3**. Presione **Ctrl+S** para guardar los cambios. 
 
-    >**Nota**: La implementación de la plantilla puede tener como destino un grupo de recursos, una suscripción, un grupo de administración o un inquilino. Según el ámbito de la implementación, usará comandos diferentes.
+    >**Nota**: la implementación de la plantilla puede tener como destino un grupo de recursos, una suscripción, un grupo de administración o un inquilino. Según el ámbito de la implementación, usará comandos diferentes.
 
 1. Para realizar la implementación en un grupo de recursos, utilice **New-AzResourceGroupDeployment**.
 
@@ -227,7 +227,7 @@ En esta tarea, usarás un archivo de Bicep para implementar un disco administrad
    
 1. Haz los siguientes cambios:
 
-    + Cambia el valor **managedDiskName**, línea 4, a Disk4.
+    + Cambia el valor **managedDiskName**, línea 2, a Disk4.
     + Cambia el valor **sku name**, línea 26, a StandardSSD_LRS.
     + Cambia el valor **diskSizeinGiB**, línea 7, a 32.
 
