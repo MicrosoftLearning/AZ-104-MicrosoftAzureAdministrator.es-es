@@ -148,9 +148,9 @@ En esta tarea, creará la red virtual ManufacturingVnet y las subredes asociadas
 
 1. Selecciona **Compilar su propia plantilla en el editor** y, a continuación, **Cargar archivo**.
 
-1. Selecciona el archivo **templates.json** con los cambios de fabricación y, a continuación, selecciona **Guardar**.
+1. Selecciona el archivo **template.json** con los cambios de Manufactura y, a continuación, selecciona **Guardar**.
 
-1. Selecciona **Editar plantilla** y luego **Cargar archivo**.
+1. Selecciona **Editar parámetros** y, a continuación, **Cargar archivo**.
 
 1. Selecciona el archivo **parameters.json** con los cambios de fabricación y, a continuación, selecciona **Guardar**.
 
@@ -191,8 +191,8 @@ En esta tarea, crearemos un grupo de seguridad de aplicaciones y un grupo de seg
 
     | Configuración | Valor |
     | -- | -- |
-    | Suscripción | *su suscripción* |
-    | Resource group | **az104-rg4** |
+    | Suscripción | *tu suscripción* |
+    | Grupo de recursos | **az104-rg4** |
     | Nombre | `myNSGSecure` |
     | Región | **Este de EE. UU.**  |
 
@@ -271,7 +271,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
     | Propiedad | Valor    |
     |:---------|:---------|
     | Suscripción | **Selecciona la suscripción** |
-    | Resource group | **az-104-rg4** |
+    | Grupo de recursos | **az-104-rg4** |
     | Nombre | `contoso.com` (si se reserva, ajuste el nombre) |
     | Region |**Este de EE. UU.** (revise el icono informativo) |
 
@@ -281,7 +281,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
 
 1. En la hoja **Información general**, observe los nombres de los cuatro servidores de nombres DNS de Azure asignados a la zona. **Copia** una de las direcciones del servidor de nombres. La necesitarás en un paso posterior. 
   
-1. Selecciona **+ Conjunto de registros**. **Agrega** un registro de vínculo de red virtual para cada red virtual que necesite compatibilidad con la resolución de nombres privados.
+1. Expande la hoja **Administración de DNS** y selecciona **+ Conjunto de registros**. **Agrega** un registro de vínculo de red virtual para cada red virtual que necesite compatibilidad con la resolución de nombres privados.
 
     | Propiedad | Valor    |
     |:---------|:---------|
@@ -325,7 +325,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. Observa que en la hoja **Información general** no hay registros de servidor de nombres. 
 
-1. Selecciona **Administración de DNS** y después **Vínculos de red virtual**. Configura el vínculo. 
+1. Expande la hoja **Administración de DNS** y, a continuación, selecciona **Vínculos de red virtual**. Configura el vínculo. 
 
     | Propiedad | Valor    |
     |:---------|:---------|
@@ -348,15 +348,15 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 + Comparta los 10 mejores procedimientos recomendados al implementar y configurar una red virtual en Azure.
 + Cómo uso los comandos de Azure PowerShell y la CLI de Azure para crear una red virtual con una dirección IP pública y una subred. 
 + Explicar las reglas de entrada y salida del grupo de seguridad de red de Azure y cómo se usan.

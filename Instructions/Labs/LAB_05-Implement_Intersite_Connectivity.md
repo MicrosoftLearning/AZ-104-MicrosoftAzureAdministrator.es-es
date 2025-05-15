@@ -1,16 +1,16 @@
 ---
 lab:
-  title: "Laboratorio\_05: Implementación de la conectividad entre sitios"
+  title: 'Laboratorio 05: Implementación de la conectividad entre sitios'
   module: Administer Intersite Connectivity
 ---
 
-# Laboratorio 05: Implementación de la conectividad entre sitios
+# Laboratorio 05: Implementación de la conectividad entre sitios
 
 ## Introducción al laboratorio
 
 En este laboratorio, explorará la comunicación entre redes virtuales. Implemente el emparejamiento de redes virtuales y pruebe las conexiones. También creará una ruta personalizada. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
 ## Tiempo estimado: 50 minutes
     
@@ -24,7 +24,7 @@ Hay simulaciones de laboratorio interactivas que le podrían resultar útiles pa
 
 + [Conectar dos redes virtuales de Azure mediante el emparejamiento de red virtual global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Pruebe la conexión entre dos máquinas virtuales en redes virtuales diferentes. Cree un emparejamiento de red virtual y vuelva a probarlo.
 
-+ [Configuración de la supervisión de redes virtuales](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/). Comprenda cómo usar Azure Network Watcher Connection Monitor, registros de flujo, diagnósticos de NSG y captura de paquetes para supervisar la conectividad entre los recursos de red de IaaS de Azure.
++ [Configuración de la supervisión de redes virtuales](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/). Comprenda cómo usar Azure Network Watcher Connection Monitor, registros de flujo, diagnósticos de NSG y captura de paquetes para supervisar la conectividad entre los recursos de red de IaaS de Azure.
 
 + [Implemente la conectividad entre sitios](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209). Ejecute una plantilla para crear una infraestructura de red virtual con varias máquinas virtuales. Configure redes virtuales y pruebe las conexiones. 
 
@@ -34,14 +34,14 @@ Hay simulaciones de laboratorio interactivas que le podrían resultar útiles pa
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Cree una máquina virtual en una red virtual.
-+ Tarea 2: Cree una máquina virtual en otra red virtual.
-+ Tarea 3: Utilice Network Watcher para probar la conexión entre máquinas virtuales. 
-+ Tarea 4: Configure emparejamientos de red virtual entre diferentes redes virtuales.
-+ Tarea 5: Use Azure PowerShell para probar la conexión entre máquinas virtuales.
++ Tarea 1: Cree una máquina virtual en una red virtual.
++ Tarea 2: Cree una máquina virtual en otra red virtual.
++ Tarea 3: Utilice Network Watcher para probar la conexión entre máquinas virtuales. 
++ Tarea 4: Configure emparejamientos de red virtual entre diferentes redes virtuales.
++ Tarea 5: Use Azure PowerShell para probar la conexión entre máquinas virtuales.
 + Tarea 6: Crear una ruta personalizada. 
 
-## Tarea 1:  Creación de una máquina virtual de servicios principales y una red virtual
+## Tarea 1:  Creación de una máquina virtual de servicios principales y una red virtual
 
 En esta tarea, creará una red virtual de servicios principales con una máquina virtual. 
 
@@ -55,10 +55,10 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
  
     | Configuración | Valor | 
     | --- | --- |
-    | Suscripción |  *su suscripción* |
+    | Suscripción |  *tu suscripción* |
     | Resource group |  `az104-rg5` (Si es necesario, **Crear nuevo**. )
     | Nombre de la máquina virtual |    `CoreServicesVM` |
-    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Región | **(EE. UU.) Este de EE. UU.** |
     | Opciones de disponibilidad | No se requiere redundancia de la infraestructura |
     | Tipo de seguridad | **Estándar** |
     | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** (observe las otras opciones) |
@@ -90,7 +90,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
     >**Nota:** ¿Ha observado que en esta tarea creó la red virtual a medida que creó la máquina virtual? También puede crear la infraestructura de red virtual y, a continuación, agregar las máquinas virtuales. 
 
-## Tarea 2: Cree una máquina virtual en otra red virtual
+## Tarea 2: Cree una máquina virtual en otra red virtual
 
 En esta tarea, creará una red virtual de servicios principales con una máquina virtual. 
 
@@ -102,10 +102,10 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
  
     | Configuración | Valor | 
     | --- | --- |
-    | Suscripción |  *su suscripción* |
+    | Suscripción |  *tu suscripción* |
     | Resource group |  `az104-rg5` |
     | Nombre de la máquina virtual |    `ManufacturingVM` |
-    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Región | **(EE. UU.) Este de EE. UU.** |
     | Tipo de seguridad | **Estándar** |
     | Opciones de disponibilidad | No se requiere redundancia de la infraestructura |
     | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
@@ -131,7 +131,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
 
-## Tarea 3: Utilice Network Watcher para probar la conexión entre máquinas virtuales 
+## Tarea 3: Utilice Network Watcher para probar la conexión entre máquinas virtuales 
 
 
 En esta tarea, comprobará que los recursos de las redes virtuales emparejadas pueden comunicarse entre sí. Network Watcher se usará para probar la conexión. Antes de continuar, asegúrese de que ambas máquinas virtuales se han implementado y se están ejecutando. 
@@ -161,7 +161,7 @@ En esta tarea, comprobará que los recursos de las redes virtuales emparejadas p
     >**Nota**: Los resultados pueden tardar un par de minutos en devolverse. Las selecciones de pantalla se atenuarán mientras se recopilan los resultados. Observe que la **Prueba de conectividad** muestra **UnReachable**. Esto tiene sentido porque las máquinas virtuales están en diferentes redes virtuales. 
 
  
-## Tarea 4: Configuración de emparejamientos de redes virtuales entre redes virtuales
+## Tarea 4: Configuración de emparejamientos de redes virtuales entre redes virtuales
 
 En esta tarea, creará un emparejamiento de red virtual para habilitar las comunicaciones entre los recursos de las redes virtuales. 
 
@@ -181,11 +181,13 @@ En esta tarea, creará un emparejamiento de red virtual para habilitar las comun
 | Permitir que CoreServicesVNet acceda a la red virtual emparejada            | seleccionado (valor predeterminado)                       |
 | Permitir que CoreServicesVNet reciba tráfico reenviado de la red virtual emparejada | seleccionados                       |
 
+1. Haz clic en **Agregar**.
+
 1. En CoreServicesVnet | Emparejamientos, compruebe que se muestra el emparejamiento **CoreServicesVnet-to-ManufacturingVnet**. Actualice la página para asegurarse de que el **estado de emparejamiento** es **Conectado**.
 
 1. Cambie al **ManufacturingVnet** y compruebe que ** se muestra el emparejamiento ManufacturingVnet-to-CoreServicesVnet**. Asegúrese de que el **Estado de emparejamiento** es **Conectado**. Es posible que tenga que **actualizar** la página. 
 
-## Tarea 5: Uso de Azure PowerShell para probar la conexión entre máquinas virtuales
+## Tarea 5: Uso de Azure PowerShell para probar la conexión entre máquinas virtuales
 
 En esta tarea, se vuelve a probar la conexión entre las máquinas virtuales de diferentes redes virtuales. 
 
@@ -215,13 +217,13 @@ En esta tarea, se vuelve a probar la conexión entre las máquinas virtuales de 
    
    ![Ventana de PowerShell con Test-NetConnection correcta.](../media/az104-lab05-success.png)
 
-## Tarea 6: Creación de una ruta personalizada 
+## Tarea 6: Creación de una ruta personalizada 
 
 En esta tarea, desea controlar el tráfico de red entre la subred perimetral y la subred de servicios centrales internos. Se instalará una aplicación de red virtual en la subred de servicios principales y todo el tráfico debe enrutarse allí. 
 
 1. Busque seleccionar `CoreServicesVnet`.
 
-1. Seleccione **Subredes** y, a continuación, **+ Crear**. Asegúrese de **Guardar** los cambios. 
+1. Selecciona **Subredes** y, a continuación, **+ Subred**. Asegúrate de seleccionar **Agregar** para guardar los cambios. 
 
     | Configuración | Valor | 
     | --- | --- |
@@ -239,9 +241,11 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
     | Nombre | `rt-CoreServices` |
     | Propagar las rutas de la puerta de enlace | **No** |
 
-1. Después de implementar la tabla de rutas, seleccione **Ir al recurso**.
+1. Después de implementar la tabla de rutas, busca y selecciona las **Tablas de rutas**.
+   
+1. Selecciona el recurso (no la casilla) **rt-CoreServices**
 
-1. Seleccione **Rutas** y después **Agregar**. Crea una ruta desde la aplicación virtual de red (NVA) futura a la red virtual CoreServices. 
+1. Expande **Configuración**, a continuación, selecciona **Rutas** y, después, **+ Agregar**. Crea una ruta desde la aplicación virtual de red (NVA) futura a la red virtual CoreServices. 
 
     | Configuración | Value | 
     | --- | --- |
@@ -251,9 +255,9 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
     | Tipo de próximo salto | **Aplicación virtual** (observe las demás opciones) |
     | Siguiente dirección de salto | `10.0.1.7` (NVA futura) |
 
-1. Seleccione **+ Agregar** cuando se complete la ruta. Lo último que debe hacer es asociar la ruta a la subred.
+1. Seleccione **+Agregar**. Lo último que debe hacer es asociar la ruta a la subred.
 
-1. Seleccione **Subredes** y, después, seleccione **Asociar**. Complete la configuración.
+1. Selecciona **Subredes** y, a continuación, **+ Asociar**. Complete la configuración.
 
     | Configuración | Valor | 
     | --- | --- |
@@ -264,14 +268,14 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
 + ¿Cómo puedo usar los comandos de Azure PowerShell o la CLI de Azure para agregar un emparejamiento de red virtual entre vnet1 y vnet2?
 + Cree una tabla que resalte varias herramientas de supervisión de Azure y de terceros compatibles con Azure. Resalte cuándo usar cada herramienta. 

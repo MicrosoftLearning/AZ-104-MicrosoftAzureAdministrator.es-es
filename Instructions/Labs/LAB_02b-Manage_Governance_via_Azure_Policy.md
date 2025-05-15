@@ -49,7 +49,7 @@ Hay simulaciones de laboratorio interactivas que le podrían resultar útiles pa
 
 ## Tarea 1: Asignar etiquetas a través de Azure Portal
 
-En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal. Las etiquetas son un componente fundamental de una estrategia de gobernanza como se describe en el Marco de buena arquitectura de Microsoft y Cloud Adoption Framework. Las etiquetas pueden permitirle identificar rápidamente los propietarios de recursos, las fechas de expiración, los contactos de grupo y otros pares de nombre y valor que la organización considera importantes. Para esta tarea, asigne una etiqueta que identifique el rol de recurso ("Infra" para "Infraestructura").
+En esta tarea, creará y asignará una etiqueta a un grupo de recursos de Azure a través de Azure Portal. Las etiquetas son un componente fundamental de una estrategia de gobernanza como se describe en el Marco de buena arquitectura de Microsoft y Cloud Adoption Framework. Las etiquetas pueden permitirle identificar rápidamente los propietarios de recursos, las fechas de expiración, los contactos de grupo y otros pares de nombre y valor que la organización considera importantes. Para esta tarea, asignarás una etiqueta que identifique el recurso Cost Center. 
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
       
@@ -92,7 +92,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     | Configuración | Valor |
     | --- | --- |
-    | Suscripción | *su suscripción* |
+    | Suscripción | *tu suscripción* |
     | Grupo de recursos | **az104-rg2** |
 
     >**Nota**: Puede asignar directivas en el nivel de grupo de administración, de suscripción o de grupo de recursos. También tiene la opción de especificar exclusiones, como suscripciones, grupos de recursos o recursos individuales. En este escenario, el objetivo es la etiqueta en todos los recursos del grupo de recursos.
@@ -126,7 +126,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
 1. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, complete la configuración.
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Resource group | **az104-rg2** |
     | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
@@ -234,14 +234,14 @@ En esta tarea, configurará y probará un bloqueo de recursos. Los bloqueos impi
     
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 + ¿Cuáles son los comandos de Azure PowerShell y la CLI para agregar y eliminar bloqueos de recursos en un grupo de recursos?
 + Se han tabulado las diferencias entre Azure Policy y Azure RBAC e incluido ejemplos.
 + ¿Cuáles son los pasos para aplicar la directiva de Azure y corregir los recursos que no son compatibles?
