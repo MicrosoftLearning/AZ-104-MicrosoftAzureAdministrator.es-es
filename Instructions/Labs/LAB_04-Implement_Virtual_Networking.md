@@ -148,9 +148,9 @@ En esta tarea, creará la red virtual ManufacturingVnet y las subredes asociadas
 
 1. Selecciona **Compilar su propia plantilla en el editor** y, a continuación, **Cargar archivo**.
 
-1. Selecciona el archivo **template.json** con los cambios de Manufactura y, a continuación, selecciona **Guardar**.
+1. Selecciona el archivo **template.json** con los cambios de fabricación y, después, selecciona **Guardar**.
 
-1. Selecciona **Editar parámetros** y, a continuación, **Cargar archivo**.
+1. Selecciona **Editar parámetros** y, después, **Cargar archivo**.
 
 1. Selecciona el archivo **parameters.json** con los cambios de fabricación y, a continuación, selecciona **Guardar**.
 
@@ -281,7 +281,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
 
 1. En la hoja **Información general**, observe los nombres de los cuatro servidores de nombres DNS de Azure asignados a la zona. **Copia** una de las direcciones del servidor de nombres. La necesitarás en un paso posterior. 
   
-1. Expande la hoja **Administración de DNS** y selecciona **+ Conjunto de registros**. **Agrega** un registro de vínculo de red virtual para cada red virtual que necesite compatibilidad con la resolución de nombres privados.
+1. Expanda la hoja **Administración de DNS** y selecciona **+ Conjunto de registros**. Agrega un registro de vínculo de red virtual para cada red virtual que necesite compatibilidad con la resolución de nombres privados.
 
     | Propiedad | Valor    |
     |:---------|:---------|
@@ -325,7 +325,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. Observa que en la hoja **Información general** no hay registros de servidor de nombres. 
 
-1. Expande la hoja **Administración de DNS** y, a continuación, selecciona **Vínculos de red virtual**. Configura el vínculo. 
+1. Expande la hoja **Administración de DNS**, selecciona **+ Vínculos de red virtual**. Configura el vínculo. 
 
     | Propiedad | Valor    |
     |:---------|:---------|
