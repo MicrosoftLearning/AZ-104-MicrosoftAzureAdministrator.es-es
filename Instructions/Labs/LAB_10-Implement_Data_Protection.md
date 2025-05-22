@@ -84,9 +84,9 @@ En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery
 
 1. En Azure Portal, busca y selecciona `Recovery Services vaults` y, en la hoja **Almacenes de Recovery Services**, haz clic en **+ Crear**.
 
-1. En la hoja **Create Recovery Services vault** (Crear almacén de Recovery Services), configure las opciones siguientes:
+1. En la hoja **Crear almacén de Recovery Services**, configura las opciones siguientes:
 
-    | Configuración | Value |
+    | Configuración | Valor |
     | --- | --- |
     | Suscripción | el nombre de la suscripción de Azure |
     | Resource group | `az104-rg-region1`  |
@@ -99,7 +99,7 @@ En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery
 
 1. Haga clic en **Revisar y crear**, asegúrese de que se haya superado la validación y, a continuación, haga clic en **Crear**.
 
-    >**Nota**: Espere a que la implementación se complete. La implementación podría tardar un par de minutos. 
+    >**Nota**: espera a que la implementación se complete. La implementación podría tardar un par de minutos. 
 
 1. Cuando se haya completado la implementación, haga clic en **Ir al recurso**.
 
@@ -240,8 +240,6 @@ En esta tarea, implementarás una cuenta de Azure Storage. A continuación, conf
 1. Busca y selecciona la máquina virtual `az104-10-vm0`.
 
 1. En la hoja **Copia de seguridad y recuperación ante desastres**, selecciona **Recuperación ante desastres**. 
-
-1. Selecciona **Habilitar replicación**.
 
 1. En la pestaña **Aspectos básicos**, observa la **Región de destino**.
 

@@ -60,7 +60,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
 1. En la pestaña **Opciones avanzadas**, usa los iconos informativos para obtener más información sobre las opciones. Usa los valores predeterminados. 
 
-1. En la pestaña **Redes**, en la sección **Acceso a red pública** selecciona **Deshabilitar**. Esto restringirá el acceso entrante al permitir el acceso saliente. 
+1. En la pestaña **Redes**, en la sección **Acceso de red**, selecciona **Deshabilitar acceso público y usar acceso privado**. Esto restringirá el acceso entrante al permitir el acceso saliente. 
 
 1. Revisa la pestaña **Protección de datos**. Recuerda que la directiva de retención de eliminación temporal predeterminada es de 7 días. Observa que es posible habilitar el control de versiones de blobs. Acepta los valores predeterminados.
 
@@ -74,19 +74,17 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
 1. Selecciona **Redes** en la hoja **Seguridad y redes**. Observa que el **acceso a la red pública** está deshabilitado.
 
-    + Selecciona **Administrar** el **Acceso a la red pública**.
-    + Cambia el **Acceso a la red pública** a **Habilitar**.
-    + Cambia la **Acción predeterminada** a **Habilitar desde redes seleccionadas**.
-    + En la sección **Direcciones IP**, selecciona **Agregar la dirección IP del cliente**.
-    + Guarde los cambios mediante **Guardar**.
+    + Cambia el **Acceso de red pública** a **Habilitar desde redes y direcciones IP seleccionadas**.
+    + En la sección **Firewall**, activa la casilla **Agregar la dirección IP del cliente**.
+    + Guarda los cambios.
   
 1. En la hoja **Administración de datos**, selecciona **Redundancia**. Observa la información sobre las ubicaciones del centro de datos principal y secundario.
 
 1. En la hoja **Administración de datos**, selecciona **Administración del ciclo de vida** y, a continuación, selecciona **Agregar una regla**.
 
-    + **Asigna un nombre** a la regla `Movetocool`. Observa las opciones para limitar el ámbito de la regla.
+    + **Asigna un nombre** a la regla `Movetocool`. Observa las opciones para limitar el ámbito de la regla. Haga clic en **Next**. 
     
-    + En la pestaña **Blobs de base**, *si* los blobs de base se modificaron por última vez más de hace más de `30 days`, *entonces* **mueva a almacenamiento esporádico**. Observa las otras opciones. 
+    + En la pestaña **Blobs de base**, *si* los blobs de base se modificaron por última vez hace más de `30 days`, *entonces***Mover al almacenamiento de acceso esporádico**. Observa las otras opciones. 
     
     + Observa que se pueden configurar otras condiciones. Selecciona **Agregar** cuando hayas terminado de explorar.
 
@@ -154,7 +152,7 @@ En esta tarea, crearás un contenedor de blobs y cargarás una imagen. Los conte
 
 ### Configuración del acceso limitado al almacenamiento de blobs
 
-1. Selecciona el archivo cargado y la pestaña **Generar SAS**. También es posible usar los puntos suspensivos (...) del lado extremo derecho. Especifica las opciones de configuración siguientes (deja las demás con los valores predeterminados):
+1. Vuelve a examinar el archivo que cargaste y selecciona los puntos suspensivos (...) situados en el extremo derecho, selecciona **Generar SAS** y especifica la siguiente configuración (deja otros con sus valores predeterminados):
 
     | Configuración | Value |
     | --- | --- |

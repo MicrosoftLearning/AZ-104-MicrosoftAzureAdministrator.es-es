@@ -227,11 +227,9 @@ En esta tarea, usarás un archivo de Bicep para implementar un disco administrad
    
 1. Haz los siguientes cambios:
 
-    + Cambia el valor **managedDiskName**, línea 2, a Disk4.
-    + Cambia el valor **sku name**, línea 26, a StandardSSD_LRS.
-    + Cambia el valor **diskSizeinGiB**, línea 7, a 32.
-
-    >**Nota:** hay disponible una plantilla de Bicep completada en los archivos para laboratorio.
+    + Cambia el valor **managedDiskName**, línea 2, a **az104-disk5**.
+    + Cambia el valor **sku name**, línea 26, a **StandardSSD_LRS**.
+    + Cambia el valor **diskSizeinGiB**, línea 7, a **32**.
     
 1. Presiona **Ctrl+S** para guardar los cambios.
 

@@ -130,6 +130,8 @@ En esta tarea, intercambiarás el espacio de ensayo por el espacio de producció
 
 1. Vuelve a la página principal del portal. Debes tener tanto una aplicación web de producción como el espacio de ensayo.
 
+1. Busca `App Services` y selecciona tu App Service Web Apps. Esto te devuelve a la ranura de implementación de producción.
+
 1. En la hoja**Información general** de App Service Web Apps, selecciona el vínculo **Dominio predeterminado** para mostrar la página principal del sitio web.
 
 1. Comprueba que la página web de producción muestre la página **Hola mundo** .
