@@ -79,7 +79,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. Seleccione **Ver** en el cuadro **Información de máquina virtual** y, después, seleccione **Configurar información**.
 
-1. Seleccione la máquina virtual y, después, **Habilitar** (dos veces).
+1. Selecciona **Habilitar** junto a la máquina virtual y, a continuación, la hoja **Habilitar en Azure Monitor: Incorporación a Insights**.
 
 1. Utilice los valores predeterminados de las reglas de recopilación de datos y de la suscripción y seleccione **Configurar**. 
 
@@ -109,7 +109,7 @@ En esta tarea, se crea una alerta que se debe desencadenar cuando se elimine una
 
 En esta tarea, si la alerta se desencadena, envía una notificación por correo electrónico al equipo de operaciones. 
 
-1. Siga trabajando en la alerta. Seleccione **Siguiente: Acciones**y, después, seleccione **Crear grupo de acciones**.
+1. Siga trabajando en la alerta. Selecciona **Usar grupos de acciones** y, a continuación, selecciona **Crear grupo de acciones** en la hoja **Seleccionar grupo de acciones**.
 
     >**¿Sabía que?** Puede agregar hasta cinco grupos de acciones a una regla de alertas. Los grupos de acciones se ejecutan simultáneamente y sin seguir ningún orden específico. Varias reglas de alerta pueden usar el mismo grupo de acciones. 
 
@@ -201,7 +201,7 @@ Escriba esta configuración para la programación de la regla de procesamiento d
 
 1. Seleccione **Siguiente: Detalles** y escriba esta configuración:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     |---------|---------|
     | Resource group | **az104-rg11** |
     | Nombre de la regla | `Planned Maintenance` |
@@ -227,7 +227,7 @@ En esta tarea, usará Azure Monitor para consultar los datos capturados de la m�
 
 1. Debe recibir un recuento de latidos del momento en que se ejecutaba la máquina virtual.
 
-1. Examine la consulta. Esta consulta usa la tabla de *latidos*. 
+1. En el lado derecho de la pantalla, selecciona la lista desplegable situada junto a **Modo simple** y elige **Modo KQL**. Examine la consulta. Esta consulta usa la tabla de *latidos*.
 
 1. Reemplace la consulta por esta y, después, haga clic en **Ejecutar**. Vea el gráfico resultante. 
 
@@ -239,6 +239,8 @@ En esta tarea, usará Azure Monitor para consultar los datos capturados de la m�
     | render timechart
    ```
 
+    >**Nota:** si la consulta no se pega correctamente, intenta pegar en el Bloc de notas y, a continuación, copia y vuelve a pegar en el campo de consulta.
+
 1. Como tiene tiempo, examine otras consultas y ejecútelas, si lo desea. 
 
     >**¿Sabía que...?**: si desea practicar con otras consultas, hay un [entorno de demostración de Log Analytics](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial#open-log-analytics).
@@ -247,14 +249,14 @@ En esta tarea, usará Azure Monitor para consultar los datos capturados de la m�
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
 + ¿Cuáles son los pasos de configuración básicos que se van a alertar en Azure cuando una máquina virtual está inactiva?
 + ¿Cómo se puede recibir una notificación cuando se desencadena una alerta de Azure?

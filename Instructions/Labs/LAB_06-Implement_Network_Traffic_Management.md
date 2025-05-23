@@ -34,7 +34,7 @@ Hay simulaciones de laboratorio interactivas que podrían resultar útiles para 
 
 ## Tarea 1: Usar una plantilla para aprovisionar una infraestructura
 
-En esta tarea, usará una plantilla para implementar una red virtual, un grupo de seguridad de red y dos máquinas virtuales.
+En esta tarea, usarás una plantilla para implementar una red virtual, un grupo de seguridad de red y tres máquinas virtuales.
 
 1. Descargue los archivos de laboratorio **\\Allfiles\\Lab06** (plantilla y parámetros).
 
@@ -105,7 +105,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
     | Equilibrador de carga de puerta de enlace | None |
     | Dirección IP pública | Seleccione **Crear nuevo** (use las instrucciones del paso siguiente) |
 
-1. En el elemento emergente **Agregar una dirección IP pública**, utilice la configuración siguiente antes de hacer clic en **Aceptar** y, a continuación, haga clic en **Agregar**. Cuando haya terminado, haga clic en **Siguiente: Grupos de back-end**.
+1. En el elemento emergente **Agregar una dirección IP pública**, utiliza la configuración siguiente antes de hacer clic en **Guardar** dos veces. Cuando haya terminado, haga clic en **Siguiente: Grupos de back-end**.
 
     | Configuración | Valor |
     | --- | --- |
@@ -117,7 +117,7 @@ En esta tarea, se implementa una instancia de Azure Load Balancer delante de las
 
     >**Nota:** La versión Estándar de SKU proporciona una dirección IP estática. Cuando se elimina el recurso se asignan direcciones IP estáticas con el recurso que se crea y publica.  
 
-1. En la pestaña **Grupos de back-end**, haga clic en **Agregar un grupo de back-end** con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Haga clic en **+ Agregar** (dos veces) y, después, en**Siguiente: Reglas de entrada**.
+1. En la pestaña **Grupos de back-end**, haga clic en **Agregar un grupo de back-end** con las opciones de configuración siguientes (deje las demás con los valores predeterminados). Haz clic en **Agregar** y, a continuación, en **Guardar**. Haz clic en **Siguiente: Reglas de entrada**.
 
     | Configuración | Valor |
     | --- | --- |
@@ -189,9 +189,9 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | --- | --- |
     | Nombre | `subnet-appgw` |
     | Dirección inicial| `10.60.3.224` |
-    | Size | `/27` |
+    | Tamaño | `/27` - Asegúrate de que la **dirección inicial** sigue siendo **10.63.3.224**|
 
-1. Haga clic en **Guardar**
+1. Haga clic en **Agregar**.
 
     > **Nota**: Azure Application Gateway usará esta subred. Application Gateway requiere una subred dedicada de tamaño /27 o mayor.
 
@@ -207,8 +207,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Region | La **misma** región de Azure que usó en la tarea 1 |
     | Nivel | **Standard V2** |
     | Habilitación del escalado automático | **No** |
-    | Recuento mínimo de instancias | `2` |
-    | Zona de disponibilidad | **1** (predeterminado) |
+    | Recuento de instancias | `2` |
     | HTTP2 | **Deshabilitada** |
     | Virtual network | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
@@ -290,7 +289,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | Configuración de back-end | **az104-http** |
     | Destino de back-end | `az104-videobe` |
 
-1. Asegúrese de **Guardar** y comprobar los cambios y, a continuación, seleccione **Siguiente: Tags >** (Siguiente: Etiquetas). No es necesario realizar ningún cambio.
+1. Asegúrate de comprobar los cambios y, a continuación, selecciona **Siguiente: Etiquetas >**. No es necesario realizar ningún cambio.
 
 1. Seleccione **Siguiente: Revisar y crear** y después en **Crear**.
 
@@ -316,15 +315,15 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
 + Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
 + Compare y contraste Azure Load Balancer con Azure Application Gateway. Necesito ayuda para decidir en qué escenarios debo usar cada producto.
 + ¿Qué herramientas están disponibles para solucionar problemas de conexiones a Azure Load Balancer? 
