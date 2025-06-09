@@ -228,10 +228,12 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
     | Configuración | Valor | 
     | --- | --- |
     | Nombre | `perimeter` |
-    | Intervalo de direcciones de subred | `10.0.1.0/24`  |
+    | Dirección inicial | `10.0.1.0/24`  |
 
    
-1. En Azure Portal, busca y selecciona `Route tables`, selecciona **Revisar y crear** y luego selecciona **Crear**. 
+1. En Azure Portal, busca y selecciona `Route tables` y, a continuación, selecciona **+ Crear**.
+
+1. Escribe los detalles siguientes, selecciona **Revisar y crear** y, a continuación, selecciona **Crear**. 
 
     | Configuración | Valor | 
     | --- | --- |

@@ -204,7 +204,6 @@ En esta tarea, implementarás una cuenta de Azure Storage. A continuación, conf
     - **Datos de alerta de Azure Backup del complemento**
     - **Trabajos de Azure Site Recovery**
     - **Eventos de Azure Site Recovery**
-    - **Estado**
 
 1. En Detalles de destino, coloca una marca de verificación junto a **Archivar en una cuenta de almacenamiento**.
 

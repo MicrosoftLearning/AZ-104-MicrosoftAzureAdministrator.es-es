@@ -164,9 +164,9 @@ En esta tarea, se usará la nueva definición de directiva para corregir los rec
     | --- | --- |
     | Nombre de asignación | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Descripción | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
-    | Aplicación de directivas | habilitado |
+    | Aplicación de directivas | Habilitado |
 
-1. Haga clic en **Siguiente** dos veces y establezca **Parámetros** en los valores siguientes:
+1. Haga clic en **Siguiente** y establezca **Parámetros** en los valores siguientes:
 
     | Configuración | Value |
     | --- | --- |
