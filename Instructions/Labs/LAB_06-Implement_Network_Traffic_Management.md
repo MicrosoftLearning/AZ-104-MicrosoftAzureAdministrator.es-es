@@ -189,7 +189,7 @@ En esta tarea, se implementa Azure Application Gateway delante de dos máquinas 
     | --- | --- |
     | Nombre | `subnet-appgw` |
     | Dirección inicial| `10.60.3.224` |
-    | Tamaño | `/27` - Asegúrate de que la **dirección inicial** sigue siendo **10.63.3.224**|
+    | Tamaño | `/27` - Asegúrate de que la **dirección inicial** sigue siendo **10.60.3.224**|
 
 1. Haga clic en **Agregar**.
 
