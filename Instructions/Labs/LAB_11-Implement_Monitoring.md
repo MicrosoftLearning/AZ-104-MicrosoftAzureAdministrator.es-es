@@ -18,13 +18,12 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 Su organización ha migrado su infraestructura a Azure. Es importante notificar a los administradores todos los cambios significativos que se realicen en la infraestructura. Planee examinar las funcionalidades de Azure Monitor, entre las que se incluye Log Analytics.
 
-## Simulación interactiva de laboratorio
+## Simulaciones de laboratorio interactivas
 
-Hay una simulación de laboratorio interactiva que puede resultar útil para este tema. La simulación permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
-+ [Implementar la supervisión.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017) Cree un área de trabajo de Log Analytics y soluciones de Azure Automation. Examine la configuración de la supervisión y diagnóstico de las máquinas virtuales. Examine de la funcionalidad de Azure Monitor y Log Analytics. 
+## Diagrama de arquitectura
 
-## Diagrama de la arquitectura
 
 ![Diagrama de las tareas de arquitectura](../media/az104-lab11-architecture.png)
 

@@ -20,15 +20,9 @@ Su organización segmenta los servicios y aplicaciones de TI principales (como D
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
-+ [Conectar dos redes virtuales de Azure mediante el emparejamiento de red virtual global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Pruebe la conexión entre dos máquinas virtuales en redes virtuales diferentes. Cree un emparejamiento de red virtual y vuelva a probarlo.
-
-+ [Configuración de la supervisión de redes virtuales](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/). Comprenda cómo usar Azure Network Watcher Connection Monitor, registros de flujo, diagnósticos de NSG y captura de paquetes para supervisar la conectividad entre los recursos de red de IaaS de Azure.
-
-+ [Implemente la conectividad entre sitios](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209). Ejecute una plantilla para crear una infraestructura de red virtual con varias máquinas virtuales. Configure redes virtuales y pruebe las conexiones. 
-
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de arquitectura del laboratorio 05](../media/az104-lab05-architecture.png)
 

@@ -20,15 +20,7 @@ Su organización quiere explorar la implementación y configuración de máquina
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
-
-+ [Crear una máquina virtual en el portal](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201). Cree una máquina virtual, conéctela e instale el rol de servidor web.
-
-+ [Implementar una máquina virtual con una plantilla](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Explore la galería de inicio rápido y localice una plantilla de máquina virtual. Implementar la plantilla y comprobar el resultado.
-
-+ [Crear una máquina virtual con PowerShell](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2010). Use Azure PowerShell para implementar una máquina virtual. Revise las recomendaciones de Azure Advisor.
-
-+ [Crear una máquina virtual con la CLI](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2011). Use la CLI para implementar una máquina virtual. Revise las recomendaciones de Azure Advisor.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ## Aptitudes de trabajo
 

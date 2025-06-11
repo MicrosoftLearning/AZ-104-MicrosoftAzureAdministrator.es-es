@@ -16,11 +16,7 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure. 
-
-+ [Administración de recursos de Azure mediante plantillas de Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205) Revise, cree e implemente discos administrados con una plantilla.
-  
-+ [Creación de una máquina virtual con una plantilla](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Implementación desde una máquina virtual con una plantilla de inicio rápido.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
   
 ## Escenario del laboratorio
 

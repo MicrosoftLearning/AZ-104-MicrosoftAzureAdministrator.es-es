@@ -20,13 +20,9 @@ La organización almacena actualmente datos en almacenes de datos locales. A la 
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
-+ [Creación del almacenamiento de blobs](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Cree una cuenta de almacenamiento, administre el almacenamiento de blogs y supervise las actividades de almacenamiento. 
-  
-+ [Administración del almacenamiento de Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011). Cree una cuenta de almacenamiento y revise la configuración. Administrar contenedores de Blob Storage. Configuración de conexiones en red de almacenamiento. 
-
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab07-architecture.png)
 

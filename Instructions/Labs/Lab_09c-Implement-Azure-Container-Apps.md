@@ -18,11 +18,7 @@ Este laboratorio requiere una suscripción a Azure. El tipo de suscripción pued
 
 Tu organización tiene una aplicación web que se ejecuta en una máquina virtual del centro de datos local. La organización quiere mover todas las aplicaciones a la nube sin tener que administrar muchos servidores. Por consiguiente, decides evaluar Azure Container Apps.
 
-## Simulaciones de laboratorio interactivas
-
-No hay simulaciones de laboratorio interactivas para este tema. 
-
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab09b-aca-architecture.png)
 
