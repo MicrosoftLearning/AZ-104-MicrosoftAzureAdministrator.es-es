@@ -10,22 +10,19 @@ lab:
 
 En este laboratorio, aprenderá a implementar y utilizar Azure Container Instances.
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puedes cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
 
 ## Tiempo estimado: 15 minutos
 
 ## Escenario del laboratorio
 
-Su organización tiene una aplicación web que se ejecuta en una máquina virtual del centro de datos local. La organización quiere mover todas las aplicaciones a la nube, pero no quiere tener un gran número de servidores para administrar. Decide evaluar Azure Container Instances y Docker. 
+Tu organización tiene una aplicación web que se ejecuta en una máquina virtual del centro de datos local. La organización quiere mover todas las aplicaciones a la nube, pero no quiere tener un gran número de servidores para administrar. Decide evaluar Azure Container Instances y Docker. 
+
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se requiere una suscripción de Azure.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
-+ [Implementación de Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Cree, configure e implemente un contenedor de Docker con Azure Container Instances.
-  
-+ [Implementar Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Implementación de una imagen de Docker por medio de Azure Container Instances. 
-
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab09b-aci-architecture.png)
 
@@ -46,7 +43,7 @@ En esta tarea, creará una aplicación web sencilla mediante una imagen de Docke
 
     | Configuración | Valor |
     | ---- | ---- |
-    | Suscripción | Seleccione su suscripción a Azure. |
+    | Suscripción | Selecciona tu suscripción a Azure. |
     | Resource group | `az104-rg9` (Si es necesario, seleccione **Crear nuevo**) |
     | Nombre del contenedor | `az104-c1` |
     | Region | **Este de EE. UU** (o una región disponible cerca de usted)|

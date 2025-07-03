@@ -28,15 +28,9 @@ La superficie en la nube de la organización ha crecido considerablemente en el 
 
 ## Simulaciones interactivas de laboratorio
 
-Hay simulaciones de laboratorio interactivas que le podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
-+ [Administración de bloqueos de recursos](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Agregue un bloqueo de recursos y pruébelo para confirmarlo.
-  
-+ [Crear una directiva de Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Cree una directiva de Azure que restrinja los recursos de ubicación que se pueden ubicar. Cree un recurso y asegúrese de que se aplica la directiva. 
-
-+ [Administración de la gobernanza mediante la directiva de Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Cree y asigne etiquetas mediante Azure Portal. Cree una directiva de Azure que requiera etiquetado. Corrija los recursos no conformes.
-
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de la arquitectura de tareas.](../media/az104-lab02b-architecture.png)
 

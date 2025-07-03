@@ -20,11 +20,7 @@ La organización tiene un sitio web público. Debe equilibrar la carga de las so
 
 ## Simulaciones de laboratorio interactivas
 
-Hay simulaciones de laboratorio interactivas que podrían resultar útiles para este tema. La simulación le permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
-
-+ [Cree y configure Azure Load Balancer](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Cree una red virtual, servidores back-end, un equilibrador de carga y, después, pruebe este último.
-+ [Implemente una instancia de Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Cree una puerta de enlace de aplicación, cree máquinas virtuales, cree el grupo de back-end y pruebe la puerta de enlace.
-+ [Implemente la administración del tráfico](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010). Implemente una red en estrella tipo hub-and-spoke completa, incluidas las máquinas virtuales, las redes virtuales, el emparejamiento, el equilibrador de carga y la puerta de enlace de aplicaciones.
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ## Aptitudes de trabajo
 

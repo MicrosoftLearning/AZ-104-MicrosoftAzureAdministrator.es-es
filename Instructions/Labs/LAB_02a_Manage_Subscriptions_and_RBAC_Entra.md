@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratorio\_02a: Administración de suscripciones y RBAC"
+  title: 'Laboratorio 02a: Administración de suscripciones y RBAC'
   module: Administer Governance and Compliance
 ---
 
@@ -10,9 +10,9 @@ lab:
 
 En este laboratorio, obtendrá información sobre el control de acceso basado en roles. Obtendrá información sobre cómo usar los permisos y ámbitos para controlar qué acciones pueden realizar las identidades y cuáles no. También aprenderá a facilitar la administración de suscripciones mediante grupos de administración. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
-## Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
 ## Escenario del laboratorio
 
@@ -28,26 +28,20 @@ Para simplificar la administración de recursos de Azure en su organización, se
 
 ## Simulaciones interactivas de laboratorio
 
-Existen algunas simulaciones de laboratorio interactivas que pueden resultarle útiles para este tema. La simulación te permite hacer clic en un escenario similar a tu propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure. 
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
-+ [Administrar acceso con RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Asigne un rol integrado a un usuario y supervise los registros de actividad. 
-
-+ [Administrar suscripciones y RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202). Implemente un grupo de administración y cree y asigne un rol de RBAC personalizado.
-
-+ [Abrir una solicitud de soporte técnico](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022). Revise las opciones del plan de soporte técnico y, a continuación, cree y supervise una solicitud de soporte técnico o facturación.
-
-## Diagrama de la arquitectura
+## Diagrama de arquitectura
 
 ![Diagrama de tareas de laboratorio.](../media/az104-lab02a-architecture.png)
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Implementar grupos de administración.
-+ Tarea 2: Revisar y asignar un rol de Azure integrado.
-+ Tarea 3: Crear un rol de RBAC personalizado.
-+ Tarea 4: Supervisar la asignación de roles con el registro de actividades.
++ Tarea 1: Implementar grupos de administración.
++ Tarea 2: Revisar y asignar un rol de Azure integrado.
++ Tarea 3: Crear un rol de RBAC personalizado.
++ Tarea 4: Supervisar la asignación de roles con el registro de actividades.
 
-## Tarea 1: Implementar grupos de administración
+## Tarea 1: Implementar grupos de administración
 
 En esta tarea, creará y configurará grupos de administración. Los grupos de administración se usan para organizar y segmentar lógicamente las suscripciones. Permiten asignar y heredar RBAC y Azure Policy a otros grupos de administración y suscripciones. Por ejemplo, si su organización cuenta con un equipo de asistencia dedicado a Europa, puede organizar las suscripciones europeas en un grupo de administración para proporcionar al personal de asistencia acceso a dichas suscripciones (sin proporcionar acceso individual a todas las suscripciones). En nuestro escenario, todos los miembros del departamento de soporte técnico tendrán que crear una solicitud de soporte técnico para todas las suscripciones. 
 
@@ -61,7 +55,7 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
    
 1. Busque y seleccione `Management groups`.
 
-1. En la hoja **Grupos de administración**, haga clic en **+ Crear**.
+1. En la hoja **Grupos de administración**, haga clic en **+ Crear**.
 
 1. Cree un grupo de administración con la siguiente configuración. Seleccione **Enviar** cuando haya terminado. 
 
@@ -74,7 +68,7 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
 
    >**Nota:** ¿Se ha fijado en el grupo de administración raíz? Este grupo de administración raíz está integrado en la jerarquía para contener todos los grupos de administración y suscripciones. Este grupo de administración raíz permite la aplicación de directivas globales y de asignaciones de roles de Azure a nivel de directorio. Tras crear un grupo de administración, deberá agregar las suscripciones que deban estar incluidas en el grupo. 
 
-## Tarea 2: Revisar y asignar un rol de Azure integrado
+## Tarea 2: Revisar y asignar un rol de Azure integrado
 
 En esta tarea, revisará los roles integrados y asignará el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
@@ -104,7 +98,7 @@ En esta tarea, revisará los roles integrados y asignará el rol Colaborador de 
 
     >**¿Sabía que...?** Es posible que esta asignación no le conceda privilegios adicionales. Si ya tiene el rol Propietario, ese rol incluye todos los permisos asociados al rol Colaborador de máquina virtual.
     
-## Tarea 3: Crear un rol de RBAC personalizado
+## Tarea 3: Crear un rol de RBAC personalizado
 
 En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados son una parte fundamental de la implementación del principio de privilegios mínimos para un entorno. Los roles integrados pueden tener demasiados permisos para su escenario. También crearemos un nuevo rol y quitaremos los permisos que no sean necesarios. ¿Tiene un plan para administrar permisos superpuestos?
 
@@ -139,7 +133,7 @@ En esta tarea, creará un rol de RBAC personalizado. Los roles personalizados so
 
     >**Nota:** En este punto, ha creado un rol personalizado y lo ha asignado al grupo de administración.  
 
-## Tarea 4: Supervisar la asignación de roles con el registro de actividades
+## Tarea 4: Supervisar la asignación de roles con el registro de actividades
 
 En esta tarea, verá el registro de actividades para determinar si alguien ha creado un nuevo rol. 
 
@@ -151,15 +145,15 @@ En esta tarea, verá el registro de actividades para determinar si alguien ha cr
 
 ## Limpieza de los recursos
 
-Si utiliza **su propia suscripción**, dedique un minuto a eliminar los recursos del laboratorio. De esta forma estará seguro de que los recursos se liberan y de que se minimiza el costo. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, seleccione el grupo de recursos, seleccione **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haga clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
++ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Mediante la CLI, `az group delete --name resourceGroupName`.
   
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 + Cree dos tablas que resalte comandos importantes de PowerShell y la CLI para obtener información sobre las suscripciones de la organización en Azure y explicar cada comando en la columna “Explicación”. 
 + ¿Cuál es el formato del archivo JSON RBAC de Azure?
 + ¿Cuáles son los pasos básicos para crear un rol RBAC de Azure personalizado?

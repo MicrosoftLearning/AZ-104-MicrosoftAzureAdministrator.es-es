@@ -18,11 +18,9 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización está evaluando cómo realizar copias de seguridad y restaurar máquinas virtuales de Azure a partir de una pérdida de datos accidental o malintencionada. Además, la organización quiere explorar el uso de Azure Site Recovery para escenarios de recuperación ante desastres. 
 
-## Simulación interactiva de laboratorio
+## Simulaciones de laboratorio interactivas
 
-Hay una simulación de laboratorio interactiva que puede resultar útil para este tema. La simulación permite hacer clic en un escenario similar a su propio ritmo. Hay ciertas diferencias entre la simulación interactiva y este laboratorio, pero muchos de los conceptos básicos son los mismos. No se necesita una suscripción de Azure.
-
-+ **[Copia de seguridad de máquinas virtuales y archivos locales.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**. Cree un almacén de Recovery Services e implemente una copia de seguridad de máquina virtual de Azure. Implemente la copia de seguridad local de carpetas y archivos mediante el agente de Microsoft Azure Recovery Services. Las copias de seguridad locales están fuera del ámbito de este laboratorio, pero puede resultar útil ver esos pasos. 
+>**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ## Aptitudes de trabajo
 
