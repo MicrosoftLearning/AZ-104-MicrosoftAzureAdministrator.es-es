@@ -22,7 +22,7 @@ La red virtual **CoreServicesVnet** tiene el mayor número de recursos. Se prev�
 
 La red virtual **ManufacturingVnet** contiene sistemas para las operaciones de las instalaciones de fabricación. La organización prevé un gran número de dispositivos conectados internos para que sus sistemas recuperen datos. 
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
@@ -177,7 +177,9 @@ En esta tarea, crearemos un grupo de seguridad de aplicaciones y un grupo de seg
 
 ### Crea el grupo de seguridad de red y asócialo a CoreServicesVnet
 
-1. En Azure Portal, busque y seleccione `Network security groups`.
+1. En Azure Portal, busca y selecciona `Network security groups`.
+
+>**Nota:** También puede encontrar este recurso mediante el menú de Azure Portal (icono de la parte superior izquierda). Seleccione **Crear un recurso** y, después, en el panel **Redes**, seleccione **Grupo de seguridad de red**. 
 
 1. Seleccione **+ Crear** y proporcione información sobre la pestaña **Conceptos básicos**. 
 
@@ -239,11 +241,11 @@ En esta tarea, crearemos un grupo de seguridad de aplicaciones y un grupo de seg
     | Destination | **Etiqueta de servicio** |
     | Etiqueta de servicio de destino | **Internet** |
     | Service | **Personalizada** |
-    | Intervalos de puertos de destino | **8080** |
+    | Intervalos de puertos de destino | `*` |
     | Protocolo | **Cualquiera** |
     | Acción | **Deny** |
     | Prioridad | **4096** |
-    | Nombre | **DenyAnyCustom8080Outbound** |
+    | Nombre | `DenyInternetOutbound` |
 
 
 ## Tarea 4: Configuración de zonas DNS de Azure públicas y privadas
@@ -273,7 +275,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
 
 1. En la hoja **Información general**, observe los nombres de los cuatro servidores de nombres DNS de Azure asignados a la zona. **Copia** una de las direcciones del servidor de nombres. La necesitarás en un paso posterior. 
   
-1. Expande la hoja **Administración de DNS** y selecciona **Conjuntos de registros**. Haga clic en **+Agregar**. 
+1. Expande la hoja **Administración de DNS** y selecciona **Conjuntos de registros**. Haga clic en **+ Agregar**. 
 
     | Propiedad | Valor    |
     |:---------|:---------|
@@ -372,3 +374,5 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red. Hay reglas entrantes y salientes predeterminadas que puede personalizar para sus necesidades.
 + Los grupos de seguridad de aplicaciones se usan para proteger grupos de servidores con una función común, como servidores web o servidores de bases de datos.
 + Azure DNS es un servicio de hospedaje para dominios DNS que ofrece resolución de nombres. Puede configurar Azure DNS para resolver nombres de host en el dominio público.  También puede usar zonas DNS privadas para asignar nombres DNS a máquinas virtuales (VM) en las redes virtuales de Azure.
+
+
