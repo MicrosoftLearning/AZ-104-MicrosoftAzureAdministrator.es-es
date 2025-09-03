@@ -18,7 +18,7 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 La organización almacena actualmente datos en almacenes de datos locales. A la mayoría de estos archivos no se accede con frecuencia. Para minimizar el coste de almacenamiento, quisiera colocar los archivos a los que se acceda con poca frecuencia en niveles de almacenamiento de menor precio. También tiene previsto explorar los diferentes mecanismos de protección que ofrece Azure Storage, incluido el acceso a la red, la autenticación, la autorización y la replicación. Por último, quisiera determinar en qué medida el servicio Azure Files sería adecuado para hospedar los recursos compartidos de archivos locales.
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
@@ -56,7 +56,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
 1. En la pestaña **Opciones avanzadas**, usa los iconos informativos para obtener más información sobre las opciones. Usa los valores predeterminados. 
 
-1. En la pestaña **Redes**, en la sección **Acceso de red**, selecciona **Deshabilitar acceso público y usar acceso privado**. Esto restringirá el acceso entrante al permitir el acceso saliente. 
+1. En la pestaña **Redes**, en la sección **Acceso a red pública** selecciona **Deshabilitar**. Esto restringirá el acceso entrante al permitir el acceso saliente. 
 
 1. Revisa la pestaña **Protección de datos**. Recuerda que la directiva de retención de eliminación temporal predeterminada es de 7 días. Observa que es posible habilitar el control de versiones de blobs. Acepta los valores predeterminados.
 
@@ -70,8 +70,9 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
 1. Selecciona **Redes** en la hoja **Seguridad y redes**. Observa que el **acceso a la red pública** está deshabilitado.
 
-    + Cambia el **Acceso de red pública** a **Habilitar desde redes y direcciones IP seleccionadas**.
-    + En la sección **Firewall**, activa la casilla **Agregar la dirección IP del cliente**.
+    + Seleccione **Administrar** y cambie el valor **Acceso a la red pública** a **Habilitado**. 
+    + Cambia **Ámbito de acceso a la red pública** a **Habilitar desde redes seleccionadas**.
+    + En la sección **Direcciones IPv4**, selecciona **Agregar la dirección IPv4 del cliente**.
     + Guarda los cambios.
   
 1. En la hoja **Administración de datos**, selecciona **Redundancia**. Observa la información sobre las ubicaciones del centro de datos principal y secundario.
@@ -80,7 +81,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. La cuenta de
 
     + **Asigna un nombre** a la regla `Movetocool`. Observa las opciones para limitar el ámbito de la regla. Haga clic en **Next**. 
     
-    + En la pestaña **Blobs de base**, *si* los blobs de base se modificaron por última vez hace más de `30 days`, *entonces***Mover al almacenamiento de acceso esporádico**. Observa las otras opciones. 
+    + En la página **Agregar regla**, *si* los blobs de base se modificaron por última vez más de hace más de `30` días, *entonces* seleccione **Mover a almacenamiento esporádico**. Observa las otras opciones. 
     
     + Observa que se pueden configurar otras condiciones. Selecciona **Agregar** cuando hayas terminado de explorar.
 
@@ -138,9 +139,9 @@ En esta tarea, crearás un contenedor de blobs y cargarás una imagen. Los conte
 
 1. Confirma que tienes una nueva carpeta y que el archivo se cargó. 
 
-1. Selecciona el archivo de carga y revisa las opciones, como **Descargar**, **Eliminar**, **Cambiar de nivel** y **Adquirir concesión**.
+1. Seleccione el archivo de carga y revise las opciones de los puntos suspensivos (...), como **Descargar**, **Eliminar**, **Cambiar de nivel** y **Adquirir concesión**.
 
-1. Copia la **dirección URL** del archivo (hoja Propiedades) y pégala en una nueva ventana de exploración de **Inprivate**.
+1. Copie la **URL** del archivo (panel Configuración --> Propiedades) y péguela en una nueva ventana de exploración de **Inprivate**.
 
 1. Debería presentarse un mensaje con formato XML que indique **ResourceNotFound** o **PublicAccessNotPermitted**.
 
@@ -200,9 +201,9 @@ En esta tarea, crearás y configurarás recursos compartidos de Azure. Usarás e
 
 ### Restricción del acceso de red a la cuenta de almacenamiento
 
-1. En el portal, busca y selecciona **Redes virtuales**.
+1. En el portal, busca y selecciona `Virtual networks`.
 
-1. Selecciona **+ Create** (+ Crear). Selecciona el grupo de recursos. y asigna a la red virtual un **nombre**, `vnet1`.
+1. Selecciona **+ Crear**. Selecciona el grupo de recursos. y asigna a la red virtual un **nombre**, `vnet1`.
 
 1. Toma los valores predeterminados para otros parámetros, selecciona **Revisar y crear** y, a continuación, **Crear**.
 
@@ -218,9 +219,13 @@ En esta tarea, crearás y configurarás recursos compartidos de Azure. Usarás e
 
 1. En la hoja **Seguridad y redes**, selecciona **Redes**.
 
-1. Selecciona **Agregar red virtual existente**, así como **vnet1** y subred **predeterminada**. Selecciona **Agregar**.
+1. En **Acceso a la red pública**, seleccione **Administrar**. 
 
-1. En la sección **Firewall**, **Elimina** la dirección IP de la máquina. El tráfico permitido solo debería provenir de la red virtual. 
+1. Seleccione **Agregar una red virtual** y después **Agregar red existente**.
+
+1. Seleccione **vnet1** y subred **predeterminada** y luego **Agregar**.
+
+1. En la sección **Direcciones IPv4**, **Elimine** la dirección IP de la máquina. El tráfico permitido solo debería provenir de la red virtual. 
 
 1. Asegúrese de **Guardar** los cambios.
 
@@ -228,7 +233,7 @@ En esta tarea, crearás y configurarás recursos compartidos de Azure. Usarás e
 
 1. Seleccione el **Explorador de almacenamiento** y **Actualice** la página. Vaya al recurso compartido o al contenido del blob.  
 
-    >**Nota:** Debería recibir un mensaje *No autorizado para realizar esta operación*. No se está conectando desde la red virtual. Esto podría tardar un par de minutos en surtir efecto.
+    >**Nota:** Debería recibir un mensaje *No autorizado para realizar esta operación*. No se está conectando desde la red virtual. Esto podría tardar un par de minutos en surtir efecto. Es posible que todavía pueda ver el recurso compartido de archivos, pero no los archivos ni los blobs de la cuenta de almacenamiento. 
 
 
 ![Captura de pantalla del acceso no autorizado.](../media/az104-lab07-notauthorized.png)
@@ -250,8 +255,9 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 
 ## Más información con el aprendizaje autodirigido
 
++ [Cree una cuenta de Azure Storage](https://learn.microsoft.com/training/modules/create-azure-storage-account/). Cree una cuenta de Azure Storage con las opciones que respondan a sus necesidades empresariales.
++ [Administrar el ciclo de vida de Azure Blob Storage](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle). Obtenga información sobre cómo administrar la disponibilidad de los datos a lo largo del ciclo de vida de Azure Blob Storage.
 + [Optimice los costes con Azure Blob Storage.](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Aprenda a optimizar los costes con Azure Blob Storage.
-+ [Control de acceso a Azure Storage con firmas de acceso compartido](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Conceda acceso de forma segura a los datos almacenados en las cuentas de Azure Storage mediante firmas de acceso compartido.
 
 ## Puntos clave
 
