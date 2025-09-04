@@ -26,7 +26,7 @@ Para simplificar la administración de recursos de Azure en su organización, se
     - Creación de vales de solicitud de soporte técnico (no incluya agregar proveedores de Azure)
 
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
@@ -37,8 +37,8 @@ Para simplificar la administración de recursos de Azure en su organización, se
 ## Aptitudes de trabajo
 
 + Tarea 1: Implementar grupos de administración.
-+ Tarea 2: Revisar y asignar un rol de Azure integrado.
-+ Tarea 3: Crear un rol de RBAC personalizado.
++ Tarea 2: Revisar y asignar un rol integrado de Azure.
++ Tarea 3: Crear roles RBAC personalizados.
 + Tarea 4: Supervisar la asignación de roles con el registro de actividades.
 
 ## Tarea 1: Implementar grupos de administración
@@ -162,7 +162,6 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 ## Más información con el aprendizaje autodirigido
 
 + [Protección de los recursos de Azure con el control de acceso basado en roles de Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Uso de RBAC de Azure para administrar el acceso a los recursos en Azure.
-+ [Creación de roles personalizados para los recursos de Azure con el control de acceso basado en roles (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Comprenda la estructura de las definiciones de roles para el control de acceso. Identifique las propiedades de roles que se van a usar que definen los permisos de roles personalizados. Cree un rol personalizado de Azure y asígnelo a un usuario.
 
 ## Puntos clave
 
@@ -174,6 +173,7 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Puede crear nuevos roles o personalizar los roles existentes.
 + Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
 + Puede usar el registro de actividad para supervisar las asignaciones de roles.
+
 
 
 
