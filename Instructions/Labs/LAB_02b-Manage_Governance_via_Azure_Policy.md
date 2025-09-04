@@ -26,7 +26,7 @@ La superficie en la nube de la organización ha crecido considerablemente en el 
 
 - usar bloqueos de recursos para proteger los recursos
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
@@ -36,9 +36,9 @@ La superficie en la nube de la organización ha crecido considerablemente en el 
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: crear y asignar etiquetas a través de Azure Portal.
-+ Tarea 2: Exigir el etiquetado mediante una instancia de Azure Policy.
-+ Tarea 3: Aplicar el etiquetado mediante una instancia de Azure Policy.
++ Tarea 1: Crear y asignar etiquetas mediante Azure Portal.
++ Tarea 2: Exigir el etiquetado a través de una directiva de Azure Policy.
++ Tarea 3: Aplicar el etiquetado a través de una directiva de Azure Policy.
 + Tarea 4: Configurar y probar los bloqueos de recursos. 
 
 ## Tarea 1: Asignar etiquetas a través de Azure Portal
@@ -240,10 +240,6 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + Se han tabulado las diferencias entre Azure Policy y Azure RBAC e incluido ejemplos.
 + ¿Cuáles son los pasos para aplicar la directiva de Azure y corregir los recursos que no son compatibles?
 + ¿Cómo puedo obtener un informe de los recursos de Azure con etiquetas específicas?
-
-## Más información con el aprendizaje autodirigido
-
-+ [Diseño de una estrategia de gobernanza empresarial](https://learn.microsoft.com/training/modules/enterprise-governance/). Use RBAC y Azure Policy para limitar el acceso a las soluciones de Azure y determinar qué método es adecuado para los objetivos de seguridad.
 
 ## Puntos clave
 
