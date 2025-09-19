@@ -14,7 +14,7 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 ## Tiempo estimado: 50 minutos
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
   
@@ -172,7 +172,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
 1. Confirme que se creó el disco.
 
    ```powershell
-   Get-AzDisk
+   Get-AzDisk | ft
    ```
    
 ## Tarea 4: Implementación de una plantilla con la CLI 
