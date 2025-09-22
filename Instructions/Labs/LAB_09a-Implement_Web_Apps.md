@@ -19,7 +19,7 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización está interesada en las aplicaciones web de Azure para hospedar los sitios web de su empresa. Actualmente, estos sitios web se hospedan en centros de datos locales. Los sitios web se ejecutan en servidores Windows con la pila de runtime de PHP. El hardware está cerca del final de la vida útil y pronto tendrá que reemplazarse. Su organización quiere evitar nuevos costes de hardware usando Azure para hospedar los sitios web. 
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
@@ -138,9 +138,9 @@ En esta tarea, intercambiarás el espacio de ensayo por el espacio de producció
 
 En esta tarea, configurarás el escalado automático de la aplicación web de Azure. El escalado automático permite mantener un rendimiento óptimo de la aplicación web cuando aumenta el tráfico a esta. Para determinar cuándo debes escalar la aplicación, puedes supervisar métricas como el uso de CPU, la memoria o el ancho de banda.
 
-1. En la sección **Configuración**, selecciona **Escalar horizontalmente (plan de App Service)**.
+1. En el panel de la izquierda, en la sección **Plan de App Service**, seleccione **Escalabilidad horizontal**.
 
-    >**Nota:** asegúrate de que estás trabajando en el espacio de producción y no en el de ensayo.  
+    >**Nota:** Asegúrese de que trabaja en el espacio de producción y no en el de ensayo.  
 
 1. En la sección **Escalado**, selecciona **Automático**. Observa la opción **Basado en reglas**. El escalado basado en reglas se puede configurar para diferentes métricas de aplicación. 
 
