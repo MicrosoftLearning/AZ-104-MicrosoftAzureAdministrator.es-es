@@ -18,15 +18,15 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 Su organización quiere explorar la implementación y configuración de máquinas virtuales de Azure. En primer lugar, implementará una máquina virtual de Azure con escalado manual. A continuación, implementará un conjunto de escalado de máquinas virtuales y explorará el escalado automático.
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Implementación de Azure Virtual Machines con resistencia de zona mediante Azure Portal.
-+ Tarea 2: Administración del escalado de proceso y almacenamiento para máquinas virtuales.
-+ Tarea 3: Creación y configuración de Azure Virtual Machine Scale Sets.
++ Tarea 1: Implementación de Azure Virtual Machines con resistencia de zona mediante Azure Portal.
++ Tarea 2: Administración del escalado de proceso y almacenamiento para máquinas virtuales.
++ Tarea 3: Creación y configuración de Azure Virtual Machine Scale Sets.
 + Tarea 4: Escalado de los Conjuntos de escalado de las máquinas virtuales de Azure.
 + Tarea 5: Creación de una máquina virtual mediante Azure PowerShell (opcional 1).
 + Tarea 6: Creación de una máquina virtual con la CLI (opcional 2).
@@ -383,7 +383,7 @@ En esta tarea, se escala el conjunto de escalado de máquinas virtuales mediante
 1. Una vez completado el comando, use **az vm show** para comprobar que se creó la máquina.
 
     ```sh
-    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details
+    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details --output table
     ```
 
 1. Compruebe que **powerState** es **VM en ejecución**.
