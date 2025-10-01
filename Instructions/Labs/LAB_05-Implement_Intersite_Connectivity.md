@@ -18,7 +18,7 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización segmenta los servicios y aplicaciones de TI principales (como DNS y servicios de seguridad) de otras partes de la empresa, incluido el departamento de fabricación. Sin embargo, en algunos escenarios, las aplicaciones y los servicios del área principal necesitan comunicarse con aplicaciones y servicios en el área de fabricación. En este laboratorio, configurará la conectividad entre las áreas segmentadas. Este es un escenario común para separar la producción del desarrollo o separar una filial de otra.  
 
-## Simulaciones interactivas de laboratorio
+## Simulaciones de laboratorio interactivas
 
 >**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
 
@@ -213,7 +213,7 @@ En esta tarea, se vuelve a probar la conexión entre las máquinas virtuales de 
 
 ## Tarea 6: Creación de una ruta personalizada 
 
-En esta tarea, desea controlar el tráfico de red entre la subred perimetral y la subred de servicios centrales internos. Se instalará una aplicación de red virtual en la subred de servicios principales y todo el tráfico debe enrutarse allí. 
+En esta tarea, desea controlar el tráfico de red entre la subred perimetral y la subred de servicios centrales internos. Se instalará un dispositivo de red virtual en la subred perimetral y todo el tráfico debe enrutarse allí. 
 
 1. Busque seleccionar `CoreServicesVnet`.
 
