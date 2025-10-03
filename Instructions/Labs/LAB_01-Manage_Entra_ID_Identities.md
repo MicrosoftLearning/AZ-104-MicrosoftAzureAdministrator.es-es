@@ -10,10 +10,10 @@ lab:
 
 Este es el primero de una serie de laboratorios para administradores de Azure. En este laboratorio, obtendrá información sobre usuarios y grupos. Los usuarios y grupos son los bloques de creación básicos de una solución de identidad. 
 
-Este laboratorio requiere una suscripción a Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+Este laboratorio requiere una suscripción a Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
 
 
-## Tiempo estimado: 30 minutos
+## Tiempo estimado: 30 minutos
 
 ## Escenario del laboratorio
 
@@ -25,10 +25,10 @@ Su organización está creando un nuevo entorno de laboratorio para pruebas de p
 
 ## Aptitudes de trabajo
 
-+ Tarea 1: Cree y configure cuentas de usuario.
-+ Tarea 2: Cree grupos y agregue miembros.
++ Tarea 1: Cree y configure cuentas de usuario.
++ Tarea 2: Cree grupos y agregue miembros.
 
-## Tarea 1: Cree y configure cuentas de usuario
+## Tarea 1: Cree y configure cuentas de usuario
 
 En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas de usuario almacenarán datos de usuario como el nombre, el departamento, la ubicación y la información de contacto.
 
@@ -50,7 +50,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas 
    
 ### Creación de un nuevo usuario
 
-1. Seleccione **Usuarios**y, después, en la lista desplegable **Nuevo usuario ** seleccione **Crear nuevo usuario**. 
+1. En la hoja **Administrar**, seleccione **Usuarios** y, a continuación, en la lista desplegable **Nuevo usuario**, seleccione **Crear nuevo usuario**. 
 
 1. Cree un nuevo usuario con la siguiente configuración (deje a otros usuarios con sus valores predeterminados). En la pestaña **Propiedades** observe todos los distintos tipos de información que se pueden incluir en la cuenta de usuario. 
 
@@ -93,7 +93,7 @@ En esta tarea, creará y configurará una cuenta de almacenamiento. Las cuentas 
 
     >**Nota:** Es poco probable que cree cuentas de usuario individualmente. ¿Sabe cómo planea su organización crear y administrar cuentas de usuario?
     
-## Tarea 2: Cree grupos y agregue miembros
+## Tarea 2: Cree grupos y agregue miembros
 
 En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir cuentas de usuario o dispositivos. Estas son dos formas básicas de asignar miembros a grupos: Estática y dinámicamente. Los grupos estáticos requieren que los administradores agreguen y quiten miembros manualmente.  Los grupos dinámicos se actualizan automáticamente en función de las propiedades de una cuenta de usuario o dispositivo. Por ejemplo, el puesto de trabajo. 
 
@@ -135,7 +135,7 @@ En esta tarea, creará una cuenta de grupo. Las cuentas de grupo pueden incluir 
    
 ## Ampliar el aprendizaje con Copilot
 
-Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesita más información. Abra un explorador Edge y elija Copilot (superior derecha) o vaya a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 + ¿Cuáles son los comandos de Azure PowerShell y la CLI para crear un grupo de seguridad denominado Administradores de TI? Proporcione la página oficial de referencia del comando.  
 + Proporcione una estrategia paso a paso para administrar usuarios y grupos en Microsoft Entra ID.
 + ¿Cuáles son los pasos de Azure Portal para crear usuarios y grupos de forma masiva?
@@ -145,8 +145,8 @@ Copilot puede ayudarle a aprender a usar las herramientas de scripting de Azure.
 ## Más información con el aprendizaje autodirigido
 
 + [Comprender Entra de Microsoft ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/). Compare Microsoft Entra ID con Active Directory DS, obtenga información sobre Microsoft Entra ID P1 y P2 y explore Microsoft Entra Domain Services para administrar aplicaciones y dispositivos unidos a un dominio en la nube.
-+ [Crear usuarios y grupos de Azure en el id. de Microsoft Entra](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Crear usuarios en Microsoft Entra ID. Conozca los distintos tipos de grupos. Cree un grupo e incorpore miembros a él. Administre cuentas de invitado de negocio a negocio.
-+ [Permitir que los usuarios restablezcan sus contraseñas con el autoservicio de restablecimiento de contraseña de Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Evalúe el autoservicio de restablecimiento de contraseña para permitir que los usuarios de la organización restablezcan sus contraseñas o desbloqueen sus cuentas. Implemente, configure y pruebe el autoservicio de restablecimiento de contraseña.
++ [Crear usuarios y grupos de Azure en el id. de Microsoft Entra](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Crear usuarios en Microsoft Entra ID. Conozca los distintos tipos de grupos. Cree un grupo e incorpore miembros a él. Administre cuentas de invitado de negocio a negocio.
++ [Permitir que los usuarios restablezcan sus contraseñas con el autoservicio de restablecimiento de contraseña de Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Evalúe el autoservicio de restablecimiento de contraseña para permitir que los usuarios de la organización restablezcan sus contraseñas o desbloqueen sus cuentas. Implemente, configure y pruebe el autoservicio de restablecimiento de contraseña.
 
 
 ## Puntos clave
@@ -157,3 +157,4 @@ Enhorabuena por completar el laboratorio. Estos son algunos de los principales p
 + Microsoft Entra ID tiene cuentas de usuario e invitado. Cada cuenta tiene un nivel de acceso específico para el ámbito de trabajo que se espera que se realice.
 + Los grupos combinan usuarios o dispositivos relacionados. Existen dos tipos de grupos: Seguridad y Microsoft 365.
 + La pertenencia a grupos se puede asignar estática o dinámicamente.
+
