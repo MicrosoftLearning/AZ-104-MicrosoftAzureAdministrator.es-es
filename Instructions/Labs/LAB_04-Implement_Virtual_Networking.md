@@ -265,7 +265,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
     | Propiedad | Valor    |
     |:---------|:---------|
     | Suscripción | **Selecciona la suscripción** |
-    | Grupo de recursos | **az-104-rg4** |
+    | Resource group | **az104-rg4** |
     | Nombre | `contoso.com` (si se reserva, ajuste el nombre) |
     | Region |**Este de EE. UU.** (revise el icono informativo) |
 
@@ -309,7 +309,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
     | Propiedad | Valor    |
     |:---------|:---------|
     | Suscripción | **Selecciona la suscripción** |
-    | Grupo de recursos | **az-104-rg4** |
+    | Resource group | **az104-rg4** |
     | Nombre | `private.contoso.com` (ajusta si tenías que cambiar el nombre) |
     | Región |**Este de EE. UU.** |
 
@@ -374,5 +374,6 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red. Hay reglas entrantes y salientes predeterminadas que puede personalizar para sus necesidades.
 + Los grupos de seguridad de aplicaciones se usan para proteger grupos de servidores con una función común, como servidores web o servidores de bases de datos.
 + Azure DNS es un servicio de hospedaje para dominios DNS que ofrece resolución de nombres. Puede configurar Azure DNS para resolver nombres de host en el dominio público.  También puede usar zonas DNS privadas para asignar nombres DNS a máquinas virtuales (VM) en las redes virtuales de Azure.
+
 
 
