@@ -18,10 +18,6 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización segmenta los servicios y aplicaciones de TI principales (como DNS y servicios de seguridad) de otras partes de la empresa, incluido el departamento de fabricación. Sin embargo, en algunos escenarios, las aplicaciones y los servicios del área principal necesitan comunicarse con aplicaciones y servicios en el área de fabricación. En este laboratorio, configurará la conectividad entre las áreas segmentadas. Este es un escenario común para separar la producción del desarrollo o separar una filial de otra.  
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de arquitectura del laboratorio 05](../media/az104-lab05-architecture.png)

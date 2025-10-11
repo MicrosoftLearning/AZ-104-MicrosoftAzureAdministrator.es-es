@@ -14,10 +14,6 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 ## Tiempo estimado: 50 minutos
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-  
 ## Escenario del laboratorio
 
 Su equipo quiere ver formas de automatizar y simplificar las implementaciones de recursos. Su organización busca formas de reducir la sobrecarga administrativa, reducir el error humano y aumentar la coherencia.  

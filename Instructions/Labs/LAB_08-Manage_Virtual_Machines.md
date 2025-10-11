@@ -18,10 +18,6 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 Su organización quiere explorar la implementación y configuración de máquinas virtuales de Azure. En primer lugar, implementará una máquina virtual de Azure con escalado manual. A continuación, implementará un conjunto de escalado de máquinas virtuales y explorará el escalado automático.
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Aptitudes de trabajo
 
 + Tarea 1: Implementación de Azure Virtual Machines con resistencia de zona mediante Azure Portal.

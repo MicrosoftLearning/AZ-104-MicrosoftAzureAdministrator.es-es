@@ -25,11 +25,6 @@ Para simplificar la administración de recursos de Azure en su organización, se
     - Crear y administrar máquinas virtuales
     - Creación de vales de solicitud de soporte técnico (no incluya agregar proveedores de Azure)
 
-
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de tareas de laboratorio.](../media/az104-lab02a-architecture.png)
@@ -173,6 +168,7 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Puede crear nuevos roles o personalizar los roles existentes.
 + Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
 + Puede usar el registro de actividad para supervisar las asignaciones de roles.
+
 
 
 

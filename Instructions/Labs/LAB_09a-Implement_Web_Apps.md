@@ -19,10 +19,6 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización está interesada en las aplicaciones web de Azure para hospedar los sitios web de su empresa. Actualmente, estos sitios web se hospedan en centros de datos locales. Los sitios web se ejecutan en servidores Windows con la pila de runtime de PHP. El hardware está cerca del final de la vida útil y pronto tendrá que reemplazarse. Su organización quiere evitar nuevos costes de hardware usando Azure para hospedar los sitios web. 
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab09a-architecture.png)
