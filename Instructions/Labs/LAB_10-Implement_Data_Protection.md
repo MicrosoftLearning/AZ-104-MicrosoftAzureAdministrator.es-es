@@ -42,7 +42,7 @@ En esta tarea, usará una plantilla para implementar una máquina virtual. La m�
 
 1. Busque y seleccione `Deploy a custom template`.
 
-1. En la página de implementación personalizada, seleccione **Crear plantilla propia en el editor**.
+1. En la página de implementación personalizada, seleccione **Crear su propia plantilla en el editor**.
 
 1. En la página de edición de la plantilla, seleccione **Cargar archivo**.
 

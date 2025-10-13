@@ -41,7 +41,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. En Azure Portal, busque `Deploy a custom template` y selecciónelo.
 
-1. En la página de implementación personalizada, seleccione **Crear plantilla propia en el editor**.
+1. En la página de implementación personalizada, seleccione **Crear su propia plantilla en el editor**.
 
 1. En la página de edición de la plantilla, seleccione **Cargar archivo**.
 

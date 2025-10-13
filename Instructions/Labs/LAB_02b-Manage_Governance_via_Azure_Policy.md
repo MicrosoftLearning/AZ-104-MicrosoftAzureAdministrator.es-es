@@ -91,7 +91,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre de asignación | Requerir etiqueta de centro de coste y su valor en los recursos |
+    | Nombre de asignación | `Require Cost Center tag and its value on resources` |
     | Descripción | `Require Cost Center tag and its value on all resources in the resource group`|
     | Aplicación de directivas | habilitado |
 
