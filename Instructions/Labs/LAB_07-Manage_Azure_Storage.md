@@ -137,7 +137,7 @@ En esta tarea, crearás un contenedor de blobs y cargarás una imagen. Los conte
 
 1. Seleccione el archivo de carga y revise las opciones de los puntos suspensivos (...), como **Descargar**, **Eliminar**, **Cambiar de nivel** y **Adquirir concesión**.
 
-1. Copie la **URL** del archivo (panel Configuración --> Propiedades) y péguela en una nueva ventana de exploración de **Inprivate**.
+1. Copie la **URL** del archivo (panel Configuración --> Propiedades) y péguela en una nueva ventana de exploración de **InPrivate**.
 
 1. Debería presentarse un mensaje con formato XML que indique **ResourceNotFound** o **PublicAccessNotPermitted**.
 

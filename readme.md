@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # AZ-104: Administrador de Microsoft Azure
 
 ## Bienvenido
@@ -36,9 +28,9 @@ Con efecto inmediato: la contraseña de administrador se quitará de los archivo
 
 ## ¿Cómo contribuyo?
 
-- Cualquier MCT puede enviar una solicitud de extracción al código o contenido en el reproductor de GitHub, Microsoft y el autor del curso seleccionará e incluirá los cambios de contenido y de laboratorio según sea necesario.
+- Cualquier MCT puede enviar una solicitud de extracción al código o contenido en el repositorio de GitHub, Microsoft y el autor del curso seleccionará e incluirá los cambios de contenido y de laboratorio según sea necesario.
 
-- Puede enviar errores, cambios, mejoras e ideas.  ¿Encontró una nueva característica de Azure antes que nosotros?  ¡Envíe una nueva demostración!
+- Puede enviar errores, cambios, mejoras e ideas.  ¿Ha encontrado una nueva característica de Azure antes de tenerla?  ¡Envíe una nueva demostración!
 
 ## ¿Qué pasa con los cambios en el manual del alumno?
 

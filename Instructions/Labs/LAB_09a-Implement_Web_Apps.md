@@ -120,7 +120,7 @@ En esta tarea, intercambiarás el espacio de ensayo por el espacio de producció
 
 1. Usa los valores predeterminados y haz clic en **Iniciar intercambio**. Espera a la notificación de que el intercambio ha finalizado.
 
-1. Vuelve a la página principal del portal. Debes tener tanto una aplicación web de producción como el espacio de ensayo.
+1. Vuelve a la página principal del portal. Debe tener tanto la aplicación web de producción como la ranura de ensayo.
 
 1. Busca `App Services` y selecciona tu App Service Web Apps. Esto te devuelve a la ranura de implementación de producción.
 
