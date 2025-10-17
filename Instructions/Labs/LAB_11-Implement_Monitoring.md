@@ -18,12 +18,7 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 Su organización ha migrado su infraestructura a Azure. Es importante notificar a los administradores todos los cambios significativos que se realicen en la infraestructura. Planee examinar las funcionalidades de Azure Monitor, entre las que se incluye Log Analytics.
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
-
 
 ![Diagrama de las tareas de arquitectura](../media/az104-lab11-architecture.png)
 
@@ -46,7 +41,7 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 1. En Azure Portal, busque `Deploy a custom template` y selecciónelo.
 
-1. En la página de implementación personalizada, seleccione **Crear plantilla propia en el editor**.
+1. En la página de implementación personalizada, seleccione **Crear su propia plantilla en el editor**.
 
 1. En la página de edición de la plantilla, seleccione **Cargar archivo**.
 

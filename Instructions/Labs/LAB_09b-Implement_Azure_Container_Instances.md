@@ -18,10 +18,6 @@ Este laboratorio requiere una suscripción de Azure. El tipo de suscripción pue
 
 Tu organización tiene una aplicación web que se ejecuta en una máquina virtual del centro de datos local. La organización quiere mover todas las aplicaciones a la nube, pero no quiere tener un gran número de servidores para administrar. Decide evaluar Azure Container Instances y Docker. 
 
-## Simulaciones interactivas de laboratorio
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab09b-aci-architecture.png)
@@ -43,7 +39,7 @@ En esta tarea, creará una aplicación web sencilla mediante una imagen de Docke
 
     | Configuración | Valor |
     | ---- | ---- |
-    | Suscripción | Selecciona tu suscripción a Azure. |
+    | Suscripción | Selección de su suscripción a Azure |
     | Resource group | `az104-rg9` (Si es necesario, seleccione **Crear nuevo**) |
     | Nombre del contenedor | `az104-c1` |
     | Region | **Este de EE. UU** (o una región disponible cerca de usted)|

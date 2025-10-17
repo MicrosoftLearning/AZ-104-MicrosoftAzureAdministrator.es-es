@@ -18,10 +18,6 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 La organización almacena actualmente datos en almacenes de datos locales. A la mayoría de estos archivos no se accede con frecuencia. Para minimizar el coste de almacenamiento, quisiera colocar los archivos a los que se acceda con poca frecuencia en niveles de almacenamiento de menor precio. También tiene previsto explorar los diferentes mecanismos de protección que ofrece Azure Storage, incluido el acceso a la red, la autenticación, la autorización y la replicación. Por último, quisiera determinar en qué medida el servicio Azure Files sería adecuado para hospedar los recursos compartidos de archivos locales.
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab07-architecture.png)
@@ -141,7 +137,7 @@ En esta tarea, crearás un contenedor de blobs y cargarás una imagen. Los conte
 
 1. Seleccione el archivo de carga y revise las opciones de los puntos suspensivos (...), como **Descargar**, **Eliminar**, **Cambiar de nivel** y **Adquirir concesión**.
 
-1. Copie la **URL** del archivo (panel Configuración --> Propiedades) y péguela en una nueva ventana de exploración de **Inprivate**.
+1. Copie la **URL** del archivo (panel Configuración --> Propiedades) y péguela en una nueva ventana de exploración de **InPrivate**.
 
 1. Debería presentarse un mensaje con formato XML que indique **ResourceNotFound** o **PublicAccessNotPermitted**.
 

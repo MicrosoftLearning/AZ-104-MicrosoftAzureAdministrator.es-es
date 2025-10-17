@@ -22,10 +22,6 @@ La red virtual **CoreServicesVnet** tiene el mayor número de recursos. Se prev�
 
 La red virtual **ManufacturingVnet** contiene sistemas para las operaciones de las instalaciones de fabricación. La organización prevé un gran número de dispositivos conectados internos para que sus sistemas recuperen datos. 
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diseño de red](../media/az104-lab04-architecture.png)
@@ -262,7 +258,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
 
 1. Configure la pestaña **Aspectos básicos**.
 
-    | Propiedad | Valor    |
+    | Propiedad | Value    |
     |:---------|:---------|
     | Suscripción | **Selecciona la suscripción** |
     | Resource group | **az104-rg4** |
@@ -277,7 +273,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
   
 1. Expande la hoja **Administración de DNS** y selecciona **Conjuntos de registros**. Haga clic en **+ Agregar**. 
 
-    | Propiedad | Valor    |
+    | Propiedad | Value    |
     |:---------|:---------|
     | Nombre | **www** |
     | Tipo | **A**
@@ -306,7 +302,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. En la pestaña **Datos básicos** de Crear zona DNS privada, escribe la información como se muestra en la tabla siguiente:
 
-    | Propiedad | Valor    |
+    | Propiedad | Value    |
     |:---------|:---------|
     | Suscripción | **Selecciona la suscripción** |
     | Resource group | **az104-rg4** |
@@ -330,7 +326,7 @@ Una zona DNS privada proporciona servicios de resolución de nombres dentro de l
 
 1. En la hoja **Administración de DNS** selecciona **+ Conjuntos de registros**. Ahora agregarías un registro para cada máquina virtual que necesite compatibilidad con la resolución de nombres privada.
 
-    | Propiedad | Valor    |
+    | Propiedad | Value    |
     |:---------|:---------|
     | Nombre | **sensorvm** |
     | Tipo | **A**
@@ -374,6 +370,7 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red. Hay reglas entrantes y salientes predeterminadas que puede personalizar para sus necesidades.
 + Los grupos de seguridad de aplicaciones se usan para proteger grupos de servidores con una función común, como servidores web o servidores de bases de datos.
 + Azure DNS es un servicio de hospedaje para dominios DNS que ofrece resolución de nombres. Puede configurar Azure DNS para resolver nombres de host en el dominio público.  También puede usar zonas DNS privadas para asignar nombres DNS a máquinas virtuales (VM) en las redes virtuales de Azure.
+
 
 
 

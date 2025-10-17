@@ -19,10 +19,6 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización está interesada en las aplicaciones web de Azure para hospedar los sitios web de su empresa. Actualmente, estos sitios web se hospedan en centros de datos locales. Los sitios web se ejecutan en servidores Windows con la pila de runtime de PHP. El hardware está cerca del final de la vida útil y pronto tendrá que reemplazarse. Su organización quiere evitar nuevos costes de hardware usando Azure para hospedar los sitios web. 
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de las tareas.](../media/az104-lab09a-architecture.png)
@@ -124,7 +120,7 @@ En esta tarea, intercambiarás el espacio de ensayo por el espacio de producció
 
 1. Usa los valores predeterminados y haz clic en **Iniciar intercambio**. Espera a la notificación de que el intercambio ha finalizado.
 
-1. Vuelve a la página principal del portal. Debes tener tanto una aplicación web de producción como el espacio de ensayo.
+1. Vuelve a la página principal del portal. Debe tener tanto la aplicación web de producción como la ranura de ensayo.
 
 1. Busca `App Services` y selecciona tu App Service Web Apps. Esto te devuelve a la ranura de implementación de producción.
 

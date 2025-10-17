@@ -18,10 +18,6 @@ Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripc
 
 Su organización está evaluando cómo realizar copias de seguridad y restaurar máquinas virtuales de Azure a partir de una pérdida de datos accidental o malintencionada. Además, la organización quiere explorar el uso de Azure Site Recovery para escenarios de recuperación ante desastres. 
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Aptitudes de trabajo
 
 + Tarea 1: Use una plantilla para aprovisionar una infraestructura.
@@ -46,7 +42,7 @@ En esta tarea, usará una plantilla para implementar una máquina virtual. La m�
 
 1. Busque y seleccione `Deploy a custom template`.
 
-1. En la página de implementación personalizada, seleccione **Crear plantilla propia en el editor**.
+1. En la página de implementación personalizada, seleccione **Crear su propia plantilla en el editor**.
 
 1. En la página de edición de la plantilla, seleccione **Cargar archivo**.
 
@@ -140,7 +136,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
 
 1. Define una nueva directiva de copia de seguridad con las siguientes opciones de configuración (deja las demás con los valores predeterminados):
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | ---- | ---- |
     | Nombre de la directiva | `az104-backup` |
     | Frecuencia | **A diario** |

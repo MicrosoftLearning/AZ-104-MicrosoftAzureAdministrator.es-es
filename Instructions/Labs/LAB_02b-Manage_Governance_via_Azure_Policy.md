@@ -26,10 +26,6 @@ La superficie en la nube de la organización ha crecido considerablemente en el 
 
 - usar bloqueos de recursos para proteger los recursos
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Diagrama de arquitectura
 
 ![Diagrama de la arquitectura de tareas.](../media/az104-lab02b-architecture.png)
@@ -95,7 +91,7 @@ En esta tarea, asignará la directiva integrada *Requerir una etiqueta y su valo
 
     | Configuración | Value |
     | --- | --- |
-    | Nombre de asignación | Requerir etiqueta de centro de coste y su valor en los recursos |
+    | Nombre de asignación | `Require Cost Center tag and its value on resources` |
     | Descripción | `Require Cost Center tag and its value on all resources in the resource group`|
     | Aplicación de directivas | habilitado |
 
@@ -187,7 +183,7 @@ En esta tarea, se usará la nueva definición de directiva para corregir los rec
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, compruebe que usa el grupo de recursos al que se aplicó la directiva y especifique las opciones siguientes (deje las demás en sus valores predeterminados). A continuación, haga clic en **Revisar**:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Nombre de la cuenta de almacenamiento | *cualquier combinación globalmente única de entre 3 y 24 letras minúsculas y dígitos, empezando por una letra* |
 

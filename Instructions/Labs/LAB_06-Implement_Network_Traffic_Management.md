@@ -18,10 +18,6 @@ Este laboratorio requiere una suscripción a Azure. El tipo de suscripción pued
 
 La organización tiene un sitio web público. Debe equilibrar la carga de las solicitudes públicas entrantes entre las diferentes máquinas virtuales. También debe proporcionar imágenes y vídeos de diferentes máquinas virtuales. Planea implementar una instancia de Azure Load Balancer y otra de Azure Application Gateway. Todos los recursos se encuentran en la misma región.
 
-## Simulaciones de laboratorio interactivas
-
->**Nota**: las simulaciones de laboratorio proporcionadas anteriormente se han retirado.
-
 ## Aptitudes de trabajo
 
 + Tarea 1: Use una plantilla para aprovisionar una infraestructura.
@@ -326,7 +322,7 @@ Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure.
 + ¿Cuáles son los pasos básicos para configurar Azure Application Gateway? Proporciona una lista de comprobación de alto nivel. 
 + Crea una tabla en la que se destaquen tres soluciones de equilibrio de carga de Azure. Para cada solución, muestra los protocolos admitidos, las directivas de enrutamiento, la afinidad de sesión y la descarga de TLS.
   
-## Obtén más información con el aprendizaje autodirigido
+## Más información con el aprendizaje autodirigido
 
 + [Mejora de la escalabilidad y resistencia de las aplicaciones mediante Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Analice los diferentes equilibradores de carga de Azure y cómo elegir la solución de Azure Load Balancer adecuada para satisfacer sus necesidades.
 + [Equilibrio de carga del tráfico de servicio web con Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Mejorar la resistencia de la aplicación al distribuir la carga entre varios servidores y usar el enrutamiento basado en ruta de acceso para dirigir el tráfico web.
