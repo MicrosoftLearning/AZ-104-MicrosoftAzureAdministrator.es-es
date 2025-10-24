@@ -10,7 +10,7 @@ lab:
 
 En este laboratorio, obtendrá información sobre Azure Monitor. Aprenderá a crear alertas y a enviarlas a cualquier grupo de acciones. Desencadenará y probará la alerta y comprobará el registro de actividad.  
 
-Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.**
+Este laboratorio requiere una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puede cambiar la región, pero para escribir los pasos se ha usado**Este de EE. UU.**
 
 ## Tiempo estimado: 40 minutos
 
@@ -35,47 +35,47 @@ Su organización ha migrado su infraestructura a Azure. Es importante notificar 
 
 En esta tarea, implementará una máquina virtual que se usará para probar escenarios de supervisión.
 
-1. Descargue los archivos de laboratorio **\\Allfiles\\Lab11\\az104-11-vm-template.json** en el equipo.
+1. Descargue los archivos de laboratorio**\\Allfiles\\Labs\\11\\az104-11-vm-template.json** en el equipo.
 
-1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
+1. Inicie sesión en**Azure Portal** -`https://portal.azure.com`.
 
-1. En Azure Portal, busque `Deploy a custom template` y selecciónelo.
+1. En Azure Portal, busque`Deploy a custom template` y selecciónelo.
 
-1. En la página de implementación personalizada, seleccione **Crear su propia plantilla en el editor**.
+1. En la página de implementación personalizada, seleccione**Crear su propia plantilla en el editor**.
 
-1. En la página de edición de la plantilla, seleccione **Cargar archivo**.
+1. En la página de edición de la plantilla, seleccione**Cargar archivo**.
 
-1. Busque el archivo **\\Allfiles\\Labs11\\az104-11-vm-template.json**, selecciónelo y, después, seleccione **Abrir**.
+1. Busque y seleccione el archivo**\\Allfiles\\Labs\\11\\az104-11-vm-template.json** y, después, seleccione**Abrir**.
 
-1. Seleccione **Guardar**.
+1. Seleccione**Guardar**.
 
 1. Use la siguiente información para completar los campos de implementación personalizados y deje los restantes con sus valores predeterminados:
 
     | Configuración       | Valor         | 
     | ---           | ---           |
     | Subscription  | Su suscripción de Azure |
-    | Resource group| `az104-rg11` (si fuera necesario, seleccione **Crear nuevo**)
+    | Resource group| `az104-rg11` (si fuera necesario, seleccione**Crear nuevo**)
     | Region        | **Este de EE. UU.**   |
     | Nombre de usuario      | `localadmin`   |
     | Contraseña      | Especifique una contraseña compleja |
     
-1. Seleccione **Revisar y crear** y, a continuación, seleccione **Crear**.
+1. Seleccione**Revisar y crear** y, luego,**Crear**.
 
-1. Cuando finalice la implementación, haga clic en **Ir al grupo de recursos**.
+1. Cuando finalice la implementación, haga clic en**Ir al grupo de recursos**.
 
 1. Examine qué recursos se han implementado. Debe haber una red virtual con una máquina virtual.
 
 **Configuración de Azure Monitor en máquinas virtuales (se usará en la última tarea)**
 
-1. En el portal, busque **Supervisar** y selecciónelo.
+1. En el portal, busque**Supervisar** y selecciónelo.
 
 1. Dedique un minuto a examinar toda la información, la detección, la evaluación de prioridades y las herramientas de diagnóstico disponibles.
 
-1. Seleccione **Ver** en el cuadro **Información de máquina virtual** y, después, seleccione **Configurar información**.
+1. Seleccione**Ver** en el cuadro**Información de máquina virtual** y, después, seleccione**Configurar información**.
 
-1. Selecciona **Habilitar** junto a la máquina virtual y, a continuación, la hoja **Habilitar en Azure Monitor: Incorporación a Insights**.
+1. Selecciona**Habilitar** junto a la máquina virtual y, a continuación, la hoja**Habilitar en Azure Monitor: Incorporación a Insights**.
 
-1. Utilice los valores predeterminados de las reglas de recopilación de datos y de la suscripción y seleccione **Configurar**. 
+1. Utilice los valores predeterminados de las reglas de recopilación de datos y de la suscripción y seleccione**Configurar**. 
 
 1. El agente de máquina virtual tardará unos minutos en instalarse y configurarse, y vaya al paso siguiente. 
    
@@ -83,31 +83,31 @@ En esta tarea, implementará una máquina virtual que se usará para probar esce
 
 En esta tarea, se crea una alerta que se debe desencadenar cuando se elimine una máquina virtual. 
 
-1. Vaya a la página **Supervisar** y seleccione **Alertas**. 
+1. Vaya a la página**Supervisar** y seleccione**Alertas**. 
 
-1. Seleccione **Crear+** y, después, **Regla de alertas**. 
+1. Seleccione**Crear+** y, después,**Regla de alertas**. 
 
-1. Seleccione el cuadro de la suscripción y después seleccione **Aplicar**. Esta alerta se aplicará a las máquinas virtuales de la suscripción. Si lo desea, puede especificar una máquina determinada. 
+1. Seleccione el cuadro de la suscripción y después seleccione**Aplicar**. Esta alerta se aplicará a las máquinas virtuales de la suscripción. Si lo desea, puede especificar una máquina determinada. 
 
-1. Seleccione la pestaña **Condición** y después seleccione el vínculo **Ver todas las señales**.
+1. Seleccione la pestaña**Condición** y después seleccione el vínculo**Ver todas las señales**.
 
-1. Busque la opción **Eliminar máquina virtual (máquinas virtuales)** y selecciónela. Observe las otras señales integradas. Seleccione **Aplicar**.
+1. Busque la opción**Eliminar máquina virtual (máquinas virtuales)** y selecciónela. Observe las otras señales integradas. Seleccione**Aplicar**.
 
-1. En el área **Lógica de alerta** (desplácese hacia abajo), examine las selecciones de **Nivel de evento**. Deje el valor predeterminado de **Todo seleccionado**.
+1. En el área**Lógica de alerta** (desplácese hacia abajo), examine las selecciones de**Nivel de evento**. Deje el valor predeterminado de**Todo seleccionado**.
 
-1. Examine los elementos seleccionados en **Estado**. Deje el valor predeterminado de **Todo seleccionado**.
+1. Examine los elementos seleccionados en**Estado**. Deje el valor predeterminado de**Todo seleccionado**.
 
-1. Deje abierto el panel **Crear regla de alerta**, ya que lo usará en la siguiente tarea.
+1. Deje abierto el panel**Crear regla de alerta**, ya que lo usará en la siguiente tarea.
 
 ## Tarea 3: Configurar notificaciones de grupo de acciones
 
 En esta tarea, si la alerta se desencadena, envía una notificación por correo electrónico al equipo de operaciones. 
 
-1. Siga trabajando en la alerta. Selecciona **Usar grupos de acciones** y, a continuación, selecciona **Crear grupo de acciones** en la hoja **Seleccionar grupo de acciones**.
+1. Siga trabajando en la alerta. Selecciona**Usar grupos de acciones** y, a continuación, selecciona**Crear grupo de acciones** en la hoja**Seleccionar grupo de acciones**.
 
     >**¿Sabía que?** Puede agregar hasta cinco grupos de acciones a una regla de alertas. Los grupos de acciones se ejecutan simultáneamente y sin seguir ningún orden específico. Varias reglas de alerta pueden usar el mismo grupo de acciones. 
 
-1. En la pestaña **Aspectos básicos**, escriba los valores siguientes para cada opción.
+1. En la pestaña**Aspectos básicos**, escriba los valores siguientes para cada opción.
 
     | Configuración | Valor |
     |---------|---------|
@@ -119,27 +119,27 @@ En esta tarea, si la alerta se desencadena, envía una notificación por correo 
     | Nombre del grupo de acciones | `Alert the operations team` (debe ser único en el grupo de recursos) |
     | Nombre para mostrar | `AlertOpsTeam` |
 
-1. Seleccione **Siguiente: Notificaciones** y escriba los siguientes valores.
+1. Seleccione**Siguiente: Notificaciones** y escriba los siguientes valores.
 
     | Configuración | Value |
     |---------|---------|
-    | Tipo de notificación | Seleccione **Email/SMS message/Push/Voice** (Correo electrónico/SMS/Inserción/Voz). |
+    | Tipo de notificación | Seleccione**Email/SMS message/Push/Voice** (Correo electrónico/SMS/Inserción/Voz). |
     | Nombre | `VM was deleted` |
 
-1. Seleccione **Dirección de correo electrónico** y, en el cuadro **Dirección de correo electrónico**, escriba su dirección y seleccione **Aceptar**. 
+1. Seleccione**Dirección de correo electrónico** y, en el cuadro**Dirección de correo electrónico**, escriba su dirección y seleccione**Aceptar**. 
 
     >**Nota:** Debe recibir una notificación por correo electrónico en la que se le indica que se le ha agregado a un grupo de acciones. Puede haber un retraso de unos minutos, pero eso significa que la regla se ha implementado.
 
-1. Seleccione **Revisar y crear** y, a continuación, **Crear**.
+1. Selecciona**Revisar y crear** y, a continuación,**Crear**.
    
-1. Una vez creado el grupo de acciones, vaya a **Siguiente: Detalles** y escriba los siguientes valores.
+1. Una vez creado el grupo de acciones, vaya a**Siguiente: Detalles >** y escriba los siguientes valores para cada ajuste.
 
     | Configuración | Value |
     |---------|---------|
     | Nombre de la regla de alertas | `VM was deleted` |
     | Descripción de la regla de alertas | `A VM in your resource group was deleted` |
 
-1. Seleccione **Revisar y crear** para validar la entrada y, luego, **Crear**.
+1. Seleccione**Revisar y crear** para validar la entrada y, luego,**Crear**.
 
 ## Tarea 4: Desencadenar una alerta y confirmar que funciona
 
@@ -147,39 +147,39 @@ En esta tarea, se desencadena la alerta y se confirma que se ha enviado una noti
 
 >**Nota:** Si elimina la máquina virtual antes de que se despliegue la regla de alerta, es posible que esta no se desencadene. 
 
-1. En el portal, busque y seleccione **Máquinas virtuales**.
+1. En el portal, busque y seleccione**Máquinas virtuales**.
 
-1. Active la casilla de la máquina virtual **az104-vm0**.
+1. Active la casilla de la máquina virtual**az104-vm0**.
 
-1. Seleccione **Eliminar** en la barra de menús.
+1. Seleccione**Eliminar** en la barra de menús.
 
-1. Active la casilla **Aplicar eliminación forzada**. Activa la casilla de la parte inferior para confirmar que quieres que se eliminen los recursos y selecciona **Eliminar**. 
+1. Active la casilla**Aplicar eliminación forzada**. Activa la casilla de la parte inferior para confirmar que quieres que se eliminen los recursos y selecciona**Eliminar**. 
 
-1. En la barra de título, seleccione el icono **Notificaciones** y espere hasta que **vm0** se haya eliminado.
+1. En la barra de título, seleccione el icono**Notificaciones** y espere hasta que**vm0** se haya eliminado.
 
-1. Debe recibir el siguiente correo electrónico de notificación, **Aviso importante: se ha eliminado la máquina virtual de alertas de Azure Monitor...** Si no lo recibe, abra el programa de correo electrónico y busque un correo electrónico de azure-noreply@microsoft.com.
+1. Debe recibir el siguiente correo electrónico de notificación,**Aviso importante: se ha eliminado la máquina virtual de alertas de Azure Monitor...** Si no lo recibe, abra el programa de correo electrónico y busque un correo electrónico deazure-noreply@microsoft.com.
 
     ![Captura de pantalla del correo electrónico de la alerta.](../media/az104-lab11-alert-email.png)
    
-1. En el menú de recursos de Azure Portal, seleccione **Supervisar** y, luego, **Alertas** en el menú de la izquierda.
+1. En el menú de recursos de Azure Portal, seleccione**Supervisar** y, luego,**Alertas** en el menú de la izquierda.
 
-1. La eliminación de **vm0** debería haber generado tres alertas.
+1. La eliminación de**vm0** debería haber generado tres alertas.
 
    >**Nota:** Pueden transcurrir varios minutos hasta que se envíe el correo electrónico de alerta y las alertas se actualicen en el portal. Si no desea esperar, vaya a la siguiente tarea y, después, vuelva. 
 
-1. Seleccione el nombre de una de las alertas (por ejemplo, **se eliminó la máquina virtual**). Aparece un panel **Detalles de alerta** que muestra más detalles sobre el evento.
+1. Seleccione el nombre de una de las alertas (por ejemplo,**se eliminó la máquina virtual**). Aparece un panel**Detalles de alerta** que muestra más detalles sobre el evento.
 
 ## Tarea 5: Configurar una regla de procesamiento de alertas
 
 En esta tarea, se crea una regla de alertas para suprimir las notificaciones durante el período de mantenimiento. 
 
-1. Vaya a la hoja **Alertas**, seleccione **Reglas de procesamiento de alertas** y, después, **+ Crear**. 
+1. Vaya a la hoja**Alertas**, seleccione**Reglas de procesamiento de alertas** y, después,**+ Crear**. 
    
-1. Seleccione su **Suscripción** y después **Aplicar**.
+1. Seleccione su**Suscripción** y después**Aplicar**.
    
-1. Seleccione **Siguiente: Configuración de la regla** y, a continuación, seleccione **Suprimir notificaciones**.
+1. Seleccione**Siguiente: Configuración de la regla** y, a continuación, seleccione**Suprimir notificaciones**.
    
-1. Seleccione **Siguiente: Programación**.
+1. Seleccione**Siguiente: Programación >**.
    
 1. De forma predeterminada, la regla funciona en todo momento, a menos que la deshabilite o configure una programación. Va a definir una regla para suprimir las notificaciones durante el mantenimiento nocturno.
 Escriba esta configuración para la programación de la regla de procesamiento de alertas:
@@ -193,7 +193,7 @@ Escriba esta configuración para la programación de la regla de procesamiento d
 
     ![Captura de pantalla de la sección de programación de una regla de procesamiento de alertas](../media/az104-lab11-alert-processing-rule-schedule.png)
 
-1. Seleccione **Siguiente: Detalles** y escriba esta configuración:
+1. Seleccione**Siguiente: Detalles >** e indique esta configuración:
 
     | Configuración | Value |
     |---------|---------|
@@ -201,29 +201,29 @@ Escriba esta configuración para la programación de la regla de procesamiento d
     | Nombre de la regla | `Planned Maintenance` |
     | Descripción | `Suppress notifications during planned maintenance.` |
 
-1. Seleccione **Revisar y crear** para validar la entrada y, luego, **Crear**.
+1. Seleccione**Revisar y crear** para validar la entrada y, luego,**Crear**.
 
 ## Tarea 6: Usar consultas de registro de Azure Monitor
 
 En esta tarea, usará Azure Monitor para consultar los datos capturados de la máquina virtual.
 
-1. En Azure Portal, busca y selecciona `Monitor` y después haz clic en **Registros**.
+1. En Azure Portal, busca y selecciona`Monitor` y después haz clic en**Registros**.
 
 1. Si fuera necesario, cierre la pantalla de presentación. 
 
-1. Si es necesario, seleccione un ámbito, su **suscripción**. Seleccione **Aplicar**. 
+1. Si es necesario, seleccione un ámbito, su**suscripción**. Seleccione**Aplicar**. 
 
-1. En la pestaña **Consultas**, seleccione **Máquinas virtuales** (panel izquierdo). Es posible que tenga que volver a abrir la hoja.
+1. En la pestaña**Consultas**, seleccione**Máquinas virtuales** (panel izquierdo). Es posible que tenga que volver a abrir la hoja.
 
     ![Captura de pantalla de la página Consultas.](../media/az104-lab11-queries.png)
 
-1. Examine las consultas disponibles. **Ejecute** (mantenga el puntero sobre la consulta) la consulta **Recuento de latidos**.
+1. Examine las consultas disponibles. **Ejecute** (mantenga el puntero sobre la consulta) la consulta**Recuento de latidos**.
 
 1. Debe recibir un recuento de latidos del momento en que se ejecutaba la máquina virtual.
 
-1. En el lado derecho de la pantalla, selecciona la lista desplegable situada junto a **Modo simple** y elige **Modo KQL**. Examine la consulta. Esta consulta usa la tabla de *latidos*.
+1. En el lado derecho de la pantalla, selecciona la lista desplegable situada junto a**Modo simple** y elige**Modo KQL**. Examine la consulta. Esta consulta usa la tabla de*latidos*.
 
-1. Reemplace la consulta por esta y, después, haga clic en **Ejecutar**. Vea el gráfico resultante. 
+1. Reemplace la consulta por esta y, después, haga clic en**Ejecutar**. Vea el gráfico resultante. 
 
    ```
     InsightsMetrics
@@ -237,20 +237,20 @@ En esta tarea, usará Azure Monitor para consultar los datos capturados de la m�
 
 1. Como tiene tiempo, examine otras consultas y ejecútelas, si lo desea. 
 
-    >**¿Sabía que...?**: si desea practicar con otras consultas, hay un [entorno de demostración de Log Analytics](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial#open-log-analytics).
+    >**¿Sabía que...?**: si desea practicar con otras consultas, hay un[entorno de demostración de Log Analytics](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial#open-log-analytics).
     
     >**¿Sabía que...?**: una vez que encuentre una consulta que le guste, puede crear una alerta a partir de ella. 
 
 ## Limpieza de los recursos
 
-Si utilizas **tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
+Si utilizas**tu propia suscripción**, dedica un minuto a eliminar los recursos del laboratorio. De esta forma estarás seguro de que los recursos se liberan y de que se minimiza el coste. La forma más fácil de eliminar los recursos de laboratorio es eliminar el grupo de recursos del laboratorio. 
 
-+ En Azure Portal, selecciona el grupo de recursos, selecciona **Eliminar el grupo de recursos**, **Escribir el nombre del grupo de recursos** y, después, haz clic en **Eliminar**.
-+ Mediante Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Mediante la CLI, `az group delete --name resourceGroupName`.
++ En Azure Portal, selecciona el grupo de recursos, selecciona**Eliminar el grupo de recursos**,**Escribir el nombre del grupo de recursos** y, después, haz clic en**Eliminar**.
++ Mediante Azure PowerShell,`Remove-AzResourceGroup -Name resourceGroupName`.
++ Mediante la CLI,`az group delete --name resourceGroupName`.
 
 ## Ampliar el aprendizaje con Copilot
-Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a *copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
+Copilot puede ayudarte a aprender a usar las herramientas de scripting de Azure. Copilot también puede ayudar en áreas no cubiertas en el laboratorio o donde necesitas más información. Abre un explorador Edge y elige Copilot (superior derecha) o ve a*copilot.microsoft.com*. Dedique unos minutos a probar estas indicaciones.
 
 + ¿Cuáles son los pasos de configuración básicos que se van a alertar en Azure cuando una máquina virtual está inactiva?
 + ¿Cómo se puede recibir una notificación cuando se desencadena una alerta de Azure?
