@@ -48,7 +48,7 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
 
 1. Revise el área de **Administración de recursos de Azure**. Asegúrese de que puede administrar el acceso a todas las suscripciones y grupos de administración de Azure en el inquilino.
    
-1. Busque y seleccione `Management groups`.
+1. Busque y seleccione **Grupos de administración**.
 
 1. En la hoja **Grupos de administración**, haga clic en **+ Crear**.
 
@@ -168,6 +168,7 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Puede crear nuevos roles o personalizar los roles existentes.
 + Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
 + Puede usar el registro de actividad para supervisar las asignaciones de roles.
+
 
 
 

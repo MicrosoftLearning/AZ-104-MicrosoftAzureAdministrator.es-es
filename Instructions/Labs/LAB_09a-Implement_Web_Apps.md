@@ -37,7 +37,7 @@ En esta tarea, creará una aplicación web de Azure. Azure App Services es una s
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. Busque y seleccione `App services`.
+1. Busque y seleccione `App Services`.
 
 1. Seleccione **+ Crear**, en el menú desplegable **Aplicación web**. Observe las otras opciones. 
 
@@ -144,9 +144,9 @@ En esta tarea, configurarás el escalado automático de la aplicación web de Az
 
     ![Captura de pantalla de la página de escalabilidad automática.](../media/az104-lab09a-autoscale.png)
 
-1. Selecciona **Guardar**.
+1. Seleccione **Guardar**.
 
-1. Selecciona **Diagnosticar y solucionar problemas** (panel izquierdo).
+1. Seleccione **Diagnosticar y resolver problemas** (panel izquierdo de la página principal de la aplicación web).
 
 1. En el cuadro **Prueba de carga de la aplicación**, selecciona **Crear prueba de carga**.
 

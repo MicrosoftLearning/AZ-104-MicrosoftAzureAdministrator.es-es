@@ -54,7 +54,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
     | Opciones de disponibilidad | **Zona de disponibilidad** |
     | Zona de disponibilidad | **Zona 1, 2** (lea la nota sobre el uso de conjuntos de escalado de máquinas virtuales). |
     | Tipo de seguridad | **Estándar** |
-    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Imagen (Ver todas las imágenes) | **Windows Server 2019 Datacenter: x64 Gen2** |
     | Instancia de Azure Spot | **unchecked** |
     | Size | **Estándar D2s v3** |
     | Nombre de usuario | `localadmin` |
@@ -172,7 +172,7 @@ En esta tarea, implementará un conjunto de escalado de máquinas virtuales de A
     | Modo de orquestación | **Uniforme** |
     | Tipo de seguridad | **Estándar** |
     | Opciones de escalado | **Revisa y toma los valores predeterminados**. Cambiaremos esto en la siguiente tarea. |
-    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Imagen (Ver todas las imágenes) | **Windows Server 2019 Datacenter: x64 Gen2** |
     | Ejecución de Azure Spot con descuento | **Desactivado** |
     | Size | **Estándar D2s_v3** |
     | Nombre de usuario | `localadmin` |

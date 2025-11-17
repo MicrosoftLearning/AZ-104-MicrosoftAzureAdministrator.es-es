@@ -80,7 +80,7 @@ En esta tarea, creará un almacén de Recovery Services. Un almacén de Recovery
 
 1. En la hoja **Crear almacén de Recovery Services**, configura las opciones siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Suscripción | el nombre de la suscripción de Azure |
     | Resource group | `az104-rg-region1`  |
@@ -126,7 +126,7 @@ En esta tarea, implementará la copia de seguridad a nivel de máquina virtual d
     | Configuración | Valor |
     | --- | --- |
     | ¿Dónde se ejecuta su carga de trabajo? | **Azure** (vea las otras opciones) |
-    | ¿De qué quiere hacer una copia de seguridad? | **Máquina virtual** (vea las otras opciones) |
+    | ¿De qué quiere hacer una copia de seguridad? | **Máquina virtual** (observe las otras opciones)|
 
 1. Selecciona **Copia de seguridad**.
 
@@ -174,7 +174,7 @@ En esta tarea, implementarás una cuenta de Azure Storage. A continuación, conf
 
 1. Usa la siguiente información para definir la cuenta de almacenamiento, y después selecciona **Revisar + crear**.
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- | 
     | Suscripción          | *Tu suscripción*    |
     | Grupo de recursos        | **az104-rg-region1**        |
@@ -217,7 +217,7 @@ En esta tarea, implementarás una cuenta de Azure Storage. A continuación, conf
 
 1. En la hoja **Crear almacén de Recovery Services**, configura las opciones siguientes:
 
-    | Configuración | Valor |
+    | Configuración | Value |
     | --- | --- |
     | Suscripción | el nombre de la suscripción de Azure |
     | Grupo de recursos | `az104-rg-region2` (Si es necesario, selecciona **Crear nuevo**) |
