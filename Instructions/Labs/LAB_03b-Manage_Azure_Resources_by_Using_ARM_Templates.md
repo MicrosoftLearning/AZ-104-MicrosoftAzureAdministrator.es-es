@@ -198,7 +198,7 @@ En esta tarea, trabajará con Azure Cloud Shell y Azure PowerShell. Azure Cloud 
 1. Confirma que se creó el disco.
 
      ```sh
-     az disk list --output table
+     az disk list --resource-group az104-rg3 --output table
      ```
    
 ## Tarea 5: Implementación de un recurso mediante Azure Bicep
@@ -234,7 +234,7 @@ En esta tarea, usarás un archivo de Bicep para implementar un disco administrad
 1. Confirma que se creó el disco.
 
     ```sh
-    az disk list --output table
+    az disk list --resource-group az104-rg3 --output table
     ```
 
     >**Nota:** has implementado correctamente cinco discos administrados, cada uno de ellos de forma diferente. ¡Buen trabajo!
