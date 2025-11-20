@@ -61,7 +61,9 @@ La organización planea una gran cantidad de crecimiento para los servicios prin
     | ------------------ | -------------------- |
     | Espacio de direcciones IPv4 | Reemplace el espacio de direcciones IPv4 rellenado previamente por `10.20.0.0/16` (separe las entradas)  |
 
-1. Seleccione **+ Agregar una subred**. Complete la información de nombre y dirección de cada subred. Asegúrese de seleccionar **Agregar** para cada nueva subred. Asegúrese de eliminar la subred predeterminada, ya sea antes o después de crear las otras subredes.
+1. Seleccione **+ Agregar una subred**. Complete la información de nombre y dirección de cada subred. Asegúrese de seleccionar **Agregar** para cada nueva subred. 
+
+    >**Nota:** Asegúrese de eliminar la subred predeterminada, ya sea antes o después de crear las otras subredes.
 
     | **Subred**             | **Opción**           | **Valor**              |
     | ---------------------- | -------------------- | ---------------------- |
@@ -226,7 +228,7 @@ En esta tarea, crearemos un grupo de seguridad de aplicaciones y un grupo de seg
 
 1. Después de crear la regla del NSG de entrada, seleccione **Reglas de seguridad de salida**. 
 
-1. Observe la regla **AllowInternetOutboundRule**. Observe también que la regla no se puede eliminar y la prioridad es 65001.
+1. Observe la regla **AllowInternetOutBound**. Observe también que la regla no se puede eliminar y la prioridad es 65001.
 
 1. Seleccione **+ Agregar** y configure una regla de salida que deniegue el acceso a Internet. Cuando haya terminado, seleccione **Agregar**.
 
@@ -265,7 +267,7 @@ Puede configurar Azure DNS para resolver nombres de host en el dominio público.
     | Nombre | `contoso.com` (si se reserva, ajuste el nombre) |
     | Region |**Este de EE. UU.** (revise el icono informativo) |
 
-1. Seleccione **Revisar y crear** y, a continuación, **Crear**.
+1. Selecciona **Revisar y crear** y, a continuación, **Crear**.
    
 1. Espere a que se implemente la zona DNS y seleccione **Ir al recurso**.
 
@@ -370,6 +372,8 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red. Hay reglas entrantes y salientes predeterminadas que puede personalizar para sus necesidades.
 + Los grupos de seguridad de aplicaciones se usan para proteger grupos de servidores con una función común, como servidores web o servidores de bases de datos.
 + Azure DNS es un servicio de hospedaje para dominios DNS que ofrece resolución de nombres. Puede configurar Azure DNS para resolver nombres de host en el dominio público.  También puede usar zonas DNS privadas para asignar nombres DNS a máquinas virtuales (VM) en las redes virtuales de Azure.
+
+
 
 
 

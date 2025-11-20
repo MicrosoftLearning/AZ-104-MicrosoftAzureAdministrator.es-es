@@ -37,11 +37,11 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
 1. Inicie sesión en **Azure Portal** - `https://portal.azure.com`.
 
-1. Busque y seleccione `Virtual Machines`.
+1. Busca y selecciona `Virtual Machines`.
 
-1. En la página máquinas virtuales, seleccione **Crear**, después, seleccione **Azure Virtual Machine**.
+1. En la página de máquinas virtuales, seleccione **Crear**, después, seleccione **Máquina virtual**.
 
-1. En la pestaña Aspectos básicos, use la siguiente información para completar el formulario y, a continuación, seleccione **Siguiente: Discos >**. Para cualquier configuración no especificada, deje el valor predeterminado.
+1. En la pestaña Datos básicos, use la siguiente información para completar el formulario y, a continuación, seleccione **Siguiente: Discos >**. Para cualquier configuración no especificada, deje el valor predeterminado.
  
     | Configuración | Valor | 
     | --- | --- |
@@ -51,15 +51,15 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
     | Región | **(EE. UU.) Este de EE. UU.** |
     | Opciones de disponibilidad | No se requiere redundancia de la infraestructura |
     | Tipo de seguridad | **Estándar** |
-    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** (observe las otras opciones) |
-    | Size | **Standard_DS2_v3** |
+    | Imagen (Ver todas las imágenes) | **Windows Server 2019 Datacenter: x64 Gen2** (observe las otras opciones) |
+    | Tamaño | **Standard_DS2_v3** |
     | Nombre de usuario | `localadmin` | 
     | Contraseña | **Proporcionar una contraseña compleja** |
     | Puertos de entrada públicos | **Ninguno** |
 
     ![Captura de pantalla de la página de creación de máquinas virtuales básicas. ](../media/az104-lab05-createcorevm.png)
    
-1. En la pestaña **Disk**, tome los valores predeterminados y, a continuación, seleccione **Siguiente: Redes >**.
+1. En la pestaña **Discos**, tome los valores predeterminados y, a continuación, seleccione **Siguiente: Redes >**.
 
 1. En la pestaña **Redes**, en Red virtual, seleccione **Crear nuevo**.
 
@@ -67,7 +67,7 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
     | Configuración | Valor | 
     | --- | --- |
-    | Nombre | `CoreServicesVnet` (Crear nuevo) |
+    | Nombre | `CoreServicesVnet` (Crear o editar) |
     | Intervalo de direcciones | `10.0.0.0/16`  |
     | Nombre de subred | `Core` | 
     | Intervalo de direcciones de subred | `10.0.0.0/24` |
@@ -86,9 +86,9 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
 
 1. En Azure Portal, busque y seleccione **Máquinas virtuales**.
 
-1. En la página máquinas virtuales, seleccione **Crear**, después, seleccione **Azure Virtual Machine**.
+1. En la página de máquinas virtuales, seleccione **Crear**, después, seleccione **Máquina virtual**.
 
-1. En la pestaña Aspectos básicos, use la siguiente información para completar el formulario y, a continuación, seleccione **Siguiente: Discos >**. Para cualquier configuración no especificada, deje el valor predeterminado.
+1. En la pestaña Datos básicos, use la siguiente información para completar el formulario y, a continuación, seleccione **Siguiente: Discos >**. Para cualquier configuración no especificada, deje el valor predeterminado.
  
     | Configuración | Valor | 
     | --- | --- |
@@ -98,13 +98,13 @@ En esta tarea, creará una red virtual de servicios principales con una máquina
     | Región | **(EE. UU.) Este de EE. UU.** |
     | Tipo de seguridad | **Estándar** |
     | Opciones de disponibilidad | No se requiere redundancia de la infraestructura |
-    | Imagen | **Windows Server 2019 Datacenter: x64 Gen2** |
-    | Size | **Standard_DS2_v3** | 
+    | Imagen (Ver todas las imágenes) | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Tamaño | **Standard_DS2_v3** | 
     | Nombre de usuario | `localadmin` | 
     | Contraseña | **Proporcionar una contraseña compleja** |
-    | Puertos de entrada públicos | **Ninguno** |
+    | Puertos de entrada públicos | **None** |
 
-1. En la pestaña **Disk**, tome los valores predeterminados y, a continuación, seleccione **Siguiente: Redes >**.
+1. En la pestaña **Discos**, tome los valores predeterminados y, a continuación, seleccione **Siguiente: Redes >**.
 
 1. En la pestaña Redes, en Red virtual, seleccione **Crear nuevo**.
 
@@ -136,7 +136,7 @@ En esta tarea, comprobará que los recursos de las redes virtuales emparejadas p
     | --- | --- |
     | Tipo de origen           | **Máquina virtual**   |
     | Máquina virtual       | **CoreServicesVM**    | 
-    | Tipo de destino      | **Máquina virtual**   |
+    | Tipo de destino      | **Seleccionar una máquina virtual**   |
     | Máquina virtual       | **ManufacturingVM**   | 
     | Versión de IP preferida  | **Ambos**              | 
     | Protocolo              | **TCP**               |
@@ -148,7 +148,7 @@ En esta tarea, comprobará que los recursos de las redes virtuales emparejadas p
 
 1. Seleccione **Ejecutar pruebas de diagnóstico**.
 
-    >**Nota**: Los resultados pueden tardar un par de minutos en devolverse. Las selecciones de pantalla se atenuarán mientras se recopilan los resultados. Observe que la **Prueba de conectividad** muestra **UnReachable**. Esto tiene sentido porque las máquinas virtuales están en diferentes redes virtuales. 
+    >**Nota**: Los resultados pueden tardar un par de minutos en devolverse. Las selecciones de pantalla se atenuarán mientras se recopilan los resultados. Observe que la **Prueba de conectividad** muestra **Inaccesible**. Esto tiene sentido porque las máquinas virtuales están en diferentes redes virtuales. 
 
  
 ## Tarea 4: Configuración de emparejamientos de redes virtuales entre redes virtuales
@@ -162,14 +162,14 @@ En esta tarea, creará un emparejamiento de red virtual para habilitar las comun
 1. En CoreServicesVnet, en Emparejamientos, selecciona **+ Agregar**. Si no se especifica, tome el valor predeterminado. 
 
     | **Parámetro**                                    | **Valor**                             |
-    | --------------------------------------------- | ------------------------------------- |                                
-    | Nombre del vínculo de emparejamiento                             | `CoreServicesVnet-to-ManufacturingVnet` |
-    | Red virtual    | **ManufacturingVM-net (az104-rg5)**  |
-    | Permitir que ManufacturingVNet acceda a CoreServicesVNet  | seleccionado (valor predeterminado) |
-    | Permitir que ManufacturingVnet reciba tráfico reenviado desde CoreServicesVnet | seleccionados  |
+    | --------------------------------------------- | ------------------------------------- |
     | Nombre del vínculo de emparejamiento                             | `ManufacturingVnet-to-CoreServicesVnet` |
-    | Permitir que CoreServicesVNet acceda a la red virtual emparejada            | seleccionado (valor predeterminado) |
-    | Permitir que CoreServicesVNet reciba tráfico reenviado de la red virtual emparejada | seleccionados |
+    | Red virtual    | **ManufacturingVnet (az104-rg5)**  |
+    | Permitir que "CoreServicesVnet" acceda a "ManufacturingVnet"            | seleccionado (valor predeterminado) |
+    | Permitir que "CoreServicesVnet" reciba tráfico reenviado desde "ManufacturingVnet" | seleccionados |
+    | Nombre del vínculo de emparejamiento                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | Permitir que "ManufacturingVNet" acceda a "CoreServicesVNet"  | seleccionado (valor predeterminado) |
+    | Permitir que "ManufacturingVnet" reciba tráfico reenviado desde "CoreServicesVnet" | seleccionados  |
 
 4. Haz clic en **Agregar**.
 
@@ -200,7 +200,7 @@ En esta tarea, se vuelve a probar la conexión entre las máquinas virtuales de 
     ```Powershell
     Test-NetConnection <CoreServicesVM private IP address> -port 3389
     ```
-1. El script de comandos puede tardar un par de minutos en finalizar. En la parte superior de la página se muestra un mensaje informativo *Ejecución de script en curso*.
+1. El script de comandos puede tardar un par de minutos en finalizar. En la parte superior de la página se muestra el mensaje informativo *Ejecución de script en curso...*.
 
    
 1. La conexión de prueba debe realizarse correctamente porque se ha configurado el emparejamiento. El nombre del equipo y la dirección remota de este gráfico pueden ser diferentes. 
@@ -223,7 +223,7 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
    
 1. En Azure Portal, busca y selecciona `Route tables` y, a continuación, selecciona **+ Crear**.
 
-1. Escribe los detalles siguientes, selecciona **Revisar y crear** y, a continuación, selecciona **Crear**. 
+1. Escriba los detalles siguientes, seleccione **Revisar y crear** y, a continuación, seleccione **Crear**. 
 
     | Configuración | Valor | 
     | --- | --- |
@@ -237,7 +237,7 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
    
 1. Selecciona el recurso (no la casilla) **rt-CoreServices**
 
-1. Expande **Configuración**, a continuación, selecciona **Rutas** y, después, **Agregar**. Crea una ruta desde la aplicación virtual de red (NVA) futura a la red virtual CoreServices. 
+1. Expande **Configuración**, a continuación, selecciona **Rutas** y, después, **+ Agregar**. Crea una ruta desde la aplicación virtual de red (NVA) futura a la red virtual CoreServices. 
 
     | Configuración | Value | 
     | --- | --- |
@@ -247,14 +247,14 @@ En esta tarea, desea controlar el tráfico de red entre la subred perimetral y l
     | Tipo de próximo salto | **Aplicación virtual** (observe las demás opciones) |
     | Siguiente dirección de salto | `10.0.1.7` (NVA futura) |
 
-1. Seleccione **+Agregar**. Lo último que debe hacer es asociar la ruta a la subred.
+1. Seleccione **Agregar**. Lo último que debe hacer es asociar la ruta a la subred.
 
 1. Selecciona **Subredes** y, a continuación, **+ Asociar**. Complete la configuración.
 
     | Configuración | Valor | 
     | --- | --- |
-    | Virtual network | **CoreServicesVnet** |
-    | Subnet | **Principal** |    
+    | Red virtual | **CoreServicesVnet (az104-rg5)** |
+    | Subred | **Principal** |    
 
 >**Nota**: Ha creado una ruta definida por el usuario para dirigir el tráfico desde la red perimetral a la nueva aplicación virtual de red.  
 
