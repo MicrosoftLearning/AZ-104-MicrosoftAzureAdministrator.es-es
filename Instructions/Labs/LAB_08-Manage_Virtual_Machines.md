@@ -80,11 +80,7 @@ En esta tarea, implementará dos máquinas virtuales de Azure en diferentes zona
     | Opciones de equilibrio de carga | **None** |
 
 
-1. Haga clic en **Siguiente: Administración >** y especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
-
-    | Configuración | Value |
-    | --- | --- |
-    | Opciones de orquestación de revisiones | **Orquestado por Azure** |  
+1. Haga clic en **Siguiente: Administración >** y revisa la configuración. No realice ningún cambio. 
 
 1. Haga clic en **Siguiente: Supervisión >** y especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
