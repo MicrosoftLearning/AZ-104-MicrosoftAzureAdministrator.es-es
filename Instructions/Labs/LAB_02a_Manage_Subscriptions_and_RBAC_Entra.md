@@ -67,6 +67,8 @@ En esta tarea, creará y configurará grupos de administración. Los grupos de a
 
 En esta tarea, revisará los roles integrados y asignará el rol Colaborador de máquina virtual a un miembro del departamento de soporte técnico. Azure proporciona un gran número de [roles integrados](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
+>**Nota:** En los pasos siguientes, asignará el rol al grupo del **departamento de soporte técnico**. Si no dispone de un grupo de departamento de soporte, tómese un minuto para crearlo.
+
 1. Seleccione el grupo de administración **az104-mg1**.
 
 1. Seleccione la hoja **Control de acceso (IAM)** y después la pestaña **Roles**.
@@ -77,11 +79,9 @@ En esta tarea, revisará los roles integrados y asignará el rol Colaborador de 
 
 1. En la hoja **Agregar asignación de rol**, busque y seleccione **Colaborador de máquinas virtuales**. El rol de colaborador de la máquina virtual le permite administrar máquinas virtuales, pero no acceder a su sistema operativo ni administrar la red virtual ni la cuenta de almacenamiento a la que estén conectadas. Este es un buen rol para el departamento de soporte técnico. Seleccione **Siguiente**.
 
-    >**¿Sabía que...?** Azure proporcionaba originalmente solo el modelo de implementación **Clásico**. Se ha sustituido por el modelo de implementación de **Azure Resource Manager**. Como procedimiento recomendado, no use recursos clásicos. 
+    >**¿Sabía que...?** Azure proporcionaba originalmente solo el modelo de implementación **Clásico**. Se ha sustituido por el modelo de implementación de **Azure Resource Manager**. Como procedimiento recomendado, no use recursos clásicos.
 
 1. En la pestaña **Miembros**, **Seleccione Miembros**.
-
-    >**Nota:** El siguiente paso asigna el rol al grupo **helpdesk**. Si no dispone de un grupo de departamento de soporte, tómese un minuto para crearlo.
 
 1. Busque y seleccione el grupo `helpdesk`. Haga clic en **Seleccionar**. 
 
@@ -168,6 +168,8 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Puede crear nuevos roles o personalizar los roles existentes.
 + Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
 + Puede usar el registro de actividad para supervisar las asignaciones de roles.
+
+
 
 
 

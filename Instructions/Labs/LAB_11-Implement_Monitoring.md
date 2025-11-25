@@ -207,7 +207,7 @@ Escriba esta configuración para la programación de la regla de procesamiento d
 
 En esta tarea, usará Azure Monitor para consultar los datos capturados de la máquina virtual.
 
-    >**Note:** It can take 15-30 minutes for data to appear. Concentrate on the method and types of queries, rather than the results. 
+   >**Nota:** No pasa nada si los datos no aparecen. Céntrese en los pasos para revisar la información de supervisión, incluidas las consultas de registro preconfiguradas y personalizadas. 
 
 1. En Azure Portal, busca y selecciona `Monitor` y después haz clic en **Registros**.
 
