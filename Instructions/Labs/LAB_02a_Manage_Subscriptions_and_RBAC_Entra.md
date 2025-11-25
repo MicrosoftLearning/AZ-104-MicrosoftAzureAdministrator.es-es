@@ -10,9 +10,9 @@ lab:
 
 En este laboratorio, obtendrá información sobre el control de acceso basado en roles. Obtendrá información sobre cómo usar los permisos y ámbitos para controlar qué acciones pueden realizar las identidades y cuáles no. También aprenderá a facilitar la administración de suscripciones mediante grupos de administración. 
 
-Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Es posible cambiar la región, pero los pasos se describen para **Este de EE. UU.** 
+Para este laboratorio se necesita una suscripción de Azure. El tipo de suscripción puede afectar a la disponibilidad de las características de este laboratorio. Puedes cambiar la región, pero para escribir los pasos se ha usado **Este de EE. UU.** 
 
-## Tiempo estimado: 30 minutos
+## Tiempo estimado: 20 minutos
 
 ## Escenario del laboratorio
 
@@ -168,6 +168,7 @@ Enhorabuena por completar el laboratorio. Estas son las principales conclusiones
 + Puede crear nuevos roles o personalizar los roles existentes.
 + Los roles se definen en un archivo con formato JSON e incluyen *Actions*, *NotActions* y *AssignableScopes*.
 + Puede usar el registro de actividad para supervisar las asignaciones de roles.
+
 
 
 
